@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="col-6 BMISection text-center ">
-                        <span class="TourText">Virtual Tour</span>
+                        <span class="TourText" onclick="ShowBmiCalcutorModel();">Check Your BMI</span>
                     </div>
 
                 </div>
@@ -166,19 +166,39 @@
     </div>
 
     <!-- BMI Calculator Model -->
-    <div class="modal" tabindex="-1" id="BmiModel">
+    <div class="modal text-white" tabindex="-1" id="BmiModel">
         <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content" style="background-color: transparent; backdrop-filter: blur(14px);">
+                <div class="modal-header text-center">
+                    <!-- <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                    <div class="col-12 text-center">
+                        <h1 class="modal-title fw-bold">Calculate Your BMI Calculator</h1>
+                    </div>
                 </div>
                 <div class="modal-body">
-                    <p>Modal body text goes here.</p>
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="text" placeholder="Weight" id="bmiWeight" class="form-control">
+                            </div>
+                            <div class="col-6">
+                                <input type="text" placeholder="Height" id="bmiHeight" class="form-control">
+                            </div>
+
+                            <div class="col-12 mt-2 d-grid">
+                                <button class="btn btn-outline-danger" onclick="calculateBMI();">Check</button>
+                            </div>
+
+                            <div class="col-12 text-white-50 text-center mt-3">
+                                <h3 id="BMIOutput"></h3>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
