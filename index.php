@@ -46,7 +46,7 @@
             <div class="col-12 bg-black">
                 <div class="row">
                     <!-- ABout Image -->
-                    <div class="col-6 AboutImageCover">
+                    <div class="col-6 AboutImageCover mt-5">
                         <img src="Resources/images/gym01.jpeg" class="aboutImage" alt="">
                     </div>
 
@@ -168,6 +168,9 @@
 
         </div>
     </div>
+
+
+    <?php include "footer.php" ?>
 
 
     <script src="js/script.js">
