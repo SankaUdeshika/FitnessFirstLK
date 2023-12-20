@@ -148,3 +148,26 @@
 .aboutPara{
     color: white;
 }
+
+.WhyPart{
+position: relative;
+/* margin: 5px; */
+}
+
+.whyImage{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.whyText{
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+    position: absolute;
+    bottom: 15px;
+    left: 7px;
+    /* z-index: 2; */
+    /* text-decoration: wavy; */
+}
+

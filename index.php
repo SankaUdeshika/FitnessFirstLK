@@ -62,13 +62,62 @@
                             </div>
 
                             <!-- list -->
-                            <div class="col-12">
+                            <div class="col-12 mt-3">
                                 <ul>
                                     <li class="mb-3"><span class=" border border-3 border-danger bg-danger p-0 text-black rounded-5 fs-5 fw-bold"><i class="bi bi-chevron-right"></i></span> &nbsp; <span class="text-white fw-bold"> 10,000+ Happy Clients</span></li>
                                     <li class="mb-3"><span class=" border border-3 border-danger bg-danger p-0 text-black rounded-5 fs-5 fw-bold"><i class="bi bi-chevron-right"></i></span> &nbsp;<span class="text-white fw-bold"> 12+ Years of Experience</span></li>
                                     <li class="mb-3"><span class=" border border-3 border-danger bg-danger p-0 text-black rounded-5 fs-5 fw-bold"><i class="bi bi-chevron-right"></i></span> &nbsp;<span class="text-white fw-bold"> 30+ Certified Trainers</span></li>
-
                                 </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
+            <div class="col-12 bg-black">
+                <div class="row">
+
+                    <div class="col-12 mt-5 text-center">
+                        <span class="aboutTopicwhite fs-1">WHY FITNESS</span> &nbsp;; <span class="aboutTopicRed fs-1 "> FIRST LK ?</span>
+                    </div>
+
+                    <div class="col-12 mt-2 mb-5">
+                        <div class="row">
+
+                            <div class="col-4 WhyPart">
+                                <div class="row ">
+                                    <div class="col-12">
+                                        <img src="Resources/images/gym01.jpeg" class="whyImage" alt="">
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <span class="whyText fs-1">PERSONAL TRAINING</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 WhyPart">
+                                <div class="row ">
+                                    <div class="col-12">
+                                        <img src="Resources/images/gym02.jpeg" class="whyImage" alt="">
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <span class="whyText fs-1">VARIETY OF CLASSES</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 WhyPart">
+                                <div class="row ">
+                                    <div class="col-12">
+                                        <img src="Resources/images/gym03.jpeg" class="whyImage" alt="">
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <span class="whyText fs-1">PRIME &nbsp; &nbsp; LOCATIONS</span>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
