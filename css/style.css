@@ -171,3 +171,12 @@ position: relative;
     /* text-decoration: wavy; */
 }
 
+.QuoteBtn{
+    color: white;
+    background-color: red;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 16px;
+    font-size: xx-large;
+}
+

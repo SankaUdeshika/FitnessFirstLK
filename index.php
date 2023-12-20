@@ -79,6 +79,7 @@
                 </div>
             </div>
 
+            <!-- why FITNESS FIRST LK Part -->
             <div class="col-12 bg-black">
                 <div class="row">
 
@@ -88,7 +89,7 @@
 
                     <div class="col-12 mt-2 mb-5">
                         <div class="row">
-
+                            <!-- 1 -->
                             <div class="col-4 WhyPart">
                                 <div class="row ">
                                     <div class="col-12">
@@ -99,6 +100,8 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- 2 -->
                             <div class="col-4 WhyPart">
                                 <div class="row ">
                                     <div class="col-12">
@@ -109,6 +112,8 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- 3 -->
                             <div class="col-4 WhyPart">
                                 <div class="row ">
                                     <div class="col-12">
@@ -122,6 +127,41 @@
 
                         </div>
                     </div>
+
+                </div>
+            </div>
+
+            <!-- TRUSTED BY COPORATES -->
+            <div class="col-12 bg-black">
+                <div class="row">
+
+                    <div class="col-12 text-center mt-5">
+                        <span class="aboutTopicwhite fs-1">COPORATES</span> &nbsp; <span class="aboutTopicRed fs-1">TRUSTED BY </span>
+                    </div>
+
+                  
+                        <div class="col-12 mt-5 d-flex justify-content-center">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img src="Resources/images/LOGO/FedExLogo.png" style="width: 100%;" alt="">
+                                </div>
+                                <div class="col-3">
+                                    <img src="Resources/images/LOGO/FedExLogo.png" style="width: 100%;" alt="">
+                                </div>
+                                <div class="col-3">
+                                    <img src="Resources/images/LOGO/FedExLogo.png" style="width: 100%;" alt="">
+                                </div>
+                                <div class="col-3">
+                                    <img src="Resources/images/LOGO/FedExLogo.png" style="width: 100%;" alt="">
+                                </div>
+                            </div>
+                        </div>
+                
+
+                    <div class="col-12 d-flex justify-content-center  mb-5 mt-5">
+                        <button class="QuoteBtn">Request for a Quote</button>
+                    </div>
+
 
                 </div>
             </div>
