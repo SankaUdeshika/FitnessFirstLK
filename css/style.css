@@ -180,3 +180,22 @@ position: relative;
     font-size: xx-large;
 }
 
+
+
+/* FOOTER */
+.footerCover{
+    background-color: red;
+}
+.footerTOpic{
+    color: white;
+    font-weight: bold;
+}
+
+.SocialIcons{
+ color: red;
+  font-size: large;
+  padding: 5px;  
+  border: 2px solid white;
+  background-color: white;
+  border-radius: 20px;
+}
