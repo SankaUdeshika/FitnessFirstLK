@@ -1,7 +1,6 @@
 @import url("https://fonts.google.com/specimen/Poppins");
 * {
   margin: 0;
-  /* border: 0; */
   padding: 0;
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
@@ -31,16 +30,14 @@
   font-weight: bold;
   font-size: 50px;
   animation: PrelaoderText2Animations 0.5s ease-in-out both infinite;
-
 }
 
-.preloader{
-    display: block;
+.preloader {
+  display: block;
 }
-.preloader.hide{
-    display: none;
+.preloader.hide {
+  display: none;
 }
-
 
 @keyframes PrelaoderText1Animations {
   0% {
@@ -52,17 +49,22 @@
 }
 
 @keyframes PrelaoderText2Animations {
-    0% {
-      color: red;
-    }
-    100% {
-      color: white;
-    }
+  0% {
+    color: red;
   }
+  100% {
+    color: white;
+  }
+}
 
 /* Header Css */
 .headerCover {
   background-color: rgba(0, 0, 0, 0.527);
+}
+
+.FlexImage {
+  width: 30%;
+  height: auto;
 }
 
 .LogoCover {
@@ -90,9 +92,8 @@
 
 /* Body  */
 .VirtualBMIROw {
-  position: relative;
-  width: 100%;
-  background-color: blue;
+  /* position: relative; */
+  background-color: red;
 }
 
 .TourSection {
@@ -100,8 +101,8 @@
   clip-path: polygon(0 0, 100% 0, 93% 100%, 0 100%);
   padding-bottom: 25px;
   padding-top: 25px;
-  position: absolute;
-  left: 0;
+  /* position: absolute;
+  left: 0; */
 }
 
 .BMISection {
@@ -111,10 +112,39 @@
   padding-bottom: 25px;
   padding-top: 25px;
   clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%);
-  position: absolute;
 }
 .TourText {
   color: white;
   font-weight: bold;
-  right: 0;
+}
+
+.TourText.hover {
+  color: white;
+  font-weight: bold;
+}
+
+.AboutImageCover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.aboutImage {
+  box-shadow: -12px 12px 0px red;
+  width: 350px;
+  height: auto;
+}
+
+.aboutTopicRed {
+  color: red;
+  /* font-weight: bold; */
+}
+
+.aboutTopicwhite {
+  color: white;
+  /* font-weight: bold; */
+}
+.aboutPara{
+    color: white;
 }
