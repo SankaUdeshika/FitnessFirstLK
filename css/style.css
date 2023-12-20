@@ -1,0 +1,38 @@
+@import url("https://fonts.google.com/specimen/Poppins");
+*{
+    margin: 0;
+    /* border: 0; */
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+
+/* Header Css */
+.headerCover{
+background-color: rgba(0, 0, 0, 0.527);
+}
+
+
+.LogoCover{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.FitnesFirstTextLogo1white{
+    font-family: "Poppins", sans-serif;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+}
+.FitnesFirstTextLogored{
+    font-family: "Poppins", sans-serif;
+    color: red;
+    font-weight: bold ;
+    font-size: 25px;
+}
+
+.SectionCover{
+    color: white;
+    font-weight: bold;
+    align-self: flex-end;
+}
