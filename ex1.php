@@ -5,128 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: red;
-        }
-
-        .slider {
-            width: 800px;
-            height: 500px;
-            border-radius: 10px;
-            background-color: black;
-            overflow: hidden;
-        }
-
-        .slides {
-            width: 500%;
-            height: 500px;
-            display: flex;
-        }
-
-        .slides input {
-            display: none;
-        }
-
-        .slide {
-            width: 20%;
-            transition: 2s;
-        }
-
-        .slide img {
-            width: 800px;
-            height: 500px;
-        }
-
-        /* css for manual slide navigation */
-        .navigation-manual {
-            position: absolute;
-            width: 800px;
-            margin-top: 40px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .manual-btn {
-            border: 2px solid white;
-            padding: 5px;
-            border-radius: 10px;
-            cursor: pointer;
-            transform: 1s;
-        }
-
-        .manual-btn:not(:last-child) {
-            margin-right: 40px;
-        }
-
-        .manual-btn:hover {
-            background: white;
-        }
-
-        #radio1:checked~.first {
-            margin-left: 0;
-        }
-
-        #radio2:checked~.first {
-            margin-left: -20%;
-        }
-
-        #radio3:checked~.first {
-            margin-left: -40%;
-        }
-
-        #radio4:checked~.first {
-            margin-left: -60%;
-        }
-
-        /* css for Automatic navigation */
-        .navigation-auto {
-            position: absolute;
-            display: flex;
-            width: 800px;
-            justify-content: center;
-            margin-top: 460px;
-        }
-
-        .navigation-auto div {
-            border: 2px solid white;
-            padding: 5px;
-            border-radius: 10px;
-            transition: 1s;
-        }
-
-        .navigation-auto div:not(:last-child) {
-            margin-right: 40px;
-        }
-
-        #radio1:checked~.navigation-auto .auto-btn1 {
-            background: white;
-        }
-
-        #radio2:checked~.navigation-auto .auto-btn2 {
-            background: white;
-        }
-
-        #radio3:checked~.navigation-auto .auto-btn3 {
-            background: white;
-        }
-
-        #radio4:checked~.navigation-auto .auto-btn4 {
-            background: white;
-        }
-    </style>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
     <!-- Image SLider Start -->
-
     <div class="slider">
         <div class="slides">
             <!-- radio Button Start -->
@@ -137,18 +21,43 @@
             <!-- radio Button End -->
             <!-- slide image Start -->
             <div class="slide first ">
-                <img src="Resources/images/gym01.jpeg" alt="">
+                <img src="Resources/images/carouselImages/1.jpg" alt="">
             </div>
             <div class="slide  ">
-                <img src="Resources/images/gym02.jpeg" alt="">
+                <img src="Resources/images/carouselImages/2.jpg" alt="">
             </div>
             <div class="slide  ">
-                <img src="Resources/images/gym03.jpeg" alt="">
+                <img src="Resources/images/carouselImages/3.jpg" alt="">
             </div>
             <div class="slide  ">
-                <img src="Resources/images/gym04.jpeg" alt="">
+                <img src="Resources/images/carouselImages/4.jpg" alt="">
             </div>
             <!-- slide image end -->
+
+
+
+            <!-- text and button start -->
+            <div class="CarouselTextCover d-lg-block d-none">
+                <span class="partnerText ">YOUR PARTNER IN</span><br>
+                <span class="FITNESStext ">FITNESS</span>
+                <br>
+                <button class="redBoxBtn ">Book a visit</button>
+            </div>
+
+            <div class="CarouselTextCoversmall d-lg-none d-block">
+                <span class="partnerTextsmall ">YOUR PARTNER IN</span><br>
+                <span class="FITNESStextsmall ">FITNESS</span>
+                <br>
+                <button class="redBoxBtn">Book a visit</button>
+            </div>
+            <!-- text and button end -->
+
+            <div class="CarouselTextCover">
+            </div>
+            <!-- <span class="partnerTextsmall d-lg-none d-block">YOUR PARTNER IN</span><br> -->
+            <!-- <span class="FITNESStextsmall d-lg-none d-block">FITNESS</span> -->
+            <!-- <button class="redBoxBtn d-lg-none d-blcok">Book a visit</button> -->
+
 
             <!-- automatic navigation start -->
             <div class="navigation-auto">
@@ -176,7 +85,7 @@
         var counter = 1;
         setInterval(function() {
             document.getElementById("radio" + counter).checked = true;
-            counter ++;
+            counter++;
             if (counter > 4) {
                 counter = 1;
             }

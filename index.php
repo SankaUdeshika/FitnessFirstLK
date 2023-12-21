@@ -18,14 +18,22 @@
     </div>
 
 
+
     <!-- Header -->
     <div class="col-12">
         <?php include "header.php" ?>
     </div>
 
+    <!-- caorusel -->
+    <div class="col-12">
+        <?php include "ex1.php" ?>
+    </div>
 
+
+    
     <div class="container-fluid">
         <div class="row">
+
             <!-- Virtual Tour and Bmi Calculator -->
             <div class="col-12 VirtualBMIROw">
                 <div class="row ">
@@ -40,6 +48,9 @@
 
                 </div>
             </div>
+
+
+
 
 
             <!-- About Part -->

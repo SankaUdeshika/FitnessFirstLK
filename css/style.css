@@ -40,7 +40,6 @@
 .preloader.hide {
   display: none;
   transition: 0.5s ease-in-out;
-
 }
 
 @keyframes PrelaoderText1Animations {
@@ -128,7 +127,7 @@
   color: white;
   font-weight: bold;
   font-size: 25px;
-  text-shadow: 0px 0px 10px white,0px 0px 20px white;
+  text-shadow: 0px 0px 10px white, 0px 0px 20px white;
   cursor: pointer;
 }
 
@@ -205,4 +204,180 @@
   border: 2px solid white;
   background-color: white;
   border-radius: 20px;
+}
+
+/* ................................... */
+.slider {
+  /* width: 800px; */
+  width: 100%;
+  /* height: 500px; */
+  /* height: 100vh; */
+  border-radius: 10px;
+  background-color: blue;
+  overflow: hidden;
+}
+
+.slides {
+  width: 500%;
+  height: 500px;
+  display: flex;
+}
+
+.slides input {
+  display: none;
+}
+
+.slide {
+  width: 20%;
+  transition: 2s;
+}
+
+.slide img {
+  width: 100%;
+  height: 700px;
+  object-fit: fill;
+}
+
+/* css for manual slide navigation */
+.navigation-manual {
+  position: absolute;
+  width: 450px;
+  margin-top: 460px;
+  display: flex;
+  justify-content: center;
+}
+
+.manual-btn {
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transform: 1s;
+}
+
+.manual-btn:not(:last-child) {
+  margin-right: 40px;
+}
+
+.manual-btn:hover {
+  background: white;
+}
+
+#radio1:checked ~ .first {
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+  margin-left: -20%;
+}
+
+#radio3:checked ~ .first {
+  margin-left: -40%;
+}
+
+#radio4:checked ~ .first {
+  margin-left: -60%;
+}
+
+/* css for Automatic navigation */
+
+@font-face {
+  font-family: Alinas;
+  src: url("FONTS/Montserrat-Italic-VariableFont_wght.ttf");
+  src: url("../FONTS/Montserrat-Italic-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: Alinasi;
+  src: url("FONTS/Montserrat-VariableFont_wght.ttf");
+  src: url("../FONTS/Montserrat-VariableFont_wght.ttf");
+
+}
+
+.navigation-auto {
+  position: absolute;
+  display: flex;
+  width: 450px;
+  justify-content: center;
+  margin-top: 460px;
+}
+
+.navigation-auto div {
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.navigation-auto div:not(:last-child) {
+  margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1 {
+  background: white;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2 {
+  background: white;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3 {
+  background: white;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4 {
+  background: white;
+}
+
+.CarouselTextCover {
+  position: absolute;
+  left: 10%;
+  top: 20%;
+}
+.CarouselTextCoversmall{
+  position: absolute;
+  left: 10%;
+  top:40%;
+}
+
+.partnerText {
+  color: red;
+  font-style: italic;
+  font-size: 60px;
+  font-weight: bolder;
+  font-family: "Alinas";
+  text-shadow: 0px 10px 10px black;
+}
+
+.partnerTextsmall {
+  color: red;
+  font-style: italic;
+  font-size: 30px;
+  font-weight: bolder;
+  font-family: "Alinasi";
+  text-shadow: 0px 10px 10px black;
+}
+
+.FITNESStext {
+  color: white;
+  font-size: 100px;
+  font-weight: bolder;
+  font-family: "Alinas";
+}
+.FITNESStextsmall {
+  color: white;
+  font-size: 50px;
+  font-weight: bolder;
+  font-family: "Alinasi";
+}
+
+.redBoxBtn {
+  background-color: red;
+  color: white;
+  font-size: xx-large;
+  padding: 10px;
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 0px;
 }
