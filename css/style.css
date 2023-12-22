@@ -291,7 +291,6 @@
   font-family: Alinasi;
   src: url("FONTS/Montserrat-VariableFont_wght.ttf");
   src: url("../FONTS/Montserrat-VariableFont_wght.ttf");
-
 }
 
 .navigation-auto {
@@ -334,10 +333,10 @@
   left: 10%;
   top: 20%;
 }
-.CarouselTextCoversmall{
+.CarouselTextCoversmall {
   position: absolute;
   left: 10%;
-  top:40%;
+  top: 40%;
 }
 
 .partnerText {
@@ -381,3 +380,77 @@
   padding-right: 20px;
   border: 0px;
 }
+
+/* /////////////////////////////// */
+
+.offsetStorieCarouselCover {
+  background-color: blue;
+  width: 50px;
+  height: 50px;
+}
+
+.StoriesCarosuelSlider {
+  width: 50px;
+  position: relative;
+  background-color: red;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.StorieProfileImg {
+  position: absolute;
+  left: 40%;
+  top: -35%;
+  width: 100px;
+  height: auto;
+  border: 2px solid white;
+  border-radius: 50px;
+}
+
+.storiePara {
+  margin-top: 50px;
+  color: white;
+}
+
+/* ex================== */
+.carouselStorieBackCOver {
+  background-color: red;
+  width: 100%;
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+}
+
+.LeftSlideBtn {
+  background-color: white;
+  width: 10%;
+  /* height: 500px; */
+}
+
+.rightSlideBtn {
+  background-color: white;
+  width: 10%;
+  /* height: 500px; */
+}
+
+.Sslider {
+  width: 80%;
+  /* height: 500px; */
+  background-color: blue;
+  position: relative;
+  display: grid;
+  overflow: hidden;
+}
+
+.box11 {
+  /* display: grid; */
+  display: flex;
+  background-color: blueviolet;
+}
+
+.BoxSlide {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
