@@ -53,3 +53,138 @@ function Carouselright() {
   }
 }
 // carousel Slider End
+
+// Scrolling Animations
+// -------------------------------------------------
+function DownToUpAnimation() {
+  var tag1 = document.querySelectorAll(".DownToUP");
+
+  for (var i = 0; i < tag1.length; i++) {
+    var windowHeight = window.innerHeight;
+    var TagTop = tag1[i].getBoundingClientRect().top;
+    var ViewHeight = 80;
+
+    if (TagTop < windowHeight - ViewHeight) {
+      tag1[i].classList.add("active");
+    } else {
+      tag1[i].classList.remove("active");
+    }
+  }
+}
+window.addEventListener("scroll", DownToUpAnimation);
+
+// -------------------------------------------------
+function UPToDownAnimation() {
+  var tag1 = document.querySelectorAll(".UPToDown");
+
+  for (var i = 0; i < tag1.length; i++) {
+    var windowHeight = window.innerHeight;
+    var TagTop = tag1[i].getBoundingClientRect().top;
+    var ViewHeight = 80;
+
+    if (TagTop < windowHeight - ViewHeight) {
+      tag1[i].classList.add("active");
+    } else {
+      tag1[i].classList.remove("active");
+    }
+  }
+}
+window.addEventListener("scroll", UPToDownAnimation);
+
+// -------------------------------------------------
+function DownToUpAnimation() {
+  var tag1 = document.querySelectorAll(".DownToUP");
+
+  for (var i = 0; i < tag1.length; i++) {
+    var windowHeight = window.innerHeight;
+    var TagTop = tag1[i].getBoundingClientRect().top;
+    var ViewHeight = 80;
+
+    if (TagTop < windowHeight - ViewHeight) {
+      tag1[i].classList.add("active");
+    } else {
+      tag1[i].classList.remove("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", DownToUpAnimation);
+
+
+// -------------------------------------------------
+function LeftToRightAnimation() {
+  var tag1 = document.querySelectorAll(".LeftToRight");
+
+  for (var i = 0; i < tag1.length; i++) {
+    var windowHeight = window.innerHeight;
+    var TagTop = tag1[i].getBoundingClientRect().top;
+    var ViewHeight = 80;
+
+    if (TagTop < windowHeight - ViewHeight) {
+      tag1[i].classList.add("active");
+    } else {
+      tag1[i].classList.remove("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", LeftToRightAnimation);
+
+
+// -------------------------------------------------
+function RightToLeftAnimation() {
+  var tag1 = document.querySelectorAll(".RightToLeft");
+
+  for (var i = 0; i < tag1.length; i++) {
+    var windowHeight = window.innerHeight;
+    var TagTop = tag1[i].getBoundingClientRect().top;
+    var ViewHeight = 80;
+
+    if (TagTop < windowHeight - ViewHeight) {
+      tag1[i].classList.add("active");
+    } else {
+      tag1[i].classList.remove("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", RightToLeftAnimation);
+
+
+// -------------------------------------------------
+function FadeAnimation() {
+  var tag1 = document.querySelectorAll(".Fade");
+
+  for (var i = 0; i < tag1.length; i++) {
+    var windowHeight = window.innerHeight;
+    var TagTop = tag1[i].getBoundingClientRect().top;
+    var ViewHeight = 80;
+
+    if (TagTop < windowHeight - ViewHeight) {
+      tag1[i].classList.add("active");
+    } else {
+      tag1[i].classList.remove("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", FadeAnimation);
+
+// -------------------------------------------------
+function aboutImageAnimation() {
+  var tag1 = document.querySelectorAll(".aboutImage");
+
+  for (var i = 0; i < tag1.length; i++) {
+    var windowHeight = window.innerHeight;
+    var TagTop = tag1[i].getBoundingClientRect().top;
+    var ViewHeight = 150;
+
+    if (TagTop < windowHeight - ViewHeight) {
+      tag1[i].classList.add("active");
+    } else {
+      tag1[i].classList.remove("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", aboutImageAnimation);

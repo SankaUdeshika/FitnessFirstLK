@@ -20,7 +20,7 @@
 
 
     <!-- Header -->
-    <div class="col-12">
+    <div class="col-12" style="position: fixed; z-index: 5;">
         <?php include "header.php" ?>
     </div>
 
@@ -54,30 +54,30 @@
 
 
             <!-- About Part -->
-            <div class="col-12 bg-black">
+            <div class="col-12 bg-black overflow-hidden">
                 <div class="row">
                     <!-- ABout Image -->
-                    <div class="col-6 AboutImageCover mt-5">
+                    <div class="col-6 AboutImageCover Fade mt-5">
                         <img src="Resources/images/gym01.jpeg" class="aboutImage" alt="">
                     </div>
 
                     <!-- ABout Text -->
                     <div class="col-6 mt-5">
                         <div class="row">
-                            <div class="col-12 fs-1 mt-5">
-                                <span class="aboutTopicRed">ABOUT FITNESS </span> <span class="aboutTopicwhite"> FIRST LK</span>
+                            <div class="col-12 fs-1 mt-5 UPToDown Fade  ">
+                                <span class=" aboutTopicwhite  ">ABOUT FITNESS </span> <span class=" aboutTopicRed "> FIRST LK</span>
                             </div>
 
-                            <div class="col-12 mt-3">
+                            <div class="col-12 mt-3 Fade DownToUP ">
                                 <p class="aboutPara">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labour සහ dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
                             </div>
 
                             <!-- list -->
                             <div class="col-12 mt-3">
                                 <ul>
-                                    <li class="mb-3"><span class=" border border-3 border-danger bg-danger p-0 text-black rounded-5 fs-5 fw-bold"><i class="bi bi-chevron-right"></i></span> &nbsp; <span class="text-white fw-bold"> 10,000+ Happy Clients</span></li>
-                                    <li class="mb-3"><span class=" border border-3 border-danger bg-danger p-0 text-black rounded-5 fs-5 fw-bold"><i class="bi bi-chevron-right"></i></span> &nbsp;<span class="text-white fw-bold"> 12+ Years of Experience</span></li>
-                                    <li class="mb-3"><span class=" border border-3 border-danger bg-danger p-0 text-black rounded-5 fs-5 fw-bold"><i class="bi bi-chevron-right"></i></span> &nbsp;<span class="text-white fw-bold"> 30+ Certified Trainers</span></li>
+                                    <li class="mb-3 RightToLeft Fade"><span class=" border border-3 border-danger bg-danger p-0 text-black rounded-5 fs-5 fw-bold "><i class="bi bi-chevron-right"></i></span> &nbsp; <span class="text-white fw-bold"> 10,000+ Happy Clients</span></li>
+                                    <li class="mb-3 RightToLeft Fade" style="transition-delay: 0.3s;"><span class=" border border-3 border-danger bg-danger p-0 text-black rounded-5 fs-5 fw-bold "><i class="bi bi-chevron-right"></i></span> &nbsp;<span class="text-white fw-bold"> 12+ Years of Experience</span></li>
+                                    <li class="mb-3 RightToLeft Fade" style="transition-delay:0.4s;"><span class=" border border-3 border-danger bg-danger p-0 text-black rounded-5 fs-5 fw-bold "><i class="bi bi-chevron-right"></i></span> &nbsp;<span class="text-white fw-bold"> 30+ Certified Trainers</span></li>
                                 </ul>
                             </div>
 
@@ -87,17 +87,17 @@
             </div>
 
             <!-- why FITNESS FIRST LK Part -->
-            <div class="col-12 bg-black">
+            <div class="col-12 bg-black overflow-hidden">
                 <div class="row">
 
-                    <div class="col-12 mt-5 text-center">
+                    <div class="col-12 mt-5 text-center Fade">
                         <span class="aboutTopicwhite fs-1">WHY FITNESS</span> &nbsp;; <span class="aboutTopicRed fs-1 "> FIRST LK ?</span>
                     </div>
 
-                    <div class="col-12 mt-2 mb-5">
+                    <div class="col-12 mt-2 mb-5  ">
                         <div class="row">
                             <!-- 1 -->
-                            <div class="col-4 WhyPart">
+                            <div class="col-4 WhyPart Fade LeftToRight ">
                                 <div class="row ">
                                     <div class="col-12">
                                         <img src="Resources/images/gym01.jpeg" class="whyImage" alt="">
@@ -109,7 +109,7 @@
                             </div>
 
                             <!-- 2 -->
-                            <div class="col-4 WhyPart">
+                            <div class="col-4 WhyPart Fade">
                                 <div class="row ">
                                     <div class="col-12">
                                         <img src="Resources/images/gym02.jpeg" class="whyImage" alt="">
@@ -121,7 +121,7 @@
                             </div>
 
                             <!-- 3 -->
-                            <div class="col-4 WhyPart">
+                            <div class="col-4 WhyPart RightToLeft ">
                                 <div class="row ">
                                     <div class="col-12">
                                         <img src="Resources/images/gym03.jpeg" class="whyImage" alt="">
@@ -141,7 +141,7 @@
             <div class="col-12 bg-black">
                 <div class="row">
 
-                    <div class="col-12 text-center mb-5">
+                    <div class="col-12 text-center mb-5 Fade">
                         <span class="fs-1  text-white">SUCCESS STORIES</span>
                     </div>
 
@@ -149,7 +149,7 @@
                         <img src="Resources/images/icons/leftbtn.png" class="LRbtn" onclick="CarouselLeft();">
                     </div>
 
-                    <div class="col-10">
+                    <div class="col-10 Fade ">
                         <div class="box11 ">
                             <div class="col-5 StoriesCarosuelSlider mb-5" id="firstBox">
                                 <div class="row">
@@ -203,12 +203,12 @@
             <div class="col-12 bg-black">
                 <div class="row">
 
-                    <div class="col-12 text-center mt-5">
-                        <span class="aboutTopicwhite fs-1">COPORATES</span> &nbsp; <span class="aboutTopicRed fs-1">TRUSTED BY </span>
+                    <div class="col-12 text-center mt-5 DownToUP ">
+                        <span class="aboutTopicwhite fs-1"> TRUSTED BY </span> &nbsp; <span class="aboutTopicRed fs-1"> COPORATES </span>
                     </div>
 
 
-                    <div class="col-12 mt-5 d-flex justify-content-center">
+                    <div class="col-12 mt-5 d-flex justify-content-center Fade">
                         <div class="row">
                             <div class="col-3">
                                 <img src="Resources/images/LOGO/FedExLogo.png" style="width: 100%;" alt="">
@@ -226,7 +226,7 @@
                     </div>
 
 
-                    <div class="col-12 d-flex justify-content-center  mb-5 mt-5">
+                    <div class="col-12 d-flex justify-content-center  mb-5 mt-5 Fade">
                         <button class="QuoteBtn">Request for a Quote</button>
                     </div>
 

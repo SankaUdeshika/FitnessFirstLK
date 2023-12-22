@@ -139,6 +139,12 @@
   margin-bottom: 50px;
 }
 .aboutImage {
+  box-shadow: 0px 0px 0px black;
+  width: 350px;
+  height: auto;
+  transition: 2s ease-in-out;
+}
+.aboutImage.active {
   box-shadow: -12px 12px 0px red;
   width: 350px;
   height: auto;
@@ -456,17 +462,67 @@
   background-color: red;
 }
 
-/*  */.firstBox{
+/*  */
+.firstBox {
   /* transition: 1s ease-in-out; */
   /* margin-left: -58%; */
 }
 
-.LRbtn{
+.LRbtn {
   width: 50px;
   transition: 0.2s ease-in-out;
 }
-.LRbtn:hover{
+.LRbtn:hover {
   width: 50px;
   background-color: white;
   border-radius: 50px;
 }
+
+/* SCROLING ANIMAITONS CSS */
+.DownToUP {
+  transform: translateY(100px);
+  transition: 1s ease-in-out;
+}
+.DownToUP.active {
+  transform: translateY(0px);
+}
+
+/* ------------- */
+.UPToDown {
+  transform: translateY(-100px);
+  transition: 1s ease-in-out;
+}
+.UPToDown.active {
+  transform: translateY(0px);
+}
+
+/* ------------- */
+.LeftToRight {
+  transform: translateX(-100px);
+  transition: 1s ease-in-out;
+}
+.LeftToRight.active {
+
+  transform: translateX(0px);
+}
+
+/* ------------- */
+.RightToLeft {
+  transform: translateX(100px);
+  transition: 1s ease-in-out;
+}
+.RightToLeft.active {
+  transform: translateX(0px);
+}
+
+/* ------------- */
+.Fade {
+  opacity: 0;
+  /* backdrop-filter: blur(14px); */
+  transition: 1s ease-in-out;
+}
+.Fade.active {
+  opacity: 1;
+  /* backdrop-filter: blur(0px); */
+}
+
