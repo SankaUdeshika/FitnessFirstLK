@@ -454,3 +454,16 @@
   background-color: red;
 }
 
+.firstBox{
+  /* margin-left: -58%; */
+}
+
+.LRbtn{
+  width: 50px;
+  transition: 0.2s ease-in-out;
+}
+.LRbtn:hover{
+  width: 50px;
+  background-color: white;
+  border-radius: 50px;
+}
