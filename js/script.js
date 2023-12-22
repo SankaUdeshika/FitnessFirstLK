@@ -12,7 +12,8 @@ function calculateBMI() {
 
   // Ensure weight and height are valid numbers
   if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
-    document.getElementById("BMIOutput").innerHTML = "Invalid input. Please enter valid weight and height.";
+    document.getElementById("BMIOutput").innerHTML =
+      "Invalid input. Please enter valid weight and height.";
     return "Invalid input. Please enter valid weight and height.";
   }
 
@@ -31,3 +32,24 @@ function ShowBmiCalcutorModel() {
   var model = new bootstrap.Modal(id);
   model.show();
 }
+
+// carousel Slider Start
+var marginleftM = 0;
+function CarouselLeft() {
+  if (marginleftM > -116) {
+    marginleftM = marginleftM - 58;
+    var firstBox = document.getElementById("firstBox");
+    firstBox.style.transition = "1s";
+    firstBox.style.marginLeft = marginleftM + "%";
+  }
+}
+
+function Carouselright() {
+  if (marginleftM < 0) {
+    marginleftM = marginleftM + 58;
+    var firstBox = document.getElementById("firstBox");
+    firstBox.style.transition = "1s";
+    firstBox.style.marginLeft = marginleftM + "%";
+  }
+}
+// carousel Slider End

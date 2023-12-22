@@ -395,6 +395,7 @@
   background-color: red;
   padding: 10px;
   border-radius: 20px;
+  margin-top: 60px;
 }
 
 .StorieProfileImg {
@@ -445,7 +446,8 @@
 .box11 {
   /* display: grid; */
   display: flex;
-  background-color: blueviolet;
+  background-color: black;
+  overflow: hidden;
 }
 
 .BoxSlide {
@@ -454,7 +456,8 @@
   background-color: red;
 }
 
-.firstBox{
+/*  */.firstBox{
+  /* transition: 1s ease-in-out; */
   /* margin-left: -58%; */
 }
 

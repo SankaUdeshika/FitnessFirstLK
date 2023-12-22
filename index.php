@@ -146,16 +146,15 @@
                     </div>
 
                     <div class="col-1 d-flex justify-content-center align-items-center">
-                        <!-- <span class="text-white bg-danger rounded-5 p-1 fs-1"><i class="bi bi-arrow-left-circle"></i></span> -->
-                        <img src="Resources/images/icons/leftbtn.png" class="LRbtn">
+                        <img src="Resources/images/icons/leftbtn.png" class="LRbtn" onclick="CarouselLeft();">
                     </div>
 
                     <div class="col-10">
                         <div class="box11 ">
-                            <div class="col-5 StoriesCarosuelSlider firstBox mb-5">
+                            <div class="col-5 StoriesCarosuelSlider mb-5" id="firstBox">
                                 <div class="row">
 
-                                    <div class="col-12  ">
+                                    <div class="col-12">
                                         <img src="Resources/images/gym01.jpeg" class="StorieProfileImg ">
                                     </div>
 
@@ -193,8 +192,7 @@
                         </div>
                     </div>
                     <div class="col-1 d-flex justify-content-center align-items-center ">
-                        <!-- <span class="text-white bg-danger rounded-5 p-1 fs-1"><i class="bi bi-arrow-right-circle"></i></span> -->
-                        <img src="Resources/images/icons/rightbtn.png" class="LRbtn" >
+                        <img src="Resources/images/icons/rightbtn.png" class="LRbtn" onclick="Carouselright();" >
                     </div>
                 </div>
             </div>
