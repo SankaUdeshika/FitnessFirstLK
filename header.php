@@ -48,11 +48,11 @@
             <div class="col-12 headerCover d-lg-none d-blcok">
                 <div class="row">
 
-                    <div class="col-6 text-center LogoCover">
+                    <div class="col-10 text-lg-center LogoCover">
                         <span class="FitnesFirstTextLogo1white">FITNESS </span><span class="FitnesFirstTextLogored">FIRST LK</span>
                     </div>
 
-                    <div class="col-6 d-flex justify-content-end text-white fs-1 fw-bold">
+                    <div class="col-2 d-flex justify-content-end text-white fs-1 fw-bold">
                         <button class="bg-transparent text-white border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i class="bi bi-list"></i></button>
                     </div>
 

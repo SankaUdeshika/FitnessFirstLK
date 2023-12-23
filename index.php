@@ -17,8 +17,6 @@
         <?php include "preloader.php" ?>
     </div>
 
-
-
     <!-- Header -->
     <div class="col-12" style="position: fixed; z-index: 4;">
         <?php include "header.php" ?>
