@@ -110,7 +110,6 @@ function DownToUpAnimation() {
 
 window.addEventListener("scroll", DownToUpAnimation);
 
-
 // -------------------------------------------------
 function LeftToRightAnimation() {
   var tag1 = document.querySelectorAll(".LeftToRight");
@@ -130,7 +129,6 @@ function LeftToRightAnimation() {
 
 window.addEventListener("scroll", LeftToRightAnimation);
 
-
 // -------------------------------------------------
 function RightToLeftAnimation() {
   var tag1 = document.querySelectorAll(".RightToLeft");
@@ -149,7 +147,6 @@ function RightToLeftAnimation() {
 }
 
 window.addEventListener("scroll", RightToLeftAnimation);
-
 
 // -------------------------------------------------
 function FadeAnimation() {
@@ -188,3 +185,14 @@ function aboutImageAnimation() {
 }
 
 window.addEventListener("scroll", aboutImageAnimation);
+
+
+// Carosuel Functions
+var counter = 1;
+setInterval(function () {
+  document.getElementById("radio" + counter).checked = true;
+  counter++;
+  if (counter > 4) {
+    counter = 1;
+  }
+}, 5000);

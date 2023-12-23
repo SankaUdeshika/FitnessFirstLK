@@ -20,9 +20,10 @@
 
 
     <!-- Header -->
-    <div class="col-12" style="position: fixed;">
+    <div class="col-12" style="position: fixed; z-index: 4;">
         <?php include "header.php" ?>
     </div>
+
 
     <!-- caorusel -->
     <div class="col-12">
@@ -30,9 +31,10 @@
     </div>
 
 
-
     <div class="container-fluid">
         <div class="row">
+
+
 
             <!-- Virtual Tour and Bmi Calculator -->
             <div class="col-12 VirtualBMIROw">
@@ -115,7 +117,7 @@
                                         <img src="Resources/images/gym02.jpeg" class="whyImage" alt="">
                                     </div>
                                     <div class="col-12 text-center">
-                                        <span class="whyText fs-1">VARIETY </br>  OF CLASSES</span>
+                                        <span class="whyText fs-1">VARIETY </br> OF CLASSES</span>
                                     </div>
                                 </div>
                             </div>
@@ -127,7 +129,7 @@
                                         <img src="Resources/images/gym03.jpeg" class="whyImage" alt="">
                                     </div>
                                     <div class="col-12 ">
-                                        <span class="whyText fs-1">PRIME </br>  LOCATIONS</span>
+                                        <span class="whyText fs-1">PRIME </br> LOCATIONS</span>
                                     </div>
                                 </div>
                             </div>
@@ -192,7 +194,7 @@
                         </div>
                     </div>
                     <div class="col-1 d-flex justify-content-center align-items-center ">
-                        <img src="Resources/images/icons/rightbtn.png" class="LRbtn" onclick="Carouselright();" >
+                        <img src="Resources/images/icons/rightbtn.png" class="LRbtn" onclick="Carouselright();">
                     </div>
                 </div>
             </div>

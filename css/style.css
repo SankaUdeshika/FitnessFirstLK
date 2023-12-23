@@ -180,7 +180,7 @@
   object-fit: cover;
   transition: 0.5s ease-in-out;
 }
-.whyImage:hover{
+.whyImage:hover {
   width: 120%;
   height: 300px;
 }
@@ -272,7 +272,15 @@
   transform: 1s;
 }
 
-.manual-btn:not(:last-child) {
+.CarouselButton {
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transform: 1s;
+}
+
+/* .manual-btn:not(:last-child) {
   margin-right: 40px;
 }
 
@@ -294,7 +302,7 @@
 
 #radio4:checked ~ .first {
   margin-left: -60%;
-}
+} */
 
 /* css for Automatic navigation */
 
