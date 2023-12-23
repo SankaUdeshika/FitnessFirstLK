@@ -14,7 +14,7 @@
     <!-- Header -->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 headerCover">
+            <div class="col-12 headerCover d-lg-block d-none">
                 <div class="row">
 
                     <div class="col-3 text-center LogoCover">
@@ -40,6 +40,49 @@
 
                     <div class="col-2 d-flex justify-content-center">
                         <img src="Resources/images/LOGO/Flex.png" class="FlexImage">
+                    </div>
+
+                </div>
+            </div>
+            <!-- small Screen -->
+            <div class="col-12 headerCover d-lg-none d-blcok">
+                <div class="row">
+
+                    <div class="col-6 text-center LogoCover">
+                        <span class="FitnesFirstTextLogo1white">FITNESS </span><span class="FitnesFirstTextLogored">FIRST LK</span>
+                    </div>
+
+                    <div class="col-6 d-flex justify-content-end text-white fs-1 fw-bold">
+                        <button class="bg-transparent text-white border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i class="bi bi-list"></i></button>
+                    </div>
+
+                    <div class="offcanvas offcanvas-top bg-dark" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                        <div class="offcanvas-header">
+                            <div class="col-12 text-center LogoCover">
+                                <span class="FitnesFirstTextLogo1white">FITNESS </span><span class="FitnesFirstTextLogored">FIRST LK</span>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+                        </div>
+                        <div class="offcanvas-body">
+                            <div class="col-12 text-center SectionCover">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <span>MEMBERSHIPS</span>
+                                    </div>
+                                    <div class="col-3">
+                                        <span>CLASSES</span>
+                                    </div>
+                                    <div class="col-3">
+                                        <span>FACULITIES</span>
+                                    </div>
+                                    <div class="col-3">
+                                        <span>BLOG</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
