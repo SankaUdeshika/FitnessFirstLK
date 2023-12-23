@@ -20,7 +20,7 @@
 
 
     <!-- Header -->
-    <div class="col-12" style="position: fixed; z-index: 5;">
+    <div class="col-12" style="position: fixed;">
         <?php include "header.php" ?>
     </div>
 
@@ -57,12 +57,12 @@
             <div class="col-12 bg-black overflow-hidden">
                 <div class="row">
                     <!-- ABout Image -->
-                    <div class="col-6 AboutImageCover Fade mt-5">
+                    <div class="col-lg-6 col-12 AboutImageCover Fade mt-5">
                         <img src="Resources/images/gym01.jpeg" class="aboutImage" alt="">
                     </div>
 
                     <!-- ABout Text -->
-                    <div class="col-6 mt-5">
+                    <div class="col-lg-6 col-12 mt-5">
                         <div class="row">
                             <div class="col-12 fs-1 mt-5 UPToDown Fade  ">
                                 <span class=" aboutTopicwhite  ">ABOUT FITNESS </span> <span class=" aboutTopicRed "> FIRST LK</span>
@@ -97,37 +97,37 @@
                     <div class="col-12 mt-2 mb-5  ">
                         <div class="row">
                             <!-- 1 -->
-                            <div class="col-4 WhyPart Fade LeftToRight ">
+                            <div class="col-lg-4  col-12 WhyPart Fade LeftToRight ">
                                 <div class="row ">
                                     <div class="col-12">
                                         <img src="Resources/images/gym01.jpeg" class="whyImage" alt="">
                                     </div>
                                     <div class="col-12 text-center">
-                                        <span class="whyText fs-1">PERSONAL TRAINING</span>
+                                        <span class="whyText fs-1">PERSONAL </br> TRAINING</span>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- 2 -->
-                            <div class="col-4 WhyPart Fade">
+                            <div class="col-lg-4 col-12 WhyPart Fade">
                                 <div class="row ">
                                     <div class="col-12">
                                         <img src="Resources/images/gym02.jpeg" class="whyImage" alt="">
                                     </div>
                                     <div class="col-12 text-center">
-                                        <span class="whyText fs-1">VARIETY OF CLASSES</span>
+                                        <span class="whyText fs-1">VARIETY </br>  OF CLASSES</span>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- 3 -->
-                            <div class="col-4 WhyPart RightToLeft ">
+                            <div class="col-lg-4 col-12 WhyPart RightToLeft ">
                                 <div class="row ">
                                     <div class="col-12">
                                         <img src="Resources/images/gym03.jpeg" class="whyImage" alt="">
                                     </div>
-                                    <div class="col-12 text-center">
-                                        <span class="whyText fs-1">PRIME &nbsp; &nbsp; LOCATIONS</span>
+                                    <div class="col-12 ">
+                                        <span class="whyText fs-1">PRIME </br>  LOCATIONS</span>
                                     </div>
                                 </div>
                             </div>
@@ -151,7 +151,7 @@
 
                     <div class="col-10 Fade ">
                         <div class="box11 ">
-                            <div class="col-5 StoriesCarosuelSlider mb-5" id="firstBox">
+                            <div class="col-lg-5 col-12 StoriesCarosuelSlider mb-5" id="firstBox">
                                 <div class="row">
 
                                     <div class="col-12">
