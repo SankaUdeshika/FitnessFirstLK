@@ -52,7 +52,19 @@ function Carouselright() {
     firstBox.style.marginLeft = marginleftM + "%";
   }
 }
+
+// rsmall btn
+function Carouselrightsmallbtn() {
+  alert("OKOk");  
+  if (marginleftM < 0) {
+    marginleftM = marginleftM + 58;
+    var firstBox = document.getElementById("firstBox");
+    firstBox.style.transition = "1s";
+    firstBox.style.marginLeft = marginleftM + "%";
+  }
+}
 // carousel Slider End
+
 
 // Scrolling Animations
 // -------------------------------------------------
@@ -185,7 +197,6 @@ function aboutImageAnimation() {
 }
 
 window.addEventListener("scroll", aboutImageAnimation);
-
 
 // Carosuel Functions
 var counter = 1;

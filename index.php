@@ -112,7 +112,7 @@
                             <div class="col-lg-4 col-12 WhyPart Fade">
                                 <div class="row ">
                                     <div class="col-12">
-                                        <img src="Resources/images/gym02.jpeg" class="whyImage" alt="">
+                                        <img src="Resources/images/gym02.jpg" class="whyImage" alt="">
                                     </div>
                                     <div class="col-12 text-center">
                                         <span class="whyText fs-1">VARIETY </br> OF CLASSES</span>
@@ -124,7 +124,7 @@
                             <div class="col-lg-4 col-12 WhyPart RightToLeft ">
                                 <div class="row ">
                                     <div class="col-12">
-                                        <img src="Resources/images/gym03.jpeg" class="whyImage" alt="">
+                                        <img src="Resources/images/gym03.jpg" class="whyImage" alt="">
                                     </div>
                                     <div class="col-12 ">
                                         <span class="whyText fs-1">PRIME </br> LOCATIONS</span>
@@ -137,8 +137,9 @@
 
                 </div>
             </div>
-
-            <div class="col-12 bg-black">
+            <!-- SUCCESS STORIES -->
+            <!-- Big Screen -->
+            <div class="col-12 bg-black d-lg-block d-none">
                 <div class="row">
 
                     <div class="col-12 text-center mb-5 Fade">
@@ -148,8 +149,7 @@
                     <div class="col-1 d-flex justify-content-center align-items-center">
                         <img src="Resources/images/icons/leftbtn.png" class="LRbtn" onclick="CarouselLeft();">
                     </div>
-
-                    <div class="col-10 Fade ">
+                    <div class="col-10 Fade d-lg-block d-none ">
                         <div class="box11 ">
                             <div class="col-lg-5 col-12 StoriesCarosuelSlider mb-5" id="firstBox">
                                 <div class="row">
@@ -196,6 +196,62 @@
                     </div>
                 </div>
             </div>
+            <!-- Samll Screen -->
+            <div class="col-12 bg-black d-lg-none d-block">
+                <div class="row">
+
+                    <div class="col-12 text-center mb-5 Fade">
+                        <span class="fs-1  text-white">SUCCESS STORIES</span>
+                    </div>
+                    <!-- Left Button -->
+                    <div class="col-1 d-flex justify-content-center align-items-center">
+                        <img src="Resources/images/icons/leftbtn.png" class="LRbtnsmall" onclick="CarouselLeft();">
+                    </div>
+                    <!-- ReDBox -->
+                    <div class="col-10 Fade d-lg-none d-block ">
+                        <div class="box11 ">
+                            <div class="col-lg-5 col-12 StoriesCarosuelSlidersmall mb-5" id="firstBox">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="Resources/images/gym01.jpeg" class="SStorieProfileImgsmall ">
+                                    </div>
+                                    <div class="col-12 text-center ">
+                                        <p class="storiePara fw-bold">Lorem Upsun us simply dummy text of the printing and typesetting industry.Lorem Upsun us simply dummy text of the printing and typesetting industry.</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-12 StoriesCarosuelSlidersmall mb-5" id="firstBox">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="Resources/images/gym01.jpeg" class="SStorieProfileImgsmall ">
+                                    </div>
+                                    <div class="col-12 text-center ">
+                                        <p class="storiePara fw-bold">Lorem Upsun us simply dummy text of the printing and typesetting industry.Lorem Upsun us simply dummy text of the printing and typesetting industry.</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-12 StoriesCarosuelSlidersmall mb-5" id="firstBox">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="Resources/images/gym01.jpeg" class="SStorieProfileImgsmall ">
+                                    </div>
+                                    <div class="col-12 text-center ">
+                                        <p class="storiePara fw-bold">Lorem Upsun us simply dummy text of the printing and typesetting industry.Lorem Upsun us simply dummy text of the printing and typesetting industry.</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right Button -->
+
+                    <div class="col-1 d-flex justify-content-center align-items-center " >
+                        <img src="Resources/images/icons/rightbtn.png" class="LRbtnsmall" onclick="Carouselrightsmallbtn();" >
+                    </div>
+                </div>
+            </div>
 
 
 
@@ -206,7 +262,6 @@
                     <div class="col-12 text-center mt-5 DownToUP ">
                         <span class="aboutTopicwhite fs-1"> TRUSTED BY </span> &nbsp; <span class="aboutTopicRed fs-1"> COPORATES </span>
                     </div>
-
 
                     <div class="col-12 mt-5 d-flex justify-content-center Fade">
                         <div class="row">
@@ -224,7 +279,6 @@
                             </div>
                         </div>
                     </div>
-
 
                     <div class="col-12 d-flex justify-content-center  mb-5 mt-5 Fade">
                         <button class="QuoteBtn">Request for a Quote</button>

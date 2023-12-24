@@ -318,40 +318,7 @@
   src: url("../FONTS/Montserrat-VariableFont_wght.ttf");
 }
 
-.navigation-auto {
-  position: absolute;
-  display: flex;
-  width: 450px;
-  justify-content: center;
-  margin-top: 460px;
-}
 
-.navigation-auto div {
-  border: 2px solid white;
-  padding: 5px;
-  border-radius: 10px;
-  transition: 1s;
-}
-
-.navigation-auto div:not(:last-child) {
-  margin-right: 40px;
-}
-
-#radio1:checked ~ .navigation-auto .auto-btn1 {
-  background: white;
-}
-
-#radio2:checked ~ .navigation-auto .auto-btn2 {
-  background: white;
-}
-
-#radio3:checked ~ .navigation-auto .auto-btn3 {
-  background: white;
-}
-
-#radio4:checked ~ .navigation-auto .auto-btn4 {
-  background: white;
-}
 
 .CarouselTextCover {
   position: absolute;
@@ -422,11 +389,29 @@
   border-radius: 20px;
   margin-top: 60px;
 }
+.StoriesCarosuelSlidersmall{
+  width: 25px;
+  position: relative;
+  background-color: red;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 60px;
+}
 
 .StorieProfileImg {
   position: absolute;
   left: 40%;
   top: -35%;
+  width: 100px;
+  height: auto;
+  border: 2px solid white;
+  border-radius: 50px;
+}
+
+.SStorieProfileImgsmall {
+  position: absolute;
+  left: 30%;
+  top: -25%;
   width: 100px;
   height: auto;
   border: 2px solid white;
@@ -496,6 +481,18 @@
   background-color: white;
   border-radius: 50px;
 }
+
+.LRbtnsmall {
+  width: 25px;
+  transition: 0.2s ease-in-out;
+}
+.LRbtnsmall:hover {
+  width: 25px;
+  background-color: white;
+  border-radius: 50px;
+}
+
+
 
 /* SCROLING ANIMAITONS CSS */
 .DownToUP {
