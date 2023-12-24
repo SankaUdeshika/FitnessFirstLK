@@ -145,7 +145,7 @@
                     <div class="col-12 text-center mb-5 Fade">
                         <span class="fs-1  text-white">SUCCESS STORIES</span>
                     </div>
-
+                    <!-- left btn -->
                     <div class="col-1 d-flex justify-content-center align-items-center">
                         <img src="Resources/images/icons/leftbtn.png" class="LRbtn" onclick="CarouselLeft();">
                     </div>
@@ -191,6 +191,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- right btn -->
                     <div class="col-1 d-flex justify-content-center align-items-center ">
                         <img src="Resources/images/icons/rightbtn.png" class="LRbtn" onclick="Carouselright();">
                     </div>
@@ -205,12 +206,12 @@
                     </div>
                     <!-- Left Button -->
                     <div class="col-1 d-flex justify-content-center align-items-center">
-                        <img src="Resources/images/icons/leftbtn.png" class="LRbtnsmall" onclick="CarouselLeft();">
+                        <img src="Resources/images/icons/leftbtn.png" class="LRbtnsmall" onclick="Carouselleftsmallbtn();">
                     </div>
                     <!-- ReDBox -->
                     <div class="col-10 Fade d-lg-none d-block ">
                         <div class="box11 ">
-                            <div class="col-lg-5 col-12 StoriesCarosuelSlidersmall mb-5" id="firstBox">
+                            <div class="col-lg-5 col-12 StoriesCarosuelSlidersmall mb-5" id="firstBoxs">
                                 <div class="row">
                                     <div class="col-12">
                                         <img src="Resources/images/gym01.jpeg" class="SStorieProfileImgsmall ">
@@ -221,7 +222,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-lg-5 col-12 StoriesCarosuelSlidersmall mb-5" id="firstBox">
+                            <div class="col-lg-5 col-12 StoriesCarosuelSlidersmall mb-5" id="firstBoxs">
                                 <div class="row">
                                     <div class="col-12">
                                         <img src="Resources/images/gym01.jpeg" class="SStorieProfileImgsmall ">
@@ -232,7 +233,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-lg-5 col-12 StoriesCarosuelSlidersmall mb-5" id="firstBox">
+                            <div class="col-lg-5 col-12 StoriesCarosuelSlidersmall mb-5" id="firstBoxs">
                                 <div class="row">
                                     <div class="col-12">
                                         <img src="Resources/images/gym01.jpeg" class="SStorieProfileImgsmall ">
@@ -247,8 +248,8 @@
                     </div>
                     <!-- Right Button -->
 
-                    <div class="col-1 d-flex justify-content-center align-items-center " >
-                        <img src="Resources/images/icons/rightbtn.png" class="LRbtnsmall" onclick="Carouselrightsmallbtn();" >
+                    <div class="col-1 d-flex justify-content-center align-items-center ">
+                        <img src="Resources/images/icons/rightbtn.png" class="LRbtnsmall" onclick="Carouselrightsmallbtn();">
                     </div>
                 </div>
             </div>

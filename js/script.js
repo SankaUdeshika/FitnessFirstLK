@@ -54,17 +54,26 @@ function Carouselright() {
 }
 
 // rsmall btn
+
+function Carouselleftsmallbtn() {
+  alert(marginleftM);
+  if (marginleftM > -200) {
+    marginleftM = marginleftM - 100;
+    var firstBox = document.getElementById("firstBoxs");
+    firstBox.style.transition = "1s";
+    firstBox.style.marginLeft = marginleftM + "%";
+  }
+}
+
 function Carouselrightsmallbtn() {
-  alert("OKOk");  
-  if (marginleftM < 0) {
-    marginleftM = marginleftM + 58;
-    var firstBox = document.getElementById("firstBox");
+  if(marginleftM < 0){
+    marginleftM = marginleftM + 100;
+    var firstBox = document.getElementById("firstBoxs");
     firstBox.style.transition = "1s";
     firstBox.style.marginLeft = marginleftM + "%";
   }
 }
 // carousel Slider End
-
 
 // Scrolling Animations
 // -------------------------------------------------
