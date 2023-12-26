@@ -468,6 +468,7 @@
 
 /*  */
 .firstBox {
+  display: block;
   /* transition: 1s ease-in-out; */
   /* margin-left: -58%; */
 }
