@@ -27,7 +27,7 @@
                                 <span class="HeaderTabs" onclick="window.location = 'classes.php'">CLASSES</span>
                             </div>
                             <div class="col-4">
-                                <span class="HeaderTabs" onclick="window.location = 'classes.php'">FACULITIES</span>
+                                <span class="HeaderTabs" onclick="window.location = 'index.php'">FACULITIES</span>
                             </div>
                             <div class="col-4">
                                 <span class="HeaderTabs" onclick="window.location = 'blog.php'">BLOG</span>
@@ -68,7 +68,7 @@
                                         <span class="HeaderTabs" onclick="window.location = 'classes.php'">CLASSES</span>
                                     </div>
                                     <div class="col-12">
-                                        <span class="HeaderTabs" onclick="window.location = 'classes.php'">FACULITIES</span>
+                                        <span class="HeaderTabs" onclick="window.location = 'index.php'">FACULITIES</span>
                                     </div>
                                     <div class="col-12">
                                         <span class="HeaderTabs" onclick="window.location = 'blog.php'">BLOG</span>
