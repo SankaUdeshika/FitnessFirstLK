@@ -599,3 +599,21 @@
   font-size: xx-large;
   color: white;
 }
+
+/* classes css */
+.Classes-cover {
+  width: 100%;
+  height: 300px;
+  background: url("../Resources/images/gym02.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+.classesVideo {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
