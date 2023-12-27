@@ -66,6 +66,21 @@
             </div>
 
 
+            <!-- popular Classess -->
+
+            <div class="col-12">
+                <div class="row">
+
+                    <div class="col-8">
+                        <span>POPULAR CLASSES</span>
+                    </div>
+                    <div class="col-4">
+
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </div>
 
