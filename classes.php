@@ -67,7 +67,7 @@
 
 
             <!-- popular Classess -->
-            <div class="col-12">
+            <!-- <div class="col-12">
                 <div class="row">
 
                     <div class="col-8">
@@ -78,9 +78,116 @@
                     </div>
 
                 </div>
-            </div>
+            </div> -->
 
-            
+
+            <!-- Out 5 Area -->
+            <div class="col-12 mb-5">
+                <div class="row">
+
+                    <div class="col-11 offset-lg-1">
+                        <span class="Classes-AreaTopic">OUR 5 AREAS</span>
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-8 text-white offset-lg-1">
+                                <p class="fs-4"> Our classes are designed with your training in mind incorporating the latest fitness trends so you can have fun whilst working out with like-minded members!</p>
+                            </div>
+
+                            <div class="col-2 d-flex justify-content-end">
+                                <button class="Blog-searchBtn">View all classes</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="row">
+
+                            <div class="col-10 offset-lg-1">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="row">
+                                            <div class="col-12 classImageCover" >
+                                                <img src="Resources/images/gym03.jpg" class="ClassAreaImages" alt="">
+                                                <div class="blackImageCover"></div>
+                                            </div>
+                                            <div class="col-12">
+                                                <span class=" classenames">Cardio</span><small class="text-white-50 ">(13 classes)</small>
+                                            </div>
+                                            <div class="col-12">
+                                                <span class="text-white">View Classes</span><span class="ViewClassesArrow"> &nbsp;&nbsp; &nbsp; <i class="bi bi-arrow-right"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="row">
+                                            <div class="col-12 classImageCover" >
+                                                <img src="Resources/images/gym01.jpeg" class="ClassAreaImages" alt="">
+                                                <div class="blackImageCover"></div>
+                                            </div>
+                                            <div class="col-12">
+                                                <span class=" classenames">Strength</span><small class="text-white-50 ">(9 classes)</small>
+                                            </div>
+                                            <div class="col-12">
+                                                <span class="text-white">View Classes</span><span class="ViewClassesArrow"> &nbsp;&nbsp; &nbsp; <i class="bi bi-arrow-right"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="row">
+                                            <div class="col-12 classImageCover" >
+                                                <img src="Resources/images/gym02.jpg" class="ClassAreaImages" alt="">
+                                                <div class="blackImageCover"></div>
+                                            </div>
+                                            <div class="col-12">
+                                                <span class=" classenames">Cycle</span><small class="text-white-50 ">(4 classes)</small>
+                                            </div>
+                                            <div class="col-12">
+                                                <span class="text-white">View Classes</span><span class="ViewClassesArrow"> &nbsp;&nbsp; &nbsp; <i class="bi bi-arrow-right"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="row">
+                                            <div class="col-12 classImageCover" >
+                                                <img src="Resources/images/gym04.jpeg" class="ClassAreaImages" alt="">
+                                                <div class="blackImageCover"></div>
+                                            </div>
+                                            <div class="col-12">
+                                                <span class=" classenames">Mind and Body</span><small class="text-white-50 ">(13 classes)</small>
+                                            </div>
+                                            <div class="col-12">
+                                                <span class="text-white">View Classes</span><span class="ViewClassesArrow"> &nbsp;&nbsp; &nbsp; <i class="bi bi-arrow-right"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="row">
+                                            <div class="col-12 classImageCover" >
+                                                <img src="Resources/images/gym02.jpg" class="ClassAreaImages" alt="">
+                                                <div class="blackImageCover"></div>
+                                            </div>
+                                            <div class="col-12">
+                                                <span class=" classenames">Fight</span><small class="text-white-50 ">(13 classes)</small>
+                                            </div>
+                                            <div class="col-12">
+                                                <span class="text-white">View Classes</span><span class="ViewClassesArrow"> &nbsp;&nbsp; &nbsp; <i class="bi bi-arrow-right"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
 
 
         </div>

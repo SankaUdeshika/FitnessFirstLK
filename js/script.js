@@ -206,6 +206,23 @@ function aboutImageAnimation() {
 }
 
 window.addEventListener("scroll", aboutImageAnimation);
+// --------------------------------------------------
+function ImageBlackBoxAni() {
+  var tag1 = document.querySelectorAll(".blackImageCover");
+
+  for (var i = 0; i < tag1.length; i++) {
+    var windowHeight = window.innerHeight;
+    var TagTop = tag1[i].getBoundingClientRect().top;
+    var ViewHeight = 80;
+
+    if (TagTop < windowHeight - ViewHeight) {
+      tag1[i].classList.add("active");
+    } else {
+      tag1[i].classList.remove("active");
+    }
+  }
+}
+window.addEventListener("scroll", ImageBlackBoxAni);
 
 // Carosuel Functions
 var counter = 1;
