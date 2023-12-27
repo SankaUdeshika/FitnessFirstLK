@@ -47,7 +47,7 @@
                 <div class="col-12 mt-5">
                     <div class="row">
                         <div class="col-6">
-                            <img src="Resources/images/gym02.jpg" class="classesVideo" alt="">
+                            <video autoplay muted src="Resources/Videos/pexels-tima-miroshnichenko-5319759 (2160p).mp4" class="classesVideo"></video>
                         </div>
                         <div class="col-6">
                             <div class="row">
