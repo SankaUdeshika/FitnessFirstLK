@@ -43,13 +43,13 @@
             </div>
 
             <!-- Classes intro -->
-            <div class="col-10 offset-lg-1 mb-5">
+            <div class="col-lg-10 col-12 offset-lg-1 mb-5">
                 <div class="col-12 mt-5">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-lg-6 col-12">
                             <video autoplay muted src="Resources/Videos/pexels-tima-miroshnichenko-5319759 (2160p).mp4" class="classesVideo"></video>
                         </div>
-                        <div class="col-6">
+                        <div class="col-lg-6 col-12">
                             <div class="row">
                                 <div class="col-12">
                                     <span class="fw-bold text-white fs-2">Experience classes at Fitness First</span>
@@ -69,16 +69,16 @@
             <div class="col-12 mb-5">
                 <div class="row">
 
-                    <div class="col-11 offset-lg-1">
+                    <div class="col-lg-11 col-12 offset-lg-1 Fade UPToDown">
                         <span class="Classes-AreaTopic">OUR 5 AREAS</span>
                     </div>
                     <div class="col-12">
                         <div class="row">
-                            <div class="col-8 text-white offset-lg-1">
+                            <div class="col-lg-8 col-12 text-white offset-lg-1 Fade">
                                 <p class="fs-4"> Our classes are designed with your training in mind incorporating the latest fitness trends so you can have fun whilst working out with like-minded members!</p>
                             </div>
 
-                            <div class="col-2 d-flex justify-content-end">
+                            <div class="col-lg-2 col-12 d-flex justify-content-center Fade">
                                 <button class="Blog-searchBtn">View all classes</button>
                             </div>
                         </div>
@@ -87,9 +87,9 @@
                     <div class="col-12">
                         <div class="row">
 
-                            <div class="col-10 offset-lg-1">
+                            <div class="col-lg-10 col-12 offset-lg-1 ">
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-lg-6 col-12 Fade">
                                         <div class="row">
                                             <div class="col-12 classImageCover">
                                                 <img src="Resources/images/gym03.jpg" class="ClassAreaImages" alt="">
@@ -104,7 +104,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-6">
+                                    <div class="col-lg-6 col-12 Fade">
                                         <div class="row">
                                             <div class="col-12 classImageCover">
                                                 <img src="Resources/images/gym01.jpeg" class="ClassAreaImages" alt="">
@@ -119,7 +119,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-6">
+                                    <div class="col-lg-6 col-12 Fade">
                                         <div class="row">
                                             <div class="col-12 classImageCover">
                                                 <img src="Resources/images/gym02.jpg" class="ClassAreaImages" alt="">
@@ -134,7 +134,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-6">
+                                    <div class="col-lg-6 col-12 Fade">
                                         <div class="row">
                                             <div class="col-12 classImageCover">
                                                 <img src="Resources/images/gym04.jpeg" class="ClassAreaImages" alt="">
@@ -149,7 +149,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-6">
+                                    <div class="col-lg-6 col-12 Fade">
                                         <div class="row">
                                             <div class="col-12 classImageCover">
                                                 <img src="Resources/images/gym02.jpg" class="ClassAreaImages" alt="">
@@ -179,10 +179,10 @@
             <div class="col-12">
                 <div class="row">
 
-                    <div class="col-10 offset-lg-1 ">
+                    <div class="col-lg-10 col-12 offset-lg-1 ">
                         <div class="row">
 
-                            <div class="col-12 mb-5">
+                            <div class="col-12 mb-5 UPToDown Fade">
                                 <div class="col-12 text-white fs-1 fw-bold">
                                     <span>Five areas of fitness</span>
                                 </div>
@@ -193,7 +193,7 @@
                             </div>
 
 
-                            <div class="col-12 mb-5">
+                            <div class="col-12 mb-5 Fade">
                                 <div class="col-12 text-white fs-1 fw-bold">
                                     <span>Cardio</span>
                                 </div>
@@ -204,7 +204,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-12 mb-5">
+                            <div class="col-12 mb-5 Fade">
                                 <div class="col-12 text-white fs-1 fw-bold">
                                     <span>Strength</span>
                                 </div>
@@ -216,7 +216,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-12 mb-5">
+                            <div class="col-12 mb-5 Fade">
                                 <div class="col-12 text-white fs-1 fw-bold">
                                     <span>Cycle</span>
                                 </div>
@@ -229,7 +229,7 @@
                             </div>
 
 
-                            <div class="col-12 mb-5">
+                            <div class="col-12 mb-5 Fade">
                                 <div class="col-12 text-white fs-1 fw-bold">
                                     <span>Mind & Body</span>
                                 </div>
@@ -240,7 +240,7 @@
                             </div>
 
 
-                            <div class="col-12 mb-5">
+                            <div class="col-12 mb-5 Fade">
                                 <div class="col-12 text-white fs-1 fw-bold">
                                     <span>Fight</span>
                                 </div>
