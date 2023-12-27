@@ -318,8 +318,6 @@
   src: url("../FONTS/Montserrat-VariableFont_wght.ttf");
 }
 
-
-
 .CarouselTextCover {
   position: absolute;
   left: 10%;
@@ -389,7 +387,7 @@
   border-radius: 20px;
   margin-top: 60px;
 }
-.StoriesCarosuelSlidersmall{
+.StoriesCarosuelSlidersmall {
   width: 25px;
   position: relative;
   background-color: red;
@@ -493,8 +491,6 @@
   border-radius: 50px;
 }
 
-
-
 /* SCROLING ANIMAITONS CSS */
 .DownToUP {
   transform: translateY(100px);
@@ -542,8 +538,7 @@
   /* backdrop-filter: blur(0px); */
 }
 
-
-.Search-cover{
+.Search-cover {
   width: 100%;
   height: 500px;
   background: url("../Resources/images/gym02.jpg");
@@ -555,14 +550,14 @@
   align-items: center;
 }
 
-.Blog-Search-text{
+.Blog-Search-text {
   color: white;
   font-size: 500%;
   font-family: "Alinasi";
   font-weight: bold;
 }
 
-.Blog-SearchIcon{
+.Blog-SearchIcon {
   color: gray;
   display: flex;
   justify-content: center;
@@ -570,12 +565,12 @@
   font-size: large;
 }
 
-.Blog-SearchInput{
-  border:  0px solid transparent;
+.Blog-SearchInput {
+  border: 0px solid transparent;
   height: 80px;
 }
 
-.Blog-searchBtn{
+.Blog-searchBtn {
   background-color: red;
   display: flex;
   justify-content: center;
@@ -584,4 +579,23 @@
   width: 100%;
   height: 80px;
   border: 0px solid transparent;
+}
+
+.BlogCategoryImages {
+  width: 100%;
+  height: 200px;
+  transition: 0.5s ease-in-out;
+  object-fit: cover;
+}
+
+.BlogCategoryImages:hover {
+  width: 100%;
+  height: 200px;
+  transition: 0.5s ease-in-out;
+  transform: scale(1.2);
+}
+
+.BlogThmbnailTopic {
+  font-size: xx-large;
+  color: white;
 }

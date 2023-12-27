@@ -60,13 +60,280 @@
                     <span class="text-white-50 fw-bold fs-3">All</span>
                 </div>
                 <div class="col-3">
-                    <span class="text-white-50 fw-bold fs-3" >Fitness</span>
+                    <span class="text-white-50 fw-bold fs-3">Fitness</span>
                 </div>
                 <div class="col-3">
                     <span class="text-white-50 fw-bold fs-3">Nutrition</span>
                 </div>
                 <div class="col-3">
                     <span class="text-white-50 fw-bold fs-3">Archive</span>
+                </div>
+            </div>
+
+
+            <!-- Blog Divs -->
+            <div class="col-12">
+                <div class="row">
+
+                    <div class="col-5 offset-lg-1 d-flex justify-content-center">
+                        <div class="row">
+                            <div class="col-12 overflow-hidden">
+                                <img src="Resources/images/gym03.jpg" class="BlogCategoryImages" alt="">
+                            </div>
+                            <div class="col-12 text-white">
+                                <div class="row">
+                                    <div class="col-12 mt-3 mb-2">
+                                        <span style="font-family: monospace;">FITNESS</span>
+                                    </div>
+                                    <div class="col-12">
+                                        <span class="BlogThmbnailTopic">How To Get Fit In The New Year</span>
+                                    </div>
+                                    <div class="col-12">
+                                        <small class="text-white-50 ">DECEMBER 20 2023 6 MIN READ</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-5 d-flex justify-content-center">
+                        <div class="row">
+                            <div class="col-12 overflow-hidden">
+                                <img src="Resources/images/gym04.jpeg" class="BlogCategoryImages" alt="">
+                            </div>
+                            <div class="col-12 text-white">
+                                <div class="row">
+                                    <div class="col-12 mt-3 mb-2">
+                                        <span style="font-family: monospace;">FITNESS</span>
+                                    </div>
+                                    <div class="col-12">
+                                        <span class="BlogThmbnailTopic">What Is Body Mass Index?</span>
+                                    </div>
+                                    <div class="col-12">
+                                        <small class="text-white-50 ">DECEMBER 20 2023 6 MIN READ</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- second row -->
+                    <div class="col-5 d-flex justify-content-center mt-5 offset-lg-1">
+                        <div class="row">
+                            <div class="col-12 overflow-hidden">
+                                <img src="Resources/images/gym01.jpeg" class="BlogCategoryImages" alt="">
+                            </div>
+                            <div class="col-12 text-white">
+                                <div class="row">
+                                    <div class="col-12 mt-3 mb-2">
+                                        <span style="font-family: monospace;">FITNESS</span>
+                                    </div>
+                                    <div class="col-12">
+                                        <span class="BlogThmbnailTopic">What Is Body Mass Index?</span>
+                                    </div>
+                                    <div class="col-12">
+                                        <small class="text-white-50 ">DECEMBER 20 2023 6 MIN READ</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-5 d-flex justify-content-center mt-5">
+                        <div class="row">
+                            <div class="col-12 overflow-hidden">
+                                <img src="Resources/images/gym02.jpg" class="BlogCategoryImages" alt="">
+                            </div>
+                            <div class="col-12 text-white">
+                                <div class="row">
+                                    <div class="col-12 mt-3 mb-2">
+                                        <span style="font-family: monospace;">FITNESS</span>
+                                    </div>
+                                    <div class="col-12">
+                                        <span class="BlogThmbnailTopic">What Is Body Mass Index?</span>
+                                    </div>
+                                    <div class="col-12">
+                                        <small class="text-white-50 ">DECEMBER 20 2023 6 MIN READ</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- realted Topics -->
+                    <div class="col-12 mt-5">
+                        <div class="row">
+                            <div class="col-10 offset-lg-1">
+                                <div class="row">
+                                    <!-- 1 -->
+                                    <div class="col-3 ">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <img src="Resources/images/gym04.jpeg" class="BlogCategoryImages" alt="">
+                                            </div>
+                                            <div class="col-12 text-white">
+                                                <div class="row">
+                                                    <div class="col-12 mt-3 mb-2">
+                                                        <span style="font-family: monospace;">FITNESS</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <span class="BlogThmbnailTopic">What Is Body Mass Index?</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <small class="text-white-50 ">DECEMBER 20 2023 6 MIN READ</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 1 -->
+                                    <div class="col-3">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <img src="Resources/images/gym01.jpeg" class="BlogCategoryImages" alt="">
+                                            </div>
+                                            <div class="col-12 text-white">
+                                                <div class="row">
+                                                    <div class="col-12 mt-3 mb-2">
+                                                        <span style="font-family: monospace;">FITNESS</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <span class="BlogThmbnailTopic">What Is Body Mass Index?</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <small class="text-white-50 ">DECEMBER 20 2023 6 MIN READ</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 1 -->
+                                    <div class="col-3 ">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <img src="Resources/images/gym03.jpg" class="BlogCategoryImages" alt="">
+                                            </div>
+                                            <div class="col-12 text-white">
+                                                <div class="row">
+                                                    <div class="col-12 mt-3 mb-2">
+                                                        <span style="font-family: monospace;">FITNESS</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <span class="BlogThmbnailTopic">What Is Body Mass Index?</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <small class="text-white-50 ">DECEMBER 20 2023 6 MIN READ</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 1 -->
+                                    <div class="col-3 ">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <img src="Resources/images/gym01.jpeg" class="BlogCategoryImages" alt="">
+                                            </div>
+                                            <div class="col-12 text-white">
+                                                <div class="row">
+                                                    <div class="col-12 mt-3 mb-2">
+                                                        <span style="font-family: monospace;">FITNESS</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <span class="BlogThmbnailTopic">What Is Body Mass Index?</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <small class="text-white-50 ">DECEMBER 20 2023 6 MIN READ</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Second Row -->
+                                    <div class="col-3 mt-5 ">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <img src="Resources/images/gym01.jpeg" class="BlogCategoryImages" alt="">
+                                            </div>
+                                            <div class="col-12 text-white">
+                                                <div class="row">
+                                                    <div class="col-12 mt-3 mb-2">
+                                                        <span style="font-family: monospace;">FITNESS</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <span class="BlogThmbnailTopic">What Is Body Mass Index?</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <small class="text-white-50 ">DECEMBER 20 2023 6 MIN READ</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mt-5 ">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <img src="Resources/images/gym02.jpg" class="BlogCategoryImages" alt="">
+                                            </div>
+                                            <div class="col-12 text-white">
+                                                <div class="row">
+                                                    <div class="col-12 mt-3 mb-2">
+                                                        <span style="font-family: monospace;">FITNESS</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <span class="BlogThmbnailTopic">What Is Body Mass Index?</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <small class="text-white-50 ">DECEMBER 20 2023 6 MIN READ</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mt-5 ">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <img src="Resources/images/gym03.jpg" class="BlogCategoryImages" alt="">
+                                            </div>
+                                            <div class="col-12 text-white">
+                                                <div class="row">
+                                                    <div class="col-12 mt-3 mb-2">
+                                                        <span style="font-family: monospace;">FITNESS</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <span class="BlogThmbnailTopic">What Is Body Mass Index?</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <small class="text-white-50 ">DECEMBER 20 2023 6 MIN READ</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mt-5 ">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <img src="Resources/images/gym04.jpeg" class="BlogCategoryImages" alt="">
+                                            </div>
+                                            <div class="col-12 text-white">
+                                                <div class="row">
+                                                    <div class="col-12 mt-3 mb-2">
+                                                        <span style="font-family: monospace;">FITNESS</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <span class="BlogThmbnailTopic">What Is Body Mass Index?</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <small class="text-white-50 ">DECEMBER 20 2023 6 MIN READ</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
 
