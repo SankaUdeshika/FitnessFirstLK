@@ -8,21 +8,22 @@
     <link rel="stylesheet" href="css/bootstrap.css"/>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
+   
 </head>
 
-<body style="background-color:black">
+<body style="background-color:black ">
 
     <div class="container-fluid">
         <div class="row">
 
-            <div class="col-12 adminBackground">
+            <div class="col-12 adminBackground ">
                 <div class="row">
 
-                    <div class="col-6 offset-3 AdminLoginCard">
-                        <div class="row">
+                    <div class="col-6 offset-3 AdminLoginCard ">
+                        <div class="row" >
 
                             <div class="col-12 d-flex justify-content-center">
-                                <img src="Resources/images/LOGO.png" width="150px" alt="">
+                                <img src="Resources/images/LOGO/gymLoginlogo.png" width="150px" alt="">
                             </div>
 
                             <div class="col-12  mt-3 text-center text-white">
