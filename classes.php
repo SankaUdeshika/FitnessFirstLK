@@ -65,22 +65,6 @@
                 </div>
             </div>
 
-
-            <!-- popular Classess -->
-            <!-- <div class="col-12">
-                <div class="row">
-
-                    <div class="col-8">
-                        <span>POPULAR CLASSES</span>
-                    </div>
-                    <div class="col-4">
-
-                    </div>
-
-                </div>
-            </div> -->
-
-
             <!-- Out 5 Area -->
             <div class="col-12 mb-5">
                 <div class="row">
@@ -263,7 +247,7 @@
 
                                 <div class="col-12 text-white-50">
                                     <p>Our <span class="text-danger">Fight </span> classes are an excellent way to improve your strength, agility and endurance. These stress-busting sessions are a popular choice for those wanting to break a sweat and learn something new. </p>
-                                    <p>Choose from different classes, including <span class="text-danger"> Boxercise </span>  — a session based on boxer training methods — which involves hitting focus pads. Or, learn various martial arts techniques, moves, kicks, and twists with our <span class="text-danger"> Self Defense </span> sessions. </p>
+                                    <p>Choose from different classes, including <span class="text-danger"> Boxercise </span> — a session based on boxer training methods — which involves hitting focus pads. Or, learn various martial arts techniques, moves, kicks, and twists with our <span class="text-danger"> Self Defense </span> sessions. </p>
                                 </div>
                             </div>
 

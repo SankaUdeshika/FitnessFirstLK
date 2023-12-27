@@ -23,17 +23,14 @@
 
                     <div class="col-7 text-center SectionCover">
                         <div class="row">
-                            <div class="col-3">
-                                <span>MEMBERSHIPS</span>
+                            <div class="col-4">
+                                <span class="HeaderTabs" onclick="window.location = 'classes.php'">CLASSES</span>
                             </div>
-                            <div class="col-3">
-                                <span>CLASSES</span>
+                            <div class="col-4">
+                                <span class="HeaderTabs" onclick="window.location = 'classes.php'">FACULITIES</span>
                             </div>
-                            <div class="col-3">
-                                <span>FACULITIES</span>
-                            </div>
-                            <div class="col-3">
-                                <span>BLOG</span>
+                            <div class="col-4">
+                                <span class="HeaderTabs" onclick="window.location = 'blog.php'">BLOG</span>
                             </div>
                         </div>
                     </div>
@@ -67,17 +64,14 @@
                         <div class="offcanvas-body">
                             <div class="col-12 text-center SectionCover">
                                 <div class="row">
-                                    <div class="col-3">
-                                        <span>MEMBERSHIPS</span>
+                                    <div class="col-12">
+                                        <span class="HeaderTabs" onclick="window.location = 'classes.php'">CLASSES</span>
                                     </div>
-                                    <div class="col-3">
-                                        <span>CLASSES</span>
+                                    <div class="col-12">
+                                        <span class="HeaderTabs" onclick="window.location = 'classes.php'">FACULITIES</span>
                                     </div>
-                                    <div class="col-3">
-                                        <span>FACULITIES</span>
-                                    </div>
-                                    <div class="col-3">
-                                        <span>BLOG</span>
+                                    <div class="col-12">
+                                        <span class="HeaderTabs" onclick="window.location = 'blog.php'">BLOG</span>
                                     </div>
                                 </div>
                             </div>
