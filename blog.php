@@ -337,6 +337,30 @@
                 </div>
             </div>
 
+
+            <!-- pagination -->
+            <div class="col-12 mt-5 mb-5 d-flex justify-content-center">
+                <div class="row">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link bg-black text-white " href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item bg-black text-white"><a class="page-link bg-black text-white" href="#">1</a></li>
+                            <li class="page-item bg-black text-white"><a class="page-link bg-black text-white" href="#">2</a></li>
+                            <li class="page-item bg-black text-white"><a class="page-link bg-black text-white" href="#">3</a></li>
+                            <li class="page-item bg-black text-white">
+                                <a class="page-link bg-black text-white" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
         </div>
     </div>
 
