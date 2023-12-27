@@ -11,7 +11,7 @@
    
 </head>
 
-<body style="background-color:black ">
+<body>
 
     <div class="container-fluid">
         <div class="row">
@@ -19,11 +19,11 @@
             <div class="col-12 adminBackground ">
                 <div class="row">
 
-                    <div class="col-6 offset-3 AdminLoginCard ">
+                    <div class="col-6 offset-3  AdminLoginCard ">
                         <div class="row" >
 
                             <div class="col-12 d-flex justify-content-center">
-                                <img src="Resources/images/LOGO/gymLoginlogo.png" width="150px" alt="">
+                                <img src="Resources/images/LOGO/gymLoginlogo.png" class="mt-5" width="300px" alt="">
                             </div>
 
                             <div class="col-12  mt-3 text-center text-white">
