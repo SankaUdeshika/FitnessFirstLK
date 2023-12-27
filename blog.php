@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 
-<body>
+<body class="bg-black">
 
     <!-- preloader -->
     <div class="col-12 preloader " id="preloader">
@@ -55,11 +55,19 @@
 
             <!-- Blog Category -->
 
-            <div class="col-12 text-center d-flex justify-content-center">
-                <span>All</span>
-                <span>Fitness</span>
-                <span>Nutrition</span>
-                <span>Archive</span>
+            <div class="col-12 text-center d-flex justify-content-center text-center mt-5 mb-5">
+                <div class="col-3">
+                    <span class="text-white-50 fw-bold fs-3">All</span>
+                </div>
+                <div class="col-3">
+                    <span class="text-white-50 fw-bold fs-3" >Fitness</span>
+                </div>
+                <div class="col-3">
+                    <span class="text-white-50 fw-bold fs-3">Nutrition</span>
+                </div>
+                <div class="col-3">
+                    <span class="text-white-50 fw-bold fs-3">Archive</span>
+                </div>
             </div>
 
         </div>
