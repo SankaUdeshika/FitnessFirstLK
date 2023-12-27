@@ -30,21 +30,21 @@
                     <div class="col-12">
                         <div class="row ">
                             <div class="col-12">
-                                <span class="Blog-Search-text">The Inside Track Blog</span><br>
+                                <span class="Blog-Search-text" style="transition: 1s ease-in-out;">The Inside Track Blog</span><br>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-6 offset-lg-3">
+                    <div class="col-lg-6 col-12 offset-lg-3">
                         <div class="col-12 bg-body">
                             <div class="row">
                                 <div class="col-2 Blog-SearchIcon">
                                     <span class=""><i class="bi bi-search"></i></span>
                                 </div>
-                                <div class="col-8 d-grid">
+                                <div class="col-lg-8 col-7 d-grid">
                                     <input type="text" placeholder="Search for an article" class="Blog-SearchInput d-grid">
                                 </div>
-                                <div class="col-2">
+                                <div class="col-lg-2 col-3">
                                     <button class="Blog-searchBtn">Search</button>
                                 </div>
                             </div>
@@ -55,18 +55,18 @@
 
             <!-- Blog Category -->
 
-            <div class="col-12 text-center d-flex justify-content-center text-center mt-5 mb-5">
-                <div class="col-3">
-                    <span class="text-white-50 fw-bold fs-3">All</span>
+            <div class="col-12 text-center d-flex justify-content-center text-center mt-5 mb-5  ">
+                <div class="col-lg-3">
+                    <span class=" HeaderTabs">All</span>
                 </div>
-                <div class="col-3">
-                    <span class="text-white-50 fw-bold fs-3">Fitness</span>
+                <div class="col-lg-3 ">
+                    <span class="HeaderTabs">Fitness</span>
                 </div>
-                <div class="col-3">
-                    <span class="text-white-50 fw-bold fs-3">Nutrition</span>
+                <div class="col-lg-3">
+                    <span class="HeaderTabs">Nutrition</span>
                 </div>
-                <div class="col-3">
-                    <span class="text-white-50 fw-bold fs-3">Archive</span>
+                <div class="col-lg-3">
+                    <span class="HeaderTabs">Archive</span>
                 </div>
             </div>
 
@@ -75,7 +75,7 @@
             <div class="col-12">
                 <div class="row">
 
-                    <div class="col-5 offset-lg-1 d-flex justify-content-center">
+                    <div class="col-lg-5 col-6 offset-lg-1 d-flex justify-content-center Fade">
                         <div class="row">
                             <div class="col-12 overflow-hidden">
                                 <img src="Resources/images/gym03.jpg" class="BlogCategoryImages" alt="">
@@ -96,7 +96,7 @@
                         </div>
                     </div>
 
-                    <div class="col-5 d-flex justify-content-center">
+                    <div class="col-lg-5 col-6 d-flex justify-content-center Fade">
                         <div class="row">
                             <div class="col-12 overflow-hidden">
                                 <img src="Resources/images/gym04.jpeg" class="BlogCategoryImages" alt="">
@@ -117,7 +117,7 @@
                         </div>
                     </div>
                     <!-- second row -->
-                    <div class="col-5 d-flex justify-content-center mt-5 offset-lg-1">
+                    <div class="col-lg-5 col-6 d-flex justify-content-center mt-5 offset-lg-1 Fade">
                         <div class="row">
                             <div class="col-12 overflow-hidden">
                                 <img src="Resources/images/gym01.jpeg" class="BlogCategoryImages" alt="">
@@ -137,7 +137,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-5 d-flex justify-content-center mt-5">
+                    <div class="col-lg-5 col-6 d-flex justify-content-center mt-5 Fade">
                         <div class="row">
                             <div class="col-12 overflow-hidden">
                                 <img src="Resources/images/gym02.jpg" class="BlogCategoryImages" alt="">
@@ -159,12 +159,12 @@
                     </div>
 
                     <!-- realted Topics -->
-                    <div class="col-12 mt-5">
+                    <div class="col-12 mt-5 ">
                         <div class="row">
-                            <div class="col-10 offset-lg-1">
+                            <div class="col-lg-10 col-12 offset-lg-1">
                                 <div class="row">
                                     <!-- 1 -->
-                                    <div class="col-3 ">
+                                    <div class="col-lg-3 col-12 Fade">
                                         <div class="row">
                                             <div class="col-12">
                                                 <img src="Resources/images/gym04.jpeg" class="BlogCategoryImages" alt="">
@@ -185,7 +185,7 @@
                                         </div>
                                     </div>
                                     <!-- 1 -->
-                                    <div class="col-3">
+                                    <div class="col-lg-3 col-12 Fade">
                                         <div class="row">
                                             <div class="col-12">
                                                 <img src="Resources/images/gym01.jpeg" class="BlogCategoryImages" alt="">
@@ -206,7 +206,7 @@
                                         </div>
                                     </div>
                                     <!-- 1 -->
-                                    <div class="col-3 ">
+                                    <div class="col-lg-3 col-12 Fade ">
                                         <div class="row">
                                             <div class="col-12">
                                                 <img src="Resources/images/gym03.jpg" class="BlogCategoryImages" alt="">
@@ -227,7 +227,7 @@
                                         </div>
                                     </div>
                                     <!-- 1 -->
-                                    <div class="col-3 ">
+                                    <div class="col-lg-3 col-12 Fade">
                                         <div class="row">
                                             <div class="col-12">
                                                 <img src="Resources/images/gym01.jpeg" class="BlogCategoryImages" alt="">
@@ -248,7 +248,7 @@
                                         </div>
                                     </div>
                                     <!-- Second Row -->
-                                    <div class="col-3 mt-5 ">
+                                    <div class="col-lg-3 col-12 mt-5 Fade ">
                                         <div class="row">
                                             <div class="col-12">
                                                 <img src="Resources/images/gym01.jpeg" class="BlogCategoryImages" alt="">
@@ -268,7 +268,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-3 mt-5 ">
+                                    <div class="col-lg-3 col-12 mt-5 Fade ">
                                         <div class="row">
                                             <div class="col-12">
                                                 <img src="Resources/images/gym02.jpg" class="BlogCategoryImages" alt="">
@@ -288,7 +288,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-3 mt-5 ">
+                                    <div class="col-lg-3 col-12 mt-5  Fade">
                                         <div class="row">
                                             <div class="col-12">
                                                 <img src="Resources/images/gym03.jpg" class="BlogCategoryImages" alt="">
@@ -308,7 +308,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-3 mt-5 ">
+                                    <div class="col-lg-3 col-12 mt-5 Fade ">
                                         <div class="row">
                                             <div class="col-12">
                                                 <img src="Resources/images/gym04.jpeg" class="BlogCategoryImages" alt="">
