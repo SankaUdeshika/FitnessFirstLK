@@ -52,6 +52,16 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Blog Category -->
+
+            <div class="col-12 text-center d-flex justify-content-center">
+                <span>All</span>
+                <span>Fitness</span>
+                <span>Nutrition</span>
+                <span>Archive</span>
+            </div>
+
         </div>
     </div>
 
