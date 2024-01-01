@@ -27,7 +27,7 @@
             <!-- Top bar -->
             <div class="col-12 Classes-cover  ">
                 <div class="row">
-                    <div class="col-12 mx-5">
+                    <div class="col-12 text-center">
                         <div class="row ">
                             <div class="col-12">
                                 <span class="fs-4 fw-bold text-white" style="font-family: monospace;">CHECK OUT</span>
