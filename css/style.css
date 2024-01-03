@@ -79,13 +79,16 @@
 .LogoCover {
   margin-top: 10px;
   margin-bottom: 10px;
+ 
 }
 
 .LogoCover:hover .FitnesFirstTextLogo1white {
   color: red;
+  cursor: pointer;
 }
 .LogoCover:hover .FitnesFirstTextLogored {
   color: white;
+  cursor: pointer;
 }
 
 .FitnesFirstTextLogo1white {
@@ -697,6 +700,7 @@
   display: inline-block;
   padding: 15px 20px;
   position: relative;
+  cursor: pointer;
 }
 
 .HeaderTabs:after {
@@ -710,6 +714,7 @@
   background: #fff;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
+  cursor: pointer;
 }
 
 .HeaderTabs:hover:after {
