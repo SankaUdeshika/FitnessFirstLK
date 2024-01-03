@@ -233,3 +233,31 @@ setInterval(function () {
     counter = 1;
   }
 }, 5000);
+
+
+// BackendProcess
+function adminChangePassword(email){
+    var command = "adminChangePassword";
+    var Email = email;
+
+    var curruntP = document.getElementById("curruntPassword").value;
+    var newPassword = document.getElementById("newPassword").value;
+    var RPassword = document.getElementById("RPassword").value;
+
+    var f = new FormData();
+    f.append("command",command);
+    f.append("Email",Email);
+    f.append("curruntP",curruntP);
+    f.append("newPassword",newPassword);
+    f.append("RPassword",RPassword);
+
+    var r = new XMLHttpRequest();
+    r.onreadystatechange = function (){
+      if(r.readyState == 4 && r.status == 200){
+        alert(r.responseText);
+      }
+    }
+    r.open("POST","BackEndProcess.php",true);
+    r.send(f);
+    
+}

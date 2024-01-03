@@ -1,7 +1,12 @@
 <?php
 session_start();
-
+$detialsarrey = array(
+    'email' => 'sankaudeshika123@gmail.com',
+    'password' => '12345678'
+);
+$_SESSION["admin"] = $detialsarrey;
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
