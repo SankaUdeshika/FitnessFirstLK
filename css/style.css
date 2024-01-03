@@ -80,17 +80,29 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.LogoCover:hover .FitnesFirstTextLogo1white {
+  color: red;
+}
+.LogoCover:hover .FitnesFirstTextLogored {
+  color: white;
+}
+
 .FitnesFirstTextLogo1white {
   font-family: "Poppins", sans-serif;
   color: white;
   font-weight: bold;
   font-size: 25px;
+  transition: 0.5s ease-in-out;
+
 }
 .FitnesFirstTextLogored {
   font-family: "Poppins", sans-serif;
   color: red;
   font-weight: bold;
   font-size: 25px;
+  transition: 0.5s ease-in-out;
+
 }
 
 .SectionCover {
@@ -701,8 +713,7 @@
 }
 
 .HeaderTabs:hover:after {
-  width: 100%; 
-  left: 0; 
+  width: 100%;
+  left: 0;
   cursor: pointer;
 }
-
