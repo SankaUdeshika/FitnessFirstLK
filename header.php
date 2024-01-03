@@ -17,7 +17,7 @@
             <div class="col-12 headerCover d-lg-block d-none">
                 <div class="row">
 
-                    <div class="col-3 text-center LogoCover">
+                    <div class="col-3 text-center LogoCover" onclick="window.location='index.php'">
                         <span class="FitnesFirstTextLogo1white">FITNESS </span><span class="FitnesFirstTextLogored">FIRST LK</span>
                     </div>
 
