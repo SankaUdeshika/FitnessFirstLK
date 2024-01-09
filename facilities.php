@@ -48,15 +48,15 @@
             <div class="col-12">
                 <div class="row">
 
-                    <div class="col-12 mt-5 mb-5">
+                    <div class="col-12 mt-5 mb-5 FirstDownToUPAnimation"> 
                         <div class="row">
                             <div class="col-12 text-center mt-5">
-                                <span class="aboutTopicwhite facilitiyAboutText ">ABOUT THE </span> <br> <span class="aboutTopicRed facilitiyAboutText"> FITNESS FACILITIES</span>
+                                <span class="aboutTopicwhite facilitiyAboutText  ">ABOUT THE </span> <br> <span class="aboutTopicRed facilitiyAboutText"> FITNESS FACILITIES</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-12 mt-5">
+                    <div class="col-12 mt-5 FirstUpToDownAnimation">
                         <div class="row">
                             <div class="col-lg-8 col-12 offset-lg-2 text-center text-white">
                                 <p>The Fitness Factory is a 24/7, multi-level facility that houses an expansive selection of equipment, resources for a complete wellness experience. We provide a friendly, welcoming atmosphere for all members for all fitness levels from beginners to the PRO athletes. Whether your passion is, cardio, weight training, bodybuilding, powerlifting, CrossFit, or functional training; we have all the equipment and necessary machines you need for results.</p>
@@ -69,31 +69,31 @@
                     <div class="col-12 mt-5 mb-5">
                         <div class="row">
 
-                            <div class="col-lg-6 offset-lg-2  text-white">
+                            <div class="col-lg-6 offset-lg-2  text-white Fade ">
                                 <span class="fs-1 mx-5 fw-bold">Our Facility Features:</span>
                             </div>
 
-                            <div class="col-12 text-white-50">
+                            <div class="col-12 text-white-50 mt-4">
                                 <div class="row">
 
                                     <div class="col-lg-8 col-12 offset-lg-2">
                                         <div class="row">
-                                            <div class="col-6">
+                                            <div class="col-6 LeftToRight Fade">
                                                 <ul>
-                                                    <li> <span class="fs-3">Over 18,000 square feet of space</span></li>
+                                                    <li> <span class="fs-3 ">Over 18,000 square feet of space</span></li>
                                                     <li> <span class="fs-3">Locker rooms with private showers and day lockers</span></li>
                                                     <li> <span class="fs-3">Two levels of cardio equipment</span></li>
                                                     <li> <span class="fs-3">60 feet of turf for sleds</span></li>
+                                                <li> <span class="fs-3">Rogue Glute Hamstring Developer</span></li>
                                                 </ul>
                                             </div>
 
-                                            <div class="col-6">
+                                            <div class="col-6 RightToLeft Fade">
                                                 <li> <span class="fs-3">Dumbbells up to 150 lbs</span></li>
                                                 <li> <span class="fs-3">Hammer Strength plate loaded equipment</span></li>
                                                 <li> <span class="fs-3">Pin loaded weight training machines</span></li>
                                                 <li> <span class="fs-3">7 squat racks</span></li>
                                                 <li> <span class="fs-3">4 deadlift platforms with bumper plates</span></li>
-                                                <li> <span class="fs-3">Rogue Glute Hamstring Developer</span></li>
                                             </div>
                                         </div>
                                     </div>
@@ -106,7 +106,7 @@
                     <div class="col-12 mb-5  ">
                         <div class="row d-flex justify-content-center">
 
-                            <div class="col-3  border border-1 rounded rounded-5 border-white">
+                            <div class="col-3  border border-1 rounded rounded-5 border-white Fade DownToUP">
                                 <div class="row">
                                     <div class="col-12 mt-4">
                                         <img src="Resources/images/suna.jpeg" class="facilitieImage" width="100%" alt="">
@@ -125,7 +125,7 @@
                             </div>
 
 
-                            <div class="col-3 mx-5 border border-1 rounded rounded-5 border-white">
+                            <div class="col-3 mx-5 border border-1 rounded rounded-5 border-white Fade UPToDown">
                                 <div class="row">
                                     <div class="col-12 mt-4">
                                         <img src="Resources/images/SwimmingPool.jpeg" class="facilitieImage" width="100%" alt="">
@@ -145,7 +145,7 @@
 
 
 
-                            <div class="col-3  border border-1 rounded rounded-5 border-white">
+                            <div class="col-3  border border-1 rounded rounded-5 border-white DownToUP">
                                 <div class="row">
                                     <div class="col-12 mt-4">
                                         <img src="Resources/images/sportMassage.jpeg" class="facilitieImage" width="100%" alt="">
@@ -179,7 +179,7 @@
                     <div class="col-12 mb-5">
                         <div class="row">
 
-                            <div class="col-12 col-lg-6 col-12 offset-lg-1">
+                            <div class="col-12 col-lg-6 col-12 offset-lg-1 Fade">
                                 <span class="aboutTopicwhite fs-1">The</span> &nbsp; <span class="aboutTopicRed fs-1">SUPPLIMENT FACTORY</span>
                             </div>
 

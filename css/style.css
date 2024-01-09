@@ -79,7 +79,6 @@
 .LogoCover {
   margin-top: 10px;
   margin-bottom: 10px;
- 
 }
 
 .LogoCover:hover .FitnesFirstTextLogo1white {
@@ -97,7 +96,6 @@
   font-weight: bold;
   font-size: 25px;
   transition: 0.5s ease-in-out;
-
 }
 .FitnesFirstTextLogored {
   font-family: "Poppins", sans-serif;
@@ -105,7 +103,6 @@
   font-weight: bold;
   font-size: 25px;
   transition: 0.5s ease-in-out;
-
 }
 
 .SectionCover {
@@ -723,14 +720,45 @@
   cursor: pointer;
 }
 
-
-.facilitiyAboutText{
+.facilitiyAboutText {
   font-size: 40px;
-  font-family: 'Alinasi';
+  font-family: "Alinasi";
 }
 
-.facilitieImage{
+.facilitieImage {
   width: 100%;
   height: 200px;
   object-fit: cover;
+}
+
+.FirstDownToUPAnimation {
+  animation: FirstDownToUPAnimation 1.5s ease-in-out;
+}
+
+@keyframes FirstDownToUPAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.FirstUpToDownAnimation {
+  animation: FirstUpToDownAnimation 2.5s ease-in-out;
+}
+
+@keyframes FirstUpToDownAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
