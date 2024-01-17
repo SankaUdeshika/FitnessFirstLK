@@ -22,7 +22,7 @@
                         <div class="row">
 
                             <div class="col-12 d-flex justify-content-center">
-                                <img src="Resources/images/LOGO/gymLoginlogo.png" width="300px" class="mt-5" alt="">
+                                <img src="Resources/images/LOGO/gymLoginlogo.png" width="300px" class="mt-5"   alt="">
                             </div>
 
                             <div class="col-12  mt-3 text-center text-white">
