@@ -22,11 +22,11 @@
                         <div class="row">
 
                             <div class="col-12 d-flex justify-content-center">
-                                <img src="Resources/images/LOGO.png" width="150px" alt="">
+                                <img src="Resources/images/LOGO/gymLoginlogo.png" width="300px" class="mt-5"   alt="">
                             </div>
 
                             <div class="col-12  mt-3 text-center text-white">
-                                <h1 style="font-weight: bold;"><u>Admin Login</u> </h1>
+                                <h1 style="font-weight: bold;" class="AdminTitle"><u>Admin Login</u> </h1>
                             </div>
 
 
@@ -35,11 +35,11 @@
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-12 text-center">
-                                        <span class="text-white-50">Email</span>
+                                        <span class="AdminText" style="font-weight: bold;">Email</span>
                                     </div>
 
                                     <div class="col-12 mb-3 text-center">
-                                        <input type="email" placeholder="Please Enter Your Email" class="form-control" id="emailInput">
+                                        <input type="email" placeholder="Please Enter Your Email" class="form-control" style="border-color:gray;" id="emailInput">
                                     </div>
                                 </div>
                             </div>
@@ -47,13 +47,13 @@
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-12 text-center">
-                                        <span class="text-white-50">password</span>
+                                        <span  style="font-weight: bold;"class="AdminText">password</span>
                                     </div>
 
                                     <div class="col-12 mb-3 text-center">
                                         <div class="row">
                                             <div class="col-10">
-                                                <input type="password" id="PasswordInput" placeholder="Please Enter Your Pasword" class="form-control">
+                                                <input type="password" id="PasswordInput" placeholder="Please Enter Your Pasword"  style="border-color:gray; "class="form-control">
                                             </div>
                                             <div class="col-2">
                                                 <button class="btn btn-outline-light" onclick="PasswordVisible();"><i class="bi bi-eye-fill"></i></button>
