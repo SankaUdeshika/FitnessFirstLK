@@ -20,8 +20,7 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="Resources/images/gym03.jpg" class="d-block w-100" alt="...">
-
+                <img src="Resources/images/gym03.jpg" class="d-block w-100" style="object-fit: cover;" alt="...">
             </div>
             <div class="carousel-item">
                 <img src="Resources/images/gym02.jpg" class="d-block w-100" alt="...">

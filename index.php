@@ -307,10 +307,10 @@
                     <div class="col-12">
                         <div class="row">
                             <div class="col-6">
-                                <input type="text" placeholder="Weight" id="bmiWeight" class="form-control">
+                                <input type="text" placeholder="Weight (Kg)" id="bmiWeight" class="form-control">
                             </div>
                             <div class="col-6">
-                                <input type="text" placeholder="Height" id="bmiHeight" class="form-control">
+                                <input type="text" placeholder="Height (cm)" id="bmiHeight" class="form-control">
                             </div>
 
                             <div class="col-12 mt-2 d-grid">

@@ -206,6 +206,23 @@ function aboutImageAnimation() {
 }
 
 window.addEventListener("scroll", aboutImageAnimation);
+// --------------------------------------------------
+function ImageBlackBoxAni() {
+  var tag1 = document.querySelectorAll(".blackImageCover");
+
+  for (var i = 0; i < tag1.length; i++) {
+    var windowHeight = window.innerHeight;
+    var TagTop = tag1[i].getBoundingClientRect().top;
+    var ViewHeight = 80;
+
+    if (TagTop < windowHeight - ViewHeight) {
+      tag1[i].classList.add("active");
+    } else {
+      tag1[i].classList.remove("active");
+    }
+  }
+}
+window.addEventListener("scroll", ImageBlackBoxAni);
 
 // Carosuel Functions
 var counter = 1;
@@ -216,3 +233,31 @@ setInterval(function () {
     counter = 1;
   }
 }, 5000);
+
+
+// BackendProcess
+function adminChangePassword(email){
+    var command = "adminChangePassword";
+    var Email = email;
+
+    var curruntP = document.getElementById("curruntPassword").value;
+    var newPassword = document.getElementById("newPassword").value;
+    var RPassword = document.getElementById("RPassword").value;
+
+    var f = new FormData();
+    f.append("command",command);
+    f.append("Email",Email);
+    f.append("curruntP",curruntP);
+    f.append("newPassword",newPassword);
+    f.append("RPassword",RPassword);
+
+    var r = new XMLHttpRequest();
+    r.onreadystatechange = function (){
+      if(r.readyState == 4 && r.status == 200){
+        alert(r.responseText);
+      }
+    }
+    r.open("POST","BackEndProcess.php",true);
+    r.send(f);
+    
+}
