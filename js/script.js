@@ -66,7 +66,7 @@ function Carouselleftsmallbtn() {
 }
 
 function Carouselrightsmallbtn() {
-  if(marginleftM < 0){
+  if (marginleftM < 0) {
     marginleftM = marginleftM + 100;
     var firstBox = document.getElementById("firstBoxs");
     firstBox.style.transition = "1s";
@@ -234,30 +234,54 @@ setInterval(function () {
   }
 }, 5000);
 
-
 // BackendProcess
-function adminChangePassword(email){
-    var command = "adminChangePassword";
-    var Email = email;
+function adminChangePassword(email) {
+  var command = "adminChangePassword";
+  var Email = email;
 
-    var curruntP = document.getElementById("curruntPassword").value;
-    var newPassword = document.getElementById("newPassword").value;
-    var RPassword = document.getElementById("RPassword").value;
+  var curruntP = document.getElementById("curruntPassword").value;
+  var newPassword = document.getElementById("newPassword").value;
+  var RPassword = document.getElementById("RPassword").value;
 
-    var f = new FormData();
-    f.append("command",command);
-    f.append("Email",Email);
-    f.append("curruntP",curruntP);
-    f.append("newPassword",newPassword);
-    f.append("RPassword",RPassword);
+  var f = new FormData();
+  f.append("command", command);
+  f.append("Email", Email);
+  f.append("curruntP", curruntP);
+  f.append("newPassword", newPassword);
+  f.append("RPassword", RPassword);
 
-    var r = new XMLHttpRequest();
-    r.onreadystatechange = function (){
-      if(r.readyState == 4 && r.status == 200){
-        alert(r.responseText);
+  var r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if (r.readyState == 4 && r.status == 200) {
+      alert(r.responseText);
+    }
+  };
+  r.open("POST", "BackEndProcess.php", true);
+  r.send(f);
+}
+
+//admin Login process
+function adminLogin() {
+  var email = document.getElementById("emailInput").value;
+  var password = document.getElementById("PasswordInput").value;
+  var command = "adminLoginProcess";
+
+  var form = new FormData();
+  form.append("command", command);
+  form.append("email",email);
+  form.append("password",password);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      if(response == "Success"){
+        window.location = 'adminDashboard.php';
+      }else if(response == "Error"){
+        alert("invalid email and Password");
       }
     }
-    r.open("POST","BackEndProcess.php",true);
-    r.send(f);
-    
+  };
+  request.open("POST", "BackEndProcess.php", true);
+  request.send(form);
 }
