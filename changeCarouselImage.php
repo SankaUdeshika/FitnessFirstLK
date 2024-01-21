@@ -27,7 +27,7 @@ if (isset($_SESSION["admin"])) {
                             <div class="row g-1 text-center">
 
                                 <div class="col-12 mt-5">
-                                <h4 class="text-white">Welcome <?php echo ($_SESSION["admin"]["firstname"]." ".$_SESSION["admin"]["lastname"]) ?></h4>
+                                    <h4 class="text-white">Welcome <?php echo ($_SESSION["admin"]["firstname"] . " " . $_SESSION["admin"]["lastname"]) ?></h4>
                                     <hr class="border border-white border-1" />
                                 </div>
 
@@ -96,7 +96,32 @@ if (isset($_SESSION["admin"])) {
                         </div>
 
                         <!-- content -->
-                      
+                        <div class="col-12">
+                            <div class="row">
+                                <?php
+                                $images_rs = Database::search("SELECT * FROM `homecarouselimages`");
+                                $image_num = $images_rs->num_rows;
+
+                                for ($i = 0; $i < $image_num; $i++) {
+                                    $image_data = $images_rs->fetch_assoc();
+                                ?>
+                                    <div class="col-12 mt-4 mb-3">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <input type="file" class="visually-hidden" onchange="changeCarouseImage('<?php echo ($image_data['HCI_id']) ?>');" id="FileChooser<?php echo ($image_data["HCI_id"]) ?>">
+                                                <img src="<?php echo ($image_data["HIC_path"]) ?>" id="Cimage<?php echo ($image_data["HCI_id"]) ?>" alt="">
+                                            </div>
+                                            <div class="col-2 d-grid">
+                                                <label for="FileChooser<?php echo ($image_data["HCI_id"]) ?>" class="btn btn-primary" style=" display:flex;align-items: center; justify-content: center;">Upload Image</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php
+                                }
+                                ?>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
