@@ -71,9 +71,6 @@ $_SESSION["admin"] = $detialsarrey;
 
 
 
-
-
-
                     <div class="col-12 bg-dark">
                         <div class="row">
                             <div class="col-12 col-lg-2 text-center my-3">
