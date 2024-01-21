@@ -27,7 +27,7 @@ if (isset($_SESSION["admin"])) {
                             <div class="row g-1 text-center">
 
                                 <div class="col-12 mt-5">
-                                    <h4 class="text-white">Welcome <?php echo ($_SESSION["admin"]["Name"]) ?></h4>
+                                <h4 class="text-white">Welcome <?php echo ($_SESSION["admin"]["firstname"]." ".$_SESSION["admin"]["lastname"]) ?></h4>
                                     <hr class="border border-white border-1" />
                                 </div>
 

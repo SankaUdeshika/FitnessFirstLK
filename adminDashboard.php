@@ -1,10 +1,5 @@
 <?php
 session_start();
-$detialsarrey = array(
-    'email' => 'sankaudeshika123@gmail.com',
-    'password' => '12345678'
-);
-$_SESSION["admin"] = $detialsarrey;
 ?>
 
 <!DOCTYPE html>
@@ -30,8 +25,7 @@ $_SESSION["admin"] = $detialsarrey;
                         <div class="row g-1 text-center">
 
                             <div class="col-12 mt-5">
-                                <!-- <h4 class="text-white">Welcome <?php echo ($_SESSION["admin"]["Name"]) ?></h4> -->
-                                <h4 class="text-white">Welcome Sanka Udeshika</h4>
+                                <h4 class="text-white">Welcome <?php echo ($_SESSION["admin"]["firstname"]." ".$_SESSION["admin"]["lastname"]) ?></h4>
                                 <hr class="border border-white border-1" />
                             </div>
 
