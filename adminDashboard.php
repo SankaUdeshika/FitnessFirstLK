@@ -39,7 +39,7 @@ $_SESSION["admin"] = $detialsarrey;
                                 <div class="nav flex-column nav-pills me-3 mt-3" role="tablist" aria-orientation="vertical">
                                     <nav class="nav flex-column">
                                         <a class="nav-link active" aria-current="page" href="adminDashboard.php">Dashboard</a>
-                                        <a class="nav-link" href="adminManag                                                                                  eContent.php">Manage Content</a>
+                                        <a class="nav-link" href="adminManageContent.php">Manage Content</a>
                                     </nav>
                                 </div>
                             </div>
