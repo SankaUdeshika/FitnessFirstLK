@@ -36,7 +36,6 @@ if (isset($_SESSION["admin"])) {
                                         <nav class="nav flex-column">
                                             <a class="nav-link " href="adminDashboard.php">Dashboard</a>
                                             <a class="nav-link active" aria-current="page" href="adminManageContent.php">Manage Content</a>
-
                                         </nav>
                                     </div>
                                 </div>
@@ -97,9 +96,7 @@ if (isset($_SESSION["admin"])) {
                         </div>
 
                         <!-- content -->
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeCarouselImage.php'">
-                            <h1>Change Carousel Image</h1>
-                        </div>
+                      
                     </div>
                 </div>
             </div>
