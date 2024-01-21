@@ -48,6 +48,8 @@ if ($command == "adminChangePassword") {
 
         if ($admin_num == 1) {
             echo ("Success");
+            $admin_data = $admin_rs->fetch_assoc();
+            $_SESSION["admin"] = $admin_data;
         } else {
             echo ("Error");
         }
