@@ -150,7 +150,7 @@ if (isset($_SESSION["admin"])) {
                                                 ?>
                                                     <tr>
                                                         <th><?php echo ($list_data["ListText"]) ?></th>
-                                                        <th><button class="btn btn-danger" onclick="">Delete</button></th>
+                                                        <th><button class="btn btn-danger" onclick="DeleteAboutList('<?php echo ($list_data['HAL_id']) ?>');">Delete</button></th>
                                                     </tr>
                                                 <?php
                                                 }

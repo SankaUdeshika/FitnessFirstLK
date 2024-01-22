@@ -140,11 +140,19 @@ if ($command == "adminChangePassword") {
         echo ("Please Select a Image");
     }
 } else if ($command == "addAboutList") { // admin add about List
-    if(empty($_POST["Text"])){
-        echo("Please Enter a text");
-    }else{
+    if (empty($_POST["Text"])) {
+        echo ("Please Enter a text");
+    } else {
         $test = $_POST["Text"];
-        Database::search("INSERT INTO `homeaboutlist` (`ListText`) VALUES ('".$test."') ");
-        echo("Adding Success");
+        Database::search("INSERT INTO `homeaboutlist` (`ListText`) VALUES ('" . $test . "') ");
+        echo ("Adding Success");
     }
+} else if ($command == "DeleteAboutList") { // admin Delete about List
+
+    $id = $_POST["id"];
+
+    Database::iud("DELETE FROM `homeaboutlist` WHERE `HAL_id` = '" . $id . "' ");
+    echo("Delete Success");
+
+
 }
