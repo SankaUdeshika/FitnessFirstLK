@@ -27,7 +27,7 @@ if (isset($_SESSION["admin"])) {
                             <div class="row g-1 text-center">
 
                                 <div class="col-12 mt-5">
-                                <h4 class="text-white">Welcome <?php echo ($_SESSION["admin"]["firstname"]." ".$_SESSION["admin"]["lastname"]) ?></h4>
+                                    <h4 class="text-white">Welcome <?php echo ($_SESSION["admin"]["firstname"] . " " . $_SESSION["admin"]["lastname"]) ?></h4>
                                     <hr class="border border-white border-1" />
                                 </div>
 
@@ -97,12 +97,80 @@ if (isset($_SESSION["admin"])) {
                         </div>
 
                         <!-- content -->
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeCarouselImage.php'">
-                            <h1>Home Page Change Carousel Image</h1>
+                        <!-- About Image Change Part -->
+
+                        <div class="col-12 mt-5">
+                            <div class="row">
+
+                                <?php
+                                $aboutImage_rs = Database::search("SELECT * FROM `homeaboutimage`");
+                                $aboutImage_rs = $aboutImage_rs->fetch_assoc();
+
+                                ?>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-4 d-grid">
+                                            <img src="<?php echo ($aboutImage_rs["HAI_path"]) ?>" id="Cimage<?php echo ($aboutImage_rs["HAI_id"]) ?>" style="width: 100%;">
+                                            <input type="file" onchange="ChangeAboutImage('<?php echo ($aboutImage_rs['HAI_id']) ?>');" id="about<?php echo ($aboutImage_rs["HAI_id"]) ?>" class="visually-hidden">
+                                            <label for="about<?php echo ($aboutImage_rs["HAI_id"]) ?>" class="btn btn-primary mt-2">Change Image</label>
+                                        </div>
+                                        <div class="col-8 d-grid">
+                                            <!-- about Para  -->
+                                            <?php
+                                            $aboutpara_rs = Database::search("SELECT * FROM `homeaboutpara`");
+                                            $aboutpara_data = $aboutpara_rs->fetch_assoc();
+                                            ?>
+                                            <textarea name="" id="" cols="40" rows="18"><?php echo ($aboutpara_data["para"]) ?></textarea>
+                                            <button class="btn btn-primary mt-2">Change About paragraph</button>
+                                        </div>
+                                        <div class="col-6 bg-dark text-white p-2 mt-3 rounded rounded-3 mx-3">
+                                            <div class="row">
+                                                <div class="col-12 text-center">
+                                                    <span>Add About List</span>
+                                                </div>
+                                                <div class="col-12 mt-2">
+                                                    <input type="text" class="form-control" placeholder="Enter a Text" id="InsertListInput">
+                                                </div>
+                                                <div class="col-12 d-grid">
+                                                    <button class="btn btn-success" onclick="addAboutList();">add List</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 mx-3 mt-3">
+                                            <table class="table">
+                                                <tr>
+                                                    <th>Text</th>
+                                                    <th>action</th>
+                                                </tr>
+                                                <?php
+                                                $list_rs = Database::search("SELECT * FROM `homeaboutlist` ");
+                                                $list_num = $list_rs->num_rows;
+                                                for ($i = 0; $i < $list_num; $i++) {
+                                                    $list_data = $list_rs->fetch_assoc();
+                                                ?>
+                                                    <tr>
+                                                        <th><?php echo ($list_data["ListText"]) ?></th>
+                                                        <th><button class="btn btn-danger" onclick="">Delete</button></th>
+                                                    </tr>
+                                                <?php
+                                                }
+                                                ?>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php
+
+                                ?>
+
+                            </div>
                         </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeHomePage.php'">
-                            <h1>Home Page About Change</h1>
-                        </div>
+
+
+
+
+
+
                     </div>
                 </div>
             </div>

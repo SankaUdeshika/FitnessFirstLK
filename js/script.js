@@ -286,34 +286,82 @@ function adminLogin() {
   request.send(form);
 }
 
-//function Change Admin carousel Image
+// Change Admin carousel Image
 function changeCarouseImage(id) {
-
   var command = "changeCarouseImage";
-  var file  = document.getElementById("FileChooser"+id);
+  var file = document.getElementById("FileChooser" + id);
 
   var form = new FormData();
   form.append("command", command);
   form.append("id", id);
-  form.append("file",file.files[0]);
+  form.append("file", file.files[0]);
 
   var request = new XMLHttpRequest();
   request.onreadystatechange = function () {
     if (request.readyState == 4 && request.status == 200) {
       var response = request.responseText;
-      if(response == "Update Success"){
-        
-          var ImageView = document.getElementById("Cimage"+id);
-          urlFile = file.files[0];
-          url = window.URL.createObjectURL(urlFile);
-          ImageView.src = url;
-
-      }else{
+      if (response == "Update Success") {
+        var ImageView = document.getElementById("Cimage" + id);
+        urlFile = file.files[0];
+        url = window.URL.createObjectURL(urlFile);
+        ImageView.src = url;
+      } else {
         alert(response);
       }
     }
   };
   request.open("POST", "BackEndProcess.php", true);
   request.send(form);
+}
 
+//Change About Image
+function ChangeAboutImage(id) {
+  var command = "changeAboutImage";
+  var file = document.getElementById("about" + id);
+
+  var form = new FormData();
+  form.append("command", command);
+  form.append("id", id);
+  form.append("file", file.files[0]);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      if (response == "Update Success") {
+        var ImageView = document.getElementById("Cimage" + id);
+        urlFile = file.files[0];
+        url = window.URL.createObjectURL(urlFile);
+        ImageView.src = url;
+      } else {
+        alert(response);
+      }
+    }
+  };
+  request.open("POST", "BackEndProcess.php", true);
+  request.send(form);
+}
+
+// add About List
+function addAboutList() {
+  var command = "addAboutList";
+  var Text = document.getElementById("InsertListInput").value;
+
+  var form = new FormData();
+  form.append("command", command);
+  form.append("Text", Text);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      if (response == "Adding Success") {
+        window.location.reload();
+      } else {
+        alert(response);
+      }
+    }
+  };
+  request.open("POST", "BackEndProcess.php", true);
+  request.send(form);
 }
