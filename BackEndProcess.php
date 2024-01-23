@@ -124,7 +124,7 @@ if ($command == "adminChangePassword") {
             $oldImage_data = $oldImage_rs->fetch_assoc();
 
             if ($oldImage_num == "1") {
-                // unlink($oldImage_data["HIC_path"]);
+                unlink($oldImage_data["HIC_path"]);
                 move_uploaded_file($ImageFile["tmp_name"], $newImageName);
                 Database::iud("UPDATE `homeaboutimage` SET `HAI_path` = '" . $newImageName . "' WHERE `HAI_id` = '" . $id . "'");
                 echo ("Update Success");
@@ -152,7 +152,51 @@ if ($command == "adminChangePassword") {
     $id = $_POST["id"];
 
     Database::iud("DELETE FROM `homeaboutlist` WHERE `HAL_id` = '" . $id . "' ");
-    echo("Delete Success");
+    echo ("Delete Success");
+    
+} else if ($command == "changeWhyImage") { // admin change why Image
+    if (!empty($_FILES["file"])) {
+
+        $ImageFile = $_FILES["file"];
+        $ImageType = $ImageFile["type"];
+        $id = $_POST["id"];
 
 
+        $allowed_Image_extentions = array("image/jpg", "image/jpeg", "image/png", "image/svg+xml");
+
+        if (in_array($ImageType, $allowed_Image_extentions)) {
+
+            $NewImage_Extention;
+            if ($ImageType == "image/jpg") {
+                $NewImage_Extention = ".jpg";
+            } else  if ($ImageType == "image/jpeg") {
+                $NewImage_Extention = ".jpeg";
+            } else  if ($ImageType == "image/png") {
+                $NewImage_Extention = ".png";
+            } else  if ($ImageType == "image/svg+xml") {
+                $NewImage_Extention = ".svg";
+            }
+
+            $newImageName = "Resources//images//whyFitness//why" . $id . $NewImage_Extention;
+
+            $oldImage_rs = Database::search("SELECT * FROM `homewhyfitness` WHERE `HWF_id` = '" . $id . "' ");
+            $oldImage_num = $oldImage_rs->num_rows;
+            $oldImage_data = $oldImage_rs->fetch_assoc();
+
+            if ($oldImage_num == "1") {
+                unlink($oldImage_data["HWF_imagepath"]);
+                move_uploaded_file($ImageFile["tmp_name"], $newImageName);
+                Database::iud("UPDATE `homewhyfitness` SET `HWF_imagepath` = '" . $newImageName . "' WHERE `HWF_id` = '" . $id . "'");
+                echo ("Update Success");
+            } else {
+                move_uploaded_file($ImageFile["tmp_name"], $newImageName);
+                Database::iud("UPDATE `homewhyfitness` SET `HWF_imagepath` = '" . $newImageName . "' WHERE `HWF_id` = '" . $id . "'");
+                echo ("Update Success");
+            }
+        } else {
+            echo ("Please Select Valid Image Extention");
+        }
+    } else {
+        echo ("Please Select a Image");
+    }
 }

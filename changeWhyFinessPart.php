@@ -97,15 +97,36 @@ if (isset($_SESSION["admin"])) {
                         </div>
 
                         <!-- content -->
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeCarouselImage.php'">
-                            <h1>Home Page Change Carousel Image</h1>
+                        <div class="col-12">
+                            <div class="row">
+
+                                <?php
+                                $Data_rs = Database::search("SELECT * FROM `homewhyfitness` ");
+                                $Data_num = $Data_rs->num_rows;
+
+                                for ($x = 0; $x < $Data_num; $x++) {
+                                    $Data_data = $Data_rs->fetch_assoc();
+                                ?>
+                                    <div class="col-6 d-grid mt-3">
+                                        <img src="<?php echo ($Data_data["HWF_imagepath"]) ?>" style="width: 100%;" id="Cimage<?php echo ($Data_data["HWF_id"]) ?>">
+                                        <input type="file" onchange="changeWhyImage('<?php echo ($Data_data['HWF_id']) ?>')" class="visually-hidden" id="why<?php echo ($Data_data["HWF_id"]) ?>">
+                                        <label for="why<?php echo ($Data_data["HWF_id"]) ?>" class="btn btn-primary">Change Image</label>
+                                    </div>
+                                    <div class="col-4 d-grid mt-3">
+                                        <input type="text" class="text-center" value="<?php echo ($Data_data["HWF_text"]) ?>">
+                                        <button class="btn btn-success">Change Text</button>
+                                    </div>
+                                    <div class="col-2 d-grid mt-3">
+                                        <button class="btn btn-danger">Delete</button>
+                                    </div>
+                                <?php
+                                }
+
+                                ?>
+
+                            </div>
                         </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeHomePage.php'">
-                            <h1>Home Page About Change</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeWhyFinessPart.php'">
-                            <h1>Change Home Page Why Fitness Part</h1>
-                        </div>
+
                     </div>
                 </div>
             </div>
