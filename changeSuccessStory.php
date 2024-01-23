@@ -110,20 +110,21 @@ if (isset($_SESSION["admin"])) {
                                 ?>
                                     <div class="col-12">
                                         <div class="row">
-                                            <div class="col-4 mt-3 mb-3">
-                                                <img src="<?php echo ($story_data["HS_image"]) ?>" style="width: 100%;" alt="">
-                                                <input type="file" id="storyImage<?php echo ($story_data["HS_id"]) ?>" class="visually-hidden">
+                                            <div class="col-4 mt-3 mb-3 d-grid">
+                                                <img src="<?php echo ($story_data["HS_image"]) ?>" style="width: 100%;" id="Cimage<?php echo ($story_data["HS_id"]) ?>">
+                                                <input type="file" id="storyImage<?php echo ($story_data["HS_id"]) ?>" onchange="ChangeStoryImage(<?php echo ($story_data['HS_id']) ?>);" class="visually-hidden">
                                                 <label for="storyImage<?php echo ($story_data["HS_id"]) ?>" class="btn btn-success">Change Image</label>
                                             </div>
                                             <div class="col-6 mt-3 d-grid">
-                                                <textarea name="" id="" cols="30" rows="10"></textarea>
-                                                <button class="btn btn-primary mt-3">Change paragraph</button>
+                                                <textarea name="" id="" cols="30" rows="10"><?php echo($story_data["Hs_text"])?></textarea>
+                                                <button class="btn btn-primary mt-3" onclick="changeStorypara('<?php echo ($story_data['HS_id']) ?>');">Change paragraph</button>
                                             </div>
                                             <div class="col-2 mt-3 d-grid">
                                                 <button class="btn btn-danger">Delete</button>
                                             </div>
                                         </div>
                                     </div>
+                                    <hr>
                                 <?php
 
                                 }
