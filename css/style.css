@@ -630,7 +630,167 @@
   object-fit: cover;
 }
 
+.Classes-AreaTopic {
+  color: white;
+  font-size: 500%;
+  font-family: fantasy;
+}
 
+.ClassAreaImages {
+  width: 100%;
+  height: 550px;
+  transition: 0.5s ease-in-out;
+  object-fit: cover;
+}
+.ClassAreaImages:hover {
+  width: 100%;
+  height: 550px;
+  transition: 0.5s ease-in-out;
+  transform: scale(1.2);
+}
+.classenames {
+  color: white;
+  font-weight: bold;
+  font-size: 500%;
+  font-family: serif;
+}
+
+.ViewClassesArrow {
+  color: white;
+  font: lighter;
+  font-size: larger;
+  transition: 0.5s ease-in-out;
+}
+
+.ViewClassesArrow:hover {
+  color: white;
+  font: lighter;
+  font-size: larger;
+  margin-left: 20px;
+}
+
+.classImageCover {
+  overflow: hidden;
+  position: relative;
+}
+
+.blackImageCover {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  clip-path: polygon(27% 0, 100% 0, 100% 100%, 0% 100%);
+  transition: 2s ease-in-out;
+}
+
+.blackImageCover.active {
+  margin-left: 100%;
+}
+
+.HeaderTabs {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.HeaderTabs:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+  cursor: pointer;
+}
+
+.HeaderTabs:hover:after {
+  width: 100%;
+  left: 0;
+  cursor: pointer;
+}
+
+.facilitiyAboutText {
+  font-size: 40px;
+  font-family: "Alinasi";
+}
+
+.facilitieImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.FirstDownToUPAnimation {
+  animation: FirstDownToUPAnimation 1.5s ease-in-out;
+}
+
+@keyframes FirstDownToUPAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.FirstUpToDownAnimation {
+  animation: FirstUpToDownAnimation 2.5s ease-in-out;
+}
+
+@keyframes FirstUpToDownAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+
+
+
+
+/* amasha css */
+.adminBackground{
+  display: flex;
+  background-color: gray;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.AdminLoginCard{
+  background-color: black;
+  border-radius: 50px;
+  border: 2px solid white;
+  box-shadow: 10px 10px 3px rgb(39, 37, 37) ;
+}
+
+.AdminTitle{
+  color: rgb(251, 251, 252); ;
+}
+
+.AdminText{
+  color: rgb(209, 206, 207); ;
+}
 
 
 
