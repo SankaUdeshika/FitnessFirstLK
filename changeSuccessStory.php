@@ -120,7 +120,7 @@ if (isset($_SESSION["admin"])) {
                                                 <button class="btn btn-primary mt-3" onclick="changeStorypara('<?php echo ($story_data['HS_id']) ?>');">Change paragraph</button>
                                             </div>
                                             <div class="col-2 mt-3 d-grid">
-                                                <button class="btn btn-danger">Delete</button>
+                                                <button class="btn btn-danger" onclick="DeleteStoryInfo('<?php echo ($story_data['HS_id']) ?>');">Delete</button>
                                             </div>
                                         </div>
                                     </div>

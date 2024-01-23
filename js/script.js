@@ -484,3 +484,24 @@ function changeStorypara(id) {
   request.open("POST", "BackEndProcess.php", true);
   request.send(form);
 }
+
+// admin Delete Story progress
+function DeleteStoryInfo(id) {
+  var command = "DeleteStoryInfo";
+  var id = id;
+
+  var form = new FormData();
+  form.append("command", command);
+  form.append("id", id);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      alert(response);
+      window.location.reload();
+    }
+  };
+  request.open("POST", "BackEndProcess.php", true);
+  request.send(form);
+}

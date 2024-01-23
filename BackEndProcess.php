@@ -261,4 +261,8 @@ if ($command == "adminChangePassword") {
         Database::search("UPDATE `homestories` SET `Hs_text` = '" . $text . "' WHERE `HS_id` = '" . $id . "' ");
         echo ("Update Success");
     }
+} else if ($command == "DeleteStoryInfo") { // admin change story para
+    $id = $_POST["id"];
+    Database::iud("DELETE FROM `homestories` WHERE `HS_id` = '" . $id . "' ");
+    echo ("Delete Success");
 }
