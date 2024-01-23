@@ -392,13 +392,10 @@ function changeWhyImage(id) {
   var command = "changeWhyImage";
   var file = document.getElementById("why" + id);
 
-
   var form = new FormData();
   form.append("command", command);
   form.append("id", id);
   form.append("file", file.files[0]);
-
-
 
   var request = new XMLHttpRequest();
   request.onreadystatechange = function () {
@@ -412,6 +409,27 @@ function changeWhyImage(id) {
       } else {
         alert(response);
       }
+    }
+  };
+  request.open("POST", "BackEndProcess.php", true);
+  request.send(form);
+}
+
+// change why text in hOme page
+function changeWhyText(id) {
+  var text = document.getElementById("whyText" + id).value;
+  var command = "changeWhytext";
+
+  var form = new FormData();
+  form.append("command", command);
+  form.append("id", id);
+  form.append("text", text);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      alert(response);
     }
   };
   request.open("POST", "BackEndProcess.php", true);

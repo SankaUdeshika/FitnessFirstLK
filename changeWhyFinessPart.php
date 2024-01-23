@@ -113,8 +113,8 @@ if (isset($_SESSION["admin"])) {
                                         <label for="why<?php echo ($Data_data["HWF_id"]) ?>" class="btn btn-primary">Change Image</label>
                                     </div>
                                     <div class="col-4 d-grid mt-3">
-                                        <input type="text" class="text-center" value="<?php echo ($Data_data["HWF_text"]) ?>">
-                                        <button class="btn btn-success">Change Text</button>
+                                        <input type="text" class="text-center" value="<?php echo ($Data_data["HWF_text"]) ?>" id="whyText<?php echo ($Data_data["HWF_id"]) ?>">
+                                        <button class="btn btn-success" onclick="changeWhyText(<?php echo ($Data_data['HWF_id']) ?>);">Change Text</button>
                                     </div>
                                     <div class="col-2 d-grid mt-3">
                                         <button class="btn btn-danger">Delete</button>

@@ -153,7 +153,6 @@ if ($command == "adminChangePassword") {
 
     Database::iud("DELETE FROM `homeaboutlist` WHERE `HAL_id` = '" . $id . "' ");
     echo ("Delete Success");
-    
 } else if ($command == "changeWhyImage") { // admin change why Image
     if (!empty($_FILES["file"])) {
 
@@ -198,5 +197,14 @@ if ($command == "adminChangePassword") {
         }
     } else {
         echo ("Please Select a Image");
+    }
+} else if ($command == "changeWhytext") { // admin change why text
+    if (empty($_POST["text"])) {
+        echo ("Please Enter a text");
+    } else {
+        $text = $_POST["text"];
+        $id = $_POST["id"];
+        Database::search("UPDATE `homewhyfitness` SET `HWF_text` = '" . $text . "' WHERE `HWF_id` = '" . $id . "' ");
+        echo ("Update Success");
     }
 }
