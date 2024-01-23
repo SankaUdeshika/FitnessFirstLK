@@ -95,20 +95,46 @@ if (isset($_SESSION["admin"])) {
                                 </div>
                             </div>
                         </div>
-
                         <!-- content -->
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeCarouselImage.php'">
-                            <h1>Home Page Change Carousel Image</h1>
+
+                        <!-- laod Story -->
+                        <div class="col-">
+                            <div class="row">
+                                <?php
+                                $Story_rs = Database::search("SELECT * FROM `homestories` ");
+                                $story_num = $Story_rs->num_rows;
+
+                                for ($i = 0; $i < $story_num; $i++) {
+                                    $story_data = $Story_rs->fetch_assoc();
+
+                                ?>
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-4 mt-3 mb-3">
+                                                <img src="<?php echo ($story_data["HS_image"]) ?>" style="width: 100%;" alt="">
+                                                <input type="file" id="storyImage<?php echo ($story_data["HS_id"]) ?>" class="visually-hidden">
+                                                <label for="storyImage<?php echo ($story_data["HS_id"]) ?>" class="btn btn-success">Change Image</label>
+                                            </div>
+                                            <div class="col-6 mt-3 d-grid">
+                                                <textarea name="" id="" cols="30" rows="10"></textarea>
+                                                <button class="btn btn-primary mt-3">Change paragraph</button>
+                                            </div>
+                                            <div class="col-2 mt-3 d-grid">
+                                                <button class="btn btn-danger">Delete</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php
+
+                                }
+                                ?>
+                            </div>
                         </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeHomePage.php'">
-                            <h1>Home Page About Change</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeWhyFinessPart.php'">
-                            <h1>Change Home Page Why Fitness Part</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeSuccessStory.php'">
-                            <h1>Change Home Success Box</h1>
-                        </div>
+
+
+
+
+
                     </div>
                 </div>
             </div>
