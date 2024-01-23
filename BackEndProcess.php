@@ -252,4 +252,13 @@ if ($command == "adminChangePassword") {
     } else {
         echo ("Please Select a Image");
     }
+} else if ($command == "changeStroyPara") { // admin change story para
+    if (empty($_POST["text"])) {
+        echo ("Please Enter a text");
+    } else {
+        $text = $_POST["text"];
+        $id = $_POST["id"];
+        Database::search("UPDATE `homestories` SET `Hs_text` = '" . $text . "' WHERE `HS_id` = '" . $id . "' ");
+        echo ("Update Success");
+    }
 }

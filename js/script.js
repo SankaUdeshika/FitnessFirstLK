@@ -463,3 +463,24 @@ function ChangeStoryImage(id) {
   request.open("POST", "BackEndProcess.php", true);
   request.send(form);
 }
+
+// admin Change story para
+function changeStorypara(id) {
+  var text = document.getElementById("storypara" + id).value;
+  var command = "changeStroyPara";
+
+  var form = new FormData();
+  form.append("command", command);
+  form.append("id", id);
+  form.append("text", text);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      alert(response);
+    }
+  };
+  request.open("POST", "BackEndProcess.php", true);
+  request.send(form);
+}

@@ -116,7 +116,7 @@ if (isset($_SESSION["admin"])) {
                                                 <label for="storyImage<?php echo ($story_data["HS_id"]) ?>" class="btn btn-success">Change Image</label>
                                             </div>
                                             <div class="col-6 mt-3 d-grid">
-                                                <textarea name="" id="" cols="30" rows="10"><?php echo($story_data["Hs_text"])?></textarea>
+                                                <textarea name="" id="storypara<?php echo ($story_data["HS_id"]) ?>" cols="30" rows="10"><?php echo($story_data["Hs_text"])?></textarea>
                                                 <button class="btn btn-primary mt-3" onclick="changeStorypara('<?php echo ($story_data['HS_id']) ?>');">Change paragraph</button>
                                             </div>
                                             <div class="col-2 mt-3 d-grid">
