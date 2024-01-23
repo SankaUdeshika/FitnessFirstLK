@@ -505,3 +505,34 @@ function DeleteStoryInfo(id) {
   request.open("POST", "BackEndProcess.php", true);
   request.send(form);
 }
+
+// View Change image in adding Story Box part
+function ViewStoryImage() {
+  var ViewImage = document.getElementById("ViewImage");
+  var ImageInput = document.getElementById("ImageInput");
+  urlFile = ImageInput.files[0];
+  url = window.URL.createObjectURL(urlFile);
+  ViewImage.src = url;
+}
+
+function addStoryBox() {
+  var command = "AddStoryBox";
+  var file = document.getElementById("ImageInput");
+  var storyparainput = document.getElementById("storyparainput").value;
+
+  var form = new FormData();
+  form.append("command", command);
+  form.append("storyparainput", storyparainput);
+  form.append("file", file.files[0]);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      alert(response);
+      window.location.reload();
+    }
+  };
+  request.open("POST", "BackEndProcess.php", true);
+  request.send(form);
+}

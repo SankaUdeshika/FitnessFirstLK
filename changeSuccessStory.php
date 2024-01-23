@@ -96,6 +96,28 @@ if (isset($_SESSION["admin"])) {
                             </div>
                         </div>
                         <!-- content -->
+                        <!-- adding Story  -->
+
+                        <div class="col-12 bg-dark text-white">
+                            <div class="row">
+                                <div class="col-12 mb-3">
+                                    <div class="row">
+                                        <div class="col-4 mt-3 mb-3 d-grid">
+                                            <img src="Resources/images/LOGO/addImage (2).png" style="width: 100%;" id="ViewImage">
+                                            <input type="file" id="ImageInput" onchange="ViewStoryImage();" class="visually-hidden">
+                                            <label for="ImageInput" class="btn btn-success">Add Image</label>
+                                        </div>
+                                        <div class="col-6 mt-3 d-grid">
+                                            <textarea name="" placeholder="Enter a Paragraph" id="storyparainput" cols="30" rows="10"></textarea>
+                                        </div>
+                                        <div class="col-2 mt-3 d-grid">
+                                            <button class="btn btn-info" onclick="addStoryBox();">Add Story Box</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
 
                         <!-- laod Story -->
                         <div class="col-">
@@ -116,7 +138,7 @@ if (isset($_SESSION["admin"])) {
                                                 <label for="storyImage<?php echo ($story_data["HS_id"]) ?>" class="btn btn-success">Change Image</label>
                                             </div>
                                             <div class="col-6 mt-3 d-grid">
-                                                <textarea name="" id="storypara<?php echo ($story_data["HS_id"]) ?>" cols="30" rows="10"><?php echo($story_data["Hs_text"])?></textarea>
+                                                <textarea name="" id="storypara<?php echo ($story_data["HS_id"]) ?>" cols="30" rows="10"><?php echo ($story_data["Hs_text"]) ?></textarea>
                                                 <button class="btn btn-primary mt-3" onclick="changeStorypara('<?php echo ($story_data['HS_id']) ?>');">Change paragraph</button>
                                             </div>
                                             <div class="col-2 mt-3 d-grid">

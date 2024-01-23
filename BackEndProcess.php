@@ -265,4 +265,46 @@ if ($command == "adminChangePassword") {
     $id = $_POST["id"];
     Database::iud("DELETE FROM `homestories` WHERE `HS_id` = '" . $id . "' ");
     echo ("Delete Success");
+} else if ($command == "AddStoryBox") { // admin add Story box
+    if (!empty($_FILES["file"])) {
+
+        $ImageFile = $_FILES["file"];
+        $ImageType = $ImageFile["type"];
+
+
+        $allowed_Image_extentions = array("image/jpg", "image/jpeg", "image/png", "image/svg+xml");
+
+        if (in_array($ImageType, $allowed_Image_extentions)) {
+
+            $NewImage_Extention;
+            if ($ImageType == "image/jpg") {
+                $NewImage_Extention = ".jpg";
+            } else  if ($ImageType == "image/jpeg") {
+                $NewImage_Extention = ".jpeg";
+            } else  if ($ImageType == "image/png") {
+                $NewImage_Extention = ".png";
+            } else  if ($ImageType == "image/svg+xml") {
+                $NewImage_Extention = ".svg";
+            }
+
+
+            if (!empty($_POST["storyparainput"])) {
+                $oldImage_rs = Database::search("SELECT * FROM `homestories` ");
+                $oldImage_num = $oldImage_rs->num_rows;
+                $id = $oldImage_num + 1;
+                $para = $_POST["storyparainput"];
+                $newImageName = "Resources//images//storyboxImage//story" . $id . $NewImage_Extention;
+
+                Database::iud("INSERT INTO `homestories` (`HS_id`,`HS_image`,`Hs_text`) VALUES('".$id."','".$newImageName."','".$para."')");
+                move_uploaded_file($ImageFile["tmp_name"], $newImageName);
+                echo ("Adding Success");
+            } else {
+                echo ("Please Enter  Paragraph");
+            }
+        } else {
+            echo ("Please Select Valid Image Extention");
+        }
+    } else {
+        echo ("Please Select a Image");
+    }
 }
