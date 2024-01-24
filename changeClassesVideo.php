@@ -97,20 +97,45 @@ if (isset($_SESSION["admin"])) {
                         </div>
 
                         <!-- content -->
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeCarouselImage.php'">
-                            <h1>Home Page Change Carousel Image</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeHomePage.php'">
-                            <h1>Home Page About Change</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeWhyFinessPart.php'">
-                            <h1>Change Home Page Why Fitness Part</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeSuccessStory.php'">
-                            <h1>Change Home Success Box</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-danger" onclick="window.location = 'changeClassesVideo.php'">
-                            <h1>Change Classes Video part</h1>
+                        <!-- laod Story -->
+                        <div class="col-12 bg-dark mb-3">
+                            <div class="row">
+
+                                <?php
+                                $classesVideo_rs = Database::search("SELECT * FROM `classesvideo`");
+                                $classesVideo_data = $classesVideo_rs->fetch_assoc();
+
+                                ?>
+                                <div class="col-4 mt-3 d-grid">
+                                    <video width="320" id="vidoeView" height="240" enctype="multipart/form-data" controls>
+                                        <source  src="<?php echo ($classesVideo_data["CV_path"]) ?>" type="video/mp4">
+                                    </video>
+                                    <input type="file" onchange="VideoChange();" class="visually-hidden" id="Video" value="<?php echo ($classesVideo_data["CV_path"]) ?>">
+                                    <label for="Video" class="btn btn-info">Change Video</label>
+                                </div>
+                                <div class="col-6 ">
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <label for="">Enter Topic</label>
+                                            <input type="text" class="form-control" id="topic" value="<?php echo ($classesVideo_data["CV_topic"]) ?>">
+                                        </div>
+
+                                        <!--  -->
+                                        <div class="col-10">
+                                            <textarea name="" style="width: 100%;" id="para" cols="30" rows="10"><?php echo ($classesVideo_data["CV_para"]) ?></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2 ">
+                                    <div class="col-12 d-grid">
+                                        <button class="btn btn-primary" onclick="ChangeClassesVideoandPara();">Upload Changes</button>
+                                    </div>
+                                </div>
+                                <?php
+
+                                ?>
+
+                            </div>
                         </div>
                     </div>
                 </div>

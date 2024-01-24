@@ -295,7 +295,7 @@ if ($command == "adminChangePassword") {
                 $para = $_POST["storyparainput"];
                 $newImageName = "Resources//images//storyboxImage//story" . $id . $NewImage_Extention;
 
-                Database::iud("INSERT INTO `homestories` (`HS_id`,`HS_image`,`Hs_text`) VALUES('".$id."','".$newImageName."','".$para."')");
+                Database::iud("INSERT INTO `homestories` (`HS_id`,`HS_image`,`Hs_text`) VALUES('" . $id . "','" . $newImageName . "','" . $para . "')");
                 move_uploaded_file($ImageFile["tmp_name"], $newImageName);
                 echo ("Adding Success");
             } else {
@@ -307,4 +307,4 @@ if ($command == "adminChangePassword") {
     } else {
         echo ("Please Select a Image");
     }
-}
+} 

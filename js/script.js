@@ -515,6 +515,7 @@ function ViewStoryImage() {
   ViewImage.src = url;
 }
 
+// admin Add Story Box
 function addStoryBox() {
   var command = "AddStoryBox";
   var file = document.getElementById("ImageInput");
@@ -534,5 +535,38 @@ function addStoryBox() {
     }
   };
   request.open("POST", "BackEndProcess.php", true);
+  request.send(form);
+}
+
+function VideoChange() {
+  var ViewVideo = document.getElementById("vidoeView");
+  var vidoeInput = document.getElementById("Video");
+  urlFile = vidoeInput.files[0];
+  url = window.URL.createObjectURL(urlFile);
+  ViewVideo.src = url;
+}
+
+//admin change Video and Para And Topic in classes
+function ChangeClassesVideoandPara() {
+  var command = "changeclassVodeoPara";
+  var file = document.getElementById("Video");
+  var topic = document.getElementById("topic").value;
+  var para = document.getElementById("para").value;
+
+  var form = new FormData();
+  form.append("command", command);
+  form.append("topic", topic);
+  form.append("para", para);
+  form.append("file", file.files[0]);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      alert(response);
+      // window.location.reload();
+    }
+  };
+  request.open("POST", "GetBackEndProcess.php", true);
   request.send(form);
 }
