@@ -97,24 +97,50 @@ if (isset($_SESSION["admin"])) {
                         </div>
 
                         <!-- content -->
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeCarouselImage.php'">
-                            <h1>Home Page Change Carousel Image</h1>
+                        <!-- classes -->
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12">
+                                    <span class="fw-bold fs-1 text-white">Classes Page Top Image</span>
+                                </div>
+                                <div class="col-12">
+                                    <?php
+                                    $Classes_rs = Database::search("SELECT * FROM `classestopimage` WHERE `CTI_id` = '1'");
+                                    $Classes_data = $Classes_rs->fetch_assoc();
+                                    ?>
+                                    <img src="<?php echo ($Classes_data["CTI_path"]) ?>" id="Cimage1" style="width: 100%; height: 200px; background-size: cover; background-position: center; object-fit: cover;" alt="">
+                                    <input type="file" onchange="ChangeTopImage('1');" id="TopImage1" class="visually-hidden">
+                                </div>
+                                <div class="col-12 mt-1 d-grid d-flex justify-content-center">
+                                    <label for="TopImage1" class="btn btn-success" >Change Image</label>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeHomePage.php'">
-                            <h1>Home Page About Change</h1>
+
+
+                        <hr class="fw-bold fs-1 mt-3 mb-3">
+
+                        <!-- blog -->
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12">
+                                    <span class="fw-bold fs-1 text-white">Blog Page Top Image</span>
+                                </div>
+                                <div class="col-12">
+                                    <?php
+                                    $Classes_rs = Database::search("SELECT * FROM `classestopimage` WHERE `CTI_id` = '2'");
+                                    $Classes_data = $Classes_rs->fetch_assoc();
+                                    ?>
+                                    <img src="<?php echo ($Classes_data["CTI_path"]) ?>" id="Cimage2" style="width: 100%; height: 200px; background-size: cover; background-position: center; object-fit: cover;" alt="">
+                                    <input type="file" onchange="ChangeTopImage('2');" id="TopImage2" class="visually-hidden">
+                                </div>
+                                <div class="col-12 mt-1 d-grid d-flex justify-content-center">
+                                    <label for="TopImage2" class="btn btn-success" >Change Image</label>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeWhyFinessPart.php'">
-                            <h1>Change Home Page Why Fitness Part</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeSuccessStory.php'">
-                            <h1>Change Home Success Box</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-danger" onclick="window.location = 'changeClassesVideo.php'">
-                            <h1>Change Classes Video part</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-danger" onclick="window.location = 'changeClassesTopImage.php'">
-                            <h1>Change Classes Top Image</h1>
-                        </div>
+
+
                     </div>
                 </div>
             </div>
