@@ -431,7 +431,7 @@ if ($command == "adminChangePassword") {
     $id = $_POST["id"];
     Database::search(" DELETE FROM `facilitiesfeatures` WHERE `FF_id` = '" . $id . "' ");
     echo ("Delete Success");
-} else if ($command == "ChangePremiumImage") { // admin Delete Facilities Features
+} else if ($command == "ChangePremiumImage") { // admin change primeum Facilities Features Image
     if (!empty($_FILES["file"])) {
 
         $ImageFile = $_FILES["file"];
@@ -475,5 +475,18 @@ if ($command == "adminChangePassword") {
         }
     } else {
         echo ("Please Select a Image");
+    }
+} else if ($command == "changePfacilitiesinof") { // admin Change premium Facilities Infomations
+
+    if (empty($_POST["topic"])) {
+        echo ("Please Enter a topic");
+    } else if (empty($_POST["para"])) {
+        echo ("Please Enter a paragraph");
+    } else {
+        $topic = $_POST["topic"];
+        $para = $_POST["para"];
+        $id = $_POST["id"];
+        Database::search("UPDATE `premiumfacilities` SET `ImageHeadline` = '" . $topic . "' , `ImagePara` = '".$para."' WHERE `PF_id` = '" . $id . "' ");
+        echo ("Update Success");
     }
 }

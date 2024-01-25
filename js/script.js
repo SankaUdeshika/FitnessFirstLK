@@ -740,3 +740,27 @@ function ChangePremiumImage(id) {
   request.open("POST", "BackEndProcess.php", true);
   request.send(form);
 }
+
+// admin Change Premium faciliteis infomations
+function changefacilitiesInfomations(id) {
+  var command = "changePfacilitiesinof";
+  var topic = document.getElementById("faTopic"+id).value;
+  var para = document.getElementById("fapara"+id).value;
+
+  var form = new FormData();
+  form.append("command", command);
+  form.append("topic", topic);
+  form.append("para", para);
+  form.append("id", id);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      alert(response);
+      window.location.reload();
+    }
+  };
+  request.open("POST", "BackEndProcess.php", true);
+  request.send(form);
+}

@@ -190,13 +190,13 @@ if (isset($_SESSION["admin"])) {
                                                     <div class="col-12">
                                                     </div>
                                                     <div class="col-12 p-3">
-                                                        <input type="text" class="form-control" id="faTopic" value="<?php echo ($iamge_data["ImageHeadline"]) ?>">
+                                                        <input type="text" class="form-control" id="faTopic<?php echo ($iamge_data['PF_id']) ?>" value="<?php echo ($iamge_data["ImageHeadline"]) ?>">
                                                     </div>
                                                     <div class="col-12 ">
-                                                        <textarea name="" id="" style="width: 100%;" cols="30" rows="10"><?php echo ($iamge_data["ImagePara"]) ?></textarea>
+                                                        <textarea name="" id="fapara<?php echo ($iamge_data['PF_id']) ?>" style="width: 100%;" cols="30" rows="10"><?php echo ($iamge_data["ImagePara"]) ?></textarea>
                                                     </div>
                                                     <div class="col-12 d-grid">
-                                                        <button class="fw-bold btn btn-outline-dark">Change Infomations</button>
+                                                        <button class="fw-bold btn btn-outline-dark" onclick="changefacilitiesInfomations('<?php echo ($iamge_data['PF_id']) ?>');">Change Infomations</button>
                                                     </div>
                                                 </div>
                                             </div>
