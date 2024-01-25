@@ -121,7 +121,7 @@ if (isset($_SESSION["admin"])) {
 
                         <hr class="mt-5 mb-5">
 
-                        <!-- <div class="col-12">
+                        <div class="col-12">
                             <div class="row">
 
                                 <div class="col-12">
@@ -129,13 +129,43 @@ if (isset($_SESSION["admin"])) {
                                 </div>
                                 <div class="col-6">
                                     <div class="col-12">
-                                        <span>Add Feut</span>
+                                        <span>Add Features</span>
+                                    </div>
+                                    <div class="col-12">
+                                        <input type="text" class="form-control" id="addFeaturesInput" placeholder="Enter Features">
+                                    </div>
+                                    <div class="col-12 mt-1">
+                                        <button class="btn btn-primary" onclick="addFeaturess();">Add +</button>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="row">
+                                        <?php
+                                        $List_rs = Database::search("SELECT * FROM `facilitiesfeatures` ");
+                                        $list_num = $List_rs->num_rows;
+
+                                        for ($i = 0; $i < $list_num; $i++) {
+                                            $list_data = $List_rs->fetch_assoc();
+                                        ?>
+
+                                            <div class="col-2 mb-3">
+                                                <button class="btn btn-danger" onclick="DeleteFacilites('<?php echo ($list_data['FF_id']) ?>');">Delete</button>
+                                            </div>
+                                            <div class="col-10 mt-2">
+                                                <span id="FeutreView<?php echo ("FF_id") ?>"><?php echo ($list_data["text"]) ?></span>
+                                            </div>
+                                            <hr>
+                                        <?php
+                                        }
+
+                                        ?>
                                     </div>
                                 </div>
 
 
                             </div>
-                        </div> -->
+                        </div>
 
 
 

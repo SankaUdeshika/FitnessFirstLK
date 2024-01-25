@@ -418,4 +418,18 @@ if ($command == "adminChangePassword") {
         Database::search("UPDATE `facilitiesabout` SET `AboutPara` = '" . $About . "'  WHERE `FA_id` = '1' ");
         echo ("Update Success");
     }
+} else if ($command == "addFacilitiesFeutrues") { // admin add Facilities Features
+
+    if (empty($_POST["Text"])) {
+        echo ("Please Enter a text");
+    } else {
+        $text = $_POST["Text"];
+        Database::search(" INSERT INTO `facilitiesfeatures` (`text`) VALUES('" . $text . "') ");
+        echo ("Update Success");
+    }
+} else if ($command == "DeleteFacilitiesFeatures") { // admin Delete Facilities Features
+    $id = $_POST["id"];
+    Database::search(" DELETE FROM `facilitiesfeatures` WHERE `FF_id` = '" . $id . "' ");
+    echo ("Delete Success");
+
 }

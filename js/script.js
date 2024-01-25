@@ -671,3 +671,44 @@ function ChangeFacilitiesPara() {
   request.open("POST", "BackEndProcess.php", true);
   request.send(form);
 }
+
+// admin add Facilities Feutures
+function addFeaturess() {
+  var command = "addFacilitiesFeutrues";
+  var Text = document.getElementById("addFeaturesInput").value;
+
+  var form = new FormData();
+  form.append("command", command);
+  form.append("Text", Text);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      alert(response);
+      window.location.reload();
+    }
+  };
+  request.open("POST", "BackEndProcess.php", true);
+  request.send(form);
+}
+
+// admin Delete Facilities Features
+function DeleteFacilites(id) {
+  var command = "DeleteFacilitiesFeatures";
+
+  var form = new FormData();
+  form.append("command", command);
+  form.append("id", id);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      alert(response);
+      window.location.reload();
+    }
+  };
+  request.open("POST", "BackEndProcess.php", true);
+  request.send(form);
+}
