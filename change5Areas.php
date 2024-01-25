@@ -97,27 +97,50 @@ if (isset($_SESSION["admin"])) {
                         </div>
 
                         <!-- content -->
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeCarouselImage.php'">
-                            <h1>Home Page Change Carousel Image</h1>
+
+                        <div class="col-12">
+                            <div class="row">
+                                <?php
+                                $Areas_rs = Database::search("SELECT * FROM `clasessareas` ");
+                                $Areas_num = $Areas_rs->num_rows;
+
+                                for ($i = 0; $i < $Areas_num; $i++) {
+                                    $Areas_data = $Areas_rs->fetch_assoc();
+                                ?>
+                                    <div class="col-6">
+                                        <img src="<?php echo ($Areas_data["CA_image"]) ?>" id="Cimage<?php echo ($Areas_data["CA_id"]) ?>" style="width: 100%;">
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <span>Name</span>
+                                                <input type="text" class="form-control" id="Name<?php echo ($Areas_data["CA_id"]) ?>" value="<?php echo ($Areas_data["CA_text"]) ?>">
+                                            </div>
+                                            <div class="col-12">
+                                                <span>Class</span>
+                                                <input type="number" class="form-control" id="Number<?php echo ($Areas_data["CA_id"]) ?>" value="<?php echo ($Areas_data["CA_classes_NO"]) ?>">
+                                            </div>
+                                            <div class="col-12 mt-4">
+                                                <div class="row">
+                                                    <div class="col-6 d-grid">
+                                                        <input type="file" class="visually-hidden" onchange="ChangeAreasImage('<?php echo ($Areas_data['CA_id']) ?>')" id="ImageInput<?php echo ($Areas_data["CA_id"]) ?>">
+                                                        <label for="ImageInput<?php echo ($Areas_data["CA_id"]) ?>" class="btn btn-primary" >Change Image</label>
+                                                    </div>
+                                                    <div class="col-6 d-grid">
+                                                        <button class="btn btn-info">Change Text</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php
+                                }
+
+                                ?>
+                            </div>
                         </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeHomePage.php'">
-                            <h1>Home Page About Change</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeWhyFinessPart.php'">
-                            <h1>Change Home Page Why Fitness Part</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeSuccessStory.php'">
-                            <h1>Change Home Success Box</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-danger" onclick="window.location = 'changeClassesTopImage.php'">
-                            <h1>Change Top Image in evey sub Page</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-danger" onclick="window.location = 'changeClassesVideo.php'">
-                            <h1>Change Classes Video part</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-danger" onclick="window.location = 'change5Areas.php'">
-                            <h1>Change 5 Areas</h1>
-                        </div>
+
+
                     </div>
                 </div>
             </div>

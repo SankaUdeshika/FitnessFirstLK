@@ -352,4 +352,49 @@ if ($command == "adminChangePassword") {
     } else {
         echo ("Please Select a Image");
     }
+} else if ($command == "ChangeAreaImage") { // admin change Areas Image
+    if (!empty($_FILES["file"])) {
+
+        $ImageFile = $_FILES["file"];
+        $ImageType = $ImageFile["type"];
+        $id = $_POST["id"];
+
+
+        $allowed_Image_extentions = array("image/jpg", "image/jpeg", "image/png", "image/svg+xml");
+
+        if (in_array($ImageType, $allowed_Image_extentions)) {
+
+            $NewImage_Extention;
+            if ($ImageType == "image/jpg") {
+                $NewImage_Extention = ".jpg";
+            } else  if ($ImageType == "image/jpeg") {
+                $NewImage_Extention = ".jpeg";
+            } else  if ($ImageType == "image/png") {
+                $NewImage_Extention = ".png";
+            } else  if ($ImageType == "image/svg+xml") {
+                $NewImage_Extention = ".svg";
+            }
+
+            $newImageName = "Resources//images//Areas//Area" . $id . $NewImage_Extention;
+
+            $oldImage_rs = Database::search("SELECT * FROM `clasessareas` WHERE `CA_id` = '" . $id . "' ");
+            $oldImage_num = $oldImage_rs->num_rows;
+            $oldImage_data = $oldImage_rs->fetch_assoc();
+
+            if ($oldImage_num == "1") {
+                unlink($oldImage_data["CA_image"]);
+                move_uploaded_file($ImageFile["tmp_name"], $newImageName);
+                Database::iud("UPDATE `clasessareas` SET `CA_image` = '" . $newImageName . "' WHERE `CA_id` = '" . $id . "'");
+                echo ("Update Success");
+            } else {
+                move_uploaded_file($ImageFile["tmp_name"], $newImageName);
+                Database::iud("UPDATE `clasessareas` SET `CA_image` = '" . $newImageName . "' WHERE `CA_id` = '" . $id . "'");
+                echo ("Update Success");
+            }
+        } else {
+            echo ("Please Select Valid Image Extention");
+        }
+    } else {
+        echo ("Please Select a Image");
+    }
 }
