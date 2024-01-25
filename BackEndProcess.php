@@ -397,4 +397,16 @@ if ($command == "adminChangePassword") {
     } else {
         echo ("Please Select a Image");
     }
+} else if ($command == "ChangeAreaInfo") { // admin change Areas Image
+    if (empty($_POST["Name"])) {
+        echo ("Please Enter a Name");
+    } else     if (empty($_POST["Number"])) {
+        echo ("Please Enter a Number");
+    } else {
+        $Name = $_POST["Name"];
+        $Number = $_POST["Number"];
+        $id = $_POST["id"];
+        Database::search("UPDATE `clasessareas` SET `CA_text` = '" . $Name . "' , `CA_classes_NO` = '" . $Number . "' WHERE `CA_id` = '" . $id . "' ");
+        echo ("Update Success");
+    }
 }

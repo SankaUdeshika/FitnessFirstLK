@@ -124,10 +124,10 @@ if (isset($_SESSION["admin"])) {
                                                 <div class="row">
                                                     <div class="col-6 d-grid">
                                                         <input type="file" class="visually-hidden" onchange="ChangeAreasImage('<?php echo ($Areas_data['CA_id']) ?>')" id="ImageInput<?php echo ($Areas_data["CA_id"]) ?>">
-                                                        <label for="ImageInput<?php echo ($Areas_data["CA_id"]) ?>" class="btn btn-primary" >Change Image</label>
+                                                        <label for="ImageInput<?php echo ($Areas_data["CA_id"]) ?>" class="btn btn-primary">Change Image</label>
                                                     </div>
                                                     <div class="col-6 d-grid">
-                                                        <button class="btn btn-info">Change Text</button>
+                                                        <button class="btn btn-info" onclick="ChangeAreasInfo('<?php echo ($Areas_data['CA_id']) ?>')">Change infomations</button>
                                                     </div>
                                                 </div>
                                             </div>
