@@ -650,3 +650,24 @@ function ChangeAreasInfo(id) {
   request.open("POST", "BackEndProcess.php", true);
   request.send(form);
 }
+
+// admin Change Facilities about paragraph
+function ChangeFacilitiesPara() {
+  var command = "ChangeFacilitiesAboutPara";
+  var About = document.getElementById("Fabout").value;
+
+  var form = new FormData();
+  form.append("command", command);
+  form.append("About", About);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      alert(response);
+      window.location.reload();
+    }
+  };
+  request.open("POST", "BackEndProcess.php", true);
+  request.send(form);
+}

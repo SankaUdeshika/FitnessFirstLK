@@ -409,4 +409,13 @@ if ($command == "adminChangePassword") {
         Database::search("UPDATE `clasessareas` SET `CA_text` = '" . $Name . "' , `CA_classes_NO` = '" . $Number . "' WHERE `CA_id` = '" . $id . "' ");
         echo ("Update Success");
     }
+} else if ($command == "ChangeFacilitiesAboutPara") { // admin change Fitness About Para
+
+    if (empty($_POST["About"])) {
+        echo ("Please Enter a Paragraph");
+    } else {
+        $About = $_POST["About"];
+        Database::search("UPDATE `facilitiesabout` SET `AboutPara` = '" . $About . "'  WHERE `FA_id` = '1' ");
+        echo ("Update Success");
+    }
 }

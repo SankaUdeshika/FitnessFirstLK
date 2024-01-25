@@ -97,30 +97,50 @@ if (isset($_SESSION["admin"])) {
                         </div>
 
                         <!-- content -->
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeCarouselImage.php'">
-                            <h1>Home Page Change Carousel Image</h1>
+
+                        <div class="col-12">
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <h1>Facilities About </h1>
+                                </div>
+
+                                <?php
+                                $FA_rs = Database::Search("SELECT * FROM `facilitiesabout` ");
+                                $FA_data = $FA_rs->fetch_assoc();
+
+                                ?>
+                                <div class="col-12">
+                                    <textarea name="" style="width: 100%;" id="Fabout" cols="30" rows="10"><?php echo ($FA_data["AboutPara"]) ?></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-success" onclick="ChangeFacilitiesPara();">Change Paragraph</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeHomePage.php'">
-                            <h1>Home Page About Change</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeWhyFinessPart.php'">
-                            <h1>Change Home Page Why Fitness Part</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeSuccessStory.php'">
-                            <h1>Change Home Success Box</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-danger" onclick="window.location = 'changeClassesTopImage.php'">
-                            <h1>Change Top Image in evey sub Page</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-danger" onclick="window.location = 'changeClassesVideo.php'">
-                            <h1>Change Classes Video part</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-danger" onclick="window.location = 'change5Areas.php'">
-                            <h1>Change 5 Areas</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-primary" onclick="window.location = 'ChangeFacilitiesAbout.php'">
-                            <h1>Change Facilities Features</h1>
-                        </div>
+
+                        <hr class="mt-5 mb-5">
+
+                        <!-- <div class="col-12">
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <h1>Facilities Features </h1>
+                                </div>
+                                <div class="col-6">
+                                    <div class="col-12">
+                                        <span>Add Feut</span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div> -->
+
+
+
+
+
                     </div>
                 </div>
             </div>
