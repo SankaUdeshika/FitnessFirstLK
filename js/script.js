@@ -712,3 +712,31 @@ function DeleteFacilites(id) {
   request.open("POST", "BackEndProcess.php", true);
   request.send(form);
 }
+
+// admin Change Premium Images on facilities Page
+function ChangePremiumImage(id) {
+  var command = "ChangePremiumImage";
+  var file = document.getElementById("ImageInput" + id);
+
+  var form = new FormData();
+  form.append("command", command);
+  form.append("id", id);
+  form.append("file", file.files[0]);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      if (response == "Update Success") {
+        var ImageView = document.getElementById("Cimage" + id);
+        urlFile = file.files[0];
+        url = window.URL.createObjectURL(urlFile);
+        ImageView.src = url;
+      } else {
+        alert(response);
+      }
+    }
+  };
+  request.open("POST", "BackEndProcess.php", true);
+  request.send(form);
+}

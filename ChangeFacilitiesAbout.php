@@ -123,7 +123,7 @@ if (isset($_SESSION["admin"])) {
 
                         <div class="col-12">
                             <div class="row">
-
+                                <!-- add Features -->
                                 <div class="col-12">
                                     <h1>Facilities Features </h1>
                                 </div>
@@ -139,6 +139,7 @@ if (isset($_SESSION["admin"])) {
                                     </div>
                                 </div>
 
+                                <!-- Delete Features -->
                                 <div class="col-6">
                                     <div class="row">
                                         <?php
@@ -161,6 +162,51 @@ if (isset($_SESSION["admin"])) {
 
                                         ?>
                                     </div>
+                                </div>
+
+                                <!-- Image Features -->
+                                <div class="col-12 mt-5">
+                                    <hr>
+                                    <div class="row">
+                                        <?php
+                                        $iamge_rs = Database::search("SELECT * FROM `premiumfacilities` ");
+                                        $image_num = $iamge_rs->num_rows;
+
+                                        for ($i = 0; $i < $image_num; $i++) {
+                                            $iamge_data = $iamge_rs->fetch_assoc();
+                                        ?>
+                                            <div class="col-3 m-4">
+                                                <div class="row">
+                                                    <div class="col-12 bg-info">
+                                                        <div class="col-12 d-grid">
+                                                            <label for="ImageInput<?php echo ($iamge_data["PF_id"]) ?>" class="btn btn-outline-dark">Change Image</label>
+                                                        </div>
+                                                        <div class="col-12 d-flex justify-content-center">
+                                                            <img src="<?php echo ($iamge_data["ImagePath"]) ?>" id="Cimage<?php echo ($iamge_data['PF_id']) ?>" style="width: 100%;">
+                                                            <input type="file" class="visually-hidden" onchange="ChangePremiumImage('<?php echo ($iamge_data['PF_id']) ?>');" id="ImageInput<?php echo ($iamge_data["PF_id"]) ?>">
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-12">
+                                                    </div>
+                                                    <div class="col-12 p-3">
+                                                        <input type="text" class="form-control" id="faTopic" value="<?php echo ($iamge_data["ImageHeadline"]) ?>">
+                                                    </div>
+                                                    <div class="col-12 ">
+                                                        <textarea name="" id="" style="width: 100%;" cols="30" rows="10"><?php echo ($iamge_data["ImagePara"]) ?></textarea>
+                                                    </div>
+                                                    <div class="col-12 d-grid">
+                                                        <button class="fw-bold btn btn-outline-dark">Change Infomations</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php
+                                        }
+
+                                        ?>
+                                    </div>
+
+
                                 </div>
 
 
