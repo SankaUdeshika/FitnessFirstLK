@@ -784,3 +784,24 @@ function ChangeFactoryImage() {
   request.open("POST", "BackEndProcess.php", true);
   request.send(form);
 }
+
+// admin change Factory Info
+function UpdateFactoryPara() {
+  var command = "ChangeFactoryInfo";
+  var para = document.getElementById("FFPara").value;
+
+  var form = new FormData();
+  form.append("command", command);
+  form.append("para", para);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      alert(response);
+      window.location.reload();
+    }
+  };
+  request.open("POST", "BackEndProcess.php", true);
+  request.send(form);
+}

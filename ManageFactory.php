@@ -113,10 +113,10 @@ if (isset($_SESSION["admin"])) {
                                     <label for="FactioryImageInput" class="btn btn-info">Change Image</label>
                                 </div>
                                 <div class="col-6">
-                                    <textarea name="" style="width: 100%;" cols="30" rows="9"><?php echo ($image_data["para"]) ?></textarea>
+                                    <textarea name="" id="FFPara" style="width: 100%;" cols="30" rows="9"><?php echo ($image_data["para"]) ?></textarea>
                                 </div>
                                 <div class="col-2">
-                                    <button class="btn btn-primary">Update Infomations</button>
+                                    <button class="btn btn-primary" onclick="UpdateFactoryPara();">Update Infomations</button>
                                 </div>
                             </div>
                         </div>

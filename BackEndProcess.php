@@ -490,7 +490,6 @@ if ($command == "adminChangePassword") {
         echo ("Update Success");
     }
 } else if ($command == "ChangeFactoryImage") { // admin Change Factory Items
-    echo ("OKOKO");
     if (!empty($_FILES["file"])) {
 
         $ImageFile = $_FILES["file"];
@@ -527,10 +526,18 @@ if ($command == "adminChangePassword") {
                 Database::iud("UPDATE `factoryimage` SET `iamgePath` = '" . $newImageName . "' WHERE `FI_id` = '1' ");
                 echo ("Update Success");
             }
-        } else {git
+        } else {
             echo ("Please Select Valid Image Extention");
         }
     } else {
         echo ("Please Select a Image");
+    }
+} else if ($command == "ChangeFactoryInfo") { // admin Change Factory para
+    if (empty($_POST["para"])) {
+        echo ("Please Enter a paragraph");
+    } else {
+        $para = $_POST["para"];
+        Database::search("UPDATE `factoryimage` SET `para` = '" . $para . "'  WHERE `FI_id` = '1' ");
+        echo ("Update Success");
     }
 }
