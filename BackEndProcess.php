@@ -486,7 +486,51 @@ if ($command == "adminChangePassword") {
         $topic = $_POST["topic"];
         $para = $_POST["para"];
         $id = $_POST["id"];
-        Database::search("UPDATE `premiumfacilities` SET `ImageHeadline` = '" . $topic . "' , `ImagePara` = '".$para."' WHERE `PF_id` = '" . $id . "' ");
+        Database::search("UPDATE `premiumfacilities` SET `ImageHeadline` = '" . $topic . "' , `ImagePara` = '" . $para . "' WHERE `PF_id` = '" . $id . "' ");
         echo ("Update Success");
+    }
+} else if ($command == "ChangeFactoryImage") { // admin Change Factory Items
+    echo ("OKOKO");
+    if (!empty($_FILES["file"])) {
+
+        $ImageFile = $_FILES["file"];
+        $ImageType = $ImageFile["type"];
+
+        $allowed_Image_extentions = array("image/jpg", "image/jpeg", "image/png", "image/svg+xml");
+
+        if (in_array($ImageType, $allowed_Image_extentions)) {
+
+            $NewImage_Extention;
+            if ($ImageType == "image/jpg") {
+                $NewImage_Extention = ".jpg";
+            } else  if ($ImageType == "image/jpeg") {
+                $NewImage_Extention = ".jpeg";
+            } else  if ($ImageType == "image/png") {
+                $NewImage_Extention = ".png";
+            } else  if ($ImageType == "image/svg+xml") {
+                $NewImage_Extention = ".svg";
+            }
+
+            $newImageName = "Resources//images//FactoryImage//Factory" . $NewImage_Extention;
+
+            $oldImage_rs = Database::search("SELECT * FROM `factoryimage` WHERE `FI_id` = '1' ");
+            $oldImage_num = $oldImage_rs->num_rows;
+            $oldImage_data = $oldImage_rs->fetch_assoc();
+
+            if ($oldImage_num == "1") {
+                unlink($oldImage_data["iamgePath"]);
+                move_uploaded_file($ImageFile["tmp_name"], $newImageName);
+                Database::iud("UPDATE `factoryimage` SET `iamgePath` = '" . $newImageName . "' WHERE `FI_id` = '1'");
+                echo ("Update Success");
+            } else {
+                move_uploaded_file($ImageFile["tmp_name"], $newImageName);
+                Database::iud("UPDATE `factoryimage` SET `iamgePath` = '" . $newImageName . "' WHERE `FI_id` = '1' ");
+                echo ("Update Success");
+            }
+        } else {git
+            echo ("Please Select Valid Image Extention");
+        }
+    } else {
+        echo ("Please Select a Image");
     }
 }

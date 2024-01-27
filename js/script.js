@@ -744,8 +744,8 @@ function ChangePremiumImage(id) {
 // admin Change Premium faciliteis infomations
 function changefacilitiesInfomations(id) {
   var command = "changePfacilitiesinof";
-  var topic = document.getElementById("faTopic"+id).value;
-  var para = document.getElementById("fapara"+id).value;
+  var topic = document.getElementById("faTopic" + id).value;
+  var para = document.getElementById("fapara" + id).value;
 
   var form = new FormData();
   form.append("command", command);
@@ -758,6 +758,26 @@ function changefacilitiesInfomations(id) {
     if (request.readyState == 4 && request.status == 200) {
       var response = request.responseText;
       alert(response);
+      window.location.reload();
+    }
+  };
+  request.open("POST", "BackEndProcess.php", true);
+  request.send(form);
+}
+
+// admin Change Factory Image
+function ChangeFactoryImage() {
+  var command = "ChangeFactoryImage";
+  var file = document.getElementById("FactioryImageInput");
+
+  var form = new FormData();
+  form.append("command", command);
+  form.append("file", file.files[0]);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
       window.location.reload();
     }
   };

@@ -97,33 +97,34 @@ if (isset($_SESSION["admin"])) {
                         </div>
 
                         <!-- content -->
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeCarouselImage.php'">
-                            <h1>Home Page Change Carousel Image</h1>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h1>Manage Factory Items</h1>
+                                </div>
+                                <!-- image -->
+                                <div class="col-4 d-grid">
+                                    <?php
+                                    $image_rs = Database::search("SELECT * FROM `factoryimage`");
+                                    $image_data = $image_rs->fetch_assoc();
+                                    ?>
+                                    <img src="<?php echo ($image_data["iamgePath"]) ?>" id="Cimage" style="width: 100%;">
+                                    <input type="file" class="visually-hidden" onchange="ChangeFactoryImage();" id="FactioryImageInput">
+                                    <label for="FactioryImageInput" class="btn btn-info">Change Image</label>
+                                </div>
+                                <div class="col-6">
+                                    <textarea name="" style="width: 100%;" cols="30" rows="9"><?php echo ($image_data["para"]) ?></textarea>
+                                </div>
+                                <div class="col-2">
+                                    <button class="btn btn-primary">Update Infomations</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeHomePage.php'">
-                            <h1>Home Page About Change</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeWhyFinessPart.php'">
-                            <h1>Change Home Page Why Fitness Part</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeSuccessStory.php'">
-                            <h1>Change Home Success Box</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-danger" onclick="window.location = 'changeClassesTopImage.php'">
-                            <h1>Change Top Image in evey sub Page</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-danger" onclick="window.location = 'changeClassesVideo.php'">
-                            <h1>Change Classes Video part</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-danger" onclick="window.location = 'change5Areas.php'">
-                            <h1>Change 5 Areas</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-primary" onclick="window.location = 'ChangeFacilitiesAbout.php'">
-                            <h1>Change Facilities Features</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-primary" onclick="window.location = 'ManageFactory.php'">
-                            <h1>Manage Factory Items</h1>
-                        </div>
+
+                        <!-- $product_rs = Database::search("SELECT `ImagePth` FROM `factoryinfo` INNER JOIN `factorycategory` ON `factorycategory`.`FC_id` = `factoryinfo`.`FactoryCategory` "); -->
+
+
+
                     </div>
                 </div>
             </div>
