@@ -552,4 +552,60 @@ if ($command == "adminChangePassword") {
         Database::search("INSERT INTO `factoryinfo` (`FactoryCategory`,`ProductName`) VALUES ('" . $ItemCategory . "','" . $itemName . "') ");
         echo ("Adding Success");
     }
+} else if ($command == "AddBlogPost") { // admin add Factory Items
+
+
+
+    if (!empty($_FILES["file"])) {
+
+        $ImageFile = $_FILES["file"];
+        $ImageType = $ImageFile["type"];
+
+        $allowed_Image_extentions = array("image/jpg", "image/jpeg", "image/png", "image/svg+xml");
+
+        if (in_array($ImageType, $allowed_Image_extentions)) {
+
+            $NewImage_Extention;
+            if ($ImageType == "image/jpg") {
+                $NewImage_Extention = ".jpg";
+            } else  if ($ImageType == "image/jpeg") {
+                $NewImage_Extention = ".jpeg";
+            } else  if ($ImageType == "image/png") {
+                $NewImage_Extention = ".png";
+            } else  if ($ImageType == "image/svg+xml") {
+                $NewImage_Extention = ".svg";
+            }
+
+
+            if (!empty($_POST["blogName"])) {
+
+
+                if (!empty($_POST["content"])) {
+                    $blogName = $_POST["blogName"];
+                    $Category = $_POST["Category"];
+                    $content = $_POST["content"];
+
+                    // Get Date Time
+                    $date = date("Y.m.d");
+                    $time = date("H:i:s");
+
+                    $newImageName = "Resources//images//blogImage//blog" . $blogName . $NewImage_Extention;
+
+                    Database::iud("INSERT INTO `blog` (`BlogName`,`content`,`BlogMainImage`,`Bdate`,`Btime`) VALUES('" . $blogName . "','" . $content . "','" . $newImageName . "','".$date."','".$time."')");
+                    move_uploaded_file($ImageFile["tmp_name"], $newImageName);
+                    echo ("Adding Success");
+
+                    
+                } else {
+                    echo ("Please Type Your Content");
+                }
+            } else {
+                echo ("Please Enter  Paragraph");
+            }
+        } else {
+            echo ("Please Select Valid Image Extention");
+        }
+    } else {
+        echo ("Please Select a Image");
+    }
 }

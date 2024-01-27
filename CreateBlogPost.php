@@ -35,8 +35,8 @@ if (isset($_SESSION["admin"])) {
                                     <div class="nav flex-column nav-pills me-3 mt-3" role="tablist" aria-orientation="vertical">
                                         <nav class="nav flex-column">
                                             <a class="nav-link " href="adminDashboard.php">Dashboard</a>
-                                            <a class="nav-link active" aria-current="page" href="adminManageContent.php">Manage Content</a>
-                                            <a class="nav-link" href="adminManageBlogs.php">Manage Blog</a>
+                                            <a class="nav-link " href="adminManageContent.php">Manage Content</a>
+                                            <a class="nav-link active" aria-current="page" href="adminManageBlogs.php">Manage Blog</a>
                                         </nav>
                                     </div>
                                 </div>
@@ -97,33 +97,65 @@ if (isset($_SESSION["admin"])) {
                         </div>
 
                         <!-- content -->
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeCarouselImage.php'">
-                            <h1>Home Page Change Carousel Image</h1>
+
+                        <div class="col-12 ">
+                            <div class="row g-2">
+
+                                <div class="col-12 text-center">
+                                    <h1>Create a New Blog Post</h1>
+                                </div>
+
+                                <div class="col-12 d-flex  justify-content-center">
+                                    <input type="text" class="form-control" placeholder="Blog Name" id="blogName">
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="col-12">
+                                        <span>Select Category</span>
+                                        <select name="" class="form-select" id="Category">
+                                            <?php
+                                            $blogCategory_rs = Database::search("SELECT * FROM `blogcategory` ");
+                                            $blognum = $blogCategory_rs->num_rows;
+
+                                            for ($i = 0; $i < $blognum; $i++) {
+                                                $blog_data = $blogCategory_rs->fetch_assoc();
+                                            ?>
+                                                <option value="<?php echo ($blog_data["BCid"]) ?>"><?php echo ($blog_data["category"]) ?></option>
+                                            <?php
+                                            }
+
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 ">
+                                    <div class="row">
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <img src="Resources/images/LOGO/addImage (2).png" id="Cimage" style="width: 50%;" alt="">
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <input type="file" onchange="BlogViewImage();" id="AddBlogImage" class="visually-hidden">
+                                            <label for="AddBlogImage" class="btn btn-primary">Select Image</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="row">
+                                        <textarea name="" style="width: 100%;" id="content" placeholder="Please type Your Content" cols="30" rows="10"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 d-grid" >
+                                    <button class="fw-bold fs-1 btn btn-outline-info" onclick="AddBlog();">Publish Post</button>
+                                </div>
+
+
+
+                            </div>
                         </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeHomePage.php'">
-                            <h1>Home Page About Change</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeWhyFinessPart.php'">
-                            <h1>Change Home Page Why Fitness Part</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeSuccessStory.php'">
-                            <h1>Change Home Success Box</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-danger" onclick="window.location = 'changeClassesTopImage.php'">
-                            <h1>Change Top Image in evey sub Page</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-danger" onclick="window.location = 'changeClassesVideo.php'">
-                            <h1>Change Classes Video part</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-danger" onclick="window.location = 'change5Areas.php'">
-                            <h1>Change 5 Areas</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-primary" onclick="window.location = 'ChangeFacilitiesAbout.php'">
-                            <h1>Change Facilities Features</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-primary" onclick="window.location = 'ManageFactory.php'">
-                            <h1>Manage Factory Items</h1>
-                        </div>
+
                     </div>
                 </div>
             </div>

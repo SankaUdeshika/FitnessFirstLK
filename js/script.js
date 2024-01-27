@@ -828,3 +828,39 @@ function AddFactoryItems() {
   request.open("POST", "BackEndProcess.php", true);
   request.send(form);
 }
+
+// Change Image View when Create a Blog Post
+function BlogViewImage() {
+  var ImageView = document.getElementById("Cimage");
+  var file = document.getElementById("AddBlogImage");
+  urlFile = file.files[0];
+  url = window.URL.createObjectURL(urlFile);
+  ImageView.src = url;
+}
+
+// admin Create a Blog Post
+function AddBlog() {
+  var command = "AddBlogPost";
+  var file = document.getElementById("AddBlogImage");
+  var blogName = document.getElementById("blogName").value;
+  var Category = document.getElementById("Category").value;
+  var content = document.getElementById("content").value;
+
+  var form = new FormData();
+  form.append("command", command);
+  form.append("file", file.files[0]);
+  form.append("blogName", blogName);
+  form.append("Category", Category);
+  form.append("content", content);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      alert(response);
+      window.location.reload();
+    }
+  };
+  request.open("POST", "BackEndProcess.php", true);
+  request.send(form);
+}
