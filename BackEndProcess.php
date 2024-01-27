@@ -540,4 +540,16 @@ if ($command == "adminChangePassword") {
         Database::search("UPDATE `factoryimage` SET `para` = '" . $para . "'  WHERE `FI_id` = '1' ");
         echo ("Update Success");
     }
+} else if ($command == "AddFacotryItems") { // admin add Factory Items
+    if (empty($_POST["itemName"])) {
+        echo ("Please Enter a Item Name");
+    } else  if (empty($_POST["ItemCategory"])) {
+        echo ("Please Enter a Item Category");
+    } else {
+        $itemName = $_POST["itemName"];
+        $ItemCategory = $_POST["ItemCategory"];
+
+        Database::search("INSERT INTO `factoryinfo` (`FactoryCategory`,`ProductName`) VALUES ('" . $ItemCategory . "','" . $itemName . "') ");
+        echo ("Adding Success");
+    }
 }

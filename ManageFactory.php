@@ -121,7 +121,71 @@ if (isset($_SESSION["admin"])) {
                             </div>
                         </div>
 
-                        <!-- $product_rs = Database::search("SELECT `ImagePth` FROM `factoryinfo` INNER JOIN `factorycategory` ON `factorycategory`.`FC_id` = `factoryinfo`.`FactoryCategory` "); -->
+                        <div class="col-12 mt-3 bg-info">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3>Add Items</h3>
+                                </div>
+                                <div class="col-6">
+                                    <span>Item Name</span>
+                                    <input type="text" id="itemName" class="form-control">
+                                </div>
+                                <div class="col-6">
+                                    <span>Select Name</span>
+                                    <select name="" class="form-select" id="ItemCategory">
+                                        <?php
+                                        $category_rs = Database::search(" SELECT * FROM `factorycategory` ");
+                                        $category_num = $category_rs->num_rows;
+
+                                        for ($i = 0; $i < $category_num; $i++) {
+                                            $category_data = $category_rs->fetch_assoc();
+                                        ?>
+                                            <option value="<?php echo ($category_data["FC_id"]) ?>"><?php echo ($category_data["FactoryCategory"]) ?></option>
+                                        <?php
+                                        }
+
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="col-12 d-grid mt-1 mb-4">
+                                    <button class="btn btn-primary" onclick="AddFactoryItems();">Add Item</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 mt-5">
+                            <div class="row">
+
+                                <?php
+                                $product_rs = Database::search("SELECT * FROM `factoryinfo` INNER JOIN `factorycategory` ON `factorycategory`.`FC_id` = `factoryinfo`.`FactoryCategory` ");
+                                $priduct_num = $product_rs->num_rows;
+
+                                for ($i = 0; $i < $priduct_num; $i++) {
+                                    $product_data = $product_rs->fetch_assoc();
+                                ?>
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <span class="text-white"><?php echo ($product_data["ProductName"]) ?></span>
+                                            </div>
+                                            <div class="col-4">
+                                                <span class="text-white-50"><?php echo ($product_data["FactoryCategory"]) ?></span>
+                                            </div>
+                                            <div class="col-2">
+                                                <button class="btn btn-danger" onclick="">Delete</button>
+                                            </div>
+                                            <hr>
+                                            <br>
+                                        </div>
+                                    </div>
+                                <?php
+                                }
+
+                                ?>
+
+                            </div>
+                        </div>
+
 
 
 
