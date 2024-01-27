@@ -857,8 +857,12 @@ function AddBlog() {
   request.onreadystatechange = function () {
     if (request.readyState == 4 && request.status == 200) {
       var response = request.responseText;
-      alert(response);
-      window.location.reload();
+      if(response == "Adding Success"){
+        alert(response);
+        window.location.reload();
+      }else{
+        alert(response);
+      }
     }
   };
   request.open("POST", "BackEndProcess.php", true);
@@ -891,9 +895,8 @@ function UpdateBlog(id) {
   request.send(form);
 }
 
-
 // admin Change Update Blog Image
-function ChangeUpdateIBlogImage(id){
+function ChangeUpdateIBlogImage(id) {
   var command = "UpdateBlogPostChangeImage";
   var file = document.getElementById("AddBlogImage");
   var blogName = document.getElementById("blogName").value;
@@ -903,6 +906,27 @@ function ChangeUpdateIBlogImage(id){
   form.append("file", file.files[0]);
   form.append("id", id);
   form.append("blogName", blogName);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      alert(response);
+      window.location.reload();
+    }
+  };
+  request.open("POST", "BackEndProcess.php", true);
+  request.send(form);
+}
+
+// admin Delete Blogs
+function DeleteBlog(id) {
+  var command = "DeleteBlog";
+ 
+
+  var form = new FormData();
+  form.append("command", command);
+  form.append("id", id);
 
   var request = new XMLHttpRequest();
   request.onreadystatechange = function () {

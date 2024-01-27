@@ -654,7 +654,7 @@ if ($command == "adminChangePassword") {
     } else {
         echo ("Please Select a Image");
     }
-} else if ($command == "UpdateBlogPost") { // admin Update Image
+} else if ($command == "UpdateBlogPost") { // admin Update blog Content
     if (empty($_POST["blogName"])) {
         echo ("Please Enter a Blog Name");
     } else  if (empty($_POST["content"])) {
@@ -668,4 +668,11 @@ if ($command == "adminChangePassword") {
         Database::search("UPDATE `blog` SET `BlogName` = '" . $blogName . "' ,`content` = '" . $content . "' , `blogCategory` = '" . $Category . "'  WHERE `Bid` = '" . $id . "'");
         echo ("Update Success");
     }
+} else if ($command == "DeleteBlog") { // admin Delete Blog
+    $id = $_POST["id"];
+    $oldImage_rs = Database::search("SELECT * FROM `blog` WHERE `Bid` = '" . $id . "' ");
+    $oldImage_data = $oldImage_rs->fetch_assoc();
+    unlink($oldImage_data["BlogMainImage"]);
+    Database::search(" DELETE FROM `blog` WHERE `Bid` = '" . $id . "' ");
+    echo ("Delete Success");
 }

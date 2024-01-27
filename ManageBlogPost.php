@@ -135,7 +135,7 @@ if (isset($_SESSION["admin"])) {
                                                 <button class="btn btn-primary" onclick="window.location = 'UpdateBlogPost.php?id=<?php echo($blog_data['Bid'])?>'">Update Blog</button>
                                             </div>
                                             <div class="col-2 d-flex justify-content-center align-content-center">
-                                                <button class="btn btn-danger">Delete Blog</button>
+                                                <button class="btn btn-danger" onclick="DeleteBlog('<?php echo($blog_data['Bid'])?>');">Delete Blog</button>
                                             </div>
                                         </div>
                                     </div>
