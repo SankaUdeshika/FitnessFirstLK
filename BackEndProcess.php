@@ -591,11 +591,11 @@ if ($command == "adminChangePassword") {
 
                     $newImageName = "Resources//images//blogImage//blog" . $blogName . $NewImage_Extention;
 
-                    Database::iud("INSERT INTO `blog` (`BlogName`,`content`,`BlogMainImage`,`Bdate`,`Btime`) VALUES('" . $blogName . "','" . $content . "','" . $newImageName . "','".$date."','".$time."')");
+                    Database::iud("INSERT INTO `blog` (`BlogName`,`content`,`BlogMainImage`,`Bdate`,`Btime`,`blogCategory`) VALUES('" . $blogName . "','" . $content . "','" . $newImageName . "','".$date."','".$time."','".$Category."')");
                     move_uploaded_file($ImageFile["tmp_name"], $newImageName);
                     echo ("Adding Success");
 
-                    
+
                 } else {
                     echo ("Please Type Your Content");
                 }
