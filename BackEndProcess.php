@@ -552,10 +552,7 @@ if ($command == "adminChangePassword") {
         Database::search("INSERT INTO `factoryinfo` (`FactoryCategory`,`ProductName`) VALUES ('" . $ItemCategory . "','" . $itemName . "') ");
         echo ("Adding Success");
     }
-} else if ($command == "AddBlogPost") { // admin add Factory Items
-
-
-
+} else if ($command == "AddBlogPost") { // admin add Blog Post
     if (!empty($_FILES["file"])) {
 
         $ImageFile = $_FILES["file"];
@@ -591,11 +588,9 @@ if ($command == "adminChangePassword") {
 
                     $newImageName = "Resources//images//blogImage//blog" . $blogName . $NewImage_Extention;
 
-                    Database::iud("INSERT INTO `blog` (`BlogName`,`content`,`BlogMainImage`,`Bdate`,`Btime`,`blogCategory`) VALUES('" . $blogName . "','" . $content . "','" . $newImageName . "','".$date."','".$time."','".$Category."')");
+                    Database::iud("INSERT INTO `blog` (`BlogName`,`content`,`BlogMainImage`,`Bdate`,`Btime`,`blogCategory`) VALUES('" . $blogName . "','" . $content . "','" . $newImageName . "','" . $date . "','" . $time . "','" . $Category . "')");
                     move_uploaded_file($ImageFile["tmp_name"], $newImageName);
                     echo ("Adding Success");
-
-
                 } else {
                     echo ("Please Type Your Content");
                 }
@@ -607,5 +602,70 @@ if ($command == "adminChangePassword") {
         }
     } else {
         echo ("Please Select a Image");
+    }
+} else if ($command == "UpdateBlogPostChangeImage") { // admin Update BlogPost Image
+    if (!empty($_FILES["file"])) {
+
+        $ImageFile = $_FILES["file"];
+        $ImageType = $ImageFile["type"];
+
+        $allowed_Image_extentions = array("image/jpg", "image/jpeg", "image/png", "image/svg+xml");
+
+        if (in_array($ImageType, $allowed_Image_extentions)) {
+
+            $NewImage_Extention;
+            if ($ImageType == "image/jpg") {
+                $NewImage_Extention = ".jpg";
+            } else  if ($ImageType == "image/jpeg") {
+                $NewImage_Extention = ".jpeg";
+            } else  if ($ImageType == "image/png") {
+                $NewImage_Extention = ".png";
+            } else  if ($ImageType == "image/svg+xml") {
+                $NewImage_Extention = ".svg";
+            }
+
+            if (!empty($_POST["blogName"])) {
+                $blogName = $_POST["blogName"];
+                $id = $_POST["id"];
+
+                $newImageName = "Resources//images//blogImage//blog" . $blogName . $NewImage_Extention;
+
+
+                $oldImage_rs = Database::search("SELECT * FROM `blog` WHERE `Bid` = '" . $id . "' ");
+                $oldImage_num = $oldImage_rs->num_rows;
+                $oldImage_data = $oldImage_rs->fetch_assoc();
+
+                if ($oldImage_num == "1") {
+                    unlink($oldImage_data["BlogMainImage"]);
+                    move_uploaded_file($ImageFile["tmp_name"], $newImageName);
+                    Database::iud("UPDATE `blog` SET `BlogMainImage` = '" . $newImageName . "' WHERE `Bid` = '" . $id . "'");
+                    echo ("Update Success");
+                } else {
+                    move_uploaded_file($ImageFile["tmp_name"], $newImageName);
+                    Database::iud("UPDATE `blog` SET `BlogMainImage` = '" . $newImageName . "' WHERE `Bid` = '" . $id . "'");
+                    echo ("Update Success");
+                }
+            } else {
+                echo ("Please Enter  Paragraph");
+            }
+        } else {
+            echo ("Please Select Valid Image Extention");
+        }
+    } else {
+        echo ("Please Select a Image");
+    }
+} else if ($command == "UpdateBlogPost") { // admin Update Image
+    if (empty($_POST["blogName"])) {
+        echo ("Please Enter a Blog Name");
+    } else  if (empty($_POST["content"])) {
+        echo ("Please Enter a Item Content");
+    } else {
+        $blogName = $_POST["blogName"];
+        $content = $_POST["content"];
+        $id = $_POST["id"];
+        $Category = $_POST["Category"];
+
+        Database::search("UPDATE `blog` SET `BlogName` = '" . $blogName . "' ,`content` = '" . $content . "' , `blogCategory` = '" . $Category . "'  WHERE `Bid` = '" . $id . "'");
+        echo ("Update Success");
     }
 }

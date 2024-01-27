@@ -864,3 +864,54 @@ function AddBlog() {
   request.open("POST", "BackEndProcess.php", true);
   request.send(form);
 }
+
+// Update Blog Post
+function UpdateBlog(id) {
+  var command = "UpdateBlogPost";
+  var blogName = document.getElementById("blogName").value;
+  var Category = document.getElementById("Category").value;
+  var content = document.getElementById("content").value;
+
+  var form = new FormData();
+  form.append("command", command);
+  form.append("blogName", blogName);
+  form.append("Category", Category);
+  form.append("content", content);
+  form.append("id", id);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      alert(response);
+      window.location.reload();
+    }
+  };
+  request.open("POST", "BackEndProcess.php", true);
+  request.send(form);
+}
+
+
+// admin Change Update Blog Image
+function ChangeUpdateIBlogImage(id){
+  var command = "UpdateBlogPostChangeImage";
+  var file = document.getElementById("AddBlogImage");
+  var blogName = document.getElementById("blogName").value;
+
+  var form = new FormData();
+  form.append("command", command);
+  form.append("file", file.files[0]);
+  form.append("id", id);
+  form.append("blogName", blogName);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      alert(response);
+      window.location.reload();
+    }
+  };
+  request.open("POST", "BackEndProcess.php", true);
+  request.send(form);
+}

@@ -2,6 +2,8 @@
 session_start();
 include "Connections/connection.php";
 
+$BlogId = $_GET["id"];
+
 if (isset($_SESSION["admin"])) {
 ?>
     <!DOCTYPE html>
@@ -97,14 +99,66 @@ if (isset($_SESSION["admin"])) {
                         </div>
 
                         <!-- content -->
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-6 d-grid fs-1 fw-bold btn btn-outline-dark" onclick="window.location = 'CreateBlogPost.php'">
-                                    <h1>Create a BlogPost</h1>
+
+                        <div class="col-12 ">
+                            <div class="row g-2">
+
+                                <div class="col-12 text-center">
+                                    <h1>Update Blog Post</h1>
                                 </div>
-                                <div class="col-6 d-grid fs-1 fw-bold btn btn-outline-dark" onclick="window.location = 'ManageBlogPost.php'">
-                                    <h1>Manage Blogs</h1>
+
+                                <?php
+                                $blog_rs = Database::search("SELECT * FROM `blog` INNER JOIN `blogcategory` ON `blogcategory`.`BCid` = `blog`.`blogCategory` WHERE `Bid` = '" . $BlogId . "'  ");
+                                $Updateblog_data = $blog_rs->fetch_assoc();
+                                ?>
+
+                                <div class="col-12 d-flex  justify-content-center">
+                                    <input type="text" class="form-control " placeholder="Blog Name" value="<?php echo ($Updateblog_data["BlogName"]) ?>" id="blogName">
                                 </div>
+
+                                <div class="col-6">
+                                    <div class="col-12">
+                                        <span>Select Category</span>
+                                        <select name="" class="form-select" id="Category">
+                                            <option class="bg-danger" value="<?php echo ($Updateblog_data["BCid"]) ?>"><?php echo ($Updateblog_data["category"]) ?></option>
+                                            <?php
+                                            $blogCategory_rs = Database::search("SELECT * FROM `blogcategory` ");
+                                            $blognum = $blogCategory_rs->num_rows;
+
+                                            for ($i = 0; $i < $blognum; $i++) {
+                                                $blog_data = $blogCategory_rs->fetch_assoc();
+                                            ?>
+                                                <option value="<?php echo ($blog_data["BCid"]) ?>"><?php echo ($blog_data["category"]) ?></option>
+                                            <?php
+                                            }
+
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 ">
+                                    <div class="row">
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <img src="<?php echo ($Updateblog_data["BlogMainImage"]) ?>" id="Cimage" style="width: 50%;" alt="">
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <input type="file" onchange="ChangeUpdateIBlogImage('<?php echo ($Updateblog_data['Bid']) ?>');" id="AddBlogImage" class="visually-hidden" name="<?php echo ($Updateblog_data["BlogMainImage"]) ?>">
+                                            <label for="AddBlogImage" class="btn btn-primary">Change Image</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="row">
+                                        <textarea name="" style="width: 100%;" id="content" placeholder="Please type Your Content" cols="30" rows="10"><?php echo ($Updateblog_data["content"]) ?></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 d-grid">
+                                    <button class="fw-bold fs-1 btn btn-outline-info" onclick="UpdateBlog('<?php echo ($Updateblog_data['Bid']) ?>');">Update Post</button>
+                                </div>
+
                             </div>
                         </div>
 

@@ -95,18 +95,58 @@ if (isset($_SESSION["admin"])) {
                                 </div>
                             </div>
                         </div>
-
-                        <!-- content -->
                         <div class="col-12">
                             <div class="row">
-                                <div class="col-6 d-grid fs-1 fw-bold btn btn-outline-dark" onclick="window.location = 'CreateBlogPost.php'">
-                                    <h1>Create a BlogPost</h1>
-                                </div>
-                                <div class="col-6 d-grid fs-1 fw-bold btn btn-outline-dark" onclick="window.location = 'ManageBlogPost.php'">
-                                    <h1>Manage Blogs</h1>
-                                </div>
+
+                                <!-- content -->
+                                <?php
+                                $blog_rs = Database::search("SELECT * FROM `blog`");
+                                $blog_num = $blog_rs->num_rows;
+
+                                for ($i = 0; $i < $blog_num; $i++) {
+                                    $blog_data = $blog_rs->fetch_assoc();
+                                ?>
+                                    <div class="col-12 btn btn-outline-dark">
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <img src="<?php echo ($blog_data["BlogMainImage"]) ?>" style="width: 100%;" alt="">
+                                            </div>
+                                            <div class="col-5 fs-1 fw-bold text-center">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span><?php echo ($blog_data["BlogName"]) ?></span>
+                                                    </div>
+                                                    <div class="col-12 border-1 fw-light rounded-3 fs-5">
+                                                        <div class="row">
+                                                            <div class="col-12 text-center">
+                                                                publish Date Time
+                                                            </div>
+                                                            <div class="col-12 fs-6">
+                                                                <span class="text-white">Date : -</span><span class="text-white-50"><?php echo ($blog_data["Bdate"]) ?></span>
+                                                            </div>
+                                                            <div class="col-12 fs-6">
+                                                                <span class="text-white">Time : -</span><span class="text-white-50"><?php echo ($blog_data["Btime"]) ?></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-2 d-grid d-flex justify-content-center align-content-center">
+                                                <button class="btn btn-primary" onclick="window.location = 'UpdateBlogPost.php?id=<?php echo($blog_data['Bid'])?>'">Update Blog</button>
+                                            </div>
+                                            <div class="col-2 d-flex justify-content-center align-content-center">
+                                                <button class="btn btn-danger">Delete Blog</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php
+                                }
+
+                                ?>
+
                             </div>
                         </div>
+
 
                     </div>
                 </div>
