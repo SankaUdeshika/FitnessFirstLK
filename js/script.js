@@ -35,8 +35,10 @@ function ShowBmiCalcutorModel() {
 
 // carousel Slider Start
 var marginleftM = 0;
+// end point is load in Index.php file
+
 function CarouselLeft() {
-  if (marginleftM > -116) {
+  if (marginleftM > endPoint) {
     marginleftM = marginleftM - 58;
     var firstBox = document.getElementById("firstBox");
     firstBox.style.transition = "1s";
@@ -857,10 +859,10 @@ function AddBlog() {
   request.onreadystatechange = function () {
     if (request.readyState == 4 && request.status == 200) {
       var response = request.responseText;
-      if(response == "Adding Success"){
+      if (response == "Adding Success") {
         alert(response);
         window.location.reload();
-      }else{
+      } else {
         alert(response);
       }
     }
@@ -922,7 +924,6 @@ function ChangeUpdateIBlogImage(id) {
 // admin Delete Blogs
 function DeleteBlog(id) {
   var command = "DeleteBlog";
- 
 
   var form = new FormData();
   form.append("command", command);

@@ -420,7 +420,8 @@
   left: 40%;
   top: -55%;
   width: 100px;
-  height: auto;
+  height: 100px;
+  object-fit: cover;
   border: 2px solid white;
   border-radius: 50px;
 }

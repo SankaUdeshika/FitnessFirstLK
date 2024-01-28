@@ -172,54 +172,63 @@
             <!-- Big Screen -->
             <div class="col-12 bg-black d-lg-block d-none">
                 <div class="row">
+                    <?php
+                    $Story_rs = Database::search("SELECT * FROM `homestories` ");
+                    $Story_num = $Story_rs->num_rows;
+                    $endPoint = $Story_num * 19.333;
+                    ?>
+                    <script>
+                        var endPoint = -<?php echo ($endPoint) ?>;
+                    </script>
 
                     <div class="col-12 text-center mb-5 Fade">
                         <span class="fs-1  text-white">SUCCESS STORIES</span>
                     </div>
+
+
                     <!-- left btn -->
                     <div class="col-1 d-flex justify-content-center align-items-center">
                         <img src="Resources/images/icons/leftbtn.png" class="LRbtn" onclick="CarouselLeft();">
                     </div>
                     <div class="col-10 Fade d-lg-block d-none ">
-                        <div class="box11 ">
-                            <div class="col-lg-5 col-12 StoriesCarosuelSlider mb-5" id="firstBox">
-                                <div class="row">
+                        <div class="box11">
 
-                                    <div class="col-12">
-                                        <img src="Resources/images/gym01.jpeg" class="StorieProfileImg ">
+                            <?php
+                            for ($i = 0; $i < $Story_num; $i++) {
+                                $Story_data = $Story_rs->fetch_assoc();
+                                if ($i == '0') {
+                            ?>
+                                    <div class="col-lg-5 col-12 StoriesCarosuelSlider mb-5" id="firstBox">
+                                        <div class="row">
+
+                                            <div class="col-12">
+                                                <img src="<?php echo ($Story_data["HS_image"]) ?>" class="StorieProfileImg ">
+                                            </div>
+
+                                            <div class="col-12 text-center ">
+                                                <p class="storiePara fw-bold"><?php echo ($Story_data["Hs_text"]) ?></p>
+                                            </div>
+                                        </div>
                                     </div>
+                                <?php
+                                } else {
+                                ?>
+                                    <div class="col-5 offset-2 StoriesCarosuelSlider mb-5">
+                                        <div class="row">
 
-                                    <div class="col-12 text-center ">
-                                        <p class="storiePara fw-bold">Lorem Upsun us simply dummy text of the printing and typesetting industry.Lorem Upsun us simply dummy text of the printing and typesetting industry.</p>
+                                            <div class="col-12  ">
+                                                <img src="<?php echo ($Story_data["HS_image"]) ?>" class="StorieProfileImg ">
+                                            </div>
+
+                                            <div class="col-12 text-center ">
+                                                <p class="storiePara fw-bold"><?php echo ($Story_data["Hs_text"]) ?></p>
+                                            </div>
+                                        </div>
                                     </div>
-
-                                </div>
-                            </div>
-                            <div class="col-5 offset-2 StoriesCarosuelSlider mb-5">
-                                <div class="row">
-
-                                    <div class="git pcol-12  ">
-                                        <img src="Resources/images/gym01.jpeg" class="StorieProfileImg ">
-                                    </div>
-
-                                    <div class="col-12 text-center ">
-                                        <p class="storiePara fw-bold">Lorem Upsun us simply dummy text of the printing and typesetting industry.Lorem Upsun us simply dummy text of the printing and typesetting industry.</p>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-5 offset-2 StoriesCarosuelSlider mb-5">
-                                <div class="row">
-
-                                    <div class="col-12  ">
-                                        <img src="Resources/images/gym01.jpeg" class="StorieProfileImg ">
-                                    </div>
-
-                                    <div class="col-12 text-center ">
-                                        <p class="storiePara fw-bold">Lorem Upsun us simply dummy text of the printing and typesetting industry.Lorem Upsun us simply dummy text of the printing and typesetting industry.</p>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php
+                                }
+                            }
+                            ?>
                         </div>
                     </div>
                     <!-- right btn -->
