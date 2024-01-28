@@ -58,12 +58,12 @@
                 <div class="row">
                     <!-- ABout Image -->
                     <div class="col-lg-6 col-12 AboutImageCover Fade mt-5">
-                        <?php 
-                            $HomeABoutImage_rs = Database::search("SELECT * FROM `homeaboutimage` WHERE `HAI_id` = '1'");
-                            $HomeABoutImage_data = $HomeABoutImage_rs->fetch_assoc();
+                        <?php
+                        $HomeABoutImage_rs = Database::search("SELECT * FROM `homeaboutimage` WHERE `HAI_id` = '1'");
+                        $HomeABoutImage_data = $HomeABoutImage_rs->fetch_assoc();
 
                         ?>
-                        <img src="<?php echo($HomeABoutImage_data["HAI_path"])?>" class="aboutImage" alt="">
+                        <img src="<?php echo ($HomeABoutImage_data["HAI_path"]) ?>" class="aboutImage" alt="">
                     </div>
 
                     <!-- ABout Text -->
@@ -97,9 +97,6 @@
                                     <?php
                                     }
                                     ?>
-                                    <!-- <li class="mb-3 RightToLeft Fade"><span class=" border border-3 border-danger bg-danger p-0 text-black rounded-5 fs-5 fw-bold "><i class="bi bi-chevron-right"></i></span> &nbsp; <span class="text-white fw-bold"> 10,000+ Happy Clients</span></li>
-                                    <li class="mb-3 RightToLeft Fade" style="transition-delay: 0.3s;"><span class=" border border-3 border-danger bg-danger p-0 text-black rounded-5 fs-5 fw-bold "><i class="bi bi-chevron-right"></i></span> &nbsp;<span class="text-white fw-bold"> 12+ Years of Experience</span></li>
-                                    <li class="mb-3 RightToLeft Fade" style="transition-delay:0.4s;"><span class=" border border-3 border-danger bg-danger p-0 text-black rounded-5 fs-5 fw-bold "><i class="bi bi-chevron-right"></i></span> &nbsp;<span class="text-white fw-bold"> 30+ Certified Trainers</span></li> -->
                                 </ul>
                             </div>
 
@@ -121,11 +118,15 @@
                             <!-- 1 -->
                             <div class="col-lg-4  col-12 WhyPart Fade LeftToRight ">
                                 <div class="row ">
+                                    <?php
+                                    $HomeABoutImage_rs = Database::search("SELECT * FROM `homewhyfitness` WHERE `HWF_id` = '1'");
+                                    $HomeAboutImage_data = $HomeABoutImage_rs->fetch_assoc();
+                                    ?>
                                     <div class="col-12">
-                                        <img src="Resources/images/gym01.jpeg" class="whyImage" alt="">
+                                        <img src="<?php echo ($HomeAboutImage_data["HWF_imagepath"]) ?>" class="whyImage" alt="">
                                     </div>
                                     <div class="col-12 text-center">
-                                        <span class="whyText fs-1">PERSONAL </br> TRAINING</span>
+                                        <span class="whyText fs-1"><?php echo ($HomeAboutImage_data["HWF_text"]) ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -133,11 +134,15 @@
                             <!-- 2 -->
                             <div class="col-lg-4 col-12 WhyPart Fade">
                                 <div class="row ">
+                                    <?php
+                                    $HomeABoutImage_rs2 = Database::search("SELECT * FROM `homewhyfitness` WHERE `HWF_id` = '2'");
+                                    $HomeAboutImage_data2 = $HomeABoutImage_rs2->fetch_assoc();
+                                    ?>
                                     <div class="col-12">
-                                        <img src="Resources/images/gym02.jpg" class="whyImage" alt="">
+                                        <img src="<?php echo ($HomeAboutImage_data2["HWF_imagepath"]) ?>" class="whyImage" alt="">
                                     </div>
                                     <div class="col-12 text-center">
-                                        <span class="whyText fs-1">VARIETY </br> OF CLASSES</span>
+                                        <span class="whyText fs-1"><?php echo ($HomeAboutImage_data2["HWF_text"]) ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -145,11 +150,15 @@
                             <!-- 3 -->
                             <div class="col-lg-4 col-12 WhyPart RightToLeft ">
                                 <div class="row ">
+                                    <?php
+                                    $HomeABoutImage_rs3 = Database::search("SELECT * FROM `homewhyfitness` WHERE `HWF_id` = '3'");
+                                    $HomeAboutImage_data3 = $HomeABoutImage_rs3->fetch_assoc();
+                                    ?>
                                     <div class="col-12">
-                                        <img src="Resources/images/gym03.jpg" class="whyImage" alt="">
+                                        <img src="<?php echo ($HomeAboutImage_data3["HWF_imagepath"]) ?>" class="whyImage" alt="">
                                     </div>
-                                    <div class="col-12 ">
-                                        <span class="whyText fs-1">PRIME </br> LOCATIONS</span>
+                                    <div class="col-12 text-center">
+                                        <span class="whyText fs-1"><?php echo ($HomeAboutImage_data3["HWF_text"]) ?></span>
                                     </div>
                                 </div>
                             </div>

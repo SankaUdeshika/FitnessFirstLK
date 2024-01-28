@@ -193,8 +193,9 @@
   transition: 0.5s ease-in-out;
 }
 .whyImage:hover {
-  width: 120%;
-  height: 300px;
+  /* width: 120%;
+  height: 300px; */
+  scale: 1.1;
 }
 
 .whyText {
@@ -203,7 +204,13 @@
   font-weight: bold;
   position: absolute;
   bottom: 15px;
-  left: 25%;
+  left: 60px;
+  /* left: 25%; */
+
+  display: flex;
+  justify-content: center;
+
+
   /* z-index: 2; */
   /* text-decoration: wavy; */
 }
