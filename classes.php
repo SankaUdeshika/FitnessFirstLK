@@ -47,16 +47,21 @@
                 <div class="col-12 mt-5">
                     <div class="row">
                         <div class="col-lg-6 col-12">
-                            <video autoplay muted src="Resources/Videos/pexels-tima-miroshnichenko-5319759 (2160p).mp4" class="classesVideo"></video>
+                            <?php
+                            require "Connections/connection.php";
+                            $classesVideo_rs = Database::search("SELECT * FROM `classesvideo` WHERE `CV_id` = '1' ");
+                            $classesVideo_data = $classesVideo_rs->fetch_assoc();
+                            ?>
+                            <video autoplay muted src="<?php echo ($classesVideo_data["CV_path"]) ?>" class="classesVideo"></video>
                         </div>
-                        <div class="col-lg-6 col-12">
+                        <div class="col-lg-6 col-12 d-flex justify-content-center align-items-center">
                             <div class="row">
                                 <div class="col-12">
-                                    <span class="fw-bold text-white fs-2">Experience classes at Fitness First</span>
+                                    <span class="fw-bold text-white fs-2"><?php echo ($classesVideo_data["CV_topic"]) ?></span>
                                 </div>
                                 <div class="col-12">
                                     <p class="text-white-50 ">
-                                        Whether you want to get leaner, stronger, faster, or just have fun while working out, we have something for everyone with our group Fitness Classes. There are 55 classes for you to try out across five different categories, including Cardio, Strength, Cycle, Mind and Body, and Fight.
+                                        <?php echo ($classesVideo_data["CV_para"]) ?>
                                     </p>
                                 </div>
                             </div>
@@ -89,7 +94,34 @@
 
                             <div class="col-lg-10 col-12 offset-lg-1 ">
                                 <div class="row">
-                                    <div class="col-lg-6 col-12 Fade">
+
+                                    <?php
+                                    $classes_rs = Database::search("SELECT * FROM `clasessareas` ");
+                                    $classes_num = $classes_rs->num_rows;
+
+                                    for ($i = 0; $i < $classes_num; $i++) {
+                                        $classes_data = $classes_rs->fetch_assoc();
+                                    ?>
+                                        <div class="col-lg-6 col-12 Fade">
+                                            <div class="row">
+                                                <div class="col-12 classImageCover">
+                                                    <img src="<?php echo ($classes_data["CA_image"]) ?>" class="ClassAreaImages" alt="">
+                                                    <div class="blackImageCover"></div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <span class=" classenames"><?php echo ($classes_data["CA_text"]) ?></span><small class="text-white-50 ">(<?php echo ($classes_data["CA_classes_NO"]) ?> classes)</small>
+                                                </div>
+                                                <div class="col-12">
+                                                    <span class="text-white">View Classes</span><span class="ViewClassesArrow"> &nbsp;&nbsp; &nbsp; <i class="bi bi-arrow-right"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php
+                                    }
+
+                                    ?>
+
+                                    <!-- <div class="col-lg-6 col-12 Fade">
                                         <div class="row">
                                             <div class="col-12 classImageCover">
                                                 <img src="Resources/images/gym03.jpg" class="ClassAreaImages" alt="">
@@ -162,7 +194,7 @@
                                                 <span class="text-white">View Classes</span><span class="ViewClassesArrow"> &nbsp;&nbsp; &nbsp; <i class="bi bi-arrow-right"></i></span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
 
                                 </div>
                             </div>
