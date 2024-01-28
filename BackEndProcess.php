@@ -119,12 +119,12 @@ if ($command == "adminChangePassword") {
 
             $newImageName = "Resources//images//aboutImage//about" . $id . $NewImage_Extention;
 
-            $oldImage_rs = Database::search("SELECT * FROM `homeaboutlist` WHERE `HAL_id` = '" . $id . "' ");
+            $oldImage_rs = Database::search("SELECT * FROM `homeaboutimage` WHERE `HAI_id` = '" . $id . "' ");
             $oldImage_num = $oldImage_rs->num_rows;
             $oldImage_data = $oldImage_rs->fetch_assoc();
 
             if ($oldImage_num == "1") {
-                unlink($oldImage_data["HIC_path"]);
+                unlink($oldImage_data["HAI_path"]);
                 move_uploaded_file($ImageFile["tmp_name"], $newImageName);
                 Database::iud("UPDATE `homeaboutimage` SET `HAI_path` = '" . $newImageName . "' WHERE `HAI_id` = '" . $id . "'");
                 echo ("Update Success");

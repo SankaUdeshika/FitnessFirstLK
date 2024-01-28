@@ -58,7 +58,12 @@
                 <div class="row">
                     <!-- ABout Image -->
                     <div class="col-lg-6 col-12 AboutImageCover Fade mt-5">
-                        <img src="Resources/images/gym01.jpeg" class="aboutImage" alt="">
+                        <?php 
+                            $HomeABoutImage_rs = Database::search("SELECT * FROM `homeaboutimage` WHERE `HAI_id` = '1'");
+                            $HomeABoutImage_data = $HomeABoutImage_rs->fetch_assoc();
+
+                        ?>
+                        <img src="<?php echo($HomeABoutImage_data["HAI_path"])?>" class="aboutImage" alt="">
                     </div>
 
                     <!-- ABout Text -->
