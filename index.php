@@ -69,15 +69,32 @@
                             </div>
 
                             <div class="col-12 mt-3 Fade DownToUP ">
-                                <p class="aboutPara">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labour සහ dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                                <?php
+                                $aboutPara_rs = Database::search("SELECT * FROM `homeaboutpara` WHERE `HAP_id` = '1' ");
+                                $aboutPara_data = $aboutPara_rs->fetch_assoc();
+
+                                ?>
+                                <p class="aboutPara"><?php echo ($aboutPara_data["para"]) ?></p>
                             </div>
 
                             <!-- list -->
                             <div class="col-12 mt-3">
                                 <ul>
-                                    <li class="mb-3 RightToLeft Fade"><span class=" border border-3 border-danger bg-danger p-0 text-black rounded-5 fs-5 fw-bold "><i class="bi bi-chevron-right"></i></span> &nbsp; <span class="text-white fw-bold"> 10,000+ Happy Clients</span></li>
+                                    <?php
+                                    $aboutList_rs =  Database::search("SELECT * FROM `homeaboutlist` ");
+                                    $aboutList_num = $aboutList_rs->num_rows;
+
+                                    for ($i = 0; $i < $aboutList_num; $i++) {
+                                        $aboutList_data = $aboutList_rs->fetch_assoc();
+
+                                    ?>
+                                        <li class="mb-3 RightToLeft Fade"><span class=" border border-3 border-danger bg-danger p-0 text-black rounded-5 fs-5 fw-bold "><i class="bi bi-chevron-right"></i></span> &nbsp; <span class="text-white fw-bold"><?php echo ($aboutList_data["ListText"]) ?></span></li>
+                                    <?php
+                                    }
+                                    ?>
+                                    <!-- <li class="mb-3 RightToLeft Fade"><span class=" border border-3 border-danger bg-danger p-0 text-black rounded-5 fs-5 fw-bold "><i class="bi bi-chevron-right"></i></span> &nbsp; <span class="text-white fw-bold"> 10,000+ Happy Clients</span></li>
                                     <li class="mb-3 RightToLeft Fade" style="transition-delay: 0.3s;"><span class=" border border-3 border-danger bg-danger p-0 text-black rounded-5 fs-5 fw-bold "><i class="bi bi-chevron-right"></i></span> &nbsp;<span class="text-white fw-bold"> 12+ Years of Experience</span></li>
-                                    <li class="mb-3 RightToLeft Fade" style="transition-delay:0.4s;"><span class=" border border-3 border-danger bg-danger p-0 text-black rounded-5 fs-5 fw-bold "><i class="bi bi-chevron-right"></i></span> &nbsp;<span class="text-white fw-bold"> 30+ Certified Trainers</span></li>
+                                    <li class="mb-3 RightToLeft Fade" style="transition-delay:0.4s;"><span class=" border border-3 border-danger bg-danger p-0 text-black rounded-5 fs-5 fw-bold "><i class="bi bi-chevron-right"></i></span> &nbsp;<span class="text-white fw-bold"> 30+ Certified Trainers</span></li> -->
                                 </ul>
                             </div>
 
