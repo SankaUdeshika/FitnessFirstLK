@@ -22,4 +22,11 @@ class Database{
         $resultSet = Database::$connection->query($q);
         return $resultSet;
     }
+
+    public static function escape($Text){
+        Database::setUpConnections();
+       $TextResults = Database::$connection->real_escape_string($Text);
+        return $TextResults;
+    }
+
 }
