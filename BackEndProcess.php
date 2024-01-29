@@ -581,6 +581,7 @@ if ($command == "adminChangePassword") {
                     $blogName = $_POST["blogName"];
                     $Category = $_POST["Category"];
                     $content = $_POST["content"];
+                   $Para = Database::escape($content);
 
                     // Get Date Time
                     $date = date("Y.m.d");
@@ -588,7 +589,7 @@ if ($command == "adminChangePassword") {
 
                     $newImageName = "Resources//images//blogImage//blog" . $blogName . $NewImage_Extention;
 
-                    Database::iud("INSERT INTO `blog` (`BlogName`,`content`,`BlogMainImage`,`Bdate`,`Btime`,`blogCategory`) VALUES('" . $blogName . "','" . $content . "','" . $newImageName . "','" . $date . "','" . $time . "','" . $Category . "')");
+                    Database::iud("INSERT INTO `blog` (`BlogName`,`content`,`BlogMainImage`,`Bdate`,`Btime`,`blogCategory`) VALUES('" . $blogName . "','" . $Para . "','" . $newImageName . "','" . $date . "','" . $time . "','" . $Category . "')");
                     move_uploaded_file($ImageFile["tmp_name"], $newImageName);
                     echo ("Adding Success");
                 } else {
@@ -664,6 +665,8 @@ if ($command == "adminChangePassword") {
         $content = $_POST["content"];
         $id = $_POST["id"];
         $Category = $_POST["Category"];
+        $content = Database::escape($content);
+        
 
         Database::search("UPDATE `blog` SET `BlogName` = '" . $blogName . "' ,`content` = '" . $content . "' , `blogCategory` = '" . $Category . "'  WHERE `Bid` = '" . $id . "'");
         echo ("Update Success");
