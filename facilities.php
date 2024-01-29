@@ -83,23 +83,31 @@
 
                                     <div class="col-lg-8 col-12 offset-lg-2">
                                         <div class="row">
-                                            <div class="col-6 LeftToRight Fade">
-                                                <ul>
-                                                    <li> <span class="fs-3 ">Over 18,000 square feet of space</span></li>
-                                                    <li> <span class="fs-3">Locker rooms with private showers and day lockers</span></li>
-                                                    <li> <span class="fs-3">Two levels of cardio equipment</span></li>
-                                                    <li> <span class="fs-3">60 feet of turf for sleds</span></li>
-                                                    <li> <span class="fs-3">Rogue Glute Hamstring Developer</span></li>
-                                                </ul>
-                                            </div>
 
-                                            <div class="col-6 RightToLeft Fade">
-                                                <li> <span class="fs-3">Dumbbells up to 150 lbs</span></li>
-                                                <li> <span class="fs-3">Hammer Strength plate loaded equipment</span></li>
-                                                <li> <span class="fs-3">Pin loaded weight training machines</span></li>
-                                                <li> <span class="fs-3">7 squat racks</span></li>
-                                                <li> <span class="fs-3">4 deadlift platforms with bumper plates</span></li>
-                                            </div>
+                                            <?php
+                                            $facilitieFeatures_rs = Database::search("SELECT * FROM `facilitiesfeatures` ");
+                                            $facilitieFeatures_num = $facilitieFeatures_rs->num_rows;
+
+                                            for ($i = 0; $i < $facilitieFeatures_num; $i++) {
+                                                $number = $i % 2;
+                                                $facilitieFeatures_data = $facilitieFeatures_rs->fetch_assoc();
+                                                if ($number == 0) {
+                                            ?>
+                                                    <div class="col-6 LeftToRight Fade">
+                                                        <ul>
+                                                            <li> <span class="fs-3 "><?php echo ($facilitieFeatures_data["text"]) ?></span></li>
+                                                        </ul>
+                                                    </div>
+                                                <?php
+                                                } else if ($number == 1) {
+                                                ?>
+                                                    <div class="col-6 RightToLeft Fade">
+                                                        <li> <span class="fs-3 "><?php echo ($facilitieFeatures_data["text"]) ?></span></li>
+                                                    </div>
+                                            <?php
+                                                }
+                                            }
+                                            ?>
                                         </div>
                                     </div>
 
@@ -107,41 +115,49 @@
                             </div>
                         </div>
                     </div>
+                    <?php
+                    $Pfacilitie_rs = Database::search("SELECT * FROM `premiumfacilities` WHERE `PF_id` = '1' ");
+                    $Pfacilitie_data = $Pfacilitie_rs->fetch_assoc();
 
+                    ?>
                     <div class="col-12 mb-5  ">
                         <div class="row d-flex justify-content-center">
 
                             <div class="col-3  border border-1 rounded rounded-5 border-white Fade DownToUP">
                                 <div class="row">
                                     <div class="col-12 mt-4">
-                                        <img src="Resources/images/suna.jpeg" class="facilitieImage" width="100%" alt="">
+                                        <img src="<?php echo ($Pfacilitie_data["ImagePath"]) ?>" class="facilitieImage" width="100%" alt="">
                                     </div>
                                     <div class="col-12 mt-3">
                                         <div class="row">
                                             <div class="col-12 text-center">
-                                                <span class="fw-bold fs-1 text-white">Sauna & Steam Room</span>
+                                                <span class="fw-bold fs-1 text-white"><?php echo ($Pfacilitie_data["ImageHeadline"]) ?></span>
                                             </div>
                                             <div class="col-12 p-3 text-center text-white-50">
-                                                <p class="fs-4">Rest and Recover at our Sauna & steam room built to world class standards, while enjoying an immersive experience.</p>
+                                                <p class="fs-4"><?php echo ($Pfacilitie_data["ImagePara"]) ?></p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
+                            <?php
+                            $Pfacilitie_rs2 = Database::search("SELECT * FROM `premiumfacilities` WHERE `PF_id` = '2' ");
+                            $Pfacilitie_data2 = $Pfacilitie_rs2->fetch_assoc();
 
+                            ?>
                             <div class="col-3 mx-5 border border-1 rounded rounded-5 border-white Fade UPToDown">
                                 <div class="row">
                                     <div class="col-12 mt-4">
-                                        <img src="Resources/images/SwimmingPool.jpeg" class="facilitieImage" width="100%" alt="">
+                                        <img src="<?php echo ($Pfacilitie_data2["ImagePath"]) ?>" class="facilitieImage" width="100%" alt="">
                                     </div>
                                     <div class="col-12 mt-3">
                                         <div class="row">
                                             <div class="col-12 text-center">
-                                                <span class="fw-bold fs-1 text-white">Swimming Pool</span>
+                                                <span class="fw-bold fs-1 text-white"><?php echo ($Pfacilitie_data2["ImageHeadline"]) ?></span>
                                             </div>
                                             <div class="col-12 p-3 text-center text-white-50">
-                                                <p class="fs-4">Get Free access to our state of the Art rooftop swimming pool, built with all moden amenities.</p>
+                                                <p class="fs-4"><?php echo ($Pfacilitie_data2["ImagePara"]) ?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -149,19 +165,23 @@
                             </div>
 
 
+                            <?php
+                            $Pfacilitie_rs3 = Database::search("SELECT * FROM `premiumfacilities` WHERE `PF_id` = '3' ");
+                            $Pfacilitie_data3 = $Pfacilitie_rs3->fetch_assoc();
 
+                            ?>
                             <div class="col-3  border border-1 rounded rounded-5 border-white DownToUP">
                                 <div class="row">
                                     <div class="col-12 mt-4">
-                                        <img src="Resources/images/sportMassage.jpeg" class="facilitieImage" width="100%" alt="">
+                                        <img src="<?php echo ($Pfacilitie_data3["ImagePath"]) ?>" class="facilitieImage" width="100%" alt="">
                                     </div>
                                     <div class="col-12 mt-3">
                                         <div class="row">
                                             <div class="col-12 text-center">
-                                                <span class="fw-bold fs-1 text-white">Sports Massage</span>
+                                                <span class="fw-bold fs-1 text-white"><?php echo ($Pfacilitie_data3["ImageHeadline"]) ?></span>
                                             </div>
                                             <div class="col-12 p-3 text-center text-white-50">
-                                                <p class="fs-4">Release the tension in your muscles with a sports massage from our well qualified therapists.</p>
+                                                <p class="fs-4"><?php echo ($Pfacilitie_data3["ImagePara"]) ?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -190,58 +210,58 @@
 
                             <div class="col-lg-6 col-12 offset-lg-1 text-white-50 mt-5">
                                 <div class="row">
+                                    <?php
+                                    $factory_rs = Database::search("SELECT * FROM `factoryimage` WHERE `FI_id` = '1' ");
+                                    $factory_data = $factory_rs->fetch_assoc();
+                                    ?>
                                     <div class="col-12">
                                         <p class="fs-4">
-                                            The Supplement Factory is your source for nutrition and supplements. We have your nutrition needs covered including protein shakes made to order, protein bars and other snacks, as well as a wide array of supplements, to take home.
+                                            <?php echo ($factory_data["para"]) ?>
                                         </p>
                                     </div>
 
                                     <div class="col-12">
                                         <div class="row">
-                                            <div class="col-6">
-                                                <div class="row">
-                                                    <div class="col-12 text-white">
-                                                        <span>The Shake Bar</span>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <ul>
-                                                            <li>Protein Shakes Made to Order</li>
-                                                            <li> Pre Workout Drinks & Powder</li>
-                                                            <li>BCAAs & EAAs</li>
-                                                            <li>Protein Bars & Other Snacks</li>
-                                                            <li> Bottled Water </li>
-                                                            <li>Energy Drinks</li>
-                                                            <li>Ready to Drink Protein</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="row">
-                                                    <div class="col-12  text-white">
-                                                        <span>Retail & merchandise</span>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <ul>
-                                                            <li>Protein Tubs</li>
-                                                            <li> Pre Workout</li>
-                                                            <li>Intra Workout</li>
-                                                            <li>Custom Apparel</li>
-                                                            <li> Shaker Bottles</li>
-                                                            <li>Combination Locks</li>
-                                                            <li>Ear Buds</li>
-                                                        </ul>
+                                            <?php
+                                            $faactoryCategory_rs = Database::search("SELECT * FROM `factorycategory`");
+                                            $faactoryCategory_num = $faactoryCategory_rs->num_rows;
+
+                                            for ($i = 0; $i < $faactoryCategory_num; $i++) {
+                                                $faactoryCategory_data = $faactoryCategory_rs->fetch_assoc();
+                                            ?>
+                                                <div class="col-6">
+                                                    <div class="row">
+                                                        <div class="col-12 text-white">
+                                                            <span><?php echo ($faactoryCategory_data["FactoryCategory"]) ?></span>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <ul>
+                                                                <?php
+                                                                $factoryItem_rs = Database::search("SELECT * FROM `factoryinfo` WHERE `FactoryCategory` = '" . $faactoryCategory_data["FC_id"] . "' ");
+                                                                $factoryItem_num = $factoryItem_rs->num_rows;
+                                                                for ($x = 0; $x < $factoryItem_num; $x++) {
+                                                                    $factoryItem_data = $factoryItem_rs->fetch_assoc();
+                                                                ?> <li><?php echo($factoryItem_data["ProductName"])?></li>
+                                                                <?php
+                                                                }
+                                                                ?>
+                                                            </ul>
+                                                        </div>
+
+
                                                     </div>
                                                 </div>
-                                            </div>
+                                            <?php
+                                            }
+                                            ?>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
 
-                            <div class="col-lg-4 co-12">
-                                <img src="Resources/images/SuplimentImage.jpg" width="100%" alt="">
+                            <div class="col-
+                                <img src=" <?php echo ($factory_data["iamgePath"]) ?>" width="100%" alt="">
                             </div>
 
                         </div>
