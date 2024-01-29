@@ -48,7 +48,7 @@
             <div class="col-12">
                 <div class="row">
 
-                    <div class="col-12 mt-5 mb-5 FirstDownToUPAnimation"> 
+                    <div class="col-12 mt-5 mb-5 FirstDownToUPAnimation">
                         <div class="row">
                             <div class="col-12 text-center mt-5">
                                 <span class="aboutTopicwhite facilitiyAboutText  ">ABOUT THE </span> <br> <span class="aboutTopicRed facilitiyAboutText"> FITNESS FACILITIES</span>
@@ -59,7 +59,12 @@
                     <div class="col-12 mt-5 FirstUpToDownAnimation">
                         <div class="row">
                             <div class="col-lg-8 col-12 offset-lg-2 text-center text-white">
-                                <p>The Fitness Factory is a 24/7, multi-level facility that houses an expansive selection of equipment, resources for a complete wellness experience. We provide a friendly, welcoming atmosphere for all members for all fitness levels from beginners to the PRO athletes. Whether your passion is, cardio, weight training, bodybuilding, powerlifting, CrossFit, or functional training; we have all the equipment and necessary machines you need for results.</p>
+                                <?php
+                                require "Connections/connection.php";
+                                $aboutpara_rs = Database::search("SELECT * FROM `facilitiesabout` WHERE `FA_id` = '1' ");
+                                $aboutpara_data = $aboutpara_rs->fetch_assoc();
+                                ?>
+                                <p><?php echo ($aboutpara_data["AboutPara"]) ?></p>
                                 <h5>Come train with us!</h5>
                             </div>
                         </div>
@@ -84,7 +89,7 @@
                                                     <li> <span class="fs-3">Locker rooms with private showers and day lockers</span></li>
                                                     <li> <span class="fs-3">Two levels of cardio equipment</span></li>
                                                     <li> <span class="fs-3">60 feet of turf for sleds</span></li>
-                                                <li> <span class="fs-3">Rogue Glute Hamstring Developer</span></li>
+                                                    <li> <span class="fs-3">Rogue Glute Hamstring Developer</span></li>
                                                 </ul>
                                             </div>
 

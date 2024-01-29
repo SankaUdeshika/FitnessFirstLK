@@ -391,7 +391,6 @@
 }
 
 /* /////////////////////////////// */
-
 .offsetStorieCarouselCover {
   background-color: blue;
   width: 50px;
@@ -406,6 +405,7 @@
   border-radius: 20px;
   margin-top: 60px;
 }
+
 .StoriesCarosuelSlidersmall {
   width: 25px;
   position: relative;
