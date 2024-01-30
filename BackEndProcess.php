@@ -3,7 +3,7 @@ session_start();
 require "Connections/connection.php";
 $command = $_POST["command"];
 
-$_SESSION["Category"] = "";
+$_SESSION["Category"] = "?";
 
 // admin change Password
 if ($command == "adminChangePassword") {
