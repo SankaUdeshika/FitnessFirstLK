@@ -44,7 +44,7 @@ $blog_data = $Blog_rs->fetch_assoc();
 
                             <div class="col-12 mt-5 ">
                                 <span class="text-white fw-bold" style="font-size: 50px;"><?php echo ($blog_data["BlogName"]) ?></span>
-                            </div>
+                            </div>  
 
                             <div class="col-12">
                                 <?php
