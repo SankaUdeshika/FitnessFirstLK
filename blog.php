@@ -116,7 +116,43 @@ session_start();
                                                 <span class="BlogThmbnailTopic"><?php echo ($blog_data["BlogName"]) ?></span>
                                             </div>
                                             <div class="col-12">
-                                                <small class="text-white-50 ">DECEMBER 20 2023 6 MIN READ</small>
+
+                                                <?php
+
+                                                $FullDate =  $blog_data["Bdate"];
+                                                $DateArray = explode("-", $FullDate);
+                                                $NumberMonth = $DateArray[1];
+                                                $NumberYear = $DateArray[0];
+                                                $NumberDate = $DateArray[2];
+
+                                                if ($NumberMonth == '01') {
+                                                    $month = "Jan";
+                                                } else if ($NumberMonth == '02') {
+                                                    $month = "Feb";
+                                                } else if ($NumberMonth == '03') {
+                                                    $month = "Mar";
+                                                } else if ($NumberMonth == '04') {
+                                                    $month = "Apr";
+                                                } else if ($NumberMont == '05') {
+                                                    $month = "May";
+                                                } else if ($NumberMonth == '06') {
+                                                    $month = "Jun";
+                                                } else if ($NumberMonth == '07') {
+                                                    $month = "Jul";
+                                                } else if ($NumberMonth == '08') {
+                                                    $month = "Aug";
+                                                } else if ($NumberMonth == '09') {
+                                                    $month = "Sep";
+                                                } else if ($NumberMonth == '10') {
+                                                    $month = "Oct";
+                                                } else if ($NumberMonth == '11') {
+                                                    $month = "Nov";
+                                                } else if ($NumberMonth == '12') {
+                                                    $month = "Sep";
+                                                }
+                                                ?>
+
+                                                <small class="text-white-50 "><?php echo ($month . " " . $NumberDate . " " . $NumberYear) ?> </small>
                                             </div>
                                         </div>
                                     </div>
@@ -139,7 +175,41 @@ session_start();
                                                 <span class="BlogThmbnailTopic"><?php echo ($blog_data["BlogName"]) ?></span>
                                             </div>
                                             <div class="col-12">
-                                                <small class="text-white-50 ">DECEMBER 20 2023 6 MIN READ</small>
+                                                <?php
+
+                                                $FullDate =  $blog_data["Bdate"];
+                                                $DateArray = explode("-", $FullDate);
+                                                $NumberMonth = $DateArray[1];
+                                                $NumberYear = $DateArray[0];
+                                                $NumberDate = $DateArray[2];
+
+                                                if ($NumberMonth == '01') {
+                                                    $month = "Jan";
+                                                } else if ($NumberMonth == '02') {
+                                                    $month = "Feb";
+                                                } else if ($NumberMonth == '03') {
+                                                    $month = "Mar";
+                                                } else if ($NumberMonth == '04') {
+                                                    $month = "Apr";
+                                                } else if ($NumberMont == '05') {
+                                                    $month = "May";
+                                                } else if ($NumberMonth == '06') {
+                                                    $month = "Jun";
+                                                } else if ($NumberMonth == '07') {
+                                                    $month = "Jul";
+                                                } else if ($NumberMonth == '08') {
+                                                    $month = "Aug";
+                                                } else if ($NumberMonth == '09') {
+                                                    $month = "Sep";
+                                                } else if ($NumberMonth == '10') {
+                                                    $month = "Oct";
+                                                } else if ($NumberMonth == '11') {
+                                                    $month = "Nov";
+                                                } else if ($NumberMonth == '12') {
+                                                    $month = "Sep";
+                                                }
+                                                ?>
+                                                <small class="text-white-50 "><?php echo ($month . " " . $NumberDate . " " . $NumberYear) ?> </small>
                                             </div>
                                         </div>
                                     </div>
@@ -183,7 +253,41 @@ session_start();
                                                             <span class="BlogThmbnailTopic"><?php echo ($otherBlog_data["BlogName"]) ?></span>
                                                         </div>
                                                         <div class="col-12">
-                                                            <small class="text-white-50 ">DECEMBER 20 2023 6 MIN READ</small>
+                                                            <?php
+
+                                                            $FullDate =  $otherBlog_data["Bdate"];
+                                                            $DateArray = explode("-", $FullDate);
+                                                            $NumberMonth = $DateArray[1];
+                                                            $NumberYear = $DateArray[0];
+                                                            $NumberDate = $DateArray[2];
+
+                                                            if ($NumberMonth == '01') {
+                                                                $month = "Jan";
+                                                            } else if ($NumberMonth == '02') {
+                                                                $month = "Feb";
+                                                            } else if ($NumberMonth == '03') {
+                                                                $month = "Mar";
+                                                            } else if ($NumberMonth == '04') {
+                                                                $month = "Apr";
+                                                            } else if ($NumberMont == '05') {
+                                                                $month = "May";
+                                                            } else if ($NumberMonth == '06') {
+                                                                $month = "Jun";
+                                                            } else if ($NumberMonth == '07') {
+                                                                $month = "Jul";
+                                                            } else if ($NumberMonth == '08') {
+                                                                $month = "Aug";
+                                                            } else if ($NumberMonth == '09') {
+                                                                $month = "Sep";
+                                                            } else if ($NumberMonth == '10') {
+                                                                $month = "Oct";
+                                                            } else if ($NumberMonth == '11') {
+                                                                $month = "Nov";
+                                                            } else if ($NumberMonth == '12') {
+                                                                $month = "Sep";
+                                                            }
+                                                            ?>
+                                                            <small class="text-white-50 "><?php echo ($month . " " . $NumberDate . " " . $NumberYear) ?> </small>
                                                         </div>
                                                     </div>
                                                 </div>
