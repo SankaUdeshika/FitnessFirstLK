@@ -16,15 +16,17 @@ session_start();
 
 <body class="bg-black">
     <!-- preloader -->
-    <!-- <div class="col-12 preloader " id="preloader">
+    <div class="col-12 preloader " id="preloader">
         <?php include "preloader.php" ?>
-    </div> -->
+    </div>
 
     <div class="container-fluid">
         <div class="row">
 
             <!-- Header -->
-            <?php include "header.php" ?>
+            <div class="col-12" style="position: fixed; z-index: 4;">
+                <?php include "header.php" ?>
+            </div>
 
             <!-- search bar -->
             <div class="col-12 Search-cover text-center ">
@@ -100,7 +102,7 @@ session_start();
                         $number = $i % 2;
                         if ($number == 0) {
                     ?>
-                            <div class="col-lg-5 col-12 offset-lg-1 d-flex justify-content-center Fade">
+                            <div class="col-lg-5 col-12 offset-lg-1 d-flex justify-content-center Fade" onclick="window.location = 'blogView.php?Bid=<?php echo ($blog_data['Bid']) ?>'">
                                 <div class="row">
                                     <div class="col-12 overflow-hidden">
                                         <img src="<?php echo ($blog_data["BlogMainImage"]) ?>" class="BlogCategoryImages" alt="">
@@ -123,7 +125,7 @@ session_start();
                         <?php
                         } else if ($number == 1) {
                         ?>
-                            <div class="col-lg-5 col-12 d-flex justify-content-center Fade">
+                            <div class="col-lg-5 col-12 d-flex justify-content-center Fade" onclick="window.location = 'blogView.php?Bid=<?php echo ($blog_data['Bid']) ?>'">
                                 <div class="row">
                                     <div class="col-12 overflow-hidden">
                                         <img src="<?php echo ($blog_data["BlogMainImage"]) ?>" class="BlogCategoryImages" alt="">
@@ -167,18 +169,18 @@ session_start();
                                     for ($i = 0; $i < $otherBlog_num; $i++) {
                                         $otherBlog_data = $otherBlog_rs->fetch_assoc();
                                     ?>
-                                        <div class="col-lg-3 col-6 Fade overflow-hidden mb-5">
+                                        <div class="col-lg-3 col-6 Fade overflow-hidden mb-5 " onclick="window.location = 'blogView.php?Bid=<?php echo ($otherBlog_data['Bid']) ?>'">
                                             <div class="row">
                                                 <div class="col-12">
-                                                    <img src="<?php echo($otherBlog_data["BlogMainImage"])?>" class="BlogCategoryImages" alt="">
+                                                    <img src="<?php echo ($otherBlog_data["BlogMainImage"]) ?>" class="BlogCategoryImages" alt="">
                                                 </div>
                                                 <div class="col-12 text-white">
                                                     <div class="row">
                                                         <div class="col-12 mt-3 mb-2">
-                                                            <span style="font-family: monospace;"><?php echo($otherBlog_data["category"])?></span>
+                                                            <span style="font-family: monospace;"><?php echo ($otherBlog_data["category"]) ?></span>
                                                         </div>
                                                         <div class="col-12">
-                                                            <span class="BlogThmbnailTopic"><?php echo($otherBlog_data["BlogName"])?></span>
+                                                            <span class="BlogThmbnailTopic"><?php echo ($otherBlog_data["BlogName"]) ?></span>
                                                         </div>
                                                         <div class="col-12">
                                                             <small class="text-white-50 ">DECEMBER 20 2023 6 MIN READ</small>
