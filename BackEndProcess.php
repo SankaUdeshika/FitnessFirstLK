@@ -581,15 +581,21 @@ if ($command == "adminChangePassword") {
                     $blogName = $_POST["blogName"];
                     $Category = $_POST["Category"];
                     $content = $_POST["content"];
-                   $Para = Database::escape($content);
+                    $Para = Database::escape($content);
 
                     // Get Date Time
                     $date = date("Y.m.d");
                     $time = date("H:i:s");
 
-                    $newImageName = "Resources//images//blogImage//blog" . $blogName . $NewImage_Extention;
+                
+                    $last_id = Database::search("SELECT * FROM `blog`");
+                    $last_num = $last_id->num_rows;
 
-                    Database::iud("INSERT INTO `blog` (`BlogName`,`content`,`BlogMainImage`,`Bdate`,`Btime`,`blogCategory`) VALUES('" . $blogName . "','" . $Para . "','" . $newImageName . "','" . $date . "','" . $time . "','" . $Category . "')");
+                    $last_num = $last_num + 1;
+
+                    $newImageName = "Resources//images//blogImage//blog" . $last_num . $blogName . $NewImage_Extention;
+
+                    Database::iud("INSERT INTO `blog` (`Bid`,`BlogName`,`content`,`BlogMainImage`,`Bdate`,`Btime`,`blogCategory`) VALUES('" . $last_num . "','" . $blogName . "','" . $Para . "','" . $newImageName . "','" . $date . "','" . $time . "','" . $Category . "')");
                     move_uploaded_file($ImageFile["tmp_name"], $newImageName);
                     echo ("Adding Success");
                 } else {
@@ -629,7 +635,7 @@ if ($command == "adminChangePassword") {
                 $blogName = $_POST["blogName"];
                 $id = $_POST["id"];
 
-                $newImageName = "Resources//images//blogImage//blog" . $blogName . $NewImage_Extention;
+                $newImageName = "Resources//images//blogImage//blog" . $id . $blogName . $NewImage_Extention;
 
 
                 $oldImage_rs = Database::search("SELECT * FROM `blog` WHERE `Bid` = '" . $id . "' ");
@@ -666,7 +672,7 @@ if ($command == "adminChangePassword") {
         $id = $_POST["id"];
         $Category = $_POST["Category"];
         $content = Database::escape($content);
-        
+
 
         Database::search("UPDATE `blog` SET `BlogName` = '" . $blogName . "' ,`content` = '" . $content . "' , `blogCategory` = '" . $Category . "'  WHERE `Bid` = '" . $id . "'");
         echo ("Update Success");
