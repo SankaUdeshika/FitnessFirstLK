@@ -955,7 +955,6 @@ function ChangeCategory(Bid){
   request.onreadystatechange = function () {
     if (request.readyState == 4 && request.status == 200) {
       var response = request.responseText;
-      alert(response);
       window.location.reload();
     }
   };

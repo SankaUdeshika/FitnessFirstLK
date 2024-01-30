@@ -32,7 +32,7 @@ session_start();
                     <div class="col-12">
                         <div class="row ">
                             <div class="col-12">
-                                <span class="Blog-Search-text" style="transition: 1s ease-in-out;">The Inside Track Blog  <?php echo ($_SESSION["Category"]) ?></span><br>
+                                <span class="Blog-Search-text" style="transition: 1s ease-in-out;">The Inside Track Blog</span><br>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@ session_start();
             <div class="col-12 d-flex justify-content-around mt-5 mb-5  ">
                 <div class="row">
                     <div class="col-3 text-center">
-                        <small onclick="ChangeCategory('');" class="HeaderTabs">All</small>
+                        <small onclick="ChangeCategory('?');" class="HeaderTabs">All</small>
                     </div>
                     <?php
                     require "Connections/connection.php";
@@ -72,7 +72,7 @@ session_start();
                     ?>
                         <div class="col-3 text-center">
                             <small onclick="ChangeCategory('<?php echo ($BlogCateogry_data['BCid']) ?>');" class="HeaderTabs"><?php echo ($BlogCateogry_data["category"]) ?> </small>
-                            
+
                         </div>
                     <?php
                     }
@@ -85,91 +85,72 @@ session_start();
             <div class="col-12">
                 <div class="row">
 
-                    <div class="col-lg-5 col-12 offset-lg-1 d-flex justify-content-center Fade">
-                        <div class="row">
-                            <div class="col-12 overflow-hidden">
-                                <img src="Resources/images/gym03.jpg" class="BlogCategoryImages" alt="">
-                            </div>
-                            <div class="col-12 text-white">
-                                <div class="row">
-                                    <div class="col-12 mt-3 mb-2">
-                                        <span style="font-family: monospace;">FITNESS</span>
-                                    </div>
-                                    <div class="col-12">
-                                        <span class="BlogThmbnailTopic">How To Get Fit In The New Year</span>
-                                    </div>
-                                    <div class="col-12">
-                                        <small class="text-white-50 ">DECEMBER 20 2023 6 MIN READ</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
 
-                    <div class="col-lg-5 col-12 d-flex justify-content-center Fade">
-                        <div class="row">
-                            <div class="col-12 overflow-hidden">
-                                <img src="Resources/images/gym04.jpeg" class="BlogCategoryImages" alt="">
-                            </div>
-                            <div class="col-12 text-white">
+                    if ($_SESSION["Category"] == "?") {
+                        $blog_rs = Database::search("SELECT * FROM `blog` INNER JOIN `blogcategory` ON `blogcategory`.`BCid` = `blog`.`blogCategory`  ORDER BY `Bid` ASC limit 4 ");
+                    }else{
+                        $blog_rs = Database::search("SELECT * FROM `blog` INNER JOIN `blogcategory` ON `blogcategory`.`BCid` = `blog`.`blogCategory` WHERE `blogCategory` = '" . $_SESSION["Category"] . "' ");
+                    }
+
+                    $blog_num = $blog_rs->num_rows;
+
+                    for ($i = 0; $i < $blog_num; $i++) {
+                        $blog_data = $blog_rs->fetch_assoc();
+                        $number = $i % 2;
+                        if ($number == 0) {
+                    ?>
+                            <div class="col-lg-5 col-12 offset-lg-1 d-flex justify-content-center Fade">
                                 <div class="row">
-                                    <div class="col-12 mt-3 mb-2">
-                                        <span style="font-family: monospace;">FITNESS</span>
+                                    <div class="col-12 overflow-hidden">
+                                        <img src="<?php echo ($blog_data["BlogMainImage"]) ?>" class="BlogCategoryImages" alt="">
                                     </div>
-                                    <div class="col-12">
-                                        <span class="BlogThmbnailTopic">What Is Body Mass Index?</span>
-                                    </div>
-                                    <div class="col-12">
-                                        <small class="text-white-50 ">DECEMBER 20 2023 6 MIN READ</small>
+                                    <div class="col-12 text-white">
+                                        <div class="row">
+                                            <div class="col-12 mt-3 mb-2">
+                                                <span style="font-family: monospace;"><?php echo ($blog_data["category"]) ?></span>
+                                            </div>
+                                            <div class="col-12">
+                                                <span class="BlogThmbnailTopic"><?php echo ($blog_data["BlogName"]) ?></span>
+                                            </div>
+                                            <div class="col-12">
+                                                <small class="text-white-50 ">DECEMBER 20 2023 6 MIN READ</small>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <!-- second row -->
-                    <div class="col-lg-5 col-12 d-flex justify-content-center mt-5 offset-lg-1 Fade">
-                        <div class="row">
-                            <div class="col-12 overflow-hidden">
-                                <img src="Resources/images/gym01.jpeg" class="BlogCategoryImages" alt="">
-                            </div>
-                            <div class="col-12 text-white">
+                        <?php
+                        } else if ($number == 1) {
+                        ?>
+                            <div class="col-lg-5 col-12 d-flex justify-content-center Fade">
                                 <div class="row">
-                                    <div class="col-12 mt-3 mb-2">
-                                        <span style="font-family: monospace;">FITNESS</span>
+                                    <div class="col-12 overflow-hidden">
+                                        <img src="<?php echo ($blog_data["BlogMainImage"]) ?>" class="BlogCategoryImages" alt="">
                                     </div>
-                                    <div class="col-12">
-                                        <span class="BlogThmbnailTopic">What Is Body Mass Index?</span>
-                                    </div>
-                                    <div class="col-12">
-                                        <small class="text-white-50 ">DECEMBER 20 2023 6 MIN READ</small>
+                                    <div class="col-12 text-white">
+                                        <div class="row">
+                                            <div class="col-12 mt-3 mb-2">
+                                                <span style="font-family: monospace;"><?php echo ($blog_data["category"]) ?></span>
+                                            </div>
+                                            <div class="col-12">
+                                                <span class="BlogThmbnailTopic"><?php echo ($blog_data["BlogName"]) ?></span>
+                                            </div>
+                                            <div class="col-12">
+                                                <small class="text-white-50 ">DECEMBER 20 2023 6 MIN READ</small>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 col-12 d-flex justify-content-center mt-5 Fade">
-                        <div class="row">
-                            <div class="col-12 overflow-hidden">
-                                <img src="Resources/images/gym02.jpg" class="BlogCategoryImages" alt="">
-                            </div>
-                            <div class="col-12 text-white">
-                                <div class="row">
-                                    <div class="col-12 mt-3 mb-2">
-                                        <span style="font-family: monospace;">FITNESS</span>
-                                    </div>
-                                    <div class="col-12">
-                                        <span class="BlogThmbnailTopic">What Is Body Mass Index?</span>
-                                    </div>
-                                    <div class="col-12">
-                                        <small class="text-white-50 ">DECEMBER 20 2023 6 MIN READ</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                        }
+                    }
+
+                    ?>
 
                     <!-- realted Topics -->
-                    <div class="col-12 mt-5 ">
+                    <div class="col-12 mt-5">
                         <div class="row">
                             <div class="col-lg-10 col-12 offset-lg-1">
                                 <div class="row">
