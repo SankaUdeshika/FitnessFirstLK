@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +32,7 @@
                     <div class="col-12">
                         <div class="row ">
                             <div class="col-12">
-                                <span class="Blog-Search-text" style="transition: 1s ease-in-out;">The Inside Track Blog</span><br>
+                                <span class="Blog-Search-text" style="transition: 1s ease-in-out;">The Inside Track Blog  <?php echo ($_SESSION["Category"]) ?></span><br>
                             </div>
                         </div>
                     </div>
@@ -56,17 +60,23 @@
             <div class="col-12 d-flex justify-content-around mt-5 mb-5  ">
                 <div class="row">
                     <div class="col-3 text-center">
-                        <small class="HeaderTabs">All</small>
+                        <small onclick="ChangeCategory('');" class="HeaderTabs">All</small>
                     </div>
-                    <div class="col-3 text-center">
-                        <small class="HeaderTabs">Nutrition </small>
-                    </div>
-                    <div class="col-3 text-center">
-                        <small class="HeaderTabs">Fitness</small>
-                    </div>
-                    <div class="col-3 text-center">
-                        <small class="HeaderTabs">Archive</small>
-                    </div>
+                    <?php
+                    require "Connections/connection.php";
+                    $BlogCateogry_rs = Database::search("SELECT * FROM `blogcategory` ");
+                    $BlogCateogry_num = $BlogCateogry_rs->num_rows;
+                    for ($i = 0; $i < $BlogCateogry_num; $i++) {
+                        $BlogCateogry_data = $BlogCateogry_rs->fetch_assoc();
+
+                    ?>
+                        <div class="col-3 text-center">
+                            <small onclick="ChangeCategory('<?php echo ($BlogCateogry_data['BCid']) ?>');" class="HeaderTabs"><?php echo ($BlogCateogry_data["category"]) ?> </small>
+                            
+                        </div>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
 

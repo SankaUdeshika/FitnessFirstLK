@@ -3,6 +3,8 @@ session_start();
 require "Connections/connection.php";
 $command = $_POST["command"];
 
+$_SESSION["Category"] = "";
+
 // admin change Password
 if ($command == "adminChangePassword") {
     $curruntP = $_POST["curruntP"];
@@ -587,7 +589,7 @@ if ($command == "adminChangePassword") {
                     $date = date("Y.m.d");
                     $time = date("H:i:s");
 
-                
+
                     $last_id = Database::search("SELECT * FROM `blog`");
                     $last_num = $last_id->num_rows;
 
@@ -684,4 +686,8 @@ if ($command == "adminChangePassword") {
     unlink($oldImage_data["BlogMainImage"]);
     Database::search(" DELETE FROM `blog` WHERE `Bid` = '" . $id . "' ");
     echo ("Delete Success");
+} else if ($command == "ChangeBlogCategory") { // admin Delete Blog 
+    $Category_id =  $_POST["Bid"];
+    $_SESSION["Category"] = $Category_id;
+    echo ($Category_id);
 }

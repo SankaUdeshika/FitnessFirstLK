@@ -940,3 +940,25 @@ function DeleteBlog(id) {
   request.open("POST", "BackEndProcess.php", true);
   request.send(form);
 }
+
+
+//Customer CHange Blog Category
+
+function ChangeCategory(Bid){
+  var command = "ChangeBlogCategory";
+
+  var form = new FormData();
+  form.append("command", command);
+  form.append("Bid", Bid);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      alert(response);
+      window.location.reload();
+    }
+  };
+  request.open("POST", "BackEndProcess.php", true);
+  request.send(form);
+}
