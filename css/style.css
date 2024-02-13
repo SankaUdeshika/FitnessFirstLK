@@ -210,7 +210,6 @@
   display: flex;
   justify-content: center;
 
-
   /* z-index: 2; */
   /* text-decoration: wavy; */
 }
@@ -320,7 +319,7 @@
 }
 
 #radio4:checked ~ .first {
-  margin-left: -60%;
+@font  margin-left: -60%;
 } */
 
 /* css for Automatic navigation */
@@ -771,12 +770,8 @@
   }
 }
 
-
-
-
-
 /* amasha css */
-.adminBackground{
+.adminBackground {
   display: flex;
   background-color: gray;
   justify-content: center;
@@ -785,22 +780,27 @@
   height: 100vh;
 }
 
-.AdminLoginCard{
+.AdminLoginCard {
   background-color: black;
   border-radius: 50px;
   border: 2px solid white;
-  box-shadow: 10px 10px 3px rgb(39, 37, 37) ;
+  box-shadow: 10px 10px 3px rgb(39, 37, 37);
 }
 
-.AdminTitle{
-  color: rgb(251, 251, 252); ;
+.AdminTitle {
+  color: rgb(251, 251, 252);
 }
 
-.AdminText{
-  color: rgb(209, 206, 207); ;
+.AdminText {
+  color: rgb(209, 206, 207);
 }
 
-
-
-
-
+.FlexTopRedBar {
+  color: white;
+  background-color: red;
+}
+.FlexTopRedBarTopic {
+  color: white;
+  font-weight: bold;
+  font-family: "Alinasi";
+}
