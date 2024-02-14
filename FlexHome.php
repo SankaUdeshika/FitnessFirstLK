@@ -11,7 +11,6 @@
 </head>
 
 <body>
-    <label class=" Number  visually-hidden " id="Number">0</label>
     <!-- preloader -->
     <div class="col-12 preloader " id="preloader">
         <?php include "preloader.php" ?>
@@ -26,15 +25,16 @@
                     <div class="col-4">
                     </div>
                     <div class="col-4 text-center mt-2 mb-2 ">
+                        <label class=" Number visually-hidden  " id="Number">0</label>
                         <span class="FlexTopRedBarTopic">Exclusive Suppliment🔥</span>
                     </div>
                 </div>
-            </div> 
+            </div>
 
             <!-- Flex Header -->
             <div class="col-12 position-sticky top-0">
                 <div class="row">
-                    <?php include "FlexHeader.php"?>
+                    <?php include "FlexHeader.php" ?>
                 </div>
             </div>
 

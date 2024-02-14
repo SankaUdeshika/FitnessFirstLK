@@ -228,9 +228,9 @@ window.addEventListener("scroll", ImageBlackBoxAni);
 //---------------------------------------------------
 
 function Header() {
-  var This = document.querySelector(".Number");
-  var TagTop = This.getBoundingClientRect().bottom;
-  This.innerHTML = TagTop;
+  var Number = document.querySelector(".Number");
+  var TagTop = Number.getBoundingClientRect().bottom;
+  Number.innerHTML = TagTop;
   if (TagTop > 5) {
     document.querySelector(".FlexLOGO").classList.remove("active");
   } else {
