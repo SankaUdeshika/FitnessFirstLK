@@ -19,32 +19,31 @@
                     <div class="col-12">
                         <div class="row">
                             <div class="col-4 d-flex  align-items-center">
-                                <span class="fw-bold fs-4 offset-4"><i class="bi bi-search"></i></span>
+                                <span class="fw-bold fs-4 offset-4 FlexHeadrTab hedaerIcon"><i class="bi bi-search"></i></span>
                             </div>
                             <div class="col-4 text-center d-flex justify-content-center">
                                 <span class="FlexLOGO">Flex</span>
                             </div>
-                            <div class="col-4 text-center">
-                                <span class="fs-1 fw-bold offset-4"><i class="bi bi-cart4"></i></span>
+                            <div class="col-4 text-end d-flex align-items-center ">
+                                <span class="fs-1 fw-bold offset-5 FlexHeadrTab "><i class="bi bi-cart4"></i></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 d-flex justify-content-center">
                         <div class="row">
                             <div class="col">
-                                <span class="text-white-50">Home</span>
+                                <span class=" FlexHeadrTab">Home</span>
                             </div>
                             <div class="col">
-                                <span class="text-white-50">Catalog</span>
+                                <span class=" FlexHeadrTab">Catalog</span>
                             </div>
                             <div class="col">
-                                <span class="text-white-50">Contact</span>
+                                <span class=" FlexHeadrTab">Contact</span>
                             </div>
                         </div>
                     </div>
 
-                    
-
+                
                 </div>
             </div>
 

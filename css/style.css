@@ -812,3 +812,17 @@
 .FlexLOGO.active{
   font-size: 50px;
 }
+
+.FlexHeadrTab{
+  font-style: normal;
+  transition: 0.3s ease-in-out;
+  color: white;
+}
+.FlexHeadrTab:hover{
+  font-style: italic;
+  color: red;
+  text-decoration: line-through;
+  text-decoration: underline;
+  scale: 1.2;
+}
+
