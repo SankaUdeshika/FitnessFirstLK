@@ -225,6 +225,19 @@ function ImageBlackBoxAni() {
   }
 }
 window.addEventListener("scroll", ImageBlackBoxAni);
+//---------------------------------------------------
+
+function Header() {
+  var This = document.querySelector(".Number");
+  var TagTop = This.getBoundingClientRect().bottom;
+  This.innerHTML = TagTop;
+  if (TagTop > 5) {
+    document.querySelector(".FlexLOGO").classList.remove("active");
+  } else {
+    document.querySelector(".FlexLOGO").classList.add("active");  }
+}
+
+window.addEventListener("scroll", Header);
 
 // Carosuel Functions
 var counter = 1;
@@ -941,10 +954,9 @@ function DeleteBlog(id) {
   request.send(form);
 }
 
-
 //Customer CHange Blog Category
 
-function ChangeCategory(Bid){
+function ChangeCategory(Bid) {
   var command = "ChangeBlogCategory";
 
   var form = new FormData();

@@ -804,3 +804,11 @@
   font-weight: bold;
   font-family: "Alinasi";
 }
+.FlexLOGO{
+  font-size: 80px;
+  transition: 0.5s ease-in-out ;
+}
+
+.FlexLOGO.active{
+  font-size: 50px;
+}
