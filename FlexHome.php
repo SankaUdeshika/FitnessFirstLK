@@ -67,7 +67,13 @@
                     <div class="col-12">
                         <div class="row">
                             <div class="col-4 FlexProductCard">
+                                <div class="row">
 
+                                    <div class="col-10 offset-1 d-flex justify-content-center ">
+                                        <img src="Resources/images/Suppliment1.jpg" class="FlexProductImage" alt="">
+                                    </div>
+gi
+                                </div>
                             </div>
                         </div>
                     </div>

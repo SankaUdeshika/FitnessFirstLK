@@ -862,6 +862,12 @@
 
 .FlexProductCard {
   width: 100%;
-  height: 400px;
+  height: 450px;
   border: 2px white solid;
+}
+.FlexProductImage {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  margin-top: 30px  ;
 }
