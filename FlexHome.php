@@ -11,68 +11,92 @@
 </head>
 
 <body class="bg-black">
-    <!-- preloader -->
-    <div class="col-12 preloader " id="preloader">
-        <?php include "preloader.php" ?>
-    </div>
 
-    <!-- Top red Bar -->
-    <div class="col-12" style="background-color:red;">
-        <div class="row ">
-            <div class="col-4">
-            </div>
-            <div class="col-4 text-center mt-2 mb-2 ">
-                <label class=" Number visually-hidden  " id="Number">0</label>
-                <span class="FlexTopRedBarTopic">Exclusive Suppliment🔥</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Flex Header -->
-    <div class="col-12 position-sticky top-0 " style="z-index: 2;">
-        <div class="row">
-            <?php include "FlexHeader.php" ?>
-        </div>
-    </div>
-
-    <!-- Flex Home Image -->
-    <div class="col-12 position-relative">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <img src="Resources/images/Areas/gym02.jpg" class="FlexHomeImage" width="100%">
-            </div>
-            <div class="col-12 HomeImageTextButtonCover   text-center">
                 <div class="row">
-                    <div class="col-12 ">
-                        <span class="FlexCatouselText">Free Shipping</span>
-                    </div>
-                    <div class="col-12 mt-3">
-                        <span class="ShopNowBtn">Shop Now</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Flex Item  -->
-
-    <div class="col-12 d-flex justify-content-center">
-        <div class="HomeProductViewCover">
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-12 fw-bold text-white mt-2 mb-2">
-                        <h2>Latest Collection</h1>
+                    <!-- preloader -->
+                    <div class="col-12 preloader " id="preloader">
+                        <?php include "preloader.php" ?>
                     </div>
 
-                    <div class="col-12">
+                    <!-- Top red Bar -->
+                    <div class="col-12" style="background-color:red;">
+                        <div class="row ">
+                            <div class="col-4">
+                            </div>
+                            <div class="col-4 text-center mt-2 mb-2 ">
+                                <label class=" Number visually-hidden  " id="Number">0</label>
+                                <span class="FlexTopRedBarTopic">Exclusive Suppliment🔥</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flex Header -->
+                    <div class="col-12 position-sticky top-0 " style="z-index: 2;">
                         <div class="row">
-                            <div class="col-4 FlexProductCard">
-                                <div class="row">
+                            <?php include "FlexHeader.php" ?>
+                        </div>
+                    </div>
 
-                                    <div class="col-10 offset-1 d-flex justify-content-center ">
-                                        <img src="Resources/images/Suppliment1.jpg" class="FlexProductImage" alt="">
+                    <!-- Flex Home Image -->
+                    <div class="col-12 position-relative">
+                        <div class="row">
+                            <div class="col-12">
+                                <img src="Resources/images/Areas/gym02.jpg" class="FlexHomeImage" width="100%">
+                            </div>
+                            <div class="col-12 HomeImageTextButtonCover   text-center">
+                                <div class="row">
+                                    <div class="col-12 ">
+                                        <span class="FlexCatouselText">Free Shipping</span>
                                     </div>
-gi
+                                    <div class="col-12 mt-3">
+                                        <span class="ShopNowBtn">Shop Now</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flex Item  -->
+
+                    <div class="col-12 d-flex justify-content-center ">
+                        <div class="HomeProductViewCover">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12 fw-bold text-white mt-2 mb-2">
+                                        <h2>Latest Collection</h1>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-4 FlexProductCard">
+                                                <div class="row">
+
+                                                    <div class="col-10 offset-1 d-flex justify-content-center ">
+                                                        <img src="Resources/images/Suppliment1.jpg" class="FlexProductImage" alt="">
+                                                    </div>
+
+                                                    <div class="col-10 offset-1 mt-1 fw-bold fs-5 text-white">
+                                                        <span>WHEY Premeum High Quauty Weigt Protin</span>
+                                                    </div>
+
+                                                    <div class="col-10 offset-1 text-white-50">
+                                                        <span>Rs.8,500</span>
+                                                    </div>
+
+                                                    <div class="col-10 mt-2 offset-1">
+                                                        <div class="col-12 ViewProductButton  d-flex align-items-center justify-content-center">
+                                                            <span class="ViewProductButtonText">Choose Option</span>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -81,6 +105,7 @@ gi
             </div>
         </div>
     </div>
+
 
 
 
