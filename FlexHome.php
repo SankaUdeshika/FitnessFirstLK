@@ -10,50 +10,74 @@
     <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 
-<body>
+<body class="bg-black">
     <!-- preloader -->
     <div class="col-12 preloader " id="preloader">
         <?php include "preloader.php" ?>
     </div>
 
-    <div class="container-fluid">
-        <div class="row">
-
-            <!-- Top red Bar -->
-            <div class="col-12" style="background-color:red;">
-                <div class="row ">
-                    <div class="col-4">
-                    </div>
-                    <div class="col-4 text-center mt-2 mb-2 ">
-                        <label class=" Number visually-hidden  " id="Number">0</label>
-                        <span class="FlexTopRedBarTopic">Exclusive Suppliment🔥</span>
-                    </div>
-                </div>
+    <!-- Top red Bar -->
+    <div class="col-12" style="background-color:red;">
+        <div class="row ">
+            <div class="col-4">
             </div>
-
-            <!-- Flex Header -->
-            <div class="col-12 position-sticky top-0">
-                <div class="row">
-                    <?php include "FlexHeader.php" ?>
-                </div>
+            <div class="col-4 text-center mt-2 mb-2 ">
+                <label class=" Number visually-hidden  " id="Number">0</label>
+                <span class="FlexTopRedBarTopic">Exclusive Suppliment🔥</span>
             </div>
-
-            <h1>Sanka</h1>
-            <h1>Sanka</h1>
-            <h1>Sanka</h1>
-            <h1>Sanka</h1>
-            <h1>Sanka</h1>
-            <h1>Sanka</h1>
-            <h1>Sanka</h1>
-            <h1>Sanka</h1>
-            <h1>Sanka</h1>
-            <h1>Sanka</h1>
-            <h1>Sanka</h1>
-            <h1>Sanka</h1>
-
-
         </div>
     </div>
+
+    <!-- Flex Header -->
+    <div class="col-12 position-sticky top-0 " style="z-index: 2;">
+        <div class="row">
+            <?php include "FlexHeader.php" ?>
+        </div>
+    </div>
+
+    <!-- Flex Home Image -->
+    <div class="col-12 position-relative">
+        <div class="row">
+            <div class="col-12">
+                <img src="Resources/images/Areas/gym02.jpg" class="FlexHomeImage" width="100%">
+            </div>
+            <div class="col-12 HomeImageTextButtonCover   text-center">
+                <div class="row">
+                    <div class="col-12 ">
+                        <span class="FlexCatouselText">Free Shipping</span>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <span class="ShopNowBtn">Shop Now</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flex Item  -->
+
+    <div class="col-12 d-flex justify-content-center">
+        <div class="HomeProductViewCover">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12 fw-bold text-white mt-2 mb-2">
+                        <h2>Latest Collection</h1>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-4 FlexProductCard">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 
     <?php include "footer.php" ?>
     <script src="js/script.js">

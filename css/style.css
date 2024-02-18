@@ -804,21 +804,21 @@
   font-weight: bold;
   font-family: "Alinasi";
 }
-.FlexLOGO{
+.FlexLOGO {
   font-size: 80px;
-  transition: 0.5s ease-in-out ;
+  transition: 0.5s ease-in-out;
 }
 
-.FlexLOGO.active{
+.FlexLOGO.active {
   font-size: 50px;
 }
 
-.FlexHeadrTab{
+.FlexHeadrTab {
   font-style: normal;
   transition: 0.3s ease-in-out;
   color: white;
 }
-.FlexHeadrTab:hover{
+.FlexHeadrTab:hover {
   font-style: italic;
   color: red;
   text-decoration: line-through;
@@ -826,3 +826,42 @@
   scale: 1.2;
 }
 
+.FlexHomeImage {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+.HomeImageTextButtonCover {
+  position: absolute;
+  bottom: 25%;
+  font-weight: bold;
+  color: white;
+}
+.FlexCatouselText {
+  font-size: xxx-large;
+  font-weight: bold;
+  color: white;
+}
+.ShopNowBtn {
+  margin-top: 20px;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: x-large;
+}
+
+.HomeProductViewCover {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+.FlexProductCard {
+  width: 100%;
+  height: 400px;
+  border: 2px white solid;
+}
