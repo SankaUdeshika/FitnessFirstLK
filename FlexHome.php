@@ -95,8 +95,8 @@
                                                     </div>
                                                     <!-- Button -->
                                                     <div class="col-10 mt-2 offset-1 position-relative overflow-hidden ">
-                                                        <div class="col-12 ViewProductButton  overflow-hidden  d-flex align-items-center justify-content-center">
-                                                            <div class="col-11 ViewProductButto2  d-flex align-items-center justify-content-center">
+                                                        <div class="col-12 ViewProductButton ">
+                                                            <div class="col-11 ViewProductButto2  ">
                                                             </div>
                                                             <span class="ViewProductButtonText">Choose Option</span>
                                                         </div>
