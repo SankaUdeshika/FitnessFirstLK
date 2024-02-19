@@ -34,7 +34,7 @@
                     </div>
 
                     <!-- Flex Header -->
-                    <div class="col-12 position-sticky top-0 " style="z-index: 2;">
+                    <div class="col-12 position-sticky top-0 " style="z-index: 4;">
                         <div class="row">
                             <?php include "FlexHeader.php" ?>
                         </div>
@@ -61,7 +61,7 @@
 
                     <!-- Flex Item  -->
 
-                    <div class="col-12 d-flex justify-content-center mb-5 ">
+                    <div class="col-12 d-flex justify-content-center mt-5 mb-5 ">
                         <div class="HomeProductViewCover">
                             <div class="col-12">
                                 <div class="row">
@@ -74,13 +74,13 @@
                                             <div class="col-4 FlexProductCard">
                                                 <div class="row">
 
-                                                    <div class="col-10 offset-1 d-flex justify-content-center overflow-hidden ">
-                                                        <div class="row position-relative">
-                                                            <div class="col-12">
-                                                                <img src="Resources/images/Suppliment1.jpg" class="FlexProductImage z-4" alt="">
+                                                    <div class="col-10 offset-1 ProductImageCover ">
+                                                        <div class="row">
+                                                            <div class="col-12 ProductFirstImageCover">
+                                                                <img src="Resources/images/Suppliment1.jpg" class="FlexProductImage1" alt="">
                                                             </div>
-                                                            <div class="col-12 position-absolute overflow-hidden top-0 ">
-                                                                <img src="Resources/images/SuplimentImage.jpg" class="FlexProductImage2" alt="">
+                                                            <div class="col-12 ProductSecondImageCover ">
+                                                                <img src="Resources/images/Suppliment2.jpg" class="FlexProductImage2" alt="">
                                                             </div>
                                                         </div>
 
@@ -93,15 +93,13 @@
                                                     <div class="col-10 offset-1 text-white-50">
                                                         <span>Rs.8,500</span>
                                                     </div>
-
+                                                    <!-- Button -->
                                                     <div class="col-10 mt-2 offset-1 position-relative overflow-hidden ">
                                                         <div class="col-12 ViewProductButton  overflow-hidden  d-flex align-items-center justify-content-center">
                                                             <div class="col-11 ViewProductButto2  d-flex align-items-center justify-content-center">
                                                             </div>
                                                             <span class="ViewProductButtonText">Choose Option</span>
-
                                                         </div>
-
                                                     </div>
 
 

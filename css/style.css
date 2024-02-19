@@ -876,11 +876,42 @@
   transition: 0.5s ease-out;
 }
 
-.FlexProductImage {
+.FlexProductCard:hover .FlexProductImage2 {
+  z-index: 2;
+  transition: 0.3s ease-in-out;
+}
+
+.ProductImageCover {
+  display: flex;
+  justify-content: center;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: relative;
+}
+.ProductFirstImageCover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.FlexProductImage1 {
   width: 100%;
   height: 300px;
   object-fit: cover;
   margin-top: 30px;
+  z-index: 2;
+}
+
+.ProductSecondImageCover {
+  position: absolute;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  display: flex;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
 }
 
 .FlexProductImage2 {
@@ -888,7 +919,7 @@
   height: 300px;
   object-fit: cover;
   margin-top: 30px;
-  scale: 1.5;
+  z-index: 1;
 }
 
 .ViewProductButton {
@@ -897,6 +928,7 @@
   background-color: transparent;
   border: 1px solid white;
 }
+
 .ViewProductButto2 {
   width: 100%;
   height: 50px;
