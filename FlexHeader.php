@@ -22,7 +22,7 @@
                                 <span class="fw-bold fs-4 offset-4 FlexHeadrTab hedaerIcon"><i class="bi bi-search"></i></span>
                             </div>
                             <div class="col-4 text-center d-flex justify-content-center">
-                                <span class="FlexLOGO">Flex</span>
+                                <img src="Resources/images/LOGO/Flex.jpg" class="FlexLOGO" alt="Flex Logo">
                             </div>
                             <div class="col-4 text-end d-flex align-items-center ">
                                 <span class="fs-1 fw-bold offset-5 FlexHeadrTab "><i class="bi bi-cart4"></i></span>

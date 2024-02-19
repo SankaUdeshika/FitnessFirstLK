@@ -805,12 +805,14 @@
   font-family: "Alinasi";
 }
 .FlexLOGO {
-  font-size: 80px;
+  width: 120%;
+  height: auto;
   transition: 0.5s ease-in-out;
 }
 
 .FlexLOGO.active {
-  font-size: 50px;
+  width: 70%;
+  height: auto;
 }
 
 .FlexHeadrTab {
@@ -891,7 +893,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .FlexProductImage1 {
