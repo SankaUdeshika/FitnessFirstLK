@@ -1014,3 +1014,21 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+.ContactSendBtn{
+  background-color: white;
+  color: black;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 0px;
+  margin-top: 50px;
+  transition: 0.2s ease-in-out;
+
+}
+.ContactSendBtn:hover{
+  background-color: red;
+  color: white;
+  transition: 0.2s ease-in-out;
+}
