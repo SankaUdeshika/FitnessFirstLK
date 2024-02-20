@@ -862,9 +862,16 @@
   justify-content: center;
 }
 
+.CatelogProductViewCover {
+  width: 90%;
+  display: flex;
+  background-color: white;
+  justify-content: center;
+}
+
 .FlexProductCard {
   width: 100%;
-  height: 500px;
+  height: 515px;
   border: 2px white solid;
   transition: 0.3s ease-in-out;
 }
@@ -933,6 +940,33 @@
   justify-content: center;
 }
 
+.ViewProductButton2 {
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  border: 1px solid white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in;
+  background-color: black;
+  transition: 0.5s ease-in-out;
+}
+.ViewProductButton2 :hover {
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  border: 1px solid white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in;
+  background-color: white;
+  color: black;
+}
+
 .ViewProductButton:hover {
   transition: 0.5s ease;
   /* background-color: white; */
@@ -963,19 +997,17 @@
   z-index: 2;
 }
 
-.cartProductImage{
+.cartProductImage {
   width: 100%;
   height: auto;
 }
 
-
-.CheckoutCover{
- position: absolute;
- bottom: 0;
- left: 0;
-
+.CheckoutCover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
-.cartCheckoutBtn{
+.cartCheckoutBtn {
   background-color: white;
   color: black;
   font-size: large;
