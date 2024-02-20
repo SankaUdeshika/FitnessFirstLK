@@ -86,7 +86,7 @@
                                     </div>
 
                                     <!-- Items -->
-                                    <div class="col-12 Fade DownToUP">
+                                    <div class="col-12 FirstDownToUPAnimation ">
                                         <div class="row">
 
 
@@ -116,7 +116,7 @@
                                                             <!-- Button -->
                                                             <div class="col-10 mt-2 offset-1 position-relative overflow-hidden ">
                                                                 <div class="col-12 ViewProductButton2 ">
-                                                                    <span class="ViewProductButtonText">Choose Option</span>
+                                                                    <span class="ViewProductButtonText" onclick="window.location='FlexSingleProductView.php'">Choose Option</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -150,7 +150,7 @@
                                                             <!-- Button -->
                                                             <div class="col-10 mt-2 offset-1 position-relative overflow-hidden ">
                                                                 <div class="col-12 ViewProductButton2 ">
-                                                                    <span class="ViewProductButtonText">Choose Option</span>
+                                                                    <span class="ViewProductButtonText" onclick="window.location='FlexSingleProductView.php'">Choose Option</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -184,7 +184,7 @@
                                                             <!-- Button -->
                                                             <div class="col-10 mt-2 offset-1 position-relative overflow-hidden ">
                                                                 <div class="col-12 ViewProductButton2 ">
-                                                                    <span class="ViewProductButtonText">Choose Option</span>
+                                                                    <span class="ViewProductButtonText" onclick="window.location='FlexSingleProductView.php'">Choose Option</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -218,7 +218,7 @@
                                                             <!-- Button -->
                                                             <div class="col-10 mt-2 offset-1 position-relative overflow-hidden ">
                                                                 <div class="col-12 ViewProductButton2 ">
-                                                                    <span class="ViewProductButtonText">Choose Option</span>
+                                                                    <span class="ViewProductButtonText" onclick="window.location='FlexSingleProductView.php'">Choose Option</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -252,7 +252,7 @@
                                                             <!-- Button -->
                                                             <div class="col-10 mt-2 offset-1 position-relative overflow-hidden ">
                                                                 <div class="col-12 ViewProductButton2 ">
-                                                                    <span class="ViewProductButtonText">Choose Option</span>
+                                                                    <span class="ViewProductButtonText" onclick="window.location='FlexSingleProductView.php'">Choose Option</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -286,7 +286,7 @@
                                                             <!-- Button -->
                                                             <div class="col-10 mt-2 offset-1 position-relative overflow-hidden ">
                                                                 <div class="col-12 ViewProductButton2 ">
-                                                                    <span class="ViewProductButtonText">Choose Option</span>
+                                                                    <span class="ViewProductButtonText" onclick="window.location='FlexSingleProductView.php'">Choose Option</span>
                                                                 </div>
                                                             </div>
                                                         </div>
