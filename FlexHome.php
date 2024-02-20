@@ -297,8 +297,6 @@
                                                                     <span class="ViewProductButtonText">Choose Option</span>
                                                                 </div>
                                                             </div>
-
-
                                                         </div>
                                                     </div>
                                                 </div>

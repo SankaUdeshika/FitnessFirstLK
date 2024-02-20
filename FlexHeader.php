@@ -38,7 +38,7 @@
                                 <span class=" FlexHeadrTab" onclick="window.location = 'FlexCatelog.php'">Catalog</span>
                             </div>
                             <div class="col">
-                                <span class=" FlexHeadrTab">Contact</span>
+                                <span class=" FlexHeadrTab" onclick="window.location = 'FlexContact.php'">Contact</span>
                             </div>
                         </div>
                     </div>
