@@ -967,3 +967,18 @@
   width: 100%;
   height: auto;
 }
+
+
+.CheckoutCover{
+ position: absolute;
+ bottom: 0;
+ left: 0;
+
+}
+.cartCheckoutBtn{
+  background-color: white;
+  color: black;
+  font-size: large;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

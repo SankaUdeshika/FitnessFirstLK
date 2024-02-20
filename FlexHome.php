@@ -339,8 +339,8 @@
                     <h5 class="offcanvas-title text-white" id="staticBackdropLabel" type="button" class="btn-close btn-danger" data-bs-dismiss="offcanvas" aria-label="Close"><i class="bi bi-x-lg"></i></h5>
                     <!-- <button type="button" class="btn-close btn-danger"  data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
                 </div>
-                <div class="offcanvas-body ">
-                    <div class="col-12">
+                <div class="offcanvas-body  position-relative">
+                    <div class="col-12 ">
                         <div class="row">
                             <!-- titile -->
                             <div class="col-12 text-center">
@@ -404,7 +404,30 @@
                                 </div>
                             </div>
 
-                            
+                            <!-- Checkout out -->
+                            <div class="col-12 CheckoutCover">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <hr class="text-white text-center">
+                                    </div>
+                                    <div class="col-12 mt-3">
+                                        <div class="row">
+                                            <div class="col-6 text-start">
+                                                <span class="fw-bold text-white">Estimated total</span>
+                                            </div>
+                                            <div class="col-6 text-end">
+                                                <span class=" text-white">Rs.8,500</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <small class="text-white-50">Taxes, Discounts and shipping calculated at checkout</small>
+                                    </div>
+                                    <div class="col-12 p-3 d-grid">
+                                        <button class="cartCheckoutBtn">Check out</button>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
