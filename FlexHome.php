@@ -304,9 +304,9 @@
                                                 </div>
                                             </div>
 
-                                            
 
-                                            
+
+
 
 
 
@@ -323,6 +323,28 @@
                     </div>
                 </div>
             </div>
+            <div class="col-12">
+                <div class="row">
+                    <?php include "footer.php" ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-12">
+        <div class="row">
+            <div class="offcanvas  bg-black text-white offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title text-white" id="staticBackdropLabel" type="button" class="btn-close btn-danger" data-bs-dismiss="offcanvas" aria-label="Close"><i class="bi bi-x-lg"></i></h5>
+                    <!-- <button type="button" class="btn-close btn-danger"  data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
+                </div>
+                <div class="offcanvas-body ">
+                    <div>
+                        I will not close if you click outside of me.
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -330,7 +352,6 @@
 
 
 
-    <?php include "footer.php" ?>
     <script src="js/script.js">
     </script>
     <script src="js/bootstrap.bundle.js"></script>

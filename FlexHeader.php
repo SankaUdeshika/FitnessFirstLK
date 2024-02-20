@@ -25,7 +25,7 @@
                                 <img src="Resources/images/LOGO/Flex.jpg" class="FlexLOGO" alt="Flex Logo">
                             </div>
                             <div class="col-4 text-end d-flex align-items-center ">
-                                <span class="fs-1 fw-bold offset-5 FlexHeadrTab "><i class="bi bi-cart4"></i></span>
+                                <span class="fs-1 fw-bold offset-5 FlexHeadrTab  "  type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><i class="bi bi-cart4"></i></span>
                             </div>
                         </div>
                     </div>

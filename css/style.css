@@ -817,7 +817,7 @@
 
 .FlexHeadrTab {
   font-style: normal;
-  transition: 0.3s ease-in-out;
+  transition: 0.1s ease-in-out;
   color: white;
 }
 .FlexHeadrTab:hover {
