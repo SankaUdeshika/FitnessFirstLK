@@ -962,3 +962,8 @@
   font-weight: bold;
   z-index: 2;
 }
+
+.cartProductImage{
+  width: 100%;
+  height: auto;
+}

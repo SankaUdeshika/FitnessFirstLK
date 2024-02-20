@@ -340,8 +340,73 @@
                     <!-- <button type="button" class="btn-close btn-danger"  data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
                 </div>
                 <div class="offcanvas-body ">
-                    <div>
-                        I will not close if you click outside of me.
+                    <div class="col-12">
+                        <div class="row">
+                            <!-- titile -->
+                            <div class="col-12 text-center">
+                                <h2>Your Cart</h2>
+                            </div>
+                            <!-- Sections -->
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-6 text-start">
+                                        <small class="text-white-50">Product</small>
+                                    </div>
+                                    <div class="col-6 text-end">
+                                        <small class="text-white-50">Total</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Product Details -->
+                            <div class="col-12">
+                                <div class="row">
+
+                                    <div class="col-4">
+                                        <img src="Resources/images/Suppliment1.jpg" class="cartProductImage" alt="cartSuppliment">
+                                    </div>
+
+                                    <div class="col-5">
+                                        <span class="fw-bold text-white">WHEY Premeum High Quauty Weigt Protin</span>
+                                        <br>
+                                        <span class="text-white-50">Rs.8,500</span>
+                                    </div>
+                                    <div class="col-3 text-end">
+                                        <span class="text-white fw-bold">Rs.8,500</span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Quntity -->
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-4"></div>
+                                    <div class="col-7 ">
+                                        <div class="row">
+                                            <div class="col-8 mt-3 px-3 py-3 pt-3 pb-3 border border-1 border-white">
+                                                <div class="row">
+                                                    <div class="col-4">
+                                                        <span class="fw-bold text-white">-</span>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <span class="fw-bold text-white">1</span>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <span class="fw-bold text-white">+</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 d-flex  justify-content-center align-items-center">
+                                                <span><i class="bi bi-trash3"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+
+                        </div>
                     </div>
                 </div>
             </div>
