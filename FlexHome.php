@@ -12,21 +12,23 @@
 
 <body class="bg-black">
 
+    <!-- preloader -->
+    <div class="col-12 preloader " id="preloader">
+        <?php include "preloader.php" ?>
+    </div>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="row">
-                    <!-- preloader -->
-                    <div class="col-12 preloader " id="preloader">
-                        <?php include "preloader.php" ?>
-                    </div>
+
 
                     <!-- Top red Bar -->
                     <div class="col-12" style="background-color:red;">
                         <div class="row ">
-                            <div class="col-4">
+                            <div class="col-lg-4">
                             </div>
-                            <div class="col-4 text-center mt-2 mb-2 ">
+                            <div class="col-lg-4 col-12 text-center mt-2 mb-2 ">
                                 <label class=" Number visually-hidden  " id="Number">0</label>
                                 <span class="FlexTopRedBarTopic">Exclusive Suppliment🔥</span>
                             </div>
