@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="col-2 d-flex justify-content-center">
-                        <img src="Resources/images/LOGO/Flex.png" class="FlexImage">
+                        <img src="Resources/images/LOGO/FlexTransparent.png" onclick="window.location = 'FlexHome.php'" class="FlexImage">
                     </div>
 
                 </div>

@@ -72,8 +72,14 @@
 }
 
 .FlexImage {
-  width: 30%;
+  width: 100%;
   height: auto;
+  transition: 0.2s ease-in-out ;
+}
+
+.FlexImage:hover {
+  transform: scale(1.3);
+  transition: 0.2s ease-in-out ;
 }
 
 .LogoCover {
@@ -813,6 +819,10 @@
 .FlexLOGO.active {
   width: 70%;
   height: auto;
+}
+
+.FlexLOGO:hover {
+ filter: sepia(5)
 }
 
 .FlexHeadrTab {
