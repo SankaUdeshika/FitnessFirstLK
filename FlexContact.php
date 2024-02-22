@@ -11,22 +11,21 @@
 </head>
 
 <body class="bg-black">
-
+    <!-- preloader -->
+    <div class="col-12 preloader " id="preloader">
+        <?php include "preloader.php" ?>
+    </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="row">
-                    <!-- preloader -->
-                    <div class="col-12 preloader " id="preloader">
-                        <?php include "preloader.php" ?>
-                    </div>
 
                     <!-- Top red Bar -->
                     <div class="col-12" style="background-color:red;">
                         <div class="row ">
-                            <div class="col-4">
+                            <div class="col-lg-4">
                             </div>
-                            <div class="col-4 text-center mt-2 mb-2 ">
+                            <div class="col-lg-4 col-12 text-center mt-2 mb-2 ">
                                 <label class=" Number visually-hidden  " id="Number">0</label>
                                 <span class="FlexTopRedBarTopic">Exclusive Suppliment🔥</span>
                             </div>
@@ -43,7 +42,7 @@
                     <!-- Content -->
                     <div class="col-12 bg-dark">
                         <div class="row">
-                            <div class="col-8 offset-lg-2">
+                            <div class="col-8 offset-2">
                                 <div class="row">
                                     <div class="col-12 pt-4 pb-4">
                                         <h1 class="fw-bold fs-1 text-white">Contact</h1>
@@ -53,7 +52,7 @@
                         </div>
                     </div>
 
-                    <div class="col-8 offset-lg-2 mt-4 mb-5">
+                    <div class="col-lg-8 offset-lg-2 col-12 mt-4 mb-5">
                         <div class="row">
                             <div class="col-12">
                                 <div class="row">
@@ -75,19 +74,15 @@
                                             <label for="floatingInput" class="">Phone Number</label>
                                         </div>
                                     </div>
-
                                     <div class="col-12">
                                         <div class="form-floating bg-black text-white">
                                             <textarea class="form-control bg-black text-white" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                                             <label for="floatingTextarea2">Comments</label>
                                         </div>
                                     </div>
-
-
                                     <div class="col-12 d-flex justify-content-center align-items-center">
                                         <Button class="ContactSendBtn ">Send</Button>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
