@@ -54,7 +54,7 @@
                                         <span class="FlexCatouselText">Free Shipping</span>
                                     </div>
                                     <div class="col-12 mt-3">
-                                        <span class="ShopNowBtn">Shop Now</span>
+                                        <span class="ShopNowBtn " onclick="window.location ='FlexCatelog.php'">Shop Now</span>
                                     </div>
                                 </div>
                             </div>
@@ -67,17 +67,17 @@
                         <div class="HomeProductViewCover">
                             <div class="col-12">
                                 <div class="row">
-                                    <div class="col-12 fw-bold text-white mt-2 mb-2">
+                                    <div class="col-12 fw-bold text-white mt-2 ">
                                         <h2>Latest Collection</h1>
                                     </div>
 
+                                    <!-- Items Start -->
                                     <div class="col-12 Fade DownToUP">
-                                        <div class="row">
+                                        <div class="row  d-flex justify-content-center">
 
-
-                                            <div class="col-lg-4 col-6 mt-5">
-                                                <div class="row">
-                                                    <div class="col-11 FlexProductCard  ">
+                                            <div class="col-lg-4 col-6 mt-5 p-4">
+                                                <div class="row ">
+                                                    <div class="col-12 FlexProductCard  ">
                                                         <div class="row">
                                                             <div class="col-lg-10 col-12 offset-lg-1 ProductImageCover ">
                                                                 <div class="row">
@@ -114,9 +114,9 @@
                                             </div>
 
 
-                                            <div class="col-lg-4 col-6 mt-5">
-                                                <div class="row">
-                                                    <div class="col-11 FlexProductCard  ">
+                                            <div class="col-lg-4 col-6 mt-5 p-4">
+                                                <div class="row ">
+                                                    <div class="col-12 FlexProductCard  ">
                                                         <div class="row">
                                                             <div class="col-lg-10 col-12 offset-lg-1 ProductImageCover ">
                                                                 <div class="row">
@@ -152,9 +152,85 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-lg-4 col-6 mt-5">
-                                                <div class="row">
-                                                    <div class="col-11 FlexProductCard  ">
+                                            <div class="col-lg-4 col-6 mt-5 p-4">
+                                                <div class="row ">
+                                                    <div class="col-12 FlexProductCard  ">
+                                                        <div class="row">
+                                                            <div class="col-lg-10 col-12 offset-lg-1 ProductImageCover ">
+                                                                <div class="row">
+                                                                    <div class="col-12 ProductFirstImageCover">
+                                                                        <img src="Resources/images/Suppliment1.jpg" class="FlexProductImage1" alt="">
+                                                                    </div>
+                                                                    <div class="col-12 ProductSecondImageCover ">
+                                                                        <img src="Resources/images/Suppliment2.jpg" class="FlexProductImage2" alt="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- Large Screen -->
+                                                            <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold fs-5 text-white d-lg-block d-none">
+                                                                <span>WHEY Premeum High Quauty Weigt Protin</span>
+                                                            </div>
+                                                            <!-- Small Screen -->
+                                                            <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold fs-6 text-white d-lg-none d-block">
+                                                                <span>WHEY Premeum High Quauty Weigt Protin</span>
+                                                            </div>
+                                                            <div class="col-lg-10 offset-lg-1 col-12 text-white-50">
+                                                                <span>Rs.8,500</span>
+                                                            </div>
+                                                            <!-- Button -->
+                                                            <div class="col-lg-10 col-12 mt-2 offset-lg-1 position-relative overflow-hidden ">
+                                                                <div class="col-12 ViewProductButton ">
+                                                                    <div class="col-11 ViewProductButto2 d-lg-block d-none  ">
+                                                                    </div>
+                                                                    <span class="ViewProductButtonText" onclick="window.location='FlexSingleProductView.php'">Choose Option</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4 col-6 mt-5 p-4">
+                                                <div class="row ">
+                                                    <div class="col-12 FlexProductCard  ">
+                                                        <div class="row">
+                                                            <div class="col-lg-10 col-12 offset-lg-1 ProductImageCover ">
+                                                                <div class="row">
+                                                                    <div class="col-12 ProductFirstImageCover">
+                                                                        <img src="Resources/images/Suppliment1.jpg" class="FlexProductImage1" alt="">
+                                                                    </div>
+                                                                    <div class="col-12 ProductSecondImageCover ">
+                                                                        <img src="Resources/images/Suppliment2.jpg" class="FlexProductImage2" alt="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- Large Screen -->
+                                                            <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold fs-5 text-white d-lg-block d-none">
+                                                                <span>WHEY Premeum High Quauty Weigt Protin</span>
+                                                            </div>
+                                                            <!-- Small Screen -->
+                                                            <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold fs-6 text-white d-lg-none d-block">
+                                                                <span>WHEY Premeum High Quauty Weigt Protin</span>
+                                                            </div>
+                                                            <div class="col-lg-10 offset-lg-1 col-12 text-white-50">
+                                                                <span>Rs.8,500</span>
+                                                            </div>
+                                                            <!-- Button -->
+                                                            <div class="col-lg-10 col-12 mt-2 offset-lg-1 position-relative overflow-hidden ">
+                                                                <div class="col-12 ViewProductButton ">
+                                                                    <div class="col-11 ViewProductButto2 d-lg-block d-none  ">
+                                                                    </div>
+                                                                    <span class="ViewProductButtonText" onclick="window.location='FlexSingleProductView.php'">Choose Option</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4 col-6 mt-5 p-4">
+                                                <div class="row ">
+                                                    <div class="col-12 FlexProductCard  ">
                                                         <div class="row">
                                                             <div class="col-lg-10 col-12 offset-lg-1 ProductImageCover ">
                                                                 <div class="row">
@@ -191,9 +267,9 @@
                                             </div>
 
 
-                                            <div class="col-lg-4 col-6 mt-5">
-                                                <div class="row">
-                                                    <div class="col-11 FlexProductCard  ">
+                                            <div class="col-lg-4 col-6 mt-5 p-4">
+                                                <div class="row ">
+                                                    <div class="col-12 FlexProductCard  ">
                                                         <div class="row">
                                                             <div class="col-lg-10 col-12 offset-lg-1 ProductImageCover ">
                                                                 <div class="row">
@@ -228,87 +304,12 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            
 
-
-
-                                            <div class="col-lg-4 col-6 mt-5">
-                                                <div class="row">
-                                                    <div class="col-11 FlexProductCard  ">
-                                                        <div class="row">
-                                                            <div class="col-lg-10 col-12 offset-lg-1 ProductImageCover ">
-                                                                <div class="row">
-                                                                    <div class="col-12 ProductFirstImageCover">
-                                                                        <img src="Resources/images/Suppliment1.jpg" class="FlexProductImage1" alt="">
-                                                                    </div>
-                                                                    <div class="col-12 ProductSecondImageCover ">
-                                                                        <img src="Resources/images/Suppliment2.jpg" class="FlexProductImage2" alt="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- Large Screen -->
-                                                            <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold fs-5 text-white d-lg-block d-none">
-                                                                <span>WHEY Premeum High Quauty Weigt Protin</span>
-                                                            </div>
-                                                            <!-- Small Screen -->
-                                                            <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold fs-6 text-white d-lg-none d-block">
-                                                                <span>WHEY Premeum High Quauty Weigt Protin</span>
-                                                            </div>
-                                                            <div class="col-lg-10 offset-lg-1 col-12 text-white-50">
-                                                                <span>Rs.8,500</span>
-                                                            </div>
-                                                            <!-- Button -->
-                                                            <div class="col-lg-10 col-12 mt-2 offset-lg-1 position-relative overflow-hidden ">
-                                                                <div class="col-12 ViewProductButton ">
-                                                                    <div class="col-11 ViewProductButto2 d-lg-block d-none  ">
-                                                                    </div>
-                                                                    <span class="ViewProductButtonText" onclick="window.location='FlexSingleProductView.php'">Choose Option</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="col-lg-4 col-6 mt-5">
-                                                <div class="row">
-                                                    <div class="col-11 FlexProductCard  ">
-                                                        <div class="row">
-                                                            <div class="col-lg-10 col-12 offset-lg-1 ProductImageCover ">
-                                                                <div class="row">
-                                                                    <div class="col-12 ProductFirstImageCover">
-                                                                        <img src="Resources/images/Suppliment1.jpg" class="FlexProductImage1" alt="">
-                                                                    </div>
-                                                                    <div class="col-12 ProductSecondImageCover ">
-                                                                        <img src="Resources/images/Suppliment2.jpg" class="FlexProductImage2" alt="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- Large Screen -->
-                                                            <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold fs-5 text-white d-lg-block d-none">
-                                                                <span>WHEY Premeum High Quauty Weigt Protin</span>
-                                                            </div>
-                                                            <!-- Small Screen -->
-                                                            <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold fs-6 text-white d-lg-none d-block">
-                                                                <span>WHEY Premeum High Quauty Weigt Protin</span>
-                                                            </div>
-                                                            <div class="col-lg-10 offset-lg-1 col-12 text-white-50">
-                                                                <span>Rs.8,500</span>
-                                                            </div>
-                                                            <!-- Button -->
-                                                            <div class="col-lg-10 col-12 mt-2 offset-lg-1 position-relative overflow-hidden ">
-                                                                <div class="col-12 ViewProductButton ">
-                                                                    <div class="col-11 ViewProductButto2 d-lg-block d-none  ">
-                                                                    </div>
-                                                                    <span class="ViewProductButtonText" onclick="window.location='FlexSingleProductView.php'">Choose Option</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
 
                                             
+
+
                                         </div>
                                     </div>
                                 </div>

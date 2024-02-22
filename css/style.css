@@ -854,6 +854,13 @@
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: x-large;
+  transition: 0.5s ease-in-out;
+
+}
+.ShopNowBtn:hover{
+  background-color: white;
+  color: black;
+  transition: 0.5s ease-in-out;
 }
 
 .HomeProductViewCover {
