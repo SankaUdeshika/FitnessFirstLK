@@ -25,7 +25,7 @@ session_start();
                         <div class="row g-1 text-center">
 
                             <div class="col-12 mt-5">
-                                <h4 class="text-white">Welcome <?php echo ($_SESSION["admin"]["firstname"]." ".$_SESSION["admin"]["lastname"]) ?></h4>
+                                <h4 class="text-white">Welcome <?php echo ($_SESSION["admin"]["firstname"] . " " . $_SESSION["admin"]["lastname"]) ?></h4>
                                 <hr class="border border-white border-1" />
                             </div>
 
@@ -34,6 +34,8 @@ session_start();
                                     <nav class="nav flex-column">
                                         <a class="nav-link active" aria-current="page" href="adminDashboard.php">Dashboard</a>
                                         <a class="nav-link" href="adminManageContent.php">Manage Content</a>
+                                        <a class="nav-link " href="adminManageBlogs.php">Manage Blog</a>
+                                        <a class="nav-link " href="FlexManage.php">Manage Flex</a>
                                     </nav>
                                 </div>
                             </div>
