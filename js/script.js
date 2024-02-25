@@ -234,7 +234,8 @@ function Header() {
   if (TagTop > 5) {
     document.querySelector(".FlexLOGO").classList.remove("active");
   } else {
-    document.querySelector(".FlexLOGO").classList.add("active");  }
+    document.querySelector(".FlexLOGO").classList.add("active");
+  }
 }
 
 window.addEventListener("scroll", Header);
@@ -972,4 +973,28 @@ function ChangeCategory(Bid) {
   };
   request.open("POST", "BackEndProcess.php", true);
   request.send(form);
+}
+
+// ---------------------FLEX------------------------------
+function AddFlexProduct() {
+  var file = document.getElementById("AddPrductimginput");
+  var ProductName = document.getElementById("ProductName").value;
+  var price = document.getElementById("price").value;
+  var Flavor = document.getElementById("Flavor").value;
+  var Description = document.getElementById("Description").value;
+
+  var f = FormData();
+  f.append("file", file.files[0]);
+  f.append("ProductName", ProductName);
+  f.append("price", price);
+  f.append("Flavor", Flavor);
+  f.append("Description", Description);
+
+  var r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if (r.readyState == 4 && r.status == 200) {
+      alert(r.responseText);
+    }
+  };
+  r.open("POST","")
 }
