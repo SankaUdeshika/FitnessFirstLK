@@ -977,18 +977,26 @@ function ChangeCategory(Bid) {
 
 // ---------------------FLEX------------------------------
 function AddFlexProduct() {
-  var file = document.getElementById("AddPrductimginput");
+  var command = "addFlexProduct";
+  var file1 = document.getElementById("AddPrductimginput");
+  var file2 = document.getElementById("AddSecondPrductimginput");
+  var file3 = document.getElementById("AddThirdPrductimginput");
   var ProductName = document.getElementById("ProductName").value;
   var price = document.getElementById("price").value;
   var Flavor = document.getElementById("Flavor").value;
   var Description = document.getElementById("Description").value;
+  var Quanitity = document.getElementById("Quanitity").value;
 
-  var f = FormData();
-  f.append("file", file.files[0]);
+  var f = new FormData();
+  f.append("command", command);
+  f.append("file1", file1.files[0]);
+  f.append("file2", file2.files[0]);
+  f.append("file3", file3.files[0]);
   f.append("ProductName", ProductName);
   f.append("price", price);
   f.append("Flavor", Flavor);
   f.append("Description", Description);
+  f.append("Quanitity", Quanitity);
 
   var r = new XMLHttpRequest();
   r.onreadystatechange = function () {
@@ -996,5 +1004,34 @@ function AddFlexProduct() {
       alert(r.responseText);
     }
   };
-  r.open("POST","")
+  r.open("POST", "FlexBackendPross.php", true);
+  r.send(f);
+}
+
+// add Main Product Image function
+function ChangeMainProductViewImage() {
+  alert("OK");
+  var ImageView = document.getElementById("MainImage");
+  var urlFile = document.getElementById("AddPrductimginput");
+  urlFile = urlFile.files[0];
+  url = window.URL.createObjectURL(urlFile);
+  ImageView.src = url;
+}
+
+// add Second Product Image function
+function ChangeSecondProductViewImage() {
+  var ImageView = document.getElementById("SecondImage");
+  var urlFile = document.getElementById("AddSecondPrductimginput");
+  urlFile = urlFile.files[0];
+  url = window.URL.createObjectURL(urlFile);
+  ImageView.src = url;
+}
+
+// add Third Product Image function
+function ChangeThirrdProductViewImage() {
+  var ImageView = document.getElementById("ThirdImage");
+  var urlFile = document.getElementById("AddThirdPrductimginput");
+  urlFile = urlFile.files[0];
+  url = window.URL.createObjectURL(urlFile);
+  ImageView.src = url;
 }

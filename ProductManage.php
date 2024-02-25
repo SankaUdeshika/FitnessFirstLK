@@ -1,5 +1,6 @@
 <?php
 session_start();
+require "Connections/FlexConnection.php";
 ?>
 
 <!DOCTYPE html>
@@ -108,11 +109,33 @@ session_start();
                                     <div class="col-3">
                                         <div class="row">
                                             <div class="col-12">
-                                                <img src="Resources/images/LOGO/addImage (2).png" width="100%" alt="">
+                                                <div class="row d-flex justify-content-center">
+                                                    <div class="col-12">
+                                                        <img src="Resources/images/LOGO/addImage (2).png" id="MainImage"  width="100%" alt="">
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="Resources/images/LOGO/addImage (2).png"  id="SecondImage" width="100%" alt="">
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="Resources/images/LOGO/addImage (2).png" id="ThirdImage" width="100%" alt="">
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="col-12 d-grid mb-3">
-                                                <input type="file" id="AddPrductimginput" class="d-none">
-                                                <label class="btn btn-dark" for="AddPrductimginput">Add Image</label>
+                                                <div class="row">
+                                                    <div class="col-12 d-grid">
+                                                        <input type="file" id="AddPrductimginput" onchange="ChangeMainProductViewImage();" class="d-none">
+                                                        <label class="btn btn-dark" for="AddPrductimginput" >Add Main Image</label>
+                                                    </div>
+                                                    <div class="col-12 d-grid">
+                                                        <input type="file" id="AddSecondPrductimginput" onchange="ChangeSecondProductViewImage();" class="d-none">
+                                                        <label class="btn btn-dark" for="AddSecondPrductimginput">Add Second Image</label>
+                                                    </div>
+                                                    <div class="col-12 d-grid">
+                                                        <input type="file" id="AddThirdPrductimginput" onchange="ChangeThirrdProductViewImage();" class="d-none">
+                                                        <label class="btn btn-dark" for="AddThirdPrductimginput">Add Third Image</label>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -132,6 +155,9 @@ session_start();
                                                     </div>
                                                     <div class="col-4">
                                                         <input type="text" class="form-control" id="Flavor" placeholder="Flavor">
+                                                    </div>
+                                                    <div class="col-3 ">
+                                                        <input type="number" class="form-control" min="1" placeholder="Quanitity" id="Quanitity">
                                                     </div>
                                                     <div class="col-12 mt-3">
                                                         <textarea name="" class="form-control" id="Description" placeholder="Description" cols="30" rows="10"></textarea>
