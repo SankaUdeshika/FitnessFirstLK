@@ -87,7 +87,7 @@ if ($command == "addFlexProduct") {
                         $newImageName3 = "Resources//images//FlexProductImage//Third_" . $ProductName . $Flavor . $NewImage_Extention3;
 
 
-                        FlexDatabase::iud("INSERT INTO `product` (`Product_id`,`Product_name`,`Description`,`Flavor_F_id`,`Qty`) VALUES ('" . $uniqueNumber . "','" . $ProductName . "','" . $Description . "','" . $Flavor . "','" . $Quanitity . "')");
+                        FlexDatabase::iud("INSERT INTO `product` (`Product_id`,`Product_name`,`Description`,`Flavor_F_id`,`Qty`,`Price`) VALUES ('" . $uniqueNumber . "','" . $ProductName . "','" . $Description . "','" . $Flavor . "','" . $Quanitity . "','".$price."')");
                         FlexDatabase::iud("INSERT INTO `product_images` (`Main_Image`,`Seciond_Image`,`product_Product_id`,`Third_Image`) VALUES ('".$newImageName1."','".$newImageName2."','".$uniqueNumber."','".$newImageName3."')");
 
                         move_uploaded_file($ImageFile1["tmp_name"], $newImageName1);
