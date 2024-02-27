@@ -1123,6 +1123,7 @@ function ChangeProductInfo(id) {
   var ProductPrice = document.getElementById("ProductPrice" + id).value;
   var ProductFlavor = document.getElementById("ProductFlavor" + id).value;
 
+
   var f = new FormData();
   f.append("command", command);
   f.append("id", id);

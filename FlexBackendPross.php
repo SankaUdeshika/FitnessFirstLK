@@ -264,6 +264,7 @@ if ($command == "addFlexProduct") {
     } else {
         echo ("Please Select a Image");
     }
+    // Chanage Product Info
 } else if ($command == "ChangeProductInfo") {
 
     if (empty($_POST["ProductName"])) {
@@ -276,10 +277,6 @@ if ($command == "addFlexProduct") {
         echo ("please Enter a Product Price");
     } else if (empty($_POST["ProductFlavor"])) {
         echo ("please Enter a Flavor");
-    } else if (empty($_POST["ProductQty"])) {
-        echo ("Please Enter a Quanitity Number");
-    } else if (!is_numeric($_POST["ProductQty"])) {
-        echo ("Quanitity must have only Numbers");
     } else {
         $productName = $_POST["ProductName"];
         $ProductDescription = $_POST["ProductDescription"];
@@ -291,6 +288,8 @@ if ($command == "addFlexProduct") {
         FlexDatabase::iud("UPDATE `product` SET `Product_name` = '" . $productName . "', `Description` = '" . $ProductDescription . "', `Flavor_F_id` = '" . $ProductFlavor . "', `Qty` = '" . $ProductQty . "' , `Price` = '" . $ProductPrice . "' WHERE `Product_id` = '" . $Productid . "' ");
         echo ("Done update");
     }
+
+    // Delete Product Info
 } else if ($command == "DeleteProductInfo") {
     $id = $_POST["id"];
 
@@ -304,12 +303,11 @@ if ($command == "addFlexProduct") {
         unlink($oldImage_data["Seciond_Image"]);
         unlink($oldImage_data["Third_Image"]);
 
-        FlexDatabase::iud("DELETE FROM `product_images` WHERE `product_Product_id` = '".$id."'");
-        FlexDatabase::iud("DELETE FROM `product` WHERE `Product_id` = '".$id."'");
+        FlexDatabase::iud("DELETE FROM `product_images` WHERE `product_Product_id` = '" . $id . "'");
+        FlexDatabase::iud("DELETE FROM `product` WHERE `Product_id` = '" . $id . "'");
 
         echo ("Delete Success");
     } else {
         echo ("Something Wrong, Please Try again later");
-   
     }
 }

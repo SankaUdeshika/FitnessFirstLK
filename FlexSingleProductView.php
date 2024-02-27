@@ -96,7 +96,7 @@ require "Connections/FlexConnection.php";
                                     </div>
                                     <?php
 
-                                    if ($product_data["Qty"] < 0) {
+                                    if ($product_data["Qty"] == 0) {
                                     ?>
                                         <span class="text-danger">Sold Out</span>
                                     <?php
