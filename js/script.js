@@ -1160,3 +1160,23 @@ function DeleteProduct(id) {
   r.open("POST", "FlexBackendPross.php", true);
   r.send(f);
 }
+
+// Change Single Product Image
+
+function ChangeSingleMainChangeImage() {
+  var Image = document.getElementById("MainImage");
+  var BigImage = document.getElementById("BigImage");
+  BigImage.src = Image.src;
+}
+
+function ChangeSingleSecondChangeImage() {
+  var Image = document.getElementById("SecondImage");
+  var BigImage = document.getElementById("BigImage");
+  BigImage.src = Image.src;
+}
+
+function ChangeSingleThirdChangeImage() {
+  var Image = document.getElementById("ThirdImage");
+  var BigImage = document.getElementById("BigImage");
+  BigImage.src = Image.src;
+}

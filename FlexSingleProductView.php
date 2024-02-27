@@ -61,18 +61,18 @@ require "Connections/FlexConnection.php";
                             <div class="col-lg-6 col-12">
                                 <div class="row">
                                     <div class="col-lg-11 col-12">
-                                        <img src="<?php echo($product_data["Main_Image"])?>" class="SingleProductViewImage" alt="<?php echo($product_data["Product_name"])?>">
+                                        <img src="<?php echo($product_data["Main_Image"])?>" id="BigImage" class="SingleProductViewImage" alt="<?php echo($product_data["Product_name"])?>">
                                     </div>
                                     <div class="col-lg-11 col-12  mt-4">
                                         <div class="row  d-flex justify-content-center ">
-                                            <div class="col-3">
-                                                <img src="<?php echo($product_data["Main_Image"])?>" class="SmallSingleProductViewImage" alt="<?php echo($product_data["Product_name"])?>">
+                                            <div class="col-3" onclick="ChangeSingleMainChangeImage();">
+                                                <img src="<?php echo($product_data["Main_Image"])?>" id="MainImage" class="SmallSingleProductViewImage" alt="<?php echo($product_data["Product_name"])?>">
                                             </div>
-                                            <div class="col-3">
-                                                <img src="<?php echo($product_data["Seciond_Image"])?>" class="SmallSingleProductViewImage" alt="<?php echo($product_data["Product_name"])?>">
+                                            <div class="col-3" onclick="ChangeSingleSecondChangeImage();">
+                                                <img src="<?php echo($product_data["Seciond_Image"])?>" id="SecondImage" class="SmallSingleProductViewImage" alt="<?php echo($product_data["Product_name"])?>">
                                             </div>
-                                            <div class="col-3">
-                                                <img src="<?php echo($product_data["Third_Image"])?>" class="SmallSingleProductViewImage" alt="<?php echo($product_data["Product_name"])?>">
+                                            <div class="col-3" onclick="ChangeSingleThirdChangeImage();">
+                                                <img src="<?php echo($product_data["Third_Image"])?>" id="ThirdImage" class="SmallSingleProductViewImage" alt="<?php echo($product_data["Product_name"])?>">
                                             </div>
 
                                         </div>
