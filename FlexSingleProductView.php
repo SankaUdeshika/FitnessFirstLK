@@ -94,29 +94,43 @@ require "Connections/FlexConnection.php";
                                     <div class="col-12">
                                         <span class="text-white">Quantity</span>
                                     </div>
-                                    <div class="col-6  mt-2 border border-1 border-white">
-                                        <div class="row ">
-                                            <div class="col-4 p-3  text-center" onclick="ChangeQuantitiy('-')">
-                                                <span class=" QTYUdt"><i class="bi bi-dash-lg"></i></span>
-                                            </div>
-                                            <div class="col-4 p-3  text-center">
-                                                <span class="text-white" id="QTYNo">1</span>
-                                            </div>
-                                            <div class="col-4 p-3  text-center" onclick="ChangeQuantitiy('+')">
-                                                <span class=" QTYUdt"><i class="bi bi-plus"></i></span>
+                                    <?php
+
+                                    if ($product_data["Qty"] < 0) {
+                                    ?>
+                                        <span class="text-danger">Sold Out</span>
+                                    <?php
+                                    } else {
+                                    ?>
+                                        <div class="col-6  mt-2 border border-1 border-white">
+                                            <div class="row ">
+                                                <div class="col-4 p-3  text-center" onclick="ChangeQuantitiy('-')">
+                                                    <span class=" QTYUdt"><i class="bi bi-dash-lg"></i></span>
+                                                </div>
+                                                <div class="col-4 p-3  text-center">
+                                                    <span class="text-white" id="QTYNo">1</span>
+                                                </div>
+                                                <div class="col-4 p-3  text-center" onclick="ChangeQuantitiy('+')">
+                                                    <span class=" QTYUdt"><i class="bi bi-plus"></i></span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-12  mt-3">
-                                        <div class="row">
-                                            <div class="col-lg-10 col-12 d-grid SingleProductViewBtn text-center">
-                                                Add to cart
-                                            </div>
-                                            <div class="col-lg-10 col-12 d-grid SingleProductViewBtn mt-3 text-center">
-                                                Buy Now
+                                        <div class="col-12  mt-3">
+                                            <div class="row">
+                                                <div class="col-lg-10 col-12 d-grid SingleProductViewBtn text-center">
+                                                    Add to cart
+                                                </div>
+                                                <div class="col-lg-10 col-12 d-grid SingleProductViewBtn mt-3 text-center">
+                                                    Buy Now
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    <?php
+                                    }
+
+                                    ?>
+
+
 
                                     <div class="col-lg-10 col-12 mt-3 text-white-50">
                                         <p><?php echo ($product_data["Description"]) ?></p>
