@@ -1,3 +1,7 @@
+<?php
+$Pid = $_GET["id"];
+require "Connections/FlexConnection.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,24 +47,32 @@
                     </div>
 
                     <!-- Content -->
+
+                    <!-- connecti Database -->
+                    <?php
+                    $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id`  WHERE `Product_id` = '".$Pid."' ");
+                    $product_data = $product_rs->fetch_assoc();
+                    ?>
+
+
                     <div class="col-lg-10 col-12 offset-lg-1 mb-5 mt-5">
                         <div class="row">
 
                             <div class="col-lg-6 col-12">
                                 <div class="row">
                                     <div class="col-lg-11 col-12">
-                                        <img src="Resources/images/Suppliment2.jpg" class="SingleProductViewImage" alt="Suppliment Image">
+                                        <img src="<?php echo($product_data["Main_Image"])?>" class="SingleProductViewImage" alt="<?php echo($product_data["Product_name"])?>">
                                     </div>
                                     <div class="col-lg-11 col-12  mt-4">
                                         <div class="row  d-flex justify-content-center ">
                                             <div class="col-3">
-                                                <img src="Resources/images/Suppliment1.jpg" class="SmallSingleProductViewImage" alt="Suppliment Image">
+                                                <img src="<?php echo($product_data["Main_Image"])?>" class="SmallSingleProductViewImage" alt="<?php echo($product_data["Product_name"])?>">
                                             </div>
                                             <div class="col-3">
-                                                <img src="Resources/images/Suppliment2.jpg" class="SmallSingleProductViewImage" alt="Suppliment Image">
+                                                <img src="<?php echo($product_data["Seciond_Image"])?>" class="SmallSingleProductViewImage" alt="<?php echo($product_data["Product_name"])?>">
                                             </div>
                                             <div class="col-3">
-                                                <img src="Resources/images/Suppliment1.jpg" class="SmallSingleProductViewImage" alt="Suppliment Image">
+                                                <img src="<?php echo($product_data["Third_Image"])?>" class="SmallSingleProductViewImage" alt="<?php echo($product_data["Product_name"])?>">
                                             </div>
 
                                         </div>
@@ -71,10 +83,10 @@
                             <div class="col-lg-6 col-10    offset-lg-0 offset-1 mt-lg-0 mt-3 ">
                                 <div class="row d-lg-block d-flex justify-content-center">
                                     <div class="col-12 ">
-                                        <h1 class="fw-bold fs-1 text-white">WHEY Premeum High Quauty Weigt Protin</h1>
+                                        <h1 class="fw-bold fs-1 text-white"><?php echo($product_data["Product_name"])?> </h1>
                                     </div>
                                     <div class="col-12 ">
-                                        <span class="text-white-50 fs-3">Rs.8500</span>
+                                        <span class="text-white-50 fs-3">Rs.<?php echo($product_data["Price"])?> </span>
                                     </div>
                                     <div class="col-12">
                                         <span class="text-white">Quantity</span>
@@ -104,14 +116,14 @@
                                     </div>
 
                                     <div class="col-lg-10 col-12 mt-3 text-white-50">
-                                        <p>Get ready to make a statement with this Sam Sulek-inspired baseball cap. Made with 100% cotton twill, this 6-panel, structured cap features a low-profile design that’s perfect for any Hosstile occasion. The adjustable Velcro® closure ensures a comfortable fit, while the signature Sam Sulek logo on the front adds a touch of style. Whether you’re hitting the gym or running errands, this cap is sure to turn heads and make you stand out from the crowd. </p>
+                                        <p><?php echo($product_data["Description"])?></p>
                                     </div>
 
                                 </div>
                             </div>
 
 
-                            <div class="col-12">
+                            <div class="col-12 mt-5">
                                 <h2 class="fw-bold fs-1 text-white">You may also like</h2>
                             </div>
                             <!-- items -->

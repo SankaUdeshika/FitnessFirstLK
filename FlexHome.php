@@ -80,7 +80,7 @@ require "Connections/FlexConnection.php";
                                             <!-- Connect Database -->
                                             <?php
 
-                                            $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` LIMIT 6 ");
+                                            $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` ");
                                             $product_num = $product_rs->num_rows;
 
                                             for ($i = 0; $i < $product_num; $i++) {
@@ -116,7 +116,7 @@ require "Connections/FlexConnection.php";
                                                                     <div class="col-12 ViewProductButton ">
                                                                         <div class="col-11 ViewProductButto2 d-lg-block d-none  ">
                                                                         </div>
-                                                                        <span class="ViewProductButtonText text-center" onclick="window.location='FlexSingleProductView.php?id=<?php echo($product_data['Product_id'])?>'">Choose Option</span>
+                                                                        <span class="ViewProductButtonText text-center" onclick="window.location='FlexSingleProductView.php?id=<?php echo($product_data['Product_id'])?>'">Choose Option </span>
                                                                     </div>
                                                                 </div>
                                                             </div>
