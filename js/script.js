@@ -1055,7 +1055,7 @@ function ChangeUpdateMainImage(id) {
   r.onreadystatechange = function () {
     if (r.readyState == 4 && r.status == 200) {
       alert(r.responseText);
-      var ImageView = document.getElementById("MainView"+id);
+      var ImageView = document.getElementById("MainView" + id);
       urlFile = file.files[0];
       url = window.URL.createObjectURL(urlFile);
       ImageView.src = url;
@@ -1064,7 +1064,6 @@ function ChangeUpdateMainImage(id) {
   r.open("POST", "FlexBackendPross.php", true);
   r.send(f);
 }
-
 
 // Change Second Product Image
 function ChangeUpdateSecondImage(id) {
@@ -1080,7 +1079,7 @@ function ChangeUpdateSecondImage(id) {
   r.onreadystatechange = function () {
     if (r.readyState == 4 && r.status == 200) {
       alert(r.responseText);
-      var ImageView = document.getElementById("SecondView"+id);
+      var ImageView = document.getElementById("SecondView" + id);
       urlFile = file.files[0];
       url = window.URL.createObjectURL(urlFile);
       ImageView.src = url;
@@ -1089,7 +1088,6 @@ function ChangeUpdateSecondImage(id) {
   r.open("POST", "FlexBackendPross.php", true);
   r.send(f);
 }
-
 
 // Change Third Product Image
 function ChangeUpdateThirdImage(id) {
@@ -1105,10 +1103,41 @@ function ChangeUpdateThirdImage(id) {
   r.onreadystatechange = function () {
     if (r.readyState == 4 && r.status == 200) {
       alert(r.responseText);
-      var ImageView = document.getElementById("ThirdView"+id);
+      var ImageView = document.getElementById("ThirdView" + id);
       urlFile = file.files[0];
       url = window.URL.createObjectURL(urlFile);
       ImageView.src = url;
+    }
+  };
+  r.open("POST", "FlexBackendPross.php", true);
+  r.send(f);
+}
+
+// Change Product info Process
+function ChangeProductInfo(id) {
+  var command = "ChangeProductInfo";
+  var ProductName = document.getElementById("ProductName"+id).value;
+  var ProductDescription = document.getElementById("ProductDescription"+id).value;
+  var ProductQty = document.getElementById("ProductQty"+id).value;
+  var ProductPrice = document.getElementById("ProductPrice"+id).value;
+  var ProductFlavor = document.getElementById("ProductFlavor"+id).value;
+
+
+  var f = new FormData();
+  f.append("command", command);
+  f.append("id", id);
+  f.append("ProductName", ProductName);
+  f.append("ProductDescription", ProductDescription);
+  f.append("ProductQty", ProductQty);
+  f.append("ProductPrice", ProductPrice);
+  f.append("ProductFlavor", ProductFlavor);
+
+
+  var r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if (r.readyState == 4 && r.status == 200) {
+      alert(r.responseText);
+      window.location.reload();
     }
   };
   r.open("POST", "FlexBackendPross.php", true);

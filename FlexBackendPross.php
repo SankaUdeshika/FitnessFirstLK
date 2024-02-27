@@ -212,7 +212,7 @@ if ($command == "addFlexProduct") {
     } else {
         echo ("Please Select a Image");
     }
-}else if ($command == "ChangeThirdProductImage") {
+} else if ($command == "ChangeThirdProductImage") {
     if (!empty($_FILES["file"])) {
 
 
@@ -263,5 +263,38 @@ if ($command == "addFlexProduct") {
         }
     } else {
         echo ("Please Select a Image");
+    }
+} else if ($command == "ChangeProductInfo") {
+
+    if (empty($_POST["ProductName"])) {
+        echo ("Please Enter a Product Name");
+
+    } else if (empty($_POST["ProductDescription"])) {
+        echo ("please  Enter a Product Description");
+
+    } else if (!is_numeric($_POST["ProductPrice"])) {
+        echo ("Price must have Only Numbers");
+
+    } else if (empty($_POST["ProductPrice"])) {
+        echo ("please Enter a Product Price");
+
+    } else if (empty($_POST["ProductFlavor"])) {
+        echo ("please Enter a Flavor");
+
+    } else if (empty($_POST["ProductQty"])) {
+        echo ("Please Enter a Quanitity Number");
+
+    } else if (!is_numeric($_POST["ProductQty"])) {
+        echo ("Quanitity must have only Numbers");
+    } else {
+        $productName = $_POST["ProductName"];
+        $ProductDescription = $_POST["ProductDescription"];
+        $ProductQty = $_POST["ProductQty"];
+        $ProductPrice = $_POST["ProductPrice"];
+        $ProductFlavor = $_POST["ProductFlavor"];
+        $Productid = $_POST["id"];
+
+        FlexDatabase::iud("UPDATE `product` SET `Product_name` = '".$productName."', `Description` = '".$ProductDescription."', `Flavor_F_id` = '".$ProductFlavor."', `Qty` = '".$ProductQty."' , `Price` = '".$ProductPrice."' WHERE `Product_id` = '".$Productid."' ");
+        echo("Done update");
     }
 }

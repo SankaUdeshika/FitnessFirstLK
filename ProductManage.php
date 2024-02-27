@@ -163,7 +163,7 @@ require "Connections/FlexConnection.php";
                                                         <textarea name="" class="form-control" id="Description" placeholder="Description" cols="30" rows="10"></textarea>
                                                     </div>
                                                     <div class="col-12 d-grid">
-                                                        <button class="btn btn-primary" onclick="AddFlexProduct();">Add Product</button>
+                                                        <button class="btn btn-primary" onclick="AddFlexProduct();"> Add Product </button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -198,8 +198,8 @@ require "Connections/FlexConnection.php";
                                     for ($i = 0; $i < $flex_num; $i++) {
                                         $flex_data = $Flex_rs->fetch_assoc();
                                     ?>
-                                        <td><input type="text" class="form-control" value="<?php echo ($flex_data["Product_name"]) ?>"></td>
-                                        <td><textarea name="" class="form-control" id="" cols="30" rows="10"> <?php echo ($flex_data["Description"]) ?> </textarea></td>
+                                        <td><input type="text" class="form-control" value="<?php echo ($flex_data["Product_name"]) ?>" id="ProductName<?php echo ($flex_data["Product_id"]) ?>"></td>
+                                        <td><textarea name="" class="form-control" id="ProductDescription<?php echo ($flex_data["Product_id"]) ?>" cols="30" rows="10"> <?php echo ($flex_data["Description"]) ?> </textarea></td>
                                         <td>
                                             <div class="row">
                                                 <div class="col-4">
@@ -237,9 +237,9 @@ require "Connections/FlexConnection.php";
                                                 </div>
                                             </div>
                                         </td>
-                                        <td><input type="number" class="form-control" min="0" value="<?php echo ($flex_data["Qty"]) ?>"></td>
-                                        <td><input type="text" class="form-control" value="<?php echo ($flex_data["Price"]) ?>"></td>
-                                        <td><input type="text" class="form-control" value="<?php echo ($flex_data["Flavor_F_id"]) ?>"></td>
+                                        <td><input type="number" class="form-control" min="0" value="<?php echo ($flex_data["Qty"])?>" id="ProductQty<?php echo ($flex_data["Product_id"]) ?>" ></td>
+                                        <td><input type="text" class="form-control" value="<?php echo ($flex_data["Price"]) ?>" id="ProductPrice<?php echo ($flex_data["Product_id"]) ?>"></td>
+                                        <td><input type="text" class="form-control" value="<?php echo ($flex_data["Flavor_F_id"]) ?>" id="ProductFlavor<?php echo ($flex_data["Product_id"]) ?>"></td>
 
                                     <?php
                                     }
