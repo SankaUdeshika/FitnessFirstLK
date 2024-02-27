@@ -1015,7 +1015,6 @@ function AddFlexProduct() {
 
 // add Main Product Image function
 function ChangeMainProductViewImage() {
-  alert("OK");
   var ImageView = document.getElementById("MainImage");
   var urlFile = document.getElementById("AddPrductimginput");
   urlFile = urlFile.files[0];
