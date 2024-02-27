@@ -268,22 +268,16 @@ if ($command == "addFlexProduct") {
 
     if (empty($_POST["ProductName"])) {
         echo ("Please Enter a Product Name");
-
     } else if (empty($_POST["ProductDescription"])) {
         echo ("please  Enter a Product Description");
-
     } else if (!is_numeric($_POST["ProductPrice"])) {
         echo ("Price must have Only Numbers");
-
     } else if (empty($_POST["ProductPrice"])) {
         echo ("please Enter a Product Price");
-
     } else if (empty($_POST["ProductFlavor"])) {
         echo ("please Enter a Flavor");
-
     } else if (empty($_POST["ProductQty"])) {
         echo ("Please Enter a Quanitity Number");
-
     } else if (!is_numeric($_POST["ProductQty"])) {
         echo ("Quanitity must have only Numbers");
     } else {
@@ -294,7 +288,28 @@ if ($command == "addFlexProduct") {
         $ProductFlavor = $_POST["ProductFlavor"];
         $Productid = $_POST["id"];
 
-        FlexDatabase::iud("UPDATE `product` SET `Product_name` = '".$productName."', `Description` = '".$ProductDescription."', `Flavor_F_id` = '".$ProductFlavor."', `Qty` = '".$ProductQty."' , `Price` = '".$ProductPrice."' WHERE `Product_id` = '".$Productid."' ");
-        echo("Done update");
+        FlexDatabase::iud("UPDATE `product` SET `Product_name` = '" . $productName . "', `Description` = '" . $ProductDescription . "', `Flavor_F_id` = '" . $ProductFlavor . "', `Qty` = '" . $ProductQty . "' , `Price` = '" . $ProductPrice . "' WHERE `Product_id` = '" . $Productid . "' ");
+        echo ("Done update");
+    }
+} else if ($command == "DeleteProductInfo") {
+    $id = $_POST["id"];
+
+    $oldImage_rs = FlexDatabase::search("SELECT * FROM `product_images` INNER JOIN `product` ON `product`.`Product_id` = `product_images`.`product_Product_id` WHERE `product_Product_id` = '" . $id . "' ");
+    $oldImage_num = $oldImage_rs->num_rows;
+    $oldImage_data = $oldImage_rs->fetch_assoc();
+
+    if ($oldImage_num == "1") {
+
+        unlink($oldImage_data["Main_Image"]);
+        unlink($oldImage_data["Seciond_Image"]);
+        unlink($oldImage_data["Third_Image"]);
+
+        FlexDatabase::iud("DELETE FROM `product_images` WHERE `product_Product_id` = '".$id."'");
+        FlexDatabase::iud("DELETE FROM `product` WHERE `Product_id` = '".$id."'");
+
+        echo ("Delete Success");
+    } else {
+        echo ("Something Wrong, Please Try again later");
+   
     }
 }

@@ -190,14 +190,15 @@ require "Connections/FlexConnection.php";
                                     <th>price</th>
                                     <th>Flavor</th>
                                 </tr>
-                                <tr>
-                                    <?php
-                                    $Flex_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id`  ");
-                                    $flex_num = $Flex_rs->num_rows;
 
-                                    for ($i = 0; $i < $flex_num; $i++) {
-                                        $flex_data = $Flex_rs->fetch_assoc();
-                                    ?>
+                                <?php
+                                $Flex_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id`  ");
+                                $flex_num = $Flex_rs->num_rows;
+
+                                for ($i = 0; $i < $flex_num; $i++) {
+                                    $flex_data = $Flex_rs->fetch_assoc();
+                                ?>
+                                    <tr>
                                         <td><input type="text" class="form-control" value="<?php echo ($flex_data["Product_name"]) ?>" id="ProductName<?php echo ($flex_data["Product_id"]) ?>"></td>
                                         <td><textarea name="" class="form-control" id="ProductDescription<?php echo ($flex_data["Product_id"]) ?>" cols="30" rows="10"> <?php echo ($flex_data["Description"]) ?> </textarea></td>
                                         <td>
@@ -237,28 +238,27 @@ require "Connections/FlexConnection.php";
                                                 </div>
                                             </div>
                                         </td>
-                                        <td><input type="number" class="form-control" min="0" value="<?php echo ($flex_data["Qty"])?>" id="ProductQty<?php echo ($flex_data["Product_id"]) ?>" ></td>
+                                        <td><input type="number" class="form-control" min="0" value="<?php echo ($flex_data["Qty"]) ?>" id="ProductQty<?php echo ($flex_data["Product_id"]) ?>"></td>
                                         <td><input type="text" class="form-control" value="<?php echo ($flex_data["Price"]) ?>" id="ProductPrice<?php echo ($flex_data["Product_id"]) ?>"></td>
                                         <td><input type="text" class="form-control" value="<?php echo ($flex_data["Flavor_F_id"]) ?>" id="ProductFlavor<?php echo ($flex_data["Product_id"]) ?>"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <div class="col-12">
+                                                <button class="btn btn-info d-grid" onclick="ChangeProductInfo('<?php echo ($flex_data['Product_id']) ?>');">Update Product</button>
+                                            </div>
+                                        </td>
+                                        <td colspan="3">
+                                            <div class="col-12">
+                                                <button class="btn btn-danger d-grid" onclick="DeleteProduct('<?php echo ($flex_data['Product_id']) ?>');">Delete Product</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php
+                                }
 
-                                    <?php
-                                    }
+                                ?>
 
-                                    ?>
-                                </tr>
-                                <tr>
-                                    <td colspan="3">
-                                        <div class="col-12">
-                                            <button class="btn btn-info d-grid" onclick="ChangeProductInfo('<?php echo ($flex_data['Product_id']) ?>');">Update Product</button>
-                                        </div>
-                                    </td>
-                                    <td colspan="3">
-                                        <div class="col-12">
-                                            <button class="btn btn-danger d-grid" onclick="ChangeProductInfo('<?php echo ($flex_data['Product_id']) ?>');">Delete Product</button>
-                                        </div>
-                                    </td>
-
-                                </tr>
                             </table>
 
                         </div>

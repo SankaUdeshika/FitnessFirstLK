@@ -1116,12 +1116,13 @@ function ChangeUpdateThirdImage(id) {
 // Change Product info Process
 function ChangeProductInfo(id) {
   var command = "ChangeProductInfo";
-  var ProductName = document.getElementById("ProductName"+id).value;
-  var ProductDescription = document.getElementById("ProductDescription"+id).value;
-  var ProductQty = document.getElementById("ProductQty"+id).value;
-  var ProductPrice = document.getElementById("ProductPrice"+id).value;
-  var ProductFlavor = document.getElementById("ProductFlavor"+id).value;
-
+  var ProductName = document.getElementById("ProductName" + id).value;
+  var ProductDescription = document.getElementById(
+    "ProductDescription" + id
+  ).value;
+  var ProductQty = document.getElementById("ProductQty" + id).value;
+  var ProductPrice = document.getElementById("ProductPrice" + id).value;
+  var ProductFlavor = document.getElementById("ProductFlavor" + id).value;
 
   var f = new FormData();
   f.append("command", command);
@@ -1132,6 +1133,23 @@ function ChangeProductInfo(id) {
   f.append("ProductPrice", ProductPrice);
   f.append("ProductFlavor", ProductFlavor);
 
+  var r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if (r.readyState == 4 && r.status == 200) {
+      alert(r.responseText);
+      window.location.reload();
+    }
+  };
+  r.open("POST", "FlexBackendPross.php", true);
+  r.send(f);
+}
+
+// Delete Product Info
+function DeleteProduct(id) {
+  var command = "DeleteProductInfo";
+  var f = new FormData();
+  f.append("command", command);
+  f.append("id", id);
 
   var r = new XMLHttpRequest();
   r.onreadystatechange = function () {
