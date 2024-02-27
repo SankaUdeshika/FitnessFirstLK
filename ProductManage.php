@@ -216,10 +216,10 @@ require "Connections/FlexConnection.php";
                                                 <div class="col-4">
                                                     <div class="row">
                                                         <div class="col-12">
-                                                            <img width="100%" src="<?php echo ($flex_data["Seciond_Image"]) ?>">
+                                                            <img width="100%" id="SecondView<?php echo ($flex_data["Product_id"]) ?>" src="<?php echo ($flex_data["Seciond_Image"]) ?>">
                                                         </div>
                                                         <div class="col-12 d-flex justify-content-center">
-                                                            <input type="file" class="d-none" id="Second<?php echo ($flex_data["Product_id"]) ?>">
+                                                            <input type="file" class="d-none" id="Second<?php echo ($flex_data["Product_id"]) ?>" onchange="ChangeUpdateSecondImage('<?php echo ($flex_data['Product_id']) ?>');">
                                                             <label for="Second<?php echo ($flex_data["Product_id"]) ?>" class="btn btn-success">Change Second</label>
                                                         </div>
                                                     </div>
