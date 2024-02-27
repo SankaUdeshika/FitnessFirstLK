@@ -1162,7 +1162,6 @@ function DeleteProduct(id) {
 }
 
 // Change Single Product Image
-
 function ChangeSingleMainChangeImage() {
   var Image = document.getElementById("MainImage");
   var BigImage = document.getElementById("BigImage");
@@ -1179,4 +1178,18 @@ function ChangeSingleThirdChangeImage() {
   var Image = document.getElementById("ThirdImage");
   var BigImage = document.getElementById("BigImage");
   BigImage.src = Image.src;
+}
+
+var Quanitity = 0;
+// Change Quanitity Process
+function ChangeQuantitiy(action) {
+  if (action == "+") {
+    Quanitity = Quanitity + 1;
+    document.getElementById("QTYNo").innerHTML = Quanitity;
+  } else if (action == "-") {
+    if (Quanitity > 1) {
+      Quanitity = Quanitity - 1;
+      document.getElementById("QTYNo").innerHTML = Quanitity;
+    }
+  }
 }

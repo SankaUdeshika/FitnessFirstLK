@@ -1104,3 +1104,15 @@
   transition: 0.5s ease-in-out;
   font-size: large;
 }
+
+
+.QTYUdt{
+  color: white;
+  font-weight: bold;
+}
+
+.QTYUdt:hover{
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+}

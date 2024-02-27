@@ -50,7 +50,7 @@ require "Connections/FlexConnection.php";
 
                     <!-- connecti Database -->
                     <?php
-                    $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id`  WHERE `Product_id` = '".$Pid."' ");
+                    $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id`  WHERE `Product_id` = '" . $Pid . "' ");
                     $product_data = $product_rs->fetch_assoc();
                     ?>
 
@@ -61,18 +61,18 @@ require "Connections/FlexConnection.php";
                             <div class="col-lg-6 col-12">
                                 <div class="row">
                                     <div class="col-lg-11 col-12">
-                                        <img src="<?php echo($product_data["Main_Image"])?>" id="BigImage" class="SingleProductViewImage" alt="<?php echo($product_data["Product_name"])?>">
+                                        <img src="<?php echo ($product_data["Main_Image"]) ?>" id="BigImage" class="SingleProductViewImage" alt="<?php echo ($product_data["Product_name"]) ?>">
                                     </div>
                                     <div class="col-lg-11 col-12  mt-4">
                                         <div class="row  d-flex justify-content-center ">
                                             <div class="col-3" onclick="ChangeSingleMainChangeImage();">
-                                                <img src="<?php echo($product_data["Main_Image"])?>" id="MainImage" class="SmallSingleProductViewImage" alt="<?php echo($product_data["Product_name"])?>">
+                                                <img src="<?php echo ($product_data["Main_Image"]) ?>" id="MainImage" class="SmallSingleProductViewImage" alt="<?php echo ($product_data["Product_name"]) ?>">
                                             </div>
                                             <div class="col-3" onclick="ChangeSingleSecondChangeImage();">
-                                                <img src="<?php echo($product_data["Seciond_Image"])?>" id="SecondImage" class="SmallSingleProductViewImage" alt="<?php echo($product_data["Product_name"])?>">
+                                                <img src="<?php echo ($product_data["Seciond_Image"]) ?>" id="SecondImage" class="SmallSingleProductViewImage" alt="<?php echo ($product_data["Product_name"]) ?>">
                                             </div>
                                             <div class="col-3" onclick="ChangeSingleThirdChangeImage();">
-                                                <img src="<?php echo($product_data["Third_Image"])?>" id="ThirdImage" class="SmallSingleProductViewImage" alt="<?php echo($product_data["Product_name"])?>">
+                                                <img src="<?php echo ($product_data["Third_Image"]) ?>" id="ThirdImage" class="SmallSingleProductViewImage" alt="<?php echo ($product_data["Product_name"]) ?>">
                                             </div>
 
                                         </div>
@@ -83,24 +83,24 @@ require "Connections/FlexConnection.php";
                             <div class="col-lg-6 col-10    offset-lg-0 offset-1 mt-lg-0 mt-3 ">
                                 <div class="row d-lg-block d-flex justify-content-center">
                                     <div class="col-12 ">
-                                        <h1 class="fw-bold fs-1 text-white"><?php echo($product_data["Product_name"])?> </h1>
+                                        <h1 class="fw-bold fs-1 text-white"><?php echo ($product_data["Product_name"]) ?> </h1>
                                     </div>
                                     <div class="col-12 ">
-                                        <span class="text-white-50 fs-3">Rs.<?php echo($product_data["Price"])?> </span>
+                                        <span class="text-white-50 fs-3">Rs.<?php echo ($product_data["Price"]) ?> </span>
                                     </div>
                                     <div class="col-12">
                                         <span class="text-white">Quantity</span>
                                     </div>
                                     <div class="col-6  mt-2 border border-1 border-white">
                                         <div class="row ">
-                                            <div class="col-4 p-3  text-center">
-                                                <span class="text-white">-</span>
+                                            <div class="col-4 p-3  text-center" onclick="ChangeQuantitiy('-')">
+                                                <span class=" QTYUdt"><i class="bi bi-dash-lg"></i></span>
                                             </div>
                                             <div class="col-4 p-3  text-center">
-                                                <span class="text-white">1</span>
+                                                <span class="text-white" id="QTYNo">1</span>
                                             </div>
-                                            <div class="col-4 p-3  text-center">
-                                                <span class="text-white">+</span>
+                                            <div class="col-4 p-3  text-center" onclick="ChangeQuantitiy('+')">
+                                                <span class=" QTYUdt" ><i class="bi bi-plus"></i></span>
                                             </div>
                                         </div>
                                     </div>
@@ -116,7 +116,7 @@ require "Connections/FlexConnection.php";
                                     </div>
 
                                     <div class="col-lg-10 col-12 mt-3 text-white-50">
-                                        <p><?php echo($product_data["Description"])?></p>
+                                        <p><?php echo ($product_data["Description"]) ?></p>
                                     </div>
 
                                 </div>
