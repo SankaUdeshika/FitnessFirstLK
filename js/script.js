@@ -1089,3 +1089,28 @@ function ChangeUpdateSecondImage(id) {
   r.open("POST", "FlexBackendPross.php", true);
   r.send(f);
 }
+
+
+// Change Third Product Image
+function ChangeUpdateThirdImage(id) {
+  var file = document.getElementById("third" + id);
+  var command = "ChangeThirdProductImage";
+
+  var f = new FormData();
+  f.append("command", command);
+  f.append("id", id);
+  f.append("file", file.files[0]);
+
+  var r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if (r.readyState == 4 && r.status == 200) {
+      alert(r.responseText);
+      var ImageView = document.getElementById("ThirdView"+id);
+      urlFile = file.files[0];
+      url = window.URL.createObjectURL(urlFile);
+      ImageView.src = url;
+    }
+  };
+  r.open("POST", "FlexBackendPross.php", true);
+  r.send(f);
+}

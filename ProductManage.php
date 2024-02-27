@@ -227,10 +227,10 @@ require "Connections/FlexConnection.php";
                                                 <div class="col-4">
                                                     <div class="row">
                                                         <div class="col-12">
-                                                            <img width="100%" src="<?php echo ($flex_data["Third_Image"]) ?>">
+                                                            <img width="100%" id="ThirdView<?php echo ($flex_data["Product_id"]) ?>" src="<?php echo ($flex_data["Third_Image"]) ?>">
                                                         </div>
                                                         <div class="col-12 d-flex justify-content-center">
-                                                            <input type="file" class="d-none" id="third<?php echo ($flex_data["Product_id"]) ?>">
+                                                            <input type="file" class="d-none" id="third<?php echo ($flex_data["Product_id"]) ?>" onchange="ChangeUpdateThirdImage('<?php echo ($flex_data['Product_id']) ?>');">
                                                             <label for="third<?php echo ($flex_data["Product_id"]) ?>" class="btn btn-success">Change Third</label>
                                                         </div>
                                                     </div>
