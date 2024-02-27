@@ -87,8 +87,8 @@ if ($command == "addFlexProduct") {
                         $newImageName3 = "Resources//images//FlexProductImage//Third_" . $ProductName . $Flavor . $NewImage_Extention3;
 
 
-                        FlexDatabase::iud("INSERT INTO `product` (`Product_id`,`Product_name`,`Description`,`Flavor_F_id`,`Qty`,`Price`) VALUES ('" . $uniqueNumber . "','" . $ProductName . "','" . $Description . "','" . $Flavor . "','" . $Quanitity . "','".$price."')");
-                        FlexDatabase::iud("INSERT INTO `product_images` (`Main_Image`,`Seciond_Image`,`product_Product_id`,`Third_Image`) VALUES ('".$newImageName1."','".$newImageName2."','".$uniqueNumber."','".$newImageName3."')");
+                        FlexDatabase::iud("INSERT INTO `product` (`Product_id`,`Product_name`,`Description`,`Flavor_F_id`,`Qty`,`Price`) VALUES ('" . $uniqueNumber . "','" . $ProductName . "','" . $Description . "','" . $Flavor . "','" . $Quanitity . "','" . $price . "')");
+                        FlexDatabase::iud("INSERT INTO `product_images` (`Main_Image`,`Seciond_Image`,`product_Product_id`,`Third_Image`) VALUES ('" . $newImageName1 . "','" . $newImageName2 . "','" . $uniqueNumber . "','" . $newImageName3 . "')");
 
                         move_uploaded_file($ImageFile1["tmp_name"], $newImageName1);
                         move_uploaded_file($ImageFile2["tmp_name"], $newImageName2);
@@ -107,5 +107,57 @@ if ($command == "addFlexProduct") {
         }
     } else {
         echo ("Please Select Main Image");
+    }
+} else if ($command == "ChangeMainProductImage") {
+    if (!empty($_FILES["file"])) {
+
+
+        $ImageFile = $_FILES["file"];
+        $ImageType = $ImageFile["type"];
+
+        $id = $_POST["id"];
+
+
+        $allowed_Image_extentions = array("image/jpg", "image/jpeg", "image/png", "image/svg+xml");
+
+        if (in_array($ImageType, $allowed_Image_extentions)) {
+
+            $NewImage_Extention;
+            if ($ImageType == "image/jpg") {
+                $NewImage_Extention = ".jpg";
+            } else  if ($ImageType == "image/jpeg") {
+                $NewImage_Extention = ".jpeg";
+            } else  if ($ImageType == "image/png") {
+                $NewImage_Extention = ".png";
+            } else  if ($ImageType == "image/svg+xml") {
+                $NewImage_Extention = ".svg";
+            }
+
+
+            $oldImage_rs = FlexDatabase::search("SELECT * FROM `product_images` INNER JOIN `product` ON `product`.`Product_id` = `product_images`.`product_Product_id` WHERE `product_Product_id` = '" . $id . "' ");
+            $oldImage_num = $oldImage_rs->num_rows;
+            $oldImage_data = $oldImage_rs->fetch_assoc();
+            $ProductName = $oldImage_data["Product_name"];
+            $Flavor = $oldImage_data["Flavor_F_id"];
+
+
+            $newImageName = "Resources//images//FlexProductImage//Main_" . $ProductName . $Flavor . $NewImage_Extention;
+
+
+            if ($oldImage_num == "1") {
+                unlink($oldImage_data["Main_Image"]);
+                move_uploaded_file($ImageFile["tmp_name"], $newImageName);
+                FlexDatabase::iud("UPDATE `product_images` SET `Main_Image` = '" . $newImageName . "' WHERE `product_Product_id` = '" . $id . "'");
+                echo ("Update Success");
+            } else {
+                move_uploaded_file($ImageFile["tmp_name"], $newImageName);
+                FlexDatabase::iud("UPDATE `product_images` SET `Main_Image` = '" . $newImageName . "' WHERE `product_Product_id` = '" . $id . "'");
+                echo ("Update Success");
+            }
+        } else {
+            echo ("Please Select Valid Image Extention");
+        }
+    } else {
+        echo ("Please Select a Image");
     }
 }

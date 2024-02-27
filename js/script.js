@@ -1001,7 +1001,12 @@ function AddFlexProduct() {
   var r = new XMLHttpRequest();
   r.onreadystatechange = function () {
     if (r.readyState == 4 && r.status == 200) {
-      alert(r.responseText);
+      if (r.responseText == "Insert Success") {
+        alert(r.responseText);
+        window.location.reload();
+      } else {
+        alert(r.responseText);
+      }
     }
   };
   r.open("POST", "FlexBackendPross.php", true);
@@ -1034,4 +1039,28 @@ function ChangeThirrdProductViewImage() {
   urlFile = urlFile.files[0];
   url = window.URL.createObjectURL(urlFile);
   ImageView.src = url;
+}
+
+// Change Main Product Image
+function ChangeUpdateMainImage(id) {
+  var file = document.getElementById("Main" + id);
+  var command = "ChangeMainProductImage";
+
+  var f = new FormData();
+  f.append("command", command);
+  f.append("id", id);
+  f.append("file", file.files[0]);
+
+  var r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if (r.readyState == 4 && r.status == 200) {
+      alert(r.responseText);
+      var ImageView = document.getElementById("MainView"+id);
+      urlFile = file.files[0];
+      url = window.URL.createObjectURL(urlFile);
+      ImageView.src = url;
+    }
+  };
+  r.open("POST", "FlexBackendPross.php", true);
+  r.send(f);
 }

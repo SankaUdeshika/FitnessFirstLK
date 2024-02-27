@@ -111,10 +111,10 @@ require "Connections/FlexConnection.php";
                                             <div class="col-12">
                                                 <div class="row d-flex justify-content-center">
                                                     <div class="col-12">
-                                                        <img src="Resources/images/LOGO/addImage (2).png" id="MainImage"  width="100%" alt="">
+                                                        <img src="Resources/images/LOGO/addImage (2).png" id="MainImage" width="100%" alt="">
                                                     </div>
                                                     <div class="col-4">
-                                                        <img src="Resources/images/LOGO/addImage (2).png"  id="SecondImage" width="100%" alt="">
+                                                        <img src="Resources/images/LOGO/addImage (2).png" id="SecondImage" width="100%" alt="">
                                                     </div>
                                                     <div class="col-4">
                                                         <img src="Resources/images/LOGO/addImage (2).png" id="ThirdImage" width="100%" alt="">
@@ -125,7 +125,7 @@ require "Connections/FlexConnection.php";
                                                 <div class="row">
                                                     <div class="col-12 d-grid">
                                                         <input type="file" id="AddPrductimginput" onchange="ChangeMainProductViewImage();" class="d-none">
-                                                        <label class="btn btn-dark" for="AddPrductimginput" >Add Main Image</label>
+                                                        <label class="btn btn-dark" for="AddPrductimginput">Add Main Image</label>
                                                     </div>
                                                     <div class="col-12 d-grid">
                                                         <input type="file" id="AddSecondPrductimginput" onchange="ChangeSecondProductViewImage();" class="d-none">
@@ -176,6 +176,93 @@ require "Connections/FlexConnection.php";
                         </div>
                     </div>
 
+
+
+                    <div class="col-12 mt-5">
+                        <div class="row">
+
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th>Product Name</th>
+                                    <th>Description</th>
+                                    <th>Product Images</th>
+                                    <th>Quanitity</th>
+                                    <th>price</th>
+                                    <th>Flavor</th>
+                                </tr>
+                                <tr>
+                                    <?php
+                                    $Flex_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id`  ");
+                                    $flex_num = $Flex_rs->num_rows;
+
+                                    for ($i = 0; $i < $flex_num; $i++) {
+                                        $flex_data = $Flex_rs->fetch_assoc();
+                                    ?>
+                                        <td><input type="text" class="form-control" value="<?php echo ($flex_data["Product_name"]) ?>"></td>
+                                        <td><textarea name="" class="form-control" id="" cols="30" rows="10"> <?php echo ($flex_data["Description"]) ?> </textarea></td>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <img width="100%" id="MainView<?php echo ($flex_data["Product_id"]) ?>" src="<?php echo ($flex_data["Main_Image"]) ?>">
+                                                        </div>
+                                                        <div class="col-12 d-flex justify-content-center">
+                                                            <input type="file" class="d-none" id="Main<?php echo ($flex_data["Product_id"]) ?>" onchange="ChangeUpdateMainImage('<?php echo ($flex_data['Product_id']) ?>');">
+                                                            <label for="Main<?php echo ($flex_data["Product_id"]) ?>" class="btn btn-success">Change Main</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <img width="100%" src="<?php echo ($flex_data["Seciond_Image"]) ?>">
+                                                        </div>
+                                                        <div class="col-12 d-flex justify-content-center">
+                                                            <input type="file" class="d-none" id="Second<?php echo ($flex_data["Product_id"]) ?>">
+                                                            <label for="Second<?php echo ($flex_data["Product_id"]) ?>" class="btn btn-success">Change Second</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <img width="100%" src="<?php echo ($flex_data["Third_Image"]) ?>">
+                                                        </div>
+                                                        <div class="col-12 d-flex justify-content-center">
+                                                            <input type="file" class="d-none" id="third<?php echo ($flex_data["Product_id"]) ?>">
+                                                            <label for="third<?php echo ($flex_data["Product_id"]) ?>" class="btn btn-success">Change Third</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td><input type="number" class="form-control" min="0" value="<?php echo ($flex_data["Qty"]) ?>"></td>
+                                        <td><input type="text" class="form-control" value="<?php echo ($flex_data["Price"]) ?>"></td>
+                                        <td><input type="text" class="form-control" value="<?php echo ($flex_data["Flavor_F_id"]) ?>"></td>
+
+                                    <?php
+                                    }
+
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <div class="col-12">
+                                            <button class="btn btn-info d-grid" onclick="ChangeProductInfo('<?php echo ($flex_data['Product_id']) ?>');">Update Product</button>
+                                        </div>
+                                    </td>
+                                    <td colspan="3">
+                                        <div class="col-12">
+                                            <button class="btn btn-danger d-grid" onclick="ChangeProductInfo('<?php echo ($flex_data['Product_id']) ?>');">Delete Product</button>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
 
 
 
