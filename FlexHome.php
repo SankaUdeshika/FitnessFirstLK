@@ -1,5 +1,11 @@
 <?php
 require "Connections/FlexConnection.php";
+// Coookie Set
+if (!isset($_COOKIE["User"])) {
+    $cookie_name = "User";
+    $cookie_value = uniqid("");
+    setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -93,30 +99,30 @@ require "Connections/FlexConnection.php";
                                                                 <div class="col-lg-10 col-12 offset-lg-1 ProductImageCover ">
                                                                     <div class="row">
                                                                         <div class="col-12 ProductFirstImageCover">
-                                                                            <img src="<?php echo($product_data["Main_Image"])?>" class="FlexProductImage1" alt="<?php echo($product_data["Main_Image"])?>">
+                                                                            <img src="<?php echo ($product_data["Main_Image"]) ?>" class="FlexProductImage1" alt="<?php echo ($product_data["Main_Image"]) ?>">
                                                                         </div>
                                                                         <div class="col-12 ProductSecondImageCover ">
-                                                                            <img src="<?php echo($product_data["Seciond_Image"])?>" class="FlexProductImage2" alt="<?php echo($product_data["Seciond_Image"])?>">
+                                                                            <img src="<?php echo ($product_data["Seciond_Image"]) ?>" class="FlexProductImage2" alt="<?php echo ($product_data["Seciond_Image"]) ?>">
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <!-- Large Screen -->
                                                                 <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold fs-5 text-white d-lg-block d-none">
-                                                                    <span><?php echo($product_data["Product_name"])?></span>
+                                                                    <span><?php echo ($product_data["Product_name"]) ?></span>
                                                                 </div>
                                                                 <!-- Small Screen -->
                                                                 <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold text-white  d-lg-none d-block">
-                                                                    <small><?php echo($product_data["Product_name"])?></small>
+                                                                    <small><?php echo ($product_data["Product_name"]) ?></small>
                                                                 </div>
                                                                 <div class="col-lg-10 offset-lg-1 col-12 text-white-50">
-                                                                    <span>Rs.<?php echo($product_data["Price"])?></span>
+                                                                    <span>Rs.<?php echo ($product_data["Price"]) ?></span>
                                                                 </div>
                                                                 <!-- Button -->
                                                                 <div class="col-lg-10 col-12 mt-2 offset-lg-1 position-relative overflow-hidden ">
                                                                     <div class="col-12 ViewProductButton ">
                                                                         <div class="col-11 ViewProductButto2 d-lg-block d-none  ">
                                                                         </div>
-                                                                        <span class="ViewProductButtonText text-center" onclick="window.location='FlexSingleProductView.php?id=<?php echo($product_data['Product_id'])?>'">Choose Option </span>
+                                                                        <span class="ViewProductButtonText text-center" onclick="window.location='FlexSingleProductView.php?id=<?php echo ($product_data['Product_id']) ?>'">Choose Option </span>
                                                                     </div>
                                                                 </div>
                                                             </div>

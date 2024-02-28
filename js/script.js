@@ -1123,7 +1123,6 @@ function ChangeProductInfo(id) {
   var ProductPrice = document.getElementById("ProductPrice" + id).value;
   var ProductFlavor = document.getElementById("ProductFlavor" + id).value;
 
-
   var f = new FormData();
   f.append("command", command);
   f.append("id", id);
@@ -1183,10 +1182,8 @@ function ChangeSingleThirdChangeImage() {
 
 // Change Quanitity Process
 function ChangeQuantitiy(action) {
-
-
   if (action == "+") {
-    if( Quanitity < MaxQuantity ){
+    if (Quanitity < MaxQuantity) {
       Quanitity = Quanitity + 1;
       document.getElementById("QTYNo").innerHTML = Quanitity;
     }
@@ -1196,4 +1193,11 @@ function ChangeQuantitiy(action) {
       document.getElementById("QTYNo").innerHTML = Quanitity;
     }
   }
+}
+
+
+// Add To cart
+function AddToCart(Pid) {
+  alert(Pid);
+  
 }

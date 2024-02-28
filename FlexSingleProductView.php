@@ -1,6 +1,12 @@
 <?php
 $Pid = $_GET["id"];
 require "Connections/FlexConnection.php";
+// Coookie Set
+if (!isset($_COOKIE["User"])) {
+    $cookie_name = "User";
+    $cookie_value = uniqid("");
+    setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -117,7 +123,7 @@ require "Connections/FlexConnection.php";
                                         </div>
                                         <div class="col-12  mt-3">
                                             <div class="row">
-                                                <div class="col-lg-10 col-12 d-grid SingleProductViewBtn text-center">
+                                                <div class="col-lg-10 col-12 d-grid SingleProductViewBtn text-center" onclick="AddToCart('<?php echo($Pid)?>');" >
                                                     Add to cart
                                                 </div>
                                                 <div class="col-lg-10 col-12 d-grid SingleProductViewBtn mt-3 text-center">
