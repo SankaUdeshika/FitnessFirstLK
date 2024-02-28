@@ -114,28 +114,28 @@ if (!isset($_COOKIE["User"])) {
                                                                 <div class="col-lg-10 col-12 offset-lg-1 ProductImageCover ">
                                                                     <div class="row">
                                                                         <div class="col-12 ProductFirstImageCover">
-                                                                            <img src="<?php echo($product_data["Main_Image"])?>" class="FlexProductImage1" alt="<?php echo($product_data["Main_Image"])?>">
+                                                                            <img src="<?php echo ($product_data["Main_Image"]) ?>" class="FlexProductImage1" alt="<?php echo ($product_data["Main_Image"]) ?>">
                                                                         </div>
                                                                         <div class="col-12 ProductSecondImageCover ">
-                                                                            <img src="<?php echo($product_data["Seciond_Image"])?>" class="FlexProductImage2" alt="<?php echo($product_data["Seciond_Image"])?>">
+                                                                            <img src="<?php echo ($product_data["Seciond_Image"]) ?>" class="FlexProductImage2" alt="<?php echo ($product_data["Seciond_Image"]) ?>">
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <!-- Large Screen -->
                                                                 <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold fs-6 text-white d-lg-block d-none">
-                                                                    <span><?php echo($product_data["Product_name"])?></span>
+                                                                    <span><?php echo ($product_data["Product_name"]) ?></span>
                                                                 </div>
                                                                 <!-- Small Screen -->
                                                                 <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold  text-white d-lg-none d-block">
-                                                                    <small><?php echo($product_data["Product_name"])?></small>
+                                                                    <small><?php echo ($product_data["Product_name"]) ?></small>
                                                                 </div>
                                                                 <div class="col-lg-10 offset-lg-1 col-12 text-white-50">
-                                                                    <small>Rs.<?php echo($product_data["Price"])?></small>
+                                                                    <small>Rs.<?php echo ($product_data["Price"]) ?></small>
                                                                 </div>
                                                                 <!-- Button -->
                                                                 <div class="col-10 mt-2 offset-1 position-relative overflow-hidden ">
                                                                     <div class="col-12 ViewProductButton2 text-center ">
-                                                                        <small class="ViewProductButtonText" onclick="window.location='FlexSingleProductView.php?id=<?php echo($product_data['Product_id'])?>'">Choose Option</small>
+                                                                        <small class="ViewProductButtonText" onclick="window.location='FlexSingleProductView.php?id=<?php echo ($product_data['Product_id']) ?>'">Choose Option</small>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -169,111 +169,15 @@ if (!isset($_COOKIE["User"])) {
     </div>
 
 
-    <div class="col-12">
-        <div class="row">
-            <div class="offcanvas  bg-black text-white offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title text-white" id="staticBackdropLabel" type="button" class="btn-close btn-danger" data-bs-dismiss="offcanvas" aria-label="Close"><i class="bi bi-x-lg"></i></h5>
-                    <!-- <button type="button" class="btn-close btn-danger"  data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
-                </div>
-                <div class="offcanvas-body  position-relative">
-                    <div class="col-12 ">
-                        <div class="row">
-                            <!-- titile -->
-                            <div class="col-12 text-center">
-                                <h2>Your Cart</h2>
-                            </div>
-                            <!-- Sections -->
-                            <div class="col-12">
-                                <div class="row">
-                                    <div class="col-6 text-start">
-                                        <small class="text-white-50">Product</small>
-                                    </div>
-                                    <div class="col-6 text-end">
-                                        <small class="text-white-50">Total</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product Details -->
-                            <div class="col-12">
-                                <div class="row">
 
-                                    <div class="col-4">
-                                        <img src="Resources/images/Suppliment1.jpg" class="cartProductImage" alt="cartSuppliment">
-                                    </div>
+    <!-- Offcanvas -->
 
-                                    <div class="col-5">
-                                        <span class="fw-bold text-white">WHEY Premeum High Quauty Weigt Protin</span>
-                                        <br>
-                                        <span class="text-white-50">Rs.8,500</span>
-                                    </div>
-                                    <div class="col-3 text-end">
-                                        <span class="text-white fw-bold">Rs.8,500</span>
+    <?php include "Offcanvas.php" ?>
 
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Quntity -->
-                            <div class="col-12">
-                                <div class="row">
-                                    <div class="col-4"></div>
-                                    <div class="col-7 ">
-                                        <div class="row">
-                                            <div class="col-8 mt-3 px-3 py-3 pt-3 pb-3 border border-1 border-white">
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <span class="fw-bold text-white">-</span>
-                                                    </div>
-                                                    <div class="col-4">
-                                                        <span class="fw-bold text-white">1</span>
-                                                    </div>
-                                                    <div class="col-4">
-                                                        <span class="fw-bold text-white">+</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-4 d-flex  justify-content-center align-items-center">
-                                                <span><i class="bi bi-trash3"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Checkout out -->
-                            <div class="col-12 CheckoutCover">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <hr class="text-white text-center">
-                                    </div>
-                                    <div class="col-12 mt-3">
-                                        <div class="row">
-                                            <div class="col-6 text-start">
-                                                <span class="fw-bold text-white">Estimated total</span>
-                                            </div>
-                                            <div class="col-6 text-end">
-                                                <span class=" text-white">Rs.8,500</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <small class="text-white-50">Taxes, Discounts and shipping calculated at checkout</small>
-                                    </div>
-                                    <div class="col-12 p-3 d-grid">
-                                        <button class="cartCheckoutBtn">Check out</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+    <script>
+        var Quanitity = 0;
+        var MaxQuantity = <?php echo ($product_data["Qty"]) ?>;
+    </script>
 
 
 

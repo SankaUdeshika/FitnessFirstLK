@@ -159,17 +159,14 @@ if (!isset($_COOKIE["User"])) {
     </div>
 
 
-    <?php include "Offcanvas.php"?>
+    <!-- Offcanvas -->
 
-
-    
-
+    <?php include "Offcanvas.php" ?>
 
     <script>
         var Quanitity = 0;
         var MaxQuantity = <?php echo ($product_data["Qty"]) ?>;
     </script>
-
 
 
     <script src="js/script.js">
