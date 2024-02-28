@@ -322,12 +322,24 @@ if ($command == "addFlexProduct") {
     if ($cookie_num == 1) {
         $cookie_data = $cookie_rs->fetch_assoc();
         FlexDatabase::iud("INSERT INTO `cart` (`Qty`,`Cookie_C_id`,`product_Product_id`) VALUES ('" . $Qty . "','" . $cookie_data["C_id"] . "','" . $Pid . "')");
-        echo("Add To cart");
+        echo ("Add To cart");
     } else {
         FlexDatabase::iud("INSERT INTO `cookie` (`Cookie`) VALUES ('" . $_COOKIE["User"] . "')");
         $cookie_rs = FlexDatabase::search("SELECT * FROM `cookie` WHERE `cookie` = '" . $_COOKIE["User"] . "'");
         $cookie_data = $cookie_rs->fetch_assoc();
         FlexDatabase::iud("INSERT INTO `cart` (`Qty`,`Cookie_C_id`,`product_Product_id`) VALUES ('" . $Qty . "','" . $cookie_data["C_id"] . "','" . $Pid . "')");
-        echo("Add To cart");
+        echo ("Add To cart");
     }
+} else if ($command == "RemoveFromCart") {
+    // remove Form Cart Process
+    $Pid = $_POST["Pid"];
+
+    $cookie_rs = FlexDatabase::search("SELECT * FROM `cookie` WHERE `cookie` = '" . $_COOKIE["User"] . "'");
+    $cookie_num = $cookie_rs->num_rows;
+
+    if ($cookie_num == 1) {
+        $cookie_data = $cookie_rs->fetch_assoc();
+        FlexDatabase::iud("DELETE FROM `cart` WHERE `Cookie_C_id` = '" . $cookie_data["C_id"] . "' AND `product_Product_id` = '" . $Pid . "' ");
+        echo ("Delete from  cart");
+    } 
 }

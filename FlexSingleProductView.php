@@ -123,9 +123,41 @@ if (!isset($_COOKIE["User"])) {
                                         </div>
                                         <div class="col-12  mt-3">
                                             <div class="row">
-                                                <div class="col-lg-10 col-12 d-grid SingleProductViewBtn text-center" onclick="AddToCart('<?php echo($Pid)?>');" >
-                                                    Add to cart
-                                                </div>
+                                                <?php
+                                                // Check inside Cart or no?
+                                                $cookie_rs = FlexDatabase::search("SELECT * FROM `cookie` WHERE `cookie` = '" . $_COOKIE["User"] . "'");
+                                                $cookie_num = $cookie_rs->num_rows;
+
+                                                if ($cookie_num == 1) {
+                                                    $cookie_data = $cookie_rs->fetch_assoc();
+
+                                                    $cart_rs = FlexDatabase::search("SELECT * FROM `cart` WHERE `Cookie_C_id` = '" . $cookie_data["C_id"] . "' AND `product_Product_id` = '" . $Pid . "' ");
+                                                    $cart_num = $cart_rs->num_rows;
+
+                                                    if ($cart_num == 0) {
+                                                ?>
+                                                        <div class="col-lg-10 col-12 d-grid SingleProductViewBtn text-center" onclick="AddToCart('<?php echo ($Pid) ?>');">
+                                                            Add to cart
+                                                        </div>
+                                                    <?php
+                                                    } else if ($cart_num != 0) {
+                                                    ?>
+                                                        <div class="col-lg-10 col-12 d-grid SingleProductViewBtn text-center" onclick="removefromCart('<?php echo ($Pid) ?>');">
+                                                            Remove from cart
+                                                        </div>
+                                                    <?php
+                                                    }
+                                                } else {
+                                                    ?>
+                                                    <div class="col-lg-10 col-12 d-grid SingleProductViewBtn text-center" onclick="AddToCart('<?php echo ($Pid) ?>');">
+                                                        Add to cart
+                                                    </div>
+                                                <?php
+                                                }
+
+
+                                                ?>
+                                                <!-- Buy Now Button -->
                                                 <div class="col-lg-10 col-12 d-grid SingleProductViewBtn mt-3 text-center">
                                                     Buy Now
                                                 </div>
