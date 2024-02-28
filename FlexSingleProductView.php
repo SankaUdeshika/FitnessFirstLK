@@ -320,6 +320,10 @@ require "Connections/FlexConnection.php";
 
 
 
+    <script>
+        var Quanitity = 0;
+        var MaxQuantity = <?php echo ($product_data["Qty"]) ?>;
+    </script>
 
 
     <script src="js/script.js">

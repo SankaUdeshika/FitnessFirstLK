@@ -1181,12 +1181,15 @@ function ChangeSingleThirdChangeImage() {
   BigImage.src = Image.src;
 }
 
-var Quanitity = 0;
 // Change Quanitity Process
 function ChangeQuantitiy(action) {
+
+
   if (action == "+") {
-    Quanitity = Quanitity + 1;
-    document.getElementById("QTYNo").innerHTML = Quanitity;
+    if( Quanitity < MaxQuantity ){
+      Quanitity = Quanitity + 1;
+      document.getElementById("QTYNo").innerHTML = Quanitity;
+    }
   } else if (action == "-") {
     if (Quanitity > 1) {
       Quanitity = Quanitity - 1;
