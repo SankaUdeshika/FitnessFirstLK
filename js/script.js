@@ -1195,9 +1195,23 @@ function ChangeQuantitiy(action) {
   }
 }
 
-
 // Add To cart
 function AddToCart(Pid) {
-  alert(Pid);
+  var command = "AddToCart";
+  var Qty  = document.getElementById("QTYNo").innerHTML;
+
+  var f = new FormData();
+  f.append("command", command);
+  f.append("Pid", Pid);
+  f.append("Qty", Qty);
   
+
+  var r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if (r.readyState == 4 && r.status == 200) {
+      alert(r.responseText);
+    }
+  };
+  r.open("POST", "FlexBackendPross.php", true);
+  r.send(f);
 }

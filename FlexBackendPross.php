@@ -310,4 +310,24 @@ if ($command == "addFlexProduct") {
     } else {
         echo ("Something Wrong, Please Try again later");
     }
+    // Add TO cart Process
+} else if ($command == "AddToCart") {
+
+    $Pid = $_POST["Pid"];
+    $Qty = $_POST["Qty"];
+
+    $cookie_rs = FlexDatabase::search("SELECT * FROM `cookie` WHERE `cookie` = '" . $_COOKIE["User"] . "'");
+    $cookie_num = $cookie_rs->num_rows;
+
+    if ($cookie_num == 1) {
+        $cookie_data = $cookie_rs->fetch_assoc();
+        FlexDatabase::iud("INSERT INTO `cart` (`Qty`,`Cookie_C_id`,`product_Product_id`) VALUES ('" . $Qty . "','" . $cookie_data["C_id"] . "','" . $Pid . "')");
+        echo("Add To cart");
+    } else {
+        FlexDatabase::iud("INSERT INTO `cookie` (`Cookie`) VALUES ('" . $_COOKIE["User"] . "')");
+        $cookie_rs = FlexDatabase::search("SELECT * FROM `cookie` WHERE `cookie` = '" . $_COOKIE["User"] . "'");
+        $cookie_data = $cookie_rs->fetch_assoc();
+        FlexDatabase::iud("INSERT INTO `cart` (`Qty`,`Cookie_C_id`,`product_Product_id`) VALUES ('" . $Qty . "','" . $cookie_data["C_id"] . "','" . $Pid . "')");
+        echo("Add To cart");
+    }
 }

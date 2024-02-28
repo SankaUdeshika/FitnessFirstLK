@@ -4,7 +4,7 @@ require "Connections/FlexConnection.php";
 // Coookie Set
 if (!isset($_COOKIE["User"])) {
     $cookie_name = "User";
-    $cookie_value = uniqid("");
+    $cookie_value = uniqid("user");
     setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 }
 ?>
