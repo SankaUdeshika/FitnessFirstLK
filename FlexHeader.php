@@ -1,3 +1,5 @@
+<?php
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +27,24 @@
                                 <img src="Resources/images/LOGO/Flex.jpg" onclick="window.location = 'index.php'" class="FlexLOGO" alt="Flex Logo">
                             </div>
                             <div class="col-lg-4 col-2 text-end d-flex align-items-center ">
-                                <span class="fs-1 fw-bold offset-5 FlexHeadrTab  "  type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><i class="bi bi-cart4"></i></span>
+                                <?php
+                                // Show Cart Number Icons
+                                $Cookie_rs  = FlexDatabase::search("SELECT * FROM `cookie` WHERE `Cookie` = '" . $_COOKIE["User"] . "' ");
+                                $Cookie_num = $Cookie_rs->num_rows;
+                                if ($Cookie_num == 1) {
+                                    $Cookie_data = $Cookie_rs->fetch_assoc();
+                                    $cartBatch_rs = FlexDatabase::search("SELECT * FROM `cart` WHERE `Cookie_C_id` = '" . $Cookie_data["C_id"] . "' ");
+                                    $cartBatch_num = $cartBatch_rs->num_rows;
+                                ?>
+                                    <span class="fs-1 fw-bold offset-5 FlexHeadrTab" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><i class="bi bi-cart4"></i></span>
+                                    <small class="text-center text-danger"><?php echo ($cartBatch_num) ?></small>
+                                <?php
+                                } else {
+                                ?>
+                                    <span class="fs-1 fw-bold offset-5 FlexHeadrTab" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><i class="bi bi-cart4"></i></span>
+                                <?php
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -43,7 +62,7 @@
                         </div>
                     </div>
 
-                
+
                 </div>
             </div>
 
