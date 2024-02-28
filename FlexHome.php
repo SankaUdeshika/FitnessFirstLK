@@ -185,51 +185,76 @@ if (!isset($_COOKIE["User"])) {
                                 </div>
                             </div>
                             <!-- Product Details -->
-                            <div class="col-12">
-                                <div class="row">
+                            <div class="col-12 overflow-y-scroll " style="height: 40vh;">
+                                <div class="row ">
 
-                                    <div class="col-4">
-                                        <img src="Resources/images/Suppliment1.jpg" class="cartProductImage" alt="cartSuppliment">
-                                    </div>
 
-                                    <div class="col-5">
-                                        <span class="fw-bold text-white">WHEY Premeum High Quauty Weigt Protin</span>
-                                        <br>
-                                        <span class="text-white-50">Rs.8,500</span>
-                                    </div>
-                                    <div class="col-3 text-end">
-                                        <span class="text-white fw-bold">Rs.8,500</span>
+                                    <?php
+                                    $CookieCheck_rs  = FlexDatabase::search("SELECT * FROM `cookie` WHERE `Cookie` = '" . $_COOKIE["User"] . "' ");
+                                    $CookieCheck_num = $CookieCheck_rs->num_rows;
 
-                                    </div>
-                                </div>
-                            </div>
+                                    if ($CookieCheck_num == 1) {
+                                        $CookieCheck_data = $CookieCheck_rs->fetch_assoc();
 
-                            <!-- Quntity -->
-                            <div class="col-12">
-                                <div class="row">
-                                    <div class="col-4"></div>
-                                    <div class="col-7 ">
-                                        <div class="row">
-                                            <div class="col-8 mt-3 px-3 py-3 pt-3 pb-3 border border-1 border-white">
+                                        $Mcart_rs = FlexDatabase::search("SELECT * FROM `cart` INNER JOIN `product` ON `product`.`Product_id` = `cart`.`product_Product_id` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id`   WHERE `Cookie_C_id` = '" . $CookieCheck_data["C_id"] . "'");
+                                        $Mcart_num = $Mcart_rs->num_rows;
+
+                                        for ($i = 0; $i < $Mcart_num; $i++) {
+                                            $Mcart_data = $Mcart_rs->fetch_assoc();
+                                    ?>
+                                            <div class="col-4">
+                                                <img src="<?php echo ($Mcart_data["Main_Image"]) ?>" class="cartProductImage" alt="cartSuppliment">
+                                            </div>
+
+                                            <div class="col-5">
+                                                <span class="fw-bold text-white"><?php echo ($Mcart_data["Product_name"]) ?></span>
+                                                <br>
+                                                <span class="text-white-50">Rs.<?php echo ($Mcart_data["Price"]) ?></span>
+                                            </div>
+                                            <div class="col-3 text-end">
+                                                <span class="text-white fw-bold">Rs.<?php echo ($Mcart_data["Price"]) ?></span>
+                                            </div>
+git add .
+                                            <!-- Quntity -->
+                                            <div class="col-12 mb-3">
                                                 <div class="row">
-                                                    <div class="col-4">
-                                                        <span class="fw-bold text-white">-</span>
-                                                    </div>
-                                                    <div class="col-4">
-                                                        <span class="fw-bold text-white">1</span>
-                                                    </div>
-                                                    <div class="col-4">
-                                                        <span class="fw-bold text-white">+</span>
+                                                    <div class="col-4"></div>
+                                                    <div class="col-7 ">
+                                                        <div class="row">
+                                                            <div class="col-8 mt-3 px-3 py-3 pt-3 pb-3 border border-1 border-white">
+                                                                <div class="row">
+                                                                    <?php
+                                                                    $cartQty_rs = FlexDatabase::search("SELECT * FROM `cart`   WHERE `product_Product_id` = '" . $Mcart_data["Product_id"] . "'");
+                                                                    $cartQty_data = $cartQty_rs->fetch_assoc();
+                                                                    ?>
+                                                                    <input type="number" min="1" max="<?php echo ($Mcart_data["Qty"]) ?>" value="<?php echo ($cartQty_data["Qty"]) ?>">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-4 d-flex  justify-content-center align-items-center">
+                                                                <span><i class="bi bi-trash3"></i></span>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
+                                                <hr class="text-white-50">
                                             </div>
-                                            <div class="col-4 d-flex  justify-content-center align-items-center">
-                                                <span><i class="bi bi-trash3"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
+
+
+                                        <?php
+                                        }
+                                    } else {
+                                        ?>
+                                        <span>Empty</span>
+                                    <?php
+                                    }
+
+                                    ?>
+
+
                                 </div>
                             </div>
+
+
 
                             <!-- Checkout out -->
                             <div class="col-12 CheckoutCover">
@@ -264,6 +289,10 @@ if (!isset($_COOKIE["User"])) {
     </div>
 
 
+    <script>
+        var Quanitity = 0;
+        var MaxQuantity = <?php echo ($product_data["Qty"]) ?>;
+    </script>
 
 
 
