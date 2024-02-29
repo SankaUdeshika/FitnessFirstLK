@@ -40,6 +40,7 @@
 
 
                                     <?php
+                                    $total = 0;
                                     $CookieCheck_rs  = FlexDatabase::search("SELECT * FROM `cookie` WHERE `Cookie` = '" . $_COOKIE["User"] . "' ");
                                     $CookieCheck_num = $CookieCheck_rs->num_rows;
 
@@ -51,6 +52,8 @@
 
                                         for ($i = 0; $i < $Mcart_num; $i++) {
                                             $Mcart_data = $Mcart_rs->fetch_assoc();
+
+
                                     ?>
                                             <div class="col-4">
                                                 <img src="<?php echo ($Mcart_data["Main_Image"]) ?>" class="cartProductImage" alt="cartSuppliment">
@@ -75,8 +78,10 @@
                                                                     <?php
                                                                     $cartQty_rs = FlexDatabase::search("SELECT * FROM `cart`   WHERE `product_Product_id` = '" . $Mcart_data["Product_id"] . "'");
                                                                     $cartQty_data = $cartQty_rs->fetch_assoc();
+
+                                                                    $total = $total + ($Mcart_data["Price"] * $cartQty_data["Qty"]);
                                                                     ?>
-                                                                    <input type="number" min="1" max="<?php echo ($Mcart_data["Qty"]) ?>" value="<?php echo ($cartQty_data["Qty"]) ?>">
+                                                                    <input type="number" id="Mcart_id<?php echo ($Mcart_data["Product_id"]) ?>" min="1" max="<?php echo ($Mcart_data["Qty"]) ?>" value="<?php echo ($cartQty_data["Qty"]) ?>" onchange="ChangeTotal('<?php echo ($Mcart_data['Product_id']) ?>');">
                                                                 </div>
                                                             </div>
                                                             <div class="col-4 d-flex  justify-content-center align-items-center" onclick="removefromCart('<?php echo ($Mcart_data['Product_id']) ?>')">
@@ -121,7 +126,7 @@
                                                 <span class="fw-bold text-white">Estimated total</span>
                                             </div>
                                             <div class="col-6 text-end">
-                                                <span class=" text-white">Rs.8,500</span>
+                                                <span class=" text-white" id="TotalPrice">Rs.<?php echo($total)?></span>
                                             </div>
                                         </div>
                                     </div>

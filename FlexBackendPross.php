@@ -341,5 +341,32 @@ if ($command == "addFlexProduct") {
         $cookie_data = $cookie_rs->fetch_assoc();
         FlexDatabase::iud("DELETE FROM `cart` WHERE `Cookie_C_id` = '" . $cookie_data["C_id"] . "' AND `product_Product_id` = '" . $Pid . "' ");
         echo ("Delete from  cart");
-    } 
+    }
+} else if ($command == "ChangeQtyCart") {
+    $Qty  = $_POST["Qty"];
+    $Pid  = $_POST["Pid"];
+
+
+    $cookie_rs = FlexDatabase::search("SELECT * FROM `cookie` WHERE `cookie` = '" . $_COOKIE["User"] . "'");
+    $cookie_data = $cookie_rs->fetch_assoc();
+
+    FlexDatabase::iud("UPDATE `cart` SET  `Qty` = '" . $Qty . "' WHERE `product_Product_id` = '" . $Pid . "'  AND `Cookie_C_id` = '" . $cookie_data["C_id"] . "' ");
+
+    $Total_rs = FlexDatabase::search("SELECT * FROM `cart`  WHERE `Cookie_C_id` = '" . $cookie_data["C_id"] . "' ");
+    $Total_num = $Total_rs->num_rows;
+
+    $totalPrice = 0;
+
+    for ($i = 0; $i < $Total_num; $i++) {
+        $Total_data = $Total_rs->fetch_assoc();
+
+        $product_rs = FlexDatabase::search("SELECT * FROM `product`  WHERE `Product_id` = '" . $Total_data["product_Product_id"] . "' ");
+        $product_data = $product_rs->fetch_assoc();
+
+        $product_Price = $product_data["Price"];
+        $product_Qty = $Total_data["Qty"];
+
+        $totalPrice = $totalPrice + ($product_Price * $product_Qty);
+    }
+    echo ($totalPrice);
 }

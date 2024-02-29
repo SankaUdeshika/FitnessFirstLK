@@ -1234,3 +1234,28 @@ function removefromCart(Pid) {
   r.open("POST", "FlexBackendPross.php", true);
   r.send(f);
 }
+
+// Change Cart Total Price                                                            <span><i class="bi bi-arrow-clockwise"></i></span>
+function ChangeTotal(Pid) {
+  var command = "ChangeQtyCart";
+  var Qty = document.getElementById("Mcart_id" + Pid).value;
+
+
+  var f = new FormData();
+  f.append("command", command);
+  f.append("Pid", Pid);
+  f.append("Qty", Qty);
+
+  var r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if (r.readyState == 4 && r.status == 200) {
+     
+      var Total = r.responseText;
+      var TotalPrice = document.getElementById("TotalPrice");
+      TotalPrice.innerHTML ="Rs." + Total;
+
+    }
+  };
+  r.open("POST", "FlexBackendPross.php", true);
+  r.send(f);
+}
