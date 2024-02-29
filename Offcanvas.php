@@ -30,7 +30,7 @@
                                         <small class="text-white-50">Product</small>
                                     </div>
                                     <div class="col-6 text-end">
-                                        <small class="text-white-50">Total</small>
+                                        <small class="text-white-50">Unit Price</small>
                                     </div>
                                 </div>
                             </div>
