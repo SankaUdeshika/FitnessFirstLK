@@ -111,7 +111,7 @@ if (!isset($_COOKIE["User"])) {
 
                                             <div class="col-12 mb-5">
                                                 <div class="row d-flex justify-content-center">
-                                                    <div class=" col-12 d-grid SingleProductViewBtn mt-3 text-center">
+                                                    <div class=" col-12 d-grid SingleProductViewBtn mt-3 text-center" onclick="AddOrder();">
                                                         Pay Now
                                                     </div>
                                                 </div>
@@ -153,7 +153,7 @@ if (!isset($_COOKIE["User"])) {
 
 
                                                 // Total
-                                                $Total = $Total + $subTotal;
+                                                $Total = $subTotal + $shipping;
 
                                             ?>
                                                 <div class="col-12 mt-2">
@@ -212,8 +212,6 @@ if (!isset($_COOKIE["User"])) {
                                                             <div class="col-6 text-white-50 text-end">
                                                                 <small>Rs.<?php echo ($shipping) ?></small>
                                                             </div>
-
-
                                                         </div>
                                                     </div>
 

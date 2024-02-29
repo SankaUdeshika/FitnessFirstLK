@@ -1259,3 +1259,9 @@ function ChangeTotal(Pid) {
   r.open("POST", "FlexBackendPross.php", true);
   r.send(f);
 }
+
+
+// Add Order Process
+function AddOrder(){
+  alert("OKOK");
+}
