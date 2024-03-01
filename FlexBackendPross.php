@@ -369,4 +369,148 @@ if ($command == "addFlexProduct") {
         $totalPrice = $totalPrice + ($product_Price * $product_Qty);
     }
     echo ($totalPrice);
+} else if ($command == "AddOrder") {
+
+    if (empty($_POST["Email"])) {
+        echo ("Please Enter a Email ");
+    } else if (empty($_POST["mobile"])) {
+        echo ("Please Enter a mobile ");
+    } else if (empty($_POST["fname"])) {
+        echo ("Please Enter a First Name ");
+    } else if (empty($_POST["lname"])) {
+        echo ("Please Enter a Last Name ");
+    } else if (empty($_POST["Address"])) {
+        echo ("Please Enter a Address ");
+    } else if (empty($_POST["City"])) {
+        echo ("Please Enter a City ");
+    } else if (empty($_POST["Pcode"])) {
+        echo ("Please Enter a Pcode ");
+    } else {
+
+        $Email =  $_POST["Email"];
+        $User_rs = FlexDatabase::search("SELECT * FROM `user` WHERE `Email` = '" . $Email . "' ");
+        $User_num  = $User_rs->num_rows;
+
+        if ($User_num == 1) {
+            $User_data  = $User_rs->fetch_assoc();
+
+            $cookie_name = "User";
+            $OldCookie_rs = FlexDatabase::search("SELECT * FROM `cookie` WHERE `C_id` = '" . $User_data["Cookie_C_id"] . "' ");
+            $OldCookie_data = $OldCookie_rs->fetch_assoc();
+            // Old Cookie
+            $OldCookieVlaue = $OldCookie_data["Cookie"];
+
+            // Add Old Cookie
+            setcookie($cookie_name, $OldCookieVlaue, time() + (86400 * 30), "/");
+
+            $mobile =  $_POST["mobile"];
+            $fname =  $_POST["fname"];
+            $lname =  $_POST["lname"];
+            $Address =  $_POST["Address"];
+            $City =  $_POST["City"];
+            $Pcode =  $_POST["Pcode"];
+            $UserCookie = $User_data["Cookie_C_id"];
+
+            FlexDatabase::iud("UPDATE `user` SET `FIrst_name` = '" . $fname . "',`Last_name` = '" . $lname . "',`mobile` = '" . $mobile . "' ,`Address` = '" . $Address . "', `City` = '" . $City . "' , `PostalCode` = '" . $Pcode . "' ");
+
+
+            $Cart_rs = FlexDatabase::search("SELECT * FROM `cart` WHERE `Cookie_C_id` = '" . $UserCookie . "' ");
+            $Cart_num = $Cart_rs->num_rows;
+
+            $Total = 0;
+
+            for ($i = 0; $i < $Cart_num; $i++) {
+                $Cart_data = $Cart_rs->fetch_assoc();
+                $CartProduct_rs = FlexDatabase::search("SELECT * FROM `product` WHERE `Product_id` = '" . $Cart_data["product_Product_id"] . "' ");
+                $CartProduct_data = $CartProduct_rs->fetch_assoc();
+
+                $CartProduct_Price = $CartProduct_data["Price"];
+                $CartProduct_Qty = $Cart_data["Qty"];
+
+                $Total = $Total + ($CartProduct_Price * $CartProduct_Qty);
+            }
+
+            // Get Date abbd Time
+            $DateTime = date('Y-m-d H:i:s');
+            $ExplodeDateTime =  explode(" ", $DateTime);
+
+            $Date = $ExplodeDateTime[0];
+            $Time = $ExplodeDateTime[1];
+
+            $Order_id = uniqid("Order_");
+
+            FlexDatabase::iud("INSERT INTO `order` (`Order_id`,`Total`,`User_Email`,`OrderDate`,`OrderTime`,`Status_Sid`) VALUES('" . $Order_id . "','" . $Total . "','" . $Email . "','" . $Date . "','" . $Time . "','3')");
+
+            $OrderCart_rs = FlexDatabase::search("SELECT * FROM `cart` WHERE `Cookie_C_id` = '" . $UserCookie . "' ");
+            $OrderCart_num = $OrderCart_rs->num_rows;
+
+            for ($x = 0; $x < $OrderCart_num; $x++) {
+                $OrderCart_data = $OrderCart_rs->fetch_assoc();
+                // Add Oder Items
+                FlexDatabase::iud("INSERT INTO `orderitem` (`Qty`,`Order_Order_id`,`product_Product_id`) VALUES('" . $OrderCart_data["Qty"] . "','" . $Order_id . "','" . $OrderCart_data["product_Product_id"] . "')");
+                // Delete From Cart
+                FlexDatabase::iud("DELETE FROM `cart` WHERE `Cart_id` = '" . $OrderCart_data["Cart_id"] . "' ");
+            }
+
+            echo ("Order Add SuccessFull");
+        } else if ($User_num == 0) {
+
+            $Email =  $_POST["Email"];
+            $mobile =  $_POST["mobile"];
+            $fname =  $_POST["fname"];
+            $lname =  $_POST["lname"];
+            $Address =  $_POST["Address"];
+            $City =  $_POST["City"];
+            $Pcode =  $_POST["Pcode"];
+
+            $Cookie_rs =   FlexDatabase::search("SELECT * FROM `cookie` WHERE `Cookie` = '" . $_COOKIE["User"] . "' ");
+            $Cookie_data = $Cookie_rs->fetch_assoc();
+
+            $UserCookie = $Cookie_data["C_id"];
+
+            FlexDatabase::iud("INSERT INTO `user` (`Email`,`FIrst_name`,`Last_name`,`mobile`,`Address`,`City`,`PostalCode`,`Cookie_C_id`) 
+            VALUES('" . $Email . "','" . $fname . "','" . $lname . "','" . $mobile . "','" . $Address . "','".$City."','".$Pcode."','".$UserCookie."')");
+
+
+            $Cart_rs = FlexDatabase::search("SELECT * FROM `cart` WHERE `Cookie_C_id` = '" . $UserCookie . "' ");
+            $Cart_num = $Cart_rs->num_rows;
+
+            $Total = 0;
+
+            for ($i = 0; $i < $Cart_num; $i++) {
+                $Cart_data = $Cart_rs->fetch_assoc();
+                $CartProduct_rs = FlexDatabase::search("SELECT * FROM `product` WHERE `Product_id` = '" . $Cart_data["product_Product_id"] . "' ");
+                $CartProduct_data = $CartProduct_rs->fetch_assoc();
+
+                $CartProduct_Price = $CartProduct_data["Price"];
+                $CartProduct_Qty = $Cart_data["Qty"];
+
+                $Total = $Total + ($CartProduct_Price * $CartProduct_Qty);
+            }
+
+            // Get Date abbd Time
+            $DateTime = date('Y-m-d H:i:s');
+            $ExplodeDateTime =  explode(" ", $DateTime);
+
+            $Date = $ExplodeDateTime[0];
+            $Time = $ExplodeDateTime[1];
+
+            $Order_id = uniqid("Order_");
+
+            FlexDatabase::iud("INSERT INTO `order` (`Order_id`,`Total`,`User_Email`,`OrderDate`,`OrderTime`,`Status_Sid`) VALUES('" . $Order_id . "','" . $Total . "','" . $Email . "','" . $Date . "','" . $Time . "','3')");
+
+            $OrderCart_rs = FlexDatabase::search("SELECT * FROM `cart` WHERE `Cookie_C_id` = '" . $UserCookie . "' ");
+            $OrderCart_num = $OrderCart_rs->num_rows;
+
+            for ($x = 0; $x < $OrderCart_num; $x++) {
+                $OrderCart_data = $OrderCart_rs->fetch_assoc();
+                // Add Oder Items
+                FlexDatabase::iud("INSERT INTO `orderitem` (`Qty`,`Order_Order_id`,`product_Product_id`) VALUES('" . $OrderCart_data["Qty"] . "','" . $Order_id . "','" . $OrderCart_data["product_Product_id"] . "')");
+                // Delete From Cart
+                FlexDatabase::iud("DELETE FROM `cart` WHERE `Cart_id` = '" . $OrderCart_data["Cart_id"] . "' ");
+            }
+
+            echo ("Order Add SuccessFull");
+        }
+    }
 }

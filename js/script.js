@@ -1240,7 +1240,6 @@ function ChangeTotal(Pid) {
   var command = "ChangeQtyCart";
   var Qty = document.getElementById("Mcart_id" + Pid).value;
 
-
   var f = new FormData();
   f.append("command", command);
   f.append("Pid", Pid);
@@ -1249,19 +1248,42 @@ function ChangeTotal(Pid) {
   var r = new XMLHttpRequest();
   r.onreadystatechange = function () {
     if (r.readyState == 4 && r.status == 200) {
-     
       var Total = r.responseText;
       var TotalPrice = document.getElementById("TotalPrice");
-      TotalPrice.innerHTML ="Rs." + Total;
-
+      TotalPrice.innerHTML = "Rs." + Total;
     }
   };
   r.open("POST", "FlexBackendPross.php", true);
   r.send(f);
 }
 
-
 // Add Order Process
-function AddOrder(){
-  alert("OKOK");
+function AddOrder() {
+  var command = "AddOrder";
+  var Email = document.getElementById("Email").value;
+  var mobile = document.getElementById("mobile").value;
+  var fname = document.getElementById("fname").value;
+  var lname = document.getElementById("lname").value;
+  var Address = document.getElementById("Address").value;
+  var City = document.getElementById("City").value;
+  var Pcode = document.getElementById("Pcode").value;
+
+  var f = new FormData();
+  f.append("command", command);
+  f.append("Email", Email);
+  f.append("mobile", mobile);
+  f.append("fname", fname);
+  f.append("lname", lname);
+  f.append("Address", Address);
+  f.append("City", City);
+  f.append("Pcode", Pcode);
+
+  var r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if (r.readyState == 4 && r.status == 200) {
+      alert(r.responseText);
+    }
+  };
+  r.open("POST", "FlexBackendPross.php", true);
+  r.send(f);
 }

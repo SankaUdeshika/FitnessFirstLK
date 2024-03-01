@@ -65,20 +65,20 @@ if (!isset($_COOKIE["User"])) {
                                                 <h1 class="text-white">Contact</h1>
                                             </div>
                                             <div class="col-12">
-                                                <input type="text" class="form-control" placeholder="Email">
+                                                <input type="text" class="form-control" placeholder="Email" id="Email">
                                             </div>
 
                                             <div class="col-12 mt-3">
-                                                <input type="text" class="form-control" placeholder="Phone Number">
+                                                <input type="text" class="form-control" placeholder="Phone Number" id="mobile">
                                             </div>
 
 
                                             <div class="col-6 mt-3">
-                                                <input type="text" class="form-control" placeholder="First Name">
+                                                <input type="text" class="form-control" placeholder="First Name" id="fname">
                                             </div>
 
                                             <div class="col-6 mt-3">
-                                                <input type="text" class="form-control" placeholder="Last Name">
+                                                <input type="text" class="form-control" placeholder="Last Name" id="lname">
                                             </div>
 
 
@@ -86,15 +86,15 @@ if (!isset($_COOKIE["User"])) {
                                                 <h1 class="text-white">Delevery</h1>
                                             </div>
                                             <div class="col-12">
-                                                <textarea name="" class="form-control" id="" placeholder="Address" cols="20" rows="5"></textarea>
+                                                <textarea name="" class="form-control"  placeholder="Address" id="Address" cols="20" rows="5"></textarea>
                                             </div>
 
                                             <div class="col-6 mt-3">
-                                                <input type="text" class="form-control" placeholder="City">
+                                                <input type="text" class="form-control" placeholder="City" id="City">
                                             </div>
 
                                             <div class="col-6 mt-3">
-                                                <input type="text" class="form-control" placeholder="Postal Code">
+                                                <input type="text" class="form-control" placeholder="Postal Code" id="Pcode">
                                             </div>
 
 
