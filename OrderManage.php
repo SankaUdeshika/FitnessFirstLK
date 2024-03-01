@@ -1,5 +1,6 @@
 <?php
 session_start();
+require "Connections/FlexConnection.php";
 ?>
 
 <!DOCTYPE html>
@@ -57,7 +58,7 @@ session_start();
             <div class="col-12 col-lg-10">
                 <div class="row">
                     <div class="text-white fw-bold mb-1 mt-3">
-                        <h2 class="fw-bold ml-5">Dashboard</h2>
+                        <h2 class="fw-bold ml-5">Order Manager</h2>
                     </div>
                     <div class="col-12">
                         <hr />
@@ -101,13 +102,44 @@ session_start();
                     </div>
 
 
-                    <div class="col-12 d-grid">
-                        <button class="btn btn-outline-dark fs-2" onclick="window.location = 'ProductManage.php'"> Manage Product</button>
+                    <div class="col-12">
+                        <div class="row">
+
+                            <table class="table table-dark">
+                                <tr>
+                                    <th>OrderId</th>
+                                    <th>User Email</th>
+                                    <th>Data Time</th>
+                                    <th>Name</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                    <th>Bill</th>
+                                </tr>
+                                <?php
+                                $Order_rs = FlexDatabase::Search("SELECT * FROM `order` INNER JOIN `user` ON `user`.`Email` = `Order`.`User_Email`  ");
+                                $Order_num = $Order_rs->num_rows;
+
+                                for ($i = 0; $i < $Order_num; $i++) {
+                                    $Order_data = $Order_rs->fetch_assoc();
+                                ?>
+                                    <tr>
+                                        <td><?php echo ($Order_data["Order_id"]) ?></td>
+                                        <td><?php echo ($Order_data["User_Email"]) ?></td>
+                                        <td><?php echo ($Order_data["OrderDate"] . " " . $Order_data["OrderTime"]) ?></td>
+                                        <td><?php echo ($Order_data["FIrst_name"] . " " . $Order_data["Last_name"]) ?></td>
+                                        <td><?php echo ($Order_data["Total"]) ?></td>
+                                        <td><button class="btn btn-success">Confirm Order</button></td>
+                                        <td><button class="btn btn-warning">Check Bill</button></td>
+                                    </tr>
+                                <?php
+                                }
+
+                                ?>
+                            </table>
+
+                        </div>
                     </div>
 
-                    <div class="col-12 d-grid">
-                        <button class="btn btn-outline-dark fs-2" onclick="window.location = 'OrderManage.php'"> Manage Orders </button>
-                    </div>
 
 
 
