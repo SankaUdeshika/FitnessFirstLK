@@ -21,7 +21,7 @@
                         <div class="row">
                             <!-- titile -->
                             <div class="col-12 text-center">
-                                <h2>Your Cart</h2>
+                                <h2>Your Cart</h2>g
                             </div>
                             <!-- Sections -->
                             <div class="col-12">
@@ -134,7 +134,7 @@
                                         <small class="text-white-50">Taxes, Discounts and shipping calculated at checkout</small>
                                     </div>
                                     <div class="col-12 p-3 d-grid">
-                                        <button class="cartCheckoutBtn">Check out</button>
+                                        <button class="cartCheckoutBtn" onclick="window.location = 'Checkout.php'">Check out</button>
                                     </div>
                                 </div>
                             </div>
