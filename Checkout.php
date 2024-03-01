@@ -57,9 +57,9 @@ if (!isset($_COOKIE["User"])) {
                     <div class="col-12">
                         <div class="row">
                             <!-- From -->
-                            <div class="col-6 border-0 border-end border-white">
+                            <div class="col-lg-6 col-12 border-0 border-end border-white">
                                 <div class="row">
-                                    <div class="col-8 offset-lg-2">
+                                    <div class="col-lg-8 col-12 offset-lg-2">
                                         <div class="row">
                                             <div class="col-12">
                                                 <h1 class="text-white">Contact</h1>
@@ -86,7 +86,7 @@ if (!isset($_COOKIE["User"])) {
                                                 <h1 class="text-white">Delevery</h1>
                                             </div>
                                             <div class="col-12">
-                                                <textarea name="" class="form-control"  placeholder="Address" id="Address" cols="20" rows="5"></textarea>
+                                                <textarea name="" class="form-control" placeholder="Address" id="Address" cols="20" rows="5"></textarea>
                                             </div>
 
                                             <div class="col-6 mt-3">
@@ -121,7 +121,7 @@ if (!isset($_COOKIE["User"])) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6 border-0 border-end border-white">
+                            <div class="col-lg-6 col-12 border-0 border-end border-white">
                                 <div class="row">
 
                                     <div class="col-12">
@@ -136,7 +136,8 @@ if (!isset($_COOKIE["User"])) {
 
                                             $subTotal = 0;
                                             $Total = 0;
-
+                                            // Shipping
+                                            $shipping = 0;
 
                                             for ($i = 0; $i < $cart_num; $i++) {
                                                 $cart_data = $cart_rs->fetch_assoc();
@@ -148,8 +149,7 @@ if (!isset($_COOKIE["User"])) {
                                                 // SubTotal
                                                 $subTotal = $subTotal + $cart_data["Qty"] * $product_data["Price"];
 
-                                                // Shipping
-                                                $shipping = 0;
+
 
 
                                                 // Total
