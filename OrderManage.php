@@ -116,7 +116,7 @@ require "Connections/FlexConnection.php";
                                     <th>Bill</th>
                                 </tr>
                                 <?php
-                                $Order_rs = FlexDatabase::Search("SELECT * FROM `order` INNER JOIN `user` ON `user`.`Email` = `Order`.`User_Email`  ");
+                                $Order_rs = FlexDatabase::Search("SELECT * FROM `order` INNER JOIN `user` ON `user`.`Email` = `Order`.`User_Email` INNER JOIN `status` ON  `status`.`Sid` = `order`.`Status_Sid`  ");
                                 $Order_num = $Order_rs->num_rows;
 
                                 for ($i = 0; $i < $Order_num; $i++) {
@@ -128,8 +128,20 @@ require "Connections/FlexConnection.php";
                                         <td><?php echo ($Order_data["OrderDate"] . " " . $Order_data["OrderTime"]) ?></td>
                                         <td><?php echo ($Order_data["FIrst_name"] . " " . $Order_data["Last_name"]) ?></td>
                                         <td><?php echo ($Order_data["Total"]) ?></td>
-                                        <td><button class="btn btn-success">Confirm Order</button></td>
-                                        <td><button class="btn btn-warning" onclick="window.location='invoice.php?id=<?php echo($Order_data['Order_id'])?>'">Check Bill</button></td>
+                                        <!-- Satatus Part -->
+                                        <?php
+                                        // Pending
+                                        if ($Order_data["Status"] == "PENDING") {
+                                        ?>
+                                            <td><button class="btn btn-warning" onclick="ChangeOrderStatus('<?php echo ($Order_data['Order_id']) ?>');" >Pending Order</button></td>
+                                        <?php
+                                        } else  if ($Order_data["Status"] == 'ACTIVE') {
+                                        ?>
+                                            <td><button class="btn btn-success">Confirm Order</button></td>
+                                        <?php
+                                        }
+                                        ?>
+                                        <td><button class="btn btn-warning" onclick="window.location='invoice.php?id=<?php echo ($Order_data['Order_id']) ?>'">Check Bill</button></td>
                                     </tr>
                                 <?php
                                 }

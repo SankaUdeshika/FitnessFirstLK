@@ -513,4 +513,10 @@ if ($command == "addFlexProduct") {
             echo ("Order Add SuccessFull");
         }
     }
+} else if ($command == "ChangeOrderStatus") {
+    $Order_id = $_POST["Order_id"];
+
+    FlexDatabase::iud("UPDATE `order` SET `Status_Sid` = '1' WHERE `Order_id` = '".$Order_id."' ");
+    echo("Update Order Status");
+
 }

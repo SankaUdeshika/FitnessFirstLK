@@ -1292,10 +1292,29 @@ function AddOrder() {
 function downloadAsPDF(Order_id) {
   const element = document.getElementById("page"); // The HTML element to be converted
 
-  var DownloadFileName = "Inovice_"+Order_id;
+  var DownloadFileName = "Inovice_" + Order_id;
 
   html2pdf()
     .set({ html2canvas: { scale: 4 } }) // Adjust scale if needed
     .from(element)
     .save(DownloadFileName);
+}
+
+// Change Order Status
+function ChangeOrderStatus(Order_id) {
+  var command = "ChangeOrderStatus";
+
+  var f = new FormData();
+  f.append("command", command);
+  f.append("Order_id", Order_id);
+
+  var r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if (r.readyState == 4 && r.status == 200) {
+      alert(r.responseText);
+      window.location.reload();
+    }
+  };
+  r.open("POST", "FlexBackendPross.php", true);
+  r.send(f);
 }
