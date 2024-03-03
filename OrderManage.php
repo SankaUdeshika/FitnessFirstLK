@@ -129,7 +129,7 @@ require "Connections/FlexConnection.php";
                                         <td><?php echo ($Order_data["FIrst_name"] . " " . $Order_data["Last_name"]) ?></td>
                                         <td><?php echo ($Order_data["Total"]) ?></td>
                                         <td><button class="btn btn-success">Confirm Order</button></td>
-                                        <td><button class="btn btn-warning">Check Bill</button></td>
+                                        <td><button class="btn btn-warning" onclick="window.location='invoice.php?id=<?php echo($Order_data['Order_id'])?>'">Check Bill</button></td>
                                     </tr>
                                 <?php
                                 }
