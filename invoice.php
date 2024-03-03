@@ -50,9 +50,9 @@ $Order_id = $_GET["id"];
                                 <img src="Resources/images/LOGO/FlexTransparent.png" width="300px" alt="">
                             </div>
                             <div class="col-12 fw-bold text-end">
-                                <span>85/5, Vihara Mawwatha, Bellanwila, Boralesgamuwa, Sri Lanka</span><br />
-                                <span>070 646 4522</span><br />
-                                <span>JainNaturals@gmail.com</span>
+                                <span>42 1/1 Maitland Crescent, Colombo 7, Colombo, Sri Lanka</span><br />
+                                <span>0112 695 331</span><br />
+                                <span>fitnessfirstcolombo@gmail.com</span>
                             </div>
                         </div>
                     </div>
