@@ -28,7 +28,7 @@ $Order_id = $_GET["id"];
             </div>
 
             <div class="col-12 btn-toolbar justify-content-end">
-                <button class="btn btn-danger me-2" onclick="downloadAsPDF();"><i class="bi bi-filetype-pdf"></i> Download as PDF</button>
+                <button class="btn btn-danger me-2" onclick="downloadAsPDF('<?php echo($Order_id)?>');"><i class="bi bi-filetype-pdf"></i> Download as PDF</button>
             </div>
 
             <div class="col-12">
@@ -223,6 +223,10 @@ $Order_id = $_GET["id"];
     <script src="js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.0/jspdf.umd.min.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.0.0-rc.5/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+ -->
 
 </body>
 

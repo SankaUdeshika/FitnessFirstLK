@@ -1287,3 +1287,15 @@ function AddOrder() {
   r.open("POST", "FlexBackendPross.php", true);
   r.send(f);
 }
+
+// Invoice Download As PDF
+function downloadAsPDF(Order_id) {
+  const element = document.getElementById("page"); // The HTML element to be converted
+
+  var DownloadFileName = "Inovice_"+Order_id;
+
+  html2pdf()
+    .set({ html2canvas: { scale: 4 } }) // Adjust scale if needed
+    .from(element)
+    .save(DownloadFileName);
+}
