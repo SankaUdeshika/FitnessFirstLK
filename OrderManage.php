@@ -1,6 +1,7 @@
 <?php
 session_start();
 require "Connections/FlexConnection.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -116,7 +117,7 @@ require "Connections/FlexConnection.php";
                                     <th>Bill</th>
                                 </tr>
                                 <?php
-                                $Order_rs = FlexDatabase::Search("SELECT * FROM `order` INNER JOIN `user` ON `user`.`Email` = `Order`.`User_Email` INNER JOIN `status` ON  `status`.`Sid` = `order`.`Status_Sid`  ");
+                                $Order_rs = FlexDatabase::Search("SELECT * FROM `order` INNER JOIN `user` ON `user`.`Email` = `order`.`User_Email` INNER JOIN `status` ON  `status`.`Sid` = `order`.`Status_Sid`  ");
                                 $Order_num = $Order_rs->num_rows;
 
                                 for ($i = 0; $i < $Order_num; $i++) {
@@ -133,7 +134,7 @@ require "Connections/FlexConnection.php";
                                         // Pending
                                         if ($Order_data["Status"] == "PENDING") {
                                         ?>
-                                            <td><button class="btn btn-warning" onclick="ChangeOrderStatus('<?php echo ($Order_data['Order_id']) ?>');" >Pending Order</button></td>
+                                            <td><button class="btn btn-warning" onclick="ChangeOrderStatus('<?php echo ($Order_data['Order_id']) ?>');">Pending Order</button></td>
                                         <?php
                                         } else  if ($Order_data["Status"] == 'ACTIVE') {
                                         ?>
@@ -145,7 +146,6 @@ require "Connections/FlexConnection.php";
                                     </tr>
                                 <?php
                                 }
-
                                 ?>
                             </table>
 
