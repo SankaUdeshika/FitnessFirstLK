@@ -148,7 +148,6 @@
                                         </div>
                                     <?php
                                     }
-
                                     ?>
                                     <div class="col-12 p-3 d-grid">
                                         <button class="cartCheckoutBtn" onclick="window.location = 'Checkout.php'">Check out</button>
