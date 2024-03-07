@@ -21,7 +21,7 @@
                         <div class="row">
                             <!-- titile -->
                             <div class="col-12 text-center">
-                                <h2>Your Cart</h2>g
+                                <h2>Your Cart</h2>
                             </div>
                             <!-- Sections -->
                             <div class="col-12">
@@ -98,7 +98,7 @@
                                         }
                                     } else {
                                         ?>
-                                        <div class="col-12">
+                                        <div class="col-12 mt-3">
                                             <div class="row d-flex justify-content-center align-items-center">
                                                 <span class="text-white-50 fw-bold text-center fs-1">Empty</span>
                                             </div>
@@ -126,13 +126,30 @@
                                                 <span class="fw-bold text-white">Estimated total</span>
                                             </div>
                                             <div class="col-6 text-end">
-                                                <span class=" text-white" id="TotalPrice">Rs.<?php echo($total)?></span>
+                                                <span class=" text-white" id="TotalPrice">Rs.<?php echo ($total) ?></span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <small class="text-white-50">Taxes, Discounts and shipping calculated at checkout</small>
                                     </div>
+                                    <!-- purchesed History -->
+                                    <?php
+                                    $Cookie_rs = FlexDatabase::search("SELECT * FROM `cookie` WHERE `Cookie` = '" . $_COOKIE["User"] . "' ");
+                                    $Cookie_data = $Cookie_rs->fetch_assoc();
+
+                                    $purchesed_items_rs = FlexDatabase::search("SELECT * FROM `user` WHERE `Cookie_C_id` = '" . $Cookie_data["C_id"] . "'");
+                                    $purchesed_items_num = $purchesed_items_rs->num_rows;
+
+                                    if ($purchesed_items_num > 0) {
+                                    ?>
+                                        <div class="col-12 text-center">
+                                            <small class="PHistory" onclick="window.location = 'ListOfPHistory.php'">Check purchesed History</small>
+                                        </div>
+                                    <?php
+                                    }
+
+                                    ?>
                                     <div class="col-12 p-3 d-grid">
                                         <button class="cartCheckoutBtn" onclick="window.location = 'Checkout.php'">Check out</button>
                                     </div>

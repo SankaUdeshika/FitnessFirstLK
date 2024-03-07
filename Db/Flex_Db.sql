@@ -1,0 +1,176 @@
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               8.0.34 - MySQL Community Server - GPL
+-- Server OS:                    Win64
+-- HeidiSQL Version:             12.5.0.6677
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+-- Dumping database structure for flex_db
+CREATE DATABASE IF NOT EXISTS `flex_db` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `flex_db`;
+
+-- Dumping structure for table flex_db.cart
+CREATE TABLE IF NOT EXISTS `cart` (
+  `Cart_id` int NOT NULL AUTO_INCREMENT,
+  `Qty` int DEFAULT NULL,
+  `Cookie_C_id` int NOT NULL,
+  `product_Product_id` varchar(100) NOT NULL,
+  PRIMARY KEY (`Cart_id`),
+  KEY `fk_cart_Cookie1_idx` (`Cookie_C_id`),
+  KEY `fk_cart_product1_idx` (`product_Product_id`),
+  CONSTRAINT `fk_cart_Cookie1` FOREIGN KEY (`Cookie_C_id`) REFERENCES `cookie` (`C_id`),
+  CONSTRAINT `fk_cart_product1` FOREIGN KEY (`product_Product_id`) REFERENCES `product` (`Product_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb3;
+
+-- Dumping data for table flex_db.cart: ~0 rows (approximately)
+
+-- Dumping structure for table flex_db.cookie
+CREATE TABLE IF NOT EXISTS `cookie` (
+  `C_id` int NOT NULL AUTO_INCREMENT,
+  `Cookie` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`C_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+
+-- Dumping data for table flex_db.cookie: ~1 rows (approximately)
+INSERT INTO `cookie` (`C_id`, `Cookie`) VALUES
+	(3, 'user65df04b50b0c7');
+
+-- Dumping structure for table flex_db.order
+CREATE TABLE IF NOT EXISTS `order` (
+  `Order_id` varchar(100) NOT NULL DEFAULT 'AUTO_INCREMENT',
+  `Total` double DEFAULT NULL,
+  `User_Email` varchar(100) NOT NULL,
+  `OrderDate` date DEFAULT NULL,
+  `OrderTime` time DEFAULT NULL,
+  `Status_Sid` int NOT NULL DEFAULT '3',
+  PRIMARY KEY (`Order_id`),
+  KEY `fk_Order_User1_idx` (`User_Email`),
+  KEY `fk_Order_Status1_idx` (`Status_Sid`),
+  CONSTRAINT `fk_Order_Status1` FOREIGN KEY (`Status_Sid`) REFERENCES `status` (`Sid`),
+  CONSTRAINT `fk_Order_User1` FOREIGN KEY (`User_Email`) REFERENCES `user` (`Email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+-- Dumping data for table flex_db.order: ~2 rows (approximately)
+INSERT INTO `order` (`Order_id`, `Total`, `User_Email`, `OrderDate`, `OrderTime`, `Status_Sid`) VALUES
+	('Order_65e1ed5ead53c', 18300, 'sankaudeshika123@gmail.com', '2024-03-01', '15:59:42', 1),
+	('Order_65e1f5d68f182', 17000, 'sankaudeshika123@gmail.com', '2024-03-01', '16:35:50', 3);
+
+-- Dumping structure for table flex_db.orderitem
+CREATE TABLE IF NOT EXISTS `orderitem` (
+  `OItems_id` int NOT NULL AUTO_INCREMENT,
+  `Qty` int DEFAULT NULL,
+  `Order_Order_id` varchar(100) NOT NULL DEFAULT '',
+  `product_Product_id` varchar(100) NOT NULL,
+  PRIMARY KEY (`OItems_id`),
+  KEY `fk_orderitem_product1_idx` (`product_Product_id`),
+  KEY `FK_orderitem_order` (`Order_Order_id`),
+  CONSTRAINT `FK_orderitem_order` FOREIGN KEY (`Order_Order_id`) REFERENCES `order` (`Order_id`),
+  CONSTRAINT `fk_orderitem_product1` FOREIGN KEY (`product_Product_id`) REFERENCES `product` (`Product_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+
+-- Dumping data for table flex_db.orderitem: ~3 rows (approximately)
+INSERT INTO `orderitem` (`OItems_id`, `Qty`, `Order_Order_id`, `product_Product_id`) VALUES
+	(1, 1, 'Order_65e1ed5ead53c', '65de08e1d8604'),
+	(2, 1, 'Order_65e1ed5ead53c', '65de076731dc7'),
+	(3, 2, 'Order_65e1f5d68f182', '65de076731dc7');
+
+-- Dumping structure for table flex_db.product
+CREATE TABLE IF NOT EXISTS `product` (
+  `Product_id` varchar(100) NOT NULL,
+  `Product_name` varchar(100) DEFAULT NULL,
+  `Description` text,
+  `Flavor_F_id` varchar(50) NOT NULL,
+  `Qty` int DEFAULT NULL,
+  `Price` int DEFAULT NULL,
+  PRIMARY KEY (`Product_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+-- Dumping data for table flex_db.product: ~6 rows (approximately)
+INSERT INTO `product` (`Product_id`, `Product_name`, `Description`, `Flavor_F_id`, `Qty`, `Price`) VALUES
+	('65de076731dc7', 'ISO-XP', '   \r\nISO-XP is a whey protein isolate supplement marketed as high-quality and low in fat, carbs, and sugar. It claims to offer a high protein content per serving (around 23 grams per 25 grams) and be free of soy and lactose.   ', 'Chochlet', 2, 8500),
+	('65de08e1d8604', 'Creatine MonoHy Drate', ' Creatine MonoHy Drate Description ', 'Stawberry', 9, 9800),
+	('65de093989919', 'Creating MonoHydrate Second', 'Creating MonoHydrate Second Description', 'White Powder', 4, 8800),
+	('65e48879a86f4', 'ABE - ALL BLACK EVERYTHING ', 'ABE delivers a unique blend of the most vital and researched active ingredients known to help increase physical performance*, reduce tiredness & fatigue* and provide continual focus throughout your training, maximizing your bodies potential. However talk is cheap and the proof is in the product, after extensive research, meticulous formulating and precise lab testing we are confident to let ABE do the talking.', 'White Powder', 20, 6500),
+	('65e489c7b8862', 'BCAA AMINO HYDRATE', 'BCAA Amino Hydrate is the SUGAR FREE intra workout & recovery drink-mix that all Athletes, Bodybuilders, Powerlifters, Boxers and general keep fitters should be consuming during every workout.', 'Fruit Brust', 10, 4200),
+	('65e48a884a6df', 'CRITICAL GREENS POWDER', 'Critical Greens is packed with 17 super-greens extracts including broccoli, celery, spinach, wheatgrass, and kale powder — get your greens in a super-convenient way. Our critical blend can simply be added to your protein shake, fruit smoothie or can be mixed with water for a fresh natural taste.', 'White Powder', 5, 12000);
+
+-- Dumping structure for table flex_db.product_images
+CREATE TABLE IF NOT EXISTS `product_images` (
+  `Product_Image_id` int NOT NULL AUTO_INCREMENT,
+  `Main_Image` varchar(100) DEFAULT NULL,
+  `Seciond_Image` varchar(100) DEFAULT NULL,
+  `product_Product_id` varchar(100) NOT NULL,
+  `Third_Image` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`Product_Image_id`),
+  KEY `fk_product_images_product1_idx` (`product_Product_id`),
+  CONSTRAINT `fk_product_images_product1` FOREIGN KEY (`product_Product_id`) REFERENCES `product` (`Product_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
+
+-- Dumping data for table flex_db.product_images: ~6 rows (approximately)
+INSERT INTO `product_images` (`Product_Image_id`, `Main_Image`, `Seciond_Image`, `product_Product_id`, `Third_Image`) VALUES
+	(2, 'Resources//images//FlexProductImage//Main_ISO-XPChochlet.jpeg', 'Resources//images//FlexProductImage//Second_ISO-XPChochlet.jpeg', '65de076731dc7', 'Resources//images//FlexProductImage//Third_ISO-XPChochlet.jpeg'),
+	(4, 'Resources//images//FlexProductImage//Main_Creatine MonoHy DrateStawberry.jpeg', 'Resources//images//FlexProductImage//Second_Creatine MonoHy DrateStawberry.jpeg', '65de08e1d8604', 'Resources//images//FlexProductImage//Third_Creatine MonoHy DrateStawberry.jpeg'),
+	(5, 'Resources//images//FlexProductImage//Main_Creating MonoHydrate SecondWhite Powder.jpeg', 'Resources//images//FlexProductImage//Second_Creating MonoHydrate SecondWhite Powder.jpeg', '65de093989919', 'Resources//images//FlexProductImage//Third_Creating MonoHydrate SecondWhite Powder.jpeg'),
+	(6, 'Resources//images//FlexProductImage//Main_ABE - ALL BLACK EVERYTHING White Powder.jpeg', 'Resources//images//FlexProductImage//Second_ABE - ALL BLACK EVERYTHING White Powder.jpeg', '65e48879a86f4', 'Resources//images//FlexProductImage//Third_ABE - ALL BLACK EVERYTHING White Powder.jpeg'),
+	(7, 'Resources//images//FlexProductImage//Main_BCAA AMINO HYDRATEFruit Brust.jpeg', 'Resources//images//FlexProductImage//Second_BCAA AMINO HYDRATEFruit Brust.jpeg', '65e489c7b8862', 'Resources//images//FlexProductImage//Third_BCAA AMINO HYDRATEFruit Brust.jpeg'),
+	(8, 'Resources//images//FlexProductImage//Main_CRITICAL GREENS POWDERWhite Powder.jpeg', 'Resources//images//FlexProductImage//Second_CRITICAL GREENS POWDERWhite Powder.jpeg', '65e48a884a6df', 'Resources//images//FlexProductImage//Third_CRITICAL GREENS POWDERWhite Powder.jpeg');
+
+-- Dumping structure for table flex_db.specialpoints
+CREATE TABLE IF NOT EXISTS `specialpoints` (
+  `SP_Id` int NOT NULL,
+  `Point` text,
+  PRIMARY KEY (`SP_Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+-- Dumping data for table flex_db.specialpoints: ~0 rows (approximately)
+
+-- Dumping structure for table flex_db.status
+CREATE TABLE IF NOT EXISTS `status` (
+  `Sid` int NOT NULL AUTO_INCREMENT,
+  `Status` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`Sid`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+
+-- Dumping data for table flex_db.status: ~3 rows (approximately)
+INSERT INTO `status` (`Sid`, `Status`) VALUES
+	(1, 'ACTIVE'),
+	(2, 'DEACTIVE'),
+	(3, 'PENDING');
+
+-- Dumping structure for table flex_db.user
+CREATE TABLE IF NOT EXISTS `user` (
+  `Email` varchar(100) NOT NULL,
+  `FIrst_name` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `Last_name` varchar(45) DEFAULT NULL,
+  `mobile` varchar(10) DEFAULT NULL,
+  `Address` text,
+  `City` varchar(45) DEFAULT NULL,
+  `PostalCode` varchar(45) DEFAULT NULL,
+  `Cookie_C_id` int NOT NULL,
+  `Status_Sid` int NOT NULL DEFAULT '1',
+  PRIMARY KEY (`Email`),
+  KEY `fk_User_Cookie1_idx` (`Cookie_C_id`),
+  KEY `fk_User_Status1_idx` (`Status_Sid`),
+  CONSTRAINT `fk_User_Cookie1` FOREIGN KEY (`Cookie_C_id`) REFERENCES `cookie` (`C_id`),
+  CONSTRAINT `fk_User_Status1` FOREIGN KEY (`Status_Sid`) REFERENCES `status` (`Sid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+-- Dumping data for table flex_db.user: ~1 rows (approximately)
+INSERT INTO `user` (`Email`, `FIrst_name`, `Last_name`, `mobile`, `Address`, `City`, `PostalCode`, `Cookie_C_id`, `Status_Sid`) VALUES
+	('sankaudeshika123@gmail.com', 'Sanka', 'Udeshika', '0764213724', '40/6,A,  Bellanthara Road, Dehiwala', 'Dehiwala', '10350', 3, 1);
+
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
