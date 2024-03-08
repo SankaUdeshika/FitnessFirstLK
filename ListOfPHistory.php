@@ -89,7 +89,7 @@ if (!isset($_COOKIE["User"])) {
                                                 // Pending
                                                 if ($Order_data["Status_Sid"] == "3") {
                                                 ?>
-                                                    <td><button class="text-warning">Pending Order</button></td>
+                                                    <td><span class="text-warning">Pending Order</span></td>
                                                 <?php
                                                 } else  if ($Order_data["Status_Sid"] == '1') {
                                                 ?>
