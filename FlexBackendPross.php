@@ -401,7 +401,7 @@ if ($command == "addFlexProduct") {
             $OldCookieVlaue = $OldCookie_data["Cookie"];
 
             // Add Old Cookie
-            setcookie($cookie_name, $OldCookieVlaue, time() + (86400 * 30), "/");
+            setcookie($cookie_name, $OldCookieVlaue, time() + (86400 * 30 * 12), "/");
 
             $mobile =  $_POST["mobile"];
             $fname =  $_POST["fname"];
