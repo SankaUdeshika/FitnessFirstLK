@@ -178,12 +178,37 @@ if (isset($_SESSION["admin"])) {
 <?php
 } else {
 ?>
-    <div class="col-12 bg-black text-white" style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100vh;">
-        <div class="row">
-            <h1>Please Log in First</h1>
-            <small><a href="adminLogin.php">Go to Login Page</a></small>
+     <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact | RASIKA OFFICIAL</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    </head>
+
+    <body style="background-color: #74EBD5;background-image: linear-gradient(90deg,#74EBD5 0%,#9FACE6 100%);">
+
+        <div class="col-12 d-flex justify-content-center align-items-center text-white" style="width: 100%; height: 100vh;">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Please Log In first</h1>
+                </div>
+                <div class="col-12">
+                    <a href="adminLogin.php">Go to Login Page</a>
+                </div>
+            </div>
         </div>
-    </div>
+
+        <script src="bootstrap.bundle.js"></script>
+        <script src="script.js"></script>
+        <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
+    </body>
+
+    </html>
 <?php
 }
 ?>

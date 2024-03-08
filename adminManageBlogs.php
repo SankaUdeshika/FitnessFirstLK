@@ -136,9 +136,15 @@ if (isset($_SESSION["admin"])) {
     <body style="background-color: #74EBD5;background-image: linear-gradient(90deg,#74EBD5 0%,#9FACE6 100%);">
 
         <div class="col-12 d-flex justify-content-center align-items-center text-white" style="width: 100%; height: 100vh;">
-            <h1>Please Log In first</h1>
+            <div class="row">
+                <div class="col-12">
+                    <h1>Please Log In first</h1>
+                </div>
+                <div class="col-12">
+                    <a href="adminLogin.php">Go to Login Page</a>
+                </div>
+            </div>
         </div>
-
 
         <script src="bootstrap.bundle.js"></script>
         <script src="script.js"></script>
