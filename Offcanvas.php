@@ -136,17 +136,21 @@
                                     <!-- purchesed History -->
                                     <?php
                                     $Cookie_rs = FlexDatabase::search("SELECT * FROM `cookie` WHERE `Cookie` = '" . $_COOKIE["User"] . "' ");
-                                    $Cookie_data = $Cookie_rs->fetch_assoc();
+                                    $cookie_num = $Cookie_rs->num_rows;
 
-                                    $purchesed_items_rs = FlexDatabase::search("SELECT * FROM `user` WHERE `Cookie_C_id` = '" . $Cookie_data["C_id"] . "'");
-                                    $purchesed_items_num = $purchesed_items_rs->num_rows;
+                                    if ($cookie_num == "1") {
+                                        $Cookie_data = $Cookie_rs->fetch_assoc();
 
-                                    if ($purchesed_items_num > 0) {
+                                        $purchesed_items_rs = FlexDatabase::search("SELECT * FROM `user` WHERE `Cookie_C_id` = '" . $Cookie_data["C_id"] . "'");
+                                        $purchesed_items_num = $purchesed_items_rs->num_rows;
+
+                                        if ($purchesed_items_num > 0) {
                                     ?>
-                                        <div class="col-12 text-center">
-                                            <small class="PHistory" onclick="window.location = 'ListOfPHistory.php'">Check purchesed History</small>
-                                        </div>
+                                            <div class="col-12 text-center">
+                                                <small class="PHistory" onclick="window.location = 'ListOfPHistory.php'">Check purchesed History</small>
+                                            </div>
                                     <?php
+                                        }
                                     }
                                     ?>
                                     <div class="col-12 p-3 d-grid">
