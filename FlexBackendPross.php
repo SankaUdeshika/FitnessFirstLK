@@ -452,7 +452,7 @@ if ($command == "addFlexProduct") {
                 FlexDatabase::iud("DELETE FROM `cart` WHERE `Cart_id` = '" . $OrderCart_data["Cart_id"] . "' ");
             }
 
-            echo ("Order Add SuccessFull");
+            echo ("Order Add SuccessFull" . "," . $Order_id);
         } else if ($User_num == 0) {
 
             $Email =  $_POST["Email"];
@@ -469,7 +469,7 @@ if ($command == "addFlexProduct") {
             $UserCookie = $Cookie_data["C_id"];
 
             FlexDatabase::iud("INSERT INTO `user` (`Email`,`FIrst_name`,`Last_name`,`mobile`,`Address`,`City`,`PostalCode`,`Cookie_C_id`) 
-            VALUES('" . $Email . "','" . $fname . "','" . $lname . "','" . $mobile . "','" . $Address . "','".$City."','".$Pcode."','".$UserCookie."')");
+            VALUES('" . $Email . "','" . $fname . "','" . $lname . "','" . $mobile . "','" . $Address . "','" . $City . "','" . $Pcode . "','" . $UserCookie . "')");
 
 
             $Cart_rs = FlexDatabase::search("SELECT * FROM `cart` WHERE `Cookie_C_id` = '" . $UserCookie . "' ");
@@ -510,13 +510,12 @@ if ($command == "addFlexProduct") {
                 FlexDatabase::iud("DELETE FROM `cart` WHERE `Cart_id` = '" . $OrderCart_data["Cart_id"] . "' ");
             }
 
-            echo ("Order Add SuccessFull");
+            echo ("Order Add SuccessFull" . "," . $Order_id);
         }
     }
 } else if ($command == "ChangeOrderStatus") {
     $Order_id = $_POST["Order_id"];
 
-    FlexDatabase::iud("UPDATE `order` SET `Status_Sid` = '1' WHERE `Order_id` = '".$Order_id."' ");
-    echo("Update Order Status");
-
+    FlexDatabase::iud("UPDATE `order` SET `Status_Sid` = '1' WHERE `Order_id` = '" . $Order_id . "' ");
+    echo ("Update Order Status");
 }

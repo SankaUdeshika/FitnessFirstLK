@@ -1281,7 +1281,15 @@ function AddOrder() {
   var r = new XMLHttpRequest();
   r.onreadystatechange = function () {
     if (r.readyState == 4 && r.status == 200) {
-      alert(r.responseText);
+      var response = r.responseText;
+      var SplitOut = response.split(",");
+      var SplitLength = SplitOut.length;
+
+      if (SplitLength > 1) {
+        window.location = "invoice.php?id=" + SplitOut[1];
+      } else {
+        alert(response);
+      }
     }
   };
   r.open("POST", "FlexBackendPross.php", true);
