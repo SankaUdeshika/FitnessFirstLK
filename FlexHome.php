@@ -5,6 +5,7 @@ if (!isset($_COOKIE["User"])) {
     $cookie_name = "User";
     $cookie_value = uniqid("user");
     setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+    header("Location: http://localhost/fitnesFirst/FlexHome.php");
 }
 ?>
 <!DOCTYPE html>
