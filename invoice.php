@@ -189,10 +189,9 @@ $Order_id = $_GET["id"];
                             <div class="col-12 mt-3 mb-3">
                                 <label class="form-label fs-5 fw-bold">Thank You </label>
                                 <br />
-                                <label class="form-label fs-6">You can check your purchesed Items <a href="PurchesedItems.php">Click Here</a>.</label><br>
+                                <label class="form-label fs-6">You can check your purchesed Items <a href="http://localhost/fitnesFirst/ListOfPHistory.php">Click Here</a>.</label><br>
                                 <label class="form-label fs-6" onclick="downloadAsPDF();">You Can download This Invoice As a PDF only .</label>
                                 <!-- <label class="form-label fs-6" onclick="SendBuyEmailMessage('<?php echo $customer_data['Nic'] ?>');">You Can Get the Email from.</label><span style="color: lightblue;"><u>Click Here</u></span> -->
-
                             </div>
                         </div>
                     </div>
