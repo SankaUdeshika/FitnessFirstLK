@@ -122,7 +122,223 @@
                                 <button class="IndexJoinNowBtn2 mt-4">Join Now</button>
                             </div>
                         </div>
-                    </div>gi
+                    </div>
+
+                    <!-- Pricing List -->
+                    <div class="col-12 mt-5 mb-5">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <span class="text-primary fs-4">Pricing</span>
+                            </div>
+                            <div class="col-12 text-center">
+                                <span class="ExploreTextWhite">Our List Packages</span>
+                            </div>
+                            <!-- Switch -->
+                            <div class="col-12 mb-5">
+                                <div class="row">
+                                    <div class="col-4 offset-4 PricingSwitchWhite">
+                                        <div class="row">
+                                            <!-- Billed Monthly -->
+                                            <div class="col-6 d-flex justify-content-center">
+                                                <div class="col-10 offset-1 bg-black text-center rounded-4 p-3 m-3">
+                                                    <span class="text-white-50 fw-bold fs-4"> Billed Monthly</span>
+                                                </div>
+                                            </div>
+                                            <!-- Billed Yearly -->
+                                            <div class="col-6 d-flex justify-content-center">
+                                                <div class="col-10 offset-1  text-center rounded-4 p-3 m-3">
+                                                    <span class="text-black-50 fw-bold fs-4"> Billed Monthly</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Pricing Cards -->
+                            <div class="col-11 offset-1 mt-5">
+                                <div class="row">
+                                    <!-- Basic Plan -->
+                                    <div class="col-2 rounded-4 mx-5 mt-5" style="background-color: #0D0D0D;">
+                                        <div class="row p-1">
+                                            <div class="col-10 offset-1">
+                                                <div class="row">
+                                                    <div class="col-12 mt-5">
+                                                        <span class="fs-4" style="color: red;">Basic Package</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <span class=" text-white " style="font-size: 60px;">$25</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <span class=" text-white-50 fs-4 ">per month,bill annualy</span>
+                                                    </div>
+                                                    <div class="col-12 mt-5 mb-5">
+                                                        <div class="row">
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Unlimited Gym Access</span></li>
+                                                            </div>
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">2x Fitness Consultant</span></li>
+                                                            </div>
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Nutrition Tracking</span></li>
+                                                            </div>
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">1x Free Suplement</span></li>
+                                                            </div>
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">3 Days per week</span></li>
+                                                            </div>
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Personal Trainer</span></li>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 PricingListBtn text-center rounded-3 mb-5 pt-3 pb-3 ">
+                                                        <span class="text-white fs-3">Register Now</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- Mid Plan -->
+                                    <div class="col-2 rounded-4 mx-5 " style="background-color: red; overflow: hidden;">
+                                        <div class="row p-1">
+                                            <div class="col-10 offset-1" style="position: relative; ">
+                                                <div class="row">
+                                                    <div class="col-12 bestBanner  text-center fs-3">Best Offset</div>
+                                                    <div class="col-12 mt-5 ">
+                                                        <span class="fs-4" style="color: white;">Mid Package</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <span class=" text-white " style="font-size: 60px;">$55</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <span class=" text-white fs-4 ">per month,bill annualy</span>
+                                                    </div>
+                                                    <div class="col-12 mt-5 mb-5">
+                                                        <div class="row">
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Unlimited Gym Access</span></li>
+                                                            </div>
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">2x Fitness Consultant</span></li>
+                                                            </div>
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Nutrition Tracking</span></li>
+                                                            </div>
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">1x Free Suplement</span></li>
+                                                            </div>
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">3 Days per week</span></li>
+                                                            </div>
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Personal Trainer</span></li>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 minPricingListBtn text-center rounded-3 mb-5 mt-5 pt-3 pb-3 ">
+                                                        <span class="text-white fs-3">Register Now</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pro Plan -->
+                                    <div class="col-2 rounded-4 mx-5 mt-5" style="background-color: #0D0D0D;">
+                                        <div class="row p-1">
+                                            <div class="col-12 ">
+                                                <div class="row">
+                                                    <div class="col-12 mt-5">
+                                                        <span class="fs-4" style="color: red;">Pro Package</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <span class=" text-white " style="font-size: 60px;">$75</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <span class=" text-white-50 fs-4 ">per month,bill annualy</span>
+                                                    </div>
+                                                    <div class="col-12 mt-5 mb-5">
+                                                        <div class="row">
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Unlimited Gym Access</span></li>
+                                                            </div>
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">2x Fitness Consultant</span></li>
+                                                            </div>
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Nutrition Tracking</span></li>
+                                                            </div>
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">1x Free Suplement</span></li>
+                                                            </div>
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">3 Days per week</span></li>
+                                                            </div>
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Personal Trainer</span></li>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 PricingListBtn text-center rounded-3 mb-5 pt-3 pb-3 ">
+                                                        <span class="text-white fs-3">Register Now</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Athlete Plan -->
+                                    <div class="col-2 rounded-4 mx-5 mt-5" style="background-color: #0D0D0D;">
+                                        <div class="row p-1">
+                                            <div class="col-10 offset-1">
+                                                <div class="row">
+                                                    <div class="col-12 mt-5">
+                                                        <span class="fs-4" style="color: red;">Athlete Package</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <span class=" text-white " style="font-size: 60px;">$25</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <span class=" text-white-50 fs-4 ">per month,bill annualy</span>
+                                                    </div>
+                                                    <div class="col-12 mt-5 mb-5">
+                                                        <div class="row">
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Unlimited Gym Access</span></li>
+                                                            </div>
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">2x Fitness Consultant</span></li>
+                                                            </div>
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Nutrition Tracking</span></li>
+                                                            </div>
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">1x Free Suplement</span></li>
+                                                            </div>
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">3 Days per week</span></li>
+                                                            </div>
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Personal Trainer</span></li>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 PricingListBtn text-center rounded-3 mb-5 pt-3 pb-3 ">
+                                                        <span class="text-white fs-3">Register Now</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
                 </div>
