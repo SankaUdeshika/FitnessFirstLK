@@ -17,26 +17,29 @@
             <div class="col-12 headerCover d-lg-block d-none">
                 <div class="row">
 
-                    <div class="col-3 text-center LogoCover" onclick="window.location='index.php'">
-                        <span class="FitnesFirstTextLogo1white">FITNESS </span><span class="FitnesFirstTextLogored">FIRST LK</span>
+                    <div class="col-2 LogoCover" onclick="window.location='index.php'">
+                        <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.svg"  class="FlexImage"  alt="NewFitnessFirstLogo">
                     </div>
 
-                    <div class="col-7 text-center SectionCover">
+                    <div class="col-8 text-center SectionCover">
                         <div class="row">
-                            <div class="col-4">
-                                <span class="HeaderTabs" onclick="window.location = 'classes.php'">CLASSES</span>
+                            <div class="col-3">
+                                <span class="HeaderTabs" onclick="window.location = 'classes.php'">Home</span>
                             </div>
-                            <div class="col-4">
-                                <span class="HeaderTabs" onclick="window.location = 'facilities.php'">FACILITIES</span>
+                            <div class="col-3">
+                                <span class="HeaderTabs" onclick="window.location = 'facilities.php'">Pricing</span>
                             </div>
-                            <div class="col-4">
-                                <span class="HeaderTabs" onclick="window.location = 'blog.php'">BLOG</span>
+                            <div class="col-3">
+                                <span class="HeaderTabs" onclick="window.location = 'blog.php'">Suppliments</span>
+                            </div>
+                            <div class="col-3">
+                                <span class="HeaderTabs" onclick="window.location = 'blog.php'">Blogs</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-2 d-flex justify-content-center">
-                        <img src="Resources/images/LOGO/FlexTransparent.png" onclick="window.location = 'FlexHome.php'" class="FlexImage">
+                    <div class="col-2  LogoCover">
+                        <img src="Resources/images/LOGO/NewFlexHeader.svg" onclick="window.location = 'FlexHome.php'" class="FlexImage">
                     </div>
 
                 </div>
@@ -58,7 +61,7 @@
                             <button type="button" class="btn-close fs-1 fw-bold text-white" data-bs-dismiss="offcanvas" aria-label="Close"><i class="bi bi-x-lg"></i></button>
                         </div>
                         <div class="offcanvas-body">
-                            
+
                             <div class="col-12 text-center LogoCover">
                                 <span class="FitnesFirstTextLogo1white">FITNESS </span><span class="FitnesFirstTextLogored">FIRST LK</span>
                             </div>
