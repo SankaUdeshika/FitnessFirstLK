@@ -112,6 +112,18 @@
                         </div>
                     </div>
 
+                    <!-- Join Now Second -->
+                    <div class="col-10 offset-1 mt-5 mb-5 rounded-4" style="background-color: #0D0D0D;">
+                        <div class="row">
+                            <div class="col-7 m-3">
+                                <span class="text-white fs-3"> Enhance user experience with healthy nutrition tips, support resources, and social elements.</span>
+                            </div>
+                            <div class="col-4 d-flex justify-content-end alginitems-center">
+                                <button class="IndexJoinNowBtn2 mt-4">Join Now</button>
+                            </div>
+                        </div>
+                    </div>gi
+
 
                 </div>
             </div>

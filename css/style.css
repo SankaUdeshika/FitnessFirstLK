@@ -172,6 +172,8 @@
   color: red;
   transition: 0.2s ease-in;
 }
+
+
 .IndexContactUsBtn {
   background-color: transparent;
   color: white;
@@ -188,6 +190,18 @@
   color: white;
   transition: 0.2s ease-in;
   background-color: red;
+}
+
+.IndexJoinNowBtn2 {
+  background-color: red;
+  color: white;
+  height: 40px;
+  font-size: large;
+  border: 0px white solid;
+  padding-left: 10%;
+  padding-right: 10%;
+  border-radius: 10px;
+  transition: 0.2s ease-in;
 }
 
 .JoinNowImageCover {
