@@ -35,15 +35,84 @@
                         <button class="TopImagePlayDemoBtn "> <img src="Resources/images/icons/playIcon.svg" style="width: 25px; height: auto;"> &nbsp; Watch Demo </button>
                     </div>
                     <!-- Explore Our Program -->
-                    <div class="col-10 offset-1">
+                    <div class="col-10 offset-1 mb-5">
                         <div class="row">
                             <div class="col-12">
-                                <div class="col-9 bg-danger">
-                                    <h1 class="ExploreTextWhite">Explore Our Program</h1>
+                                <div class="row">
+                                    <div class="col-9 ">
+                                        <h1 class="ExploreTextWhite">Explore Our Program</h1>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <span class="ProgrammeExploreBtn"><i class="bi bi-arrow-left-short"></i></span>
+                                            </div>
+                                            <div class="col-6">
+                                                <span class="ProgrammeExploreBtn"><i class="bi bi-arrow-right-short"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Transform Your Physique with our fitness plan part -->
+                    <div class="col-10 offset-1 mt-5 mb-5">
+                        <div class="row">
+                            <div class="col-12 mt-5">
+                                <div class="row">
+                                    <div class="col-6 ">
+                                        <div class="row">
+                                            <div class="col-10 JoinNowImageCover ">
+                                                <div class="row">
+                                                    <div class="col-9 JoinNowFirstImageCover">
+                                                        <img src="Resources/images/aboutImage/NewINdexNewTranformImage2.png" style="width: 100%;" alt="">
+                                                    </div>
+                                                    <div class="col-7 JoinNowSecondImageCover">
+                                                        <img src="Resources/images/aboutImage/newIndexNewTransform2.png" style="width: 100%;" alt="">
+                                                    </div>
+                                                    <div class="col-6 JoinNowThirdImageCover">
+                                                        <img src="Resources/images/aboutImage/NBwIndexNewTransformming3.png" style="width: 100%;" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="row">
+                                            <div class="col-10 offset-1">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="ExploreTextWhite">Transform Your Phusque with our fitness plan</span>
+                                                    </div>
+                                                    <div class="col-12 mt-5">
+                                                        <ul style="color: black;">
+                                                            <li class="p-2"><span class="indexListTickIcon"><i class="bi bi-check-lg"></i></span> <span class="text-white fs-3">Increase Muscle and Strength</span></li>
+                                                            <li class="p-2"><span class="indexListTickIcon"><i class="bi bi-check-lg"></i></span> <span class="text-white fs-3">Be Healthier than before</span></li>
+                                                            <li class="p-2"><span class="indexListTickIcon"><i class="bi bi-check-lg"></i></span> <span class="text-white fs-3">Increase Stamina</span> </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-12 mt-3">
+                                                        <div class="row">
+                                                            <div class="col-6 d-flex justify-content-center">
+                                                                <button class="IndexJoinNowBtn">Join Now</button>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <button class="IndexContactUsBtn">Contact us</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </div>
