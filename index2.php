@@ -437,7 +437,7 @@
                                                         <input type="text" placeholder="Enter Your Email address" class="SubscribeInput">
                                                     </div>
                                                     <div class="col-4 mt-3  mb-3  d-flex justify-content-center  ">
-                                                        <button class="text-white border-0 fs-4 rounded-4" style="background-color: red; padding-left: 10px; padding-right: 10px;" > Subscribe</button>
+                                                        <button class="text-white border-0 fs-4 rounded-4" style="background-color: red; padding-left: 10px; padding-right: 10px;"> Subscribe</button>
                                                     </div>
 
                                                 </div>
@@ -450,7 +450,14 @@
                             </div>
                         </div>
                     </div>
-                    
+
+                    <!-- footer -->
+                    <div class="col-12 mt-5">
+                        <div class="row">
+                            <?php include "footer.php" ?>
+                        </div>
+                    </div>
+
 
 
                 </div>
