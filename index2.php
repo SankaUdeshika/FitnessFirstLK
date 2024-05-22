@@ -15,9 +15,9 @@
 
 <body style="background-color: black; color:white;">
     <!-- preloader -->
-    <!-- <div class="col-12 preloader " id="preloader">
+    <div class="col-12 preloader " id="preloader">
         <?php include "preloader.php" ?>
-    </div> -->
+    </div>
 
     <!-- Header -->
     <div class="col-12" style="position: fixed; z-index: 4;">
@@ -464,7 +464,7 @@
             </div>
         </div>
     </div>
-
+<script src="js/script.js"></script>
 </body>
 
 </html>
