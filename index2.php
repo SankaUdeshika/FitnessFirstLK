@@ -155,8 +155,8 @@
                                 </div>
                             </div>
                             <!-- Pricing Cards -->
-                            <div class="col-11 offset-1 mt-5">
-                                <div class="row">
+                            <div class="col-12   mt-5">
+                                <div class="row d-flex justify-content-center">
                                     <!-- Basic Plan -->
                                     <div class="col-2 rounded-4 mx-5 mt-5" style="background-color: #0D0D0D;">
                                         <div class="row p-1">
@@ -337,6 +337,90 @@
 
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- CUstomer Comments  -->
+                    <div class="col-12 mt-5">
+                        <div class="row">
+
+                            <div class="col-10 offset-1">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="row">
+                                            <div class="col-12 mb-5">
+                                                <span class="ExploreTextWhite">What Our Member Say About Us?</span>
+                                            </div>
+                                            <div class="col-12 mt-5">
+                                                <div class="row mt-5">
+                                                    <div class="col-12">
+                                                        <img src="Resources/images/ProfileImage/Profile.svg" class="mt-5" width="36" height="auto" alt="">
+                                                        <img src="Resources/images/ProfileImage/Profile.svg" class="mt-5" width="36" height="auto" alt="">
+                                                        <img src="Resources/images/ProfileImage/Profile.svg" class="mt-5" width="36" height="auto" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <span class="text-white-50 fs-4">10K + Satisfied Customer</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 p-5 rounded-5" style="background-color:#0D0D0D ;">
+                                        <div class="row">
+                                            <div class="col-10 mt-5 mb-5 offset-1 d-flex justify-content-end">
+                                                <div class="row">
+                                                    <div class="col-2">
+                                                        <span class="text-warning fs-3"><i class="bi bi-star-fill"></i></span>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <span class="text-warning fs-3"><i class="bi bi-star-fill"></i></span>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <span class="text-warning fs-3"><i class="bi bi-star-fill"></i></span>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <span class="text-warning fs-3"><i class="bi bi-star-fill"></i></span>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <span class="text-warning fs-3"><i class="bi bi-star-fill"></i></span>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <span class="text-warning fs-3"><i class="bi bi-star-fill"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-10 mb-5 offset-1 text-end">
+                                                <p class="fs-4"> “ Join this fitness member, the best choice that I’ve. They’re very professional and give you suggestion about what food and nutrition that you can eat” </p>
+                                            </div>
+                                            <div class="col-10 mt-5 offset-1">
+                                                <div class="row">
+                                                    <div class="col-2">
+                                                        <img src="Resources/images/ProfileImage/Profile.svg" class="mt-5" width="100%" height="55" alt="">
+                                                    </div>
+                                                    <div class="col-6 d-flex mt-5 align-items-center">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <span class="fs-3 text-white">Jonathan Edward</span>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <span class="fs-4 text-white-50">Office Worker</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Subscribe Section -->
+                    <div class="col-12">
+                        <div class="row">
+
                         </div>
                     </div>
 
