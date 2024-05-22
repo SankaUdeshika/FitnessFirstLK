@@ -418,11 +418,39 @@
                     </div>
 
                     <!-- Subscribe Section -->
-                    <div class="col-12">
-                        <div class="row">
+                    <div class="col-12 mt-5 mb-5">
+                        <div class="row ">
+                            <div class="col-10 p-5 border border-1 border-white rounded-5 offset-1">
+                                <div class="row">
+                                    <div class="col-12 text-center">
+                                        <span class=" IndexSubscribeText ">Subscribe out fitness tips</span>
+                                    </div>
+                                    <div class="col-8 offset-2 text-center">
+                                        <span class="fs-5">Clearly communicate the benefits of subscribing, such as exclusive content and breaking news.</span>
+                                    </div>
 
+                                    <div class="col-12 mt-5 d-flex justify-content-center">
+                                        <div class="row">
+                                            <div class="col-12  bg-white rounded-5">
+                                                <div class="row">
+                                                    <div class="col-8 d-grid">
+                                                        <input type="text" placeholder="Enter Your Email address" class="SubscribeInput">
+                                                    </div>
+                                                    <div class="col-4 mt-3  mb-3  d-flex justify-content-center  ">
+                                                        <button class="text-white border-0 fs-4 rounded-4" style="background-color: red; padding-left: 10px; padding-right: 10px;" > Subscribe</button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    
 
 
                 </div>
