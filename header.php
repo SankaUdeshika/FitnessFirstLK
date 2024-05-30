@@ -18,7 +18,7 @@
                 <div class="row">
 
                     <div class="col-2 LogoCover" onclick="window.location='index.php'">
-                        <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.svg"  class="FlexImage"  alt="NewFitnessFirstLogo">
+                        <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.svg" class="FlexImage" alt="NewFitnessFirstLogo">
                     </div>
 
                     <div class="col-8 text-center SectionCover">
@@ -48,8 +48,8 @@
             <div class="col-12 headerCover d-lg-none d-blcok">
                 <div class="row">
 
-                    <div class="col-10 text-lg-center LogoCover">
-                        <span class="FitnesFirstTextLogo1white">FITNESS </span><span class="FitnesFirstTextLogored">FIRST LK</span>
+                    <div class="col-10  LogoCover2">
+                        <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.svg" class="FlexImage2" alt="NewFitnessFirstLogo">
                     </div>
 
                     <div class="col-2 d-flex justify-content-end text-white fs-1 fw-bold">
@@ -60,22 +60,57 @@
                         <div class="offcanvas-header">
                             <button type="button" class="btn-close fs-1 fw-bold text-white" data-bs-dismiss="offcanvas" aria-label="Close"><i class="bi bi-x-lg"></i></button>
                         </div>
-                        <div class="offcanvas-body">
+                        <div class="offcanvas-body SectionCover">
+                            <!-- Logo -->
 
-                            <div class="col-12 text-center LogoCover">
-                                <span class="FitnesFirstTextLogo1white">FITNESS </span><span class="FitnesFirstTextLogored">FIRST LK</span>
+                            <div class="col-12 text-center SectionCover">
+                                <div class="row">
+                                    <!-- fitnessfirt Logo -->
+                                    <div class="col-6 d-flex justify-content-center">
+                                        <div class="row">
+                                            <div class="col-12 mt-3">
+                                                <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.svg" class="FlexImage" alt="NewFitnessFirstLogo">
+                                            </div>
+                                            <div class="col-12">
+                                                <span class="fw-bold fs-4 text-white-50">FitnessFirstLK</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Flexx -->
+                                    <div class="col-6 d-flex justify-content-center">
+                                        <div class="row">
+                                            <div class="col-12 mt-3">
+                                                <img src="Resources/images/LOGO/NewFlexHeader.svg" onclick="window.location = 'FlexHome.php'" class="FlexImage">
+                                            </div>
+                                            <div class="col-12">
+                                                <span class="fw-bold fs-4 text-white-50">Flex</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-10 offset-1">
+                                        <hr>
+                                    </div>
+
+
+
+
+                                </div>
                             </div>
 
                             <div class="col-12 text-center SectionCover">
                                 <div class="row">
                                     <div class="col-12">
-                                        <span class="HeaderTabs" onclick="window.location = 'classes.php'">CLASSES</span>
+                                        <span class="HeaderTabs" onclick="window.location = 'classes.php'">HOME</span>
                                     </div>
                                     <div class="col-12">
-                                        <span class="HeaderTabs" onclick="window.location = 'facilities.php'">FACILITIES</span>
+                                        <span class="HeaderTabs" onclick="window.location = 'facilities.php'">PRICE</span>
                                     </div>
                                     <div class="col-12">
-                                        <span class="HeaderTabs" onclick="window.location = 'blog.php'">BLOG</span>
+                                        <span class="HeaderTabs" onclick="window.location = 'blog.php'">SUPPLIMENTS</span>
+                                    </div>
+                                    <div class="col-12">
+                                        <span class="HeaderTabs" onclick="window.location = 'blog.php'">BLOGS</span>
                                     </div>
                                 </div>
                             </div>
