@@ -24,13 +24,13 @@
                     <div class="col-8 text-center SectionCover">
                         <div class="row">
                             <div class="col-3">
-                                <span class="HeaderTabs" onclick="window.location = 'classes.php'">Home</span>
+                                <span class="HeaderTabs" onclick="window.location = 'index.php'">Home</span>
                             </div>
                             <div class="col-3">
-                                <span class="HeaderTabs" onclick="window.location = 'facilities.php'">Pricing</span>
+                                <span class="HeaderTabs" onclick="window.location = 'index.php#price'">Pricing</span>
                             </div>
                             <div class="col-3">
-                                <span class="HeaderTabs" onclick="window.location = 'blog.php'">Suppliments</span>
+                                <span class="HeaderTabs" onclick="window.location = 'flexhome.php'">Suppliments</span>
                             </div>
                             <div class="col-3">
                                 <span class="HeaderTabs" onclick="window.location = 'blog.php'">Blogs</span>
@@ -69,7 +69,7 @@
                                     <div class="col-6 d-flex justify-content-center">
                                         <div class="row">
                                             <div class="col-12 mt-3">
-                                                <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.svg" class="FlexImage" alt="NewFitnessFirstLogo">
+                                                <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.svg" onclick="window.location = 'index.php'" class="FlexImage" alt="NewFitnessFirstLogo">
                                             </div>
                                             <div class="col-12">
                                                 <span class="fw-bold fs-4 text-white-50">FitnessFirstLK</span>
@@ -80,7 +80,7 @@
                                     <div class="col-6 d-flex justify-content-center">
                                         <div class="row">
                                             <div class="col-12 mt-3">
-                                                <img src="Resources/images/LOGO/NewFlexHeader.svg" onclick="window.location = 'FlexHome.php'" class="FlexImage">
+                                                <img src="Resources/images/LOGO/NewFlexHeader.svg" onclick="window.location = 'flexhome.php'" class="FlexImage">
                                             </div>
                                             <div class="col-12">
                                                 <span class="fw-bold fs-4 text-white-50">Flex</span>
@@ -101,10 +101,10 @@
                             <div class="col-12 text-center SectionCover">
                                 <div class="row">
                                     <div class="col-12">
-                                        <span class="HeaderTabs" onclick="window.location = 'classes.php'">HOME</span>
+                                        <span class="HeaderTabs" onclick="window.location = 'index.php'">HOME</span>
                                     </div>
                                     <div class="col-12">
-                                        <span class="HeaderTabs" onclick="window.location = 'facilities.php'">PRICE</span>
+                                        <span class="HeaderTabs" onclick="window.location = 'index.php#price'">PRICE</span>
                                     </div>
                                     <div class="col-12">
                                         <span class="HeaderTabs" onclick="window.location = 'blog.php'">SUPPLIMENTS</span>

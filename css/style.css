@@ -421,7 +421,7 @@
   color: white;
   font-weight: bold;
   align-self: center;
-  backdrop-filter: blur(100px);
+  /* backdrop-filter: blur(100px); */
 }
 
 /* Body  */

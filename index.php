@@ -127,7 +127,7 @@
                     </div>
 
                     <!-- Pricing List -->
-                    <div class="col-12 mt-5 mb-5">
+                    <div class="col-12 mt-5 mb-5 " id="price">
                         <div class="row">
                             <div class="col-12 text-center">
                                 <span class="text-primary fs-4 Fade">Pricing</span>
@@ -157,7 +157,7 @@
                                 </div>
                             </div>
                             <!-- Pricing Cards -->
-                            <div class="col-12   mt-5">
+                            <div class="col-12   mt-5" >
                                 <div class="row d-flex justify-content-center">
                                     <!-- Basic Plan -->
                                     <div class="col-lg-2 col-8 offset-lg-0 offset-4 rounded-4 mx-5 mt-5 Fade " style="background-color: #0D0D0D;">
