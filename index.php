@@ -29,13 +29,15 @@
             <div class="col-12">
                 <div class="row">
                     <!-- TopImage -->
-                    <div class="col-10 offset-1 " class="indexTopImageCover">
+                    <!-- Large Screen -->
+                    <div class="col-10 offset-1  " class="indexTopImageCover">
                         <img src="Resources/images/pageTopImages/IndexTopImage.svg" class="IndexTopImage " alt="MainTopImage">
                         <button class="TopImageTrainingBtn  ">Start Training</button>
                         <button class="TopImagePlayDemoBtn "> <img src="Resources/images/icons/playIcon.svg" style="width: 25px; height: auto;"> &nbsp; Watch Demo </button>
                     </div>
+
                     <!-- Explore Our Program -->
-                    <div class="col-10 offset-1 mb-5">
+                    <div class="col-10 offset-1 mb-lg-5 mb-0">
                         <div class="row">
                             <div class="col-12">
                                 <div class="row">
@@ -58,33 +60,33 @@
                     </div>
 
                     <!-- Transform Your Physique with our fitness plan part -->
-                    <div class="col-10 offset-1 mt-5 mb-5">
+                    <div class="col-10 offset-1 mt-lg-5 mb-lg-5">
                         <div class="row">
                             <div class="col-12 mt-5">
                                 <div class="row">
-                                    <div class="col-6 ">
+                                    <div class="col-lg-6 col-12  position-relative ">
                                         <div class="row">
                                             <div class="col-10 JoinNowImageCover ">
                                                 <div class="row">
-                                                    <div class="col-9 JoinNowFirstImageCover">
+                                                    <div class="col-6 col-lg-9 JoinNowFirstImageCover">
                                                         <img src="Resources/images/aboutImage/NewINdexNewTranformImage2.png" style="width: 100%;" alt="">
                                                     </div>
-                                                    <div class="col-7 JoinNowSecondImageCover">
+                                                    <div class="col-5 col-lg-7 JoinNowSecondImageCover">
                                                         <img src="Resources/images/aboutImage/newIndexNewTransform2.png" style="width: 100%;" alt="">
                                                     </div>
-                                                    <div class="col-6 JoinNowThirdImageCover">
+                                                    <div class="col-6 col-lg-6 JoinNowThirdImageCover">
                                                         <img src="Resources/images/aboutImage/NBwIndexNewTransformming3.png" style="width: 100%;" alt="">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-6">
-                                        <div class="row">
-                                            <div class="col-10 offset-1">
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <span class="ExploreTextWhite">Transform Your Phusque with our fitness plan</span>
+                                    <div class="col-lg-6 col-12 mt-lg-0 mt-lg-0 mt-5 ">
+                                        <div class="row mt-lg-0 mt-lg-0 mt-5 ">
+                                            <div class="col-10 offset-1 mt-lg-0 mt-lg-0 mt-5  ">
+                                                <div class="row mt-lg-0 mt-lg-0 mt-5 ">
+                                                    <div class="col-12  mt-lg-0 mt-lg-0 mt-5 position-relative ">
+                                                        <span class="ExploreTextWhite mt-lg-0 mt-lg-0 mt-5 ">Transform Your Phusque with our fitness plan</span>
                                                     </div>
                                                     <div class="col-12 mt-5">
                                                         <ul style="color: black;">
@@ -136,7 +138,7 @@
                             <!-- Switch -->
                             <div class="col-12 mb-5">
                                 <div class="row">
-                                    <div class="col-4 offset-4 PricingSwitchWhite">
+                                    <div class="col-lg-4 offset-lg-4 col-10 offset-1 PricingSwitchWhite">
                                         <div class="row">
                                             <!-- Billed Monthly -->
                                             <div class="col-6 d-flex justify-content-center">
@@ -158,7 +160,7 @@
                             <div class="col-12   mt-5">
                                 <div class="row d-flex justify-content-center">
                                     <!-- Basic Plan -->
-                                    <div class="col-2 rounded-4 mx-5 mt-5" style="background-color: #0D0D0D;">
+                                    <div class="col-lg-2 col-8 offset-lg-0 offset-4 rounded-4 mx-5 mt-5" style="background-color: #0D0D0D;">
                                         <div class="row p-1">
                                             <div class="col-10 offset-1">
                                                 <div class="row">
@@ -203,7 +205,7 @@
 
 
                                     <!-- Mid Plan -->
-                                    <div class="col-2 rounded-4 mx-5 " style="background-color: red; overflow: hidden;">
+                                    <div class="col-lg-2 col-8 offset-lg-0 offset-4 mt-lg-0 mt-5 rounded-4 mx-5 " style="background-color: red; overflow: hidden;">
                                         <div class="row p-1">
                                             <div class="col-10 offset-1" style="position: relative; ">
                                                 <div class="row">
@@ -248,7 +250,7 @@
                                     </div>
 
                                     <!-- Pro Plan -->
-                                    <div class="col-2 rounded-4 mx-5 mt-5" style="background-color: #0D0D0D;">
+                                    <div class="col-lg-2 col-8 offset-lg-0 offset-4 mt-lg-0 mt-5 rounded-4 mx-5 mt-5" style="background-color: #0D0D0D;">
                                         <div class="row p-1">
                                             <div class="col-12 ">
                                                 <div class="row">
@@ -292,7 +294,7 @@
                                     </div>
 
                                     <!-- Athlete Plan -->
-                                    <div class="col-2 rounded-4 mx-5 mt-5" style="background-color: #0D0D0D;">
+                                    <div class="col-lg-2 col-8 offset-lg-0 offset-4 mt-lg-0 mt-5 rounded-4 mx-5 mt-5" style="background-color: #0D0D0D;">
                                         <div class="row p-1">
                                             <div class="col-10 offset-1">
                                                 <div class="row">
@@ -346,7 +348,7 @@
 
                             <div class="col-10 offset-1">
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-lg-6 col-12">
                                         <div class="row">
                                             <div class="col-12 mb-5">
                                                 <span class="ExploreTextWhite">What Our Member Say About Us?</span>
@@ -365,7 +367,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-6 p-5 rounded-5" style="background-color:#0D0D0D ;">
+                                    <div class="col-lg-6 col-12 p-5 rounded-5" style="background-color:#0D0D0D ;">
                                         <div class="row">
                                             <div class="col-10 mt-5 mb-5 offset-1 d-flex justify-content-end">
                                                 <div class="row">
@@ -464,7 +466,7 @@
             </div>
         </div>
     </div>
-<script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
