@@ -75,7 +75,6 @@
 .headerCover {
   /* background-color: rgba(0, 0, 0, 0.527); */
   background-color: transparent;
- 
 }
 
 .indexTopImageCover {
@@ -421,7 +420,12 @@
   color: white;
   font-weight: bold;
   align-self: center;
-  /* backdrop-filter: blur(100px); */
+  backdrop-filter: blur(100px);
+}
+.SectionCover2 {
+  color: white;
+  font-weight: bold;
+  align-self: center;
 }
 
 /* Body  */

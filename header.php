@@ -21,7 +21,7 @@
                         <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.svg" class="FlexImage" alt="NewFitnessFirstLogo">
                     </div>
 
-                    <div class="col-8 text-center SectionCover">
+                    <div class="col-8 text-center SectionCover2">
                         <div class="row">
                             <div class="col-3">
                                 <span class="HeaderTabs" onclick="window.location = 'index.php'">Home</span>
@@ -107,7 +107,7 @@
                                         <span class="HeaderTabs" onclick="window.location = 'index.php#price'">PRICE</span>
                                     </div>
                                     <div class="col-12">
-                                        <span class="HeaderTabs" onclick="window.location = 'blog.php'">SUPPLIMENTS</span>
+                                        <span class="HeaderTabs" onclick="window.location = 'flexhome.php'">SUPPLIMENTS</span>
                                     </div>
                                     <div class="col-12">
                                         <span class="HeaderTabs" onclick="window.location = 'blog.php'">BLOGS</span>
