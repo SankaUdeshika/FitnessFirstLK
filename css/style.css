@@ -320,7 +320,15 @@
   background-color: red;
 }
 @media screen and (max-width: 480px) {
-
+  .SubscribeInput {
+    font-size: xx-small;
+    color: black;
+    border: 0px white solid;
+    outline: none;
+    margin-top: 10%;
+    margin-left: 10px;
+    margin-bottom: 10%;
+  }
   .transformTextMargin {
     background-color: red;
     margin-top: 500px;
@@ -1023,6 +1031,19 @@
   width: 100%;
   height: 200px;
   object-fit: cover;
+}
+
+.FirstFadeUp {
+  animation: FSFS 5.5s ease-in-out forwards;
+}
+
+@keyframes FSFS {
+  0% {
+    opacity: 0px;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .FirstDownToUPAnimation {
