@@ -21,7 +21,7 @@
                     <div class="col-6 d-flex justify-content-center align-items-center">
                         <div class="row">
 
-                            <div class="col-6">
+                            <div class="col-lg-6 col-10 offset-0 offset-lg-1">
                                 <span class="text-white fs-2">Highlight benefits of each exercise, both physical and mental</span>
                             </div>
 
