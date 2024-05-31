@@ -51,7 +51,7 @@
                     <div class="col-12 d-flex justify-content-center">
                         <div class="row">
                             <div class="col">
-                                <span class=" FlexHeadrTab" onclick="window.location = 'FlexHome.php'">Home</span>
+                                <span class=" FlexHeadrTab" onclick="window.location = 'flexhome.php'">Home</span>
                             </div>
                             <div class="col">
                                 <span class=" FlexHeadrTab" onclick="window.location = 'FlexCatelog.php'">Catalog</span>

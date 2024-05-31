@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="col-2  LogoCover">
-                        <img src="Resources/images/LOGO/NewFlexHeader.svg" onclick="window.location = 'FlexHome.php'" class="FlexImage">
+                        <img src="Resources/images/LOGO/NewFlexHeader.svg" onclick="window.location = 'flexhome.php'" class="FlexImage">
                     </div>
 
                 </div>

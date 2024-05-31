@@ -76,9 +76,20 @@
                                     <div class="col-12">
                                         <span class="fw-bold fs-4 text-white">Social Media</span>
                                     </div>
-                                    <div class="col-2 fs-2"> <span class="text-white"><i class="bi bi-instagram"></i></span></div>
-                                    <div class="col-2 fs-2"> <span class="text-white"><i class="bi bi-twitter"></i></span></div>
-                                    <div class="col-2 fs-2"> <i class="bi bi-facebook"></i></span></div>
+                                    <div class="col-2 fs-2 d-lg-block d-none"> <span class="text-white"><i class="bi bi-instagram"></i></span></div>
+                                    <div class="col-2 fs-2 d-lg-block d-none"> <span class="text-white"><i class="bi bi-twitter"></i></span></div>
+                                    <div class="col-2 fs-2 d-lg-block d-none"> <i class="bi bi-facebook"></i></span></div>
+                                    <div class="row d-lg-none d-block">
+                                        <div class="col-12 text-center">
+                                            <div class="col-2 fs-6 text-center"> <span class="text-white"><i class="bi bi-instagram"></i></span></div>
+                                        </div>
+                                        <div class="col-12 text-center">
+                                            <div class="col-2 fs-6 text-center "> <span class="text-white"><i class="bi bi-twitter"></i></span></div>
+                                        </div>
+                                        <div class="col-12 text-center">
+                                            <div class="col-2 fs-6 text-center "> <i class="bi bi-facebook"></i></span></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

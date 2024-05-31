@@ -136,18 +136,18 @@
                                 <span class="ExploreTextWhite Fade DownToUP ">Our List Packages</span>
                             </div>
                             <!-- Switch -->
-                            <div class="col-12 mb-5">
+                            <!-- <div class="col-12 mb-5">
                                 <div class="row">
                                     <div class="col-lg-4 offset-lg-4 col-10 offset-1 PricingSwitchWhite Fade">
-                                        <div class="row">
-                                            <!-- Billed Monthly -->
-                                            <div class="col-6 d-flex justify-content-center">
+                                        <div class="row"> -->
+                            <!-- Billed Monthly -->
+                            <!-- <div class="col-6 d-flex justify-content-center">
                                                 <div class="col-10 offset-1 bg-black text-center rounded-4 p-3 m-3 Fade" style="animation-delay: 1s;">
                                                     <span class="text-white-50 fw-bold fs-4 Fade " style="animation-delay: 2s;"> Billed Monthly</span>
                                                 </div>
-                                            </div>
-                                            <!-- Billed Yearly -->
-                                            <div class="col-6 d-flex justify-content-center">
+                                            </div> -->
+                            <!-- Billed Yearly -->
+                            <!-- <div class="col-6 d-flex justify-content-center">
                                                 <div class="col-10 offset-1  text-center rounded-4 p-3 m-3">
                                                     <span class="text-black-50 fw-bold fs-4  Fade " style="animation-delay: 2s;"> Billed Monthly</span>
                                                 </div>
@@ -155,9 +155,13 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
+
+
+
+
                             <!-- Pricing Cards -->
-                            <div class="col-12   mt-5" >
+                            <div class="col-12   mt-5">
                                 <div class="row d-flex justify-content-center">
                                     <!-- Basic Plan -->
                                     <div class="col-lg-2 col-8 offset-lg-0 offset-4 rounded-4 mx-5 mt-5 Fade " style="background-color: #0D0D0D;">
@@ -252,7 +256,7 @@
                                     <!-- Pro Plan -->
                                     <div class="col-lg-2 col-8 offset-lg-0 offset-4 mt-lg-0 mt-5 rounded-4 mx-5 mt-5 Fade" style="background-color: #0D0D0D; animation-delay: 6s;">
                                         <div class="row p-1">
-                                            <div class="col-12 ">
+                                            <div class="col-10 offset-1 ">
                                                 <div class="row">
                                                     <div class="col-12 mt-5">
                                                         <span class="fs-4" style="color: red;">Pro Package</span>
@@ -422,7 +426,7 @@
                     <!-- Subscribe Section -->
                     <div class="col-12 mt-5 mb-5 Fade DownToUP">
                         <div class="row ">
-                            <div class="col-10 p-5 border border-1 border-white rounded-5 offset-1">
+                            <div class="col-lg-10 col-12 p-5 border border-1 border-white rounded-5 offset-lg-1 offset-0">
                                 <div class="row">
                                     <div class="col-12 text-center">
                                         <span class=" IndexSubscribeText ">Subscribe out fitness tips</span>
@@ -439,7 +443,7 @@
                                                         <input type="text" placeholder="Enter Your Email address" class="SubscribeInput">
                                                     </div>
                                                     <div class="col-4 mt-3  mb-3  d-flex justify-content-center  ">
-                                                        <button class="text-white border-0 fs-4 rounded-4" style="background-color: red; padding-left: 10px; padding-right: 10px;"> Subscribe</button>
+                                                        <button class="text-white border-0 fs-4 rounded-4" style="background-color: red; padding-left: 5px; padding-right: 5px; margin-right: 10px;"> Subscribe</button>
                                                     </div>
 
                                                 </div>
