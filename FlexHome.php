@@ -108,16 +108,21 @@ if (!isset($_COOKIE["User"])) {
                                                                     </div>
                                                                 </div>
                                                                 <!-- Large Screen -->
-                                                                <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold fs-5 text-white d-lg-block d-none">
-                                                                    <span><?php echo ($product_data["Product_name"]) ?></span>
+                                                                <div class="col-12 " style="height: 90px;">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold fs-5 text-white d-lg-block d-none">
+                                                                            <span><?php echo ($product_data["Product_name"]) ?></span>
+                                                                        </div>
+                                                                        <!-- Small Screen -->
+                                                                        <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold text-white  d-lg-none d-block">
+                                                                            <small><?php echo ($product_data["Product_name"]) ?></small>
+                                                                        </div>
+                                                                        <div class="col-lg-10 offset-lg-1 col-12 text-white-50">
+                                                                            <span>Rs.<?php echo ($product_data["Price"]) ?></span>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-                                                                <!-- Small Screen -->
-                                                                <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold text-white  d-lg-none d-block">
-                                                                    <small><?php echo ($product_data["Product_name"]) ?></small>
-                                                                </div>
-                                                                <div class="col-lg-10 offset-lg-1 col-12 text-white-50">
-                                                                    <span>Rs.<?php echo ($product_data["Price"]) ?></span>
-                                                                </div>
+
                                                                 <!-- Button -->
                                                                 <div class="col-lg-10 col-12 mt-2 offset-lg-1 position-relative overflow-hidden ">
                                                                     <div class="col-12 ViewProductButton ">
