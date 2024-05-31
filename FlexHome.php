@@ -151,9 +151,9 @@ if (!isset($_COOKIE["User"])) {
                     </div>
                 </div>
             </div>
-            <div class="col-12">
+            <div class="col-12 fs-6">
                 <div class="row">
-                    <?php include "footer.php" ?>
+                    <?php include "flexfooter.php" ?>
                 </div>
             </div>
         </div>
