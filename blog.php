@@ -220,8 +220,9 @@ session_start();
                     }
 
                     ?>
-
-                    <hr class="text-white mt-5">
+                    <div class="col-10 offset-1">
+                        <hr class="text-white mt-5">
+                    </div>
 
                     <!-- Other Blog -->
                     <div class="col-12 mt-5">
