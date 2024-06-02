@@ -32,8 +32,8 @@
                     <!-- Large Screen -->
                     <div class="col-10 offset-1  " class="indexTopImageCover FirstDownToUPAnimation">
                         <img src="Resources/images/pageTopImages/IndexTopImage.svg" class="IndexTopImage " alt="MainTopImage">
-                        <button class="TopImageTrainingBtn   ">Start Training</button>
-                        <button class="TopImagePlayDemoBtn  "> <img src="Resources/images/icons/playIcon.svg" style="width: 25px; height: auto;"> &nbsp; Watch Demo </button>
+                        <!-- <button class="TopImageTrainingBtn   ">Start Training</button>
+                        <button class="TopImagePlayDemoBtn  "> <img src="Resources/images/icons/playIcon.svg" style="width: 25px; height: auto;"> &nbsp; Watch Demo </button> -->
                     </div>
 
                     <!-- Explore Our Program -->
