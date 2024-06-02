@@ -39,7 +39,7 @@ $blog_data = $Blog_rs->fetch_assoc();
             <div class="col-12">
                 <div class="row">
 
-                    <div class="col-8 offset-2 mt-5">
+                    <div class="col-lg-8 offset-lg-2 col-12 mt-5">
                         <div class="row">
 
                             <div class="col-12 mt-5 ">
