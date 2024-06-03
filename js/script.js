@@ -240,8 +240,6 @@ function Header() {
 
 window.addEventListener("scroll", Header);
 
-
-
 // BackendProcess
 function adminChangePassword(email) {
   var command = "adminChangePassword";
@@ -1317,4 +1315,38 @@ function ChangeOrderStatus(Order_id) {
   };
   r.open("POST", "FlexBackendPross.php", true);
   r.send(f);
+}
+
+// Leftside Carousel Programme
+
+function ProgrammeLeft() {
+  var Element = document.getElementById("InnerView");
+  Element.style.transform = "translateX( -150px)";
+}
+
+// Rightside Carousel Programme
+function ProgrammeRight() {
+  var Element = document.getElementById("InnerView");
+  Element.style.transform = "translateX( 0px)";
+}
+
+var elementMovingwidth = 0;
+var Maxwidth = 140;
+var MinWidth = 0;
+
+// small
+function ProgrammeLeftsmall() {
+  if (elementMovingwidth >= -800) {
+    elementMovingwidth = elementMovingwidth - 200;
+    var Element = document.getElementById("InnerView");
+    Element.style.transform = "translateX(" + elementMovingwidth + "px)";
+  }
+}
+
+function ProgrammeRightsmall() {
+  if (elementMovingwidth <= -100) {
+    elementMovingwidth = elementMovingwidth + 200;
+    var Element = document.getElementById("InnerView");
+    Element.style.transform = "translateX(" + elementMovingwidth + "px)";
+  }
 }

@@ -42,15 +42,127 @@
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-9 ">
-                                        <h1 class="ExploreTextWhite FirstFadeUp mt-lg-0 mt-5">Explore Our Program</h1>
+                                        <h1 class="ExploreTextWhite FirstFadeUp mt-lg-0 mt-5" id="outtext">Explore Our Program</h1>
                                     </div>
                                     <div class="col-3">
                                         <div class="row">
-                                            <div class="col-6">
-                                                <span class="ProgrammeExploreBtn FirstDownToUPAnimation"><i class="bi bi-arrow-left-short"></i></span>
+                                            <!-- Large Screen -->
+                                            <div class="col-6 d-lg-block d-none">
+                                                <span class="ProgrammeExploreBtn FirstDownToUPAnimation" onclick="ProgrammeLeft();"><i class="bi bi-arrow-left-short"></i></span>
                                             </div>
-                                            <div class="col-6">
-                                                <span class="ProgrammeExploreBtn FirstDownToUPAnimation"><i class="bi bi-arrow-right-short"></i></span>
+                                            <div class="col-6 d-lg-block d-none">
+                                                <span class="ProgrammeExploreBtn FirstDownToUPAnimation" onclick="ProgrammeRight();"><i class="bi bi-arrow-right-short"></i></span>
+                                            </div>
+                                            <!-- small Screens -->
+                                            <div class="col-6 d-lg-none d-block">
+                                                <span class="ProgrammeExploreBtn FirstDownToUPAnimation" onclick="ProgrammeLeftsmall();" ><i class="bi bi-arrow-left-short"></i></span>
+                                            </div>
+                                            <div class="col-6 d-lg-none d-block ">
+                                                <span class="ProgrammeExploreBtn FirstDownToUPAnimation" onclick="ProgrammeRightsmall();"><i class="bi bi-arrow-right-short"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Carousel Cards -->
+                                    <!-- Large Screens -->
+                                    <div class="col-12 ">
+                                        <div class="CarouselView">
+                                            <div class="CarouselInnerView" id="InnerView">
+                                                <div class="Programmebox">
+                                                    <div class="col-12">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <span class="text-white fw-bold fs-1"><i class="bi bi-backpack"></i></span>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <span class="text-white fw-bold fs-3">Cardio Strength</span>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <span class="text-white fw-bold fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="Programmebox">
+                                                    <div class="col-12">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <span class="text-white fw-bold fs-1"><i class="bi bi-backpack"></i></span>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <span class="text-white fw-bold fs-3">Fat Lose</span>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <span class="text-white fw-bold fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="Programmebox">
+                                                    <div class="col-12">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <span class="text-white fw-bold fs-1"><i class="bi bi-backpack"></i></span>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <span class="text-white fw-bold fs-3">Muscle Gain</span>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <span class="text-white fw-bold fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="Programmebox">
+                                                    <div class="col-12">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <span class="text-white fw-bold fs-1"><i class="bi bi-backpack"></i></span>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <span class="text-white fw-bold fs-3">Nutritions</span>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <span class="text-white fw-bold fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="Programmebox">
+                                                    <div class="col-12">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <span class="text-white fw-bold fs-1"><i class="bi bi-backpack"></i></span>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <span class="text-white fw-bold fs-3">Cardio Strength</span>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <span class="text-white fw-bold fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="Programmebox">
+                                                    <div class="col-12">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <span class="text-white fw-bold fs-1"><i class="bi bi-backpack"></i></span>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <span class="text-white fw-bold fs-3">Fat Lose</span>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <span class="text-white fw-bold fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
