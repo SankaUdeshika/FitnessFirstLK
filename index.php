@@ -30,14 +30,27 @@
                 <div class="row">
                     <!-- TopImage -->
                     <!-- Large Screen -->
-                    <div class="col-10 offset-1  " class="indexTopImageCover FirstDownToUPAnimation">
-                        <img src="Resources/images/pageTopImages/IndexTopImage.svg" class="IndexTopImage " alt="MainTopImage">
-                        <!-- <button class="TopImageTrainingBtn   ">Start Training</button>
-                        <button class="TopImagePlayDemoBtn  "> <img src="Resources/images/icons/playIcon.svg" style="width: 25px; height: auto;"> &nbsp; Watch Demo </button> -->
+                    <div class="col-12" class="indexTopImageCover FirstDownToUPAnimation">
+                        <img src="Resources/images/carouselImages/FFLOGO 2.png" class="IndexTopImage " alt="MainTopImage">
+                        <img src="Resources/images/LOGO/FitnessFirstTextLogo.svg" class="FitnesFirstTextLogo" alt="">
+                        <div class="col-10 offset-1 TrustedByIcons">
+                            <div class="row">
+                                <div class="col-12">
+                                    <span class="TrustedText">Trusted By</span>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <img src="Resources/images/LOGO/BrandRow.png" style="width: 100%; height: auto;" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Explore Our Program -->
-                    <div class="col-10 offset-1 mt-5mb-lg-5 mb-0">
+                    <div class="col-10 offset-1 mt-5 mb-lg-5 mb-0">
                         <div class="row">
                             <div class="col-12">
                                 <div class="row">
@@ -55,7 +68,7 @@
                                             </div>
                                             <!-- small Screens -->
                                             <div class="col-6 d-lg-none d-block">
-                                                <span class="ProgrammeExploreBtn FirstDownToUPAnimation" onclick="ProgrammeLeftsmall();" ><i class="bi bi-arrow-left-short"></i></span>
+                                                <span class="ProgrammeExploreBtn FirstDownToUPAnimation" onclick="ProgrammeLeftsmall();"><i class="bi bi-arrow-left-short"></i></span>
                                             </div>
                                             <div class="col-6 d-lg-none d-block ">
                                                 <span class="ProgrammeExploreBtn FirstDownToUPAnimation" onclick="ProgrammeRightsmall();"><i class="bi bi-arrow-right-short"></i></span>

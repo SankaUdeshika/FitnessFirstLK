@@ -84,12 +84,18 @@
   justify-content: center;
   position: relative;
 }
+.TrustedByIcons {
+  width: 600px;
+  height: 100px;
+  position: absolute;
+  bottom: -300px;
+}
+
 .IndexTopImage {
   width: 100%;
   /* height: 500px; */
   object-fit: cover;
   background-position: center;
-  margin-top: 100px;
 }
 .TopImageTrainingBtn {
   background-color: red;
@@ -377,44 +383,40 @@
   transform: scale(1.3);
   transition: 0.2s ease-in-out;
 }
-.LogoCover {
-  margin-top: 15px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.LogoCovers {
-  margin-top: 15px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-}
 
-.LogoCover:hover .FitnesFirstTextLogo1white {
-  color: red;
-  cursor: pointer;
+.FitnesFirstTextLogo {
+  width: 600px;
+  height: auto;
+  position: absolute;
+  top: 150px;
+  left: 120px;
 }
-.LogoCover:hover .FitnesFirstTextLogored {
-  color: white;
-  cursor: pointer;
-}
-
-/* .FitnesFirstTextLogo1white {
-  font-family: "Poppins", sans-serif;
-  color: white;
+.TrustedText{
+  font-size: xx-large;
   font-weight: bold;
-  font-size: 25px;
-  transition: 0.5s ease-in-out;
+  color: gray;
 }
-.FitnesFirstTextLogored {
-  font-family: "Poppins", sans-serif;
-  color: red;
-  font-weight: bold;
-  font-size: 25px;
-  transition: 0.5s ease-in-out;
-} */
+@media screen and (max-width: 1000px) {
+  .FitnesFirstTextLogo {
+    width: 300px;
+    height: auto;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+  }
+  .TrustedByIcons {
+    width: 600px;
+    height: 100px;
+    position: absolute;
+    top: 30%;
+    left: 5%;
+  }
+  .TrustedText{
+    font-size: medium;
+    font-weight: bold;
+    color: gray;
+  }
+}
 
 .SectionCover {
   color: white;
