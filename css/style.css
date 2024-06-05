@@ -391,10 +391,34 @@
   top: 150px;
   left: 120px;
 }
-.TrustedText{
+.TrustedText {
   font-size: xx-large;
   font-weight: bold;
   color: gray;
+}
+.PrgrammeCategories {
+  background-color: #464242;
+  color: white;
+  padding: 10px;
+  font-size: large;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: 0px transparent solid;
+  transition: ease-in-out 0.5s;
+}
+.PrgrammeCategories:hover {
+  background-color: #786f6a;
+  color: white;
+  padding: 10px;
+  font-size: large;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 0px transparent solid;
+  transition: ease-in-out 0.5s;
 }
 @media screen and (max-width: 1000px) {
   .FitnesFirstTextLogo {
@@ -411,7 +435,7 @@
     top: 30%;
     left: 5%;
   }
-  .TrustedText{
+  .TrustedText {
     font-size: medium;
     font-weight: bold;
     color: gray;
