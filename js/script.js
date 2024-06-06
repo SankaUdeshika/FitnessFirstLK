@@ -6,31 +6,44 @@ function preloader() {
 window.addEventListener("load", preloader);
 
 // BMI Calculator
-function calculateBMI() {
-  var weight = document.getElementById("bmiWeight").value;
-  var height = document.getElementById("bmiHeight").value;
+function CalculateBMI() {
+  var Heightinput = document.getElementById("HeightRangeInput").value;
+  var Height = Heightinput/100;
+  var Weight = document.getElementById("WeightRangeInput").value;
 
-  // Ensure weight and height are valid numbers
-  if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
-    document.getElementById("BMIOutput").innerHTML =
-      "Invalid input. Please enter valid weight and height.";
-    return "Invalid input. Please enter valid weight and height.";
+  var BMIvalue = Weight / (Height * Height);
+  document.getElementById("BMIoutput").innerHTML = BMIvalue;
+
+  if (BMIvalue < 18.5) {
+    document.getElementById("ClassOutput").innerHTML =
+      "OBESE CLASS iii (Underweight)";
+  } else if (BMIvalue >= 18.5 && BMIvalue < 24.9) {
+    document.getElementById("ClassOutput").innerHTML =
+      "OBESE CLASS iii (Normal weight)";
+  } else if (BMIvalue >= 25 && BMIvalue < 29.9) {
+    document.getElementById("ClassOutput").innerHTML =
+      "OBESE CLASS iii (Overweight)";
+  } else if (BMIvalue >= 30 && BMIvalue < 34.9) {
+    document.getElementById("ClassOutput").innerHTML =
+      "OBESE CLASS iii (Obesity (Class 1))";
+  } else if (BMIvalue >= 35 && BMIvalue < 39.9) {
+    document.getElementById("ClassOutput").innerHTML =
+      "OBESE CLASS iii (Obesity (Class 2))";
+  } else {
+    document.getElementById("ClassOutput").innerHTML =
+      "OBESE CLASS iii (Obesity (Class 3))";
   }
-
-  // Calculate BMI
-  var bmi = weight / (height * height);
-
-  //   Output
-  document.getElementById("BMIOutput").innerHTML = bmi.toFixed(2);
-
-  // Return the calculated BMI
-  return bmi.toFixed(2); // Round to two decimal places
+}
+// Change Height
+function ChangeHeight() {
+  var HeightRangeInput = document.getElementById("HeightRangeInput").value;
+  document.getElementById("HeightText").innerHTML = HeightRangeInput + " cm";
 }
 
-function ShowBmiCalcutorModel() {
-  var id = document.getElementById("BmiModel");
-  var model = new bootstrap.Modal(id);
-  model.show();
+// Change Weight
+function ChangeWeight() {
+  var HeightRangeInput = document.getElementById("WeightRangeInput").value;
+  document.getElementById("WeightText").innerHTML = HeightRangeInput + " Kg";
 }
 
 // carousel Slider Start

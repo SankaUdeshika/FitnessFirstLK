@@ -408,6 +408,29 @@
   border: 0px transparent solid;
   transition: ease-in-out 0.5s;
 }
+.BMICalculateBtn {
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: x-large;
+  transition: 0.3s ease-in-out;
+}
+
+.BMICalculateBtn:hover {
+  color: black;
+  background-color: white;
+  border: 2px solid white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: x-large;
+  transition: 0.3s ease-in-out;
+}
 .PrgrammeCategories:hover {
   background-color: #786f6a;
   color: white;
