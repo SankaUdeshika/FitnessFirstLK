@@ -220,6 +220,61 @@
   border-radius: 100px;
   font-size: 20px;
 }
+
+.Gents {
+  background-color: white;
+  color: gray;
+  transition: 0.2s ease-in;
+}
+.Gents:hover {
+  background-color: gray;
+  color: white;
+  transition: 0.2s ease-in;
+}
+.Gentsactive {
+  background-color: black;
+  color: white;
+  transition: 0.2s ease-in;
+}
+.Gentsactive {
+  background-color: black;
+  color: white;
+  transition: 0.2s ease-in;
+}
+.Gentsactive:hover {
+  background-color: black;
+  color: white;
+  transition: 0.2s ease-in;
+  font-weight: bold;
+  scale: 1.1;
+}
+
+.Ladies {
+  background-color: white;
+  color: gray;
+  transition: 0.2s ease-in;
+}
+
+.Ladies:hover {
+  background-color: gray;
+  color: white;
+  transition: 0.2s ease-in;
+}
+
+.Ladiesactive {
+  background-color: black;
+  color: white;
+  transition: 0.2s ease-in;
+}
+
+.Ladiesactive:hover {
+  background-color: black;
+  color: white;
+  transition: 0.2s ease-in;
+  font-weight: bold;
+  scale: 1.1;
+}
+
 .PriceListTickIcon {
   color: black;
   background-color: white;
@@ -227,7 +282,7 @@
   font-size: 16px;
 }
 .PricingListBtn {
-  background-color: #786F6A;
+  background-color: #786f6a;
 }
 .minPricingListBtn {
   background-color: black;

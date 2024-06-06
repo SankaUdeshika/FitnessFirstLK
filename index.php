@@ -173,14 +173,14 @@
                                         <div class="row">
                                             <!-- Gents Package -->
                                             <div class="col-6 d-flex justify-content-center">
-                                                <div class="col-10 offset-1 bg-black text-center rounded-4 p-3 m-3 Fade" style="animation-delay: 1s;">
-                                                    <span class="text-white-50 fw-bold fs-4 Fade " style="animation-delay: 2s;"> Gents Package</span>
+                                                <div class="col-10 offset-1  text-center rounded-4 Gentsactive p-3 m-3 Fade" style="animation-delay: 1s;">
+                                                    <span class=" fw-bold fs-4 Fade  " style="animation-delay: 2s;"> Gents Package</span>
                                                 </div>
                                             </div>
                                             <!-- Ladies Package -->
                                             <div class="col-6 d-flex justify-content-center">
-                                                <div class="col-10 offset-1  text-center rounded-4 p-3 m-3">
-                                                    <span class="text-black-50 fw-bold fs-4  Fade " style="animation-delay: 2s;"> Ladies Package</span>
+                                                <div class="col-10 offset-1  text-center rounded-4 p-3 m-3 Ladies">
+                                                    <span class=" fw-bold fs-4  Fade " style="animation-delay: 2s;"> Ladies Package</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -203,7 +203,7 @@
                                                         <span class="fs-4 fw-bold" style="color: white;">Ja Ela</span>
                                                     </div>
                                                     <div class="col-12">
-                                                        <span class=" text-white " style="font-size: 25px;">Rs.60,000</span>
+                                                        <span class=" text-white " style="font-size: 25px;" id="JaelaPrice">Rs.60,000</span>
                                                     </div>
                                                     <div class="col-12">
                                                         <span class=" text-white-50 fs-4 ">Annual</span>
@@ -249,7 +249,7 @@
                                                         <span class="fs-4 fw-bold" style="color: white;">Colombo 7 </span>
                                                     </div>
                                                     <div class="col-12">
-                                                        <span class=" text-white " style="font-size: 30px;">RS.105,000</span>
+                                                        <span class=" text-white " style="font-size: 30px;" id="colombo-7Price">RS.105,000</span>
                                                     </div>
                                                     <div class="col-12">
                                                         <span class=" text-white fs-4 ">Annual</span>
@@ -300,10 +300,10 @@
                                             <div class="col-10 offset-1">
                                                 <div class="row">
                                                     <div class="col-12 mt-5">
-                                                        <span class="fs-4 fw-bold" style="color: white;">WT</span>
+                                                        <span class="fs-4 fw-bold" style="color: white;">WTC</span>
                                                     </div>
                                                     <div class="col-12">
-                                                        <span class=" text-white " style="font-size: 25px;">Rs.75,000</span>
+                                                        <span class=" text-white " style="font-size: 25px;" id="WTCPrice">Rs.75,000</span>
                                                     </div>
                                                     <div class="col-12">
                                                         <span class=" text-white-50 fs-4 ">Annual</span>
