@@ -139,6 +139,22 @@
   font-family: "urbanist";
   font-weight: bold;
 }
+.ExploreTextWhite2 {
+  color: white;
+  font-size: 35px;
+  font-family: "urbanist";
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  .ExploreTextWhite2 {
+    color: white;
+    font-size: 25px;
+    font-family: "urbanist";
+    font-weight: bold;
+  }
+}
+
 .ProgrammeExploreBtn {
   color: white;
   background-color: transparent;

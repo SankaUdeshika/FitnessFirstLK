@@ -103,10 +103,17 @@
                             </div>
                             <div class="col-12 border-1 border border-white border-top-0">
                                 <div class="row">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-7">
+                                                <input type="range" class="form-range " onchange="ChangeHeight();" value="50" max="272" id="HeightRangeInput">
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
                                     <div class="col-lg-9 col-8 ">
                                         <div class="row">
                                             <div class="col-10 offset-1 p-5 ">
-                                                <input type="range" class="form-range " onchange="ChangeHeight();"value="50" max="272" id="HeightRangeInput">
                                             </div>
                                             <div class="col-10 offset-1 p-5 ">
                                                 <input type="range" class="form-range " onchange="ChangeWeight();" max="635" value="45" id="WeightRangeInput">
@@ -115,11 +122,10 @@
                                     </div>
                                     <div class="col-lg-3 col-4">
                                         <div class="row">
-                                            <div class="col-10 offset-1  ">
-                                                <span class="ExploreTextWhite" id="HeightText">160 cm</span>
+                                            <div class="col-10 offset-1 p-3  ">
                                             </div>
-                                            <div class="col-10 offset-1  ">
-                                                <span class="ExploreTextWhite" id="WeightText">160 cm</span>
+                                            <div class="col-10 offset-1 p-3 ">
+                                                <span class="ExploreTextWhite2" id="WeightText">Weight</span>
                                             </div>
                                         </div>
                                     </div>
@@ -130,8 +136,7 @@
                             </div>
                         </div>
 
-                        <!-- Transform Your Physique with our fitness plan part -->
-                        
+
 
                         <!-- Join Now Second -->
                         <div class="col-10 offset-1 mt-5 mb-5 rounded-4 DownToUP Fade" style="background-color: #0D0D0D;">
