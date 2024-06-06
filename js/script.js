@@ -8,7 +8,7 @@ window.addEventListener("load", preloader);
 // BMI Calculator
 function CalculateBMI() {
   var Heightinput = document.getElementById("HeightRangeInput").value;
-  var Height = Heightinput/100;
+  var Height = Heightinput / 100;
   var Weight = document.getElementById("WeightRangeInput").value;
 
   var BMIvalue = Weight / (Height * Height);
@@ -1362,4 +1362,24 @@ function ProgrammeRightsmall() {
     var Element = document.getElementById("InnerView");
     Element.style.transform = "translateX(" + elementMovingwidth + "px)";
   }
+}
+
+// Trun Ladies PackagePrice
+function TrunLadiesPackeage() {
+  var LadiesPackageBtn = document.getElementById("LadiesBtn");
+  LadiesPackageBtn.classList.add("Ladiesactive");
+
+  var GentsPackageBtn = document.getElementById("GentsBtn");
+  GentsPackageBtn.classList.remove("Gentsactive");
+  GentsPackageBtn.classList.add("Gents");
+}
+
+// Trun Gents PackagePrice
+function TrunGentsPackeage() {
+  var LadiesPackageBtn = document.getElementById("GentsBtn");
+  LadiesPackageBtn.classList.add("Gentsactive");
+
+  var GentsPackageBtn = document.getElementById("LadiesBtn");
+  GentsPackageBtn.classList.remove("Ladiesactive");
+  GentsPackageBtn.classList.add("Ladies");
 }

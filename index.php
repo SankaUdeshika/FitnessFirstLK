@@ -173,13 +173,13 @@
                                         <div class="row">
                                             <!-- Gents Package -->
                                             <div class="col-6 d-flex justify-content-center">
-                                                <div class="col-10 offset-1  text-center rounded-4 Gentsactive p-3 m-3 Fade" style="animation-delay: 1s;">
+                                                <div class="col-10 offset-1  text-center rounded-4 Gentsactive p-3 m-3 Fade" id="GentsBtn" onclick="TrunGentsPackeage();" style="animation-delay: 1s;">
                                                     <span class=" fw-bold fs-4 Fade  " style="animation-delay: 2s;"> Gents Package</span>
                                                 </div>
                                             </div>
                                             <!-- Ladies Package -->
                                             <div class="col-6 d-flex justify-content-center">
-                                                <div class="col-10 offset-1  text-center rounded-4 p-3 m-3 Ladies">
+                                                <div class="col-10 offset-1  text-center rounded-4 p-3 m-3 Ladies" id="LadiesBtn" onclick="TrunLadiesPackeage();">
                                                     <span class=" fw-bold fs-4  Fade " style="animation-delay: 2s;"> Ladies Package</span>
                                                 </div>
                                             </div>
