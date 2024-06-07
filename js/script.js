@@ -1372,6 +1372,12 @@ function TrunLadiesPackeage() {
   var GentsPackageBtn = document.getElementById("GentsBtn");
   GentsPackageBtn.classList.remove("Gentsactive");
   GentsPackageBtn.classList.add("Gents");
+
+  // Ladies Price Change
+  document.getElementById("JaelaPrice").innerText = "RS.50,000";
+  document.getElementById("colombo-7Price").innerText = "RS.95,000";
+  document.getElementById("WTCPrice").innerText = "RS.65,000";
+  window.location = "#price";
 }
 
 // Trun Gents PackagePrice
@@ -1382,4 +1388,10 @@ function TrunGentsPackeage() {
   var GentsPackageBtn = document.getElementById("LadiesBtn");
   GentsPackageBtn.classList.remove("Ladiesactive");
   GentsPackageBtn.classList.add("Ladies");
+
+  // Gents Price Change
+  document.getElementById("JaelaPrice").innerText = "RS.60,000";
+  document.getElementById("colombo-7Price").innerText = "RS.105,000";
+  document.getElementById("WTCPrice").innerText = "RS.75,000";
+  window.location = "#price";
 }

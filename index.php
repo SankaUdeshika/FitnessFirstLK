@@ -105,30 +105,25 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="row">
-                                            <div class="col-7">
+                                            <!-- Wegiht -->
+                                            <div class="col-8 p-5">
                                                 <input type="range" class="form-range " onchange="ChangeHeight();" value="50" max="272" id="HeightRangeInput">
+                                            </div>
+                                            <div class="col-4 text-center">
+                                                <span class="ExploreTextWhite2" id="HeightText">Heigth</span>
+                                            </div>
+
+                                            <!-- Height -->
+                                            <div class="col-8 p-5">
+                                                <input type="range" class="form-range " onchange="ChangeWeight();" max="635" value="45" id="WeightRangeInput">
+                                            </div>
+                                            <div class="col-4 text-center">
+                                                <span class="ExploreTextWhite2" id="WeightText">Weight</span>
                                             </div>
 
                                         </div>
                                     </div>
-                                    <div class="col-lg-9 col-8 ">
-                                        <div class="row">
-                                            <div class="col-10 offset-1 p-5 ">
-                                            </div>
-                                            <div class="col-10 offset-1 p-5 ">
-                                                <input type="range" class="form-range " onchange="ChangeWeight();" max="635" value="45" id="WeightRangeInput">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-4">
-                                        <div class="row">
-                                            <div class="col-10 offset-1 p-3  ">
-                                            </div>
-                                            <div class="col-10 offset-1 p-3 ">
-                                                <span class="ExploreTextWhite2" id="WeightText">Weight</span>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                             <div class="col-12 d-flex justify-content-center mt-3 mb-5">
