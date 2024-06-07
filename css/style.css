@@ -146,6 +146,46 @@
   font-weight: bold;
 }
 
+.FlexTopicText {
+  color: white;
+  font-size: 50px;
+  font-family: "urbanist";
+  font-weight: bolder;
+}
+
+.FlexCategoryTabs {
+  background-color: #464242;
+  color: white;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  transition: 0.5s ease-in-out;
+}
+
+.FlexCategoryTabs:hover {
+  background-color: #535151;
+  color: white;
+  cursor: pointer;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  transition: 0.5s ease-in-out;
+}
+
+.FlexCategoryTabsActive {
+  background-color: red;
+  color: white;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.FlexCategoryTabsActive:hover {
+  background-color: rgb(192, 42, 42);
+  color: white;
+  cursor: pointer;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  transition: 0.5s ease-in-out;
+}
+
 @media screen and (max-width: 600px) {
   .ExploreTextWhite2 {
     color: white;

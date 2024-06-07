@@ -1,5 +1,8 @@
 <?php
 require "Connections/FlexConnection.php";
+// FilterHomeProducts
+session_start();
+$_SESSION["HomeProduct"] = "";
 // Coookie Set
 if (!isset($_COOKIE["User"])) {
     $cookie_name = "User";
@@ -16,8 +19,11 @@ if (!isset($_COOKIE["User"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flex Home | Fitness First LK</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="icon" href="resources/Images/blacklogo.jfif">
+    <meta name="keywords" content="FitnessFirstLk,Fitness,First,Lk,Gym">
+    <meta name="description" content="Best Fitness centers & gyms in Colombo, Western Province, Sri Lanka. High Octane Fitness, Get U Fit Gym, Ultimate Gym">
 </head>
 
 <body class="bg-black">
@@ -70,15 +76,70 @@ if (!isset($_COOKIE["User"])) {
                             </div>
                         </div>
                     </div>
+                    <!-- Category Tabs -->
+                    <div class="col-10 offset-1 mt-5">
+                        <div class="row">
+                            <div class="col-12 fw-bold text-white mt-2 ">
+                                <h2 class="FlexTopicText">Best Seller</h1>
+                            </div>
+
+                            <div class="col-12 nt-4 ">
+                                <div class="row">
+                                    <?php
+                                    if ($_SESSION["HomeProduct"] == "") {
+                                    ?>
+                                        <div class="col-2 mx-4 text-center  FlexCategoryTabsActive">
+                                            <span>Top Sellers</span>
+                                        </div>
+                                        <div class="col-2 offset-1 text-center FlexCategoryTabs">
+                                            <span>Energy Drink</span>
+                                        </div>
+                                        <div class="col-2 offset-1 text-center FlexCategoryTabs">
+                                            <span>Protein</span>
+                                        </div>
+                                    <?php
+                                    } else if ($_SESSION["HomeProduct"] == "EnergyDrink") {
+                                    ?>
+                                        <div class="col-2 mx-4 text-center  FlexCategoryTabs">
+                                            <span>Top Sellers</span>
+                                        </div>
+                                        <div class="col-2 offset-1 text-center FlexCategoryTabsActive">
+                                            <span>Energy Drink</span>
+                                        </div>
+                                        <div class="col-2 offset-1 text-center FlexCategoryTabs">
+                                            <span>Protein</span>
+                                        </div>
+                                    <?php
+                                    } else if ($_SESSION["HomeProduct"] == "Protein") {
+                                    ?>
+                                        <div class="col-2 mx-4 text-center  FlexCategoryTabs">
+                                            <span>Top Sellers</span>
+                                        </div>
+                                        <div class="col-2 offset-1 text-center FlexCategoryTabs">
+                                            <span>Energy Drink</span>
+                                        </div>
+                                        <div class="col-2 offset-1 text-center FlexCategoryTabsActive">
+                                            <span>Protein</span>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>
+
+                                    <div class="col-2 offset-1 text-center FlexCategoryTabs ">
+                                        <span>All Products</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- Flex Item  -->
                     <div class="col-12 d-flex justify-content-center mt-5 mb-5 ">
                         <div class="HomeProductViewCover">
                             <div class="col-12">
                                 <div class="row">
-                                    <div class="col-12 fw-bold text-white mt-2 ">
-                                        <h2>Latest Collection</h1>
-                                    </div>
+
+
 
                                     <!-- Items Start -->
                                     <div class="col-12 Fade DownToUP">
@@ -87,13 +148,13 @@ if (!isset($_COOKIE["User"])) {
                                             <!-- Connect Database -->
                                             <?php
 
-                                            $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` ");
+                                            $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` ORDER BY `Qty` ASC LIMIT 8 ");
                                             $product_num = $product_rs->num_rows;
 
                                             for ($i = 0; $i < $product_num; $i++) {
                                                 $product_data = $product_rs->fetch_assoc();
                                             ?>
-                                                <div class="col-lg-4 col-6 mt-5 p-4">
+                                                <div class="col-lg-3 col-6 mt-5 p-4">
                                                     <div class="row">
                                                         <div class="col-12 FlexProductCard  ">
                                                             <div class="row">
