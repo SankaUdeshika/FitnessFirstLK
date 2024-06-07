@@ -60,19 +60,19 @@
 
                                     <div class="col-12  mt-5">
                                         <div class="row">
-                                            <div class="col-3  d-flex justify-content-center  text-center">
+                                            <div class="col-lg-3 col-12 mt-5   d-flex justify-content-center  text-center">
                                                 <button class="PrgrammeCategories">Cardio Strength</bu>
                                             </div>
 
-                                            <div class="col-3  d-flex justify-content-center  text-center">
+                                            <div class="col-lg-3 col-12 mt-5   d-flex justify-content-center  text-center">
                                                 <button class="PrgrammeCategories">&nbsp;&nbsp;&nbsp;&nbsp; Fat Loss &nbsp;&nbsp;&nbsp;&nbsp;</bu>
                                             </div>
 
-                                            <div class="col-3  d-flex justify-content-center  text-center">
+                                            <div class="col-lg-3 col-12 mt-5  d-flex justify-content-center  text-center">
                                                 <button class="PrgrammeCategories">Pre & Pose Natel</bu>
                                             </div>
 
-                                            <div class="col-3  d-flex justify-content-center  text-center">
+                                            <div class="col-lg-3 col-12 mt-5 d-flex justify-content-center  text-center">
                                                 <button class="PrgrammeCategories">Elderly Training</bu>
                                             </div>
 
@@ -118,7 +118,7 @@
                                                 <input type="range" class="form-range " onchange="ChangeWeight();" max="635" value="45" id="WeightRangeInput">
                                             </div>
                                             <div class="col-4 text-center">
-                                                <span class="ExploreTextWhite2" id="WeightText">Weight</span>
+                                                <span class="ExploreTextWhite2 " id="WeightText">Weight</span>
                                             </div>
 
                                         </div>
@@ -136,7 +136,8 @@
                     <div class="col-10 offset-1 mt-5 mb-5 rounded-4 DownToUP Fade" style="background-color: #0D0D0D;">
                         <div class="row">
                             <div class="col-7 m-3">
-                                <span class="text-white fs-1"> Enhance user experience with healthy nutrition tips, support resources, and social elements.</span>
+                                <span class="text-white fs-1 d-lg-block d-none"> Enhance user experience with healthy nutrition tips, support resources, and social elements.</span>
+                                <span class="text-white fs-4 d-lg-none d-block"> Enhance user experience with healthy nutrition tips, support resources, and social elements.</span>
                             </div>
                             <div class="col-4 d-flex justify-content-end alginitems-center">
                                 <div class="row">
@@ -190,7 +191,7 @@
                             <div class="col-12   mt-5">
                                 <div class="row d-flex justify-content-center">
                                     <!-- Ja ela -->
-                                    <div class="col-lg-2 col-8 offset-lg-0 offset-4 rounded-4 mt-5 Fade " style="background-color: #0D0D0D;">
+                                    <div class="col-lg-2 col-8 offset-lg-0  rounded-4 mt-5 Fade " style="background-color: #0D0D0D;">
                                         <div class="row p-1">
                                             <div class="col-10 offset-1">
                                                 <div class="row">
@@ -290,7 +291,7 @@
                                     </div>
 
                                     <!-- WTC -->
-                                    <div class="col-lg-2 col-8 offset-lg-0 offset-4 rounded-4 mt-5 Fade " style="background-color: #0D0D0D;">
+                                    <div class="col-lg-2 col-8 offset-lg-0 offset-0 rounded-4 mt-5 Fade " style="background-color: #0D0D0D;">
                                         <div class="row p-1">
                                             <div class="col-10 offset-1">
                                                 <div class="row">
