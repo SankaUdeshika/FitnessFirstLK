@@ -20,13 +20,32 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="row">
-                            <div class="col-lg-4 col-2 d-flex  align-items-center">
-                                <span class="fw-bold fs-4 offset-4 FlexHeadrTab hedaerIcon"><i class="bi bi-search"></i></span>
+                            <div class="col-lg-1  col-2 d-flex  align-items-center justify-content-end">
+                                <img src="Resources/images/LOGO/FlexRedLogo.png" style="width:100%;" alt="">
                             </div>
-                            <div class="col-lg-4 col-8 text-center d-flex justify-content-center">
-                                <img src="Resources/images/LOGO/Flex.jpg" onclick="window.location = 'index.php'" class="FlexLOGO" alt="Flex Logo">
+                            <div class="col-lg-1  col-2 d-flex  align-items-center justify-content-start">
+                                <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.svg" style="width: 100%;" alt="">
                             </div>
-                            <div class="col-lg-4 col-2 text-end d-flex align-items-center ">
+                            <div class="col-lg-4 offset-2 offset col-8 text-center ">
+                                <div class="row">
+                                    <div class="col-3 mt-4 text-center">
+                                        <span class=" FlexHeadrTab" onclick="window.location = 'flexhome.php'">Home</span>
+                                    </div>
+                                    <div class="col-3 mt-4 text-center">
+                                        <span class=" FlexHeadrTab" onclick="window.location = 'FlexCatelog.php'">Catalog</span>
+                                    </div>
+                                    <div class="col-3 mt-4 text-center">
+                                        <span class=" FlexHeadrTab" onclick="window.location = 'flexhome.php'">Gift Pack</span>
+                                    </div>
+                                    <div class="col-3 mt-4 text-center">
+                                        <span class=" FlexHeadrTab" onclick="window.location = 'flexhome.php'">Merch</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-1  offset-2 col-2 d-flex  align-items-center justify-content-end">
+                                <span class="fs-1 fw-bold offset-5 FlexHeadrTab" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><i class="bi bi-search"></i></span>
+                            </div>
+                            <div class="col-lg-1 col-2 text-end d-flex align-items-center ">
                                 <?php
                                 // Show Cart Number Icons
                                 $Cookie_rs  = FlexDatabase::search("SELECT * FROM `cookie` WHERE `Cookie` = '" . $_COOKIE["User"] . "' ");
@@ -48,21 +67,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 d-flex justify-content-center">
-                        <div class="row">
-                            <div class="col">
-                                <span class=" FlexHeadrTab" onclick="window.location = 'flexhome.php'">Home</span>
-                            </div>
-                            <div class="col">
-                                <span class=" FlexHeadrTab" onclick="window.location = 'FlexCatelog.php'">Catalog</span>
-                            </div>
-                            <div class="col">
-                                <span class=" FlexHeadrTab" onclick="window.location = 'FlexContact.php'">Contact</span>
-                            </div>
-                        </div>
-                    </div>
-
-
+                    
                 </div>
             </div>
 
