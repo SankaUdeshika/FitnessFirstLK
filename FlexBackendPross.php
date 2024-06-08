@@ -3,6 +3,8 @@ session_start();
 require "Connections/FlexConnection.php";
 $command = $_POST["command"];
 
+// Flex Home Product Change
+$_SESSION["HomeProduct"] = "TopSellers";
 
 // add Flex Product
 
@@ -518,4 +520,14 @@ if ($command == "addFlexProduct") {
 
     FlexDatabase::iud("UPDATE `order` SET `Status_Sid` = '1' WHERE `Order_id` = '" . $Order_id . "' ");
     echo ("Update Order Status");
+} else if ($command == "ChangeHomePageCategoryPage") {
+    $Category = $_POST["HomeProducts"];
+
+    if ($Category == "") {
+        $_SESSION["HomeProduct"] = "TopSellers";
+    } else if ($Category == "EndergyDrink") {
+        $_SESSION["HomeProduct"] = "EnergyDrink";
+    } else if ($Category == "Protein") {
+        $_SESSION["HomeProduct"] = "Protein";
+    }
 }

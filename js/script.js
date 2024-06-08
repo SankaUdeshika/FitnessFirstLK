@@ -1395,3 +1395,32 @@ function TrunGentsPackeage() {
   document.getElementById("WTCPrice").innerText = "RS.75,000";
   window.location = "#price";
 }
+
+// Change Product Categories
+function ChangeHomeCategory(CategoryName) {
+  var HomeProducts = "";
+  var command = "ChangeHomePageCategoryPage";
+
+  if (CategoryName == "TopSellers") {
+    HomeProducts = "";
+  } else if (CategoryName == "EndergyDrink") {
+    HomeProducts = "EndergyDrink";
+  } else if (CategoryName == "Protein") {
+    HomeProducts = "Protein";
+  }
+
+  var f = new FormData();
+  f.append("HomeProducts", HomeProducts);
+  f.append("command", command);
+
+  var r = new XMLHttpRequest();
+
+  r.onreadystatechange = function () {
+    if ((r.readyState == 4) & (r.status == 200)) {
+      window.location.reload();
+    }
+  };
+
+  r.open("POST", "FlexBackendPross.php", true);
+  r.send(f);
+}

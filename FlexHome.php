@@ -2,7 +2,12 @@
 require "Connections/FlexConnection.php";
 // FilterHomeProducts
 session_start();
-$_SESSION["HomeProduct"] = "";
+if ($_SESSION["HomeProduct"] == null) {
+    $_SESSION["HomeProduct"] = "TopSellers";
+    header("Location: http://localhost/fitnesFirst/FlexHome.php");
+}
+
+
 // Coookie Set
 if (!isset($_COOKIE["User"])) {
     $cookie_name = "User";
@@ -82,50 +87,50 @@ if (!isset($_COOKIE["User"])) {
                             <div class="col-12 fw-bold text-white mt-2 ">
                                 <h2 class="FlexTopicText">Best Seller</h1>
                             </div>
-
+                            <!-- <h1><?php echo ($_SESSION["HomeProduct"]) ?></h1> -->
                             <div class="col-12 nt-4 ">
                                 <div class="row">
                                     <?php
-                                    if ($_SESSION["HomeProduct"] == "") {
+                                    if ($_SESSION["HomeProduct"] == "TopSellers") {
                                     ?>
-                                        <div class="col-2 mx-4 text-center  FlexCategoryTabsActive">
+                                        <div class="col-2 mx-4 text-center  FlexCategoryTabsActive" onclick="ChangeHomeCategory('TopSellers');">
                                             <span>Top Sellers</span>
                                         </div>
-                                        <div class="col-2 offset-1 text-center FlexCategoryTabs">
+                                        <div class="col-2 offset-1 text-center FlexCategoryTabs" onclick="ChangeHomeCategory('EndergyDrink');">
                                             <span>Energy Drink</span>
                                         </div>
-                                        <div class="col-2 offset-1 text-center FlexCategoryTabs">
+                                        <div class="col-2 offset-1 text-center FlexCategoryTabs" onclick="ChangeHomeCategory('Protein');">
                                             <span>Protein</span>
                                         </div>
                                     <?php
                                     } else if ($_SESSION["HomeProduct"] == "EnergyDrink") {
                                     ?>
-                                        <div class="col-2 mx-4 text-center  FlexCategoryTabs">
+                                        <div class="col-2 mx-4 text-center  FlexCategoryTabs" onclick="ChangeHomeCategory('TopSellers');">
                                             <span>Top Sellers</span>
                                         </div>
-                                        <div class="col-2 offset-1 text-center FlexCategoryTabsActive">
+                                        <div class="col-2 offset-1 text-center FlexCategoryTabsActive" onclick="ChangeHomeCategory('EndergyDrink');">
                                             <span>Energy Drink</span>
                                         </div>
-                                        <div class="col-2 offset-1 text-center FlexCategoryTabs">
+                                        <div class="col-2 offset-1 text-center FlexCategoryTabs" onclick="ChangeHomeCategory('Protein');">
                                             <span>Protein</span>
                                         </div>
                                     <?php
                                     } else if ($_SESSION["HomeProduct"] == "Protein") {
                                     ?>
-                                        <div class="col-2 mx-4 text-center  FlexCategoryTabs">
+                                        <div class="col-2 mx-4 text-center  FlexCategoryTabs" onclick="ChangeHomeCategory('TopSellers');">
                                             <span>Top Sellers</span>
                                         </div>
-                                        <div class="col-2 offset-1 text-center FlexCategoryTabs">
+                                        <div class="col-2 offset-1 text-center FlexCategoryTabs" onclick="ChangeHomeCategory('EndergyDrink');">
                                             <span>Energy Drink</span>
                                         </div>
-                                        <div class="col-2 offset-1 text-center FlexCategoryTabsActive">
+                                        <div class="col-2 offset-1 text-center FlexCategoryTabsActive" onclick="ChangeHomeCategory('Protein');">
                                             <span>Protein</span>
                                         </div>
                                     <?php
                                     }
                                     ?>
 
-                                    <div class="col-2 offset-1 text-center FlexCategoryTabs ">
+                                    <div class="col-2 offset-1 text-center FlexCategoryTabs" onclick="window.location = 'FlexCatelog.php'">
                                         <span>All Products</span>
                                     </div>
                                 </div>
@@ -148,7 +153,14 @@ if (!isset($_COOKIE["User"])) {
                                             <!-- Connect Database -->
                                             <?php
 
-                                            $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` ORDER BY `Qty` ASC LIMIT 8 ");
+                                            if ($_SESSION["HomeProduct"] == "TopSellers") {
+                                                $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` ORDER BY `Qty` ASC LIMIT 8 ");
+                                            } else if ($_SESSION["HomeProduct"] == "EnergyDrink") {
+                                                $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` WHERE `category_name` = 'Energy Drink' LIMIT 8 ");
+                                            } else if ($_SESSION["HomeProduct"] == "Protein") {
+                                                $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` WHERE `category_name` = 'Protein' LIMIT 8 ");
+                                            }
+
                                             $product_num = $product_rs->num_rows;
 
                                             for ($i = 0; $i < $product_num; $i++) {
