@@ -1,5 +1,11 @@
 <?php
 require "Connections/FlexConnection.php";
+// Flex Catelog Categories
+session_start();
+if ($_SESSION["CatelogProduct"] == null) {
+    $_SESSION["CatelogProduct"] = "";
+    // header("Location: http://localhost/fitnesFirst/FlexCatelog.php");
+}
 // Coookie Set
 if (!isset($_COOKIE["User"])) {
     $cookie_name = "User";
@@ -55,42 +61,50 @@ if (!isset($_COOKIE["User"])) {
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-12 fw-bold text-white mt-2 mb-2">
-                                        <h1 class="text-white fw-bold">Products</h1>
+                                        <h1 class="text-white fw-bold">All Products</h1>
                                     </div>
 
-                                    <div class="col-12">
+                                    <div class="col-10 offset-1 mt-5">
                                         <div class="row">
-                                            <div class="col-6">
+
+
+
+
+                                            <div class="col-12 nt-4 ">
                                                 <div class="row">
-                                                    <div class="col-2">
-                                                        <small class="text-white-50">Filter :</small>
+                                                    <div class="col-2 mx-4 text-center  FlexCategoryTabsActive" onclick="ChangeHomeCategory('TopSellers');">
+                                                        <span>Energy Drinks</span>
                                                     </div>
-                                                    <div class="col-3">
-                                                        <small class="text-white-50">Availability <i class="bi bi-chevron-down"></i></small>
+                                                    <div class="col-2 offset-1 text-center FlexCategoryTabs" onclick="ChangeHomeCategory('EndergyDrink');">
+                                                        <span>Protien</span>
+                                                    </div>
+                                                    <div class="col-2 offset-1 text-center FlexCategoryTabs" onclick="ChangeHomeCategory('Protein');">
+                                                        <span>Pre-Wrokout</span>
                                                     </div>
 
-                                                    <div class="col-3">
-                                                        <small class="text-white-50">Price <i class="bi bi-chevron-down"></i></small>
+                                                    <div class="col-2 offset-1 text-center FlexCategoryTabs " data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <span>Other &nbsp; &nbsp; <i class="bi bi-caret-down"></i> </span>
+                                                        <div class="dropdown">
+
+                                                            <!-- <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                Dropdown button
+                                                            </button> -->
+                                                            <ul class="dropdown-menu">
+                                                                <?php
+                                                                $Category_rs = FlexDatabase::search("SELECT * FROM `category`");
+                                                                $Category_num = $Category_rs->num_rows;
+                                                                for ($x = 0; $x < $Category_num; $x++) {
+                                                                    $Category_data = $Category_rs->fetch_assoc();
+                                                                ?>
+                                                                    <li><?php echo ($Category_data["category_name"]) ?></li>
+                                                                <?php
+                                                                }
+                                                                ?>
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-
-
-                                            <div class="col-6">
-                                                <div class="row d-flex justify-content-end">
-                                                    <div class="col-2 text-end">
-                                                        <small class="text-white-50">Sort By :</small>
-                                                    </div>
-                                                    <div class="col-4 text-end">
-                                                        <small class="text-white-50">Alphabetically, A-Z <i class="bi bi-chevron-down"></i></small>
-                                                    </div>
-
-                                                    <div class="col-3 text-end">
-                                                        <small class="text-white-50">6 Products </small>
-                                                    </div>
-                                                </div>
-                                            </div>
-
                                         </div>
                                     </div>
 
@@ -185,6 +199,7 @@ if (!isset($_COOKIE["User"])) {
     </script>
     <script src="js/bootstrap.bundle.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
