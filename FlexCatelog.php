@@ -105,7 +105,7 @@ if (!isset($_COOKIE["User"])) {
 
                                     <!-- Items -->
                                     <div class="col-12 FirstDownToUPAnimation ">
-                                        <div class="row">
+                                        <div class="row" id="ShowSearchItems">
 
 
                                             <!-- connecti Database -->

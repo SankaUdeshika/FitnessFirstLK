@@ -42,8 +42,56 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- Drop Down Search -->
                             <div class="col-lg-1  offset-2 col-2 d-flex  align-items-center justify-content-end">
-                                <span class="fs-1 fw-bold offset-5 FlexHeadrTab" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><i class="bi bi-search"></i></span>
+
+                                <div class="dropdown">
+                                    <span class="fs-1 fw-bold offset-5 FlexHeadrTab " data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside"><i class="bi bi-search"></i></span>
+
+                                    <div class="dropdown-menu p-4 bg-dark text-white">
+                                        <div class="row">
+
+                                            <div class="mb-1">
+                                                <label for="exampleDropdownFormEmail2" class="form-label">Product Name</label>
+                                                <input type="text" class="form-control" id="SearchProductName" placeholder="Name">
+                                            </div>
+                                            <button class="btn btn-danger" onclick="SearchProductByName();">Search</button>
+
+                                            <div class="col-12">
+                                                <hr class="text-white">
+                                            </div>
+
+                                            <div class="col-12 mb-2">
+                                                <div class="row">
+                                                    <div class="col-12 text-center fw-bold">
+                                                        <label for="exampleDropdownFormEmail2" class="form-label">Price</label>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label for="exampleDropdownFormEmail2" class="form-label">Min</label>
+                                                        <input type="email" class="form-control d-grid" id="exampleDropdownFormEmail2" placeholder="0">
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label for="exampleDropdownFormEmail2" class="form-label">Max</label>
+                                                        <input type="email" class="form-control d-grid" id="exampleDropdownFormEmail2" placeholder="0">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 mb-2 d-grid">
+                                                <button type="submit" class="btn btn-danger fs-6">Search</button>
+                                            </div>
+
+                                            <div class="col-12 d-grid">
+                                                <button type="submit" class="btn btn-secondary fs-6" onclick="window.location.reload();">Refresh</button>
+                                            </div>
+
+
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-lg-1 col-2 text-end d-flex align-items-center ">
                                 <?php
@@ -67,7 +115,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
 

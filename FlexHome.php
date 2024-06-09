@@ -148,7 +148,7 @@ if (!isset($_COOKIE["User"])) {
 
                                     <!-- Items Start -->
                                     <div class="col-12 Fade DownToUP">
-                                        <div class="row  d-flex justify-content-center">
+                                        <div class="row  d-flex justify-content-center" id="ShowSearchItems">
 
                                             <!-- Connect Database -->
                                             <?php
@@ -252,6 +252,8 @@ if (!isset($_COOKIE["User"])) {
     </script>
     <script src="js/bootstrap.bundle.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

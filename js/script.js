@@ -1477,3 +1477,25 @@ function ChangeCatelogCategory(CategoryName) {
   r.open("POST", "FlexBackendPross.php", true);
   r.send(f);
 }
+
+// Search product by Name
+function SearchProductByName() {
+  var ProductName = document.getElementById("SearchProductName").value;
+  var command = "SearchProductByname";
+
+  var f = new FormData();
+  f.append("ProductName", ProductName);
+  f.append("command", command);
+
+  var r = new XMLHttpRequest();
+
+  r.onreadystatechange = function () {
+    if ((r.readyState == 4) & (r.status == 200)) {
+      var ShowResponseHtml = r.responseText;
+      document.getElementById("ShowSearchItems").innerHTML = ShowResponseHtml;
+    }
+  };
+
+  r.open("POST", "FlexBackendPross.php", true);
+  r.send(f);
+}
