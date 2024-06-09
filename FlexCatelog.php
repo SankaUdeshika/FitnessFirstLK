@@ -60,7 +60,17 @@ if (!isset($_COOKIE["User"])) {
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-12 fw-bold text-white mt-2 mb-2">
-                                        <h1 class="text-white fw-bold">All Products <?php echo ($_SESSION["CatelogProduct"]) ?></h1>
+                                        <?php
+                                        if ($_SESSION["CatelogProduct"] == "none") {
+                                        ?>
+                                            <h1 class="text-white fw-bold">All Products</h1>
+                                        <?php
+                                        } else {
+                                        ?>
+                                            <h1 class="text-white fw-bold"> <?php echo ($_SESSION["CatelogProduct"]) ?></h1>
+                                        <?php
+                                        }
+                                        ?>
                                     </div>
 
                                     <div class="col-10 offset-1 mt-5">

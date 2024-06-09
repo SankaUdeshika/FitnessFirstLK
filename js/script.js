@@ -1457,7 +1457,7 @@ function ChangeCatelogCategory(CategoryName) {
   if (CategoryName == "endergydrinks") {
     CatelogProducts = "Energy Drink";
   } else if (CategoryName == "protien") {
-    CatelogProducts = "Protien";
+    CatelogProducts = "Protein";
   } else if (CategoryName == "pre-workout") {
     CatelogProducts = "Pre-Workout";
   }
@@ -1504,8 +1504,6 @@ function SearchProductByName() {
 function SearchProductByPrice() {
   var MinPrice = document.getElementById("SearchMinPrice").value;
   var MaxPrice = document.getElementById("searchMaxPrice").value;
-
-  
 
   var command = "SearchProductByPrice";
 
