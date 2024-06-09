@@ -20,13 +20,18 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="row">
-                            <div class="col-lg-1  col-2 d-flex  align-items-center justify-content-end">
+                            <div class="col-lg-1   d-lg-block d-none d-flex  align-items-center justify-content-end">
                                 <img src="Resources/images/LOGO/FlexRedLogo.png" style="width:100%;" alt="">
                             </div>
-                            <div class="col-lg-1  col-2 d-flex  align-items-center justify-content-start">
+                            <div class="col-lg-1  col-3 d-flex  align-items-center justify-content-start">
                                 <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.svg" style="width: 100%;" alt="">
                             </div>
-                            <div class="col-lg-4 offset-2 offset col-8 text-center ">
+                            <!-- SmallSceen Flex Logo Image -->
+                            <div class="col-6  d-lg-none d-block d-flex justify-content-center bgdanger">
+                                <img src="Resources/images/LOGO/Flex.jpg" width="100%" alt="">
+                            </div>
+                            <!-- Flex Tabs -->
+                            <div class="col-lg-4 offset-2 d-lg-block d-none offset col-8 text-center ">
                                 <div class="row">
                                     <div class="col-3 mt-4 text-center">
                                         <span class=" FlexHeadrTab" onclick="window.location = 'flexhome.php'">Home</span>
@@ -43,7 +48,7 @@
                                 </div>
                             </div>
                             <!-- Drop Down Search -->
-                            <div class="col-lg-1  offset-2 col-2 d-flex  align-items-center justify-content-end">
+                            <div class="col-lg-1  offset-lg-2 offset-0 col-1 d-flex  align-items-center justify-content-end">
 
                                 <div class="dropdown">
                                     <span class="fs-1 fw-bold offset-5 FlexHeadrTab " data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside"><i class="bi bi-search"></i></span>
@@ -77,7 +82,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-12 mb-2 d-grid">
+                                            <div class="col-12 mb-1 d-grid">
                                                 <button type="submit" class="btn btn-danger fs-6" onclick="SearchProductByPrice();">Search</button>
                                             </div>
 
@@ -112,6 +117,23 @@
                                 <?php
                                 }
                                 ?>
+                            </div>
+                            <div class="col-12  text-center d-lg-none d-block">
+                                <span class="fs-1 fw-bold text-white" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true" aria-controls="collapseExample"><i class="bi bi-list"></i></span>
+                                <div class="collapse position-absolute" style="width: 100%;" id="collapseExample">
+                                    <div class="card card-body " style="background-color: red; width: 100%;">
+                                        <?php
+                                        $Category_rs = FlexDatabase::search("SELECT * FROM `category`");
+                                        $Category_num = $Category_rs->num_rows;
+                                        for ($x = 0; $x < $Category_num; $x++) {
+                                            $Category_data = $Category_rs->fetch_assoc();
+                                        ?>
+                                            <span class="mb-2 fw-bold" onclick="" value="<?php echo ($Category_data["category_name"]) ?>"><?php echo ($Category_data["category_name"]) ?></span>
+                                        <?php
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
