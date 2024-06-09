@@ -1499,3 +1499,32 @@ function SearchProductByName() {
   r.open("POST", "FlexBackendPross.php", true);
   r.send(f);
 }
+
+// Search Product By Price
+function SearchProductByPrice() {
+  var MinPrice = document.getElementById("SearchMinPrice").value;
+  var MaxPrice = document.getElementById("searchMaxPrice").value;
+
+  
+
+  var command = "SearchProductByPrice";
+
+  var f = new FormData();
+  f.append("MinPrice", MinPrice);
+  f.append("MaxPrice", MaxPrice);
+
+  f.append("command", command);
+
+  var r = new XMLHttpRequest();
+
+  r.onreadystatechange = function () {
+    if ((r.readyState == 4) & (r.status == 200)) {
+      var ShowResponseHtml = r.responseText;
+      document.getElementById("ShowSearchItems").innerHTML = ShowResponseHtml;
+      // alert(r.responseText);
+    }
+  };
+
+  r.open("POST", "FlexBackendPross.php", true);
+  r.send(f);
+}

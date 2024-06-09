@@ -68,17 +68,17 @@
                                                     </div>
                                                     <div class="col-6">
                                                         <label for="exampleDropdownFormEmail2" class="form-label">Min</label>
-                                                        <input type="email" class="form-control d-grid" id="exampleDropdownFormEmail2" placeholder="0">
+                                                        <input type="email" class="form-control d-grid" id="SearchMinPrice" placeholder="0">
                                                     </div>
                                                     <div class="col-6">
                                                         <label for="exampleDropdownFormEmail2" class="form-label">Max</label>
-                                                        <input type="email" class="form-control d-grid" id="exampleDropdownFormEmail2" placeholder="0">
+                                                        <input type="email" class="form-control d-grid" id="searchMaxPrice" placeholder="0">
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="col-12 mb-2 d-grid">
-                                                <button type="submit" class="btn btn-danger fs-6">Search</button>
+                                                <button type="submit" class="btn btn-danger fs-6" onclick="SearchProductByPrice();">Search</button>
                                             </div>
 
                                             <div class="col-12 d-grid">
