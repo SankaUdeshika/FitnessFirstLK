@@ -50,7 +50,7 @@
                     </div>
 
                     <!-- Explore Our Program -->
-                    <div class="col-10 offset-1 mt-5 mb-lg-5 mb-0">
+                    <div class="col-10 d-lg-block d-none offset-1 mt-5 mb-lg-5 mb-0">
                         <div class="row">
                             <div class="col-12">
                                 <div class="row">
