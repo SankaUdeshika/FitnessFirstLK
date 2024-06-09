@@ -1424,3 +1424,29 @@ function ChangeHomeCategory(CategoryName) {
   r.open("POST", "FlexBackendPross.php", true);
   r.send(f);
 }
+
+// Change Catelog Category
+function ChangeCatelogDropDown() {
+  var CatelogDropDown = document.getElementById("CatelogDropDown").value;
+  if (CatelogDropDown != "other") {
+    var command = "ChangeCatelogDropDown";
+
+    var f = new FormData();
+    f.append("CatelogDropDown", CatelogDropDown);
+    f.append("command", command);
+
+    var r = new XMLHttpRequest();
+
+    r.onreadystatechange = function () {
+      if ((r.readyState == 4) & (r.status == 200)) {
+        window.location.reload();
+      }
+    };
+    r.open("POST", "FlexBackendPross.php", true);
+    r.send(f);
+
+
+  } else {
+    alert("Please Select a Category");
+  }
+}

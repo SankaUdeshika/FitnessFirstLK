@@ -3,7 +3,7 @@ require "Connections/FlexConnection.php";
 // Flex Catelog Categories
 session_start();
 if ($_SESSION["CatelogProduct"] == null) {
-    $_SESSION["CatelogProduct"] = "";
+    $_SESSION["CatelogProduct"] = "none";
     // header("Location: http://localhost/fitnesFirst/FlexCatelog.php");
 }
 // Coookie Set
@@ -61,7 +61,7 @@ if (!isset($_COOKIE["User"])) {
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-12 fw-bold text-white mt-2 mb-2">
-                                        <h1 class="text-white fw-bold">All Products</h1>
+                                        <h1 class="text-white fw-bold">All Products <?php echo ($_SESSION["CatelogProduct"]) ?></h1>
                                     </div>
 
                                     <div class="col-10 offset-1 mt-5">
@@ -72,36 +72,32 @@ if (!isset($_COOKIE["User"])) {
 
                                             <div class="col-12 nt-4 ">
                                                 <div class="row">
-                                                    <div class="col-2 mx-4 text-center  FlexCategoryTabsActive" onclick="ChangeHomeCategory('TopSellers');">
+                                                    <div class="col-2 mx-4 text-center  FlexCategoryTabs" onclick="ChangeHomeCategory('TopSellers');">
                                                         <span>Energy Drinks</span>
                                                     </div>
                                                     <div class="col-2 offset-1 text-center FlexCategoryTabs" onclick="ChangeHomeCategory('EndergyDrink');">
                                                         <span>Protien</span>
                                                     </div>
                                                     <div class="col-2 offset-1 text-center FlexCategoryTabs" onclick="ChangeHomeCategory('Protein');">
-                                                        <span>Pre-Wrokout</span>
+                                                        <span>Pre-wrokout</span>
                                                     </div>
 
-                                                    <div class="col-2 offset-1 text-center FlexCategoryTabs " data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <span>Other &nbsp; &nbsp; <i class="bi bi-caret-down"></i> </span>
-                                                        <div class="dropdown">
+                                                    <div class="col-2 offset-1 " onchange="ChangeCatelogDropDown();" type="button" data-bs-toggle="dropdown" aria-expanded="false" on>
+                                                        <select name="" id="CatelogDropDown" class="border-0 FlexCategoryTabs" style="padding-left: 15px; padding-right:15px; padding-top:10px; padding-bottom:15px; background-color: red;">
+                                                            <option value="other">Other </option>
+                                                            <?php
+                                                            $Category_rs = FlexDatabase::search("SELECT * FROM `category`");
+                                                            $Category_num = $Category_rs->num_rows;
+                                                            for ($x = 0; $x < $Category_num; $x++) {
+                                                                $Category_data = $Category_rs->fetch_assoc();
+                                                            ?>
+                                                                <option value="<?php echo ($Category_data["category_name"]) ?>"><?php echo ($Category_data["category_name"]) ?></option>
+                                                            <?php
+                                                            }
+                                                            ?>
+                                                        </select>
 
-                                                            <!-- <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                Dropdown button
-                                                            </button> -->
-                                                            <ul class="dropdown-menu">
-                                                                <?php
-                                                                $Category_rs = FlexDatabase::search("SELECT * FROM `category`");
-                                                                $Category_num = $Category_rs->num_rows;
-                                                                for ($x = 0; $x < $Category_num; $x++) {
-                                                                    $Category_data = $Category_rs->fetch_assoc();
-                                                                ?>
-                                                                    <li><?php echo ($Category_data["category_name"]) ?></li>
-                                                                <?php
-                                                                }
-                                                                ?>
-                                                            </ul>
-                                                        </div>
+
                                                     </div>
                                                 </div>
                                             </div>

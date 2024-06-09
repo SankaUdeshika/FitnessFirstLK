@@ -6,6 +6,9 @@ $command = $_POST["command"];
 // Flex Home Product Change
 $_SESSION["HomeProduct"] = "TopSellers";
 
+// Flex Catelog Product Change
+$_SESSION["CatelogProduct"] = "";
+
 // add Flex Product
 
 if ($command == "addFlexProduct") {
@@ -530,4 +533,9 @@ if ($command == "addFlexProduct") {
     } else if ($Category == "Protein") {
         $_SESSION["HomeProduct"] = "Protein";
     }
+} else if ($command == "ChangeCatelogDropDown") {
+
+    $Category = $_POST["CatelogDropDown"];
+
+    $_SESSION["CatelogProduct"] = $Category;
 }
