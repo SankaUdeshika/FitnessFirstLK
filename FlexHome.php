@@ -213,20 +213,50 @@ if (!isset($_COOKIE["User"])) {
 
                                             ?>
 
-
-                                            <!-- ................................................................................................. -->
-
-
-
-
-
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Subscribe Section -->
+                    <div class="col-10 offset-1 mt-5 mb-5 Fade DownToUP">
+                        <div class="row ">
+                            <div class="col-lg-10 col-12 p-5 border border-1 border-white rounded-2 offset-lg-1 offset-0">
+                                <div class="row">
+                                    <div class="col-12 text-center">
+                                        <span class=" IndexSubscribeText ">Subscribe out fitness tips</span>
+                                    </div>
+                                    <div class="col-8 offset-2 text-center">
+                                        <span class="fs-5">Clearly communicate the benefits of subscribing, such as exclusive content and breaking news.</span>
+                                    </div>
+
+                                    <div class="col-12 mt-5 d-flex justify-content-center">
+                                        <div class="row">
+                                            <div class="col-12  bg-white rounded-2">
+                                                <div class="row">
+                                                    <div class="col-8 d-grid">
+                                                        <input type="text" placeholder="Enter Your Email address" class="SubscribeInput">
+                                                    </div>
+                                                    <div class="col-4 mt-3  mb-3  d-flex justify-content-center  ">
+                                                        <button class="text-white border-0 fs-4 rounded-1" style="background-color: black; padding-left: 5px; padding-right: 5px; margin-right: 10px;"> Subscribe</button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
                 </div>
             </div>
             <div class="col-12 fs-6">

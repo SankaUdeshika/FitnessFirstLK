@@ -72,7 +72,7 @@
                                                     </div>
                                                     <div class="col-6">
                                                         <label for="exampleDropdownFormEmail2" class="form-label">Max</label>
-                                                        <input type="email" class="form-control d-grid" id="searchMaxPrice" placeholder="0">
+                                                        <input type="email" class="form-control d-grid" id="z" placeholder="0">
                                                     </div>
                                                 </div>
                                             </div>
