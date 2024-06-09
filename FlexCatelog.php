@@ -4,7 +4,7 @@ require "Connections/FlexConnection.php";
 session_start();
 if ($_SESSION["CatelogProduct"] == null) {
     $_SESSION["CatelogProduct"] = "none";
-    // header("Location: http://localhost/fitnesFirst/FlexCatelog.php");
+    header("Location: http://localhost/fitnesFirst/FlexCatelog.php");
 }
 // Coookie Set
 if (!isset($_COOKIE["User"])) {
@@ -28,7 +28,6 @@ if (!isset($_COOKIE["User"])) {
 <body class="bg-black">
     <!-- preloader -->
     <div class="col-12 preloader " id="preloader">
-        <?php include "preloader.php" ?>
     </div>
 
     <div class="container-fluid">
@@ -72,13 +71,13 @@ if (!isset($_COOKIE["User"])) {
 
                                             <div class="col-12 nt-4 ">
                                                 <div class="row">
-                                                    <div class="col-2 mx-4 text-center  FlexCategoryTabs" onclick="ChangeHomeCategory('TopSellers');">
+                                                    <div class="col-2 mx-4 text-center  FlexCategoryTabs" onclick="ChangeCatelogCategory('endergydrinks');">
                                                         <span>Energy Drinks</span>
                                                     </div>
-                                                    <div class="col-2 offset-1 text-center FlexCategoryTabs" onclick="ChangeHomeCategory('EndergyDrink');">
+                                                    <div class="col-2 offset-1 text-center FlexCategoryTabs" onclick="ChangeCatelogCategory('protien');">
                                                         <span>Protien</span>
                                                     </div>
-                                                    <div class="col-2 offset-1 text-center FlexCategoryTabs" onclick="ChangeHomeCategory('Protein');">
+                                                    <div class="col-2 offset-1 text-center FlexCategoryTabs" onclick="ChangeCatelogCategory('pre-workout');">
                                                         <span>Pre-wrokout</span>
                                                     </div>
 
@@ -111,7 +110,12 @@ if (!isset($_COOKIE["User"])) {
 
                                             <!-- connecti Database -->
                                             <?php
-                                            $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` ");
+                                            $CategoryCatelog = $_SESSION["CatelogProduct"];
+                                            if ($_SESSION["CatelogProduct"] == "none") {
+                                                $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` ");
+                                            } else if ($_SESSION["CatelogProduct"] != "none") {
+                                                $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` WHERE `category_name` = '" . $CategoryCatelog . "' ");
+                                            }
                                             $product_num = $product_rs->num_rows;
 
                                             for ($i = 0; $i < $product_num; $i++) {

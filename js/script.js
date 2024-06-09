@@ -1444,9 +1444,36 @@ function ChangeCatelogDropDown() {
     };
     r.open("POST", "FlexBackendPross.php", true);
     r.send(f);
-
-
   } else {
     alert("Please Select a Category");
   }
+}
+
+// ChangeCatelgo category Btn
+function ChangeCatelogCategory(CategoryName) {
+  var CatelogProducts = "none";
+  var command = "ChangeCatelogCategoryBtn";
+
+  if (CategoryName == "endergydrinks") {
+    CatelogProducts = "Energy Drink";
+  } else if (CategoryName == "protien") {
+    CatelogProducts = "Protien";
+  } else if (CategoryName == "pre-workout") {
+    CatelogProducts = "Pre-Workout";
+  }
+
+  var f = new FormData();
+  f.append("CatelogProducts", CatelogProducts);
+  f.append("command", command);
+
+  var r = new XMLHttpRequest();
+
+  r.onreadystatechange = function () {
+    if ((r.readyState == 4) & (r.status == 200)) {
+      window.location.reload();
+    }
+  };
+
+  r.open("POST", "FlexBackendPross.php", true);
+  r.send(f);
 }
