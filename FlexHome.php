@@ -147,8 +147,8 @@ if (!isset($_COOKIE["User"])) {
 
 
 
-                                    <!-- Items Start -->
-                                    <div class="col-12 Fade DownToUP">
+                                    <!-- Items Start Large Itmes-->
+                                    <div class="col-12 Fade DownToUP d-lg-block d-none">
                                         <div class="row  d-flex justify-content-center" id="ShowSearchItems">
 
                                             <!-- Connect Database -->
@@ -216,6 +216,89 @@ if (!isset($_COOKIE["User"])) {
 
                                         </div>
                                     </div>
+
+                                    <!-- Items Start Samll Sceens -->
+                                    <div class="col-12 Fade DownToUP d-lg-none d-block">
+                                        <div class="row  d-flex justify-content-center" id="ShowSearchItems">
+                                            <!-- Energy Drinks -->
+                                            <div class="col-12">
+                                                <div class="col-10 mx-4 text-center  FlexCategoryTabs" onclick="ChageEnergyDrinks();">
+                                                    <span>Energy Drinks</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 " style="display: flex; overflow: hidden;">
+                                                <div class=" EnergyDrinkSmallSceenCarousel"   id="EnergyDrinksInnerCarosuel">
+                                                    <?php
+                                                    $EnergyDrinkProduct_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` WHERE `category_name` = 'Energy Drink' LIMIT 4 ");
+                                                    $EnergyDrinkProduct_num = $EnergyDrinkProduct_rs->num_rows;
+
+                                                    for ($i = 0; $i < $EnergyDrinkProduct_num; $i++) {
+                                                        $EnergyDrinkProduct_data = $EnergyDrinkProduct_rs->fetch_assoc();
+                                                    ?>
+                                                        <div class=" col-6  mt-5 p-4">
+                                                            <div class="row">
+                                                                <div class="col-12 FlexProductCard  ">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-10 col-12 offset-lg-1 ProductImageCover ">
+                                                                            <div class="row">
+                                                                                <div class="col-12 ProductFirstImageCover">
+                                                                                    <img src="<?php echo ($EnergyDrinkProduct_data["Main_Image"]) ?>" class="FlexProductImage1" alt="<?php echo ($EnergyDrinkProduct_data["Main_Image"]) ?>">
+                                                                                </div>
+                                                                                <div class="col-12 ProductSecondImageCover ">
+                                                                                    <img src="<?php echo ($EnergyDrinkProduct_data["Seciond_Image"]) ?>" class="FlexProductImage2" alt="<?php echo ($EnergyDrinkProduct_data["Seciond_Image"]) ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- Large Screen -->
+                                                                        <div class="col-12 " style="height: 90px;">
+                                                                            <div class="row">
+                                                                                <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold fs-5 text-white d-lg-block d-none">
+                                                                                    <span><?php echo ($EnergyDrinkProduct_data["Product_name"]) ?></span>
+                                                                                </div>
+                                                                                <!-- Small Screen -->
+                                                                                <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold text-white  d-lg-none d-block">
+                                                                                    <small><?php echo ($EnergyDrinkProduct_data["Product_name"]) ?></small>
+                                                                                </div>
+                                                                                <div class="col-lg-10 offset-lg-1 col-12 text-white-50">
+                                                                                    <span>Rs.<?php echo ($EnergyDrinkProduct_data["Price"]) ?></span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <!-- Button -->
+                                                                        <div class="col-lg-10 col-12 mt-2 offset-lg-1 position-relative overflow-hidden ">
+                                                                            <div class="col-12 ViewProductButton ">
+                                                                                <div class="col-11 ViewProductButto2 d-lg-block d-none  ">
+                                                                                </div>
+                                                                                <span class="ViewProductButtonText text-center" onclick="window.location='FlexSingleProductView.php?id=<?php echo ($product_data['Product_id']) ?>'">Buy Now </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    <?php
+
+                                                    }
+                                                    ?>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 mt-3">
+                                                <div class="row">
+                                                    <div class="col-6 text-center">
+                                                        <span class="text-white fs-1" onclick="EnergyCarouselleft();"><i class="bi bi-caret-left-fill"></i></span>
+                                                    </div>
+                                                    <div class="col-6 text-center">
+                                                        <span class="text-white fs-1" onclick="EnergyCarouselRight();"><i class="bi bi-caret-right-fill"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span id="ShowValue"></span>
+
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

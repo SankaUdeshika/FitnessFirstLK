@@ -1528,7 +1528,7 @@ function SearchProductByPrice() {
 }
 
 // Search Product By Small Screen Categiry Category
-function smallScreenCategorySearch(CategoryName){
+function smallScreenCategorySearch(CategoryName) {
   var command = "smallScreenCategorySearch";
 
   var f = new FormData();
@@ -1547,4 +1547,22 @@ function smallScreenCategorySearch(CategoryName){
 
   r.open("POST", "FlexBackendPross.php", true);
   r.send(f);
+}
+
+// Small Screen Product Carosel Functions
+var EnergyCarousel = 0;
+function EnergyCarouselleft() {
+  if (EnergyCarousel > -340) {
+    EnergyCarousel = EnergyCarousel - 170;
+    var InnerCarousel = document.getElementById("EnergyDrinksInnerCarosuel");
+    InnerCarousel.style.transform = "translateX( " + EnergyCarousel + "px)";
+  }
+}
+
+function EnergyCarouselRight() {
+  if (EnergyCarousel != 0) {
+    EnergyCarousel = EnergyCarousel + 170;
+    var InnerCarousel = document.getElementById("EnergyDrinksInnerCarosuel");
+    InnerCarousel.style.transform = "translateX( " + EnergyCarousel + "px)";
+  }
 }
