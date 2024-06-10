@@ -26,7 +26,8 @@ if (!isset($_COOKIE["User"])) {
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    <link rel="icon" href="resources/Images/blacklogo.jfif">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="icon" href="resources/Images/LOGO/NewFitnessFirst_LOGO.svg">
     <meta name="keywords" content="FitnessFirstLk,Fitness,First,Lk,Gym">
     <meta name="description" content="Best Fitness centers & gyms in Colombo, Western Province, Sri Lanka. High Octane Fitness, Get U Fit Gym, Ultimate Gym">
 </head>
@@ -82,7 +83,7 @@ if (!isset($_COOKIE["User"])) {
                         </div>
                     </div>
                     <!-- Category Tabs -->
-                    <div class="col-10 offset-1 mt-5">
+                    <div class="col-10 d-lg-block d-none offset-1 mt-5">
                         <div class="row">
                             <div class="col-12 fw-bold text-white mt-2 ">
                                 <h2 class="FlexTopicText">Best Seller</h1>

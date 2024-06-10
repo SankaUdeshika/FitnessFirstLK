@@ -1526,3 +1526,25 @@ function SearchProductByPrice() {
   r.open("POST", "FlexBackendPross.php", true);
   r.send(f);
 }
+
+// Search Product By Small Screen Categiry Category
+function smallScreenCategorySearch(CategoryName){
+  var command = "smallScreenCategorySearch";
+
+  var f = new FormData();
+  f.append("CategoryName", CategoryName);
+  f.append("command", command);
+
+  var r = new XMLHttpRequest();
+
+  r.onreadystatechange = function () {
+    if ((r.readyState == 4) & (r.status == 200)) {
+      var ShowResponseHtml = r.responseText;
+      document.getElementById("ShowSearchItems").innerHTML = ShowResponseHtml;
+      // alert(r.responseText);
+    }
+  };
+
+  r.open("POST", "FlexBackendPross.php", true);
+  r.send(f);
+}

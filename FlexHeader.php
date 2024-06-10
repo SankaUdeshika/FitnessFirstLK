@@ -21,28 +21,28 @@
                     <div class="col-12">
                         <div class="row">
                             <div class="col-lg-1   d-lg-block d-none d-flex  align-items-center justify-content-end">
-                                <img src="Resources/images/LOGO/FlexRedLogo.png" style="width:100%;" alt="">
+                                <img src="Resources/images/LOGO/FlexRedLogo.png" class="FlexImage" alt="">
                             </div>
                             <div class="col-lg-1  col-3 d-flex  align-items-center justify-content-start">
-                                <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.svg" style="width: 100%;" alt="">
+                                <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.svg" class="FlexImage" onclick="window.location='index.php'" style="width: 100%;" alt="">
                             </div>
                             <!-- SmallSceen Flex Logo Image -->
-                            <div class="col-6  d-lg-none d-block d-flex justify-content-center bgdanger">
-                                <img src="Resources/images/LOGO/Flex.jpg" width="100%" alt="">
+                            <div class="col-6   d-lg-none d-block d-flex justify-content-center bgdanger">
+                                <img src="Resources/images/LOGO/FlexTransparent.png" class="" width="150%" alt="">
                             </div>
                             <!-- Flex Tabs -->
                             <div class="col-lg-4 offset-2 d-lg-block d-none offset col-8 text-center ">
                                 <div class="row">
-                                    <div class="col-3 mt-4 text-center">
+                                    <div class="col-3 mt-5 text-center">
                                         <span class=" FlexHeadrTab" onclick="window.location = 'flexhome.php'">Home</span>
                                     </div>
-                                    <div class="col-3 mt-4 text-center">
+                                    <div class="col-3 mt-5 text-center">
                                         <span class=" FlexHeadrTab" onclick="window.location = 'FlexCatelog.php'">Catalog</span>
                                     </div>
-                                    <div class="col-3 mt-4 text-center">
+                                    <div class="col-3 mt-5 text-center">
                                         <span class=" FlexHeadrTab" onclick="window.location = 'flexhome.php'">Gift Pack</span>
                                     </div>
-                                    <div class="col-3 mt-4 text-center">
+                                    <div class="col-3 mt-5 text-center">
                                         <span class=" FlexHeadrTab" onclick="window.location = 'flexhome.php'">Merch</span>
                                     </div>
                                 </div>
@@ -128,7 +128,7 @@
                                         for ($x = 0; $x < $Category_num; $x++) {
                                             $Category_data = $Category_rs->fetch_assoc();
                                         ?>
-                                            <span class="mb-2 fw-bold" onclick="" value="<?php echo ($Category_data["category_name"]) ?>"><?php echo ($Category_data["category_name"]) ?></span>
+                                            <span class="mb-2 fw-bold" onclick="smallScreenCategorySearch('<?php echo ($Category_data['category_name']) ?>');" value=""><?php echo ($Category_data["category_name"]) ?></span>
                                         <?php
                                         }
                                         ?>
