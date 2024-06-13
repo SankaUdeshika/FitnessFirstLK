@@ -67,10 +67,10 @@ if (!isset($_COOKIE["User"])) {
                     <!-- Flex Home Image -->
                     <div class="col-12 position-relative">
                         <div class="row">
-                            <div class="col-12">
-                                <img src="Resources/images/Areas/gym02.jpg" class="FlexHomeImage" width="100%">
+                            <div class="col-lg-10 offset-1 ">
+                                <img src="Resources/images/carouselImages/flexx 1.png" class="FlexHomeImage" width="100%" id="FlexHomeCarosuelImage">
                             </div>
-                            <div class="col-12 HomeImageTextButtonCover   text-center">
+                            <!-- <div class="col-12 HomeImageTextButtonCover   text-center">
                                 <div class="row">
                                     <div class="col-12 ">
                                         <span class="FlexCatouselText">Free Shipping</span>
@@ -79,7 +79,7 @@ if (!isset($_COOKIE["User"])) {
                                         <span class="ShopNowBtn " onclick="window.location ='FlexCatelog.php'">Shop Now</span>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <!-- Category Tabs -->

@@ -1605,3 +1605,26 @@ function ProteinCarouselRight() {
     InnerCarousel.style.transform = "translateX( " + PreWorkoutCarousel + "px)";
   }
 }
+
+var MainNumber = 0;
+
+function StartChageFlexHomeCaroysel() {
+  setInterval(() => {
+    MainNumber = MainNumber + 1;
+    ChangeFlexHomeCarlousel(MainNumber);
+  }, 3000);
+}
+
+window.addEventListener("load", StartChageFlexHomeCaroysel);
+
+function ChangeFlexHomeCarlousel(number) {
+  // alert(number);
+  var value = number % 2;
+  if (value == 0) {
+    document.getElementById("FlexHomeCarosuelImage").src =
+      "Resources/images/carouselImages/flexx 1.png";
+  } else if (value == 1) {
+    document.getElementById("FlexHomeCarosuelImage").src =
+      "Resources/images/carouselImages/flexx03 1.png";
+  }
+}
