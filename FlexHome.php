@@ -466,15 +466,15 @@ if (!isset($_COOKIE["User"])) {
                     </div>
 
                     <!-- Subscribe Section -->
-                    <div class="col-10 offset-1 mt-5 mb-5 Fade DownToUP">
+                    <div class="col-lg-10 col-12 offset-lg-1 offset-0 mt-5 mb-5 Fade DownToUP">
                         <div class="row ">
                             <div class="col-lg-10 col-12 p-5 border border-1 border-white rounded-2 offset-lg-1 offset-0">
                                 <div class="row">
                                     <div class="col-12 text-center">
                                         <span class=" IndexSubscribeText ">Subscribe out fitness tips</span>
                                     </div>
-                                    <div class="col-8 offset-2 text-center">
-                                        <span class="fs-5">Clearly communicate the benefits of subscribing, such as exclusive content and breaking news.</span>
+                                    <div class="col-lg-8 col-12 offset-lg-2 text-center">
+                                        <span class="fs-5 text-white">Clearly communicate the benefits of subscribing, such as exclusive content and breaking news.</span>
                                     </div>
 
                                     <div class="col-12 mt-5 d-flex justify-content-center">
