@@ -122,6 +122,9 @@
                                 <span class="fs-1 fw-bold text-white" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true" aria-controls="collapseExample"><i class="bi bi-list"></i></span>
                                 <div class="collapse position-absolute" style="width: 100%;" id="collapseExample">
                                     <div class="card card-body " style="background-color: red; width: 100%;">
+
+                                        <button type="button" class="btn-close btn-close-white" aria-label="Close" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true" aria-controls="collapseExample"></button>
+                                        <hr>
                                         <?php
                                         $Category_rs = FlexDatabase::search("SELECT * FROM `category`");
                                         $Category_num = $Category_rs->num_rows;
@@ -132,6 +135,7 @@
                                         <?php
                                         }
                                         ?>
+                                        <hr>
                                     </div>
                                 </div>
                             </div>
