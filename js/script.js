@@ -1550,6 +1550,7 @@ function smallScreenCategorySearch(CategoryName) {
 }
 
 // Small Screen Product Carosel Functions
+// Energy Drinks
 var EnergyCarousel = 0;
 function EnergyCarouselleft() {
   if (EnergyCarousel > -340) {
@@ -1564,5 +1565,23 @@ function EnergyCarouselRight() {
     EnergyCarousel = EnergyCarousel + 170;
     var InnerCarousel = document.getElementById("EnergyDrinksInnerCarosuel");
     InnerCarousel.style.transform = "translateX( " + EnergyCarousel + "px)";
+  }
+}
+
+// Protein
+var ProteinCarousel = 0;
+function ProteinCarouselleft() {
+  if (ProteinCarousel > -340) {
+    ProteinCarousel = ProteinCarousel - 170;
+    var InnerCarousel = document.getElementById("ProteinInnerCarosuel");
+    InnerCarousel.style.transform = "translateX( " + ProteinCarousel + "px)";
+  }
+}
+
+function ProteinCarouselRight() {
+  if (ProteinCarousel != 0) {
+    ProteinCarousel = ProteinCarousel + 170;
+    var InnerCarousel = document.getElementById("ProteinInnerCarosuel");
+    InnerCarousel.style.transform = "translateX( " + ProteinCarousel + "px)";
   }
 }
