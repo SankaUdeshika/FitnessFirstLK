@@ -64,6 +64,9 @@ if (!isset($_COOKIE["User"])) {
 
                             <div class="col-lg-6 col-12">
                                 <div class="row">
+                                    <div class="col-12 d-lg-none d-block text-center ">
+                                        <h1 class="fw-bold fs-1 text-white"><?php echo ($product_data["Product_name"]) ?> </h1>
+                                    </div>
                                     <div class="col-lg-11 col-12">
                                         <img src="<?php echo ($product_data["Main_Image"]) ?>" id="BigImage" class="SingleProductViewImage" alt="<?php echo ($product_data["Product_name"]) ?>">
                                     </div>
@@ -86,7 +89,7 @@ if (!isset($_COOKIE["User"])) {
 
                             <div class="col-lg-6 col-10    offset-lg-0 offset-1 mt-lg-0 mt-3 ">
                                 <div class="row d-lg-block d-flex justify-content-center">
-                                    <div class="col-12 ">
+                                    <div class="col-12 d-lg-block d-none ">
                                         <h1 class="fw-bold fs-1 text-white"><?php echo ($product_data["Product_name"]) ?> </h1>
                                     </div>
 
@@ -97,8 +100,35 @@ if (!isset($_COOKIE["User"])) {
                                     <div class="col-12 ">
                                         <span class="text-white-50 fs-3">Rs.<?php echo ($product_data["Price"]) ?> </span>
                                     </div>
+                                    <!-- Flavours -->
+                                    <div class="col-12 mt-3 mb-3">
+                                        <div class="col-12">
+                                            <span class="text-white fw-bold "> Flavours </span>
+
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <?php
+                                                $Flavour_rs = FlexDatabase::search("SELECT * FROM `product_flavour` INNER JOIN `product`  ON `product_flavour`.`pf_product_id` = `product`.`Product_id` INNER JOIN `flavors` ON `flavors`.`flavour_id` = `product_flavour`.`pf_flavour_id` WHERE `Product_id` = '" . $Pid . "'  ");
+                                                $Flavour_num = $Flavour_rs->num_rows;
+
+                                                for ($x = 0; $x < $Flavour_num; $x++) {
+                                                    $Flavour_data = $Flavour_rs->fetch_assoc();
+                                                ?>
+                                                    <div class="col-lg-4 col-6 m-2 text-center text-white btn btn-secondary">
+                                                        <span><?php echo ($Flavour_data["flavour_name"]) ?></span>
+                                                    </div>
+                                                <?php
+                                                }
+
+
+                                                ?>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                     <div class="col-12">
-                                        <span class="text-white">Quantity</span>
+                                        <span class="text-white fw-bold">Quantity</span>
                                     </div>
                                     <?php
 
@@ -169,6 +199,14 @@ if (!isset($_COOKIE["User"])) {
                                     ?>
 
 
+                                    <div class="col-lg-10 col-12 mt-5 d-lg-none d-block ">
+                                        <span class="fs-1 fw-bold text-white"><?php echo ($product_data["Product_name"]) ?></span>
+                                    </div>
+
+
+                                    <div class="col-lg-10 col-12 mt-5 d-lg-none d-block ">
+                                        <span class="fs-3 fw-bold text-white-50">DESCRIPTION</span>
+                                    </div>
 
                                     <div class="col-lg-10 col-12 mt-3 text-white-50">
                                         <p><?php echo ($product_data["Description"]) ?></p>
