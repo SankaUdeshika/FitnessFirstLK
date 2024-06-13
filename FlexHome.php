@@ -219,7 +219,7 @@ if (!isset($_COOKIE["User"])) {
 
                                     <!-- Items Start Samll Sceens -->
                                     <div class="col-12 Fade DownToUP d-lg-none d-block">
-                                        <div class="row  d-flex justify-content-center" id="ShowSearchItems">
+                                        <div class="row  d-flex justify-content-center" id="ShowSearchItemssmall">
                                             <!-- Energy Drinks -->
                                             <div class="col-12">
                                                 <div class="col-10 mx-4 text-center  FlexCategoryTabs" onclick="ChageEnergyDrinks();">
