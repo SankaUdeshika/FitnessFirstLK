@@ -15,94 +15,32 @@
         <div class="row">
             <div class="col-12 text-white footerCover">
                 <div class="row">
-
-                    <!-- left -->
-
-                    <div class="col-6 d-flex justify-content-center align-items-center">
-                        <div class="row">
-
-                            <div class="col-lg-6 col-10 offset-0 offset-lg-1">
-                                <span class="text-white fs-2">Highlight benefits of each exercise, both physical and mental</span>
-                            </div>
-
-
-
-                            <!-- <div class="col-10 offset-2 mt-3 mb-5">
-                                <span class="SocialIcons"><i class="bi bi-facebook"></i></span>
-                                <span class="SocialIcons" style="margin-left: 10px;"><i class="bi bi-instagram"></i></span>
-                                <span class="SocialIcons" style="margin-left: 10px;"><i class="bi bi-tiktok"></i></span>
-                            </div> -->
-                        </div>
-                    </div>
-
-
-                    <!-- right -->
-                    <div class="col-6">
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <span class="fw-bold fs-4 text-white">Sitemap</span>
-                                    </div>
-                                    <div class="col-12 mt-2">
-                                        <span class="fw-bold fs-6 text-white-50">About Us</span>
-                                    </div>
-                                    <div class="col-12 ">
-                                        <span class="fw-bold fs-6 text-white-50">proms</span>
-                                    </div>
-                                    <div class="col-12 ">
-                                        <span class="fw-bold fs-6 text-white-50">New & Blog</span>
-                                    </div>
-                                    <div class="col-12 ">
-                                        <span class="fw-bold fs-6 text-white-50">Help Center</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <span class="fw-bold fs-4 text-white">Support</span>
-                                    </div>
-                                    <div class="col-12 mt-2">
-                                        <span class="fw-bold fs-6 text-white-50">FAQ</span>
-                                    </div>
-                                    <div class="col-12 ">
-                                        <span class="fw-bold fs-6 text-white-50">Support Center</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-4 ">
-                                <div class="row">
-                                    <div class="col-12 fs-6">
-                                        <span class="fw-bold fs-4 text-white fs-6">Social Media</span>
-                                    </div>
-                                    <div class="col-2 fs-2 d-lg-block d-none"> <span class="text-white"><i class="bi bi-instagram"></i></span></div>
-                                    <div class="col-2 fs-2 d-lg-block d-none"> <span class="text-white"><i class="bi bi-twitter"></i></span></div>
-                                    <div class="col-2 fs-2 d-lg-block d-none"> <i class="bi bi-facebook"></i></span></div>
-                                    <div class="row d-lg-none d-block">
-                                        <div class="col-12 text-center">
-                                            <div class="col-2 fs-6 text-center fs-6"> <span class="text-white"><i class="bi bi-instagram"></i></span></div>
-                                        </div>
-                                        <div class="col-12 text-center">
-                                            <div class="col-2 fs-6 text-center "> <span class="text-white"><i class="bi bi-twitter"></i></span></div>
-                                        </div>
-                                        <div class="col-12 text-center">
-                                            <div class="col-2 fs-6 text-center "> <i class="bi bi-facebook"></i></span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="col-12">
-                        <hr class="border border-1 border-white">
+                        <hr class="text-white fw-bold">
                     </div>
 
-                    <div class="col-12 text-center text-white-50">
-                        <span class="fs-6">
-                            © 2023 FITNESS FIRST LK. All Right Reserved Developed By Hansa&Sanka</span>
+                    <div class="col-5  text-white-50">
+                        <small class=" text-start mx-2 fw-bold">
+                            ©FITNESS FIRST LK</small>
                     </div>
+
+                    <div class="col-7   text-white-50">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-6 text-end">
+                                        <small class=" ">
+                                            Term of Use</small>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class=" ">
+                                            Privacy Policy</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
 
                 </div>
             </div>
