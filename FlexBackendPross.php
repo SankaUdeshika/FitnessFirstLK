@@ -83,6 +83,8 @@ if ($command == "addFlexProduct") {
                         $Description = $_POST["Description"];
                         $Quanitity = $_POST["Quanitity"];
                         $uniqueNumber = uniqid();
+                        $Category = $_POST["Category"];
+
                         // get FlavourID
                         $Flavor = $_POST["Flavour"];
                         $isFlavour_rs  = FlexDatabase::search("SELECT * FROM `flavors` WHERE `flavour_name` = '" . $Flavor . "'  ");
@@ -97,7 +99,7 @@ if ($command == "addFlexProduct") {
 
 
 
-                            FlexDatabase::iud("INSERT INTO `product` (`Product_id`,`Product_name`,`Description`,`Qty`,`Price`) VALUES ('" . $uniqueNumber . "','" . $ProductName . "','" . $Description . "','" . $Quanitity . "','" . $price . "')");
+                            FlexDatabase::iud("INSERT INTO `product` (`Product_id`,`Product_name`,`Description`,`Qty`,`Price`,Category_id) VALUES ('" . $uniqueNumber . "','" . $ProductName . "','" . $Description . "','" . $Quanitity . "','" . $price . "','".$Category."')");
                             // GET  falvour ID
                             $falvour_data = $isFlavour_rs->fetch_assoc();
                             FlexDatabase::iud("INSERT INTO `product_flavour` (`pf_product_id`,`pf_flavour_id`) VALUES ('" . $uniqueNumber . "','" . $falvour_data["flavour_id"] . "') ");
@@ -770,7 +772,6 @@ if ($command == "addFlexProduct") {
 
     FlexDatabase::search("INSERT INTO `product_flavour` (`pf_product_id`,`pf_flavour_id`) VALUES ('" . $pid . "','" . $addFlavourSelector . "') ");
     echo ("Adding Success");
-    
 } else if ($command == "DeleteProductFlavoursonUpdateProcess") {
 
     $pid = $_POST["pid"];

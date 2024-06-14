@@ -994,40 +994,47 @@ function AddFlexProduct() {
     Flavour = document.getElementById("FlavourSelector").value;
   }
 
-  if (Flavour != null) {
-    var file1 = document.getElementById("AddPrductimginput");
-    var file2 = document.getElementById("AddSecondPrductimginput");
-    var file3 = document.getElementById("AddThirdPrductimginput");
-    var ProductName = document.getElementById("ProductName").value;
-    var price = document.getElementById("price").value;
-    var Description = document.getElementById("Description").value;
-    var Quanitity = document.getElementById("Quanitity").value;
-    var f = new FormData();
-    f.append("command", command);
-    f.append("file1", file1.files[0]);
-    f.append("file2", file2.files[0]);
-    f.append("file3", file3.files[0]);
-    f.append("ProductName", ProductName);
-    f.append("price", price);
-    f.append("Description", Description);
-    f.append("Quanitity", Quanitity);
-    f.append("Flavour", Flavour);
-    var r = new XMLHttpRequest();
-    r.onreadystatechange = function () {
-      if (r.readyState == 4 && r.status == 200) {
-        if (r.responseText == "Insert Success") {
-          alert(r.responseText);
-          window.location.reload();
-        } else {
-          alert(r.responseText);
+  if(document.getElementById("ProductCategorySelector").value != 0){
+    if (Flavour != null) {
+      var Category = document.getElementById("ProductCategorySelector").value;
+      var file1 = document.getElementById("AddPrductimginput");
+      var file2 = document.getElementById("AddSecondPrductimginput");
+      var file3 = document.getElementById("AddThirdPrductimginput");
+      var ProductName = document.getElementById("ProductName").value;
+      var price = document.getElementById("price").value;
+      var Description = document.getElementById("Description").value;
+      var Quanitity = document.getElementById("Quanitity").value;
+      var f = new FormData();
+      f.append("command", command);
+      f.append("Category", Category);
+      f.append("file1", file1.files[0]);
+      f.append("file2", file2.files[0]);
+      f.append("file3", file3.files[0]);
+      f.append("ProductName", ProductName);
+      f.append("price", price);
+      f.append("Description", Description);
+      f.append("Quanitity", Quanitity);
+      f.append("Flavour", Flavour);
+      var r = new XMLHttpRequest();
+      r.onreadystatechange = function () {
+        if (r.readyState == 4 && r.status == 200) {
+          if (r.responseText == "Insert Success") {
+            alert(r.responseText);
+            window.location.reload();
+          } else {
+            alert(r.responseText);
+          }
         }
-      }
-    };
-    r.open("POST", "FlexBackendPross.php", true);
-    r.send(f);
-  } else {
-    alert("NO");
+      };
+      r.open("POST", "FlexBackendPross.php", true);
+      r.send(f);
+    } else {
+      alert("NO");
+    }
+  }else{
+    alert("Please Select a Category");
   }
+  
 }
 
 // add Main Product Image function

@@ -154,8 +154,8 @@ require "Connections/FlexConnection.php";
                                                         <input type="text" class="form-control" id="price" placeholder="Price">
                                                     </div>
                                                     <div class="col-4">
-                                                        <select name="" id="" class="form-select">
-                                                            <option value="">Select Category</option>
+                                                        <select name="" id="ProductCategorySelector" class="form-select">
+                                                            <option value="0">Select Category</option>
                                                             <?php
                                                             $productCategory_rs = FlexDatabase::search("SELECT * FROM `category` ");
                                                             $productCategory_num = $productCategory_rs->num_rows;
