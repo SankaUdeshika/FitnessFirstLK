@@ -30,7 +30,7 @@
                                 <span class="HeaderTabs" onclick="window.location = 'index.php#price'">Pricing</span>
                             </div>
                             <div class="col-3">
-                                <span class="HeaderTabs" onclick="window.location = 'flexhome.php'">Suppliments</span>
+                                <span class="HeaderTabs" onclick="window.location = 'FlexHome.php'">Suppliments</span>
                             </div>
                             <div class="col-3">
                                 <span class="HeaderTabs" onclick="window.location = 'blog.php'">Blogs</span>
@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="col-2  LogoCover">
-                        <img src="Resources/images/LOGO/NewFlexHeader.svg" onclick="window.location = 'flexhome.php'" class="FlexImage">
+                        <img src="Resources/images/LOGO/NewFlexHeader.svg" onclick="window.location = 'FlexHome.php'" class="FlexImage">
                     </div>
 
                 </div>
@@ -80,7 +80,7 @@
                                     <div class="col-6 d-flex justify-content-center">
                                         <div class="row">
                                             <div class="col-12 mt-3">
-                                                <img src="Resources/images/LOGO/NewFlexHeader.svg" onclick="window.location = 'flexhome.php'" class="FlexImage">
+                                                <img src="Resources/images/LOGO/NewFlexHeader.svg" onclick="window.location = 'FlexHome.php'" class="FlexImage">
                                             </div>
                                             <div class="col-12">
                                                 <span class="fw-bold fs-4 text-white-50">Flex</span>
@@ -107,7 +107,7 @@
                                         <span class="HeaderTabs" onclick="window.location = 'index.php#price'">PRICE</span>
                                     </div>
                                     <div class="col-12">
-                                        <span class="HeaderTabs" onclick="window.location = 'flexhome.php'">SUPPLIMENTS</span>
+                                        <span class="HeaderTabs" onclick="window.location = 'FlexHome.php'">SUPPLIMENTS</span>
                                     </div>
                                     <div class="col-12">
                                         <span class="HeaderTabs" onclick="window.location = 'blog.php'">BLOGS</span>

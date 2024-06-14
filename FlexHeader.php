@@ -34,16 +34,16 @@
                             <div class="col-lg-4 offset-2 d-lg-block d-none offset col-8 text-center ">
                                 <div class="row">
                                     <div class="col-3 mt-5 text-center">
-                                        <span class=" FlexHeadrTab" onclick="window.location = 'flexhome.php'">Home</span>
+                                        <span class=" FlexHeadrTab" onclick="window.location = 'FlexHome.php'">Home</span>
                                     </div>
                                     <div class="col-3 mt-5 text-center">
                                         <span class=" FlexHeadrTab" onclick="window.location = 'FlexCatelog.php'">Catalog</span>
                                     </div>
                                     <div class="col-3 mt-5 text-center">
-                                        <span class=" FlexHeadrTab" onclick="window.location = 'flexhome.php'">Gift Pack</span>
+                                        <span class=" FlexHeadrTab" onclick="window.location = 'FlexHome.php'">Gift Pack</span>
                                     </div>
                                     <div class="col-3 mt-5 text-center">
-                                        <span class=" FlexHeadrTab" onclick="window.location = 'flexhome.php'">Merch</span>
+                                        <span class=" FlexHeadrTab" onclick="window.location = 'FlexHome.php'">Merch</span>
                                     </div>
                                 </div>
                             </div>

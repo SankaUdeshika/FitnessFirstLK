@@ -23,25 +23,67 @@ CREATE TABLE IF NOT EXISTS `cart` (
   PRIMARY KEY (`Cart_id`),
   KEY `fk_cart_Cookie1_idx` (`Cookie_C_id`),
   KEY `fk_cart_product1_idx` (`product_Product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb3;
 
 -- Dumping data for table flex_db.cart: ~2 rows (approximately)
 INSERT INTO `cart` (`Cart_id`, `Qty`, `Cookie_C_id`, `product_Product_id`) VALUES
 	(21, 1, 4, '65de08e1d8604'),
-	(22, 2, 5, '65e489c7b8862');
+	(22, 2, 5, '65e489c7b8862'),
+	(37, 1, 6, '65e48879a86f4');
+
+-- Dumping structure for table flex_db.category
+CREATE TABLE IF NOT EXISTS `category` (
+  `c_id` int NOT NULL AUTO_INCREMENT,
+  `category_name` varchar(50) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`c_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
+
+-- Dumping data for table flex_db.category: ~6 rows (approximately)
+INSERT INTO `category` (`c_id`, `category_name`) VALUES
+	(1, 'Energy Drink'),
+	(2, 'Protein'),
+	(3, 'Pre-Workout'),
+	(4, 'Mass Gainers'),
+	(5, 'Creatine'),
+	(6, 'BCAA/EAA');
 
 -- Dumping structure for table flex_db.cookie
 CREATE TABLE IF NOT EXISTS `cookie` (
   `C_id` int NOT NULL AUTO_INCREMENT,
   `Cookie` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`C_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
 
 -- Dumping data for table flex_db.cookie: ~3 rows (approximately)
 INSERT INTO `cookie` (`C_id`, `Cookie`) VALUES
 	(3, 'user65df04b50b0c7'),
 	(4, 'user65eb162676fcd'),
-	(5, 'user65eb2795561d1');
+	(5, 'user65eb2795561d1'),
+	(6, 'user6658e785e0760');
+
+-- Dumping structure for table flex_db.flavors
+CREATE TABLE IF NOT EXISTS `flavors` (
+  `flavour_id` int NOT NULL AUTO_INCREMENT,
+  `flavour_name` varchar(50) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`flavour_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb3;
+
+-- Dumping data for table flex_db.flavors: ~14 rows (approximately)
+INSERT INTO `flavors` (`flavour_id`, `flavour_name`) VALUES
+	(1, 'Chocolate'),
+	(2, 'Vanila'),
+	(3, 'Blueberry'),
+	(4, 'strawberry'),
+	(5, 'icy blue'),
+	(6, 'white powder'),
+	(7, 'squashies'),
+	(8, 'love heart'),
+	(9, 'fruit burst'),
+	(10, 'green apple'),
+	(11, 'pineapple'),
+	(12, 'unflavoured'),
+	(13, 'NewFlavour'),
+	(14, 'Testing 03 Flavour');
 
 -- Dumping structure for table flex_db.order
 CREATE TABLE IF NOT EXISTS `order` (
@@ -113,20 +155,50 @@ CREATE TABLE IF NOT EXISTS `product` (
   `Product_id` varchar(100) NOT NULL,
   `Product_name` varchar(100) DEFAULT NULL,
   `Description` text,
-  `Flavor_F_id` varchar(50) NOT NULL,
   `Qty` int DEFAULT NULL,
-  `Price` int DEFAULT NULL,
-  PRIMARY KEY (`Product_id`)
+  `Price` double DEFAULT NULL,
+  `Category_id` int DEFAULT NULL,
+  PRIMARY KEY (`Product_id`),
+  KEY `FK_product_category` (`Category_id`),
+  CONSTRAINT `FK_product_category` FOREIGN KEY (`Category_id`) REFERENCES `category` (`c_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
--- Dumping data for table flex_db.product: ~5 rows (approximately)
-INSERT INTO `product` (`Product_id`, `Product_name`, `Description`, `Flavor_F_id`, `Qty`, `Price`) VALUES
-	('65de076731dc7', 'ISO-XP', '   \r\nISO-XP is a whey protein isolate supplement marketed as high-quality and low in fat, carbs, and sugar. It claims to offer a high protein content per serving (around 23 grams per 25 grams) and be free of soy and lactose.   ', 'Chochlet', 2, 8500),
-	('65de08e1d8604', 'Creatine MonoHy Drate', ' Creatine MonoHy Drate Description ', 'Stawberry', 9, 9800),
-	('65de093989919', 'Creating MonoHydrate Second', 'Creating MonoHydrate Second Description', 'White Powder', 4, 8800),
-	('65e48879a86f4', 'ABE - ALL BLACK EVERYTHING ', 'ABE delivers a unique blend of the most vital and researched active ingredients known to help increase physical performance*, reduce tiredness & fatigue* and provide continual focus throughout your training, maximizing your bodies potential. However talk is cheap and the proof is in the product, after extensive research, meticulous formulating and precise lab testing we are confident to let ABE do the talking.', 'White Powder', 20, 6500),
-	('65e489c7b8862', 'BCAA AMINO HYDRATE', 'BCAA Amino Hydrate is the SUGAR FREE intra workout & recovery drink-mix that all Athletes, Bodybuilders, Powerlifters, Boxers and general keep fitters should be consuming during every workout.', 'Fruit Brust', 10, 4200),
-	('65e48a884a6df', 'CRITICAL GREENS POWDER', 'Critical Greens is packed with 17 super-greens extracts including broccoli, celery, spinach, wheatgrass, and kale powder — get your greens in a super-convenient way. Our critical blend can simply be added to your protein shake, fruit smoothie or can be mixed with water for a fresh natural taste.', 'White Powder', 5, 12000);
+-- Dumping data for table flex_db.product: ~7 rows (approximately)
+INSERT INTO `product` (`Product_id`, `Product_name`, `Description`, `Qty`, `Price`, `Category_id`) VALUES
+	('65de076731dc7', 'ISO-XP', '   \r\nISO-XP is a whey protein isolate supplement marketed as high-quality and low in fat, carbs, and sugar. It claims to offer a high protein content per serving (around 23 grams per 25 grams) and be free of soy and lactose.   ', 2, 8500, 3),
+	('65de08e1d8604', 'Creatine MonoHy Drate', ' Creatine MonoHy Drate Description ', 9, 9800, 3),
+	('65de093989919', 'Creating MonoHydrate Second', 'Creating MonoHydrate Second Description', 4, 8800, 3),
+	('65e48879a86f4', 'ABE - ALL BLACK EVERYTHING ', 'ABE delivers a unique blend of the most vital and researched active ingredients known to help increase physical performance*, reduce tiredness & fatigue* and provide continual focus throughout your training, maximizing your bodies potential. However talk is cheap and the proof is in the product, after extensive research, meticulous formulating and precise lab testing we are confident to let ABE do the talking.', 20, 6500, 1),
+	('65e489c7b8862', 'BCAA AMINO HYDRATE', 'BCAA Amino Hydrate is the SUGAR FREE intra workout & recovery drink-mix that all Athletes, Bodybuilders, Powerlifters, Boxers and general keep fitters should be consuming during every workout.', 10, 4200, 2),
+	('65e48a884a6df', 'CRITICAL GREENS POWDER', 'Critical Greens is packed with 17 super-greens extracts including broccoli, celery, spinach, wheatgrass, and kale powder — get your greens in a super-convenient way. Our critical blend can simply be added to your protein shake, fruit smoothie or can be mixed with water for a fresh natural taste.', 5, 12000, 1),
+	('666c91bc19e60', 'GHOST LEGEND V2', 'GHOST LEGEND V2', 7, 8500, 3);
+
+-- Dumping structure for table flex_db.product_flavour
+CREATE TABLE IF NOT EXISTS `product_flavour` (
+  `pf_id` int NOT NULL AUTO_INCREMENT,
+  `pf_product_id` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT '',
+  `pf_flavour_id` int DEFAULT NULL,
+  PRIMARY KEY (`pf_id`),
+  KEY `FK_product_flavour_product` (`pf_product_id`),
+  KEY `FK_product_flavour_flavors` (`pf_flavour_id`),
+  CONSTRAINT `FK_product_flavour_flavors` FOREIGN KEY (`pf_flavour_id`) REFERENCES `flavors` (`flavour_id`),
+  CONSTRAINT `FK_product_flavour_product` FOREIGN KEY (`pf_product_id`) REFERENCES `product` (`Product_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb3;
+
+-- Dumping data for table flex_db.product_flavour: ~11 rows (approximately)
+INSERT INTO `product_flavour` (`pf_id`, `pf_product_id`, `pf_flavour_id`) VALUES
+	(4, '65e48a884a6df', 4),
+	(5, '65e48a884a6df', 5),
+	(7, '65e48879a86f4', 8),
+	(8, '65e48879a86f4', 7),
+	(9, '65e489c7b8862', 10),
+	(11, '65e489c7b8862', 11),
+	(12, '65e48a884a6df', 12),
+	(21, '65de076731dc7', 1),
+	(23, '65de076731dc7', 2),
+	(24, '65de08e1d8604', 4),
+	(25, '65de08e1d8604', 6),
+	(26, '666c91bc19e60', 2);
 
 -- Dumping structure for table flex_db.product_images
 CREATE TABLE IF NOT EXISTS `product_images` (
@@ -137,7 +209,7 @@ CREATE TABLE IF NOT EXISTS `product_images` (
   `Third_Image` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Product_Image_id`),
   KEY `fk_product_images_product1_idx` (`product_Product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3;
 
 -- Dumping data for table flex_db.product_images: ~5 rows (approximately)
 INSERT INTO `product_images` (`Product_Image_id`, `Main_Image`, `Seciond_Image`, `product_Product_id`, `Third_Image`) VALUES
@@ -146,7 +218,8 @@ INSERT INTO `product_images` (`Product_Image_id`, `Main_Image`, `Seciond_Image`,
 	(5, 'Resources//images//FlexProductImage//Main_Creating MonoHydrate SecondWhite Powder.jpeg', 'Resources//images//FlexProductImage//Second_Creating MonoHydrate SecondWhite Powder.jpeg', '65de093989919', 'Resources//images//FlexProductImage//Third_Creating MonoHydrate SecondWhite Powder.jpeg'),
 	(6, 'Resources//images//FlexProductImage//Main_ABE - ALL BLACK EVERYTHING White Powder.jpeg', 'Resources//images//FlexProductImage//Second_ABE - ALL BLACK EVERYTHING White Powder.jpeg', '65e48879a86f4', 'Resources//images//FlexProductImage//Third_ABE - ALL BLACK EVERYTHING White Powder.jpeg'),
 	(7, 'Resources//images//FlexProductImage//Main_BCAA AMINO HYDRATEFruit Brust.jpeg', 'Resources//images//FlexProductImage//Second_BCAA AMINO HYDRATEFruit Brust.jpeg', '65e489c7b8862', 'Resources//images//FlexProductImage//Third_BCAA AMINO HYDRATEFruit Brust.jpeg'),
-	(8, 'Resources//images//FlexProductImage//Main_CRITICAL GREENS POWDERWhite Powder.jpeg', 'Resources//images//FlexProductImage//Second_CRITICAL GREENS POWDERWhite Powder.jpeg', '65e48a884a6df', 'Resources//images//FlexProductImage//Third_CRITICAL GREENS POWDERWhite Powder.jpeg');
+	(8, 'Resources//images//FlexProductImage//Main_CRITICAL GREENS POWDERWhite Powder.jpeg', 'Resources//images//FlexProductImage//Second_CRITICAL GREENS POWDERWhite Powder.jpeg', '65e48a884a6df', 'Resources//images//FlexProductImage//Third_CRITICAL GREENS POWDERWhite Powder.jpeg'),
+	(12, 'Resources//images//FlexProductImage//Main_GHOST LEGEND V2Vanila.jpeg', 'Resources//images//FlexProductImage//Second_GHOST LEGEND V2Vanila.jpeg', '666c91bc19e60', 'Resources//images//FlexProductImage//Third_GHOST LEGEND V2Vanila.jpeg');
 
 -- Dumping structure for table flex_db.specialpoints
 CREATE TABLE IF NOT EXISTS `specialpoints` (
