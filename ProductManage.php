@@ -290,7 +290,7 @@ require "Connections/FlexConnection.php";
                                             for ($x = 0; $x < $Flvaour_num; $x++) {
                                                 $Flvaour_data = $Flvaour_rs->fetch_assoc();
                                             ?>
-                                                <button class="btn btn-outline-danger"><?php echo ($Flvaour_data["flavour_name"]) ?></button>
+                                                <button class="btn btn-outline-danger" onclick="DeleteFlavouronUpdateProduct('<?php echo ($flex_data['Product_id']) ?>','<?php echo ($Flvaour_data['flavour_id']) ?>');"><?php echo ($Flvaour_data["flavour_name"]) ?></button>
                                             <?php
                                             }
 

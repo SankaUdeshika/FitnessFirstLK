@@ -769,6 +769,13 @@ if ($command == "addFlexProduct") {
     $addFlavourSelector = $_POST["addFlavourSelector"];
 
     FlexDatabase::search("INSERT INTO `product_flavour` (`pf_product_id`,`pf_flavour_id`) VALUES ('" . $pid . "','" . $addFlavourSelector . "') ");
-    echo("Adding Success");
+    echo ("Adding Success");
+    
+} else if ($command == "DeleteProductFlavoursonUpdateProcess") {
 
+    $pid = $_POST["pid"];
+    $Flavour_id = $_POST["Flavour_id"];
+
+    FlexDatabase::search("DELETE FROM `product_flavour` WHERE `pf_product_id` = '" . $pid . "' AND `pf_flavour_id` = '" . $Flavour_id . "'  ");
+    echo ("Delete Success");
 }

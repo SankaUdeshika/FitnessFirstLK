@@ -1666,3 +1666,24 @@ function selectAndAddFlavours(id) {
   r.open("POST", "FlexBackendPross.php", true);
   r.send(f);
 }
+
+function DeleteFlavouronUpdateProduct(pid, Flavour_id) {
+  var command = "DeleteProductFlavoursonUpdateProcess";
+
+  var f = new FormData();
+  f.append("pid", pid);
+  f.append("Flavour_id", Flavour_id);
+
+  f.append("command", command);
+
+  var r = new XMLHttpRequest();
+
+  r.onreadystatechange = function () {
+    if ((r.readyState == 4) & (r.status == 200)) {
+      alert(r.responseText);
+      window.location.reload();
+    }
+  };
+  r.open("POST", "FlexBackendPross.php", true);
+  r.send(f);
+}
