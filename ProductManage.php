@@ -74,7 +74,7 @@ require "Connections/FlexConnection.php";
                             <div class="col-12 col-lg-10 text-center my-3">
                                 <?php
 
-                                $start_date = new DateTime("2022-09-27 00:00:00");
+                                $start_date = new DateTime("2024-06-14 00:00:00");
 
                                 $tdate = new DateTime();
                                 $tz = new DateTimeZone("Asia/Colombo");
@@ -154,10 +154,52 @@ require "Connections/FlexConnection.php";
                                                         <input type="text" class="form-control" id="price" placeholder="Price">
                                                     </div>
                                                     <div class="col-4">
-                                                        <input type="text" class="form-control" id="Flavor" placeholder="Flavor">
+                                                        <select name="" id="" class="form-select">
+                                                            <option value="">Select Category</option>
+                                                            <?php
+                                                            $productCategory_rs = FlexDatabase::search("SELECT * FROM `category` ");
+                                                            $productCategory_num = $productCategory_rs->num_rows;
+
+                                                            for ($x = 0; $x < $productCategory_num; $x++) {
+                                                                $ProductCategory_data = $productCategory_rs->fetch_assoc();
+                                                            ?>
+                                                                <option value="<?php echo ($ProductCategory_data["c_id"]) ?>"><?php echo ($ProductCategory_data["category_name"]) ?></option>
+                                                            <?php
+                                                            }
+
+                                                            ?>
+                                                        </select>
+
                                                     </div>
                                                     <div class="col-3 ">
                                                         <input type="number" class="form-control" min="1" placeholder="Quanitity" id="Quanitity">
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="row">
+                                                            <div class="col-12 text-center mt-4">
+                                                                <span>Type New Flavour Or Select a Flavor</span>
+                                                            </div>
+                                                            <div class="col-6 mt-3">
+                                                                <input type="text" class="form-control" id="NewFlavour" placeholder="or Type new flavor">
+                                                            </div>
+                                                            <div class="col-6 mt-3">
+                                                                <select name="" id="FlavourSelector" class="form-select">
+                                                                    <option value="0">Select Flavoyr</option>
+                                                                    <?php
+                                                                    $productFlavour_rs = FlexDatabase::search("SELECT * FROM `flavors` ");
+                                                                    $productFlavour_num = $productFlavour_rs->num_rows;
+
+                                                                    for ($x = 0; $x < $productFlavour_num; $x++) {
+                                                                        $ProductFlavour_data = $productFlavour_rs->fetch_assoc();
+                                                                    ?>
+                                                                        <option value="<?php echo ($ProductFlavour_data["flavour_name"]) ?>"><?php echo ($ProductFlavour_data["flavour_name"]) ?></option>
+                                                                    <?php
+                                                                    }
+
+                                                                    ?>
+                                                                </select>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div class="col-12 mt-3">
                                                         <textarea name="" class="form-control" id="Description" placeholder="Description" cols="30" rows="10"></textarea>
@@ -240,7 +282,21 @@ require "Connections/FlexConnection.php";
                                         </td>
                                         <td><input type="number" class="form-control" min="0" value="<?php echo ($flex_data["Qty"]) ?>" id="ProductQty<?php echo ($flex_data["Product_id"]) ?>"></td>
                                         <td><input type="text" class="form-control" value="<?php echo ($flex_data["Price"]) ?>" id="ProductPrice<?php echo ($flex_data["Product_id"]) ?>"></td>
-                                        <td><input type="text" class="form-control" value="<?php echo ($flex_data["Flavor_F_id"]) ?>" id="ProductFlavor<?php echo ($flex_data["Product_id"]) ?>"></td>
+                                        <td>
+                                            <?php
+                                            $Flvaour_rs = FlexDatabase::search("SELECT * FROM `product_flavour`  INNER JOIN `flavors` ON `flavors`.`flavour_id` = `product_flavour`.`pf_flavour_id` WHERE `pf_product_id` = '" . $flex_data["Product_id"] . "' ");
+                                            $Flvaour_num = $Flvaour_rs->num_rows;
+
+                                            for ($x = 0; $x < $Flvaour_num; $x++) {
+                                                $Flvaour_data = $Flvaour_rs->fetch_assoc();
+                                            ?>
+                                                <button class="btn btn-outline-danger"><?php echo ($Flvaour_data["flavour_name"]) ?></button>
+                                            <?php
+                                            }
+
+                                            ?>
+                                            <!-- <input type="text" class="form-control" value="<?php echo ($flex_data["Flavor_F_id"]) ?>" id="ProductFlavor<?php echo ($flex_data["Product_id"]) ?>"> -->
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td colspan="3">

@@ -71,8 +71,6 @@ if ($command == "addFlexProduct") {
                         echo ("please  Enter a Price");
                     } else if (!is_numeric($_POST["price"])) {
                         echo ("Price must have Only Numbers");
-                    } else if (empty($_POST["Flavor"])) {
-                        echo ("please Enter a Flavor Name");
                     } else if (empty($_POST["Description"])) {
                         echo ("please Enter a Description");
                     } else if (empty($_POST["Quanitity"])) {
@@ -82,24 +80,65 @@ if ($command == "addFlexProduct") {
                     } else {
                         $ProductName = $_POST["ProductName"];
                         $price = $_POST["price"];
-                        $Flavor = $_POST["Flavor"];
                         $Description = $_POST["Description"];
                         $Quanitity = $_POST["Quanitity"];
                         $uniqueNumber = uniqid();
+                        // get FlavourID
+                        $Flavor = $_POST["Flavour"];
+                        $isFlavour_rs  = FlexDatabase::search("SELECT * FROM `flavors` WHERE `flavour_name` = '" . $Flavor . "'  ");
+                        $isFlavour_num =  $isFlavour_rs->num_rows;
 
-                        $newImageName1 = "Resources//images//FlexProductImage//Main_" . $ProductName . $Flavor . $NewImage_Extention1;
-                        $newImageName2 = "Resources//images//FlexProductImage//Second_" . $ProductName . $Flavor . $NewImage_Extention2;
-                        $newImageName3 = "Resources//images//FlexProductImage//Third_" . $ProductName . $Flavor . $NewImage_Extention3;
+
+                        if ($isFlavour_num == 1) {
+                            // Update Flavour id
+                            $newImageName1 = "Resources//images//FlexProductImage//Main_" . $ProductName . $Flavor . $NewImage_Extention1;
+                            $newImageName2 = "Resources//images//FlexProductImage//Second_" . $ProductName . $Flavor . $NewImage_Extention2;
+                            $newImageName3 = "Resources//images//FlexProductImage//Third_" . $ProductName . $Flavor . $NewImage_Extention3;
 
 
-                        FlexDatabase::iud("INSERT INTO `product` (`Product_id`,`Product_name`,`Description`,`Flavor_F_id`,`Qty`,`Price`) VALUES ('" . $uniqueNumber . "','" . $ProductName . "','" . $Description . "','" . $Flavor . "','" . $Quanitity . "','" . $price . "')");
-                        FlexDatabase::iud("INSERT INTO `product_images` (`Main_Image`,`Seciond_Image`,`product_Product_id`,`Third_Image`) VALUES ('" . $newImageName1 . "','" . $newImageName2 . "','" . $uniqueNumber . "','" . $newImageName3 . "')");
 
-                        move_uploaded_file($ImageFile1["tmp_name"], $newImageName1);
-                        move_uploaded_file($ImageFile2["tmp_name"], $newImageName2);
-                        move_uploaded_file($ImageFile3["tmp_name"], $newImageName3);
+                            FlexDatabase::iud("INSERT INTO `product` (`Product_id`,`Product_name`,`Description`,`Qty`,`Price`) VALUES ('" . $uniqueNumber . "','" . $ProductName . "','" . $Description . "','" . $Quanitity . "','" . $price . "')");
+                            // GET  falvour ID
+                            $falvour_data = $isFlavour_rs->fetch_assoc();
+                            FlexDatabase::iud("INSERT INTO `product_flavour` (`pf_product_id`,`pf_flavour_id`) VALUES ('" . $uniqueNumber . "','" . $falvour_data["flavour_id"] . "') ");
 
-                        echo ("Insert Success");
+
+                            FlexDatabase::iud("INSERT INTO `product_images` (`Main_Image`,`Seciond_Image`,`product_Product_id`,`Third_Image`) VALUES ('" . $newImageName1 . "','" . $newImageName2 . "','" . $uniqueNumber . "','" . $newImageName3 . "')");
+
+                            move_uploaded_file($ImageFile1["tmp_name"], $newImageName1);
+                            move_uploaded_file($ImageFile2["tmp_name"], $newImageName2);
+                            move_uploaded_file($ImageFile3["tmp_name"], $newImageName3);
+
+                            echo ("Insert Success");
+                        } else {
+                            // Insert and Create new FlavourID
+                            // Update Flavour id
+                            $newImageName1 = "Resources//images//FlexProductImage//Main_" . $ProductName . $Flavor . $NewImage_Extention1;
+                            $newImageName2 = "Resources//images//FlexProductImage//Second_" . $ProductName . $Flavor . $NewImage_Extention2;
+                            $newImageName3 = "Resources//images//FlexProductImage//Third_" . $ProductName . $Flavor . $NewImage_Extention3;
+
+
+
+                            FlexDatabase::iud("INSERT INTO `product` (`Product_id`,`Product_name`,`Description`,`Qty`,`Price`) VALUES ('" . $uniqueNumber . "','" . $ProductName . "','" . $Description . "','" . $Quanitity . "','" . $price . "')");
+
+                            // insert Flavour
+                            FlexDatabase::iud("INSERT INTO `flavors` (`flavour_name`) VALUES ('" . $Flavor . "') ");
+
+                            // GET  falvour ID
+                            $felvourId_rs = FlexDatabase::search("SELECT * FROM `flavors` WHERE `flavour_name` = '" . $Flavor . "' ");
+                            $felvourID_data = $felvourId_rs->fetch_assoc();
+
+                            FlexDatabase::iud("INSERT INTO `product_flavour` (`pf_product_id`,`pf_flavour_id`) VALUES ('" . $uniqueNumber . "','" . $felvourID_data["flavour_id"] . "') ");
+
+
+                            FlexDatabase::iud("INSERT INTO `product_images` (`Main_Image`,`Seciond_Image`,`product_Product_id`,`Third_Image`) VALUES ('" . $newImageName1 . "','" . $newImageName2 . "','" . $uniqueNumber . "','" . $newImageName3 . "')");
+
+                            move_uploaded_file($ImageFile1["tmp_name"], $newImageName1);
+                            move_uploaded_file($ImageFile2["tmp_name"], $newImageName2);
+                            move_uploaded_file($ImageFile3["tmp_name"], $newImageName3);
+
+                            echo ("Insert Success");
+                        }
                     }
                 } else {
                     echo ("Please Select Valid Image Extention");

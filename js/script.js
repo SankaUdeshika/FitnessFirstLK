@@ -981,39 +981,53 @@ function ChangeCategory(Bid) {
 // ---------------------FLEX------------------------------
 function AddFlexProduct() {
   var command = "addFlexProduct";
-  var file1 = document.getElementById("AddPrductimginput");
-  var file2 = document.getElementById("AddSecondPrductimginput");
-  var file3 = document.getElementById("AddThirdPrductimginput");
-  var ProductName = document.getElementById("ProductName").value;
-  var price = document.getElementById("price").value;
-  var Flavor = document.getElementById("Flavor").value;
-  var Description = document.getElementById("Description").value;
-  var Quanitity = document.getElementById("Quanitity").value;
 
-  var f = new FormData();
-  f.append("command", command);
-  f.append("file1", file1.files[0]);
-  f.append("file2", file2.files[0]);
-  f.append("file3", file3.files[0]);
-  f.append("ProductName", ProductName);
-  f.append("price", price);
-  f.append("Flavor", Flavor);
-  f.append("Description", Description);
-  f.append("Quanitity", Quanitity);
+  var Flavour;
 
-  var r = new XMLHttpRequest();
-  r.onreadystatechange = function () {
-    if (r.readyState == 4 && r.status == 200) {
-      if (r.responseText == "Insert Success") {
-        alert(r.responseText);
-        window.location.reload();
-      } else {
-        alert(r.responseText);
-      }
+  if (document.getElementById("FlavourSelector").value == 0) {
+    if (document.getElementById("NewFlavour").value != "") {
+      Flavour = document.getElementById("NewFlavour").value;
+    } else {
+      alert("Please Select a Flavour or Type a new one");
     }
-  };
-  r.open("POST", "FlexBackendPross.php", true);
-  r.send(f);
+  } else {
+    Flavour = document.getElementById("FlavourSelector").value;
+  }
+
+  if (Flavour != null) {
+    var file1 = document.getElementById("AddPrductimginput");
+    var file2 = document.getElementById("AddSecondPrductimginput");
+    var file3 = document.getElementById("AddThirdPrductimginput");
+    var ProductName = document.getElementById("ProductName").value;
+    var price = document.getElementById("price").value;
+    var Description = document.getElementById("Description").value;
+    var Quanitity = document.getElementById("Quanitity").value;
+    var f = new FormData();
+    f.append("command", command);
+    f.append("file1", file1.files[0]);
+    f.append("file2", file2.files[0]);
+    f.append("file3", file3.files[0]);
+    f.append("ProductName", ProductName);
+    f.append("price", price);
+    f.append("Description", Description);
+    f.append("Quanitity", Quanitity);
+    f.append("Flavour", Flavour);
+    var r = new XMLHttpRequest();
+    r.onreadystatechange = function () {
+      if (r.readyState == 4 && r.status == 200) {
+        if (r.responseText == "Insert Success") {
+          alert(r.responseText);
+          window.location.reload();
+        } else {
+          alert(r.responseText);
+        }
+      }
+    };
+    r.open("POST", "FlexBackendPross.php", true);
+    r.send(f);
+  } else {
+    alert("NO");
+  }
 }
 
 // add Main Product Image function
@@ -1627,4 +1641,8 @@ function ChangeFlexHomeCarlousel(number) {
     document.getElementById("FlexHomeCarosuelImage").src =
       "Resources/images/carouselImages/flexx03 1.png";
   }
+}
+
+function abs() {
+  alert(document.getElementById("FlavourSelector").value);
 }
