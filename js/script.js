@@ -1643,6 +1643,26 @@ function ChangeFlexHomeCarlousel(number) {
   }
 }
 
-function abs() {
-  alert(document.getElementById("FlavourSelector").value);
+function selectAndAddFlavours(id) {
+  var addFlavourSelector = document.getElementById(
+    "addFlavourSelector" + id
+  ).value;
+
+  var command = "selectAndAddFlavours";
+
+  var f = new FormData();
+  f.append("pid", id);
+  f.append("addFlavourSelector", addFlavourSelector);
+  f.append("command", command);
+
+  var r = new XMLHttpRequest();
+
+  r.onreadystatechange = function () {
+    if ((r.readyState == 4) & (r.status == 200)) {
+      alert(r.responseText);
+      window.location.reload();
+    }
+  };
+  r.open("POST", "FlexBackendPross.php", true);
+  r.send(f);
 }

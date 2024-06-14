@@ -348,7 +348,9 @@ if ($command == "addFlexProduct") {
         unlink($oldImage_data["Third_Image"]);
 
         FlexDatabase::iud("DELETE FROM `product_images` WHERE `product_Product_id` = '" . $id . "'");
+        FlexDatabase::iud("DELETE FROM `product_flavour` WHERE `pf_product_id` = '" . $id . "'");
         FlexDatabase::iud("DELETE FROM `product` WHERE `Product_id` = '" . $id . "'");
+
 
         echo ("Delete Success");
     } else {
@@ -762,4 +764,11 @@ if ($command == "addFlexProduct") {
         </div>
 <?php
     }
+} else if ($command == "selectAndAddFlavours") {
+    $pid = $_POST["pid"];
+    $addFlavourSelector = $_POST["addFlavourSelector"];
+
+    FlexDatabase::search("INSERT INTO `product_flavour` (`pf_product_id`,`pf_flavour_id`) VALUES ('" . $pid . "','" . $addFlavourSelector . "') ");
+    echo("Adding Success");
+
 }

@@ -229,7 +229,7 @@ require "Connections/FlexConnection.php";
                                     <th>Description</th>
                                     <th>Product Images</th>
                                     <th>Quanitity</th>
-                                    <th>price</th>
+                                    <th> &nbsp;price &nbsp; &nbsp; &nbsp; </th>
                                     <th>Flavor</th>
                                 </tr>
 
@@ -295,7 +295,21 @@ require "Connections/FlexConnection.php";
                                             }
 
                                             ?>
-                                            <!-- <input type="text" class="form-control" value="<?php echo ($flex_data["Flavor_F_id"]) ?>" id="ProductFlavor<?php echo ($flex_data["Product_id"]) ?>"> -->
+                                            <!-- Add New Flavours -->
+                                            <select name="" id="addFlavourSelector<?php echo ($flex_data["Product_id"]) ?>" class="form-select" onchange="selectAndAddFlavours('<?php echo ($flex_data['Product_id']) ?>');">
+                                                <option value="0">Add Category</option>
+                                                <?php
+                                                $FlvaourSelect_rs = FlexDatabase::search("SELECT * FROM `flavors` ");
+                                                $FlvaourSelect_num = $FlvaourSelect_rs->num_rows;
+
+                                                for ($x = 0; $x < $FlvaourSelect_num; $x++) {
+                                                    $FlvaourSelect_data = $FlvaourSelect_rs->fetch_assoc();
+                                                ?>
+                                                    <option value="<?php echo ($FlvaourSelect_data["flavour_id"]) ?>"><?php echo ($FlvaourSelect_data["flavour_name"]) ?></option>
+                                                <?php
+                                                }
+                                                ?>
+                                            </select>
                                         </td>
                                     </tr>
                                     <tr>
