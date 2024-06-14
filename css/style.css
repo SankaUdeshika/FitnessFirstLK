@@ -1322,12 +1322,27 @@
   scale: 1.2;
 }
 
+.FlexHomeImageLargeScreens {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  transition: 0.5s ease-in-out;
+}
+
 .FlexHomeImage {
   width: 100%;
   height: 500px;
   object-fit: contain;
   transition: 0.5s ease-in-out;
 }
+
+.FlexHomeImagecatelog {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: 0.5s ease-in-out;
+}
+
 .HomeImageTextButtonCover {
   position: absolute;
   bottom: 25%;
@@ -1612,8 +1627,8 @@
 }
 
 /* Carousel Css (Explore Programme) */
-.EnergyDrinkSmallSceenCarousel{
+.EnergyDrinkSmallSceenCarousel {
   display: flex;
   width: 100%;
-  transition: 0.5s ease-in-out ;
+  transition: 0.5s ease-in-out;
 }

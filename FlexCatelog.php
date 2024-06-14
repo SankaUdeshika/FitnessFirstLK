@@ -54,6 +54,14 @@ if (!isset($_COOKIE["User"])) {
                         </div>
                     </div>
 
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-lg-12 ">
+                                <img src="Resources/images/carouselImages/flexx03 1.png" class="FlexHomeImagecatelog" width="100%" >
+                            </div>
+                        </div>
+                    </div>
+
 
                     <div class="col-12 d-flex justify-content-center mt-5 mb-5 ">
                         <div class="HomeProductViewCover">
