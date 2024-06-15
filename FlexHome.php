@@ -283,10 +283,10 @@ if (!isset($_COOKIE["User"])) {
                                             <div class="col-12 mt-3">
                                                 <div class="row">
                                                     <div class="col-6 text-center">
-                                                        <span class="text-white fs-1" onclick="EnergyCarouselleft();"><i class="bi bi-caret-left-fill"></i></span>
+                                                        <span class="text-white fs-1" onclick="EnergyCarouselRight();"><i class="bi bi-caret-left-fill"></i></span>
                                                     </div>
                                                     <div class="col-6 text-center">
-                                                        <span class="text-white fs-1" onclick="EnergyCarouselRight();"><i class="bi bi-caret-right-fill"></i></span>
+                                                        <span class="text-white fs-1" onclick="EnergyCarouselleft();"><i class="bi bi-caret-right-fill"></i></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -362,10 +362,10 @@ if (!isset($_COOKIE["User"])) {
                                             <div class="col-12 mt-3">
                                                 <div class="row">
                                                     <div class="col-6 text-center">
-                                                        <span class="text-white fs-1" onclick="ProteinCarouselleft();"><i class="bi bi-caret-left-fill"></i></span>
+                                                        <span class="text-white fs-1" onclick="ProteinCarouselRight2();"><i class="bi bi-caret-left-fill"></i></span>
                                                     </div>
                                                     <div class="col-6 text-center">
-                                                        <span class="text-white fs-1" onclick="ProteinCarouselRight();"><i class="bi bi-caret-right-fill"></i></span>
+                                                        <span class="text-white fs-1" onclick="ProteinCarouselleft();"><i class="bi bi-caret-right-fill"></i></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -441,10 +441,10 @@ if (!isset($_COOKIE["User"])) {
                                             <div class="col-12 mt-3">
                                                 <div class="row">
                                                     <div class="col-6 text-center">
-                                                        <span class="text-white fs-1" onclick="PreWorkoutCarouselleft();"><i class="bi bi-caret-left-fill"></i></span>
+                                                        <span class="text-white fs-1" onclick="ProteinCarouselRight();"><i class="bi bi-caret-left-fill"></i></span>
                                                     </div>
                                                     <div class="col-6 text-center">
-                                                        <span class="text-white fs-1" onclick="ProteinCarouselRight();"><i class="bi bi-caret-right-fill"></i></span>
+                                                        <span class="text-white fs-1" onclick="PreWorkoutCarouselleft();"><i class="bi bi-caret-right-fill"></i></span>
                                                     </div>
                                                 </div>
                                             </div>
