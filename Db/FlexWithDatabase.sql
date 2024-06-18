@@ -14,6 +14,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+-- Dumping database structure for flex_db
+CREATE DATABASE IF NOT EXISTS `flex_db` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `flex_db`;
+
 -- Dumping structure for table flex_db.cart
 CREATE TABLE IF NOT EXISTS `cart` (
   `Cart_id` int NOT NULL AUTO_INCREMENT,
@@ -98,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `order` (
   KEY `fk_Order_Status1_idx` (`Status_Sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
--- Dumping data for table flex_db.order: ~18 rows (approximately)
+-- Dumping data for table flex_db.order: ~19 rows (approximately)
 INSERT INTO `order` (`Order_id`, `Total`, `User_Email`, `OrderDate`, `OrderTime`, `Status_Sid`) VALUES
 	('Order_65e1ed5ead53c', 18300, 'sankaudeshika123@gmail.com', '2024-03-01', '15:59:42', 1),
 	('Order_65e1f5d68f182', 17000, 'sankaudeshika123@gmail.com', '2024-03-01', '16:35:50', 1),
@@ -131,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `orderitem` (
   KEY `FK_orderitem_order` (`Order_Order_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb3;
 
--- Dumping data for table flex_db.orderitem: ~15 rows (approximately)
+-- Dumping data for table flex_db.orderitem: ~16 rows (approximately)
 INSERT INTO `orderitem` (`OItems_id`, `Qty`, `Order_Order_id`, `product_Product_id`) VALUES
 	(1, 1, 'Order_65e1ed5ead53c', '65de08e1d8604'),
 	(2, 1, 'Order_65e1ed5ead53c', '65de076731dc7'),
@@ -237,7 +242,7 @@ CREATE TABLE IF NOT EXISTS `status` (
   PRIMARY KEY (`Sid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
 
--- Dumping data for table flex_db.status: ~2 rows (approximately)
+-- Dumping data for table flex_db.status: ~3 rows (approximately)
 INSERT INTO `status` (`Sid`, `Status`) VALUES
 	(1, 'ACTIVE'),
 	(2, 'DEACTIVE'),
@@ -259,7 +264,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   KEY `fk_User_Status1_idx` (`Status_Sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
--- Dumping data for table flex_db.user: ~0 rows (approximately)
+-- Dumping data for table flex_db.user: ~1 rows (approximately)
 INSERT INTO `user` (`Email`, `FIrst_name`, `Last_name`, `mobile`, `Address`, `City`, `PostalCode`, `Cookie_C_id`, `Status_Sid`) VALUES
 	('sankaudeshika123@gmail.com', 'Sanka', 'Udeshika', '0764213724', '40/6,A,  Bellanthara Road, Dehiwala', 'Dehiwala', '10350', 3, 1);
 

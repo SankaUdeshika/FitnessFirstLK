@@ -198,7 +198,7 @@ if (!isset($_COOKIE["User"])) {
                                                                     <div class="col-12 ViewProductButton ">
                                                                         <div class="col-11 ViewProductButto2 d-lg-block d-none  ">
                                                                         </div>
-                                                                        <span class="ViewProductButtonText text-center" onclick="window.location='FlexSingleProductView.php?id=<?php echo ($product_data['Product_id']) ?>'">Choose Option </span>
+                                                                        <span class="ViewProductButtonText text-center" onclick="window.location='FlexSingleProductView.php?id=<?php echo ($product_data['Product_id']) ?>'">Buy Now</span>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -266,7 +266,7 @@ if (!isset($_COOKIE["User"])) {
                                                                             <div class="col-12 ViewProductButton ">
                                                                                 <div class="col-11 ViewProductButto2 d-lg-block d-none  ">
                                                                                 </div>
-                                                                                <span class="ViewProductButtonText text-center" onclick="window.location='FlexSingleProductView.php?id=<?php echo ($product_data['Product_id']) ?>'">Buy Now </span>
+                                                                                <span class="ViewProductButtonText text-center" onclick="window.location='FlexSingleProductView.php?id=<?php echo ($EnergyDrinkProduct_data['Product_id']) ?>'">Buy Now </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -345,7 +345,7 @@ if (!isset($_COOKIE["User"])) {
                                                                             <div class="col-12 ViewProductButton ">
                                                                                 <div class="col-11 ViewProductButto2 d-lg-block d-none  ">
                                                                                 </div>
-                                                                                <span class="ViewProductButtonText text-center" onclick="window.location='FlexSingleProductView.php?id=<?php echo ($product_data['Product_id']) ?>'">Buy Now </span>
+                                                                                <span class="ViewProductButtonText text-center" onclick="window.location='FlexSingleProductView.php?id=<?php echo ($ProtienProduct_data['Product_id']) ?>'">Buy Now </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -424,7 +424,7 @@ if (!isset($_COOKIE["User"])) {
                                                                             <div class="col-12 ViewProductButton ">
                                                                                 <div class="col-11 ViewProductButto2 d-lg-block d-none  ">
                                                                                 </div>
-                                                                                <span class="ViewProductButtonText text-center" onclick="window.location='FlexSingleProductView.php?id=<?php echo ($product_data['Product_id']) ?>'">Buy Now </span>
+                                                                                <span class="ViewProductButtonText text-center" onclick="window.location='FlexSingleProductView.php?id=<?php echo ($PreWorkoutProduct_data['Product_id']) ?>'">Buy Now </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>

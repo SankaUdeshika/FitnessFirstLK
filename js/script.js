@@ -1602,6 +1602,7 @@ function ProteinCarouselleft() {
 }
 
 function ProteinCarouselRight2() {
+  alert("OK");
   if (ProteinCarousel != 0) {
     ProteinCarousel = ProteinCarousel + 170;
     var InnerCarousel = document.getElementById("ProteinInnerCarosuel");
