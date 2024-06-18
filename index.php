@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    <link rel="icon" href="resources/Images/blacklogo.jfif">
+    <link rel="icon" href="resources/Images/LOGO/NewFitnessFirst_LOGO.svg">
     <meta name="keywords" content="FitnessFirstLk,Fitness,First,Lk,Gym">
     <meta name="description" content="Best Fitness centers & gyms in Colombo, Western Province, Sri Lanka. High Octane Fitness, Get U Fit Gym, Ultimate Gym">
 </head>
