@@ -22,7 +22,7 @@
 
 
                     <!-- Large Screens -->
-                    <div class="col-12">
+                    <div class="col-12 d-lg-block d-none">
                         <div class="row">
                             <div class="col-6 d-flex justify-content-center align-items-center">
                                 <div class="row">
@@ -108,7 +108,7 @@
                     <!-- Small Screens -->
                     <div class="col-5  text-white-50 d-lg-none d-block">
                         <small class=" text-start mx-2 fw-bold">
-                            ©FITNESS FIRST LK</small>
+                            ©FITNESSFIRSTLK</small>
                     </div>
 
                     <div class="col-7   text-white-50 d-lg-none d-block">
