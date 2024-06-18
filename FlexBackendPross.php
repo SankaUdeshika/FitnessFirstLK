@@ -99,7 +99,7 @@ if ($command == "addFlexProduct") {
 
 
 
-                            FlexDatabase::iud("INSERT INTO `product` (`Product_id`,`Product_name`,`Description`,`Qty`,`Price`,Category_id) VALUES ('" . $uniqueNumber . "','" . $ProductName . "','" . $Description . "','" . $Quanitity . "','" . $price . "','".$Category."')");
+                            FlexDatabase::iud("INSERT INTO `product` (`Product_id`,`Product_name`,`Description`,`Qty`,`Price`,Category_id) VALUES ('" . $uniqueNumber . "','" . $ProductName . "','" . $Description . "','" . $Quanitity . "','" . $price . "','" . $Category . "')");
                             // GET  falvour ID
                             $falvour_data = $isFlavour_rs->fetch_assoc();
                             FlexDatabase::iud("INSERT INTO `product_flavour` (`pf_product_id`,`pf_flavour_id`) VALUES ('" . $uniqueNumber . "','" . $falvour_data["flavour_id"] . "') ");
@@ -718,49 +718,63 @@ if ($command == "addFlexProduct") {
 
     $product_rs = FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` WHERE `category_name` = '" . $Category_name . "'");
     $product_num = $product_rs->num_rows;
-
-    for ($x = 0; $x < $product_num; $x++) {
-        $product_data = $product_rs->fetch_assoc();
+    if ($product_num != 0) {
+        for ($x = 0; $x < $product_num; $x++) {
+            $product_data = $product_rs->fetch_assoc();
         ?>
-        <div class="col-lg-3 col-6 mt-5 p-4">
-            <div class="row">
-                <div class="col-12 FlexProductCard  ">
-                    <div class="row">
-                        <div class="col-lg-10 col-12 offset-lg-1 ProductImageCover ">
-                            <div class="row">
-                                <div class="col-12 ProductFirstImageCover">
-                                    <img src="<?php echo ($product_data["Main_Image"]) ?>" class="FlexProductImage1" alt="<?php echo ($product_data["Main_Image"]) ?>">
-                                </div>
-                                <div class="col-12 ProductSecondImageCover ">
-                                    <img src="<?php echo ($product_data["Seciond_Image"]) ?>" class="FlexProductImage2" alt="<?php echo ($product_data["Seciond_Image"]) ?>">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Large Screen -->
-                        <div class="col-12 " style="height: 90px;">
-                            <div class="row">
-                                <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold fs-5 text-white d-lg-block d-none">
-                                    <span><?php echo ($product_data["Product_name"]) ?></span>
-                                </div>
-                                <!-- Small Screen -->
-                                <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold text-white  d-lg-none d-block">
-                                    <small><?php echo ($product_data["Product_name"]) ?></small>
-                                </div>
-                                <div class="col-lg-10 offset-lg-1 col-12 text-white-50">
-                                    <span>Rs.<?php echo ($product_data["Price"]) ?></span>
+            <div class="col-lg-3 col-6 mt-5 p-4">
+                <div class="row">
+                    <div class="col-12 FlexProductCard  ">
+                        <div class="row">
+                            <div class="col-lg-10 col-12 offset-lg-1 ProductImageCover ">
+                                <div class="row">
+                                    <div class="col-12 ProductFirstImageCover">
+                                        <img src="<?php echo ($product_data["Main_Image"]) ?>" class="FlexProductImage1" alt="<?php echo ($product_data["Main_Image"]) ?>">
+                                    </div>
+                                    <div class="col-12 ProductSecondImageCover ">
+                                        <img src="<?php echo ($product_data["Seciond_Image"]) ?>" class="FlexProductImage2" alt="<?php echo ($product_data["Seciond_Image"]) ?>">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                            <!-- Large Screen -->
+                            <div class="col-12 " style="height: 90px;">
+                                <div class="row">
+                                    <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold fs-5 text-white d-lg-block d-none">
+                                        <span><?php echo ($product_data["Product_name"]) ?></span>
+                                    </div>
+                                    <!-- Small Screen -->
+                                    <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold text-white  d-lg-none d-block">
+                                        <small><?php echo ($product_data["Product_name"]) ?></small>
+                                    </div>
+                                    <div class="col-lg-10 offset-lg-1 col-12 text-white-50">
+                                        <span>Rs.<?php echo ($product_data["Price"]) ?></span>
+                                    </div>
+                                </div>
+                            </div>
 
-                        <!-- Button -->
-                        <div class="col-lg-10 col-12 mt-2 offset-lg-1 position-relative overflow-hidden ">
-                            <div class="col-12 ViewProductButton ">
-                                <div class="col-11 ViewProductButto2 d-lg-block d-none  ">
+                            <!-- Button -->
+                            <div class="col-lg-10 col-12 mt-2 offset-lg-1 position-relative overflow-hidden ">
+                                <div class="col-12 ViewProductButton ">
+                                    <div class="col-11 ViewProductButto2 d-lg-block d-none  ">
+                                    </div>
+                                    <span class="ViewProductButtonText text-center" onclick="window.location='FlexSingleProductView.php?id=<?php echo ($product_data['Product_id']) ?>'">Buy Now </span>
                                 </div>
-                                <span class="ViewProductButtonText text-center" onclick="window.location='FlexSingleProductView.php?id=<?php echo ($product_data['Product_id']) ?>'">Choose Option </span>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        <?php
+        }
+    } else {
+        ?>
+        <div class="col-12 text-center m-5">
+            <div class="row">
+                <div class="col-12 mb-5">
+                    <hr class="fw-bold text-white">
+                </div>
+                <div class="col-12 mt-5">
+                    <h1 class="text-white-50 fw-bold fs-1"> No Results </h1>
                 </div>
             </div>
         </div>
