@@ -137,7 +137,7 @@ if (!isset($_COOKIE["User"])) {
 
                     <!-- Flex Item  -->
                     <div class="col-12 d-flex justify-content-center mt-5 mb-5 ">
-                        <div class="HomeProductViewCover">
+                        <div class="HomeProductViewCover" id="SearchResultShow">
                             <div class="col-12">
                                 <div class="row">
 

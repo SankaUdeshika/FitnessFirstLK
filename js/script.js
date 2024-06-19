@@ -994,7 +994,7 @@ function AddFlexProduct() {
     Flavour = document.getElementById("FlavourSelector").value;
   }
 
-  if(document.getElementById("ProductCategorySelector").value != 0){
+  if (document.getElementById("ProductCategorySelector").value != 0) {
     if (Flavour != null) {
       var Category = document.getElementById("ProductCategorySelector").value;
       var file1 = document.getElementById("AddPrductimginput");
@@ -1031,10 +1031,9 @@ function AddFlexProduct() {
     } else {
       alert("NO");
     }
-  }else{
+  } else {
     alert("Please Select a Category");
   }
-  
 }
 
 // add Main Product Image function
@@ -1514,6 +1513,8 @@ function SearchProductByName() {
     if ((r.readyState == 4) & (r.status == 200)) {
       var ShowResponseHtml = r.responseText;
       document.getElementById("ShowSearchItems").innerHTML = ShowResponseHtml;
+      document.getElementById("ShowSearchItemssmall").innerHTML = ShowResponseHtml;
+      window.location = "#SearchResultShow"
     }
   };
 
@@ -1639,7 +1640,6 @@ function StartChageFlexHomeCaroysel() {
 window.addEventListener("load", StartChageFlexHomeCaroysel);
 
 function ChangeFlexHomeCarlousel(number) {
-  // alert(number);
   var value = number % 2;
   if (value == 0) {
     document.getElementById("FlexHomeCarosuelImage").src =
