@@ -12,6 +12,10 @@ if (!isset($_COOKIE["User"])) {
     $cookie_value = uniqid("user");
     setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 }
+
+// Pagination Variable
+$pageno;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -126,15 +130,40 @@ if (!isset($_COOKIE["User"])) {
                                         <div class="row" id="ShowSearchItems">
 
 
+
+
                                             <!-- connecti Database -->
                                             <?php
-                                            $CategoryCatelog = $_SESSION["CatelogProduct"];
-                                            if ($_SESSION["CatelogProduct"] == "none") {
-                                                $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` ");
-                                            } else if ($_SESSION["CatelogProduct"] != "none") {
-                                                $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` WHERE `category_name` = '" . $CategoryCatelog . "' ");
+
+                                            // Pagination Calculator
+                                            if (isset($_GET["page"])) {
+                                                $pageno = $_GET["page"];
+                                            } else {
+                                                $pageno = 1;
                                             }
+
+                                            $CategoryCatelog = $_SESSION["CatelogProduct"];
+
+
+                                            // can only show 8 products 
+
+                                            $pagination_Product_rs = FlexDatabase::search("SELECT * FROM `product` ");
+                                            $pagination_product_num = $pagination_Product_rs->num_rows;
+
+                                            $result_per_page = 8;
+                                            $number_of_page = ceil($pagination_product_num / $result_per_page);
+
+                                            $page_result = ($pageno - 1) * $result_per_page;
+
+                                            // Original SQl  Querry
+                                            if ($_SESSION["CatelogProduct"] == "none") {
+                                                $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` LIMIT " . $result_per_page . " OFFSET " . $page_result . " ");
+                                            } else if ($_SESSION["CatelogProduct"] != "none") {
+                                                $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` WHERE `category_name` = '" . $CategoryCatelog . "'  LIMIT " . $result_per_page . " OFFSET " . $page_result . " ");
+                                            }
+
                                             $product_num = $product_rs->num_rows;
+
 
                                             for ($i = 0; $i < $product_num; $i++) {
                                                 $product_data = $product_rs->fetch_assoc();
@@ -177,6 +206,61 @@ if (!isset($_COOKIE["User"])) {
                                             <?php
                                             }
                                             ?>
+
+                                            <!-- PAGEINATION START............................................................................................... -->
+                                            <div class="offset-2 offset-lg-3 col-8 col-lg-6 text-center mb-3">
+                                                <nav aria-label="Page navigation example">
+                                                    <ul class="pagination pagination-lg justify-content-center">
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="<?PHP
+                                                                                        if ($pageno <= 1) {
+                                                                                            echo "#";
+                                                                                        } else {
+                                                                                            echo "?page=" . ($pageno - 1);
+                                                                                        }
+                                                                                        ?>" aria-label="Previous">
+                                                                <span aria-hidden="true">&laquo;</span>
+                                                            </a>
+
+                                                        </li>
+                                                        <?php
+
+                                                        for ($x = 1; $x <= $number_of_page; $x++) {
+                                                            if ($x == $pageno) {
+                                                        ?>
+                                                                <li class="page-item active">
+                                                                    <a class="page-link" href="<?php echo "?page=" . ($x); ?>"><?php echo $x ?></a>
+                                                                </li>
+                                                            <?php
+                                                            } else {
+                                                            ?>
+                                                                <li class="page-item">
+                                                                    <a class="page-link" href="<?php echo "?page=" . ($x); ?>"><?php echo $x ?></a>
+                                                                </li>
+                                                        <?php
+                                                            }
+                                                        }
+
+                                                        ?>
+
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="<?PHP
+                                                                                        if ($pageno >= $number_of_page) {
+                                                                                            echo "#";
+                                                                                        } else {
+                                                                                            echo "?page=" . ($pageno + 1);
+                                                                                        }
+                                                                                        ?>" aria-label="Next">
+                                                                <span aria-hidden="true">&raquo;</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                            <!-- PAGEINATION end............................................................................................... -->
+
+
+
                                         </div>
                                     </div>
                                 </div>
