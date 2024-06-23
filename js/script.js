@@ -1231,8 +1231,29 @@ function AddToCart(Pid) {
   var r = new XMLHttpRequest();
   r.onreadystatechange = function () {
     if (r.readyState == 4 && r.status == 200) {
-      alert(r.responseText);
+      // alert(r.responseText);
       window.location.reload();
+    }
+  };
+  r.open("POST", "FlexBackendPross.php", true);
+  r.send(f);
+}
+
+// instance Buy Now
+function IniBuyNow(Pid) {
+  var command = "AddToCart";
+  var Qty = document.getElementById("QTYNo").innerHTML;
+
+  var f = new FormData();
+  f.append("command", command);
+  f.append("Pid", Pid);
+  f.append("Qty", Qty);
+
+  var r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if (r.readyState == 4 && r.status == 200) {
+      // alert(r.responseText);
+      window.location = "Checkout.php";
     }
   };
   r.open("POST", "FlexBackendPross.php", true);
@@ -1513,8 +1534,9 @@ function SearchProductByName() {
     if ((r.readyState == 4) & (r.status == 200)) {
       var ShowResponseHtml = r.responseText;
       document.getElementById("ShowSearchItems").innerHTML = ShowResponseHtml;
-      document.getElementById("ShowSearchItemssmall").innerHTML = ShowResponseHtml;
-      window.location = "#SearchResultShow"
+      document.getElementById("ShowSearchItemssmall").innerHTML =
+        ShowResponseHtml;
+      window.location = "#SearchResultShow";
     }
   };
 

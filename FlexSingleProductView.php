@@ -188,7 +188,7 @@ if (!isset($_COOKIE["User"])) {
 
                                                 ?>
                                                 <!-- Buy Now Button -->
-                                                <div class="col-lg-10 col-12 d-grid SingleProductViewBtn mt-3 text-center">
+                                                <div class="col-lg-10 col-12 d-grid SingleProductViewBtn mt-3 text-center" onclick="IniBuyNow('<?php echo ($Pid) ?>')">
                                                     Buy Now
                                                 </div>
                                             </div>
