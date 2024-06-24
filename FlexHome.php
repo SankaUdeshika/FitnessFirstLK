@@ -155,11 +155,11 @@ if (!isset($_COOKIE["User"])) {
                                             <?php
 
                                             if ($_SESSION["HomeProduct"] == "TopSellers") {
-                                                $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` ORDER BY `Qty` ASC LIMIT 8 ");
+                                                $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` WHERE `product`.`Qty` != '0'  ORDER BY `Qty` DESC LIMIT 8 ");
                                             } else if ($_SESSION["HomeProduct"] == "EnergyDrink") {
-                                                $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` WHERE `category_name` = 'Energy Drink' LIMIT 8 ");
+                                                $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` WHERE `category_name` = 'Energy Drink' AND `product`.`Qty` != '0' LIMIT 8 ");
                                             } else if ($_SESSION["HomeProduct"] == "Protein") {
-                                                $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` WHERE `category_name` = 'Protein' LIMIT 8 ");
+                                                $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` WHERE `category_name` = 'Protein' AND `product`.`Qty` != '0' LIMIT 8 ");
                                             }
 
                                             $product_num = $product_rs->num_rows;
@@ -229,7 +229,7 @@ if (!isset($_COOKIE["User"])) {
                                             <div class="col-12 " style="display: flex; overflow: hidden;">
                                                 <div class=" EnergyDrinkSmallSceenCarousel" id="EnergyDrinksInnerCarosuel">
                                                     <?php
-                                                    $EnergyDrinkProduct_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` WHERE `category_name` = 'Energy Drink' LIMIT 4 ");
+                                                    $EnergyDrinkProduct_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` WHERE `category_name` = 'Energy Drink' AND `product`.`Qty` != '0' LIMIT 4 ");
                                                     $EnergyDrinkProduct_num = $EnergyDrinkProduct_rs->num_rows;
 
                                                     for ($i = 0; $i < $EnergyDrinkProduct_num; $i++) {
@@ -308,7 +308,7 @@ if (!isset($_COOKIE["User"])) {
                                             <div class="col-12 " style="display: flex; overflow: hidden;">
                                                 <div class=" EnergyDrinkSmallSceenCarousel" id="ProteinInnerCarosuel">
                                                     <?php
-                                                    $ProtienProduct_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` WHERE `category_name` = 'Protein' LIMIT 4 ");
+                                                    $ProtienProduct_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` WHERE `category_name` = 'Protein' AND `product`.`Qty` != '0' LIMIT 4 ");
                                                     $ProtienProduct_num = $ProtienProduct_rs->num_rows;
 
                                                     for ($i = 0; $i < $ProtienProduct_num; $i++) {
@@ -387,7 +387,7 @@ if (!isset($_COOKIE["User"])) {
                                             <div class="col-12 " style="display: flex; overflow: hidden;">
                                                 <div class=" EnergyDrinkSmallSceenCarousel" id="PreWorkoutInnerCarosuel">
                                                     <?php
-                                                    $PreWorkoutProduct_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` WHERE `category_name` = 'Pre-Workout' LIMIT 4 ");
+                                                    $PreWorkoutProduct_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` WHERE `category_name` = 'Pre-Workout' AND `product`.`Qty` != '0' LIMIT 4 ");
                                                     $PreWorkoutProduct_num = $PreWorkoutProduct_rs->num_rows;
 
                                                     for ($i = 0; $i < $PreWorkoutProduct_num; $i++) {
