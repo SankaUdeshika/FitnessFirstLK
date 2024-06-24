@@ -107,7 +107,7 @@ $pageno;
                                                         <select name="" id="CatelogDropDown" class="border-0 FlexCategoryTabs" style="padding-left: 15px; padding-right:15px; padding-top:10px; padding-bottom:15px; background-color: red;">
                                                             <option value="other">Other </option>
                                                             <?php
-                                                            $Category_rs = FlexDatabase::search("SELECT * FROM `category`");
+                                                            $Category_rs = FlexDatabase::search("SELECT * FROM `category`  ");
                                                             $Category_num = $Category_rs->num_rows;
                                                             for ($x = 0; $x < $Category_num; $x++) {
                                                                 $Category_data = $Category_rs->fetch_assoc();
@@ -147,7 +147,7 @@ $pageno;
 
                                             // can only show 8 products 
 
-                                            $pagination_Product_rs = FlexDatabase::search("SELECT * FROM `product` ");
+                                            $pagination_Product_rs = FlexDatabase::search("SELECT * FROM `product` WHERE `product`.`Qty` != '0' ");
                                             $pagination_product_num = $pagination_Product_rs->num_rows;
 
                                             $result_per_page = 8;
@@ -157,9 +157,9 @@ $pageno;
 
                                             // Original SQl  Querry
                                             if ($_SESSION["CatelogProduct"] == "none") {
-                                                $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` LIMIT " . $result_per_page . " OFFSET " . $page_result . " ");
+                                                $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` WHERE `product`.`Qty` != '0'  LIMIT " . $result_per_page . " OFFSET " . $page_result . " ");
                                             } else if ($_SESSION["CatelogProduct"] != "none") {
-                                                $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` WHERE `category_name` = '" . $CategoryCatelog . "'  LIMIT " . $result_per_page . " OFFSET " . $page_result . " ");
+                                                $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` INNER JOIN `category` ON `category`.`c_id` = `product`.`Category_id` WHERE `category_name` = '" . $CategoryCatelog . "' AND `product`.`Qty` != '0'  LIMIT " . $result_per_page . " OFFSET " . $page_result . " ");
                                             }
 
                                             $product_num = $product_rs->num_rows;
@@ -208,54 +208,58 @@ $pageno;
                                             ?>
 
                                             <!-- PAGEINATION START............................................................................................... -->
-                                            <div class="offset-2 offset-lg-3 col-8 col-lg-6 text-center mb-3">
-                                                <nav aria-label="Page navigation example">
-                                                    <ul class="pagination pagination-lg justify-content-center">
-                                                        <li class="page-item">
-                                                            <a class="page-link" href="<?PHP
-                                                                                        if ($pageno <= 1) {
-                                                                                            echo "#";
-                                                                                        } else {
-                                                                                            echo "?page=" . ($pageno - 1);
-                                                                                        }
-                                                                                        ?>" aria-label="Previous">
-                                                                <span aria-hidden="true">&laquo;</span>
-                                                            </a>
-
-                                                        </li>
-                                                        <?php
-
-                                                        for ($x = 1; $x <= $number_of_page; $x++) {
-                                                            if ($x == $pageno) {
-                                                        ?>
-                                                                <li class="page-item active">
-                                                                    <a class="page-link" href="<?php echo "?page=" . ($x); ?>"><?php echo $x ?></a>
-                                                                </li>
-                                                            <?php
-                                                            } else {
-                                                            ?>
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="offset-2 offset-lg-3 col-8 col-lg-6 text-center mb-3 mt-5">
+                                                        <nav aria-label="Page navigation example">
+                                                            <ul class="pagination pagination-lg justify-content-center">
                                                                 <li class="page-item">
-                                                                    <a class="page-link" href="<?php echo "?page=" . ($x); ?>"><?php echo $x ?></a>
+                                                                    <a class="page-link" href="<?PHP
+                                                                                                if ($pageno <= 1) {
+                                                                                                    echo "#";
+                                                                                                } else {
+                                                                                                    echo "?page=" . ($pageno - 1);
+                                                                                                }
+                                                                                                ?>" aria-label="Previous">
+                                                                        <span aria-hidden="true">&laquo;</span>
+                                                                    </a>
+
                                                                 </li>
-                                                        <?php
-                                                            }
-                                                        }
+                                                                <?php
 
-                                                        ?>
+                                                                for ($x = 1; $x <= $number_of_page; $x++) {
+                                                                    if ($x == $pageno) {
+                                                                ?>
+                                                                        <li class="page-item active">
+                                                                            <a class="page-link" href="<?php echo "?page=" . ($x); ?>"><?php echo $x ?></a>
+                                                                        </li>
+                                                                    <?php
+                                                                    } else {
+                                                                    ?>
+                                                                        <li class="page-item">
+                                                                            <a class="page-link" href="<?php echo "?page=" . ($x); ?>"><?php echo $x ?></a>
+                                                                        </li>
+                                                                <?php
+                                                                    }
+                                                                }
 
-                                                        <li class="page-item">
-                                                            <a class="page-link" href="<?PHP
-                                                                                        if ($pageno >= $number_of_page) {
-                                                                                            echo "#";
-                                                                                        } else {
-                                                                                            echo "?page=" . ($pageno + 1);
-                                                                                        }
-                                                                                        ?>" aria-label="Next">
-                                                                <span aria-hidden="true">&raquo;</span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </nav>
+                                                                ?>
+
+                                                                <li class="page-item">
+                                                                    <a class="page-link" href="<?PHP
+                                                                                                if ($pageno >= $number_of_page) {
+                                                                                                    echo "#";
+                                                                                                } else {
+                                                                                                    echo "?page=" . ($pageno + 1);
+                                                                                                }
+                                                                                                ?>" aria-label="Next">
+                                                                        <span aria-hidden="true">&raquo;</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </nav>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <!-- PAGEINATION end............................................................................................... -->
 
