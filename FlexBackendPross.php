@@ -324,17 +324,14 @@ if ($command == "addFlexProduct") {
         echo ("Price must have Only Numbers");
     } else if (empty($_POST["ProductPrice"])) {
         echo ("please Enter a Product Price");
-    } else if (empty($_POST["ProductFlavor"])) {
-        echo ("please Enter a Flavor");
     } else {
         $productName = $_POST["ProductName"];
         $ProductDescription = $_POST["ProductDescription"];
         $ProductQty = $_POST["ProductQty"];
         $ProductPrice = $_POST["ProductPrice"];
-        $ProductFlavor = $_POST["ProductFlavor"];
         $Productid = $_POST["id"];
 
-        FlexDatabase::iud("UPDATE `product` SET `Product_name` = '" . $productName . "', `Description` = '" . $ProductDescription . "', `Flavor_F_id` = '" . $ProductFlavor . "', `Qty` = '" . $ProductQty . "' , `Price` = '" . $ProductPrice . "' WHERE `Product_id` = '" . $Productid . "' ");
+        FlexDatabase::iud("UPDATE `product` SET `Product_name` = '" . $productName . "', `Description` = '" . $ProductDescription . "', `Qty` = '" . $ProductQty . "' , `Price` = '" . $ProductPrice . "' WHERE `Product_id` = '" . $Productid . "' ");
         echo ("Done update");
     }
 

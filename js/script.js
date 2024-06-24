@@ -1142,9 +1142,10 @@ function ChangeProductInfo(id) {
   var ProductDescription = document.getElementById(
     "ProductDescription" + id
   ).value;
+
   var ProductQty = document.getElementById("ProductQty" + id).value;
   var ProductPrice = document.getElementById("ProductPrice" + id).value;
-  var ProductFlavor = document.getElementById("ProductFlavor" + id).value;
+  
 
   var f = new FormData();
   f.append("command", command);
@@ -1153,7 +1154,6 @@ function ChangeProductInfo(id) {
   f.append("ProductDescription", ProductDescription);
   f.append("ProductQty", ProductQty);
   f.append("ProductPrice", ProductPrice);
-  f.append("ProductFlavor", ProductFlavor);
 
   var r = new XMLHttpRequest();
   r.onreadystatechange = function () {
