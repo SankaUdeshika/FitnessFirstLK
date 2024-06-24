@@ -1,6 +1,9 @@
 <?php
 $Pid = $_GET["id"];
 require "Connections/FlexConnection.php";
+// to Default Flavour Assign
+session_start();
+
 // Coookie Set
 if (!isset($_COOKIE["User"])) {
     $cookie_name = "User";
@@ -56,7 +59,7 @@ if (!isset($_COOKIE["User"])) {
 
                     <!-- connecti Database -->
                     <?php
-                    $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id`  WHERE `Product_id` = '" . $Pid . "' ");
+                    $product_rs =  FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id`   WHERE `Product_id` = '" . $Pid . "' ");
                     $product_data = $product_rs->fetch_assoc();
                     ?>
                     <div class="col-lg-10 col-12 offset-lg-1 mb-5 mt-5">
@@ -93,17 +96,16 @@ if (!isset($_COOKIE["User"])) {
                                         <h1 class="fw-bold fs-1 text-white"><?php echo ($product_data["Product_name"]) ?> </h1>
                                     </div>
 
-                                    <div class="col-12 ">
-                                        <small class="text-white-50 fs-6 fw-bold"> <?php echo ($product_data["Flavor_F_id"]) ?> </small>
-                                    </div>
+
 
                                     <div class="col-12 ">
                                         <span class="text-white-50 fs-3">Rs.<?php echo ($product_data["Price"]) ?> </span>
                                     </div>
                                     <!-- Flavours -->
-                                    <div class="col-12 mt-3 mb-3">
+                                    <!-- <div class="col-12 mt-3 mb-3">
                                         <div class="col-12">
                                             <span class="text-white fw-bold "> Flavours </span>
+                                            <small class="text-white"><?php echo ($_SESSION["Flavour"]) ?></small>
 
                                         </div>
                                         <div class="col-12">
@@ -112,12 +114,36 @@ if (!isset($_COOKIE["User"])) {
                                                 $Flavour_rs = FlexDatabase::search("SELECT * FROM `product_flavour` INNER JOIN `product`  ON `product_flavour`.`pf_product_id` = `product`.`Product_id` INNER JOIN `flavors` ON `flavors`.`flavour_id` = `product_flavour`.`pf_flavour_id` WHERE `Product_id` = '" . $Pid . "'  ");
                                                 $Flavour_num = $Flavour_rs->num_rows;
 
+
+
                                                 for ($x = 0; $x < $Flavour_num; $x++) {
                                                     $Flavour_data = $Flavour_rs->fetch_assoc();
+
+                                                    if ($_SESSION["Flavour"] == null) {
+                                                        $_SESSION["Flavour"] = $Flavour_data["flavour_name"];
+                                                        header("Location: http://localhost/fitnesFirst/FlexSingleProductView.php");
+                                                    } else {
+                                                        echo ($_SESSION["Flavour"]);
+                                                    }
+
+
+                                                    if ($x == 1) {
+                                                        $_SESSION["Flavour"] = $Flavour_data["flavour_name"];
+
                                                 ?>
-                                                    <div class="col-lg-4 col-6 m-2 text-center text-white btn btn-secondary">
-                                                        <span><?php echo ($Flavour_data["flavour_name"]) ?></span>
-                                                    </div>
+                                                        <div class="col-lg-4 col-6 m-2 text-center text-white btn btn-primary">
+                                                            <span onclick="ChangeFlavour('<?php echo ($Flavour_data['flavour_name']) ?>')" id="Flavour<?php echo ($Flavour_data["flavour_name"]) ?>"><?php echo ($Flavour_data["flavour_name"]) ?></span>
+                                                        </div>
+                                                    <?php
+                                                    } else if ($x != 1) {
+                                                    ?>
+                                                        <div class="col-lg-4 col-6 m-2 text-center text-white btn btn-secondary">
+                                                            <span onclick="ChangeFlavour('<?php echo ($Flavour_data['flavour_name']) ?>')" id="Flavour<?php echo ($Flavour_data["flavour_name"]) ?>"><?php echo ($Flavour_data["flavour_name"]) ?></span>
+
+                                                        </div>
+                                                    <?php
+                                                    }
+                                                    ?>
                                                 <?php
                                                 }
 
@@ -126,7 +152,7 @@ if (!isset($_COOKIE["User"])) {
                                             </div>
                                         </div>
 
-                                    </div>
+                                    </div> -->
                                     <div class="col-12">
                                         <span class="text-white fw-bold">Quantity</span>
                                     </div>

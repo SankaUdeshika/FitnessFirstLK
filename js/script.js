@@ -1716,3 +1716,23 @@ function DeleteFlavouronUpdateProduct(pid, Flavour_id) {
   r.open("POST", "FlexBackendPross.php", true);
   r.send(f);
 }
+
+// Change Flavour
+function ChangeFlavour(FlavourName) {
+  var command = "ChangingFlavour";
+
+  var f = new FormData();
+  f.append("FlavourName", FlavourName);
+  f.append("command", command);
+
+  var r = new XMLHttpRequest();
+
+  r.onreadystatechange = function () {
+    if ((r.readyState == 4) & (r.status == 200)) {
+      // alert(r.responseText);
+      window.location.reload();
+    }
+  };
+  r.open("POST", "FlexBackendPross.php", true);
+  r.send(f);
+}

@@ -2,6 +2,10 @@
 require "Connections/FlexConnection.php";
 // FilterHomeProducts
 session_start();
+
+// Flex Product Flavour initialize (Flex Flavour Session) Hided
+// $_SESSION["Flavour"] = "";
+
 if ($_SESSION["HomeProduct"] == null) {
     $_SESSION["HomeProduct"] = "TopSellers";
     header("Location: http://localhost/fitnesFirst/FlexHome.php");

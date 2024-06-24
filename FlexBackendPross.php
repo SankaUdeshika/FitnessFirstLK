@@ -3,6 +3,9 @@ session_start();
 require "Connections/FlexConnection.php";
 $command = $_POST["command"];
 
+// Flex Flavour Session
+// $_SESSION["Flavour"] = "" hide the flavour Process;
+
 // Flex Home Product Change
 $_SESSION["HomeProduct"] = "TopSellers";
 
@@ -793,4 +796,9 @@ if ($command == "addFlexProduct") {
 
     FlexDatabase::search("DELETE FROM `product_flavour` WHERE `pf_product_id` = '" . $pid . "' AND `pf_flavour_id` = '" . $Flavour_id . "'  ");
     echo ("Delete Success");
-}
+} 
+// else if ($command == "ChangingFlavour") {
+//    $flavour_name = $_POST["FlavourName"];
+//    $_SESSION["Flavour"] = $flavour_name;
+
+// }
