@@ -594,7 +594,7 @@ if ($command == "addFlexProduct") {
         </div>
         <?php
     } else {
-        $product_rs = FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` WHERE `Product_name` LIKE '%" . $product_name . "%' ");
+        $product_rs = FlexDatabase::search("SELECT * FROM `product` INNER JOIN `product_images` ON `product_images`.`product_Product_id` = `product`.`Product_id` WHERE `Product_name` LIKE '%" . $product_name . "%' AND `product`.`Qty` != '0' ");
         $product_num = $product_rs->num_rows;
 
         for ($x = 0; $x < $product_num; $x++) {
