@@ -501,10 +501,10 @@ if ($command == "addFlexProduct") {
                 // Delete Qty From Product Table
                 $QtyProduct_rs =  FlexDatabase::search("SELECT * FROM `product` WHERE `Product_id` = '" . $OrderCart_data["product_Product_id"] . "'  ");
                 $QtyProduct_num = $QtyProduct_rs->num_rows;
-                if($QtyProduct_num == 1){
+                if ($QtyProduct_num == 1) {
                     $QtyProduct_data = $QtyProduct_rs->fetch_assoc();
                     $UpdateProdcuct_Qty = $QtyProduct_data["Qty"] - $CartProduct_Qty;
-                    FlexDatabase::iud("UPDATE `product` SET `Qty` = '".$UpdateProdcuct_Qty."' WHERE `Product_id` = '".$OrderCart_data["product_Product_id"]."'  ");
+                    FlexDatabase::iud("UPDATE `product` SET `Qty` = '" . $UpdateProdcuct_Qty . "' WHERE `Product_id` = '" . $OrderCart_data["product_Product_id"] . "'  ");
                 }
             }
 
@@ -801,7 +801,46 @@ if ($command == "addFlexProduct") {
 
     FlexDatabase::search("DELETE FROM `product_flavour` WHERE `pf_product_id` = '" . $pid . "' AND `pf_flavour_id` = '" . $Flavour_id . "'  ");
     echo ("Delete Success");
+} else if ($command == "LoadCheckoutCustomerData") {
+    $CustomerCookie = $_POST["CookieId"];
+
+    $CustomerCookie_rs = FlexDatabase::search("SELECT * FROM `user` INNER JOIN `cookie` ON `cookie`.`C_id` =  `user`.`Cookie_C_id`  WHERE `Cookie` = '" . $CustomerCookie . "'");
+    $CustomerCookie_num = $CustomerCookie_rs->num_rows;
+
+    if ($CustomerCookie_num == 1) {
+        $CustomerCookie_data = $CustomerCookie_rs->fetch_assoc();
+        $Email = $CustomerCookie_data["Email"];
+        $Phone_no = $CustomerCookie_data["mobile"];
+        $FirstName = $CustomerCookie_data["FIrst_name"];
+        $LastName = $CustomerCookie_data["Last_name"];
+        $Address = $CustomerCookie_data["Address"];
+        $City = $CustomerCookie_data["City"];
+        $PostalCode = $CustomerCookie_data["PostalCode"];
+
+
+        $jsonArray = array(
+            "Action" => "Have",
+            "Email" => $Email,
+            "PhoneNo" => $Phone_no,
+            "First_name" => $FirstName,
+            "Last_name" => $LastName,
+            "Address" => $Address,
+            "City" => $City,
+            "PostalCode" => $PostalCode,
+        );
+        $jsonString = json_encode($jsonArray);
+        echo ($jsonString);
+    } else {
+        $jsonArray = array(
+            "Action" => "Nothing");
+        $jsonString = json_encode($jsonArray);
+        echo ($jsonString);
+    }
 } 
+
+
+
+
 // else if ($command == "ChangingFlavour") {
 //    $flavour_name = $_POST["FlavourName"];
 //    $_SESSION["Flavour"] = $flavour_name;

@@ -262,6 +262,45 @@ if (!isset($_COOKIE["User"])) {
         var MaxQuantity = <?php echo ($product_data["Qty"]) ?>;
     </script>
 
+    <!-- Load Customer Data to the TextField  -->
+
+    <script>
+        function LoadData(CookieId) {
+            var command = "LoadCheckoutCustomerData";
+            var CookieId = CookieId;
+
+            var f = new FormData();
+            f.append("command", command);
+            f.append("CookieId", CookieId);
+
+
+            var r = new XMLHttpRequest();
+            r.onreadystatechange = function() {
+                if (r.readyState == 4 && r.status == 200) {
+                    var response = r.responseText;
+
+                    var JSONObj = JSON.parse(response);
+
+                    if (JSONObj.Action = "Have") {
+                        document.getElementById("Email").value = JSONObj.Email;
+                        document.getElementById("mobile").value = JSONObj.PhoneNo;
+                        document.getElementById("fname").value = JSONObj.First_name;
+                        document.getElementById("lname").value = JSONObj.LastName;
+                        document.getElementById("Address").value = JSONObj.Address;
+                        document.getElementById("City").value = JSONObj.City;
+                        document.getElementById("Pcode").value = JSONObj.PostalCode;
+                    }
+
+                }
+            };
+            r.open("POST", "FlexBackendPross.php", true);
+            r.send(f);
+        }
+
+        window.addEventListener("load", LoadData('<?php echo ($_COOKIE["User"]) ?>'));
+    </script>
+
+
 
     <script src="js/script.js">
     </script>
