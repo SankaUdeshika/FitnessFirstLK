@@ -498,6 +498,14 @@ if ($command == "addFlexProduct") {
                 FlexDatabase::iud("INSERT INTO `orderitem` (`Qty`,`Order_Order_id`,`product_Product_id`) VALUES('" . $OrderCart_data["Qty"] . "','" . $Order_id . "','" . $OrderCart_data["product_Product_id"] . "')");
                 // Delete From Cart
                 FlexDatabase::iud("DELETE FROM `cart` WHERE `Cart_id` = '" . $OrderCart_data["Cart_id"] . "' ");
+                // Delete Qty From Product Table
+                $QtyProduct_rs =  FlexDatabase::search("SELECT * FROM `product` WHERE `Product_id` = '" . $OrderCart_data["product_Product_id"] . "'  ");
+                $QtyProduct_num = $QtyProduct_rs->num_rows;
+                if($QtyProduct_num == 1){
+                    $QtyProduct_data = $QtyProduct_rs->fetch_assoc();
+                    $UpdateProdcuct_Qty = $QtyProduct_data["Qty"] - $CartProduct_Qty;
+                    FlexDatabase::iud("UPDATE `product` SET `Qty` = '".$UpdateProdcuct_Qty."' WHERE `Product_id` = '".$OrderCart_data["product_Product_id"]."'  ");
+                }
             }
 
             echo ("Order Add SuccessFull" . "," . $Order_id);

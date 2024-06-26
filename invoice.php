@@ -217,7 +217,6 @@ $Order_id = $_GET["id"];
 
         </div>
     </div>
-    <?php include "footer.php" ?>
 
     <script src="js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
