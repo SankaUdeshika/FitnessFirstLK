@@ -498,29 +498,38 @@
 }
 
 .FitnesFirstTextLogo {
-  width: 600px;
+  width: 1000px;
   height: auto;
   position: absolute;
-  top: 150px;
-  left: 120px;
-  animation: FitnessFirtstLogoFirstAnimation 1s forwards  ease-in-out ;
+  top: 130px;
+  left: 135px;
+  overflow: hidden;
+  overflow-x: hidden;
+  animation: FitnessFirtstLogoFirstAnimation 1s forwards ease-in-out;
+}
+
+@media screen and (max-width: 1000px) {
+  .FitnesFirstTextLogo {
+    width: 900px;
+    height: auto;
+    position: absolute;
+    top: 130px;
+    left: 120px;
+    overflow: hidden;
+    overflow-x: hidden;
+    animation: FitnessFirtstLogoFirstAnimation 1s forwards ease-in-out;
+  }
 }
 
 @keyframes FitnessFirtstLogoFirstAnimation {
-  0%{
-    width: 1200px;
-    height: auto;
-    position: absolute;
-    top: 250px;
-    left: 420px;
+  0% {
+    opacity: 0;
+    filter: blur(14px);
+    scale: 1.5;
   }
 
-  100%{
-    width: 600px;
-    height: auto;
-    position: absolute;
-    top: 150px;
-    left: 120px;
+  100% {
+ scale: 1;
   }
 }
 
@@ -575,27 +584,6 @@
   padding-right: 20px;
   border: 0px transparent solid;
   transition: ease-in-out 0.5s;
-}
-@media screen and (max-width: 1000px) {
-  .FitnesFirstTextLogo {
-    width: 300px;
-    height: auto;
-    position: absolute;
-    top: 10%;
-    left: 10%;
-  }
-  .TrustedByIcons {
-    width: 600px;
-    height: 100px;
-    position: absolute;
-    top: 30%;
-    left: 5%;
-  }
-  .TrustedText {
-    font-size: medium;
-    font-weight: bold;
-    color: gray;
-  }
 }
 
 .SectionCover {
@@ -1321,8 +1309,7 @@
   height: auto;
   transition: 0.5s ease-in-out; */
   backdrop-filter: blur(14px);
-  transition: 0.5s ease-in-out ;
- 
+  transition: 0.5s ease-in-out;
 }
 
 .FlexLOGO.active {
@@ -1335,7 +1322,6 @@
   background-color: rgba(0, 0, 0, 0.411);
   box-shadow: 10px 10px 100vh black;
   box-shadow: -10px -10px -100vh black;
-
 }
 
 .FlexHeadrTab {

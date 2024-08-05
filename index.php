@@ -38,21 +38,8 @@
                             Your browser does not support HTML5 video.
                         </video>
                         <!-- <video src="Resources/Videos/4745810-uhd_3840_2160_25fps (1).mp4" autoplay class="IndexTopImage " alt="MainTopImage"></video> -->
-                        <img src="Resources/images/LOGO/FitnessFirstTextLogo.svg" class="FitnesFirstTextLogo" alt="">
-                        <div class="col-10 offset-1 TrustedByIcons">
-                            <div class="row">
-                                <div class="col-12">
-                                    <span class="TrustedText">Trusted By</span>
-                                </div>
-                                <div class="col-12">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <img src="Resources/images/LOGO/BrandRow.png" style="width: 100%; height: auto;" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <img src="Resources/images/LOGO/FitnessFirstTextLogo1.svg" class="FitnesFirstTextLogo" alt="">
+                        
                     </div>
 
                     
