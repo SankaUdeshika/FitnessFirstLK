@@ -294,11 +294,13 @@ function adminLogin() {
   request.onreadystatechange = function () {
     if (request.readyState == 4 && request.status == 200) {
       var response = request.responseText;
+      alert(response);
       if (response == "Success") {
         window.location = "adminDashboard.php";
-      } else if (response == "Error") {
-        alert("invalid email and Password");
-      }
+      } 
+      // else if (response == "Error") {
+      //   alert("invalid email and Password");
+      // }
     }
   };
   request.open("POST", "BackEndProcess.php", true);
@@ -1145,7 +1147,6 @@ function ChangeProductInfo(id) {
 
   var ProductQty = document.getElementById("ProductQty" + id).value;
   var ProductPrice = document.getElementById("ProductPrice" + id).value;
-  
 
   var f = new FormData();
   f.append("command", command);
@@ -1330,13 +1331,81 @@ function AddOrder() {
       var SplitLength = SplitOut.length;
 
       if (SplitLength > 1) {
-        window.location = "invoice.php?id=" + SplitOut[1];
+        alert("PayhereRunning");
+        PayHere(SplitOut[1], fname, lname, mobile, Email, Address, City);
       } else {
         alert(response);
       }
     }
   };
   r.open("POST", "FlexBackendPross.php", true);
+  r.send(f);
+}
+
+// Payhere PayNow
+function PayHere(Order_id, fname, lname, mobile, Email, Address, City) {
+  var f = new FormData();
+  f.append("Order_id", Order_id);
+
+  var r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if (r.readyState == 4 && r.status == 200) {
+      var HashResponse = r.responseText;
+      alert(HashResponse);
+      var jsonObj = JSON.parse(HashResponse);
+      alert(jsonObj.hash);
+
+      // Payhere Intregator
+      // Payment completed. It can be a successful failure.
+      payhere.onCompleted = function onCompleted(Order_id) {
+        console.log("Payment completed. OrderID:" + Order_id);
+        // Redirect invoice page
+        window.location = "invoice.php?id=" + Order_id;
+        // Note: validate the payment and show success or failure page to the customer
+      };
+
+      // Payment window closed
+      payhere.onDismissed = function onDismissed() {
+        // Note: Prompt user to pay again or show an error page
+        console.log("Payment dismissed");
+        // Redirect invoice page
+        window.location = "invoice.php?id=" + Order_id;
+      };
+
+      // Error occurred
+      payhere.onError = function onError(error) {
+        // Note: show an error page
+        console.log("Error:" + error);
+        alert(error);
+      };
+
+      // Put the payment variables here
+      var payment = {
+        sandbox: true,
+        merchant_id: jsonObj.merchant_id, // Replace your Merchant ID
+        return_url: "http://localhost/fitnesFirst/Checkout.php", // Important
+        cancel_url: "http://localhost/fitnesFirst/Checkout.php", // Important
+        notify_url: "http://sample.com/notify",
+        order_id: jsonObj.Order_id,
+        items: jsonObj.Order_id,
+        amount: jsonObj.amount,
+        currency: "LKR",
+        hash: jsonObj.hash, // *Replace with generated hash retrieved from backend
+        first_name: fname,
+        last_name: lname,
+        email: Email,
+        phone: mobile,
+        address: Address,
+        city: City,
+        country: "Sri Lanka",
+        delivery_address: Address,
+        delivery_city: City,
+        delivery_country: "Sri Lanka",
+      };
+      payhere.startPayment(payment);
+    }
+  };
+  r.open("POST", "GenerateHashcode.php", true);
   r.send(f);
 }
 

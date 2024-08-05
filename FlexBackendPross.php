@@ -508,6 +508,9 @@ if ($command == "addFlexProduct") {
                 }
             }
 
+            
+
+
             echo ("Order Add SuccessFull" . "," . $Order_id);
         } else if ($User_num == 0) {
 

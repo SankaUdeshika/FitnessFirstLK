@@ -32,6 +32,7 @@ $pageno;
 <body class="bg-black">
     <!-- preloader -->
     <div class="col-12 preloader " id="preloader">
+        <?php include "preloader.php" ?>
     </div>
 
     <div class="container-fluid">

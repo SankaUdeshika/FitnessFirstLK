@@ -16,7 +16,6 @@
         <div class="row">
             <div class="col-12 headerCover d-lg-block d-none">
                 <div class="row">
-
                     <div class="col-2 LogoCover" onclick="window.location='index.php'">
                         <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.svg" class="FlexImage" alt="NewFitnessFirstLogo">
                     </div>

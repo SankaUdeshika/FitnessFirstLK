@@ -20,9 +20,11 @@
     </div>
 
     <!-- Header -->
-    <div class="col-12" style="position: fixed; z-index: 4;">
+    <div class="col-12 FlexLOGO" style="position: fixed; z-index: 4; ">
         <?php include "header.php" ?>
     </div>
+    <span class="Number" style="z-index: -100;">sanka</span>
+
     <!-- Contaent -->
     <div class="container-fluid">
         <div class="row">
@@ -31,7 +33,11 @@
                     <!-- TopImage -->
                     <!-- Large Screen -->
                     <div class="col-12" class="indexTopImageCover FirstDownToUPAnimation">
-                        <img src="Resources/images/carouselImages/FFLOGO 2.png" class="IndexTopImage " alt="MainTopImage">
+                        <video autoplay muted loop id="myVideo" class="IndexTopImage">
+                            <source src="Resources/Videos/4745810-uhd_3840_2160_25fps (1).mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <!-- <video src="Resources/Videos/4745810-uhd_3840_2160_25fps (1).mp4" autoplay class="IndexTopImage " alt="MainTopImage"></video> -->
                         <img src="Resources/images/LOGO/FitnessFirstTextLogo.svg" class="FitnesFirstTextLogo" alt="">
                         <div class="col-10 offset-1 TrustedByIcons">
                             <div class="row">
@@ -49,42 +55,7 @@
                         </div>
                     </div>
 
-                    <!-- Explore Our Program -->
-                    <div class="col-10 d-lg-block d-none offset-1 mt-5 mb-lg-5 mb-0">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="row">
-                                    <div class="col-9 ">
-                                        <h1 class="ExploreTextWhite FirstFadeUp mt-lg-0 mt-5" id="outtext"> Our Program</h1>
-                                    </div>
-
-                                    <div class="col-12  mt-5">
-                                        <div class="row">
-                                            <div class="col-lg-3 col-12 mt-5   d-flex justify-content-center  text-center">
-                                                <button class="PrgrammeCategories">Cardio Strength</bu>
-                                            </div>
-
-                                            <div class="col-lg-3 col-12 mt-5   d-flex justify-content-center  text-center">
-                                                <button class="PrgrammeCategories">&nbsp;&nbsp;&nbsp;&nbsp; Fat Loss &nbsp;&nbsp;&nbsp;&nbsp;</bu>
-                                            </div>
-
-                                            <div class="col-lg-3 col-12 mt-5  d-flex justify-content-center  text-center">
-                                                <button class="PrgrammeCategories">Pre & Pose Natel</bu>
-                                            </div>
-
-                                            <div class="col-lg-3 col-12 mt-5 d-flex justify-content-center  text-center">
-                                                <button class="PrgrammeCategories">Elderly Training</bu>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
 
                     <div class="col-10 offset-1 mt-5 mb-5">
                         <div class="row">

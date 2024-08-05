@@ -128,7 +128,7 @@ if (!isset($_COOKIE["User"])) {
                                         <div class="row">
                                             <!-- Load Cart -->
                                             <?php
-                                            $cookie_rs = FlexDatabase::search("SELECT * FROM `cookie` WHERE `cookie` = '" . $_COOKIE["User"] . "'");
+                                            $cookie_rs = FlexDatabase::search("SELECT * FROM `cookie` WHERE `cookie` = '" . $_COOKIE["User"] . "' ");
                                             $cookie_data = $cookie_rs->fetch_assoc();
 
                                             $cart_rs = FlexDatabase::search("SELECT * FROM `cart` WHERE `Cookie_C_id` = '" . $cookie_data["C_id"] . "' ");
@@ -306,6 +306,7 @@ if (!isset($_COOKIE["User"])) {
     </script>
     <script src="js/bootstrap.bundle.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
 </body>
 
 </html>

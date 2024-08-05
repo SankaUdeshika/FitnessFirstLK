@@ -79,7 +79,7 @@
 
 .indexTopImageCover {
   width: 100%;
-  height: 500px;
+  height: 200px;
   display: flex;
   justify-content: center;
   position: relative;
@@ -93,9 +93,11 @@
 
 .IndexTopImage {
   width: 100%;
-  /* height: 500px; */
+  height: 400px;
   object-fit: cover;
   background-position: center;
+  background-attachment: fixed;
+  object-fit: cover;
 }
 .TopImageTrainingBtn {
   background-color: red;
@@ -501,7 +503,27 @@
   position: absolute;
   top: 150px;
   left: 120px;
+  animation: FitnessFirtstLogoFirstAnimation 1s forwards  ease-in-out ;
 }
+
+@keyframes FitnessFirtstLogoFirstAnimation {
+  0%{
+    width: 1200px;
+    height: auto;
+    position: absolute;
+    top: 250px;
+    left: 420px;
+  }
+
+  100%{
+    width: 600px;
+    height: auto;
+    position: absolute;
+    top: 150px;
+    left: 120px;
+  }
+}
+
 .TrustedText {
   font-size: xx-large;
   font-weight: bold;
@@ -1295,18 +1317,25 @@
   font-family: "Alinasi";
 }
 .FlexLOGO {
-  width: 120%;
+  /* width: 120%;
   height: auto;
-  transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out; */
+  backdrop-filter: blur(14px);
+  transition: 0.5s ease-in-out ;
+ 
 }
 
 .FlexLOGO.active {
-  width: 70%;
-  height: auto;
+  /* width: 70%;
+  height: auto; */
+  background-color: black;
 }
 
 .FlexLOGO:hover {
-  filter: sepia(5);
+  background-color: rgba(0, 0, 0, 0.411);
+  box-shadow: 10px 10px 100vh black;
+  box-shadow: -10px -10px -100vh black;
+
 }
 
 .FlexHeadrTab {
