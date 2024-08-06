@@ -39,10 +39,14 @@
                         </video>
                         <!-- <video src="Resources/Videos/4745810-uhd_3840_2160_25fps (1).mp4" autoplay class="IndexTopImage " alt="MainTopImage"></video> -->
                         <img src="Resources/images/LOGO/FitnessFirstTextLogo1.svg" class="FitnesFirstTextLogo" alt="">
-                        
                     </div>
 
-                    
+
+                    <!-- ImagesGrid -->
+                    <div class="col-12 mt-0">
+                        <?php include "AboutHomePage.php" ?>
+                    </div>
+
 
                     <div class="col-10 offset-1 mt-5 mb-5">
                         <div class="row">
