@@ -43,8 +43,22 @@
 
 
                     <!-- ImagesGrid -->
-                    <div class="col-12 mt-0">
+                    <div class="col-12 mb-5">
                         <?php include "AboutHomePage.php" ?>
+                    </div>
+
+                    <!-- EventList -->
+                    <div class="col-12 position-relative">
+                        <div class="row">
+                            <div class="EventImage position-relative"></div>
+                            <marquee behavior="" direction="left" class="marqueeElement" style="position: absolute; top: 0px;">
+                                <div class=""><span class="EventListText">FIGHTNIGHT </span> </div>
+                            </marquee>
+
+                            <marquee behavior="" direction="right" class="marqueeElement" style="position: absolute; top: 100px;">
+                                <div class=""><span class="EventListText2">Example1 </span> </div>
+                            </marquee>
+                        </div>
                     </div>
 
 

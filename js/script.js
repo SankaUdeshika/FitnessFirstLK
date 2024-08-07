@@ -1805,3 +1805,25 @@ function ChangeFlavour(FlavourName) {
   r.open("POST", "FlexBackendPross.php", true);
   r.send(f);
 }
+
+document.querySelector('.EventListText').addEventListener('mouseover', function() {
+  document.querySelector('.EventImage').style.backgroundImage = "url('Resources/images/carouselImages/3.jpeg')";
+  document.querySelector('.EventImage').style.transition = "0.2s ease-in-out";
+
+});
+
+document.querySelector('.EventListText').addEventListener('mouseout', function() {
+  document.querySelector('.EventImage').style.backgroundImage = "url('Resources/images/carouselImages/2.jpeg')";
+  document.querySelector('.EventImage').style.transition = "0.2s ease-in-out";
+});
+
+// EventlistnerText2
+document.querySelector('.EventListText2').addEventListener('mouseover',function(){
+  document.querySelector('.EventImage').style.backgroundImage = "url('Resources/images/carouselImages/4.jpeg')";
+  document.querySelector('.EventImage').style.transition = "0.2s ease-in-out";
+});
+
+document.querySelector('.EventListText2').addEventListener('mouseout', function() {
+  document.querySelector('.EventImage').style.backgroundImage = "url('Resources/images/carouselImages/2.jpeg')";
+  document.querySelector('.EventImage').style.transition = "0.2s ease-in-out";
+});

@@ -1795,3 +1795,35 @@
   width: 100%;
   transition: 0.5s ease-in-out;
 }
+
+@font-face {
+  font-family: FFont;
+  src: url("../FONTS/BebasNeue-Regular.ttf");
+}
+
+.EventListText {
+  font-size: 100px;
+  color: black;
+  text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white,
+    2px 2px 0 white;
+  font-family: "FFont";
+  transition: 0.5s ease-in-out;
+}
+.EventListText2 {
+  font-size: 100px;
+  color: black;
+  text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white,
+    2px 2px 0 white;
+  font-family: "FFont";
+  transition: 0.5s ease-in-out;
+}
+
+.EventImage {
+  background-image: url("../Resources/images/carouselImages/1.jpeg");
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  object-fit: cover;
+  transition: 0.2s ease-in-out;
+}
