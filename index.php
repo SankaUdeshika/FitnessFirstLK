@@ -43,23 +43,11 @@
 
 
                     <!-- ImagesGrid -->
-                    <div class="col-12 mb-5">
+                    <div class="col-12 ">
                         <?php include "AboutHomePage.php" ?>
                     </div>
 
-                    <!-- EventList -->
-                    <div class="col-12 position-relative">
-                        <div class="row">
-                            <div class="EventImage position-relative"></div>
-                            <marquee behavior="" direction="left" class="marqueeElement" style="position: absolute; top: 0px;">
-                                <div class=""><span class="EventListText">FIGHTNIGHT </span> </div>
-                            </marquee>
 
-                            <marquee behavior="" direction="right" class="marqueeElement" style="position: absolute; top: 100px;">
-                                <div class=""><span class="EventListText2">Example1 </span> </div>
-                            </marquee>
-                        </div>
-                    </div>
 
 
                     <div class="col-10 offset-1 mt-5 mb-5">
@@ -105,6 +93,20 @@
                             <div class="col-12 d-flex justify-content-center mt-3 mb-5">
                                 <button class="BMICalculateBtn" onclick="CalculateBMI();">Calculate</button>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- EventList -->
+                    <div class="col-12 position-relative">
+                        <div class="row">
+                            <div class="EventImage position-relative"></div>
+                            <marquee behavior="" direction="left" class="marqueeElement" style="position: absolute; top: 0px;">
+                                <div class=""><span class="EventListText">FIGHTNIGHT </span> </div>
+                            </marquee>
+
+                            <marquee behavior="" direction="right" class="marqueeElement" style="position: absolute; top: 100px;">
+                                <div class=""><span class="EventListText2">Example1 </span> </div>
+                            </marquee>
                         </div>
                     </div>
 
@@ -212,7 +214,7 @@
 
 
                                     <!-- Colombo 7 -->
-                                    <div class="col-lg-2 col-8 offset-lg-0 offset-4 mt-lg-0 mt-5 rounded-4 mx-5 Fade" style="background-color: #786F6A; overflow: hidden; animation-delay: 3s;">
+                                    <div class="col-lg-2 col-8 offset-lg-0 offset-4 mt-lg-0 mt-5 rounded-4 mx-5 Fade" style="background-color: #ff0000; overflow: hidden; animation-delay: 3s;">
                                         <div class="row p-1">
                                             <div class="col-10 offset-1" style="position: relative; ">
                                                 <div class="row">
