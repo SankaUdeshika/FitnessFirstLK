@@ -47,6 +47,64 @@
                         <?php include "AboutHomePage.php" ?>
                     </div>
 
+                    <!-- Thid Section -->
+
+                    <div class="col-12">
+                        <div class="row">
+
+                            <div class="col-10 offset-1">
+                                <div class="row">
+                                    <div class="col-6 findGymBox" >
+                                        <div class="row">
+
+                                            <div class="col-12 overflow-hidden">
+                                                <img src="Resources/images/carouselImages/4.jpeg" class="findGymImage">
+                                            </div>
+
+                                            <div class="col-12 text-center mt-5 findGymText">
+                                                <p class="GymFOnt" style="font-size: 100px;">FIND A <br><span class="GymFOnt" style="font-size: 160px; color: red;">GYM</span> <br> <span class="GymFOnt" style="font-size: 130px;">Near</span> <br> <span class="GymFOnt" style="font-size: 180px;">YOU</span> </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 gymsupliment overflow-overflow-x-hidden overflow-y-hidden ">
+                                        <div class="row">
+                                            <div class="col-12 overflow-hidden overflow-x-hidden position-relative">
+                                                <img src="Resources/images/blogImage/blog7How To Get Fit In The New Year.jpeg" class="SupplimentBOX">
+                                                <div class="col-12 supplimentRow ">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <div class="FlexButtonDIV"> <button class="flexShoppingButton" onclick="window.location = 'FlexHome.php'">Flex Shopping</button> </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="supplimentBOXOVERLAY d-flex justify-content-center align-items-center"> Visit our <br> Suppliment <br> Shop </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 mt-4 position-relative overflow-x-hidden overflow-y-hidden overflow-hidden">
+                                                <img src="Resources/images/storyboxImage/story4.jpeg" class="BlogBOX">
+                                                <div class="col-12 BLOGRow ">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <div class="BLOGBOXOVERLAY d-flex justify-content-center align-items-center"> Discover insights and <br> stories on our blog <br> Dive in here! </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="FlexButtonDIV"> <button class="flexShoppingButton" onclick="window.location = 'blog.php'">BLOGS</button> </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
 
 
 

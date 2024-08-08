@@ -1827,3 +1827,41 @@ document.querySelector('.EventListText2').addEventListener('mouseout', function(
   document.querySelector('.EventImage').style.backgroundImage = "url('Resources/images/carouselImages/2.jpeg')";
   document.querySelector('.EventImage').style.transition = "0.2s ease-in-out";
 });
+
+
+document.querySelector(".findGymBox").addEventListener("mouseover",function(){
+  document.querySelector(".findGymImage").style.scale = 1.2;
+  document.querySelector(".findGymText").style.scale = 0.9;
+  document.querySelector(".findGymBox").style.cursor = "pointer";
+});
+
+document.querySelector(".findGymBox").addEventListener("mouseout",function(){
+  document.querySelector(".findGymImage").style.scale = 1;
+  document.querySelector(".findGymText").style.scale = 1;
+});
+
+
+document.querySelector(".supplimentRow").addEventListener("mouseover",function(){
+  document.querySelector(".supplimentRow").style.left = "0%" ;
+  document.querySelector(".SupplimentBOX").style.scale = "1.1" ;
+
+});
+document.querySelector(".supplimentRow").addEventListener("mouseout",function(){
+  document.querySelector(".supplimentRow").style.left = "-53%" ;
+  document.querySelector(".SupplimentBOX").style.scale = "1" ;
+
+});
+
+
+
+
+document.querySelector(".BLOGRow").addEventListener("mouseover",function(){
+  document.querySelector(".BLOGRow").style.left = "0%" ;
+  document.querySelector(".BlogBOX").style.scale = "1.1" ;
+
+});
+document.querySelector(".BLOGRow").addEventListener("mouseout",function(){
+  document.querySelector(".BLOGRow").style.left = "53%" ;
+  document.querySelector(".BlogBOX").style.scale = "1" ;
+
+});

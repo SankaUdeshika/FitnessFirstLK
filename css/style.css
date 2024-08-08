@@ -1827,3 +1827,112 @@
   object-fit: cover;
   transition: 0.2s ease-in-out;
 }
+
+.findGymBox {
+  position: relative;
+  transition: 0.5s ease-in-out;
+}
+
+.findGymImage {
+  width: 100%;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  transition: 0.5s ease-in-out;
+}
+
+.findGymText {
+  position: absolute;
+  top: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.GymFOnt {
+  font-family: "FFont";
+  line-height: 0.8;
+}
+
+.SupplimentBOX {
+  width: 100%;
+  height: 250px;
+  background-position: top;
+  background-size: cover;
+  object-fit: cover;
+  transition: 0.5s ease-in-out;
+}
+
+.supplimentBOXOVERLAY {
+  width: 100%;
+  height: 250px;
+  font-family: "FFont";
+  font-size: xx-large;
+  transition: 0.5s ease-in-out;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.8379726890756303) 44%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.BLOGBOXOVERLAY {
+  width: 100%;
+  height: 250px;
+  font-family: "FFont";
+  font-size: xx-large;
+  transition: 0.5s ease-in-out;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    266deg,
+    rgba(0, 0, 0, 0.8379726890756303) 44%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.FlexButtonDIV {
+  width: 100%;
+  height: 250px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.supplimentRow {
+  position: absolute;
+  left: -53%;
+  top: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  transition: 0.5s ease-in-out;
+}
+.BLOGRow {
+  position: absolute;
+  left: 53%;
+  top: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  transition: 0.5s ease-in-out;
+}
+
+.flexShoppingButton {
+  background-color: red;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  font-family: "FFont";
+  border: 0px solid transparent;
+  font-size: xx-large;
+  transition: 0.5s ease-in-out;
+}
+
+.BlogBOX {
+  width: 100%;
+  height: 235px;
+  background-position: top;
+  background-size: cover;
+  object-fit: cover;
+  transition: 0.5s ease-in-out;
+}
