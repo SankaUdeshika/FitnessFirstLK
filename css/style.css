@@ -151,7 +151,7 @@
 .ExploreTextWhite {
   color: white;
   font-size: 50px;
-  font-family: "urbanist";
+  font-family: "FFont";
   font-weight: bold;
 }
 .ExploreTextWhite2 {
@@ -1935,4 +1935,19 @@
   background-size: cover;
   object-fit: cover;
   transition: 0.5s ease-in-out;
+}
+
+.GymLocationText {
+  font-family: "FFont";
+  color: white;
+  font-size: 50px;
+  transition: ease-in-out 0.5s;
+}
+
+.GymLocationText:hover {
+  font-family: "FFont";
+  color: red;
+  font-size: 50px;
+  transition: ease-in-out 0.2s;
+  cursor: pointer;
 }

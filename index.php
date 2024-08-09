@@ -54,7 +54,7 @@
 
                             <div class="col-10 offset-1">
                                 <div class="row">
-                                    <div class="col-6 findGymBox" >
+                                    <div class="col-6 findGymBox">
                                         <div class="row">
 
                                             <div class="col-12 overflow-hidden">
@@ -105,6 +105,8 @@
 
                         </div>
                     </div>
+
+                    <!-- This Section -->
 
 
 
@@ -169,10 +171,10 @@
                     </div>
 
                     <!-- Join Now Second -->
-                    <div class="col-10 offset-1 mt-5 mb-5 rounded-4 DownToUP Fade" style="background-color: #0D0D0D;">
+                    <div class="col-8 offset-2 mt-5 mb-5 rounded-4 DownToUP Fade" style="background-color: #0D0D0D;">
                         <div class="row">
                             <div class="col-7 m-3">
-                                <span class="text-white fs-1 d-lg-block d-none"> Enhance user experience with healthy nutrition tips, support resources, and social elements.</span>
+                                <span class="text-white fs-3 d-lg-block d-none"> Enhance user experience with healthy nutrition tips, support resources, and social elements.</span>
                                 <span class="text-white fs-4 d-lg-none d-block"> Enhance user experience with healthy nutrition tips, support resources, and social elements.</span>
                             </div>
                             <div class="col-4 d-flex justify-content-end alginitems-center">
@@ -414,9 +416,6 @@
                                             </div>
                                         </div>
                                     </div>
-
-
-
                                 </div>
                             </div>
                         </div>
@@ -425,7 +424,6 @@
                     <!-- CUstomer Comments  -->
                     <div class="col-12 mt-5">
                         <div class="row">
-
                             <div class="col-10 offset-1">
                                 <div class="row">
                                     <div class="col-lg-6 col-12">
@@ -498,6 +496,34 @@
 
                         </div>
                     </div>
+
+                    <!-- FITNESSFIRST LOCATION -->
+
+                    <div class="col-12 mt-5">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-3 text-center">
+                                        <span class="GymLocationText" onclick="showGoogleLocation('colombo');">colombo 7</span>
+                                    </div>
+                                    <div class="col-3 text-center">
+                                        <span class="GymLocationText" onclick="showGoogleLocation('jaela');">Ja Ela </span>
+                                    </div>
+                                    <div class="col-3 text-center">
+                                        <span class="GymLocationText" onclick="showGoogleLocation('wtc');"> WTC </span>
+                                    </div>
+                                    <div class="col-3 text-center">
+                                        <span class="GymLocationText" onclick="showGoogleLocation('wtc');"> Moors Club </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <iframe style="transition: 0.5s ease-in-out;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31686.815227955212!2d79.82922301083981!3d6.9083058999999984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2597a85531ecb%3A0xd24f023f2b2a2bd5!2sFitness%20First%20-%20Colombo%207!5e0!3m2!1sen!2slk!4v1723187781024!5m2!1sen!2slk" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="GoogleMap"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+
 
                     <!-- Subscribe Section -->
                     <div class="col-12 mt-5 mb-5 Fade DownToUP">

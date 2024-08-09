@@ -1865,3 +1865,17 @@ document.querySelector(".BLOGRow").addEventListener("mouseout",function(){
   document.querySelector(".BlogBOX").style.scale = "1" ;
 
 });
+
+
+
+function showGoogleLocation(location){
+  if(location == 'colombo'){
+    document.getElementById('GoogleMap').src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31686.815227955212!2d79.82922301083981!3d6.9083058999999984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2597a85531ecb%3A0xd24f023f2b2a2bd5!2sFitness%20First%20-%20Colombo%207!5e0!3m2!1sen!2slk!4v1723187781024!5m2!1sen!2slk";
+
+  }else if(location == 'jaela'){
+    document.getElementById('GoogleMap').src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31676.654279610524!2d79.86019721083984!3d7.0583264000000066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2f737cddbfe73%3A0x8db9e4efb440ac7a!2sFitness%20First%20-%20Ja%20Ela!5e0!3m2!1sen!2slk!4v1723188546821!5m2!1sen!2slk";
+  }else if(location == 'wtc'){
+    document.getElementById('GoogleMap').src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31685.182231971485!2d79.80819611083984!3d6.9326339999999975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2592c3f054759%3A0x3cdec16a4408635e!2sFitness%20First%20-%20WTC!5e0!3m2!1sen!2slk!4v1723188585859!5m2!1sen!2slk";
+    
+  }
+}
