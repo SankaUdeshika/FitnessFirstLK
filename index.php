@@ -531,7 +531,7 @@
                             <div class="col-lg-10 col-12 p-5 border border-1 border-white rounded-5 offset-lg-1 offset-0">
                                 <div class="row">
                                     <div class="col-12 text-center">
-                                        <span class=" IndexSubscribeText ">Subscribe out fitness tips</span>
+                                        <span class=" IndexSubscribeText ">Subscribe our fitness tips</span>
                                     </div>
                                     <div class="col-8 offset-2 text-center">
                                         <span class="fs-5">Clearly communicate the benefits of subscribing, such as exclusive content and breaking news.</span>
