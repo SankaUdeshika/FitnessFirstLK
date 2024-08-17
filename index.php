@@ -54,7 +54,7 @@
 
                             <div class="col-10 offset-1">
                                 <div class="row">
-                                    <div class="col-6 findGymBox">
+                                    <div class="col-lg-6 col-12 findGymBox" onclick="window.location = '#LocationMap'">
                                         <div class="row">
 
                                             <div class="col-12 overflow-hidden">
@@ -68,7 +68,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-6 gymsupliment overflow-overflow-x-hidden overflow-y-hidden ">
+                                    <div class="col-lg-6 col-12 mt-lg-0 mt-4 gymsupliment overflow-overflow-x-hidden overflow-y-hidden ">
                                         <div class="row">
                                             <div class="col-12 overflow-hidden overflow-x-hidden position-relative">
                                                 <img src="Resources/images/blogImage/blog7How To Get Fit In The New Year.jpeg" class="SupplimentBOX">
@@ -480,7 +480,7 @@
                                                     <div class="col-6 d-flex mt-5 align-items-center">
                                                         <div class="row">
                                                             <div class="col-12">
-                                                                <span class="fs-3 text-white">Jonathan Edward</span>
+                                                                <span class="fs-3 text-white" id="LocationMap">Jonathan Edward</span>
                                                             </div>
                                                             <div class="col-12">
                                                                 <span class="fs-4 text-white-50">Office Worker</span>
@@ -499,11 +499,11 @@
 
                     <!-- FITNESSFIRST LOCATION -->
 
-                    <div class="col-12 mt-5">
+                    <div class="col-12 mt-5" >
                         <div class="row">
                             <div class="col-12">
                                 <div class="row">
-                                    <div class="col-3 text-center">
+                                    <div class="col-3 text-center" >
                                         <span class="GymLocationText" onclick="showGoogleLocation('colombo');">colombo 7</span>
                                     </div>
                                     <div class="col-3 text-center">
