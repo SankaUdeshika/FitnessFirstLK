@@ -178,6 +178,104 @@
                         </div>
                     </div>
 
+
+                    <!-- Details Section -->
+                    <!-- Details tab -->
+                    <div class="ag-offer-block">
+                        <div class="ag-format-container">
+                            <ul class="ag-offer_list">
+                                <li class="ag-offer_item">
+                                    <div class="ag-offer_visible-item">
+                                        <div class="ag-offer_img-box">
+                                            <img src="https://raw.githack.com/SochavaAG/example-mycode/master/pens/1_images/icon-64-1.svg" class="ag-offer_img" alt="" />
+                                        </div>
+                                        <div class="ag-offer_title">
+                                            Evetns
+                                        </div>
+                                    </div>
+                                    <div class="ag-offer_hidden-item">
+                                        <p class="ag-offer_text">
+                                            "Join us at the gym, where we organize exciting events for our members! Get a membership and be part of our vibrant community—don't miss out on the fun and fitness.""
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="ag-offer_item">
+                                    <div class="ag-offer_visible-item">
+                                        <div class="ag-offer_img-box">
+                                            <img src="https://raw.githack.com/SochavaAG/example-mycode/master/pens/1_images/icon-64-2.svg" class="ag-offer_img" alt="" />
+                                        </div>
+                                        <div class="ag-offer_title">
+                                            Facilities
+                                        </div>
+                                    </div>
+                                    <div class="ag-offer_hidden-item">
+                                        <p class="ag-offer_text">
+                                            "We offer a range of facilities including a Supplement Shop, Merchandise, Swimming Pool Access, and much more!"
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="ag-offer_item">
+                                    <div class="ag-offer_visible-item">
+                                        <div class="ag-offer_img-box">
+                                            <img src="https://raw.githack.com/SochavaAG/example-mycode/master/pens/1_images/icon-64-3.svg" class="ag-offer_img" alt="" />
+                                        </div>
+                                        <div class="ag-offer_title">
+                                            Gym Trainers
+                                        </div>
+                                    </div>
+                                    <div class="ag-offer_hidden-item">
+                                        <p class="ag-offer_text">
+                                            "We have highly experienced gym trainers who are dedicated to helping you achieve your fitness goals."
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="ag-offer_item">
+                                    <div class="ag-offer_visible-item">
+                                        <div class="ag-offer_img-box">
+                                            <img src="https://raw.githack.com/SochavaAG/example-mycode/master/pens/1_images/icon-64-4.svg" class="ag-offer_img" alt="" />
+                                        </div>
+                                        <div class="ag-offer_title">
+                                            Equipments
+                                        </div>
+                                    </div>
+                                    <div class="ag-offer_hidden-item">
+                                        <p class="ag-offer_text">
+                                            "Whatever your fitness needs, we’ve got you covered with our complete range of gym equipment!" </p>
+                                    </div>
+                                </li>
+                                <li class="ag-offer_item">
+                                    <div class="ag-offer_visible-item">
+                                        <div class="ag-offer_img-box">
+                                            <img src="https://raw.githack.com/SochavaAG/example-mycode/master/pens/1_images/icon-64-5.svg" class="ag-offer_img" alt="" />
+                                        </div>
+                                        <div class="ag-offer_title">
+                                            Supplements
+                                        </div>
+                                    </div>
+                                    <div class="ag-offer_hidden-item">
+                                        <p class="ag-offer_text">
+                                            "We offer premium supplements crafted with the highest quality ingredients to support your health and wellness goals." </p>
+                                    </div>
+                                </li>
+                                <li class="ag-offer_item">
+                                    <div class="ag-offer_visible-item">
+                                        <div class="ag-offer_img-box">
+                                            <img src="https://raw.githack.com/SochavaAG/example-mycode/master/pens/1_images/icon-64-6.svg" class="ag-offer_img" alt="" />
+                                        </div>
+                                        <div class="ag-offer_title">Loacations</div>
+                                    </div>
+                                    <div class="ag-offer_hidden-item">
+                                        <a href="#LocationMap" class="ag-offer_btn">
+                                            View Locations
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
                     <!-- Join Now Second -->
                     <div class="col-8 offset-2 mt-5 mb-5 rounded-4 DownToUP Fade" style="background-color: #0D0D0D;">
                         <div class="row">
