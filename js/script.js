@@ -1807,13 +1807,13 @@ function ChangeFlavour(FlavourName) {
 }
 
 document.querySelector('.EventListText').addEventListener('mouseover', function() {
-  document.querySelector('.EventImage').style.backgroundImage = "url('Resources/images/carouselImages/3.jpeg')";
+  document.querySelector('.EventImage').style.backgroundImage = "url('Resources/images/Events/FightNight/A7S09290.jpg')";
   document.querySelector('.EventImage').style.transition = "0.2s ease-in-out";
 
 });
 
 document.querySelector('.EventListText').addEventListener('mouseout', function() {
-  document.querySelector('.EventImage').style.backgroundImage = "url('Resources/images/carouselImages/2.jpeg')";
+  document.querySelector('.EventImage').style.backgroundImage = "url('Resources/images/Events/FightNight/A7S09388.jpg')";
   document.querySelector('.EventImage').style.transition = "0.2s ease-in-out";
 });
 
