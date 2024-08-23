@@ -1879,3 +1879,22 @@ function showGoogleLocation(location){
     
   }
 }
+
+
+document.getElementById("MemebershipsHoverImage").addEventListener("mouseover",function(){
+    document.getElementById("membershipHoverText").style.opacity = '1';
+});
+
+document.getElementById("MemebershipsHoverImage").addEventListener("mouseout",function(){
+  document.getElementById("membershipHoverText").style.opacity = '0';
+});
+
+
+
+document.getElementById("EventsHoverImage").addEventListener("mouseover",function(){
+  document.getElementById("EventsHoverText").style.opacity = '1';
+});
+
+document.getElementById("EventsHoverImage").addEventListener("mouseout",function(){
+document.getElementById("EventsHoverText").style.opacity = '0';
+});

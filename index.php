@@ -107,6 +107,14 @@
                     </div>
 
                     <!-- This Section -->
+                    <div class="col-12 mt-5">
+                        <div class="row mt-5">
+                            <?php
+                            include "hoverglitch.php"
+                            ?>
+                        </div>
+                    </div>
+
 
 
 
@@ -499,20 +507,20 @@
 
                     <!-- FITNESSFIRST LOCATION -->
 
-                    <div class="col-12 mt-5" >
-                        <div class="row">
+                    <div class="col-12 mt-5">
+                        <div class="row mt-5">
                             <div class="col-12">
                                 <div class="row">
-                                    <div class="col-3 text-center" >
-                                        <span class="GymLocationText" onclick="showGoogleLocation('colombo');">colombo 7</span>
+                                    <div class="col-lg-3 col-4 text-center">
+                                        <span class="GymLocationText" onclick="showGoogleLocation('colombo');">colombo7</span>
                                     </div>
-                                    <div class="col-3 text-center">
+                                    <div class="col-lg-3 col-4 text-center">
                                         <span class="GymLocationText" onclick="showGoogleLocation('jaela');">Ja Ela </span>
                                     </div>
-                                    <div class="col-3 text-center">
+                                    <div class="col-lg-3 col-4 text-center">
                                         <span class="GymLocationText" onclick="showGoogleLocation('wtc');"> WTC </span>
                                     </div>
-                                    <div class="col-3 text-center">
+                                    <div class="col-lg-3 col-12 text-center">
                                         <span class="GymLocationText" onclick="showGoogleLocation('wtc');"> Moors Club </span>
                                     </div>
                                 </div>

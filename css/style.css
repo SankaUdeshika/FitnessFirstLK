@@ -1940,7 +1940,7 @@
 .GymLocationText {
   font-family: "FFont";
   color: white;
-  font-size: 50px;
+  font-size: 35px;
   transition: ease-in-out 0.5s;
 }
 
@@ -1950,4 +1950,11 @@
   font-size: 50px;
   transition: ease-in-out 0.2s;
   cursor: pointer;
+}
+
+.hoverslideImages {
+  font-size: xx-large;
+  opacity: 0;
+  font-family: "FFont";
+  transition: 0.5s ease-in-out;
 }
