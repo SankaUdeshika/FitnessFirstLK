@@ -55,7 +55,7 @@
             <div class="col-lg-4 col-12 d-flex justify-content-center">
                 <div class="row">
                     <div class="gallery">
-                        <img src="Resources/images/aboutImage/NBwIndexNewTransformming3.png" style="object-fit: cover;" id="MemebershipsHoverImage" alt="a wolf">
+                        <img src="Resources/images/aboutImage/NewINdexNewTranformImage2.png" style="object-fit: cover;" id="MemebershipsHoverImage" alt="a wolf">
                         <img src="Resources/images/Events/FightNight/A7S09299.jpg" style="object-fit: cover;" id="EventsHoverImage" alt="a lioness">
                     </div>
                 </div>

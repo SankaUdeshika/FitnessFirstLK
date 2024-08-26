@@ -2066,7 +2066,6 @@
   height: 64px;
   width: 64px;
   margin: 0 15px 0 0;
-  background-color: red;
 }
 .ag-offer_title {
   font-size: 22px;
@@ -2231,7 +2230,7 @@
     opacity: 1;
 
     font-size: 18px;
-    color: #000;
+    color: white;
   }
   .ag-offer_btn {
     border: 2px solid #0000d1;

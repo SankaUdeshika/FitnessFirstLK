@@ -190,7 +190,7 @@
                                 <li class="ag-offer_item">
                                     <div class="ag-offer_visible-item">
                                         <div class="ag-offer_img-box">
-                                            <img src="https://raw.githack.com/SochavaAG/example-mycode/master/pens/1_images/icon-64-1.svg" class="ag-offer_img" alt="" />
+                                            <img src="Resources/images/LOGO/Events.png" class="ag-offer_img" alt="" />
                                         </div>
                                         <div class="ag-offer_title">
                                             Evetns
@@ -205,7 +205,7 @@
                                 <li class="ag-offer_item">
                                     <div class="ag-offer_visible-item">
                                         <div class="ag-offer_img-box">
-                                            <img src="https://raw.githack.com/SochavaAG/example-mycode/master/pens/1_images/icon-64-2.svg" class="ag-offer_img" alt="" />
+                                            <img src="Resources/images/LOGO/Facilities.png" class="ag-offer_img" alt="" />
                                         </div>
                                         <div class="ag-offer_title">
                                             Facilities
@@ -220,7 +220,7 @@
                                 <li class="ag-offer_item">
                                     <div class="ag-offer_visible-item">
                                         <div class="ag-offer_img-box">
-                                            <img src="https://raw.githack.com/SochavaAG/example-mycode/master/pens/1_images/icon-64-3.svg" class="ag-offer_img" alt="" />
+                                            <img src="Resources/images/LOGO/trainers.png" class="ag-offer_img" alt="" />
                                         </div>
                                         <div class="ag-offer_title">
                                             Gym Trainers
@@ -235,7 +235,7 @@
                                 <li class="ag-offer_item">
                                     <div class="ag-offer_visible-item">
                                         <div class="ag-offer_img-box">
-                                            <img src="https://raw.githack.com/SochavaAG/example-mycode/master/pens/1_images/icon-64-4.svg" class="ag-offer_img" alt="" />
+                                            <img src="Resources/images/LOGO/dumbell.png" class="ag-offer_img" alt="" />
                                         </div>
                                         <div class="ag-offer_title">
                                             Equipments
@@ -249,7 +249,7 @@
                                 <li class="ag-offer_item">
                                     <div class="ag-offer_visible-item">
                                         <div class="ag-offer_img-box">
-                                            <img src="https://raw.githack.com/SochavaAG/example-mycode/master/pens/1_images/icon-64-5.svg" class="ag-offer_img" alt="" />
+                                            <img src="Resources/images/LOGO/suppliments.png" class="ag-offer_img" alt="" />
                                         </div>
                                         <div class="ag-offer_title">
                                             Supplements
@@ -263,7 +263,7 @@
                                 <li class="ag-offer_item">
                                     <div class="ag-offer_visible-item">
                                         <div class="ag-offer_img-box">
-                                            <img src="https://raw.githack.com/SochavaAG/example-mycode/master/pens/1_images/icon-64-6.svg" class="ag-offer_img" alt="" />
+                                            <img src="Resources/images/LOGO/locaitons.png" class="ag-offer_img" alt="" />
                                         </div>
                                         <div class="ag-offer_title">Loacations</div>
                                     </div>
