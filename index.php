@@ -74,8 +74,11 @@
                                                 <img src="Resources/images/blogImage/blog7How To Get Fit In The New Year.jpeg" class="SupplimentBOX">
                                                 <div class="col-12 supplimentRow ">
                                                     <div class="row">
-                                                        <div class="col-6">
+                                                        <div class="col-6 d-lg-block d-none">
                                                             <div class="FlexButtonDIV"> <button class="flexShoppingButton" onclick="window.location = 'FlexHome.php'">Flex Shopping</button> </div>
+                                                        </div>
+                                                        <div class="col-6 d-lg-none d-block">
+                                                            <div class="FlexButtonDIV"> <button class="flexShoppingButton" onclick="window.location = 'FlexHome.php'">Flex</button> </div>
                                                         </div>
                                                         <div class="col-6">
                                                             <div class="supplimentBOXOVERLAY d-flex justify-content-center align-items-center"> Visit our <br> Suppliment <br> Shop </div>
