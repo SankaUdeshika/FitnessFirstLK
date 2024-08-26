@@ -49,8 +49,8 @@
 <body>
     <div class="col-12 ">
         <div class="row">
-            <div class="col-4 d-flex justify-content-center align-items-center">
-                <span class=" hoverslideImages "  id="membershipHoverText">Join with Memberships</span>
+            <div class="col-4 d-flex justify-content-center align-items-center ">
+                <span class=" hoverslideImages d-lg-block d-none" id="membershipHoverText">Join with Memberships</span>
             </div>
             <div class="col-4 d-flex justify-content-center">
                 <div class="row">
@@ -60,10 +60,18 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 d-flex justify-content-center align-items-center">
-                <span class=" hoverslideImages " id="EventsHoverText">Ftness First Events</span>
+            <div class="col-4 d-flex justify-content-center align-items-center  ">
+                <span class=" hoverslideImages d-lg-block d-none" id="EventsHoverText">Ftness First Events</span>
             </div>
         </div>
+    </div>
+    <!-- small -->
+    <!-- small Screen -->
+    <div class="col-12 d-flex justify-content-center align-items-center d-lg-none d-block">
+        <span class=" hoverslideImages " id="membershipHoverText">Join with Memberships</span>
+    </div>
+    <div class="col-12 d-flex justify-content-center align-items-center d-lg none d-block">
+        <span class=" hoverslideImages " id="EventsHoverText">Ftness First Events</span>
     </div>
 </body>
 
