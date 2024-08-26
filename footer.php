@@ -101,7 +101,7 @@
 
                     <div class="col-12 text-center text-white-50">
                         <span>
-                            © 2023 FITNESS FIRST LK. All Right Reserved Developed By Hansa&Sanka</span>
+                            © 2023 FITNESS FIRST LK. All Right Reserved Developed By <a style="text-decoration: none;" class="text-white-50" href="https://www.bing.com/ck/a?!&&p=f91cbab3d21082f2JmltdHM9MTcyNDYzMDQwMCZpZ3VpZD0yZDAyMDQ2ZS1kNTliLTY5MTYtMWExNS0xMGI3ZDQzNzY4NmYmaW5zaWQ9NTE5MA&ptn=3&ver=2&hsh=3&fclid=2d02046e-d59b-6916-1a15-10b7d437686f&psq=sanka+udeshika&u=a1aHR0cHM6Ly9say5saW5rZWRpbi5jb20vaW4vc2Fua2EtdWRlc2hpa2EtNjI5ODMxMWJi&ntb=1">Sanka</a>&Hansa</span>
                     </div>
 
                 </div>
