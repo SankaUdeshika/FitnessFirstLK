@@ -190,7 +190,7 @@
                                 <li class="ag-offer_item">
                                     <div class="ag-offer_visible-item">
                                         <div class="ag-offer_img-box">
-                                            <img src="Resources/images/LOGO/Events.png" class="ag-offer_img" alt="" />
+                                            <img src="Resources/images/LOGO/events.png" class="ag-offer_img" alt="" />
                                         </div>
                                         <div class="ag-offer_title">
                                             Evetns
