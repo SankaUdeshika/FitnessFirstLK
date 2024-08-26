@@ -34,7 +34,7 @@
                     <!-- Large Screen -->
                     <div class="col-12" class="indexTopImageCover FirstDownToUPAnimation">
                         <video autoplay muted loop id="myVideo" class="IndexTopImage">
-                            <source src="Resources/Videos/4745810-uhd_3840_2160_25fps (1).mp4" type="video/mp4">
+                            <source src="Resources/Videos/4745810-uhd_3840_2160_25fps (2).mp4" type="video/mp4">
                             Your browser does not support HTML5 video.
                         </video>
                         <!-- <video src="Resources/Videos/4745810-uhd_3840_2160_25fps (1).mp4" autoplay class="IndexTopImage " alt="MainTopImage"></video> -->
@@ -43,7 +43,7 @@
 
 
                     <!-- ImagesGrid -->
-                    <div class="col-12 ">
+                    <div class="col-12  ">
                         <?php include "AboutHomePage.php" ?>
                     </div>
 
