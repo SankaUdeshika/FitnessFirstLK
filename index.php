@@ -172,9 +172,9 @@
                                 <div class=""><span class="EventListText">FIGHTNIGHT </span> </div>
                             </marquee>
 
-                            <marquee behavior="" direction="right" class="marqueeElement" style="position: absolute; top: 100px;">
+                            <!-- <marquee behavior="" direction="right" class="marqueeElement" style="position: absolute; top: 100px;">
                                 <div class=""><span class="EventListText2">Example1 </span> </div>
-                            </marquee>
+                            </marquee> -->
                         </div>
                     </div>
 
