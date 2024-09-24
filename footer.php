@@ -359,7 +359,7 @@
 
                         <a
                             class="inline-block text-teal-500 underline transition hover:text-teal-500/75"
-                            href="/">
+                            href="privacyPolicy.php">
                             Privacy Policy
                         </a>
                      
