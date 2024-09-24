@@ -362,7 +362,16 @@
                             href="privacyPolicy.php">
                             Privacy Policy
                         </a>
-                     
+
+
+                        <span>&middot;</span>
+
+                        <a
+                            class="inline-block text-teal-500 underline transition hover:text-teal-500/75"
+                            href="refundPolicy.php">
+                            Refund Policy
+                        </a>
+
                     </p>
 
                     <p class="mt-4 text-sm text-gray-500 sm:order-first sm:mt-0" onclick="window.location ='https://www.linkedin.com/in/sanka-udeshika-6298311bb/'">
