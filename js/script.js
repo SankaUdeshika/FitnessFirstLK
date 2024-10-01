@@ -297,7 +297,7 @@ function adminLogin() {
       alert(response);
       if (response == "Success") {
         window.location = "adminDashboard.php";
-      } 
+      }
       // else if (response == "Error") {
       //   alert("invalid email and Password");
       // }
@@ -1327,34 +1327,10 @@ function AddOrder() {
   r.onreadystatechange = function () {
     if (r.readyState == 4 && r.status == 200) {
       var response = r.responseText;
-      var SplitOut = response.split(",");
-      var SplitLength = SplitOut.length;
-
-      if (SplitLength > 1) {
-        alert("PayhereRunning");
-        PayHere(SplitOut[1], fname, lname, mobile, Email, Address, City);
-      } else {
-        alert(response);
-      }
-    }
-  };
-  r.open("POST", "FlexBackendPross.php", true);
-  r.send(f);
-}
-
-// Payhere PayNow
-function PayHere(Order_id, fname, lname, mobile, Email, Address, City) {
-  var f = new FormData();
-  f.append("Order_id", Order_id);
-
-  var r = new XMLHttpRequest();
-  r.onreadystatechange = function () {
-    if (r.readyState == 4 && r.status == 200) {
-      var HashResponse = r.responseText;
-      alert(HashResponse);
-      var jsonObj = JSON.parse(HashResponse);
-      alert(jsonObj.hash);
-
+      var payhereObj = JSON.parse(response);
+      console.log(payhereObj);
+      payhere.startPayment(payhereObj);
+      
       // Payhere Intregator
       // Payment completed. It can be a successful failure.
       payhere.onCompleted = function onCompleted(Order_id) {
@@ -1378,34 +1354,9 @@ function PayHere(Order_id, fname, lname, mobile, Email, Address, City) {
         console.log("Error:" + error);
         alert(error);
       };
-
-      // Put the payment variables here
-      var payment = {
-        sandbox: true,
-        merchant_id: jsonObj.merchant_id, // Replace your Merchant ID
-        return_url: "http://localhost/fitnesFirst/Checkout.php", // Important
-        cancel_url: "http://localhost/fitnesFirst/Checkout.php", // Important
-        notify_url: "http://sample.com/notify",
-        order_id: jsonObj.Order_id,
-        items: jsonObj.Order_id,
-        amount: jsonObj.amount,
-        currency: "LKR",
-        hash: jsonObj.hash, // *Replace with generated hash retrieved from backend
-        first_name: fname,
-        last_name: lname,
-        email: Email,
-        phone: mobile,
-        address: Address,
-        city: City,
-        country: "Sri Lanka",
-        delivery_address: Address,
-        delivery_city: City,
-        delivery_country: "Sri Lanka",
-      };
-      payhere.startPayment(payment);
     }
   };
-  r.open("POST", "GenerateHashcode.php", true);
+  r.open("POST", "FlexBackendPross.php", true);
   r.send(f);
 }
 
@@ -1806,16 +1757,21 @@ function ChangeFlavour(FlavourName) {
   r.send(f);
 }
 
-document.querySelector('.EventListText').addEventListener('mouseover', function() {
-  document.querySelector('.EventImage').style.backgroundImage = "url('Resources/images/Events/FightNight/A7S09290.jpg')";
-  document.querySelector('.EventImage').style.transition = "0.2s ease-in-out";
+document
+  .querySelector(".EventListText")
+  .addEventListener("mouseover", function () {
+    document.querySelector(".EventImage").style.backgroundImage =
+      "url('Resources/images/Events/FightNight/A7S09290.jpg')";
+    document.querySelector(".EventImage").style.transition = "0.2s ease-in-out";
+  });
 
-});
-
-document.querySelector('.EventListText').addEventListener('mouseout', function() {
-  document.querySelector('.EventImage').style.backgroundImage = "url('Resources/images/Events/FightNight/A7S09388.jpg')";
-  document.querySelector('.EventImage').style.transition = "0.2s ease-in-out";
-});
+document
+  .querySelector(".EventListText")
+  .addEventListener("mouseout", function () {
+    document.querySelector(".EventImage").style.backgroundImage =
+      "url('Resources/images/Events/FightNight/A7S09388.jpg')";
+    document.querySelector(".EventImage").style.transition = "0.2s ease-in-out";
+  });
 
 // EventlistnerText2
 // document.querySelector('.EventListText2').addEventListener('mouseover',function(){
@@ -1828,73 +1784,74 @@ document.querySelector('.EventListText').addEventListener('mouseout', function()
 //   document.querySelector('.EventImage').style.transition = "0.2s ease-in-out";
 // });
 
+document
+  .querySelector(".findGymBox")
+  .addEventListener("mouseover", function () {
+    document.querySelector(".findGymImage").style.scale = 1.2;
+    document.querySelector(".findGymText").style.scale = 0.9;
+    document.querySelector(".findGymBox").style.cursor = "pointer";
+  });
 
-document.querySelector(".findGymBox").addEventListener("mouseover",function(){
-  document.querySelector(".findGymImage").style.scale = 1.2;
-  document.querySelector(".findGymText").style.scale = 0.9;
-  document.querySelector(".findGymBox").style.cursor = "pointer";
-});
-
-document.querySelector(".findGymBox").addEventListener("mouseout",function(){
+document.querySelector(".findGymBox").addEventListener("mouseout", function () {
   document.querySelector(".findGymImage").style.scale = 1;
   document.querySelector(".findGymText").style.scale = 1;
 });
 
+document
+  .querySelector(".supplimentRow")
+  .addEventListener("mouseover", function () {
+    document.querySelector(".supplimentRow").style.left = "0%";
+    document.querySelector(".SupplimentBOX").style.scale = "1.1";
+  });
+document
+  .querySelector(".supplimentRow")
+  .addEventListener("mouseout", function () {
+    document.querySelector(".supplimentRow").style.left = "-53%";
+    document.querySelector(".SupplimentBOX").style.scale = "1";
+  });
 
-document.querySelector(".supplimentRow").addEventListener("mouseover",function(){
-  document.querySelector(".supplimentRow").style.left = "0%" ;
-  document.querySelector(".SupplimentBOX").style.scale = "1.1" ;
-
+document.querySelector(".BLOGRow").addEventListener("mouseover", function () {
+  document.querySelector(".BLOGRow").style.left = "0%";
+  document.querySelector(".BlogBOX").style.scale = "1.1";
 });
-document.querySelector(".supplimentRow").addEventListener("mouseout",function(){
-  document.querySelector(".supplimentRow").style.left = "-53%" ;
-  document.querySelector(".SupplimentBOX").style.scale = "1" ;
-
-});
-
-
-
-
-document.querySelector(".BLOGRow").addEventListener("mouseover",function(){
-  document.querySelector(".BLOGRow").style.left = "0%" ;
-  document.querySelector(".BlogBOX").style.scale = "1.1" ;
-
-});
-document.querySelector(".BLOGRow").addEventListener("mouseout",function(){
-  document.querySelector(".BLOGRow").style.left = "53%" ;
-  document.querySelector(".BlogBOX").style.scale = "1" ;
-
+document.querySelector(".BLOGRow").addEventListener("mouseout", function () {
+  document.querySelector(".BLOGRow").style.left = "53%";
+  document.querySelector(".BlogBOX").style.scale = "1";
 });
 
-
-
-function showGoogleLocation(location){
-  if(location == 'colombo'){
-    document.getElementById('GoogleMap').src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31686.815227955212!2d79.82922301083981!3d6.9083058999999984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2597a85531ecb%3A0xd24f023f2b2a2bd5!2sFitness%20First%20-%20Colombo%207!5e0!3m2!1sen!2slk!4v1723187781024!5m2!1sen!2slk";
-
-  }else if(location == 'jaela'){
-    document.getElementById('GoogleMap').src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31676.654279610524!2d79.86019721083984!3d7.0583264000000066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2f737cddbfe73%3A0x8db9e4efb440ac7a!2sFitness%20First%20-%20Ja%20Ela!5e0!3m2!1sen!2slk!4v1723188546821!5m2!1sen!2slk";
-  }else if(location == 'wtc'){
-    document.getElementById('GoogleMap').src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31685.182231971485!2d79.80819611083984!3d6.9326339999999975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2592c3f054759%3A0x3cdec16a4408635e!2sFitness%20First%20-%20WTC!5e0!3m2!1sen!2slk!4v1723188585859!5m2!1sen!2slk";
-    
+function showGoogleLocation(location) {
+  if (location == "colombo") {
+    document.getElementById("GoogleMap").src =
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31686.815227955212!2d79.82922301083981!3d6.9083058999999984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2597a85531ecb%3A0xd24f023f2b2a2bd5!2sFitness%20First%20-%20Colombo%207!5e0!3m2!1sen!2slk!4v1723187781024!5m2!1sen!2slk";
+  } else if (location == "jaela") {
+    document.getElementById("GoogleMap").src =
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31676.654279610524!2d79.86019721083984!3d7.0583264000000066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2f737cddbfe73%3A0x8db9e4efb440ac7a!2sFitness%20First%20-%20Ja%20Ela!5e0!3m2!1sen!2slk!4v1723188546821!5m2!1sen!2slk";
+  } else if (location == "wtc") {
+    document.getElementById("GoogleMap").src =
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31685.182231971485!2d79.80819611083984!3d6.9326339999999975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2592c3f054759%3A0x3cdec16a4408635e!2sFitness%20First%20-%20WTC!5e0!3m2!1sen!2slk!4v1723188585859!5m2!1sen!2slk";
   }
 }
 
+document
+  .getElementById("MemebershipsHoverImage")
+  .addEventListener("mouseover", function () {
+    document.getElementById("membershipHoverText").style.opacity = "1";
+  });
 
-document.getElementById("MemebershipsHoverImage").addEventListener("mouseover",function(){
-    document.getElementById("membershipHoverText").style.opacity = '1';
-});
+document
+  .getElementById("MemebershipsHoverImage")
+  .addEventListener("mouseout", function () {
+    document.getElementById("membershipHoverText").style.opacity = "0";
+  });
 
-document.getElementById("MemebershipsHoverImage").addEventListener("mouseout",function(){
-  document.getElementById("membershipHoverText").style.opacity = '0';
-});
+document
+  .getElementById("EventsHoverImage")
+  .addEventListener("mouseover", function () {
+    document.getElementById("EventsHoverText").style.opacity = "1";
+  });
 
-
-
-document.getElementById("EventsHoverImage").addEventListener("mouseover",function(){
-  document.getElementById("EventsHoverText").style.opacity = '1';
-});
-
-document.getElementById("EventsHoverImage").addEventListener("mouseout",function(){
-document.getElementById("EventsHoverText").style.opacity = '0';
-});
+document
+  .getElementById("EventsHoverImage")
+  .addEventListener("mouseout", function () {
+    document.getElementById("EventsHoverText").style.opacity = "0";
+  });

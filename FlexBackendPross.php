@@ -508,10 +508,45 @@ if ($command == "addFlexProduct") {
                 }
             }
 
-            
+            $merchant_id = "1221534";
+            $merchant_secret = "NDAxMzk2MTY3MDM1MzMzNjA5NzYxNTMyNDc3MzkxMjYwODU3MzY2Mg==";
+            $currency  = "LKR";
+            $country = "Sri Lanka";
+
+            $hash = strtoupper(
+                md5(
+                    $merchant_id .
+                        $Order_id .
+                        number_format($Total, 2, '.', '') .
+                        // number_format($amount) .
+                        $currency .
+                        strtoupper(md5($merchant_secret))
+                )
+            );
+
+            $response =  array();
+            $response["merchant_id"] = $merchant_id;
+            $response["return_url"] = "http://localhost";
+            $response["cancel_url"] = "http://localhost";
+            $response["notify_url"] = "http://localhost";
+            $response["first_name"] =  $fname;
+            $response["last_name"] = $lname;
+            $response["email"] = $Email;
+            $response["phone"] = $mobile;
+            $response["address"] = $Address;
+            $response["city"] = $City;
+            $response["country"] = $country;
+            $response["order_id"] =  $Order_id;
+            $response["items"] = $Order_id;
+            $response["currency"] = $currency;
+            $response["amount"] =  $Total;
+            $response["hash"] =  $hash;
+            echo json_encode($response);
 
 
-            echo ("Order Add SuccessFull" . "," . $Order_id);
+
+
+            // echo ("Order Add SuccessFull" . "," . $Order_id);
         } else if ($User_num == 0) {
 
             $Email =  $_POST["Email"];
@@ -835,7 +870,8 @@ if ($command == "addFlexProduct") {
         echo ($jsonString);
     } else {
         $jsonArray = array(
-            "Action" => "Nothing");
+            "Action" => "Nothing"
+        );
         $jsonString = json_encode($jsonArray);
         echo ($jsonString);
     }

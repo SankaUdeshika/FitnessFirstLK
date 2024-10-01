@@ -103,7 +103,7 @@
 
                         <li>
                             <a
-                                href="https://ffcolombo@gmail.com"
+                                href="https://fflkcolombo@gmail.com"
                                 rel="noopener noreferrer"
                                 target="_blank"
                                 class="text-rose-600 transition hover:text-rose-500/75">
@@ -246,7 +246,7 @@
                                     </a>
                                 </li>
 
-                                <li>
+                                <!-- <li>
                                     <a
                                         class="flex group justify-center sm:justify-start gap-1.5"
                                         href="/">
@@ -261,7 +261,7 @@
                                                 class="relative inline-flex w-2 h-2 bg-teal-500 rounded-full"></span>
                                         </span>
                                     </a>
-                                </li>
+                                </li> -->
                             </ul>
                         </nav>
                     </div>
@@ -288,7 +288,7 @@
                                     </svg>
 
                                     <span class="text-white transition group-hover:text-white/75">
-                                        john@doe.com
+                                        fflkcolombo@gmail.com
                                     </span>
                                 </a>
                             </li>
@@ -311,7 +311,7 @@
                                     </svg>
 
                                     <span class="text-white transition group-hover:text-white/75">
-                                        0123456789
+                                        +94 112 695 331
                                     </span>
                                 </a>
                             </li>
@@ -336,7 +336,7 @@
                                 </svg>
 
                                 <address class="-mt-0.5 not-italic text-white">
-                                    213 Lane, London, United Kingdom
+                                    42 1/1 Maitland Crescent, Colombo 7, Colombo, Colombo, Western
                                 </address>
                             </li>
                         </ul>
