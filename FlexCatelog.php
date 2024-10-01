@@ -179,7 +179,7 @@ $pageno;
                                                                             <img src="<?php echo ($product_data["Main_Image"]) ?>" class="FlexProductImage1" alt="<?php echo ($product_data["Main_Image"]) ?>">
                                                                         </div>
                                                                         <div class="col-12 ProductSecondImageCover ">
-                                                                            <img src="<?php echo ($product_data["Seciond_Image"]) ?>" class="FlexProductImage2" alt="<?php echo ($product_data["Seciond_Image"]) ?>">
+                                                                            <img src="<?php echo ($product_data["Seciond_Image"]) ?>" class="FlexProductImage2" alt="<?php echo ($product_data["Seciond_Image"]) ?>" style="cursor: pointer;" onclick="window.location='FlexSingleProductView.php?id=<?php echo ($product_data['Product_id']) ?>'">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -196,8 +196,8 @@ $pageno;
                                                                 </div>
                                                                 <!-- Button -->
                                                                 <div class="col-10 mt-2 offset-1 position-relative overflow-hidden ">
-                                                                    <div class="col-12 ViewProductButton2 text-center ">
-                                                                        <small class="ViewProductButtonText" onclick="window.location='FlexSingleProductView.php?id=<?php echo ($product_data['Product_id']) ?>'">Choose Option</small>
+                                                                    <div class="col-12 ViewProductButton2 text-center " style="cursor: pointer;" onclick="window.location='FlexSingleProductView.php?id=<?php echo ($product_data['Product_id']) ?>'">
+                                                                        <small class="ViewProductButtonText" >Choose Option</small>
                                                                     </div>
                                                                 </div>
                                                             </div>

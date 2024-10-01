@@ -176,7 +176,7 @@ if (!isset($_COOKIE["User"])) {
                                                                         <div class="col-12 ProductFirstImageCover">
                                                                             <img src="<?php echo ($product_data["Main_Image"]) ?>" class="FlexProductImage1" alt="<?php echo ($product_data["Main_Image"]) ?>">
                                                                         </div>
-                                                                        <div class="col-12 ProductSecondImageCover ">
+                                                                        <div class="col-12 ProductSecondImageCover " onclick="window.location='FlexSingleProductView.php?id=<?php echo ($product_data['Product_id']) ?>'" style="cursor: pointer;">
                                                                             <img src="<?php echo ($product_data["Seciond_Image"]) ?>" class="FlexProductImage2" alt="<?php echo ($product_data["Seciond_Image"]) ?>">
                                                                         </div>
                                                                     </div>
@@ -188,7 +188,7 @@ if (!isset($_COOKIE["User"])) {
                                                                             <span><?php echo ($product_data["Product_name"]) ?></span>
                                                                         </div>
                                                                         <!-- Small Screen -->
-                                                                        <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold text-white  d-lg-none d-block">
+                                                                        <div class="col-lg-10  col-12 offset-lg-1 mt-1 fw-bold text-white  d-lg-none d-block" >
                                                                             <small><?php echo ($product_data["Product_name"]) ?></small>
                                                                         </div>
                                                                         <div class="col-lg-10 offset-lg-1 col-12 text-white-50">
@@ -199,10 +199,10 @@ if (!isset($_COOKIE["User"])) {
 
                                                                 <!-- Button -->
                                                                 <div class="col-lg-10 col-12 mt-2 offset-lg-1 position-relative overflow-hidden ">
-                                                                    <div class="col-12 ViewProductButton ">
+                                                                    <div class="col-12 ViewProductButton " style="cursor: pointer;" onclick="window.location='FlexSingleProductView.php?id=<?php echo ($product_data['Product_id']) ?>'">
                                                                         <div class="col-11 ViewProductButto2 d-lg-block d-none  ">
                                                                         </div>
-                                                                        <span class="ViewProductButtonText text-center" onclick="window.location='FlexSingleProductView.php?id=<?php echo ($product_data['Product_id']) ?>'">Buy Now</span>
+                                                                        <span class="ViewProductButtonText text-center" >Buy Now</span>
                                                                     </div>
                                                                 </div>
                                                             </div>
