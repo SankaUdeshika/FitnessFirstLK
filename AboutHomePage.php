@@ -101,7 +101,7 @@
             width: 65vw;
             height: 39vw;
             background-attachment: fixed;
-            background-image: url(Resources/images/blackGymImages/1.jpeg);
+            background-image: url(Resources/images/blackGymImages/1.jpg);
         }
 
         .c-heroImageGrid .container2 .column:nth-of-type(2) .row:nth-of-type(2) {
@@ -166,17 +166,18 @@
         }
 
         .c-heroImageGrid .container2 .column:nth-of-type(2) .row:nth-of-type(2) div:nth-of-type(2):before {
+          
             position: absolute;
-            top: 0;
-            left: -40vw;
-            width: 110.1vw;
-            height: 110vw;
+            top: -10.1vw;
+            left: -14.3vw;
             background-repeat: no-repeat;
             background-size: cover;
             transform: rotateZ(-45deg);
             content: "";
+            width: 65vw;
+            height: 59vw;
             background-attachment: fixed;
-            background-image: url(Resources/images/blackGymImages/6.webp);
+            background-image: url(Resources/images/blackGymImages/6.jpg);
         }
 
         .c-heroImageGrid .container2 .column:nth-of-type(2) .row:nth-of-type(3) {
