@@ -569,7 +569,6 @@ function adminaddnewCategory() {
   form.append("command", command);
   form.append("addNewCategory", addNewCategory);
 
-
   var request = new XMLHttpRequest();
   request.onreadystatechange = function () {
     if (request.readyState == 4 && request.status == 200) {
@@ -580,7 +579,6 @@ function adminaddnewCategory() {
   };
   request.open("POST", "FlexBackendPross.php", true);
   request.send(form);
-  
 }
 
 function VideoChange() {
@@ -1779,6 +1777,29 @@ function ChangeFlavour(FlavourName) {
   };
   r.open("POST", "FlexBackendPross.php", true);
   r.send(f);
+}
+
+// Delete Category
+function DeleteCategory() {
+  var command = "adminDeleteCategory";
+  var ProductCategorySelectior = document.getElementById("ProductCategorySelector").value;
+  
+  
+  var f = new FormData();
+  f.append("CategoryID", ProductCategorySelectior);
+  f.append("command", command);
+
+  var r = new XMLHttpRequest();
+
+  r.onreadystatechange = function () {
+    if ((r.readyState == 4) & (r.status == 200)) {
+      alert(r.responseText);
+      window.location.reload();
+    }
+  };
+  r.open("POST", "FlexBackendPross.php", true);
+  r.send(f);
+  
 }
 
 document

@@ -892,6 +892,23 @@ if ($command == "addFlexProduct") {
             echo ("Adding Success");
         }
     }
+} else if ($command == "adminDeleteCategory") {
+
+    $CategoryID = $_POST["CategoryID"];
+
+    if ($CategoryID == "0") {
+        echo ("Please Select a Category");
+    } else {
+        $AlerasdyCategoryNameHave_rs  =   FlexDatabase::search("SELECT * FROM `category` WHERE `c_id` = '" . $CategoryID . "' ");
+        $AlerasdyCategoryNameHave_num = $AlerasdyCategoryNameHave_rs->num_rows;
+
+        if ($AlerasdyCategoryNameHave_num == 0) {
+            echo ("Something Wrong Please try again later");
+        } else {
+            FlexDatabase::iud("DELETE FROM `category`  WHERE `c_id` = '" . $CategoryID . "' ");
+            echo ("Delete Success");
+        }
+    }
 }
 
 

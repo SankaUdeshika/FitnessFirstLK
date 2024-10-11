@@ -188,7 +188,7 @@ require "Connections/FlexConnection.php";
                                                                 </select>
                                                             </div>
                                                             <div class="col-12 ">
-                                                                <button class="btn btn-danger"> Delete Selected Category</button>
+                                                                <button class="btn btn-danger" onclick="DeleteCategory();"> Delete Selected Category</button>
                                                             </div>
                                                         </div>
 
