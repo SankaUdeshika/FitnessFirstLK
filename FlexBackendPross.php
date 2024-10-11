@@ -875,7 +875,24 @@ if ($command == "addFlexProduct") {
         $jsonString = json_encode($jsonArray);
         echo ($jsonString);
     }
-} 
+} else if ($command == "adminaddNewCategory") {
+
+    $addNewCategoryName = $_POST["addNewCategory"];
+
+    if (empty($addNewCategoryName)) {
+        echo ("Please Enter A new Category");
+    } else {
+        $AlerasdyCategoryNameHave_rs  =   FlexDatabase::search("SELECT * FROM `category` WHERE `category_name` = '" . $addNewCategoryName . "' ");
+        $AlerasdyCategoryNameHave_num = $AlerasdyCategoryNameHave_rs->num_rows;
+
+        if ($AlerasdyCategoryNameHave_num == 1) {
+            echo ("aleready Have this category");
+        } else {
+            FlexDatabase::iud("INSERT INTO `category` (`category_name`)VALUES ('" . $addNewCategoryName . "') ");
+            echo ("Adding Success");
+        }
+    }
+}
 
 
 

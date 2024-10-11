@@ -154,21 +154,43 @@ require "Connections/FlexConnection.php";
                                                         <input type="text" class="form-control" id="price" placeholder="Price">
                                                     </div>
                                                     <div class="col-4">
-                                                        <select name="" id="ProductCategorySelector" class="form-select">
-                                                            <option value="0">Select Category</option>
-                                                            <?php
-                                                            $productCategory_rs = FlexDatabase::search("SELECT * FROM `category` ");
-                                                            $productCategory_num = $productCategory_rs->num_rows;
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="row">
+                                                                    <div class="col-8">
+                                                                        <input type="text" class="form-control" placeholder="Add Category" id="addNewCategory">
+                                                                    </div>
+                                                                    <div class="col-4">
+                                                                        <button class="btn btn-primary" onclick="adminaddnewCategory();">Add </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
 
-                                                            for ($x = 0; $x < $productCategory_num; $x++) {
-                                                                $ProductCategory_data = $productCategory_rs->fetch_assoc();
-                                                            ?>
-                                                                <option value="<?php echo ($ProductCategory_data["c_id"]) ?>"><?php echo ($ProductCategory_data["category_name"]) ?></option>
-                                                            <?php
-                                                            }
+                                                            <div class="col-12 mt-1 mb-1">
+                                                                <hr>
+                                                            </div>
 
-                                                            ?>
-                                                        </select>
+                                                            <div class="col-12 ">
+                                                                <select name="" id="ProductCategorySelector" class="form-select">
+                                                                    <option value="0">Select Category</option>
+                                                                    <?php
+                                                                    $productCategory_rs = FlexDatabase::search("SELECT * FROM `category` ");
+                                                                    $productCategory_num = $productCategory_rs->num_rows;
+
+                                                                    for ($x = 0; $x < $productCategory_num; $x++) {
+                                                                        $ProductCategory_data = $productCategory_rs->fetch_assoc();
+                                                                    ?>
+                                                                        <option value="<?php echo ($ProductCategory_data["c_id"]) ?>"><?php echo ($ProductCategory_data["category_name"]) ?></option>
+                                                                    <?php
+                                                                    }
+
+                                                                    ?>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-12 ">
+                                                                <button class="btn btn-danger"> Delete Selected Category</button>
+                                                            </div>
+                                                        </div>
 
                                                     </div>
                                                     <div class="col-3 ">

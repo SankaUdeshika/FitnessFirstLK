@@ -559,6 +559,30 @@ function addStoryBox() {
   request.send(form);
 }
 
+// admin add new category
+function adminaddnewCategory() {
+  var command = "adminaddNewCategory";
+
+  var addNewCategory = document.getElementById("addNewCategory").value;
+
+  var form = new FormData();
+  form.append("command", command);
+  form.append("addNewCategory", addNewCategory);
+
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      alert(response);
+      window.location.reload();
+    }
+  };
+  request.open("POST", "FlexBackendPross.php", true);
+  request.send(form);
+  
+}
+
 function VideoChange() {
   var ViewVideo = document.getElementById("vidoeView");
   var vidoeInput = document.getElementById("Video");
@@ -1330,7 +1354,7 @@ function AddOrder() {
       var payhereObj = JSON.parse(response);
       console.log(payhereObj);
       payhere.startPayment(payhereObj);
-      
+
       // Payhere Intregator
       // Payment completed. It can be a successful failure.
       payhere.onCompleted = function onCompleted(Order_id) {
