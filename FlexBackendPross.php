@@ -909,6 +909,26 @@ if ($command == "addFlexProduct") {
             echo ("Delete Success");
         }
     }
+} else if ($command == "adminDeleteProductFlavour") {
+
+    $FlavourSelector = $_POST["FlavourSelector"];
+
+    if ($FlavourSelector == "0") {
+        echo ("Please Select a Flavour to Delete");
+    } else {
+        $AlerasdyCategoryNameHave_rs  =   FlexDatabase::search("SELECT * FROM `flavors` WHERE `flavour_name` = '" . $FlavourSelector . "' ");
+        $AlerasdyCategoryNameHave_num = $AlerasdyCategoryNameHave_rs->num_rows;
+        
+        echo($AlerasdyCategoryNameHave_num);
+        
+
+        if ($AlerasdyCategoryNameHave_num > 0) {
+            FlexDatabase::iud("DELETE FROM `flavors`  WHERE `flavour_name` = '" . $FlavourSelector . "' ");
+            echo ("Delete Success");
+        } else {
+            echo ("Something Wrong Please try again later");
+        }
+    }
 }
 
 

@@ -1782,9 +1782,10 @@ function ChangeFlavour(FlavourName) {
 // Delete Category
 function DeleteCategory() {
   var command = "adminDeleteCategory";
-  var ProductCategorySelectior = document.getElementById("ProductCategorySelector").value;
-  
-  
+  var ProductCategorySelectior = document.getElementById(
+    "ProductCategorySelector"
+  ).value;
+
   var f = new FormData();
   f.append("CategoryID", ProductCategorySelectior);
   f.append("command", command);
@@ -1799,7 +1800,27 @@ function DeleteCategory() {
   };
   r.open("POST", "FlexBackendPross.php", true);
   r.send(f);
-  
+}
+
+// Delete Flavour on ProductAdding
+function DeleteFlavourOnProductAdding() {
+  var command = "adminDeleteProductFlavour";
+  var FlavourSelector = document.getElementById("FlavourSelector").value;
+
+  var f = new FormData();
+  f.append("FlavourSelector", FlavourSelector);
+  f.append("command", command);
+
+  var r = new XMLHttpRequest();
+
+  r.onreadystatechange = function () {
+    if ((r.readyState == 4) & (r.status == 200)) {
+      alert(r.responseText);
+      window.location.reload();
+    }
+  };
+  r.open("POST", "FlexBackendPross.php", true);
+  r.send(f);
 }
 
 document

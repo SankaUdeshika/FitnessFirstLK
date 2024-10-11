@@ -205,21 +205,29 @@ require "Connections/FlexConnection.php";
                                                                 <input type="text" class="form-control" id="NewFlavour" placeholder="or Type new flavor">
                                                             </div>
                                                             <div class="col-6 mt-3">
-                                                                <select name="" id="FlavourSelector" class="form-select">
-                                                                    <option value="0">Select Flavoyr</option>
-                                                                    <?php
-                                                                    $productFlavour_rs = FlexDatabase::search("SELECT * FROM `flavors` ");
-                                                                    $productFlavour_num = $productFlavour_rs->num_rows;
+                                                                <div class="row">
+                                                                    <div class="col-12">
+                                                                        <select name="" id="FlavourSelector" class="form-select">
+                                                                            <option value="0">Select Flavoyr</option>
+                                                                            <?php
+                                                                            $productFlavour_rs = FlexDatabase::search("SELECT * FROM `flavors` ");
+                                                                            $productFlavour_num = $productFlavour_rs->num_rows;
 
-                                                                    for ($x = 0; $x < $productFlavour_num; $x++) {
-                                                                        $ProductFlavour_data = $productFlavour_rs->fetch_assoc();
-                                                                    ?>
-                                                                        <option value="<?php echo ($ProductFlavour_data["flavour_name"]) ?>"><?php echo ($ProductFlavour_data["flavour_name"]) ?></option>
-                                                                    <?php
-                                                                    }
+                                                                            for ($x = 0; $x < $productFlavour_num; $x++) {
+                                                                                $ProductFlavour_data = $productFlavour_rs->fetch_assoc();
+                                                                            ?>
+                                                                                <option value="<?php echo ($ProductFlavour_data["flavour_name"]) ?>"><?php echo ($ProductFlavour_data["flavour_name"]) ?></option>
+                                                                            <?php
+                                                                            }
 
-                                                                    ?>
-                                                                </select>
+                                                                            ?>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-12">
+                                                                        <button class="btn btn-danger" onclick="DeleteFlavourOnProductAdding()">Delete Flavour</button>
+                                                                    </div>
+                                                                </div>
+
                                                             </div>
                                                         </div>
                                                     </div>
