@@ -46,7 +46,36 @@
                                 <span class="fw-bold">No Returns or Exchanges</span>
                             </div>
                             <div class="col-12">
-                                <p>We do not accept returns or exchanges on any products. Once a purchase is made, it is considered final. We encourage you to carefully review your order before completing the purchase.</p>
+                                <p>We accept returns within 7 days from the date of purchase. To be eligible for a return, your item must be unused and in the same condition that you received it. It must also be in the original packaging.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <br><br>
+
+                    <div class="col-12 mb-5 mt-5">
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="fw-bold">Refunds</span>
+                            </div>
+                            <div class="col-12">
+                                <p>Once we receive your return and inspect the item, we will notify you of the status of your refund. If your return is approved, we will initiate a refund to your original method of payment. Please note that the refund amount will exclude any shipping charges incurred during the initial purchase.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <br><br>
+
+
+                    <div class="col-12 mb-5 mt-5">
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="fw-bold">Exchanges</span>
+                            </div>
+                            <div class="col-12">
+                                <p>If you would like to exchange your item for a different size, color, or style, please contact our customer support team within [X] days of receiving your order. We will provide you with further instructions on how to proceed with the exchange.</p>
                             </div>
 
                         </div>
@@ -88,11 +117,44 @@
                             <div class="col-12">
                                 <p>In the rare event that your item arrives damaged or defective, please contact us immediately. We will work with you to resolve the issue by offering a replacement, if available. However, we do not provide refunds under any circumstances.</p>
                             </div>
-                            
+
                         </div>
                     </div>
 
                     <br><br>
+
+
+
+                    <div class="col-12 mb-5">
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="fw-bold">Return Shipping</span>
+                            </div>
+                            <div class="col-12">
+                                <p>You will be responsible for paying the shipping costs for returning your item unless the return is due to our error (e.g., wrong item shipped, defective product). In such cases, we will provide you with a prepaid shipping label.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <br><br>
+
+                    <div class="col-12 mb-5">
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="fw-bold">Processing Time</span>
+                            </div>
+                            <div class="col-12">
+                                <p>Refunds and exchanges will be processed within [X] business days after we receive your returned item. Please note that it may take additional time for the refund to appear in your account, depending on your payment provider.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <br><br>
+
+
+
 
 
                     <div class="col-12 mb-5">
