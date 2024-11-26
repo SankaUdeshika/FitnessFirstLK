@@ -235,7 +235,7 @@ if ($command == "addFlexProduct") {
             }
 
 
-            $oldImage_rs = FlexDatabase::search("SELECT * FROM `product_images` INNER JOIN `product` ON `product`.`Product_id` = `product_images`.`product_Product_id` WHERE `product_Product_id` = '" . $id . "' ");
+            $oldImage_rs = FlexDatabase::search("SELECT * FROM `product_images` INNER JOIN `product` ON `product`.`Product_id` = `product_images`.`product_Product_id` INNER JOIN `product_flavour` ON `product`.`Product_id` = `product_flavour`.`pf_product_id` WHERE `product_Product_id` = '" . $id . "' ");
             $oldImage_num = $oldImage_rs->num_rows;
             $oldImage_data = $oldImage_rs->fetch_assoc();
             $ProductName = $oldImage_data["Product_name"];

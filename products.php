@@ -10,7 +10,7 @@ require "Connections/FlexConnection.php";
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Product Page - Admin HTML Template</title>
+  <title>Product Page - Admin  </title>
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Roboto:400,700" />
@@ -134,14 +134,14 @@ require "Connections/FlexConnection.php";
                 for ($i = 0; $i < $flex_num; $i++) {
                   $flex_data = $Flex_rs->fetch_assoc();
                 ?>
-                  <tr onclick="window.location='edit-product.html'">
+                  <tr onclick="window.location='edit-product.php?pid=<?php echo ($flex_data['Product_id']) ?>'">
                     <td><?php echo ($flex_data["Product_id"]) ?></td>
                     <td><?php echo ($flex_data["Product_name"]) ?></td>
                     <td><?php echo ($flex_data["Description"]) ?></td>
                     <td><?php echo ($flex_data["Qty"]) ?></td>
                     <td><?php echo ($flex_data["Price"]) ?></td>
                   </tr>
-                  
+
                 <?php
                 }
                 ?>

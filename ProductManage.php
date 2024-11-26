@@ -271,7 +271,7 @@ require "Connections/FlexConnection.php";
                                     $flex_data = $Flex_rs->fetch_assoc();
                                 ?>
                                     <tr>
-                                        <td><input type="text" class="form-control" value="<?php echo ($flex_data["Product_name"]) ?>" id="ProductName<?php echo ($flex_data["Product_id"]) ?>"></td>
+                                        <td><input type="text" class="form-control bg-danger" value="<?php echo ($flex_data["Product_name"]) ?>" id="ProductName<?php echo ($flex_data["Product_id"]) ?>"></td>
                                         <td><textarea name="" class="form-control" id="ProductDescription<?php echo ($flex_data["Product_id"]) ?>" cols="30" rows="10"> <?php echo ($flex_data["Description"]) ?> </textarea></td>
                                         <td>
                                             <div class="row">
@@ -282,7 +282,7 @@ require "Connections/FlexConnection.php";
                                                         </div>
                                                         <div class="col-12 d-flex justify-content-center">
                                                             <input type="file" class="d-none" id="Main<?php echo ($flex_data["Product_id"]) ?>" onchange="ChangeUpdateMainImage('<?php echo ($flex_data['Product_id']) ?>');">
-                                                            <label for="Main<?php echo ($flex_data["Product_id"]) ?>" class="btn btn-success">Change Main</label>
+                                                            <label for="Main<?php echo ($flex_data["Product_id"]) ?>" class="btn btn-primary btn-block mx-auto">CHANGE MAIN IMAGE NOW</label>
                                                         </div>
                                                     </div>
                                                 </div>
