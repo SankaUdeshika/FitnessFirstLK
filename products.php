@@ -10,7 +10,7 @@ require "Connections/FlexConnection.php";
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Product Page - Admin  </title>
+  <title>Product Page - Admin </title>
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Roboto:400,700" />
@@ -150,107 +150,37 @@ require "Connections/FlexConnection.php";
           </div>
           <!-- table container -->
           <a
-            href="add-product.html"
+            href="add-product.php"
             class="btn btn-primary btn-block text-uppercase mb-3">Add new product</a>
-          <button class="btn btn-primary btn-block text-uppercase">
+          <!-- <button class="btn btn-primary btn-block text-uppercase">
             Delete selected products
-          </button>
+          </button> -->
         </div>
       </div>
       <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 tm-block-col">
         <div class="tm-bg-primary-dark tm-block tm-block-product-categories">
-          <h2 class="tm-block-title">Product Categories</h2>
+          <h2 class="tm-block-title">Product Flavours</h2>
           <div class="tm-product-table-container">
             <table class="table tm-table-small tm-product-table">
               <tbody>
-                <tr>
-                  <td class="tm-product-name">Product Category 1</td>
-                  <td class="text-center">
-                    <a href="#" class="tm-product-delete-link">
-                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tm-product-name">Product Category 2</td>
-                  <td class="text-center">
-                    <a href="#" class="tm-product-delete-link">
-                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tm-product-name">Product Category 3</td>
-                  <td class="text-center">
-                    <a href="#" class="tm-product-delete-link">
-                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tm-product-name">Product Category 4</td>
-                  <td class="text-center">
-                    <a href="#" class="tm-product-delete-link">
-                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tm-product-name">Product Category 5</td>
-                  <td class="text-center">
-                    <a href="#" class="tm-product-delete-link">
-                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tm-product-name">Product Category 6</td>
-                  <td class="text-center">
-                    <a href="#" class="tm-product-delete-link">
-                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tm-product-name">Product Category 7</td>
-                  <td class="text-center">
-                    <a href="#" class="tm-product-delete-link">
-                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tm-product-name">Product Category 8</td>
-                  <td class="text-center">
-                    <a href="#" class="tm-product-delete-link">
-                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tm-product-name">Product Category 9</td>
-                  <td class="text-center">
-                    <a href="#" class="tm-product-delete-link">
-                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tm-product-name">Product Category 10</td>
-                  <td class="text-center">
-                    <a href="#" class="tm-product-delete-link">
-                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tm-product-name">Product Category 11</td>
-                  <td class="text-center">
-                    <a href="#" class="tm-product-delete-link">
-                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                    </a>
-                  </td>
-                </tr>
+                <?php
+                $productCategory_rs = FlexDatabase::search("SELECT * FROM `flavors` ");
+                $productCategory_num = $productCategory_rs->num_rows;
+
+                for ($x = 0; $x < $productCategory_num; $x++) {
+                  $ProductCategory_data = $productCategory_rs->fetch_assoc();
+                ?>
+                  <tr>
+                    <td class="tm-product-name"><?php echo $ProductCategory_data["flavour_name"] ?></td>
+                    <td class="text-center">
+                      <a  class="tm-product-delete-link" onclick="DeleteFlavourOnProductpage('<?php echo $ProductCategory_data['flavour_name'] ?>')">
+                        <i class="far fa-trash-alt tm-product-delete-icon" ></i>
+                      </a>
+                    </td>
+                  </tr>
+                <?php
+                }
+                ?>
               </tbody>
             </table>
           </div>
@@ -271,6 +201,11 @@ require "Connections/FlexConnection.php";
       </p>
     </div>
   </footer>
+
+
+  <!-- My Scripts -->
+  <script src="js/bootstrap.bundle.js"></script>
+  <script src="js/script.js"></script>
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <!-- https://jquery.com/download/ -->

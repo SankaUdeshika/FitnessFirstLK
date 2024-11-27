@@ -73,7 +73,7 @@ $pid = $_GET["pid"];
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="products.html">
+            <a class="nav-link active" href="products.php">
               <i class="fas fa-shopping-cart"></i> Products
             </a>
           </li>

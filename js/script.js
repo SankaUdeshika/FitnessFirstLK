@@ -1028,6 +1028,7 @@ function AddFlexProduct() {
       var price = document.getElementById("price").value;
       var Description = document.getElementById("Description").value;
       var Quanitity = document.getElementById("Quanitity").value;
+
       var f = new FormData();
       f.append("command", command);
       f.append("Category", Category);
@@ -1200,7 +1201,7 @@ function DeleteProduct(id) {
   r.onreadystatechange = function () {
     if (r.readyState == 4 && r.status == 200) {
       alert(r.responseText);
-      window.location.reload();
+      window.location = "products.php";
     }
   };
   r.open("POST", "FlexBackendPross.php", true);
@@ -1817,6 +1818,32 @@ function DeleteFlavourOnProductAdding() {
     if ((r.readyState == 4) & (r.status == 200)) {
       alert(r.responseText);
       window.location.reload();
+    }
+  };
+  r.open("POST", "FlexBackendPross.php", true);
+  r.send(f);
+}
+// Delete Flavours in product page
+function DeleteFlavourOnProductpage(fname) {
+  var command = "adminDeleteProductFlavour";
+  var FlavourSelector = fname;
+
+  var f = new FormData();
+  f.append("FlavourSelector", FlavourSelector);
+  f.append("command", command);
+
+  var r = new XMLHttpRequest();
+
+  r.onreadystatechange = function () {
+    if ((r.readyState == 4) & (r.status == 200)) {
+      // alert(r.responseText);
+      if (r.readyState == "Delete Success") {
+        window.location.reload();
+      } else {
+        alert(
+          "Error. you can only delete non assignable flavour. please delete flavour product first."
+        );
+      }
     }
   };
   r.open("POST", "FlexBackendPross.php", true);
