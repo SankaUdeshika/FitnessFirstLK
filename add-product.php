@@ -260,7 +260,74 @@ require "Connections/FlexConnection.php";
                 Add Product Now
               </button>
             </div>
+
+
+
+
           </div>
+          <hr color="white">
+
+          <div class="row">
+            <div class="col-12 text-center">
+              <h3 class="text-white fw-bold fs-3"> Category Adding and Delete</h3>
+            </div>
+
+            <div class="col-10">
+              <input type="text" class="form-control" placeholder="Add Category" id="addNewCategory">
+            </div>
+            <div class="col-2">
+              <button class="btn btn-primary" onclick="adminaddnewCategory();">Add </button>
+            </div>
+          </div>
+
+          <div class="col-12 mt-3 ">
+            <select name="" id="ProductCategorySelector" class="custom-select tm-select-accounts">
+              <option value="0">Select Category</option>
+              <?php
+              $productCategory_rs = FlexDatabase::search("SELECT * FROM `category` ");
+              $productCategory_num = $productCategory_rs->num_rows;
+
+              for ($x = 0; $x < $productCategory_num; $x++) {
+                $ProductCategory_data = $productCategory_rs->fetch_assoc();
+              ?>
+                <option value="<?php echo ($ProductCategory_data["c_id"]) ?>"><?php echo ($ProductCategory_data["category_name"]) ?></option>
+              <?php
+              }
+              ?>
+            </select>
+          </div>
+
+          <hr color="white">
+
+          <div class="col-12 text-center">
+            <h3 class="text-white fw-bold fs-3"> Delete Flavour</h3>
+          </div>
+
+          <div class="col-6 mt-3">
+            <div class="row">
+              <div class="col-12">
+                <select name="" id="FlavourSelector" class="custom-select tm-select-accounts">
+                  <option value="0">Select Flavoyr</option>
+                  <?php
+                  $productFlavour_rs = FlexDatabase::search("SELECT * FROM `flavors` ");
+                  $productFlavour_num = $productFlavour_rs->num_rows;
+
+                  for ($x = 0; $x < $productFlavour_num; $x++) {
+                    $ProductFlavour_data = $productFlavour_rs->fetch_assoc();
+                  ?>
+                    <option value="<?php echo ($ProductFlavour_data["flavour_name"]) ?>"><?php echo ($ProductFlavour_data["flavour_name"]) ?></option>
+                  <?php
+                  }
+                  ?>
+                </select>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-danger" onclick="DeleteFlavourOnProductAdding()">Delete Flavour</button>
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </div>
     </div>

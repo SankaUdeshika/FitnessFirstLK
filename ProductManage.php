@@ -219,7 +219,6 @@ require "Connections/FlexConnection.php";
                                                                                 <option value="<?php echo ($ProductFlavour_data["flavour_name"]) ?>"><?php echo ($ProductFlavour_data["flavour_name"]) ?></option>
                                                                             <?php
                                                                             }
-
                                                                             ?>
                                                                         </select>
                                                                     </div>
