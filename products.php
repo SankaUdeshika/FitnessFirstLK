@@ -46,7 +46,7 @@ require "Connections/FlexConnection.php";
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto h-100">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="adminindex.php">
               <i class="fas fa-tachometer-alt"></i> Dashboard
               <span class="sr-only">(current)</span>
             </a>
@@ -61,16 +61,16 @@ require "Connections/FlexConnection.php";
               aria-haspopup="true"
               aria-expanded="false">
               <i class="far fa-file-alt"></i>
-              <span> Reports <i class="fas fa-angle-down"></i> </span>
+              <span> Orders <i class="fas fa-angle-down"></i> </span>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Daily Report</a>
+              <a class="dropdown-item" href="newordermanage.php">All Orders</a>
               <a class="dropdown-item" href="#">Weekly Report</a>
               <a class="dropdown-item" href="#">Yearly Report</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="products.html">
+            <a class="nav-link active" href="products.php">
               <i class="fas fa-shopping-cart"></i> Products
             </a>
           </li>
@@ -173,8 +173,8 @@ require "Connections/FlexConnection.php";
                   <tr>
                     <td class="tm-product-name"><?php echo $ProductCategory_data["flavour_name"] ?></td>
                     <td class="text-center">
-                      <a  class="tm-product-delete-link" onclick="DeleteFlavourOnProductpage('<?php echo $ProductCategory_data['flavour_name'] ?>')">
-                        <i class="far fa-trash-alt tm-product-delete-icon" ></i>
+                      <a class="tm-product-delete-link" onclick="DeleteFlavourOnProductpage('<?php echo $ProductCategory_data['flavour_name'] ?>')">
+                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
                       </a>
                     </td>
                   </tr>

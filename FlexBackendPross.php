@@ -918,9 +918,9 @@ if ($command == "addFlexProduct") {
     } else {
         $AlerasdyCategoryNameHave_rs  =   FlexDatabase::search("SELECT * FROM `flavors` WHERE `flavour_name` = '" . $FlavourSelector . "' ");
         $AlerasdyCategoryNameHave_num = $AlerasdyCategoryNameHave_rs->num_rows;
-        
-        echo($AlerasdyCategoryNameHave_num);
-        
+
+        echo ($AlerasdyCategoryNameHave_num);
+
 
         if ($AlerasdyCategoryNameHave_num > 0) {
             FlexDatabase::iud("DELETE FROM `flavors`  WHERE `flavour_name` = '" . $FlavourSelector . "' ");
@@ -929,6 +929,12 @@ if ($command == "addFlexProduct") {
             echo ("Something Wrong Please try again later");
         }
     }
+} else if ($command == "cencelOrderStatus") {
+
+    $order_id = $_POST["Order_id"];
+
+    FlexDatabase::iud("UPDATE `order` SET `Status_Sid` = '2' WHERE `Order_id` = '" . $order_id . "' ");
+    echo ("Canceled Order");
 }
 
 

@@ -1397,21 +1397,48 @@ function downloadAsPDF(Order_id) {
 
 // Change Order Status
 function ChangeOrderStatus(Order_id) {
-  var command = "ChangeOrderStatus";
+  const confirmmessage = confirm("Are You Sure To Change Order Status?");
 
-  var f = new FormData();
-  f.append("command", command);
-  f.append("Order_id", Order_id);
+  if (confirmmessage) {
+    var command = "ChangeOrderStatus";
 
-  var r = new XMLHttpRequest();
-  r.onreadystatechange = function () {
-    if (r.readyState == 4 && r.status == 200) {
-      alert(r.responseText);
-      window.location.reload();
-    }
-  };
-  r.open("POST", "FlexBackendPross.php", true);
-  r.send(f);
+    var f = new FormData();
+    f.append("command", command);
+    f.append("Order_id", Order_id);
+
+    var r = new XMLHttpRequest();
+    r.onreadystatechange = function () {
+      if (r.readyState == 4 && r.status == 200) {
+        alert(r.responseText);
+        window.location.reload();
+      }
+    };
+    r.open("POST", "FlexBackendPross.php", true);
+    r.send(f);
+  }
+}
+
+// cancel the orders
+function CancelOrderStatus(Order_id) {
+  const confirmmessage = confirm("Are You Sure To Cancel the Order Status?");
+
+  if (confirmmessage) {
+    var command = "cencelOrderStatus";
+
+    var f = new FormData();
+    f.append("command", command);
+    f.append("Order_id", Order_id);
+
+    var r = new XMLHttpRequest();
+    r.onreadystatechange = function () {
+      if (r.readyState == 4 && r.status == 200) {
+        alert(r.responseText);
+        window.location.reload();
+      }
+    };
+    r.open("POST","FlexBackendPross.php",true);
+    r.send(f);
+  }
 }
 
 // Leftside Carousel Programme

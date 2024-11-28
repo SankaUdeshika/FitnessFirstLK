@@ -66,10 +66,10 @@ require "Connections/FlexConnection.php";
               aria-haspopup="true"
               aria-expanded="false">
               <i class="far fa-file-alt"></i>
-              <span> Reports <i class="fas fa-angle-down"></i> </span>
+              <span> Orders <i class="fas fa-angle-down"></i> </span>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Daily Report</a>
+              <a class="dropdown-item" href="#">All Orders</a>
               <a class="dropdown-item" href="#">Weekly Report</a>
               <a class="dropdown-item" href="#">Yearly Report</a>
             </div>
