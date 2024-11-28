@@ -106,7 +106,7 @@ require "Connections/FlexConnection.php";
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <p class="text-white mt-5 mb-5">Welcome back, <b>Admin</b></p>
+                    <p class="text-white mt-5 mb-5">Welcome back, <b>Confirm Order management</b></p>
                 </div>
             </div>
             <!-- row -->
@@ -133,7 +133,7 @@ require "Connections/FlexConnection.php";
                             <tbody>
 
                                 <?php
-                                $Order_rs = FlexDatabase::Search("SELECT * FROM `order` INNER JOIN `user` ON `user`.`Email` = `order`.`User_Email` INNER JOIN `status` ON  `status`.`Sid` = `order`.`Status_Sid`  ");
+                                $Order_rs = FlexDatabase::Search("SELECT * FROM `order` INNER JOIN `user` ON `user`.`Email` = `order`.`User_Email` INNER JOIN `status` ON  `status`.`Sid` = `order`.`Status_Sid` WHERE `Sid` = '1'  ");
                                 $Order_num = $Order_rs->num_rows;
 
                                 for ($i = 0; $i < $Order_num; $i++) {

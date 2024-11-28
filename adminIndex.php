@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Product Admin - Dashboard HTML Template</title>
+    <title>Product Admin - Dashboard HTML </title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
     <!-- https://fonts.google.com/specimen/Roboto -->
     <link rel="stylesheet" href="css/fontawesome.min.css">
@@ -51,8 +51,9 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="newordermanage.php">All Orders</a>
-                                <a class="dropdown-item" href="#">Weekly Report</a>
-                                <a class="dropdown-item" href="#">Yearly Report</a>
+                                <a class="dropdown-item" href="pendingordermanagement.php">Pending Orders</a>
+                                <a class="dropdown-item" href="confirmordermanagement.php">Confirm Orders</a>
+                                <a class="dropdown-item" href="canceledordermanagement.php">Canceled Orders</a>
                             </div>
                         </li>
                         <li class="nav-item">
@@ -102,7 +103,7 @@
             </div>
             <!-- row -->
             <div class="row tm-content-row">
-                
+
                 <!-- <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
                     <div class="tm-bg-primary-dark tm-block">
                         <h2 class="tm-block-title">Latest Hits</h2>

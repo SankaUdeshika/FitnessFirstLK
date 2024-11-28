@@ -10,7 +10,7 @@ require "Connections/FlexConnection.php";
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Add Product - Dashboard HTML Template</title>
+  <title>Add Product - Dashboard HTML </title>
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Roboto:400,700" />
@@ -69,9 +69,10 @@ require "Connections/FlexConnection.php";
               <span> Orders <i class="fas fa-angle-down"></i> </span>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">All Orders</a>
-              <a class="dropdown-item" href="#">Weekly Report</a>
-              <a class="dropdown-item" href="#">Yearly Report</a>
+              <a class="dropdown-item" href="newordermanage.php">All Orders</a>
+              <a class="dropdown-item" href="pendingordermanagement.php">Pending Orders</a>
+              <a class="dropdown-item" href="confirmordermanagement.php">Confirm Orders</a>
+              <a class="dropdown-item" href="canceledordermanagement.php">Canceled Orders</a>
             </div>
           </li>
           <li class="nav-item">

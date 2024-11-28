@@ -65,8 +65,9 @@ require "Connections/FlexConnection.php";
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="newordermanage.php">All Orders</a>
-              <a class="dropdown-item" href="#">Weekly Report</a>
-              <a class="dropdown-item" href="#">Yearly Report</a>
+              <a class="dropdown-item" href="pendingordermanagement.php">Pending Orders</a>
+              <a class="dropdown-item" href="confirmordermanagement.php">Confirm Orders</a>
+              <a class="dropdown-item" href="canceledordermanagement.php">Canceled Orders</a>
             </div>
           </li>
           <li class="nav-item">
