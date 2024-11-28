@@ -102,12 +102,13 @@
             </div>
             <!-- row -->
             <div class="row tm-content-row">
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
+                
+                <!-- <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
                     <div class="tm-bg-primary-dark tm-block">
                         <h2 class="tm-block-title">Latest Hits</h2>
                         <canvas id="lineChart"></canvas>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
                     <div class="tm-bg-primary-dark tm-block">
                         <h2 class="tm-block-title">Performance</h2>
@@ -122,7 +123,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
+                <!-- <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
                     <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-overflow">
                         <h2 class="tm-block-title">Notification List</h2>
                         <div class="tm-notification-items">
@@ -200,7 +201,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- orders -->
 
@@ -361,9 +362,9 @@
         <footer class="tm-footer row tm-mt-small">
             <div class="col-12 font-weight-light">
                 <p class="text-center text-white mb-0 px-4 small">
-                    Copyright &copy; <b>2018</b> All rights reserved.
+                    Copyright &copy; <b>2024</b> All rights reserved.
 
-                    Design: <a rel="nofollow noopener" href="https://templatemo.com" class="tm-footer-link">Template Mo</a>
+                    Design: <a rel="nofollow noopener" href="https://www.linkedin.com/in/sanka-udeshika-6298311bb/" class="tm-footer-link">Sanka Udeshika</a>
                 </p>
             </div>
         </footer>

@@ -32,7 +32,7 @@ $pid = $_GET["pid"];
 <body>
   <nav class="navbar navbar-expand-xl">
     <div class="container h-100">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="adminindex.php">
         <h1 class="tm-site-title mb-0">Product Admin </h1>
       </a>
       <button
@@ -49,7 +49,7 @@ $pid = $_GET["pid"];
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto h-100">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="adminindex.php">
               <i class="fas fa-tachometer-alt"></i> Dashboard
               <span class="sr-only">(current)</span>
             </a>
@@ -64,12 +64,14 @@ $pid = $_GET["pid"];
               aria-haspopup="true"
               aria-expanded="false">
               <i class="far fa-file-alt"></i>
-              <span> Reports <i class="fas fa-angle-down"></i> </span>
+              <span> Orders <i class="fas fa-angle-down"></i> </span>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Daily Report</a>
-              <a class="dropdown-item" href="#">Weekly Report</a>
-              <a class="dropdown-item" href="#">Yearly Report</a>
+              <a class="dropdown-item" href="newordermanage.php">All Orders</a>
+              <a class="dropdown-item" href="#">Confirm Orders</a>
+              <a class="dropdown-item" href="#">Pending Orders</a>
+              <a class="dropdown-item" href="#">Canceled Orders</a>
+
             </div>
           </li>
           <li class="nav-item">
@@ -271,7 +273,8 @@ $pid = $_GET["pid"];
       <p class="text-center text-white mb-0 px-4 small">
         Copyright &copy; <b>2018</b> All rights reserved.
 
-        Design: <a rel="nofollow noopener" href="https://templatemo.com" class="tm-footer-link">Template Mo</a>
+        Design: <a rel="nofollow noopener" href="https://www.linkedin.com/in/sanka-udeshika-6298311bb/" class="tm-footer-link">Sanka Udeshika</a>
+
       </p>
     </div>
   </footer>

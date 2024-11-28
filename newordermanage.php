@@ -170,8 +170,8 @@ require "Connections/FlexConnection.php";
                                         }
                                         ?>
                                         <td><?php echo ($Order_data["User_Email"]) ?></td>
-                                        <td><?php echo ($Order_data["OrderDate"] . " " . $Order_data["OrderTime"]) ?></td>
                                         <td><?php echo ($Order_data["FIrst_name"] . " " . $Order_data["Last_name"]) ?></td>
+                                        <td><?php echo ($Order_data["OrderDate"] . " " . $Order_data["OrderTime"]) ?></td>
                                         <td><?php echo ($Order_data["Total"]) ?></td>
                                         <!-- Satatus Part -->
 
@@ -180,141 +180,6 @@ require "Connections/FlexConnection.php";
                                 <?php
                                 }
                                 ?>
-
-
-
-                                <tr>
-                                    <th scope="row"><b>#122349</b></th>
-                                    <td>
-                                        <div class="tm-status-circle moving">
-                                        </div>Moving
-                                    </td>
-                                    <td><b>Oliver Trag</b></td>
-                                    <td><b>London, UK</b></td>
-                                    <td><b>485 km</b></td>
-                                    <td>16:00, 12 NOV 2018</td>
-                                    <td>08:00, 18 NOV 2018</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"><b>#122348</b></th>
-                                    <td>
-                                        <div class="tm-status-circle pending">
-                                        </div>Pending
-                                    </td>
-                                    <td><b>Jacob Miller</b></td>
-                                    <td><b>London, UK</b></td>
-                                    <td><b>360 km</b></td>
-                                    <td>11:00, 10 NOV 2018</td>
-                                    <td>04:00, 14 NOV 2018</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"><b>#122347</b></th>
-                                    <td>
-                                        <div class="tm-status-circle cancelled">
-                                        </div>Cancelled
-                                    </td>
-                                    <td><b>George Wilson</b></td>
-                                    <td><b>London, UK</b></td>
-                                    <td><b>340 km</b></td>
-                                    <td>12:00, 22 NOV 2018</td>
-                                    <td>06:00, 28 NOV 2018</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"><b>#122346</b></th>
-                                    <td>
-                                        <div class="tm-status-circle moving">
-                                        </div>Moving
-                                    </td>
-                                    <td><b>William Aung</b></td>
-                                    <td><b>London, UK</b></td>
-                                    <td><b>218 km</b></td>
-                                    <td>15:00, 10 NOV 2018</td>
-                                    <td>09:00, 14 NOV 2018</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"><b>#122345</b></th>
-                                    <td>
-                                        <div class="tm-status-circle pending">
-                                        </div>Pending
-                                    </td>
-                                    <td><b>Harry Ryan</b></td>
-                                    <td><b>London, UK</b></td>
-                                    <td><b>280 km</b></td>
-                                    <td>15:00, 11 NOV 2018</td>
-                                    <td>09:00, 17 NOV 2018</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"><b>#122344</b></th>
-                                    <td>
-                                        <div class="tm-status-circle pending">
-                                        </div>Pending
-                                    </td>
-                                    <td><b>Michael Jones</b></td>
-                                    <td><b>London, UK</b></td>
-                                    <td><b>218 km</b></td>
-                                    <td>18:00, 12 OCT 2018</td>
-                                    <td>06:00, 18 OCT 2018</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"><b>#122343</b></th>
-                                    <td>
-                                        <div class="tm-status-circle moving">
-                                        </div>Moving
-                                    </td>
-                                    <td><b>Timmy Davis</b></td>
-                                    <td><b>London, UK</b></td>
-                                    <td><b>218 km</b></td>
-                                    <td>12:00, 10 OCT 2018</td>
-                                    <td>08:00, 18 OCT 2018</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"><b>#122342</b></th>
-                                    <td>
-                                        <div class="tm-status-circle moving">
-                                        </div>Moving
-                                    </td>
-                                    <td><b>Oscar Phyo</b></td>
-                                    <td><b>London, UK</b></td>
-                                    <td><b>420 km</b></td>
-                                    <td>15:30, 06 OCT 2018</td>
-                                    <td>09:30, 16 OCT 2018</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"><b>#122341</b></th>
-                                    <td>
-                                        <div class="tm-status-circle moving">
-                                        </div>Moving
-                                    </td>
-                                    <td><b>Charlie Brown</b></td>
-                                    <td><b>London, UK</b></td>
-                                    <td><b>300 km</b></td>
-                                    <td>11:00, 10 OCT 2018</td>
-                                    <td>03:00, 14 OCT 2018</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"><b>#122340</b></th>
-                                    <td>
-                                        <div class="tm-status-circle cancelled">
-                                        </div>Cancelled
-                                    </td>
-                                    <td><b>Wilson Cookies</b></td>
-                                    <td><b>London, UK</b></td>
-                                    <td><b>218 km</b></td>
-                                    <td>17:30, 12 OCT 2018</td>
-                                    <td>08:30, 22 OCT 2018</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"><b>#122339</b></th>
-                                    <td>
-                                        <div class="tm-status-circle moving">
-                                        </div>Moving
-                                    </td>
-                                    <td><b>Richard Clamon</b></td>
-                                    <td><b>London, UK</b></td>
-                                    <td><b>150 km</b></td>
-                                    <td>15:00, 12 OCT 2018</td>
-                                    <td>09:20, 26 OCT 2018</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -324,9 +189,9 @@ require "Connections/FlexConnection.php";
         <footer class="tm-footer row tm-mt-small">
             <div class="col-12 font-weight-light">
                 <p class="text-center text-white mb-0 px-4 small">
-                    Copyright &copy; <b>2018</b> All rights reserved.
+                    Copyright &copy; <b>2024</b> All rights reserved.
 
-                    Design: <a rel="nofollow noopener" href="https://templatemo.com" class="tm-footer-link">Template Mo</a>
+                    Design: <a rel="nofollow noopener" href="https://www.linkedin.com/in/sanka-udeshika-6298311bb/" class="tm-footer-link">Sanka Udeshika</a>
                 </p>
             </div>
         </footer>
