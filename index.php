@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    <link rel="icon" href="resources/Images/LOGO/NewFitnessFirst_LOGO.svg">
+    <link rel="icon" href="resources/Images/LOGO/NewFitnessFirst_LOGO.png">
     <meta name="keywords" content="FitnessFirstLk,Fitness,First,Lk,Gym">
     <meta name="description" content="Best Fitness centers & gyms in Colombo, Western Province, Sri Lanka. High Octane Fitness, Get U Fit Gym, Ultimate Gym">
 </head>
@@ -32,24 +32,24 @@
                 <div class="row">
                     <!-- TopImage -->
                     <!-- Large Screen -->
-                    <div class="col-12" class="indexTopImageCover FirstDownToUPAnimation">
+                    <!-- <div class="col-12" class="indexTopImageCover FirstDownToUPAnimation">
                         <video autoplay muted loop id="myVideo" class="IndexTopImage">
                             <source src="Resources/Videos/newViedeo.mp4" type="video/mp4">
                             Your browser does not support HTML5 video.
-                        </video>
-                        <!-- <video src="Resources/Videos/4745810-uhd_3840_2160_25fps (1).mp4" autoplay class="IndexTopImage " alt="MainTopImage"></video> -->
-                        <img src="Resources/images/LOGO/FitnessFirstTextLogo1.svg" class="FitnesFirstTextLogo" alt="">
-                    </div>
+                        </video> -->
+                    <!-- <video src="Resources/Videos/4745810-uhd_3840_2160_25fps (1).mp4" autoplay class="IndexTopImage " alt="MainTopImage"></video> -->
+                    <!-- <img src="Resources/images/LOGO/FitnessFirstTextLogo1.svg" class="FitnesFirstTextLogo" alt="">
+                    </div> -->
 
 
                     <!-- ImagesGrid -->
-                    <div class="col-12  ">
+                    <!-- <div class="col-12  ">
                         <?php include "AboutHomePage.php" ?>
-                    </div>
+                    </div> -->
 
                     <!-- Thid Section -->
 
-                    <div class="col-12">
+                    <div class="col-12" style="margin-top: 100px;">
                         <div class="row">
 
                             <div class="col-10 offset-1">
@@ -70,22 +70,8 @@
 
                                     <div class="col-lg-6 col-12 mt-lg-0 mt-4 gymsupliment overflow-overflow-x-hidden overflow-y-hidden ">
                                         <div class="row">
-                                            <div class="col-12 overflow-hidden overflow-x-hidden position-relative">
-                                                <img src="Resources/images/blogImage/blog7How To Get Fit In The New Year.jpeg" class="SupplimentBOX">
-                                                <div class="col-12 supplimentRow ">
-                                                    <div class="row">
-                                                        <div class="col-6 d-lg-block d-none">
-                                                            <div class="FlexButtonDIV"> <button class="flexShoppingButton" onclick="window.location = 'FlexHome.php'">Flex Shopping</button> </div>
-                                                        </div>
-                                                        <div class="col-6 d-lg-none d-block">
-                                                            <div class="FlexButtonDIV"> <button class="flexShoppingButton" onclick="window.location = 'FlexHome.php'">Flex</button> </div>
-                                                        </div>
-                                                        <div class="col-6">
-                                                            <div class="supplimentBOXOVERLAY d-flex justify-content-center align-items-center"> Visit our <br> Suppliment <br> Shop </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+
+
 
                                             <div class="col-12 mt-4 position-relative overflow-x-hidden overflow-y-hidden overflow-hidden">
                                                 <img src="Resources/images/storyboxImage/story4.jpeg" class="BlogBOX">
@@ -101,6 +87,25 @@
                                                 </div>
                                             </div>
 
+                                            <!-- <div class="col-12 overflow-hidden overflow-x-hidden position-relative">
+                                                <img src="Resources/images/blogImage/blog7How To Get Fit In The New Year.jpeg" class="SupplimentBOX">
+                                                <div class="col-12 supplimentRow ">
+                                                    <div class="row">
+                                                        <div class="col-6 d-lg-block d-none">
+                                                            <div class="FlexButtonDIV"> <button class="flexShoppingButton" onclick="window.location = 'FlexHome.php'">Flex Shopping</button> </div>
+                                                        </div>
+                                                        <div class="col-6 d-lg-none d-block">
+                                                            <div class="FlexButtonDIV"> <button class="flexShoppingButton" onclick="window.location = 'FlexHome.php'">Flex</button> </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="supplimentBOXOVERLAY d-flex justify-content-center align-items-center"> Visit our <br> Suppliment <br> Shop </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+
+
+
                                         </div>
                                     </div>
                                 </div>
@@ -110,13 +115,13 @@
                     </div>
 
                     <!-- This Section -->
-                    <div class="col-12 mt-5">
+                    <!-- <div class="col-12 mt-5">
                         <div class="row mt-5">
                             <?php
-                            include "hoverglitch.php"
+                            // include "hoverglitch.php"
                             ?>
                         </div>
-                    </div>
+                    </div> -->
 
 
 
@@ -142,7 +147,7 @@
                                         <div class="row">
                                             <!-- Wegiht -->
                                             <div class="col-8 p-5">
-                                                <input type="range" class="form-range " onchange="ChangeHeight();" value="50" max="272" id="HeightRangeInput">
+                                                <input type="text" class="form-control fs-1 bg-black text-center text-white " onchange="ChangeHeight();" value="50" max="272" id="HeightRangeInput">
                                             </div>
                                             <div class="col-4 text-center">
                                                 <span class="ExploreTextWhite2" id="HeightText">Heigth</span>
@@ -150,7 +155,7 @@
 
                                             <!-- Height -->
                                             <div class="col-8 p-5">
-                                                <input type="range" class="form-range " onchange="ChangeWeight();" max="635" value="45" id="WeightRangeInput">
+                                                <input type="text" class="form-control fs-1 bg-black text-center text-white " onchange="ChangeWeight();" max="635" value="45" id="WeightRangeInput">
                                             </div>
                                             <div class="col-4 text-center">
                                                 <span class="ExploreTextWhite2 " id="WeightText">Weight</span>
@@ -168,18 +173,16 @@
                     </div>
 
                     <!-- EventList -->
-                    <div class="col-12 position-relative">
+                    <!-- <div class="col-12 position-relative">
                         <div class="row">
                             <div class="EventImage position-relative"></div>
                             <marquee behavior="" direction="left" class="marqueeElement" style="position: absolute; top: 0px;">
                                 <div class=""><span class="EventListText">FIGHTNIGHT </span> </div>
                             </marquee>
 
-                            <!-- <marquee behavior="" direction="right" class="marqueeElement" style="position: absolute; top: 100px;">
-                                <div class=""><span class="EventListText2">Example1 </span> </div>
-                            </marquee> -->
+                     
                         </div>
-                    </div>
+                    </div> -->
 
 
                     <!-- Details Section -->
@@ -303,27 +306,34 @@
                     <!-- Pricing List -->
                     <div class="col-12 mt-5 mb-5 " id="price">
                         <div class="row">
-                            <div class="col-12 text-center">
+                            <!-- <div class="col-12 text-center">
                                 <span class="text-primary fs-4 Fade">Pricing</span>
-                            </div>
+                            </div> -->
                             <div class="col-12 text-center">
                                 <span class="ExploreTextWhite Fade DownToUP ">Our List Packages</span>
                             </div>
                             <!-- Switch -->
                             <div class="col-12 mb-5">
                                 <div class="row">
-                                    <div class="col-lg-4 offset-lg-4 col-10 offset-1 PricingSwitchWhite Fade">
+                                    <div class="col-lg-8 offset-lg-2 col-10 offset-1 PricingSwitchWhite Fade">
                                         <div class="row">
                                             <!-- Gents Package -->
-                                            <div class="col-6 d-flex justify-content-center">
+                                            <div class="col-4 d-flex justify-content-center">
                                                 <div class="col-10 offset-1  text-center rounded-4 Gentsactive p-3 m-3 Fade" id="GentsBtn" onclick="TrunGentsPackeage();" style="animation-delay: 1s;">
                                                     <span class=" fw-bold fs-4 Fade  " style="animation-delay: 2s;"> Gents Package</span>
                                                 </div>
                                             </div>
                                             <!-- Ladies Package -->
-                                            <div class="col-6 d-flex justify-content-center">
+                                            <div class="col-4 d-flex justify-content-center">
                                                 <div class="col-10 offset-1  text-center rounded-4 p-3 m-3 Ladies" id="LadiesBtn" onclick="TrunLadiesPackeage();">
                                                     <span class=" fw-bold fs-4  Fade " style="animation-delay: 2s;"> Ladies Package</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- couple Package -->
+                                            <div class="col-4 d-flex justify-content-center">
+                                                <div class="col-10 offset-1  text-center rounded-4 p-3 m-3 Couple" id="CoupleBtn" onclick="CouplePackeage();">
+                                                    <span class=" fw-bold fs-4  Fade " style="animation-delay: 2s;">Couple Package</span>
                                                 </div>
                                             </div>
                                         </div>

@@ -24,7 +24,7 @@
                                 <img src="Resources/images/LOGO/FlexRedLogo.png" class="FlexImage" alt="">
                             </div>
                             <div class="col-lg-1  col-3 d-flex  align-items-center justify-content-start">
-                                <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.svg" class="FlexImage" onclick="window.location='index.php'" style="width: 100%;" alt="">
+                                <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.png" class="FlexImage" onclick="window.location='index.php'" style="width: 100%;" alt="">
                             </div>
                             <!-- SmallSceen Flex Logo Image -->
                             <div class="col-6   d-lg-none d-block d-flex justify-content-center bgdanger">

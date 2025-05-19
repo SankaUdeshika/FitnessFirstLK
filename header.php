@@ -17,29 +17,29 @@
             <div class="col-12 headerCover d-lg-block d-none">
                 <div class="row">
                     <div class="col-2 LogoCover" onclick="window.location='index.php'">
-                        <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.svg" class="FlexImage" alt="NewFitnessFirstLogo">
+                        <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.png" class="FlexImage" alt="NewFitnessFirstLogo">
                     </div>
 
                     <div class="col-8 text-center SectionCover2">
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-4">
                                 <span class="HeaderTabs" onclick="window.location = 'index.php'">Home</span>
                             </div>
-                            <div class="col-3">
+                            <div class="col-4">
                                 <span class="HeaderTabs" onclick="window.location = 'index.php#price'">Pricing</span>
                             </div>
-                            <div class="col-3">
+                            <!-- <div class="col-3">
                                 <span class="HeaderTabs" onclick="window.location = 'FlexHome.php'">Suppliments</span>
-                            </div>
-                            <div class="col-3">
+                            </div> -->
+                            <div class="col-4">
                                 <span class="HeaderTabs" onclick="window.location = 'blog.php'">Blogs</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-2  LogoCover">
+                    <!-- <div class="col-2  LogoCover">
                         <img src="Resources/images/LOGO/NewFlexHeader.svg" onclick="window.location = 'FlexHome.php'" class="FlexImage">
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
@@ -48,7 +48,7 @@
                 <div class="row">
 
                     <div class="col-10  LogoCover2">
-                        <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.svg" class="FlexImage2" alt="NewFitnessFirstLogo">
+                        <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.png" class="FlexImage2" alt="NewFitnessFirstLogo">
                     </div>
 
                     <div class="col-2 d-flex justify-content-end text-white fs-1 fw-bold">
@@ -65,18 +65,18 @@
                             <div class="col-12 text-center SectionCover">
                                 <div class="row">
                                     <!-- fitnessfirt Logo -->
-                                    <div class="col-6 d-flex justify-content-center">
+                                    <!-- <div class="col-6 d-flex justify-content-center">
                                         <div class="row">
                                             <div class="col-12 mt-3">
-                                                <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.svg" onclick="window.location = 'index.php'" class="FlexImage" alt="NewFitnessFirstLogo">
+                                                <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.png" onclick="window.location = 'index.php'" class="FlexImage" alt="NewFitnessFirstLogo">
                                             </div>
                                             <div class="col-12">
                                                 <span class="fw-bold fs-4 text-white-50">FitnessFirstLK</span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- Flexx -->
-                                    <div class="col-6 d-flex justify-content-center">
+                                    <!-- <div class="col-6 d-flex justify-content-center">
                                         <div class="row">
                                             <div class="col-12 mt-3">
                                                 <img src="Resources/images/LOGO/NewFlexHeader.svg" onclick="window.location = 'FlexHome.php'" class="FlexImage">
@@ -85,7 +85,7 @@
                                                 <span class="fw-bold fs-4 text-white-50">Flex</span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
 
                                     <div class="col-10 offset-1">
                                         <hr>
@@ -105,9 +105,9 @@
                                     <div class="col-12">
                                         <span class="HeaderTabs" onclick="window.location = 'index.php#price'">PRICE</span>
                                     </div>
-                                    <div class="col-12">
+                                    <!-- <div class="col-12">
                                         <span class="HeaderTabs" onclick="window.location = 'FlexHome.php'">SUPPLIMENTS</span>
-                                    </div>
+                                    </div> -->
                                     <div class="col-12">
                                         <span class="HeaderTabs" onclick="window.location = 'blog.php'">BLOGS</span>
                                     </div>

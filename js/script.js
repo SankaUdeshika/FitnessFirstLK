@@ -296,7 +296,7 @@ function adminLogin() {
       var response = request.responseText;
       alert(response);
       if (response == "Success") {
-        window.location = "adminDashboard.php";
+        window.location = "adminindex.php";
       }
       // else if (response == "Error") {
       //   alert("invalid email and Password");
@@ -1436,7 +1436,7 @@ function CancelOrderStatus(Order_id) {
         window.location.reload();
       }
     };
-    r.open("POST","FlexBackendPross.php",true);
+    r.open("POST", "FlexBackendPross.php", true);
     r.send(f);
   }
 }
@@ -1481,8 +1481,16 @@ function TrunLadiesPackeage() {
   LadiesPackageBtn.classList.add("Ladiesactive");
 
   var GentsPackageBtn = document.getElementById("GentsBtn");
-  GentsPackageBtn.classList.remove("Gentsactive");
-  GentsPackageBtn.classList.add("Gents");
+  if (GentsPackageBtn.classList.contains("Gentsactive")) {
+    GentsPackageBtn.classList.remove("Gentsactive");
+    GentsPackageBtn.classList.add("Gents");
+  }
+
+  var CouplePackageBtn = document.getElementById("CoupleBtn");
+  if (CouplePackageBtn.classList.contains("Coupleactive")) {
+    CouplePackageBtn.classList.remove("Coupleactive");
+    CouplePackageBtn.classList.add("Couple");
+  }
 
   // Ladies Price Change
   document.getElementById("JaelaPrice").innerText = "RS.50,000";
@@ -1493,17 +1501,49 @@ function TrunLadiesPackeage() {
 
 // Trun Gents PackagePrice
 function TrunGentsPackeage() {
-  var LadiesPackageBtn = document.getElementById("GentsBtn");
-  LadiesPackageBtn.classList.add("Gentsactive");
+  var GentsPackageBtn = document.getElementById("GentsBtn");
+  GentsPackageBtn.classList.add("Gentsactive");
 
-  var GentsPackageBtn = document.getElementById("LadiesBtn");
-  GentsPackageBtn.classList.remove("Ladiesactive");
-  GentsPackageBtn.classList.add("Ladies");
+  var LadiesPackageBtn = document.getElementById("LadiesBtn");
+  if (LadiesPackageBtn.classList.contains("Ladiesactive")) {
+    LadiesPackageBtn.classList.remove("Ladiesactive");
+    LadiesPackageBtn.classList.add("Ladies");
+  }
+
+  var CouplePackageBtn = document.getElementById("CoupleBtn");
+  if (CouplePackageBtn.classList.contains("Coupleactive")) {
+    CouplePackageBtn.classList.remove("Coupleactive");
+    CouplePackageBtn.classList.add("Couple");
+  }
 
   // Gents Price Change
   document.getElementById("JaelaPrice").innerText = "RS.60,000";
   document.getElementById("colombo-7Price").innerText = "RS.105,000";
   document.getElementById("WTCPrice").innerText = "RS.75,000";
+  window.location = "#price";
+}
+
+//  Couple Package Price
+function CouplePackeage() {
+  var couplePackageBtn = document.getElementById("CoupleBtn");
+  couplePackageBtn.classList.add("Coupleactive");
+
+  var LadiesPackageBtn = document.getElementById("LadiesBtn");
+  if (LadiesPackageBtn.classList.contains("Ladiesactive")) {
+    LadiesPackageBtn.classList.remove("Ladiesactive");
+    LadiesPackageBtn.classList.add("Ladies");
+  }
+
+  var GentsPackageBtn = document.getElementById("GentsBtn");
+  if (GentsPackageBtn.classList.contains("Gentsactive")) {
+    GentsPackageBtn.classList.remove("Gentsactive");
+    GentsPackageBtn.classList.add("Gents");
+  }
+
+  // // Ladies Price Change
+  document.getElementById("JaelaPrice").innerText = "RS.00,000";
+  document.getElementById("colombo-7Price").innerText = "RS.00,000";
+  document.getElementById("WTCPrice").innerText = "RS.00,000";
   window.location = "#price";
 }
 
@@ -1877,13 +1917,13 @@ function DeleteFlavourOnProductpage(fname) {
   r.send(f);
 }
 
-document
-  .querySelector(".EventListText")
-  .addEventListener("mouseover", function () {
-    document.querySelector(".EventImage").style.backgroundImage =
-      "url('Resources/images/Events/FightNight/A7S09290.jpg')";
-    document.querySelector(".EventImage").style.transition = "0.2s ease-in-out";
-  });
+// document
+//   .querySelector(".EventListText")
+//   .addEventListener("mouseover", function () {
+//     document.querySelector(".EventImage").style.backgroundImage =
+//       "url('Resources/images/Events/FightNight/A7S09290.jpg')";
+//     document.querySelector(".EventImage").style.transition = "0.2s ease-in-out";
+//   });
 
 document
   .querySelector(".EventListText")
@@ -1917,18 +1957,18 @@ document.querySelector(".findGymBox").addEventListener("mouseout", function () {
   document.querySelector(".findGymText").style.scale = 1;
 });
 
-document
-  .querySelector(".supplimentRow")
-  .addEventListener("mouseover", function () {
-    document.querySelector(".supplimentRow").style.left = "0%";
-    document.querySelector(".SupplimentBOX").style.scale = "1.1";
-  });
-document
-  .querySelector(".supplimentRow")
-  .addEventListener("mouseout", function () {
-    document.querySelector(".supplimentRow").style.left = "-53%";
-    document.querySelector(".SupplimentBOX").style.scale = "1";
-  });
+// document
+//   .querySelector(".supplimentRow")
+//   .addEventListener("mouseover", function () {
+//     document.querySelector(".supplimentRow").style.left = "0%";
+//     document.querySelector(".SupplimentBOX").style.scale = "1.1";
+//   });
+// document
+//   .querySelector(".supplimentRow")
+//   .addEventListener("mouseout", function () {
+//     document.querySelector(".supplimentRow").style.left = "-53%";
+//     document.querySelector(".SupplimentBOX").style.scale = "1";
+//   });
 
 document.querySelector(".BLOGRow").addEventListener("mouseover", function () {
   document.querySelector(".BLOGRow").style.left = "0%";

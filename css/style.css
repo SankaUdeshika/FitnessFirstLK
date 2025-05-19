@@ -330,6 +330,29 @@
   scale: 1.1;
 }
 
+.Couple {
+  background-color: white;
+  color: gray;
+  transition: 0.2s ease-in;
+}
+.Couple:hover {
+  background-color: gray;
+  color: white;
+  transition: 0.2s ease-in;
+}
+.Coupleactive {
+  background-color: black;
+  color: white;
+  transition: 0.2s ease-in;
+}
+.Coupleactive:hover {
+  background-color: black;
+  color: white;
+  transition: 0.2s ease-in;
+  font-weight: bold;
+  scale: 1.1;
+}
+
 .PriceListTickIcon {
   color: black;
   background-color: white;
