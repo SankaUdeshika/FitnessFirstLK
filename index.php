@@ -384,7 +384,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-12 PricingListBtn text-center rounded-3 mb-5 pt-3 pb-3 ">
-                                                        <span class="text-white fs-3">Buy Now</span>
+                                                        <span class="text-white fs-3" onclick=goPackageCheckoutPage(1);>Buy Now</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -440,7 +440,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-12 minPricingListBtn text-center rounded-3 mb-5 mt-0 pt-3 pb-3 ">
-                                                        <span class="text-white fs-3">Buy Now</span>
+                                                        <span class="text-white fs-3" onclick=goPackageCheckoutPage(2);>Buy Now</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -484,7 +484,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-12 PricingListBtn text-center rounded-3 mb-5 pt-3 pb-3 ">
-                                                        <span class="text-white fs-3">Buy Now</span>
+                                                        <span class="text-white fs-3" onclick=goPackageCheckoutPage(3);>Buy Now</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -529,7 +529,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-12 PricingListBtn text-center rounded-3 mb-5 pt-3 pb-3 ">
-                                                        <span class="text-white fs-3">Buy Now</span>
+                                                        <span class="text-white fs-3" onclick=goPackageCheckoutPage(4);>Buy Now</span>
                                                     </div>
                                                 </div>
                                             </div>

@@ -1,0 +1,315 @@
+<?php
+require "Connections/connection.php";
+// Coookie Set
+
+$package_Id = $_GET["id"];
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Contact | Fitness First LK</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body class="bg-black">
+
+    <!-- preloader -->
+    <div class="col-12 preloader " id="preloader">
+        <?php include "preloader.php" ?>
+    </div>
+
+    <!-- Header -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 headerCover d-lg-block d-none">
+                <div class="row">
+                    <div class="col-2 LogoCover" onclick="window.location='index.php'">
+                        <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.png" class="FlexImage" alt="NewFitnessFirstLogo">
+                    </div>
+
+                    <div class="col-8 text-center SectionCover2">
+                        <div class="row">
+                            <div class="col-4">
+                                <span class="HeaderTabs" onclick="window.location = 'index.php'">Home</span>
+                            </div>
+                            <div class="col-4">
+                                <span class="HeaderTabs" onclick="window.location = 'index.php#price'">Pricing</span>
+                            </div>
+                            <!-- <div class="col-3">
+                                <span class="HeaderTabs" onclick="window.location = 'FlexHome.php'">Suppliments</span>
+                            </div> -->
+                            <div class="col-4">
+                                <span class="HeaderTabs" onclick="window.location = 'blog.php'">Blogs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-2  LogoCover">
+                        <img src="Resources/images/LOGO/NewFlexHeader.svg" onclick="window.location = 'FlexHome.php'" class="FlexImage">
+                    </div> -->
+
+                </div>
+            </div>
+
+            <!-- small Screen -->
+            <div class="col-12 headerCover d-lg-none d-blcok">
+                <div class="row">
+
+                    <div class="col-10  LogoCover2">
+                        <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.png" class="FlexImage2" alt="NewFitnessFirstLogo">
+                    </div>
+
+                    <div class="col-2 d-flex justify-content-end text-white fs-1 fw-bold">
+                        <button class="bg-transparent text-white border-0 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i class="bi bi-list"></i></button>
+                    </div>
+
+                    <div class="offcanvas offcanvas-top bg-dark" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                        <div class="offcanvas-header">
+                            <button type="button" class="btn-close fs-1 fw-bold text-white" data-bs-dismiss="offcanvas" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+                        </div>
+                        <div class="offcanvas-body SectionCover">
+                            <!-- Logo -->
+
+                            <div class="col-12 text-center SectionCover">
+                                <div class="row">
+                                    <!-- fitnessfirt Logo -->
+                                    <!-- <div class="col-6 d-flex justify-content-center">
+                                        <div class="row">
+                                            <div class="col-12 mt-3">
+                                                <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.png" onclick="window.location = 'index.php'" class="FlexImage" alt="NewFitnessFirstLogo">
+                                            </div>
+                                            <div class="col-12">
+                                                <span class="fw-bold fs-4 text-white-50">FitnessFirstLK</span>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <!-- Flexx -->
+                                    <!-- <div class="col-6 d-flex justify-content-center">
+                                        <div class="row">
+                                            <div class="col-12 mt-3">
+                                                <img src="Resources/images/LOGO/NewFlexHeader.svg" onclick="window.location = 'FlexHome.php'" class="FlexImage">
+                                            </div>
+                                            <div class="col-12">
+                                                <span class="fw-bold fs-4 text-white-50">Flex</span>
+                                            </div>
+                                        </div>
+                                    </div> -->
+
+                                    <div class="col-10 offset-1">
+                                        <hr>
+                                    </div>
+
+
+
+
+                                </div>
+                            </div>
+
+                            <div class="col-12 text-center SectionCover">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <span class="HeaderTabs" onclick="window.location = 'index.php'">HOME</span>
+                                    </div>
+                                    <div class="col-12">
+                                        <span class="HeaderTabs" onclick="window.location = 'index.php#price'">PRICE</span>
+                                    </div>
+                                    <!-- <div class="col-12">
+                                        <span class="HeaderTabs" onclick="window.location = 'FlexHome.php'">SUPPLIMENTS</span>
+                                    </div> -->
+                                    <div class="col-12">
+                                        <span class="HeaderTabs" onclick="window.location = 'blog.php'">BLOGS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+
+
+
+                    <!-- Flex Header -->
+
+
+                    <!-- Content -->
+
+
+                    <div class="col-12 mt-5">
+                        <div class="row">
+                            <!-- From -->
+                            <div class="col-lg-6 col-12 border-0 border-end border-white">
+                                <div class="row">
+                                    <div class="col-lg-8 col-12 offset-lg-2">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h1 class="text-white">Contact</h1>
+                                            </div>
+                                            <div class="col-12">
+                                                <input type="text" class="form-control" placeholder="Email" id="Email">
+                                            </div>
+
+                                            <div class="col-12 mt-3">
+                                                <input type="text" class="form-control" placeholder="Phone Number" id="mobile">
+                                            </div>
+
+
+                                            <div class="col-6 mt-3">
+                                                <input type="text" class="form-control" placeholder="First Name" id="fname">
+                                            </div>
+
+                                            <div class="col-6 mt-3">
+                                                <input type="text" class="form-control" placeholder="Last Name" id="lname">
+                                            </div>
+
+                                            <div class="col-12 mb-5">
+                                                <div class="row d-flex justify-content-center">
+                                                    <div class=" col-12 d-grid SingleProductViewBtn mt-3 text-center" onclick="addMembership(<?php echo $package_Id ?>);">
+                                                        Pay Now
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-12 border-0 border-end border-white">
+                                <div class="row">
+
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <!-- Load Cart -->
+
+                                            <?php
+                                            $package_rs = Database::search("SELECT * FROM `member_package` WHERE `member_ship_id`  = '" . $package_Id . "'");
+                                            $package_count = $package_rs->num_rows;
+
+                                            if ($package_count > 0) {
+                                                $package_details = $package_rs->fetch_assoc();
+                                            ?>
+                                                <h1><?php echo $package_details["PacakageName"] ?></h1>
+
+                                            <?php
+                                            }
+
+                                            ?>
+
+
+
+
+
+                                            <div class="col-12 mt-2">
+                                                <div class="row">
+                                                    <div class="col-2 ">
+                                                        <img src="https://th.bing.com/th/id/OIP.Lvho5q_xX5NuOJKUB3KF8wHaE7?cb=iwp2&rs=1&pid=ImgDetMain" width="100%" class="rounded rounded-2" alt="">
+                                                    </div>
+
+                                                    <div class="col-5">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <span class="fw-bold text-white"><?php echo $package_details["PacakageName"] ?></span>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <small class="text-white-50">Rs.<?php echo $package_details["membership_price"] ?></small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-1">
+                                                        <span class="text-white "> 1 X </span>
+                                                    </div>
+                                                    <div class="col-1">
+                                                        <span class="text-white ">Rs.<?php echo $package_details["membership_price"] ?> </span>
+                                                    </div>
+                                                    <hr class="text-white mt-1">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-10  mt-5">
+                                                <div class="row">
+
+                                                    <div class="col-12 mb-3 p-3 ">
+                                                        <div class="row">
+                                                            <input type="text" class="bg-black text-white border-0" placeholder="Promotion Code here!">
+                                                        </div>
+                                                    </div>
+
+                                                    <hr class="fw-bold text-white">
+
+
+
+
+
+
+
+                                                    <div class="col-12">
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <span class="text-white fs-5">Total</span>
+                                                            </div>
+                                                            <div class="col-6 text-white fw-bold text-end">
+                                                                <span class="text-decoration-underline"> Rs.<?php echo $package_details["membership_price"] ?></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <hr class="text-white fw-bold">
+
+
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="row">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Offcanvas -->
+
+    
+
+
+
+
+
+    <script src="js/script.js">
+    </script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
+</body>
+
+</html>

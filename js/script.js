@@ -1475,6 +1475,9 @@ function ProgrammeRightsmall() {
   }
 }
 
+// Package Group
+var package_group = "gents";
+
 // Trun Ladies PackagePrice
 function TrunLadiesPackeage() {
   var LadiesPackageBtn = document.getElementById("LadiesBtn");
@@ -1496,6 +1499,7 @@ function TrunLadiesPackeage() {
   document.getElementById("JaelaPrice").innerText = "RS.50,000";
   document.getElementById("colombo-7Price").innerText = "RS.95,000";
   document.getElementById("WTCPrice").innerText = "RS.65,000";
+  package_group = "Ladies";
   window.location = "#price";
 }
 
@@ -1520,6 +1524,7 @@ function TrunGentsPackeage() {
   document.getElementById("JaelaPrice").innerText = "RS.60,000";
   document.getElementById("colombo-7Price").innerText = "RS.105,000";
   document.getElementById("WTCPrice").innerText = "RS.75,000";
+  package_group = "gents";
   window.location = "#price";
 }
 
@@ -1544,7 +1549,80 @@ function CouplePackeage() {
   document.getElementById("JaelaPrice").innerText = "RS.00,000";
   document.getElementById("colombo-7Price").innerText = "RS.00,000";
   document.getElementById("WTCPrice").innerText = "RS.00,000";
+  package_group = "couple";
   window.location = "#price";
+}
+
+function goPackageCheckoutPage(locationID) {
+  var packageId = 1;
+  if (package_group == "gents" && locationID == "1") {
+    //1
+    packageId = 1;
+  } else if (package_group == "gents" && locationID == "2") {
+    //2
+    packageId = 2;
+  } else if (package_group == "gents" && locationID == "3") {
+    //3
+    packageId = 3;
+  } else if (package_group == "gents" && locationID == "4") {
+    //4
+    packageId = 4;
+  } else if (package_group == "Ladies" && locationID == "1") {
+    //5
+    packageId = 5;
+  } else if (package_group == "Ladies" && locationID == "2") {
+    //7
+    packageId = 6;
+  } else if (package_group == "Ladies" && locationID == "3") {
+    //8
+    packageId = 7;
+  } else if (package_group == "Ladies" && locationID == "4") {
+    //9
+    packageId = 8;
+  } else if (package_group == "couple" && locationID == "1") {
+    //10
+    packageId = 9;
+  } else if (package_group == "couple" && locationID == "2") {
+    //11
+    packageId = 10;
+  } else if (package_group == "couple" && locationID == "3") {
+    //12
+    packageId = 11;
+  } else if (package_group == "couple" && locationID == "4") {
+    //13
+    packageId = 12;
+  }
+  window.location = "membershipCheckout.php?id=" + packageId;
+}
+
+function addMembership() {
+  alert("please Wait");
+  var email = document.getElementById("Email").value;
+  var mobile = document.getElementById("mobile").value;
+  var first_name = document.getElementById("fname").value;
+  var last_name = document.getElementById("lname").value;
+  const uniqueId =
+    Date.now().toString(36) + Math.random().toString(36).substring(2);
+
+  var f = new FormData();
+  f.append("Email", email);
+  f.append("mobile", mobile);
+  f.append("fname", first_name);
+  f.append("lname", last_name);
+  f.append("uniqueId", uniqueId);
+
+  var r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if (r.readyState == 4 && r.status == 200) {
+      var response = r.responseText;
+      alert(response);
+      if (response == "Please Check you Email") {
+        window.location = "index.php";
+      }
+    }
+  };
+  r.open("POST", "purchaseMemberships.php", false);
+  r.send(f);
 }
 
 // Change Product Categories
@@ -1925,13 +2003,13 @@ function DeleteFlavourOnProductpage(fname) {
 //     document.querySelector(".EventImage").style.transition = "0.2s ease-in-out";
 //   });
 
-document
-  .querySelector(".EventListText")
-  .addEventListener("mouseout", function () {
-    document.querySelector(".EventImage").style.backgroundImage =
-      "url('Resources/images/Events/FightNight/A7S09388.jpg')";
-    document.querySelector(".EventImage").style.transition = "0.2s ease-in-out";
-  });
+// document
+//   .querySelector(".EventListText")
+//   .addEventListener("mouseout", function () {
+//     document.querySelector(".EventImage").style.backgroundImage =
+//       "url('Resources/images/Events/FightNight/A7S09388.jpg')";
+//     document.querySelector(".EventImage").style.transition = "0.2s ease-in-out";
+//   });
 
 // EventlistnerText2
 // document.querySelector('.EventListText2').addEventListener('mouseover',function(){
@@ -1944,18 +2022,18 @@ document
 //   document.querySelector('.EventImage').style.transition = "0.2s ease-in-out";
 // });
 
-document
-  .querySelector(".findGymBox")
-  .addEventListener("mouseover", function () {
-    document.querySelector(".findGymImage").style.scale = 1.2;
-    document.querySelector(".findGymText").style.scale = 0.9;
-    document.querySelector(".findGymBox").style.cursor = "pointer";
-  });
+// document
+//   .querySelector(".findGymBox")
+//   .addEventListener("mouseover", function () {
+//     document.querySelector(".findGymImage").style.scale = 1.2;
+//     document.querySelector(".findGymText").style.scale = 0.9;
+//     document.querySelector(".findGymBox").style.cursor = "pointer";
+//   });
 
-document.querySelector(".findGymBox").addEventListener("mouseout", function () {
-  document.querySelector(".findGymImage").style.scale = 1;
-  document.querySelector(".findGymText").style.scale = 1;
-});
+// document.querySelector(".findGymBox").addEventListener("mouseout", function () {
+//   document.querySelector(".findGymImage").style.scale = 1;
+//   document.querySelector(".findGymText").style.scale = 1;
+// });
 
 // document
 //   .querySelector(".supplimentRow")
