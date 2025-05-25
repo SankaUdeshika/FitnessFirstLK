@@ -5,35 +5,7 @@ function preloader() {
 }
 window.addEventListener("load", preloader);
 
-// BMI Calculator
-function CalculateBMI() {
-  var Heightinput = document.getElementById("HeightRangeInput").value;
-  var Height = Heightinput / 100;
-  var Weight = document.getElementById("WeightRangeInput").value;
 
-  var BMIvalue = Weight / (Height * Height);
-  document.getElementById("BMIoutput").innerHTML = BMIvalue;
-
-  if (BMIvalue < 18.5) {
-    document.getElementById("ClassOutput").innerHTML =
-      "OBESE CLASS iii (Underweight)";
-  } else if (BMIvalue >= 18.5 && BMIvalue < 24.9) {
-    document.getElementById("ClassOutput").innerHTML =
-      "OBESE CLASS iii (Normal weight)";
-  } else if (BMIvalue >= 25 && BMIvalue < 29.9) {
-    document.getElementById("ClassOutput").innerHTML =
-      "OBESE CLASS iii (Overweight)";
-  } else if (BMIvalue >= 30 && BMIvalue < 34.9) {
-    document.getElementById("ClassOutput").innerHTML =
-      "OBESE CLASS iii (Obesity (Class 1))";
-  } else if (BMIvalue >= 35 && BMIvalue < 39.9) {
-    document.getElementById("ClassOutput").innerHTML =
-      "OBESE CLASS iii (Obesity (Class 2))";
-  } else {
-    document.getElementById("ClassOutput").innerHTML =
-      "OBESE CLASS iii (Obesity (Class 3))";
-  }
-}
 // Change Height
 function ChangeHeight() {
   var HeightRangeInput = document.getElementById("HeightRangeInput").value;

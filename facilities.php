@@ -28,7 +28,7 @@
 
 
             <!-- Top bar -->
-            <div class="col-12 Classes-cover  ">
+            <!-- <div class="col-12 Classes-cover  ">
                 <div class="row">
                     <div class="col-12 text-center">
                         <div class="row ">
@@ -42,15 +42,15 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 
-            <div class="col-12">
+            <div class="col-12" style="margin-top: 40px;">
                 <div class="row">
 
                     <div class="col-12 mt-5 mb-5 FirstDownToUPAnimation">
                         <div class="row">
-                            <div class="col-12 text-center mt-5">
+                            <div class="col-12  text-center mt-5">
                                 <span class="aboutTopicwhite facilitiyAboutText  ">ABOUT THE </span> <br> <span class="aboutTopicRed facilitiyAboutText"> FITNESS FACILITIES</span>
                             </div>
                         </div>
@@ -123,7 +123,7 @@
                     <div class="col-12 mb-5  ">
                         <div class="row d-flex justify-content-center">
 
-                            <div class="col-3  border border-1 rounded rounded-5 border-white Fade DownToUP">
+                            <div class="col-lg-3 col-12  border border-1 rounded rounded-5 border-white Fade DownToUP">
                                 <div class="row">
                                     <div class="col-12 mt-4">
                                         <img src="<?php echo ($Pfacilitie_data["ImagePath"]) ?>" class="facilitieImage" width="100%" alt="">
@@ -146,7 +146,7 @@
                             $Pfacilitie_data2 = $Pfacilitie_rs2->fetch_assoc();
 
                             ?>
-                            <div class="col-3 mx-5 border border-1 rounded rounded-5 border-white Fade UPToDown">
+                            <div class="col-lg-3 col-12 mx-5 border border-1 rounded rounded-5 border-white Fade UPToDown">
                                 <div class="row">
                                     <div class="col-12 mt-4">
                                         <img src="<?php echo ($Pfacilitie_data2["ImagePath"]) ?>" class="facilitieImage" width="100%" alt="">
@@ -170,7 +170,7 @@
                             $Pfacilitie_data3 = $Pfacilitie_rs3->fetch_assoc();
 
                             ?>
-                            <div class="col-3  border border-1 rounded rounded-5 border-white DownToUP">
+                            <div class="col-lg-3 col-12  border border-1 rounded rounded-5 border-white DownToUP">
                                 <div class="row">
                                     <div class="col-12 mt-4">
                                         <img src="<?php echo ($Pfacilitie_data3["ImagePath"]) ?>" class="facilitieImage" width="100%" alt="">

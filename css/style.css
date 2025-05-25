@@ -827,8 +827,9 @@
 }
 
 .aboutTopicRed {
-  color: red;
-  /* font-weight: bold; */
+  color: rgb(164, 1, 1);
+
+  font-weight: bolder ;
 }
 
 .aboutTopicwhite {

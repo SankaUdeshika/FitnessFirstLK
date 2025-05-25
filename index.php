@@ -28,6 +28,15 @@
     <!-- Contaent -->
     <div class="container-fluid">
         <div class="row">
+
+            <!-- main Carousel -->
+
+            <div class="col-12 ">
+                <div class="row ">
+                    <?php include "carousel.php" ?>
+                </div>
+            </div>
+
             <div class="col-12 overflow-x-hidden ">
                 <div class="row">
                     <!-- TopImage -->
@@ -48,6 +57,9 @@
                     </div> -->
 
                     <!-- Thid Section -->
+
+
+
 
                     <div class="col-12" style="margin-top: 100px;">
                         <div class="row">
@@ -131,44 +143,8 @@
                             <div class="col-12 mt-5 mb-5 text-center">
                                 <span class="ExploreTextWhite">What Your BMI ?</span>
                             </div>
-                            <div class="col-12 border border-1 border-white">
-                                <div class="row">
-                                    <div class="col-12 text-center">
-                                        <span class="ExploreTextWhite" id="BMIoutput">7.8</span>
-                                    </div>
-                                    <div class="col-12 text-center">
-                                        <span class="fs-3 fw-bold text-white" id="ClassOutput">OBESE CLASS iii (VERY SEVERELY OBESE)</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 border-1 border border-white border-top-0">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="row">
-                                            <!-- Wegiht -->
-                                            <div class="col-8 p-5">
-                                                <input type="text" class="form-control fs-1 bg-black text-center text-white " onchange="ChangeHeight();" value="50" max="272" id="HeightRangeInput">
-                                            </div>
-                                            <div class="col-4 text-center">
-                                                <span class="ExploreTextWhite2" id="HeightText">Heigth</span>
-                                            </div>
-
-                                            <!-- Height -->
-                                            <div class="col-8 p-5">
-                                                <input type="text" class="form-control fs-1 bg-black text-center text-white " onchange="ChangeWeight();" max="635" value="45" id="WeightRangeInput">
-                                            </div>
-                                            <div class="col-4 text-center">
-                                                <span class="ExploreTextWhite2 " id="WeightText">Weight</span>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-12 d-flex justify-content-center mt-3 mb-5">
-                                <button class="BMICalculateBtn" onclick="CalculateBMI();">Calculate</button>
-                            </div>
+                            <?php include "BmiCalculator.php"?>
+                            
                         </div>
                     </div>
 
@@ -205,7 +181,7 @@
                                         </p>
                                     </div>
                                 </li>
-                                <li class="ag-offer_item">
+                                <li class="ag-offer_item " style="cursor: pointer;" onclick="window.location = 'facilities.php'">
                                     <div class="ag-offer_visible-item">
                                         <div class="ag-offer_img-box">
                                             <img src="Resources/images/LOGO/Facilities.png" class="ag-offer_img" alt="" />
@@ -235,7 +211,7 @@
                                         </p>
                                     </div>
                                 </li>
-                                <li class="ag-offer_item">
+                                <!-- <li class="ag-offer_item">
                                     <div class="ag-offer_visible-item">
                                         <div class="ag-offer_img-box">
                                             <img src="Resources/images/LOGO/dumbell.png" class="ag-offer_img" alt="" />
@@ -248,8 +224,8 @@
                                         <p class="ag-offer_text">
                                             "Whatever your fitness needs, we’ve got you covered with our complete range of gym equipment!" </p>
                                     </div>
-                                </li>
-                                <li class="ag-offer_item">
+                                </li> -->
+                                <!-- <li class="ag-offer_item">
                                     <div class="ag-offer_visible-item">
                                         <div class="ag-offer_img-box">
                                             <img src="Resources/images/LOGO/suppliments.png" class="ag-offer_img" alt="" />
@@ -262,8 +238,8 @@
                                         <p class="ag-offer_text">
                                             "We offer premium supplements crafted with the highest quality ingredients to support your health and wellness goals." </p>
                                     </div>
-                                </li>
-                                <li class="ag-offer_item">
+                                </li> -->
+                                <!-- <li class="ag-offer_item">
                                     <div class="ag-offer_visible-item">
                                         <div class="ag-offer_img-box">
                                             <img src="Resources/images/LOGO/locaitons.png" class="ag-offer_img" alt="" />
@@ -275,7 +251,7 @@
                                             View Locations
                                         </a>
                                     </div>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                     </div>
@@ -689,6 +665,7 @@
             </div>
         </div>
         <script src="js/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
