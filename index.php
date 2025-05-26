@@ -293,25 +293,26 @@
                                 <div class="row">
                                     <div class="col-lg-8 offset-lg-2 col-10 offset-1 PricingSwitchWhite Fade">
                                         <div class="row">
+                                            <h1 class="text-black fw-bold" onclick="window.location = 'membershipCheckout.php?id=1'" style="cursor: pointer;">Buy Now</h1>
                                             <!-- Gents Package -->
-                                            <div class="col-4 d-flex justify-content-center">
+                                            <!-- <div class="col-4 d-flex justify-content-center">
                                                 <div class="col-10 offset-1  text-center rounded-4 Gentsactive p-3 m-3 Fade" id="GentsBtn" onclick="TrunGentsPackeage();" style="animation-delay: 1s;">
                                                     <span class=" fw-bold fs-4 Fade  " style="animation-delay: 2s;"> Gents Package</span>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <!-- Ladies Package -->
-                                            <div class="col-4 d-flex justify-content-center">
+                                            <!-- <div class="col-4 d-flex justify-content-center">
                                                 <div class="col-10 offset-1  text-center rounded-4 p-3 m-3 Ladies" id="LadiesBtn" onclick="TrunLadiesPackeage();">
                                                     <span class=" fw-bold fs-4  Fade " style="animation-delay: 2s;"> Ladies Package</span>
                                                 </div>
-                                            </div>
+                                            </div> -->
 
                                             <!-- couple Package -->
-                                            <div class="col-4 d-flex justify-content-center">
+                                            <!-- <div class="col-4 d-flex justify-content-center">
                                                 <div class="col-10 offset-1  text-center rounded-4 p-3 m-3 Couple" id="CoupleBtn" onclick="CouplePackeage();">
                                                     <span class=" fw-bold fs-4  Fade " style="animation-delay: 2s;">Couple Package</span>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -323,8 +324,14 @@
                             <!-- Pricing Cards -->
                             <div class="col-12   mt-5">
                                 <div class="row d-flex justify-content-center">
+
+                                    <div class="col-12 text-center">
+
+                                    </div>
+
+
                                     <!-- Ja ela -->
-                                    <div class="col-lg-2 col-8 offset-lg-0  rounded-4 mt-5 Fade " style="background-color: #0D0D0D;">
+                                    <!-- <div class="col-lg-2 col-8 offset-lg-0  rounded-4 mt-5 Fade " style="background-color: #0D0D0D;">
                                         <div class="row p-1">
                                             <div class="col-10 offset-1">
                                                 <div class="row">
@@ -365,11 +372,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
 
 
                                     <!-- Colombo 7 -->
-                                    <div class="col-lg-2 col-8 offset-lg-0 offset-4 mt-lg-0 mt-5 rounded-4 mx-5 Fade" style="background-color: #ff0000; overflow: hidden; animation-delay: 3s;">
+                                    <!-- <div class="col-lg-2 col-8 offset-lg-0 offset-4 mt-lg-0 mt-5 rounded-4 mx-5 Fade" style="background-color: #ff0000; overflow: hidden; animation-delay: 3s;">
                                         <div class="row p-1">
                                             <div class="col-10 offset-1" style="position: relative; ">
                                                 <div class="row">
@@ -421,10 +428,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
 
                                     <!-- WTC -->
-                                    <div class="col-lg-2 col-8 offset-lg-0 offset-0 rounded-4 mt-5 Fade " style="background-color: #0D0D0D;">
+                                    <!-- <div class="col-lg-2 col-8 offset-lg-0 offset-0 rounded-4 mt-5 Fade " style="background-color: #0D0D0D;">
                                         <div class="row p-1">
                                             <div class="col-10 offset-1">
                                                 <div class="row">
@@ -465,10 +472,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
 
                                     <!-- Moors Club -->
-                                    <div class="col-lg-2 col-8 offset-lg-0 offset-4 rounded-4 mx-5 mt-5 Fade " style="background-color: #0D0D0D;">
+                                    <!-- <div class="col-lg-2 col-8 offset-lg-0 offset-4 rounded-4 mx-5 mt-5 Fade " style="background-color: #0D0D0D;">
                                         <div class="row p-1">
                                             <div class="col-10 offset-1">
                                                 <div class="row">
@@ -510,9 +517,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
+
+
                         </div>
                     </div>
 
