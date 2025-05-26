@@ -5,7 +5,6 @@ function preloader() {
 }
 window.addEventListener("load", preloader);
 
-
 // Change Height
 function ChangeHeight() {
   var HeightRangeInput = document.getElementById("HeightRangeInput").value;
@@ -1595,6 +1594,34 @@ function addMembership() {
   };
   r.open("POST", "purchaseMemberships.php", false);
   r.send(f);
+}
+
+// choose Funciton
+function find() {
+  var branch = document.getElementById("branch").value;
+  var time = document.getElementById("time").value;
+  var category = document.getElementById("category").value;
+  var membership = document.getElementById("membership").value;
+
+  var form = new FormData();
+  form.append("branch", branch);
+  form.append("time", time);
+  form.append("category", category);
+  form.append("membership", membership);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      if (response == "No Infomations") {
+        document.getElementById("noInfomationTag").innerHTML = "<h1 style=color:red; font-weight:'bold'>No Package details</h1>"
+      } else {
+        window.location = "membershipCheckout.php?id=" + response;
+      }
+    }
+  };
+  request.open("POST", "chooseMembershipprocess.php", false);
+  request.send(form);
 }
 
 // Change Product Categories

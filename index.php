@@ -138,13 +138,13 @@
 
 
 
-                    <div class="col-10 offset-1 mt-5 mb-5">
+                    <div class="col-10 offset-1   mt-5 mb-5">
                         <div class="row">
                             <div class="col-12 mt-5 mb-5 text-center">
                                 <span class="ExploreTextWhite">What Your BMI ?</span>
                             </div>
-                            <?php include "BmiCalculator.php"?>
-                            
+                            <?php include "bmicalculator.php" ?>
+
                         </div>
                     </div>
 

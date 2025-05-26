@@ -156,43 +156,137 @@ $package_Id = $_GET["id"];
                             <!-- From -->
                             <div class="col-lg-6 col-12 border-0 border-end border-white">
                                 <div class="row">
-                                    <div class="col-lg-8 col-12 offset-lg-2">
+
+                                    <div class="col-lg-8 col-12 offset-lg-2 " >
                                         <div class="row">
-                                            <div class="col-12">
-                                                <h1 class="text-white">Contact</h1>
-                                            </div>
-                                            <div class="col-12">
-                                                <input type="text" class="form-control" placeholder="Email" id="Email">
-                                            </div>
 
-                                            <div class="col-12 mt-3">
-                                                <input type="text" class="form-control" placeholder="Phone Number" id="mobile">
-                                            </div>
+                                            <!-- acordian -->
+                                            <div class="accordion" id="accordionExample" >
+                                                <div class="accordion-item" style="background-color: black;">
+                                                    <h2 class="accordion-header" id="headingOne">
+                                                        <button class="accordion-button " style="background-color: red;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                            Find a Package
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body">
+                                                            <!-- contact Details -->
+                                                            <div class="col-12">
+                                                                <div class="row">
+                                                                    <!-- From -->
+                                                                    <div class=" col-12 border-0 border-end border-white">
+                                                                        <div class="row">
+                                                                            <div class=" col-12 ">
+                                                                                <div class="row">
+                                                                                    <div class="col-12">
+                                                                                        <h1 class="text-white">Contact</h1>
+                                                                                    </div>
+                                                                                    <div class="col-12">
+                                                                                        <input type="text" class="form-control" placeholder="Email" id="Email">
+                                                                                    </div>
+
+                                                                                    <div class="col-12 mt-3">
+                                                                                        <input type="text" class="form-control" placeholder="Phone Number" id="mobile">
+                                                                                    </div>
 
 
-                                            <div class="col-6 mt-3">
-                                                <input type="text" class="form-control" placeholder="First Name" id="fname">
-                                            </div>
+                                                                                    <div class="col-6 mt-3">
+                                                                                        <input type="text" class="form-control" placeholder="First Name" id="fname">
+                                                                                    </div>
 
-                                            <div class="col-6 mt-3">
-                                                <input type="text" class="form-control" placeholder="Last Name" id="lname">
-                                            </div>
+                                                                                    <div class="col-6 mt-3">
+                                                                                        <input type="text" class="form-control" placeholder="Last Name" id="lname">
+                                                                                    </div>
 
-                                            <div class="col-12 mb-5">
-                                                <div class="row d-flex justify-content-center">
-                                                    <div class=" col-12 d-grid SingleProductViewBtn mt-3 text-center" onclick="addMembership(<?php echo $package_Id ?>);">
-                                                        Pay Now
+                                                                                    <div class="col-12 mb-5">
+                                                                                        <div class="row d-flex justify-content-center">
+                                                                                            <div class=" col-12 d-grid SingleProductViewBtn mt-3 text-center" onclick="addMembership(<?php echo $package_Id ?>);">
+                                                                                                Pay Now
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item" style="background-color: black;">
+                                                    <h2 class="accordion-header" id="headingTwo">
+                                                        <button class="accordion-button collapsed"  style="background-color: red;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                                            Enter Your Billing Details
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body">
+
+                                                            <!-- Find Packages -->
+                                                            <div class="col-12">
+                                                                <h1 class="text-white">Package Name</h1>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <label for="branch" class="form-label text-white">Branch:</label>
+                                                                <select id="branch" name="branch" class="form-select">
+                                                                    <option value="Colombo 7">Colombo 7</option>
+                                                                    <option value="WTC">WTC</option>
+                                                                    <option value="Moors">Moors</option>
+                                                                    <option value="Ja ela">Ja-Ela</option>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="col-12 mt-3">
+                                                                <label for="time" class="form-label text-white">Time:</label>
+                                                                <select id="time" name="time" class="form-select">
+                                                                    <option value="Full Time">Full Time</option>
+                                                                    <option value="Off Peak">Off Peak</option>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="col-6 mt-3">
+                                                                <label for="category" class="form-label text-white">Package Name:</label>
+                                                                <select id="category" name="category" class="form-select">
+                                                                    <option value="Individual Ladies">Individual Ladies</option>
+                                                                    <option value="Individual Gents">Individual Gents</option>
+                                                                    <option value="Couple">Couple</option>
+                                                                    <option value="Student">Students</option>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="col-6 mt-3">
+                                                                <label for="membership" class="form-label text-white">Membership:</label>
+                                                                <select id="membership" name="membership" class="form-select">
+                                                                    <option value="Daily">Daily</option>
+                                                                    <option value="Monthly">Monthly</option>
+                                                                    <option value="Quarterly">Quarterly</option>
+                                                                    <option value="Bi-Annual">Bi-Annual</option>
+                                                                    <option value="Annual">Annual</option>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="col-12 mb-5">
+                                                                <div class="row d-flex justify-content-center">
+                                                                    <div class=" col-12 d-grid SingleProductViewBtn mt-3 text-center" onclick="find();">
+                                                                        Find
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col-lg-6 col-12 border-0 border-end border-white">
-                                <div class="row">
+                                <div class="row" id="noInfomationTag">
 
                                     <div class="col-12">
                                         <div class="row">
@@ -212,10 +306,6 @@ $package_Id = $_GET["id"];
 
                                             ?>
 
-
-
-
-
                                             <div class="col-12 mt-2">
                                                 <div class="row">
                                                     <div class="col-2 ">
@@ -225,7 +315,7 @@ $package_Id = $_GET["id"];
                                                     <div class="col-5">
                                                         <div class="row">
                                                             <div class="col-12">
-                                                                <span class="fw-bold text-white"><?php echo $package_details["PacakageName"] ?></span>
+                                                                <span class="fw-bold text-white" style="color: white;"> <?php echo $package_details["PacakageName"] ?></span>
                                                             </div>
                                                             <div class="col-12">
                                                                 <small class="text-white-50">Rs.<?php echo $package_details["membership_price"] ?></small>
@@ -256,10 +346,6 @@ $package_Id = $_GET["id"];
 
 
 
-
-
-
-
                                                     <div class="col-12">
                                                         <div class="row">
                                                             <div class="col-6">
@@ -274,42 +360,43 @@ $package_Id = $_GET["id"];
 
 
                                                 </div>
+
+
                                             </div>
-
-
                                         </div>
-                                    </div>
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
+
+
                     </div>
-
-
-
                 </div>
-            </div>
-            <div class="col-12">
-                <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
-    <!-- Offcanvas -->
-
-    
+        <!-- Offcanvas -->
 
 
 
 
 
-    <script src="js/script.js">
-    </script>
-    <script src="js/bootstrap.bundle.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
+
+
+        <script src="js/script.js">
+        </script>
+        <script src="js/bootstrap.bundle.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
