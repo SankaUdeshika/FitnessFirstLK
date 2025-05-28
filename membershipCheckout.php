@@ -251,7 +251,7 @@ $package_Id = $_GET["id"];
                                             <div class="col-12 mt-2">
                                                 <div class="row">
                                                     <div class="col-2 ">
-                                                        <img src="https://th.bing.com/th/id/OIP.Lvho5q_xX5NuOJKUB3KF8wHaE7?cb=iwp2&rs=1&pid=ImgDetMain" width="100%" class="rounded rounded-2" alt="">
+                                                        <img src="Resources/images/LOGO/NewFitnessFirst_LOGO.png" width="100%" class="rounded rounded-2" alt="">
                                                     </div>
 
                                                     <div class="col-5">
