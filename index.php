@@ -166,7 +166,7 @@
                     <div class="ag-offer-block">
                         <div class="ag-format-container">
                             <ul class="ag-offer_list">
-                                <li class="ag-offer_item">
+                                <li class="ag-offer_item" onclick="window.location = 'events.php'">
                                     <div class="ag-offer_visible-item">
                                         <div class="ag-offer_img-box">
                                             <img src="Resources/images/LOGO/events.png" class="ag-offer_img" alt="" />
@@ -196,7 +196,7 @@
                                         </p>
                                     </div>
                                 </li>
-                                <li class="ag-offer_item">
+                                <li class="ag-offer_item" onclick="window.location = 'ourTrainers.php'">
                                     <div class="ag-offer_visible-item">
                                         <div class="ag-offer_img-box">
                                             <img src="Resources/images/LOGO/trainers.png" class="ag-offer_img" alt="" />
