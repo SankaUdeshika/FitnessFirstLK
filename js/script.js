@@ -1566,6 +1566,151 @@ function goPackageCheckoutPage(locationID) {
   window.location = "membershipCheckout.php?id=" + packageId;
 }
 
+function PayWEBXPAY() {
+  // Grab field values
+  var email = document.getElementById("Email").value.trim();
+  var mobile = document.getElementById("mobile").value.trim();
+  var fname = document.getElementById("fname").value.trim();
+  var lname = document.getElementById("lname").value.trim();
+  var address = document.getElementById("address").value.trim();
+  var membership_price = document.getElementById("membership_price").innerHTML; // Replace this dynamically if needed
+
+  // Simple validation
+  if (!email || !validateEmail(email)) {
+    alert("Please enter a valid email.");
+    return;
+  }
+  if (!mobile || !/^\d{10}$/.test(mobile)) {
+    alert("Please enter a valid 10-digit mobile number.");
+    return;
+  }
+  if (!fname) {
+    alert("Please enter your first name.");
+    return;
+  }
+  if (!lname) {
+    alert("Please enter your last name.");
+    return;
+  }
+  if (!address) {
+    alert("Please enter your address.");
+    return;
+  }
+
+  // Create the form
+  var form = document.createElement("form");
+  form.method = "POST";
+  form.action = "example1.php";
+
+  // (Optional) Open in new tab
+  // form.target = "_blank";
+
+  // Append fields
+  function appendField(name, value) {
+    var input = document.createElement("input");
+    input.type = "hidden";
+    input.name = name;
+    input.value = value;
+    form.appendChild(input);
+  }
+
+  appendField("email", email);
+  appendField("mobile", mobile);
+  appendField("fname", fname);
+  appendField("lname", lname);
+  appendField("address", address);
+  appendField("membership_price", membership_price);
+
+  document.body.appendChild(form);
+  form.submit();
+}
+
+// Email validation function
+function validateEmail(email) {
+  var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email.toLowerCase());
+}
+
+function openPaymentGateway(hashKey) {
+  const form = document.createElement("form");
+  form.method = "POST";
+  form.action = "https://webxpay.com/index.php?route=chekout/billing";
+  // form.action = "https://sandbox.webxpay.com/index.php";
+
+  const inputs = {
+    merchant_id: "561794519801",
+    order_id: "123",
+    amount: "1000.00",
+    currency: "LKR",
+    hash: hashKey,
+    first_name: "Sanka",
+    last_name: "Udeshika",
+    email: "sankaudeshika123@gmail.com",
+    phone: "0764213724",
+    address: "123 Street",
+    city: "Dehiwala",
+    country: "Sri Lanka",
+    return_url: "http://localhost/fitnesfirst/index.php",
+    cancel_url: "http://localhost/fitnesfirst/blog.php",
+  };
+
+  for (let key in inputs) {
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = key;
+    input.value = inputs[key];
+    form.appendChild(input);
+  }
+
+  document.body.appendChild(form);
+  form.submit(); // 🚀 this will redirect to WebxPay payment UI
+}
+
+// function openPaymentGateway(hashKey) {
+//   alert("payment Gateway Opened");
+
+//   const merchant_id = "561794519801";
+//   const order_id = "123";
+//   const amount = "1000.00";
+//   const currency = "LKR";
+//   const hash = hashKey;
+//   const first_name = "Sanka";
+//   const last_name = "udeshika";
+//   const email = "sankaudeshika123@gmail.com";
+//   const phone = "0764213724";
+//   const address = "123 Street";
+//   const city = "Dehiwala";
+//   const country = "Sri Lanka";
+//   const return_url = "http://localhost/fitnesfirst/index.php";
+//   const cancel_url = "http://localhost/fitnesfirst/blog.php";
+
+//   var f = new FormData();
+//   f.append("merchant_id", merchant_id);
+//   f.append("order_id", order_id);
+//   f.append("amount", amount);
+//   f.append("currency", currency);
+//   f.append("hash", hash);
+//   f.append("first_name", first_name);
+//   f.append("last_name", last_name);
+//   f.append("Email", email);
+//   f.append("phone", phone);
+//   f.append("address", address);
+//   f.append("city", city);
+//   f.append("country", country);
+//   f.append("return_url", return_url);
+//   f.append("cancel_url", cancel_url);
+
+//   var r = new XMLHttpRequest();
+//   r.onreadystatechange = function () {
+//     if (r.readyState == 4 && r.status == 200) {
+//       var response = r.responseText;
+//       alert(response);
+//     }
+//   };
+//   r.open("POST", "https://sandbox.webxpay.com/index.php", false);
+//   r.send(f);
+// }
+
 function addMembership() {
   alert("please Wait");
   var email = document.getElementById("Email").value;
@@ -1614,7 +1759,8 @@ function find() {
     if (request.readyState == 4 && request.status == 200) {
       var response = request.responseText;
       if (response == "No Infomations") {
-        document.getElementById("noInfomationTag").innerHTML = "<h1 style=color:red; font-weight:'bold'>No Package details</h1>"
+        document.getElementById("noInfomationTag").innerHTML =
+          "<h1 style=color:red; font-weight:'bold'>No Package details</h1>";
       } else {
         window.location = "membershipCheckout.php?id=" + response;
       }

@@ -294,7 +294,8 @@ $package_Id = $_GET["id"];
                                                                 <span class="text-white fs-5">Total</span>
                                                             </div>
                                                             <div class="col-6 text-white fw-bold text-end">
-                                                                <span class="text-decoration-underline"> Rs.<?php echo $package_details["membership_price"] ?></span>
+                                                                <span class="text-decoration-underline" > Rs.<?php echo $package_details["membership_price"] ?></span>
+                                                                <span class="d-none" id="membership_price"><?php echo $package_details["membership_price"] ?></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -330,9 +331,14 @@ $package_Id = $_GET["id"];
                                                                                         <input type="text" class="form-control" placeholder="Last Name" id="lname">
                                                                                     </div>
 
+                                                                                    <div class="col-12 mt-3">
+                                                                                        <input type="text" class="form-control" placeholder="Address" id="address">
+                                                                                    </div>
+
                                                                                     <div class="col-12 mb-5">
                                                                                         <div class="row d-flex justify-content-center">
-                                                                                            <div class=" col-12 d-grid SingleProductViewBtn mt-3 text-center" onclick="addMembership(<?php echo $package_Id ?>);">
+                                                                                            <!-- <div class=" col-12 d-grid SingleProductViewBtn mt-3 text-center" onclick="addMembership(<?php echo $package_Id ?>);"> -->
+                                                                                            <div class=" col-12 d-grid SingleProductViewBtn mt-3 text-center" onclick="PayWEBXPAY();">
                                                                                                 Pay Now
                                                                                             </div>
                                                                                         </div>

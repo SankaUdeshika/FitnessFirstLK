@@ -27,6 +27,8 @@ if (empty($_POST["Email"])) {
     $fname = $_POST["fname"];
     $lname = $_POST["lname"];
 
+    
+
 
 
     Database::iud("INSERT INTO `memberships` (`membership_id`,`first_name`,`last_name`,`mobile`,`email`,`join_date`)
