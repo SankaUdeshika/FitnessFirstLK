@@ -1600,7 +1600,7 @@ function PayWEBXPAY() {
   // Create the form
   var form = document.createElement("form");
   form.method = "POST";
-  form.action = "example1.php";
+  form.action = "sendWEBXPAY.php";
 
   // (Optional) Open in new tab
   // form.target = "_blank";

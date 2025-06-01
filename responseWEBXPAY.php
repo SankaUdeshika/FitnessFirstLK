@@ -1,5 +1,7 @@
 <?php
 
+
+
 require "Connections/connection.php";
 
 require "PHPMailer.php";
@@ -9,28 +11,16 @@ require "SMTP.php";
 use PHPMailer\PHPMailer\PHPMailer;
 
 
-
-if (empty($_POST["Email"])) {
-    echo ("Please Enter a Email ");
-} else if (empty($_POST["mobile"])) {
-    echo ("Please Enter a mobile ");
-} else if (empty($_POST["fname"])) {
-    echo ("Please Enter a First Name ");
-} else if (empty($_POST["lname"])) {
-    echo ("Please Enter a Last Name ");
-} else {
-
+if ($_POST['status_code'] == '1') {
     $date =  date("Y-m-d");
     $membership_id = $_POST["uniqueId"];
-    $Email = $_POST["Email"];
+    $Email = $_POST["email"];
     $mobile = $_POST["mobile"];
-    $fname = $_POST["fname"];
-    $lname = $_POST["lname"];
-
+    $fname = $_POST["first_name"];
+    $lname = $_POST["last_name"];
 
     Database::iud("INSERT INTO `memberships` (`membership_id`,`first_name`,`last_name`,`mobile`,`email`,`join_date`)
      VALUES('" . $membership_id . "','" . $Email . "','" . $mobile . "','" . $fname . "','" . $lname . "','" . $date . "');  ");
-
 
     $mail = new PHPMailer;
     $mail->IsSMTP();
@@ -81,4 +71,12 @@ if (empty($_POST["Email"])) {
     } else {
         echo ("Please Check you Email");
     }
+
+
+    echo "<h2>✅ Payment Successful!</h2>";
+    echo "<p>Order ID: " . $_POST['order_id'] . "</p>";
+    echo "<p>Transaction ID: " . $_POST['transaction_id'] . "</p>";
+    echo "<p>Paid Amount: " . $_POST['amount'] . " " . $_POST['currency'] . "</p>";
+} else {
+    echo "<h2>❌ Payment Failed</h2>";
 }

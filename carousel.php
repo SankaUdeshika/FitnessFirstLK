@@ -84,8 +84,8 @@
     <div class="col-12">
         <!-- text and button start -->
         <div class="CarouselTextCover d-lg-block d-none" style="position: absolute; top: 25%;">
-            <span class="partnerText ">YOUR PARTNER IN</span><br>
-            <span class="FITNESStext ">FITNESS</span>
+            <!-- <span class="partnerText ">YOUR PARTNER IN</span><br>
+            <span class="FITNESStext ">FITNESS</span> -->
             <br>
             <!-- <button class="redBoxBtn ">Book a visit</button> -->
             <br>
@@ -98,8 +98,8 @@
         </div>
         <!-- small -->
         <div class="CarouselTextCover d-lg-none d-block" style="position: absolute; top: 25%;">
-            <span class="partnerTextsmall ">YOUR PARTNER IN</span><br>
-            <span class="FITNESStextsmall ">FITNESS</span>
+            <!-- <span class="partnerTextsmall ">YOUR PARTNER IN</span><br>
+            <span class="FITNESStextsmall ">FITNESS</span> -->
             <br>
             <!-- <button class="redBoxBtn ">Book a visit</button> -->
             <br>
