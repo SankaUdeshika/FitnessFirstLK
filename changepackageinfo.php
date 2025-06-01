@@ -1,5 +1,6 @@
 <?php
 session_start();
+include "Connections/connection.php";
 
 if (isset($_SESSION["admin"])) {
 ?>
@@ -9,7 +10,7 @@ if (isset($_SESSION["admin"])) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Admin Dashboard | FITNESS FIRST</title>
+        <title>Manage Content | </title>
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -22,7 +23,7 @@ if (isset($_SESSION["admin"])) {
 
                 <div class="col-12 col-lg-2">
                     <div class="row">
-                        <div class="col-12 align-items-start bg-dark vh-100">
+                        <div class="col-12 align-items-start bg-dark" style="height: 300vh;">
                             <div class="row g-1 text-center">
 
                                 <div class="col-12 mt-5">
@@ -33,16 +34,12 @@ if (isset($_SESSION["admin"])) {
                                 <div class="col-12 text-center">
                                     <div class="nav flex-column nav-pills me-3 mt-3" role="tablist" aria-orientation="vertical">
                                         <nav class="nav flex-column">
-                                            <a class="nav-link active" aria-current="page" href="adminDashboard.php">Dashboard</a>
-                                            <a class="nav-link" href="adminManageContent.php">Manage Content</a>
-                                            <a class="nav-link " href="adminManageBlogs.php">Manage Blog</a>
-                                            <a class="nav-link " href="FlexManage.php">Manage Flex</a>
-                                            <a class="nav-link " href="changepackageinfo.php">Manage Membershp</a>
+                                            <a class="nav-link " href="adminDashboard.php">Dashboard</a>
+                                            <a class="nav-link active" aria-current="page" href="adminManageContent.php">Manage Content</a>
+
                                         </nav>
                                     </div>
                                 </div>
-
-
 
                                 <div class="col-12 mt-5">
                                     <hr class="border border-white border-1" />
@@ -51,7 +48,7 @@ if (isset($_SESSION["admin"])) {
                                 </div>
 
                                 <div class="col-12 mt-3 d-grid">
-                                    <label class="form-label fs-6 fw-bold btn btn-outline-info  text-white " onclick="adminLogOut();">LogOut <i class="bi bi-box-arrow-right"></i> </label>
+                                    <label class="form-label fs-6 fw-bold btn btn-outline-info  text-white ">Testing</label>
                                 </div>
                             </div>
                         </div>
@@ -60,14 +57,13 @@ if (isset($_SESSION["admin"])) {
 
                 <div class="col-12 col-lg-10">
                     <div class="row">
+
                         <div class="text-white fw-bold mb-1 mt-3">
-                            <h2 class="fw-bold ml-5">Dashboard</h2>
+                            <h2 class="fw-bold ml-5">Manage Content</h2>
                         </div>
                         <div class="col-12">
                             <hr />
                         </div>
-
-
 
                         <div class="col-12 bg-dark">
                             <div class="row">
@@ -100,79 +96,69 @@ if (isset($_SESSION["admin"])) {
                             </div>
                         </div>
 
-                        <div class="col-12">
-                            <hr>
-                        </div>
+                        <!-- content -->
 
-                        <div class="col-lg-4 col-12 ml-3 mx-3 bg-primary rounded  ">
-                            <div class="row">
-                                <div class="col-12 text-center text-white fw-bold mt-3">
-                                    <span>Share Review Link</span>
-                                </div>
+                       <div class="col-12 p-4">
+    <div class="row">
+        <?php
+        $member_package = Database::search("SELECT * FROM `member_package`");
+        $member_package_num = $member_package->num_rows;
+        ?>
 
+        <table class="table table-bordered table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>member_ship_id</th>
+                    <th>location</th>
+                    <th>membership_price</th>
+                    <th>PacakageName</th>
+                    <th>workoutTime</th>
+                    <th>duration</th>
+                    <th>Update / Insert</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                for ($i = 0; $i < $member_package_num; $i++) {
+                    $member_package_data = $member_package->fetch_assoc(); 
+                ?>
+                    <tr>
+                        <td contenteditable="false"><?php echo $member_package_data["member_ship_id"]; ?></td>
+                        <td contenteditable="true"><?php echo $member_package_data["location"]; ?></td>
+                        <td contenteditable="true"><?php echo $member_package_data["membership_price"]; ?></td>
+                        <td contenteditable="true"><?php echo $member_package_data["PacakageName"]; ?></td>
+                        <td contenteditable="true"><?php echo $member_package_data["workoutTime"]; ?></td>
+                        <td contenteditable="true"><?php echo $member_package_data["duration"]; ?></td>
+                        <td><button class="btn btn-primary btn-sm" onclick="updateRow(this)">Update</button></td>
+                    </tr>
+                <?php
+                }
+                ?>
 
-                                <div class="col-12 text-black  border-0 border-bottom 1 border-dark ">
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <input type="text" placeholder="Please Enter a Email" id="ReviewEmail" class="form-control">
-                                        </div>
-                                        <div class="col-4">
-                                            <button class="btn btn-info" onclick="sendReviewLinkFromEmail();">Send from email</button>
-                                        </div>
-                                        <div class="col-12">
-                                            <hr class="border border-1 border-white">
-                                        </div>
-                                        <div class="col-12  text-black-50  d-grid mb-4">
-                                            <button class="btn btn-success" onclick="CopyRviewLink();">Copy Link</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <tr>
+                    <td contenteditable="false"></td> 
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td><button class="btn btn-danger btn-sm" onclick="InsertRow(this)">Insert</button></td>
+                </tr>
 
-                        <div class="col-lg-7 col-12 ml-3 mx-3 bg-dark rounded  ">
-                            <div class="row">
-                                <div class="col-12 text-center text-white fw-bold mt-3">
-                                    <span>Change Password</span>
-                                </div>
-                                <div class="col-12 text-black  border-0  border-dark ">
-                                    <div class="row">
-                                        <div class="col-12 mb-3">
-                                            <input type="password" class="form-control" placeholder="currunt Password" id="curruntPassword">
-                                        </div>
-
-                                        <div class="col-12 mb-3">
-                                            <input type="password" class="form-control" placeholder="New Password" id="newPassword" required>
-                                        </div>
-
-                                        <div class="col-12 mb-3">
-                                            <input type="password" class="form-control" placeholder="Repeat Password" id="RPassword" required>
-                                        </div>
-
-                                        <div class="col-12 d-flex justify-content-center mb-3">
-                                            <button class="btn btn-danger" onclick="adminChangePassword('<?php echo ($_SESSION['admin']['email']) ?>');">Change Password</button>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
+            </tbody>
+        </table>
+    </div>
+</div>
 
 
 
                     </div>
                 </div>
-
             </div>
-        </div>
 
-        <script src="js/bootstrap.bundle.js"></script>
-        <script src="js/script.js"></script>
-        <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
+            <script src="js/bootstrap.js"></script>
+            <script src="js/script.js"></script>
+            <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
     </body>
 
     </html>
@@ -194,15 +180,9 @@ if (isset($_SESSION["admin"])) {
     <body style="background-color: #74EBD5;background-image: linear-gradient(90deg,#74EBD5 0%,#9FACE6 100%);">
 
         <div class="col-12 d-flex justify-content-center align-items-center text-white" style="width: 100%; height: 100vh;">
-            <div class="row">
-                <div class="col-12">
-                    <h1>Please Log In first</h1>
-                </div>
-                <div class="col-12">
-                    <a href="adminLogin.php">Go to Login Page</a>
-                </div>
-            </div>
+            <h1>Please Log In first</h1>
         </div>
+
 
         <script src="bootstrap.bundle.js"></script>
         <script src="script.js"></script>
@@ -212,4 +192,5 @@ if (isset($_SESSION["admin"])) {
     </html>
 <?php
 }
+
 ?>

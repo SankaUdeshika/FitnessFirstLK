@@ -267,7 +267,7 @@ function adminLogin() {
       var response = request.responseText;
       alert(response);
       if (response == "Success") {
-        window.location = "adminindex.php";
+        window.location = "adminDashboard.php";
       }
       // else if (response == "Error") {
       //   alert("invalid email and Password");
@@ -1767,6 +1767,79 @@ function find() {
     }
   };
   request.open("POST", "chooseMembershipprocess.php", false);
+  request.send(form);
+}
+
+function updateRow(button) {
+  const row = button.closest("tr");
+  const cells = row.querySelectorAll("td");
+
+  const member_ship_id = cells[0].innerText.trim();
+  const location = cells[1].innerText.trim();
+  const membership_price = cells[2].innerText.trim();
+  const packageName = cells[3].innerText.trim();
+  const workoutTime = cells[4].innerText.trim();
+  const duration = cells[5].innerText.trim();
+
+  // console.log("ID:", member_ship_id);
+  // console.log("Location:", location);
+  // console.log("Price:", membership_price);
+  // console.log("Package:", packageName);
+  // console.log("Workout Time:", workoutTime);
+  // console.log("Duration:", duration);
+
+  var form = new FormData();
+  form.append("member_ship_id", member_ship_id);
+  form.append("location", location);
+  form.append("membership_price", membership_price);
+  form.append("packageName", packageName);
+  form.append("workoutTime", workoutTime);
+  form.append("duration", duration);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      alert(response);
+      if (response == "Success") {
+        window.location.reload();
+      }
+    }
+  };
+  request.open("POST", "UpdatePackages.php", true);
+  request.send(form);
+}
+function InsertRow(button) {
+  const row = button.closest("tr");
+  const cells = row.querySelectorAll("td");
+
+  const member_ship_id = cells[0].innerText.trim();
+  const location = cells[1].innerText.trim();
+  const membership_price = cells[2].innerText.trim();
+  const packageName = cells[3].innerText.trim();
+  const workoutTime = cells[4].innerText.trim();
+  const duration = cells[5].innerText.trim();
+
+  var form = new FormData();
+  form.append("member_ship_id", member_ship_id);
+  form.append("location", location);
+  form.append("membership_price", membership_price);
+  form.append("packageName", packageName);
+  form.append("workoutTime", workoutTime);
+  form.append("duration", duration);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      alert(response);
+      console.log(response);
+      if (response == "Success") {
+        window.location.reload();
+      }
+    }
+  };
+  request.open("POST", "InsertPackages.php", true);
   request.send(form);
 }
 
