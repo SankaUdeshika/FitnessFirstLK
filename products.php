@@ -29,7 +29,7 @@ require "Connections/FlexConnection.php";
 <body id="reportsPage">
   <nav class="navbar navbar-expand-xl">
     <div class="container h-100">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="index.php">
         <h1 class="tm-site-title mb-0">Product Admin</h1>
       </a>
       <button

@@ -34,7 +34,7 @@ require "Connections/FlexConnection.php";
 <body>
   <nav class="navbar navbar-expand-xl">
     <div class="container h-100">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="index.php">
         <h1 class="tm-site-title mb-0">Product Admin</h1>
       </a>
       <button
@@ -51,7 +51,7 @@ require "Connections/FlexConnection.php";
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto h-100">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="index.php">
               <i class="fas fa-tachometer-alt"></i> Dashboard
               <span class="sr-only">(current)</span>
             </a>

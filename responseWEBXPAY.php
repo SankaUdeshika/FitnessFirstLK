@@ -1,7 +1,5 @@
 <?php
 
-
-
 require "Connections/connection.php";
 
 require "PHPMailer.php";
