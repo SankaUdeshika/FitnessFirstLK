@@ -2322,29 +2322,28 @@ function sendContactUsEmailToUs() {
   var Mobile = document.getElementById("Mobile").value;
   var Message = document.getElementById("Message").value;
 
-  var f = new FormData();
-  f.append("command", command);
-  f.append("Name", Name);
-  f.append("email", email);
-  f.append("Mobile", Mobile);
-  f.append("Message", Message);
+  var form = new FormData();
+  form.append("command", command);
+  form.append("Name", Name);
+  form.append("email", email);
+  form.append("Mobile", Mobile);
+  form.append("Message", Message);
   alert("OK bn");
 
 
-  var r = new XMLHttpRequest();
-  r.onreadystatechange = function () {
-    if ((r.readyState == 4) & (r.status == 200)) {
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if ((request.readyState == 4) & (request.status == 200)) {
      
-
-      if (r.readyState == "Delete Success") {
-        alert("OK bn");
-      } else {
-        alert(
-          "Error. you can only delete non assignable flavour. please delete flavour product first."
-        );
+      var response = request.responseText;
+      if(response =="success"){
+        alert("ok");
+      }else{
+        alert(response)
       }
+      
     }
   };
-  r.open("POST", "FlexBackendPross.php", true);
-  r.send(f);
+  request.open("POST", "FlexBackendPross.php", true);
+  request.send(form);
 }
