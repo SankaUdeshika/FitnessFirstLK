@@ -36,7 +36,7 @@ if (isset($_SESSION["admin"])) {
                                         <nav class="nav flex-column">
                                             <a class="nav-link " href="adminDashboard.php">Dashboard</a>
                                             <a class="nav-link active" aria-current="page" href="adminManageContent.php">Manage Content</a>
-                                            <a class="nav-link" href="adminManageBlogs.php">Manage Blog</a>
+
                                         </nav>
                                     </div>
                                 </div>
@@ -97,36 +97,61 @@ if (isset($_SESSION["admin"])) {
                         </div>
 
                         <!-- content -->
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeCarouselImage.php'">
-                            <h1>Home Page Change Carousel Image</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeHomePage.php'">
-                            <h1>Home Page About Change</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeWhyFinessPart.php'">
-                            <h1>Change Home Page Why Fitness Part</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeSuccessStory.php'">
-                            <h1>Change Home Success Box</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-danger" onclick="window.location = 'changeClassesTopImage.php'">
-                            <h1>Change Top Image in evey sub Page</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-danger" onclick="window.location = 'changeClassesVideo.php'">
-                            <h1>Change Classes Video part</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-danger" onclick="window.location = 'change5Areas.php'">
-                            <h1>Change 5 Areas</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-primary" onclick="window.location = 'ChangeFacilitiesAbout.php'">
-                            <h1>Change Facilities Features</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-primary" onclick="window.location = 'ManageFactory.php'">
-                            <h1>Manage Factory Items</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-primary" onclick="window.location = 'ManageTrainers.php'">
-                            <h1>Manage Trainers</h1>
-                        </div>
+
+                       <div class="col-12 p-4">
+    <div class="row">
+        <?php
+        $member_package = Database::search("SELECT * FROM `member_package`");
+        $member_package_num = $member_package->num_rows;
+        ?>
+
+        <table class="table table-bordered table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>member_ship_id</th>
+                    <th>location</th>
+                    <th>membership_price</th>
+                    <th>PacakageName</th>
+                    <th>workoutTime</th>
+                    <th>duration</th>
+                    <th>Update / Insert</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                for ($i = 0; $i < $member_package_num; $i++) {
+                    $member_package_data = $member_package->fetch_assoc(); 
+                ?>
+                    <tr>
+                        <td contenteditable="false"><?php echo $member_package_data["member_ship_id"]; ?></td>
+                        <td contenteditable="true"><?php echo $member_package_data["location"]; ?></td>
+                        <td contenteditable="true"><?php echo $member_package_data["membership_price"]; ?></td>
+                        <td contenteditable="true"><?php echo $member_package_data["PacakageName"]; ?></td>
+                        <td contenteditable="true"><?php echo $member_package_data["workoutTime"]; ?></td>
+                        <td contenteditable="true"><?php echo $member_package_data["duration"]; ?></td>
+                        <td><button class="btn btn-primary btn-sm" onclick="updateRow(this)">Update</button></td>
+                    </tr>
+                <?php
+                }
+                ?>
+
+                <tr>
+                    <td contenteditable="false"></td> 
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td><button class="btn btn-danger btn-sm" onclick="InsertRow(this)">Insert</button></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
                     </div>
                 </div>
             </div>
@@ -155,14 +180,7 @@ if (isset($_SESSION["admin"])) {
     <body style="background-color: #74EBD5;background-image: linear-gradient(90deg,#74EBD5 0%,#9FACE6 100%);">
 
         <div class="col-12 d-flex justify-content-center align-items-center text-white" style="width: 100%; height: 100vh;">
-            <div class="row">
-                <div class="col-12">
-                    <h1>Please Log In first</h1>
-                </div>
-                <div class="col-12">
-                    <a href="adminLogin.php">Go to Login Page</a>
-                </div>
-            </div>
+            <h1>Please Log In first</h1>
         </div>
 
 
