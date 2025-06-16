@@ -1620,6 +1620,7 @@ function PayWEBXPAY() {
   appendField("lname", lname);
   appendField("address", address);
   appendField("membership_price", membership_price);
+  alert(membership_price);
 
   document.body.appendChild(form);
   form.submit();
@@ -1743,6 +1744,7 @@ function addMembership() {
 
 // choose Funciton
 function find() {
+  alert("working");
   var branch = document.getElementById("branch").value;
   var time = document.getElementById("time").value;
   var category = document.getElementById("category").value;
@@ -2311,3 +2313,38 @@ document
   .addEventListener("mouseout", function () {
     document.getElementById("EventsHoverText").style.opacity = "0";
   });
+
+function sendContactUsEmailToUs() {
+
+  var command = "SendEmailTOUS";
+  var Name = document.getElementById("Name").value;
+  var email = document.getElementById("Email").value;
+  var Mobile = document.getElementById("Mobile").value;
+  var Message = document.getElementById("Message").value;
+
+  var f = new FormData();
+  f.append("command", command);
+  f.append("Name", Name);
+  f.append("email", email);
+  f.append("Mobile", Mobile);
+  f.append("Message", Message);
+  alert("OK bn");
+
+
+  var r = new XMLHttpRequest();
+  r.onreadystatechange = function () {
+    if ((r.readyState == 4) & (r.status == 200)) {
+     
+
+      if (r.readyState == "Delete Success") {
+        alert("OK bn");
+      } else {
+        alert(
+          "Error. you can only delete non assignable flavour. please delete flavour product first."
+        );
+      }
+    }
+  };
+  r.open("POST", "FlexBackendPross.php", true);
+  r.send(f);
+}

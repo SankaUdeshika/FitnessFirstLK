@@ -3,6 +3,12 @@ session_start();
 require "Connections/FlexConnection.php";
 $command = $_POST["command"];
 
+require "PHPMailer.php";
+require "Exception.php";
+require "SMTP.php";
+
+use PHPMailer\PHPMailer\PHPMailer;
+
 // Flex Flavour Session
 // $_SESSION["Flavour"] = "" hide the flavour Process;
 
@@ -935,6 +941,117 @@ if ($command == "addFlexProduct") {
 
     FlexDatabase::iud("UPDATE `order` SET `Status_Sid` = '2' WHERE `Order_id` = '" . $order_id . "' ");
     echo ("Canceled Order");
+} else if ($command == "SendEmailTOUS") {
+
+    $Name = $_POST["Name"];
+    $email = $_POST["email"];
+    $Mobile = $_POST["Mobile"];
+    $Message = $_POST["Message"];
+
+
+
+    $mail = new PHPMailer;
+    $mail->IsSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'sankaudeshika123@gmail.com';
+    $mail->Password = 'eesdvcpzbwylufww';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port = 465;
+    $mail->setFrom('sankaudeshika123@gmail.com', 'New Registation');
+    $mail->addReplyTo('sankaudeshika123@gmail.com', 'New Registation');
+    $mail->addAddress($email);
+    $mail->isHTML(true);
+    $mail->Subject = 'New Registation';
+    $bodyContent = ' <div style="background-color: black; color: white; border-radius: 50px; padding: 50px;">
+
+    <div style="color: lightgreen;">
+        <label style="font-size: 40px; font-family: cursive;" for="">Jain Naturals</label>
+    </div>
+
+    <div style="color: darkgreen; display:flex; justify-content: center;">
+        <h1>Thank you very much for purchasing our products</h1>
+    </div>
+    <hr />
+    <div style="display: flex; justify-content: center;">
+        <p>Dear Customer, <br />
+            Thank you very much for purchasing our product. We look forward to your feedback. Come back to shop with us
+        </p>
+    </div>
+
+    <div style="color: darkslategray;">
+        <h2>Prchesed Details</h2>
+    </div>
+
+
+<hr>
+    <div>
+        <span for="">Order Id = </span> <span>' . $customer_data["Order_id"] . '</span>
+    </div>
+
+    <div>
+        <span for="">Product Name = </span> <span>' . $customer_data["Product_name"] . '</span>
+    </div>
+
+    <div>
+        <span for=""> quantity = </span> <span>' . $customer_data["qty"] . '</span>
+    </div>
+
+    <div>
+        <span for=""> Purchesed Date Time = </span> <span>' . $customer_data["Purchesed_datetime"] . '</span>
+    </div>
+
+    <div>
+        <span for=""> Customer Name = </span> <span>' . $customer_data["First_name"] . " " . $customer_data["Last_name"] . '</span>
+    </div>
+
+    <div>
+        <span for=""> Customer Nic = </span> <span>' . $customer_data["Nic"] . '</span>
+    </div>
+
+    <div>
+        <span for=""> Sub Total = </span> <span>' . $customer_data["Sub_Total"] . '</span>
+    </div>
+
+    <div>
+        <span for=""> Delevery fee = </span> <span>' . $customer_data["Delevery_Cost"] . '</span>
+    </div>
+
+    <div>
+        <span for=""> Total Cost = </span> <span>' . $customer_data["Total_Cost"] . '</span>
+    </div>
+
+    <div>
+    <span for=""> Payment Method = </span> <span style="color:red">' . $customer_data["method"] . '</span>
+    </div>
+
+
+
+    <div style="display: flex; justify-content: center; margin-top: 50px;">
+        <p>Thank You!</p>
+    </div>
+
+    <div>
+        <label for="">JainNaturals@gmail.com</label>
+    </div>
+    <div>
+        <label for="">85/5, Vihara Mawwatha, <br> Bellanwila, Boralesgamuwa, Sri Lanka</label>
+    </div>
+    <div>
+        <label for="">070 646 4522</label>
+    </div>
+    <div>
+        <label for="">JAIN Naturals</label>
+    </div>
+
+</div>';
+    $mail->Body    = $bodyContent;
+
+    if (!$mail->send()) { // $mail -send. mata waraduna thana podk balanna oni aai code karaddi.
+        echo ("verification code sending failed");
+    } else {
+        echo ("success");
+    }
 }
 
 

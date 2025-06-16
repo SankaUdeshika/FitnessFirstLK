@@ -10,17 +10,28 @@ $unique_id = uniqid();
 
 
 // unique_order_id|total_amount  (Live)
-$plaintext = $unique_id . '|' . $membership_price;
+// $plaintext = "5030" . '|';
+$plaintext = '525|1000';
+// (LIVE)
+// $publickey = "-----BEGIN PUBLIC KEY-----
+// MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCeD0SNdOEvjrI9GU9+cNUqyl9t
+// IyqaBpTUjMeJrySuqLvy64bZQ5AVxwyHHRmNamAPAb4tY5inEzibxJOxgqbkVZFi
+// ojAzedZ4ykjJ/NOezQ3e0qOPeHk0KrktA6uKFOgokL2x63i2nf8vMhBzY8IaFABS
+// rM0GkeYmBpmZ85rk3wIDAQAB
+// -----END PUBLIC KEY-----";
+// $secretKey  = "1031d8c6-74a5-43a5-b3c2-242dee4bf941";
+
+
+
+// (SANDBOX)
 $publickey = "-----BEGIN PUBLIC KEY-----
-MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCeD0SNdOEvjrI9GU9+cNUqyl9t
-IyqaBpTUjMeJrySuqLvy64bZQ5AVxwyHHRmNamAPAb4tY5inEzibxJOxgqbkVZFi
-ojAzedZ4ykjJ/NOezQ3e0qOPeHk0KrktA6uKFOgokL2x63i2nf8vMhBzY8IaFABS
-rM0GkeYmBpmZ85rk3wIDAQAB
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCg4L6wWV9XNBvJEcqTnKQ1zIrp
+wH55aWFM9ycNTAOTsphrmPkp31lHsvS5J8XcyApElowps8uqVJoRNMjAAw2p0j61
+KD71eg9m7IFJoCPaMaLiU6WJ3ZelIsg0RxVf9a695Mxm8MlKMrESjnGjFD2fsM22
+Q3ZjLXgW5REL/3zPNwIDAQAB
 -----END PUBLIC KEY-----";
-$secretKey  = "1031d8c6-74a5-43a5-b3c2-242dee4bf941";
 
-
-
+$secretKey  = "02588ab1-08fb-49a4-a233-8b418730eee0";
 
 //load public key for encrypting 
 openssl_public_encrypt($plaintext, $encrypt, $publickey);
@@ -28,8 +39,10 @@ openssl_public_encrypt($plaintext, $encrypt, $publickey);
 //encode for data passing 
 $payment = base64_encode($encrypt);
 
-//checkout URL 
-$url = 'https://webxpay.com/index.php?route=checkout/billing';
+//checkout URL LIVE
+// $url = 'https://webxpay.com/index.php?route=checkout/billing';
+//checkout URL Staging
+$url = 'https://stagingxpay.info/index.php?route=checkout/billing';
 
 ?>
 
@@ -67,7 +80,7 @@ $url = 'https://webxpay.com/index.php?route=checkout/billing';
                     <!-- POST parameters -->
                     <input type="hidden" name="secret_key" value="1031d8c6-74a5-43a5-b3c2-242dee4bf941">
                     <input type="hidden" name="payment" value="<?php echo $payment; ?>">
-                    <input type="hidden" name="return_url" value="https:/fitnessfirst.lk/responseWEBXPAY.php">
+                    <input type="hidden" name="return_url" value="https://fitnessfirst.lk/responseWEBXPAY.php">
                     <input type="submit" class="btn btn-outline-danger fs-1" value="Pay Now">
                 </form>
             </div>

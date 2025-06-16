@@ -1962,16 +1962,14 @@
 }
 
 .GymLocationText {
-  font-family: "FFont";
   color: white;
-  font-size: 35px;
+  font-size: 15px;
   transition: ease-in-out 0.5s;
 }
 
 .GymLocationText:hover {
-  font-family: "FFont";
   color: red;
-  font-size: 50px;
+  font-size: 16px;
   transition: ease-in-out 0.2s;
   cursor: pointer;
 }

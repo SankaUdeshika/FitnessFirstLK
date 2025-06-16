@@ -1,680 +1,673 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Gym Template">
+    <meta name="keywords" content="Gym, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome| FitnessFirstLk</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    <link rel="icon" href="resources/Images/LOGO/NewFitnessFirst_LOGO.png">
-    <meta name="keywords" content="FitnessFirstLk,Fitness,First,Lk,Gym">
-    <meta name="description" content="Best Fitness centers & gyms in Colombo, Western Province, Sri Lanka. High Octane Fitness, Get U Fit Gym, Ultimate Gym">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fitness First LK</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/flaticon.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/barfiller.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 
-<body style="background-color: black; color:white;">
-    <!-- preloader -->
-    <div class="col-12 preloader " id="preloader">
-        <?php include "preloader.php" ?>
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
     </div>
 
-    <!-- Header -->
-    <div class="col-12 FlexLOGO" style="position: fixed; z-index: 4; ">
-        <?php include "header.php" ?>
+    <!-- Offcanvas Menu Section Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="canvas-close">
+            <i class="fa fa-close"></i>
+        </div>
+        <div class="canvas-search search-switch">
+            <i class="fa fa-search"></i>
+        </div>
+        <nav class="canvas-menu mobile-menu">
+            <ul>
+                <li><a href="./index.php">Home</a></li>
+                <li><a href="./about-us.html">About Us</a></li>
+                <!-- <li><a href="./classes.html">Classes</a></li> -->
+                <li><a href="./services.html">Amenities</a></li>
+                <li><a href="./team.html">Our Team</a></li>
+                <li><a href="#">More</a>
+                    <ul class="dropdown">
+                        <li><a href="./about-us.html">About us</a></li>
+                        <!-- <li><a href="./class-timetable.html">Classes timetable</a></li> -->
+                        <!-- <li><a href="./bmi-calculator.html">Bmi calculate</a></li> -->
+                        <li><a href="./team.html">Our team</a></li>
+                        <!-- <li><a href="./gallery.html">Gallery</a></li> -->
+                        <li><a href="./blog.html">Our blog</a></li>
+                        <!-- <li><a href="./404.html">404</a></li> -->
+                    </ul>
+                </li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+        <div class="canvas-social">
+            <a href="https://www.facebook.com/profile.php?id=61567922141868"><i class="fa fa-facebook"></i></a>
+            <!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
+            <!-- <a href="#"><i class="fa fa-youtube-play"></i></a> -->
+            <a href="https://www.instagram.com/fitnessfirstlk?igsh=MWVoeGNjdDJobGtxOQ=="><i class="fa fa-instagram"></i></a>
+        </div>
     </div>
-    <span class="Number" style="z-index: -100;">sanka</span>
+    <!-- Offcanvas Menu Section End -->
 
-    <!-- Contaent -->
-    <div class="container-fluid">
-        <div class="row">
-
-            <!-- main Carousel -->
-
-            <div class="col-12 ">
-                <div class="row ">
-                    <?php include "carousel.php" ?>
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="logo">
+                        <a href="./index.php">
+                            <img src="img/logo.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="nav-menu">
+                        <ul>
+                            <li class="active"><a href="./index.php">Home</a></li>
+                            <li><a href="./about-us.html">About Us</a></li>
+                            <!-- <li><a href="./class-details.html">Classes</a></li> -->
+                            <li><a href="./services.html">Amenities</a></li>
+                            <li><a href="./team.html">Our Team</a></li>
+                            <li><a href="#">More</a>
+                                <ul class="dropdown">
+                                    <li><a href="./about-us.html">About us</a></li>
+                                    <!-- <li><a href="./class-timetable.html">Classes timetable</a></li> -->
+                                    <!-- <li><a href="./bmi-calculator.html">Bmi calculate</a></li> -->
+                                    <li><a href="./team.html">Our team</a></li>
+                                    <!-- <li><a href="./gallery.html">Gallery</a></li> -->
+                                    <li><a href="./blog.html">Our blog</a></li>
+                                    <!-- <li><a href="./404.html">404</a></li> -->
+                                </ul>
+                            </li>
+                            <li><a href="./contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="top-option">
+                        <!-- <div class="to-search search-switch">
+                            <i class="fa fa-search"></i>
+                        </div> -->
+                        <div class="to-social">
+                            <a href="https://www.facebook.com/profile.php?id=61567922141868"><i class="fa fa-facebook"></i></a>
+                            <!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
+                            <!-- <a href="#"><i class="fa fa-youtube-play"></i></a> -->
+                            <a href="https://www.instagram.com/fitnessfirstlk?igsh=MWVoeGNjdDJobGtxOQ=="><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="canvas-open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
 
-            <div class="col-12 overflow-x-hidden ">
-                <div class="row">
-                    <!-- TopImage -->
-                    <!-- Large Screen -->
-                    <!-- <div class="col-12" class="indexTopImageCover FirstDownToUPAnimation">
-                        <video autoplay muted loop id="myVideo" class="IndexTopImage">
-                            <source src="Resources/Videos/newViedeo.mp4" type="video/mp4">
-                            Your browser does not support HTML5 video.
-                        </video> -->
-                    <!-- <video src="Resources/Videos/4745810-uhd_3840_2160_25fps (1).mp4" autoplay class="IndexTopImage " alt="MainTopImage"></video> -->
-                    <!-- <img src="Resources/images/LOGO/FitnessFirstTextLogo1.svg" class="FitnesFirstTextLogo" alt="">
-                    </div> -->
-
-
-                    <!-- ImagesGrid -->
-                    <!-- <div class="col-12  ">
-                        <?php include "AboutHomePage.php" ?>
-                    </div> -->
-
-                    <!-- Thid Section -->
-
-
-
-
-                    <div class="col-12" style="margin-top: 100px;">
-                        <div class="row">
-
-                            <div class="col-10 offset-1">
-                                <div class="row">
-                                    <div class="col-lg-6 col-12 findGymBox" onclick="window.location = '#LocationMap'">
-                                        <div class="row">
-
-                                            <div class="col-12 overflow-hidden">
-                                                <img src="Resources/images/carouselImages/4.jpeg" class="findGymImage">
-                                            </div>
-
-                                            <div class="col-12 text-center mt-5 findGymText">
-                                                <p class="GymFOnt" style="font-size: 100px;">FIND A <br><span class="GymFOnt" style="font-size: 160px; color: red;">GYM</span> <br> <span class="GymFOnt" style="font-size: 130px;">Near</span> <br> <span class="GymFOnt" style="font-size: 180px;">YOU</span> </p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6 col-12 mt-lg-0 mt-4 gymsupliment overflow-overflow-x-hidden overflow-y-hidden ">
-                                        <div class="row">
-
-
-
-                                            <div class="col-12 mt-4 position-relative overflow-x-hidden overflow-y-hidden overflow-hidden">
-                                                <img src="Resources/images/storyboxImage/story4.jpeg" class="BlogBOX">
-                                                <div class="col-12 BLOGRow ">
-                                                    <div class="row">
-                                                        <div class="col-6">
-                                                            <div class="BLOGBOXOVERLAY d-flex justify-content-center align-items-center"> Discover insights and <br> stories on our blog <br> Dive in here! </div>
-                                                        </div>
-                                                        <div class="col-6">
-                                                            <div class="FlexButtonDIV"> <button class="flexShoppingButton" onclick="window.location = 'blog.php'">BLOGS</button> </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- <div class="col-12 overflow-hidden overflow-x-hidden position-relative">
-                                                <img src="Resources/images/blogImage/blog7How To Get Fit In The New Year.jpeg" class="SupplimentBOX">
-                                                <div class="col-12 supplimentRow ">
-                                                    <div class="row">
-                                                        <div class="col-6 d-lg-block d-none">
-                                                            <div class="FlexButtonDIV"> <button class="flexShoppingButton" onclick="window.location = 'FlexHome.php'">Flex Shopping</button> </div>
-                                                        </div>
-                                                        <div class="col-6 d-lg-none d-block">
-                                                            <div class="FlexButtonDIV"> <button class="flexShoppingButton" onclick="window.location = 'FlexHome.php'">Flex</button> </div>
-                                                        </div>
-                                                        <div class="col-6">
-                                                            <div class="supplimentBOXOVERLAY d-flex justify-content-center align-items-center"> Visit our <br> Suppliment <br> Shop </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> -->
-
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- This Section -->
-                    <!-- <div class="col-12 mt-5">
-                        <div class="row mt-5">
-                            <?php
-                            // include "hoverglitch.php"
-                            ?>
-                        </div>
-                    </div> -->
-
-
-
-
-                    <div class="col-10 offset-1   mt-5 mb-5">
-                        <div class="row">
-                            <div class="col-12 mt-5 mb-5 text-center">
-                                <span class="ExploreTextWhite">What Your BMI ?</span>
-                            </div>
-                            <?php include "bmicalculator.php" ?>
-
-                        </div>
-                    </div>
-
-                    <!-- EventList -->
-                    <!-- <div class="col-12 position-relative">
-                        <div class="row">
-                            <div class="EventImage position-relative"></div>
-                            <marquee behavior="" direction="left" class="marqueeElement" style="position: absolute; top: 0px;">
-                                <div class=""><span class="EventListText">FIGHTNIGHT </span> </div>
-                            </marquee>
-
-                     
-                        </div>
-                    </div> -->
-
-
-                    <!-- Details Section -->
-                    <!-- Details tab -->
-                    <div class="ag-offer-block">
-                        <div class="ag-format-container">
-                            <ul class="ag-offer_list">
-                                <li class="ag-offer_item" onclick="window.location = 'events.php'">
-                                    <div class="ag-offer_visible-item">
-                                        <div class="ag-offer_img-box">
-                                            <img src="Resources/images/LOGO/events.png" class="ag-offer_img" alt="" />
-                                        </div>
-                                        <div class="ag-offer_title">
-                                            Evetns
-                                        </div>
-                                    </div>
-                                    <div class="ag-offer_hidden-item">
-                                        <p class="ag-offer_text">
-                                            "Join us at the gym, where we organize exciting events for our members! Get a membership and be part of our vibrant community—don't miss out on the fun and fitness.""
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="ag-offer_item " style="cursor: pointer;" onclick="window.location = 'facilities.php'">
-                                    <div class="ag-offer_visible-item">
-                                        <div class="ag-offer_img-box">
-                                            <img src="Resources/images/LOGO/Facilities.png" class="ag-offer_img" alt="" />
-                                        </div>
-                                        <div class="ag-offer_title">
-                                            Facilities
-                                        </div>
-                                    </div>
-                                    <div class="ag-offer_hidden-item">
-                                        <p class="ag-offer_text">
-                                            "We offer a range of facilities including a Supplement Shop, Merchandise, Swimming Pool Access, and much more!"
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="ag-offer_item" onclick="window.location = 'ourTrainers.php'">
-                                    <div class="ag-offer_visible-item">
-                                        <div class="ag-offer_img-box">
-                                            <img src="Resources/images/LOGO/trainers.png" class="ag-offer_img" alt="" />
-                                        </div>
-                                        <div class="ag-offer_title">
-                                            Gym Trainers
-                                        </div>
-                                    </div>
-                                    <div class="ag-offer_hidden-item">
-                                        <p class="ag-offer_text">
-                                            "We have highly experienced gym trainers who are dedicated to helping you achieve your fitness goals."
-                                        </p>
-                                    </div>
-                                </li>
-                                <!-- <li class="ag-offer_item">
-                                    <div class="ag-offer_visible-item">
-                                        <div class="ag-offer_img-box">
-                                            <img src="Resources/images/LOGO/dumbell.png" class="ag-offer_img" alt="" />
-                                        </div>
-                                        <div class="ag-offer_title">
-                                            Equipments
-                                        </div>
-                                    </div>
-                                    <div class="ag-offer_hidden-item">
-                                        <p class="ag-offer_text">
-                                            "Whatever your fitness needs, we’ve got you covered with our complete range of gym equipment!" </p>
-                                    </div>
-                                </li> -->
-                                <!-- <li class="ag-offer_item">
-                                    <div class="ag-offer_visible-item">
-                                        <div class="ag-offer_img-box">
-                                            <img src="Resources/images/LOGO/suppliments.png" class="ag-offer_img" alt="" />
-                                        </div>
-                                        <div class="ag-offer_title">
-                                            Supplements
-                                        </div>
-                                    </div>
-                                    <div class="ag-offer_hidden-item">
-                                        <p class="ag-offer_text">
-                                            "We offer premium supplements crafted with the highest quality ingredients to support your health and wellness goals." </p>
-                                    </div>
-                                </li> -->
-                                <!-- <li class="ag-offer_item">
-                                    <div class="ag-offer_visible-item">
-                                        <div class="ag-offer_img-box">
-                                            <img src="Resources/images/LOGO/locaitons.png" class="ag-offer_img" alt="" />
-                                        </div>
-                                        <div class="ag-offer_title">Loacations</div>
-                                    </div>
-                                    <div class="ag-offer_hidden-item">
-                                        <a href="#LocationMap" class="ag-offer_btn">
-                                            View Locations
-                                        </a>
-                                    </div>
-                                </li> -->
-                            </ul>
-                        </div>
-                    </div>
-
-
-
-                    <!-- Join Now Second -->
-                    <div class="col-8 offset-2 mt-5 mb-5 rounded-4 DownToUP Fade" style="background-color: #0D0D0D;">
-                        <div class="row">
-                            <div class="col-7 m-3">
-                                <span class="text-white fs-3 d-lg-block d-none"> Enhance user experience with healthy nutrition tips, support resources, and social elements.</span>
-                                <span class="text-white fs-4 d-lg-none d-block"> Enhance user experience with healthy nutrition tips, support resources, and social elements.</span>
-                            </div>
-                            <div class="col-4 d-flex justify-content-end alginitems-center">
-                                <div class="row">
-                                    <div class="col-6 d-flex align-items-center">
-                                        <span class="fw-bold fs-1 text-white"><i class="bi bi-instagram"></i></span>
-                                    </div>
-                                    <div class="col-6 d-flex align-items-center">
-                                        <span class="fw-bold fs-1 text-white"><i class="bi bi-facebook"></i></span>
-                                    </div>
-                                </div>
+    <!-- Hero Section Begin -->
+    <section class="hero-section">
+        <div class="hs-slider owl-carousel">
+            <div class="hs-item set-bg" data-setbg="img/hero/hero-1.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 offset-lg-6">
+                            <div class="hi-text">
+                                <span>Shape your body</span>
+                                <h1>Be <strong>strong</strong> with a professional</h1>
+                                <a href="team.html" class="primary-btn">Get info</a>
                             </div>
                         </div>
                     </div>
-
-
-                    <!-- Pricing List -->
-                    <div class="col-12 mt-5 mb-5 " id="price">
-                        <div class="row">
-                            <!-- <div class="col-12 text-center">
-                                <span class="text-primary fs-4 Fade">Pricing</span>
-                            </div> -->
-                            <div class="col-12 text-center">
-                                <span class="ExploreTextWhite Fade DownToUP ">Our List Packages</span>
-                            </div>
-                            <!-- Switch -->
-                            <div class="col-12 mb-5">
-                                <div class="row">
-                                    <div class="col-lg-8 offset-lg-2 col-10 offset-1 PricingSwitchWhite Fade">
-                                        <div class="row">
-                                            <h1 class="text-black fw-bold" onclick="window.location = 'membershipCheckout.php?id=1'" style="cursor: pointer;">Buy Now</h1>
-                                            <!-- Gents Package -->
-                                            <!-- <div class="col-4 d-flex justify-content-center">
-                                                <div class="col-10 offset-1  text-center rounded-4 Gentsactive p-3 m-3 Fade" id="GentsBtn" onclick="TrunGentsPackeage();" style="animation-delay: 1s;">
-                                                    <span class=" fw-bold fs-4 Fade  " style="animation-delay: 2s;"> Gents Package</span>
-                                                </div>
-                                            </div> -->
-                                            <!-- Ladies Package -->
-                                            <!-- <div class="col-4 d-flex justify-content-center">
-                                                <div class="col-10 offset-1  text-center rounded-4 p-3 m-3 Ladies" id="LadiesBtn" onclick="TrunLadiesPackeage();">
-                                                    <span class=" fw-bold fs-4  Fade " style="animation-delay: 2s;"> Ladies Package</span>
-                                                </div>
-                                            </div> -->
-
-                                            <!-- couple Package -->
-                                            <!-- <div class="col-4 d-flex justify-content-center">
-                                                <div class="col-10 offset-1  text-center rounded-4 p-3 m-3 Couple" id="CoupleBtn" onclick="CouplePackeage();">
-                                                    <span class=" fw-bold fs-4  Fade " style="animation-delay: 2s;">Couple Package</span>
-                                                </div>
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-                            <!-- Pricing Cards -->
-                            <div class="col-12   mt-5">
-                                <div class="row d-flex justify-content-center">
-
-                                    <div class="col-12 text-center">
-
-                                    </div>
-
-
-                                    <!-- Ja ela -->
-                                    <!-- <div class="col-lg-2 col-8 offset-lg-0  rounded-4 mt-5 Fade " style="background-color: #0D0D0D;">
-                                        <div class="row p-1">
-                                            <div class="col-10 offset-1">
-                                                <div class="row">
-                                                    <div class="col-12 mt-5">
-                                                        <span class="fs-4 fw-bold" style="color: white;">Ja Ela</span>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <span class=" text-white " style="font-size: 25px;" id="JaelaPrice">Rs.60,000</span>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <span class=" text-white-50 fs-4 ">Annual</span>
-                                                    </div>
-                                                    <div class="col-12 mt-5 mb-5">
-                                                        <div class="row">
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Unlimited Gym Access</span></li>
-                                                            </div>
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Free Meal Plan</span></li>
-                                                            </div>
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Free Workout Schedule</span></li>
-                                                            </div>
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Free Sport Therapy</span></li>
-                                                            </div>
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Flexx Supplement Offers</span></li>
-                                                            </div>
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Ample Parking</span></li>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 PricingListBtn text-center rounded-3 mb-5 pt-3 pb-3 ">
-                                                        <span class="text-white fs-3" onclick=goPackageCheckoutPage(1);>Buy Now</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> -->
-
-
-                                    <!-- Colombo 7 -->
-                                    <!-- <div class="col-lg-2 col-8 offset-lg-0 offset-4 mt-lg-0 mt-5 rounded-4 mx-5 Fade" style="background-color: #ff0000; overflow: hidden; animation-delay: 3s;">
-                                        <div class="row p-1">
-                                            <div class="col-10 offset-1" style="position: relative; ">
-                                                <div class="row">
-
-                                                    <div class="col-12 mt-5 ">
-                                                        <span class="fs-4 fw-bold" style="color: white;">Colombo 7 </span>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <span class=" text-white " style="font-size: 30px;" id="colombo-7Price">RS.105,000</span>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <span class=" text-white fs-4 ">Annual</span>
-                                                    </div>
-                                                    <div class="col-12 mt-5 mb-5">
-                                                        <div class="row">
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Unlimited Gym Access</span></li>
-                                                            </div>
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Access To All Branches</span></li>
-                                                            </div>
-
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Free Meal Plan</span></li>
-                                                            </div>
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Free Workout Schedule</span></li>
-                                                            </div>
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Free Sport Therapy</span></li>
-                                                            </div>
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Flexx Supplement Offers</span></li>
-                                                            </div>
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Boost Cafe</span></li>
-                                                            </div>
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Ample Parking</span></li>
-                                                            </div>
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Pool, sauna & steam Room</span></li>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 minPricingListBtn text-center rounded-3 mb-5 mt-0 pt-3 pb-3 ">
-                                                        <span class="text-white fs-3" onclick=goPackageCheckoutPage(2);>Buy Now</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> -->
-
-                                    <!-- WTC -->
-                                    <!-- <div class="col-lg-2 col-8 offset-lg-0 offset-0 rounded-4 mt-5 Fade " style="background-color: #0D0D0D;">
-                                        <div class="row p-1">
-                                            <div class="col-10 offset-1">
-                                                <div class="row">
-                                                    <div class="col-12 mt-5">
-                                                        <span class="fs-4 fw-bold" style="color: white;">WTC</span>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <span class=" text-white " style="font-size: 25px;" id="WTCPrice">Rs.75,000</span>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <span class=" text-white-50 fs-4 ">Annual</span>
-                                                    </div>
-                                                    <div class="col-12 mt-5 mb-5">
-                                                        <div class="row">
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Unlimited Gym Access</span></li>
-                                                            </div>
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Free Meal Plan</span></li>
-                                                            </div>
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Free Workout Schedule</span></li>
-                                                            </div>
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Free Sport Therapy</span></li>
-                                                            </div>
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Flexx Supplement Offers</span></li>
-                                                            </div>
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Ample Parking</span></li>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 PricingListBtn text-center rounded-3 mb-5 pt-3 pb-3 ">
-                                                        <span class="text-white fs-3" onclick=goPackageCheckoutPage(3);>Buy Now</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> -->
-
-                                    <!-- Moors Club -->
-                                    <!-- <div class="col-lg-2 col-8 offset-lg-0 offset-4 rounded-4 mx-5 mt-5 Fade " style="background-color: #0D0D0D;">
-                                        <div class="row p-1">
-                                            <div class="col-10 offset-1">
-                                                <div class="row">
-                                                    <div class="col-12 mt-5">
-                                                        <span class="fs-4 fw-bold" style="color: white;">Moors Club</span>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <span class=" text-white " style="font-size: 25px;">Rs.xxxxx</span>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <span class=" text-white-50 fs-4 ">Annual</span>
-                                                    </div>
-                                                    <div class="col-12 mt-5 mb-5">
-                                                        <div class="row">
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Unlimited Gym Access</span></li>
-                                                            </div>
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Ladies & Unisex Gym</span></li>
-                                                            </div>
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Free Meal Plan</span></li>
-                                                            </div>
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Free Workout Schedule</span></li>
-                                                            </div>
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Free Sport Therapy</span></li>
-                                                            </div>
-                                                            <div class="col-12 mt-1 mb-1">
-                                                                <span class="PriceListTickIcon"><i class="bi bi-check-lg"></i></span> &nbsp; <span class="text-white fs-5">Flexx Supplement Offers</span></li>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 PricingListBtn text-center rounded-3 mb-5 pt-3 pb-3 ">
-                                                        <span class="text-white fs-3" onclick=goPackageCheckoutPage(4);>Buy Now</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> -->
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-
-                    <!-- CUstomer Comments  -->
-                    <div class="col-12 mt-5">
-                        <div class="row">
-                            <div class="col-10 offset-1">
-                                <div class="row">
-                                    <div class="col-lg-6 col-12">
-                                        <div class="row">
-                                            <div class="col-12 mb-5">
-                                                <span class="ExploreTextWhite Fade ">What Our Member Say About Us?</span>
-                                            </div>
-                                            <div class="col-12 mt-5">
-                                                <div class="row mt-5">
-                                                    <div class="col-12">
-                                                        <img src="Resources/images/ProfileImage/Profile.svg" class="mt-5" width="36" height="auto" alt="">
-                                                        <img src="Resources/images/ProfileImage/Profile.svg" class="mt-5" width="36" height="auto" alt="">
-                                                        <img src="Resources/images/ProfileImage/Profile.svg" class="mt-5" width="36" height="auto" alt="">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <span class="text-white-50 fs-4">10K + Satisfied Customer</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-12 p-5 rounded-5" style="background-color:#0D0D0D ;">
-                                        <div class="row">
-                                            <div class="col-10 mt-5 mb-5 offset-1 d-flex justify-content-end">
-                                                <div class="row">
-                                                    <div class="col-2">
-                                                        <span class="text-warning fs-3 Fade" style="animation-delay: 1s;"><i class="bi bi-star-fill"></i></span>
-                                                    </div>
-                                                    <div class="col-2">
-                                                        <span class="text-warning fs-3 Fade" style="animation-delay: 3s;"><i class="bi bi-star-fill"></i></span>
-                                                    </div>
-                                                    <div class="col-2">
-                                                        <span class="text-warning fs-3 Fade" style="animation-delay: 6s;"><i class="bi bi-star-fill"></i></span>
-                                                    </div>
-                                                    <div class="col-2">
-                                                        <span class="text-warning fs-3 Fade" style="animation-delay: 9s ;"><i class="bi bi-star-fill"></i></span>
-                                                    </div>
-                                                    <div class="col-2">
-                                                        <span class="text-warning fs-3 Fade" style="animation-delay: 12s;"><i class="bi bi-star-fill"></i></span>
-                                                    </div>
-                                                    <div class="col-2">
-                                                        <span class="text-warning fs-3 Fade " style="animation-delay: 15s;"><i class="bi bi-star-fill"></i></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-10 mb-5 offset-1 text-end">
-                                                <p class="fs-4 Fade"> “ Join this fitness member, the best choice that I’ve. They’re very professional and give you suggestion about what food and nutrition that you can eat” </p>
-                                            </div>
-                                            <div class="col-10 mt-5 offset-1 Fade" style="animation-delay: 2s;">
-                                                <div class="row">
-                                                    <div class="col-2">
-                                                        <img src="Resources/images/ProfileImage/Profile.svg" class="mt-5" width="100%" height="55" alt="">
-                                                    </div>
-                                                    <div class="col-6 d-flex mt-5 align-items-center">
-                                                        <div class="row">
-                                                            <div class="col-12">
-                                                                <span class="fs-3 text-white" id="LocationMap">Jonathan Edward</span>
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <span class="fs-4 text-white-50">Office Worker</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- FITNESSFIRST LOCATION -->
-
-                    <div class="col-12 mt-5">
-                        <div class="row mt-5">
-                            <div class="col-12">
-                                <div class="row">
-                                    <div class="col-lg-3 col-4 text-center">
-                                        <span class="GymLocationText" onclick="showGoogleLocation('colombo');">colombo7</span>
-                                    </div>
-                                    <div class="col-lg-3 col-4 text-center">
-                                        <span class="GymLocationText" onclick="showGoogleLocation('jaela');">Ja Ela </span>
-                                    </div>
-                                    <div class="col-lg-3 col-4 text-center">
-                                        <span class="GymLocationText" onclick="showGoogleLocation('wtc');"> WTC </span>
-                                    </div>
-                                    <div class="col-lg-3 col-12 text-center">
-                                        <span class="GymLocationText" onclick="showGoogleLocation('wtc');"> Moors Club </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <iframe style="transition: 0.5s ease-in-out;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31686.815227955212!2d79.82922301083981!3d6.9083058999999984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2597a85531ecb%3A0xd24f023f2b2a2bd5!2sFitness%20First%20-%20Colombo%207!5e0!3m2!1sen!2slk!4v1723187781024!5m2!1sen!2slk" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="GoogleMap"></iframe>
+                </div>
+            </div>
+            <div class="hs-item set-bg" data-setbg="img/hero/hero-2.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 offset-lg-6">
+                            <div class="hi-text">
+                                <span>Shape your body</span>
+                                <h1>Buy <strong>Six Month</strong> Get <strong>Six month</strong></h1>
+                                <a href="#" class="primary-btn">Enroll Now</a>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- ChoseUs Section Begin -->
+    <section class="choseus-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mb-5">
+                    <?php include "bmical.php" ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <span>Why chose us?</span>
+                        <h2>PUSH YOUR LIMITS FORWARD</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="cs-item">
+                        <span class="flaticon-034-stationary-bike"></span>
+                        <h4>Modern equipment</h4>
+                        <p>Our gym is equipped with the latest state-of-the-art fitness machines and technology, designed to deliver maximum performance and safety. Whether you’re strength training or doing cardio, our equipment supports every fitness level and goal.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="cs-item">
+                        <span class="flaticon-033-juice"></span>
+                        <h4>Healthy nutrition plan</h4>
+                        <p>We go beyond the gym floor. With Fitness First meal plans, you’ll get nutritious, ready-to-follow food guidance that fuels performance and supports lasting health — because what you eat matters.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="cs-item">
+                        <span class="flaticon-002-dumbell"></span>
+                        <h4>Proffesponal training plan</h4>
+                        <p>Our certified trainers create structured, results-driven programs that help you train smarter, not harder. From strength and conditioning to fat loss and endurance, we’ve got the perfect plan for you.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="cs-item">
+                        <span class="flaticon-014-heart-beat"></span>
+                        <h4>Unique to your needs</h4>
+                        <p>Your fitness journey is personal, and so is our approach. From training plans to meal programs, everything we offer is uniquely crafted to match your individual needs and help you reach your goals faster.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ChoseUs Section End -->
 
 
 
-                    <!-- Subscribe Section -->
-                    <div class="col-12 mt-5 mb-5 Fade DownToUP">
-                        <div class="row ">
-                            <div class="col-lg-10 col-12 p-5 border border-1 border-white rounded-5 offset-lg-1 offset-0">
-                                <div class="row">
-                                    <div class="col-12 text-center">
-                                        <span class=" IndexSubscribeText ">Subscribe our fitness tips</span>
-                                    </div>
-                                    <div class="col-8 offset-2 text-center">
-                                        <span class="fs-5">Clearly communicate the benefits of subscribing, such as exclusive content and breaking news.</span>
-                                    </div>
-
-                                    <div class="col-12 mt-5 d-flex justify-content-center">
-                                        <div class="row">
-                                            <div class="col-12  bg-white rounded-5">
-                                                <div class="row">
-                                                    <div class="col-8 d-grid">
-                                                        <input type="text" placeholder="Enter Your Email address" class="SubscribeInput">
-                                                    </div>
-                                                    <div class="col-4 mt-3  mb-3  d-flex justify-content-center  ">
-                                                        <button class="text-white border-0 fs-4 rounded-4" style="background-color: red; padding-left: 5px; padding-right: 5px; margin-right: 10px;"> Subscribe</button>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
+    <!-- Team Section Begin -->
+    <section class="team-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="team-title">
+                        <div class="section-title">
+                            <span>Our Team</span>
+                            <h2>TRAIN WITH EXPERTS</h2>
+                        </div>
+                        <!-- <a href="#" class="primary-btn btn-normal appoinment-btn">appointment</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="ts-slider owl-carousel">
+                    <div class="col-lg-4">
+                        <div class="ts-item set-bg" data-setbg="img/team/team-1.jpg">
+                            <div class="ts_text">
+                                <h4>Athart Rachel</h4>
+                                <span>Gym Trainer</span>
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-4">
+                        <div class="ts-item set-bg" data-setbg="img/team/team-2.jpg">
+                            <div class="ts_text">
+                                <h4>Athart Rachel</h4>
+                                <span>Gym Trainer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="ts-item set-bg" data-setbg="img/team/team-3.jpg">
+                            <div class="ts_text">
+                                <h4>Athart Rachel</h4>
+                                <span>Gym Trainer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="ts-item set-bg" data-setbg="img/team/team-4.jpg">
+                            <div class="ts_text">
+                                <h4>Athart Rachel</h4>
+                                <span>Gym Trainer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="ts-item set-bg" data-setbg="img/team/team-5.jpg">
+                            <div class="ts_text">
+                                <h4>Athart Rachel</h4>
+                                <span>Gym Trainer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="ts-item set-bg" data-setbg="img/team/team-6.jpg">
+                            <div class="ts_text">
+                                <h4>Athart Rachel</h4>
+                                <span>Gym Trainer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Team Section End -->
 
-                    <!-- footer -->
-                    <div class="col-12 mt-5">
-                        <div class="row">
-                            <?php include "footer.php" ?>
+
+
+    <!-- Classes Section Begin -->
+    <section class="classes-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>WHAT WE CAN OFFER</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="class-item">
+                        <div class="ci-pic">
+                            <img src="img/classes/class-1.jpg" alt="">
+                        </div>
+                        <div class="ci-text">
+                            <span>STRENGTH</span>
+                            <h5>Weightlifting</h5>
+                            <!-- <a href="#"><i class="fa fa-angle-right"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="class-item">
+                        <div class="ci-pic">
+                            <img src="img/classes/class-2.jpg" alt="">
+                        </div>
+                        <div class="ci-text">
+                            <span>Cardio</span>
+                            <h5>Indoor cycling</h5>
+                            <!-- <a href="#"><i class="fa fa-angle-right"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="class-item">
+                        <div class="ci-pic">
+                            <img src="img/classes/class-3.jpg" alt="">
+                        </div>
+                        <div class="ci-text">
+                            <span>STRENGTH</span>
+                            <h5>Kettlebell power</h5>
+                            <!-- <a href="#"><i class="fa fa-angle-right"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="class-item">
+                        <div class="ci-pic">
+                            <img src="img/classes/class-4.jpg" alt="">
+                        </div>
+                        <div class="ci-text">
+                            <span>Cardio</span>
+                            <h4>Steam Room & Sauna</h4>
+                            <!-- <a href="#"><i class="fa fa-angle-right"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="class-item">
+                        <div class="ci-pic">
+                            <img src="img/classes/class-5.jpg" alt="">
+                        </div>
+                        <div class="ci-text">
+                            <span>Massage</span>
+                            <h4>Sport Massage</h4>
+                            <!-- <a href="#"><i class="fa fa-angle-right"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ChoseUs Section End -->
+
+    <!-- Banner Section Begin -->
+    <section class="banner-section set-bg" data-setbg="img/banner-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="bs-text">
+                        <h2>registration now to get more deals</h2>
+                        <div class="bt-tips">Where health, beauty and fitness meet.</div>
+                        <!-- <a href="#" class="primary-btn  btn-normal">Appointment</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner Section End -->
+
+    <!-- Pricing Section Begin -->
+    <section class="pricing-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <span>Monthly Deals</span>
+                        <h2>Choose your Package</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-8">
+                    <div class="ps-item">
+                        <h3>Gents Annual 50% OFF</h3>
+                        <div class="pi-price">
+                            <h2>Rs.40000/=</h2>
+                            <span>Moors Sport Club</span>
+                        </div>
+                        <ul>
+                            <li>Fully equipment gym</li>
+                            <li>Ladies Only Area</li>
+                            <li>Certified trainers</li>
+                            <li>Shower & Changing room facilities</li>
+                            <li>Free meal plan & workout schedules</li>
+                            <li>Body assessment</li>
+                            <li>Ample parking</li>
+                        </ul>
+                        <a href="#" class="primary-btn pricing-btn" onclick="window.location = 'membershipCheckout.php?id=1'">Enroll now</a>
+                        <!-- <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a> -->
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-8">
+                    <div class="ps-item">
+                        <h3>Buy 6months Get 6months</h3>
+                        <div class="pi-price">
+                            <h2>Rs.80000/=</h2>
+                            <span>Colombo 7</span>
+                        </div>
+                        <ul>
+                            <li>Fully equipment gym</li>
+                            <li>Swimming pool, sauna & steam room</li>
+                            <li>Certified trainers</li>
+                            <li>Access to all 4 branches</li>
+                            <li>In-house suppliments store</li>
+                            <li>Shower & Changing room facilities</li>
+                            <li>Free meal plan & workout schedules</li>
+                            <li>Body assessment</li>
+                            <li>Ample parking</li>
+                        </ul>
+                        <a href="#" class="primary-btn pricing-btn" onclick="window.location = 'membershipCheckout.php?id=1'">Enroll now</a>
+                        <!-- <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a> -->
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-8">
+                    <div class="ps-item">
+                        <h3>Ladies Annual 50% OFF </h3>
+                        <div class="pi-price">
+                            <h2>Rs.35000/=</h2>
+                            <span>JA-ELA</span>
+                        </div>
+                        <ul>
+                            <li>Fully equipment gym</li>
+                            <li>Certified trainers</li>
+                            <li>Shower & Changing room facilities</li>
+                            <li>Free meal plan & workout schedules</li>
+                            <li>Body assessment</li>
+                            <li>Ample parking</li>
+                        </ul>
+                        <a href="#" class="primary-btn pricing-btn" onclick="window.location = 'membershipCheckout.php?id=1'">Enroll now</a>
+                        <!-- <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Pricing Section End -->
+    <!-- Bmi eca methana Dapn -->
+
+    <!-- Gallery Section End -->
+
+    <!-- Team Section Begin -->
+    <section class="team-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="team-title">
+                        <div class="section-title">
+                            <span>Our Team</span>
+                            <h2>TRAIN WITH EXPERTS</h2>
+                        </div>
+                        <!-- <a href="#" class="primary-btn btn-normal appoinment-btn">appointment</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="ts-slider owl-carousel">
+                    <div class="col-lg-4">
+                        <div class="ts-item set-bg" data-setbg="img/team/piyumi.png">
+                            <div class="ts_text">
+                                <h4>Piumi</h4>
+                                <span>Gym Trainer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="ts-item set-bg" data-setbg="img/team/ashanthi.png">
+                            <div class="ts_text">
+                                <h4>Ashanthi</h4>
+                                <span>Gym Trainer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="ts-item set-bg" data-setbg="img/team/afran.png">
+                            <div class="ts_text">
+                                <h4>Afran</h4>
+                                <span>Gym Trainer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="ts-item set-bg" data-setbg="img/team/raveen.png">
+                            <div class="ts_text">
+                                <h4>Raveen</h4>
+                                <span>Gym Trainer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="ts-item set-bg" data-setbg="img/team/sashika.png">
+                            <div class="ts_text">
+                                <h4>Sashika</h4>
+                                <span>Gym Trainer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="ts-item set-bg" data-setbg="img/team/saminda.png">
+                            <div class="ts_text">
+                                <h4>Saminda</h4>
+                                <span>Gym Trainer</span>
+                            </div>
                         </div>
                     </div>
 
                 </div>
             </div>
         </div>
-        <script src="js/script.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </section>
+    <!-- Team Section End -->
+
+    <!-- Get In Touch Section Begin -->
+    <div class="gettouch-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="gt-text">
+                        <i class="fa fa-map-marker"></i>
+                        <p>Colombo 7, Maitland Crescent<br /> Colombo 2, Moors Sports Club <br />Colombo 2, World Trade Center </br> Ja-ela </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gt-text">
+                        <i class="fa fa-mobile"></i>
+                        <ul>
+                            <p>Colombo 7</p>
+                            <li>011-269-5331</li>
+                            <li>077-834-5678</li>
+                            <p>Moors Sport Club</p>
+                            <li>011-212-1755</li>
+                            <li>075-711-9033</li>
+                            <p>World Trade Center</p>
+                            <li>011-233-8842</li>
+                            <li>077-840-5889</li>
+                            <p>Ja-ela</p>
+                            <li>011-222-9747</li>
+                            <li>077-834-5678</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gt-text email">
+                        <i class="fa fa-envelope"></i>
+                        <p>fitnessfirstcolombo@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Get In Touch Section End -->
+
+    <!-- Footer Section Begin -->
+    <section class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="fs-about">
+                        <div class="fa-logo">
+                            <a href="#"><img src="img/logo.png" alt=""></a>
+                        </div>
+                        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore dolore magna aliqua endisse ultrices gravida lorem.</p> -->
+                        <div class="fa-social">
+                            <a href="https://www.facebook.com/profile.php?id=61567922141868"><i class="fa fa-facebook"></i></a>
+                            <!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
+                            <!-- <a href="#"><i class="fa fa-youtube-play"></i></a> -->
+                            <a href="https://www.instagram.com/fitnessfirstlk?igsh=MWVoeGNjdDJobGtxOQ=="><i class="fa fa-instagram"></i></a>
+                            <a href="fitnessfirstcolombo@gmail.com"><i class="fa  fa-envelope-o"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="fs-widget">
+                        <h4>Useful links</h4>
+                        <ul>
+                            <li><a href="about-us.html">About</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <!-- <li><a href="#">Classes</a></li> -->
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="fs-widget">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="https://fitnessfirst.lk/adminLogin.php">Login</a></li>
+                            <!-- <li><a href="#">My account</a></li> -->
+                            <!-- <li><a href="#">Subscribe</a></li> -->
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-4 col-md-6">
+                    <div class="fs-widget">
+                        <h4>Tips & Guides</h4>
+                        <div class="fw-recent">
+                            <h6><a href="#">Physical fitness may help prevent depression, anxiety</a></h6>
+                            <ul>
+                                <li>3 min read</li>
+                                <li>20 Comment</li>
+                            </ul>
+                        </div>
+                        <div class="fw-recent">
+                            <h6><a href="#">Fitness: The best exercise to lose belly fat and tone up...</a></h6>
+                            <ul>
+                                <li>3 min read</li>
+                                <li>20 Comment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="copyright-text">
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>
+                                document.write(new Date().getFullYear());
+                            </script> All rights reserved | <i class="fa fa-star" aria-hidden="true"></i> by <a href="https://www.linkedin.com/in/sanka-udeshika-6298311bb/" target="_blank">Sanka</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Section End -->
+
+    <!-- Search model Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/jquery.barfiller.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
+
+
+
+
 </body>
 
 </html>
