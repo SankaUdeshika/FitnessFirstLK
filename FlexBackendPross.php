@@ -943,115 +943,57 @@ if ($command == "addFlexProduct") {
     echo ("Canceled Order");
 } else if ($command == "SendEmailTOUS") {
 
+     
     $Name = $_POST["Name"];
     $email = $_POST["email"];
     $Mobile = $_POST["Mobile"];
     $Message = $_POST["Message"];
 
-
-
+try {
     $mail = new PHPMailer;
-    $mail->IsSMTP();
+    $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'sankaudeshika123@gmail.com';
-    $mail->Password = 'eesdvcpzbwylufww';
-    $mail->SMTPSecure = 'ssl';
+    $mail->Username = 'shanufer722@gmail.com'; 
+    $mail->Password = 'hsjjfhprupxmxlla';     
+    $mail->SMTPSecure = 'ssl';                 
     $mail->Port = 465;
-    $mail->setFrom('sankaudeshika123@gmail.com', 'New Registation');
-    $mail->addReplyTo('sankaudeshika123@gmail.com', 'New Registation');
+    $mail->setFrom('shanufer722@gmail.com', 'New Registration');
+    $mail->addReplyTo('shanufer4@gmail.com', 'New Registration');
+    $email = $_POST["email"] ?? 'example@example.com';
     $mail->addAddress($email);
     $mail->isHTML(true);
-    $mail->Subject = 'New Registation';
-    $bodyContent = ' <div style="background-color: black; color: white; border-radius: 50px; padding: 50px;">
+    $mail->Subject = 'New Registration';
+    $customer_data = [
+      
+    ];
 
-    <div style="color: lightgreen;">
-        <label style="font-size: 40px; font-family: cursive;" for="">Jain Naturals</label>
+    ob_start();
+    ?>
+   <div style="background-color:#f4f4f4; padding:30px; font-family:Arial, sans-serif; border-radius:10px;">
+        <div style="background-color:#2e7d32; color:white; padding:20px; border-radius:10px 10px 0 0;">
+            <h2>Fitness First - New Contact Message</h2>
+        </div>
+        <div style="background-color:white; padding:20px; border-radius:0 0 10px 10px;">
+            <p><strong>Name:</strong> <?= htmlspecialchars($Name) ?></p>
+            <p><strong>Email:</strong> <?= htmlspecialchars($email) ?></p>
+            <p><strong>Mobile:</strong> <?= htmlspecialchars($Mobile) ?></p>
+            <p><strong>Message:</strong></p>
+            <div style="background-color:#f1f1f1; padding:15px; border-left:4px solid #2e7d32;">
+                <?= nl2br(htmlspecialchars($Message)) ?>
+            </div>
+            <hr>
+            <p style="font-size:12px; color:gray;">This message was sent from the contact form on your website.</p>
+        </div>
     </div>
+    <?php
+    $mail->Body = ob_get_clean();
 
-    <div style="color: darkgreen; display:flex; justify-content: center;">
-        <h1>Thank you very much for purchasing our products</h1>
-    </div>
-    <hr />
-    <div style="display: flex; justify-content: center;">
-        <p>Dear Customer, <br />
-            Thank you very much for purchasing our product. We look forward to your feedback. Come back to shop with us
-        </p>
-    </div>
-
-    <div style="color: darkslategray;">
-        <h2>Prchesed Details</h2>
-    </div>
-
-
-<hr>
-    <div>
-        <span for="">Order Id = </span> <span>' . $customer_data["Order_id"] . '</span>
-    </div>
-
-    <div>
-        <span for="">Product Name = </span> <span>' . $customer_data["Product_name"] . '</span>
-    </div>
-
-    <div>
-        <span for=""> quantity = </span> <span>' . $customer_data["qty"] . '</span>
-    </div>
-
-    <div>
-        <span for=""> Purchesed Date Time = </span> <span>' . $customer_data["Purchesed_datetime"] . '</span>
-    </div>
-
-    <div>
-        <span for=""> Customer Name = </span> <span>' . $customer_data["First_name"] . " " . $customer_data["Last_name"] . '</span>
-    </div>
-
-    <div>
-        <span for=""> Customer Nic = </span> <span>' . $customer_data["Nic"] . '</span>
-    </div>
-
-    <div>
-        <span for=""> Sub Total = </span> <span>' . $customer_data["Sub_Total"] . '</span>
-    </div>
-
-    <div>
-        <span for=""> Delevery fee = </span> <span>' . $customer_data["Delevery_Cost"] . '</span>
-    </div>
-
-    <div>
-        <span for=""> Total Cost = </span> <span>' . $customer_data["Total_Cost"] . '</span>
-    </div>
-
-    <div>
-    <span for=""> Payment Method = </span> <span style="color:red">' . $customer_data["method"] . '</span>
-    </div>
-
-
-
-    <div style="display: flex; justify-content: center; margin-top: 50px;">
-        <p>Thank You!</p>
-    </div>
-
-    <div>
-        <label for="">JainNaturals@gmail.com</label>
-    </div>
-    <div>
-        <label for="">85/5, Vihara Mawwatha, <br> Bellanwila, Boralesgamuwa, Sri Lanka</label>
-    </div>
-    <div>
-        <label for="">070 646 4522</label>
-    </div>
-    <div>
-        <label for="">JAIN Naturals</label>
-    </div>
-
-</div>';
-    $mail->Body    = $bodyContent;
-
-    if (!$mail->send()) { // $mail -send. mata waraduna thana podk balanna oni aai code karaddi.
-        echo ("verification code sending failed");
-    } else {
-        echo ("success");
-    }
+    $mail->send();
+    echo "success";
+} catch (Exception $e) {
+    echo "Email could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
 }
 
 
