@@ -830,7 +830,7 @@ if ($command == "addFlexProduct") {
                 </div>
             </div>
         </div>
-<?php
+    <?php
     }
 } else if ($command == "selectAndAddFlavours") {
     $pid = $_POST["pid"];
@@ -943,64 +943,182 @@ if ($command == "addFlexProduct") {
     echo ("Canceled Order");
 } else if ($command == "SendEmailTOUS") {
 
-     
+
     $Name = $_POST["Name"];
     $email = $_POST["email"];
     $Mobile = $_POST["Mobile"];
     $Message = $_POST["Message"];
 
-try {
-    $mail = new PHPMailer;
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPAuth = true;
-    $mail->Username = 'shanufer722@gmail.com'; 
-    $mail->Password = 'hsjjfhprupxmxlla';     
-    $mail->SMTPSecure = 'ssl';                 
-    $mail->Port = 465;
-    $mail->setFrom('shanufer722@gmail.com', 'New Registration');
-    $mail->addReplyTo('shanufer4@gmail.com', 'New Registration');
-    $email = $_POST["email"] ?? 'example@example.com';
-    $mail->addAddress($email);
-    $mail->isHTML(true);
-    $mail->Subject = 'New Registration';
-    $customer_data = [
-      
-    ];
+    try {
+        $mail = new PHPMailer;
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'shanufer722@gmail.com';
+        $mail->Password = 'hsjjfhprupxmxlla';
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port = 465;
+        $mail->setFrom('shanufer722@gmail.com', 'New Registration');
+        $mail->addReplyTo('shanufer4@gmail.com', 'New Registration');
+        $email = $_POST["email"] ?? 'example@example.com';
+        $mail->addAddress($email);
+        $mail->isHTML(true);
+        $mail->Subject = 'New Registration';
+        $customer_data = [];
 
-    ob_start();
+        ob_start();
     ?>
-   <div style="background-color:#f4f4f4; padding:30px; font-family:Arial, sans-serif; border-radius:10px;">
-        <div style="background-color:#2e7d32; color:white; padding:20px; border-radius:10px 10px 0 0;">
-            <h2>Fitness First - New Contact Message</h2>
-        </div>
-        <div style="background-color:white; padding:20px; border-radius:0 0 10px 10px;">
-            <p><strong>Name:</strong> <?= htmlspecialchars($Name) ?></p>
-            <p><strong>Email:</strong> <?= htmlspecialchars($email) ?></p>
-            <p><strong>Mobile:</strong> <?= htmlspecialchars($Mobile) ?></p>
-            <p><strong>Message:</strong></p>
-            <div style="background-color:#f1f1f1; padding:15px; border-left:4px solid #2e7d32;">
-                <?= nl2br(htmlspecialchars($Message)) ?>
+        <div style="background-color:#f4f4f4; padding:30px; font-family:Arial, sans-serif; border-radius:10px;">
+            <div style="background-color:#000000; color:white; padding:20px; border-radius:10px 10px 0 0;">
+                <h2>Fitness First - New Contact Message</h2>
             </div>
-            <hr>
-            <p style="font-size:12px; color:gray;">This message was sent from the contact form on your website.</p>
+            <div style="background-color:white; padding:20px; border-radius:0 0 10px 10px;">
+                <p><strong>Name:</strong> <?= htmlspecialchars($Name) ?></p>
+                <p><strong>Email:</strong> <?= htmlspecialchars($email) ?></p>
+                <p><strong>Mobile:</strong> <?= htmlspecialchars($Mobile) ?></p>
+                <p><strong>Message:</strong></p>
+                <div style="background-color:#f1f1f1; padding:15px; border-left:4px solid #2e7d32;">
+                    <?= nl2br(htmlspecialchars($Message)) ?>
+                </div>
+                <hr>
+                <p style="font-size:12px; color:gray;">This message was sent from the contact form on your website.</p>
+            </div>
         </div>
-    </div>
-    <?php
-    $mail->Body = ob_get_clean();
+<?php
+        $mail->Body = ob_get_clean();
 
-    $mail->send();
+        $mail->send();
+        echo "success";
+    } catch (Exception $e) {
+        echo "Email could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
+} else if ($command == "LoadTrainers") {
+
+    $result = FlexDatabase::search("SELECT * FROM `Trainers`");
+    $Trainers = [];
+
+    while ($row = $result->fetch_assoc()) {
+        $Trainers[] = $row;
+    }
+
+    if (empty($Trainers)) {
+        echo json_encode([
+            "status" => "empty",
+            "message" => "No Trainer found"
+        ]);
+    } else {
+        echo json_encode([
+            "status" => "success",
+            "data" => $Trainers
+        ]);
+    }
+} else if ($command == "InsertTrainers") {
+    $name = $_POST["name"];
+    $position = $_POST["position"];
+    $facebook = $_POST["facebook"];
+    $instagram = $_POST["instagram"];
+
+
+    if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
+        $uploadDir = __DIR__ . "/img/trainers"; // FULL PATH
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0777, true);
+        }
+
+        $fileName = basename($_FILES["image"]["name"]);
+        $uniqueName = uniqid() . "_" . $fileName;
+        $targetFile = $uploadDir . "/" . $uniqueName;
+
+        $imageType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+        $allowed = ['jpg', 'jpeg', 'png', 'gif'];
+
+        if (!in_array($imageType, $allowed)) {
+            echo "Invalid image type";
+            exit();
+        }
+
+        if (!file_exists($_FILES["image"]["tmp_name"])) {
+            echo "Temp file not found: " . $_FILES["image"]["tmp_name"];
+            exit();
+        }
+
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
+            $relativePath = "img/trainers/" . $uniqueName;
+            FlexDatabase::iud("INSERT INTO Trainers 
+            (`name`, `position`, `facebook`, `instagram`, `image`) 
+            VALUES 
+            ('{$name}', '{$position}', '{$facebook}', '{$instagram}', '{$relativePath}')");
+
+            echo "success";
+        } else {
+            echo "Failed to move uploaded image.";
+        }
+    } else {
+        echo "Image upload failed. Error code: " . $_FILES["image"]["error"];
+    }
+} else if ($command == "UpdateTrainer") {
+    $Trainer_id = intval($_POST["Trainer_id"]);
+    $name = $_POST["name"];
+    $position = $_POST["position"];
+    $facebook = $_POST["facebook"];
+    $instagram = $_POST["instagram"];
+
+    $relativePath = null;
+
+    if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
+        $uploadDir = __DIR__ . "/img/trainers"; // full path
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0777, true);
+        }
+
+        $fileName = basename($_FILES["image"]["name"]);
+        $uniqueName = uniqid() . "_" . $fileName;
+        $targetFile = $uploadDir . "/" . $uniqueName;
+
+        $imageType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+        $allowed = ['jpg', 'jpeg', 'png', 'gif'];
+
+        if (!in_array($imageType, $allowed)) {
+            echo "Invalid image type";
+            exit();
+        }
+
+        if (!file_exists($_FILES["image"]["tmp_name"])) {
+            echo "Temp file not found: " . $_FILES["image"]["tmp_name"];
+            exit();
+        }
+
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
+            $relativePath = "img/trainers/" . $uniqueName;
+        } else {
+            echo "Failed to move uploaded image.";
+            exit();
+        }
+    }
+
+    if ($relativePath !== null) {
+        $sql = "UPDATE `Trainers`SET 
+                    `name` = '{$name}', 
+                    `position` = '{$position}', 
+                    `facebook` = '{$facebook}', 
+                    `instagram` = '{$instagram}', 
+                    `image` = '{$relativePath}' 
+                WHERE `Trainer_id` = {$Trainer_id}";
+    } else {
+        $sql = "UPDATE `Trainers` SET 
+                    `name` = '{$name}', 
+                    `position` = '{$position}', 
+                    `facebook` = '{$facebook}', 
+                    `instagram` = '{$instagram}' 
+                WHERE `Trainer_id` = {$Trainer_id}";
+    }
+
+    FlexDatabase::iud($sql);
     echo "success";
-} catch (Exception $e) {
-    echo "Email could not be sent. Mailer Error: {$mail->ErrorInfo}";
+
+} else if ($command == "DeleteTrainer") {
+    $trainer_id = intval($_POST["Trainer_id"]);
+    FlexDatabase::iud("DELETE FROM `Trainers` WHERE `Trainer_id` = {$trainer_id}");
+    echo "success";
 }
-}
 
-
-
-
-// else if ($command == "ChangingFlavour") {
-//    $flavour_name = $_POST["FlavourName"];
-//    $_SESSION["Flavour"] = $flavour_name;
-
-// }

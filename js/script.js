@@ -2347,3 +2347,206 @@ function sendContactUsEmailToUs() {
   request.open("POST", "FlexBackendPross.php", true);
   request.send(form);
 }
+function LoadData() {
+  const tbody = document.querySelector("#trainerTable tbody");
+  tbody.innerHTML = "";
+
+  const form = new FormData();
+  form.append("command", "LoadTrainers");
+
+  const request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState === 4 && request.status === 200) {
+      try {
+        const response = JSON.parse(request.responseText);
+
+        if (response.status === "success") {
+          const trainers = response.data;
+
+          if (trainers.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="6" class="text-center">No trainers found</td></tr>`;
+            return;
+          }
+          trainers.forEach((t, index) => {
+            const row = `
+              <tr data-trainer-id="${t.Trainer_id}">
+                <td>
+                  <img src="${t.image}" class="preview" alt="Trainer" 
+                       style="width:50px; height:50px; border-radius:50%;">
+                </td>
+                <td>${t.name}</td>
+                <td>${t.position}</td>
+                <td>${
+                  t.facebook
+                    ? `<a href="${t.facebook}" target="_blank">Facebook</a>`
+                    : "—"
+                }</td>
+                <td>${
+                  t.instagram
+                    ? `<a href="${t.instagram}" target="_blank">Instagram</a>`
+                    : "—"
+                }</td>
+                <td>
+                  <span class="edit-btn" onclick="editTrainer(${
+                    t.Trainer_id
+                  })">✏️ Edit</span>
+                  <span class="delete-btn" onclick="deleteTrainer(${
+                    t.Trainer_id
+                  })">🗑️ Delete</span>
+                </td>
+              </tr>
+            `;
+            tbody.innerHTML += row;
+          });
+        } else if (response.status === "empty") {
+          tbody.innerHTML = `<tr><td colspan="6" class="text-center">No trainers available</td></tr>`;
+        } else {
+          alert("Error: " + response.message);
+        }
+      } catch (e) {
+        alert("Invalid response from server");
+        console.error(e);
+      }
+    }
+  };
+
+  request.open("POST", "FlexBackendPross.php", true);
+  request.send(form);
+}
+
+function handleSubmit() {
+  var command = "InsertTrainers";
+  var name = document.getElementById("trainerName").value;
+  var position = document.getElementById("position").value;
+  var facebook = document.getElementById("facebook").value;
+  var instagram = document.getElementById("instagram").value;
+  var file = document.getElementById("imageInput").files[0];
+
+  if (!name || !position || (!file && editingIndex === -1)) {
+    alert("Please fill all required fields.");
+    return;
+  }
+  if (file && !["image/jpeg", "image/png", "image/jpg"].includes(file.type)) {
+    alert("Only JPG and PNG files are allowed.");
+    return;
+  }
+  var formData = new FormData();
+  formData.append("command", command);
+  formData.append("name", name);
+  formData.append("position", position);
+  formData.append("facebook", facebook);
+  formData.append("instagram", instagram);
+  if (file) {
+    formData.append("image", file);
+  }
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState === 4 && request.status === 200) {
+      var response = request.responseText.trim();
+      if (response === "success") {
+        alert("Trainer saved successfully!");
+        empty()
+        LoadData();
+      } else {
+        alert("Error: " + response);
+      }
+    }
+  };
+
+  request.open("POST", "FlexBackendPross.php", true);
+  request.send(formData);
+}
+function editTrainer(Trainer_id) {
+  const row = document.querySelector(`tr[data-trainer-id="${Trainer_id}"]`);
+  const cells = row.cells;
+  const name = cells[1].textContent.trim();
+  const position = cells[2].textContent.trim();
+
+  const facebookAnchor = cells[3].querySelector("a");
+  const facebook = facebookAnchor ? facebookAnchor.href : "";
+  const instagramAnchor = cells[4].querySelector("a");
+  const instagram = instagramAnchor ? instagramAnchor.href : "";
+
+  document.getElementById("trainerName").value = name;
+  document.getElementById("position").value = position;
+  document.getElementById("facebook").value = facebook;
+  document.getElementById("instagram").value = instagram;
+
+  const btn = document.querySelector("button");
+  btn.innerText = "Update Trainer";
+  btn.onclick = function () {
+    UpdateTrainer(Trainer_id);
+  };
+  document.getElementById("form-title").innerText = "Update Trainer";
+}
+function UpdateTrainer(Trainer_id) {
+  var command = "UpdateTrainer";
+  var name = document.getElementById("trainerName").value;
+  var position = document.getElementById("position").value;
+  var facebook = document.getElementById("facebook").value;
+  var instagram = document.getElementById("instagram").value;
+  var file = document.getElementById("imageInput").files[0];
+
+  var formData = new FormData();
+  formData.append("command", command);
+  formData.append("Trainer_id", Trainer_id);
+  formData.append("name", name);
+  formData.append("position", position);
+  formData.append("facebook", facebook);
+  formData.append("instagram", instagram);
+  if (file) {
+    formData.append("image", file);
+  }
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState === 4 && request.status === 200) {
+      var response = request.responseText.trim();
+      if (response === "success") {
+        alert("Trainer Update successfully!");
+        empty()
+        LoadData();
+      } else {
+        alert("Error: " + response);
+      }
+    }
+  };
+
+  request.open("POST", "FlexBackendPross.php", true);
+  request.send(formData);
+}
+
+function deleteTrainer(Trainer_id) {
+  if (!confirm("Are you sure you want to delete this trainer?")) {
+    return;
+  }
+  const formData = new FormData();
+  formData.append("command", "DeleteTrainer");
+  formData.append("Trainer_id", Trainer_id);
+
+  const request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      const response = request.responseText;
+      if (response == "success") {
+        alert("Trainer deleted successfully.");
+        LoadData();
+      } else {
+        alert("Error deleting trainer: " + response);
+      }
+   
+  };
+}
+  request.open("POST", "FlexBackendPross.php", true);
+  request.send(formData);
+
+}
+function empty() {
+document.getElementById("trainerName").value = "";
+document.getElementById("position").value = "";
+document.getElementById("facebook").value = "";
+ document.getElementById("instagram").value = "";
+ document.getElementById("imageInput").files[0] = "";
+}
+
