@@ -2550,3 +2550,174 @@ document.getElementById("facebook").value = "";
  document.getElementById("imageInput").files[0] = "";
 }
 
+function handleTestimonial(){
+  var command = "InsertTestimonial";
+  var file = document.getElementById("imageInput").files[0];
+  var name = document.getElementById("clienName").value;
+  var description = document.getElementById("description").value;
+  var rating = document.getElementById("rating").value;
+
+ 
+
+  var formData = new FormData();
+  formData.append("command", command);
+  formData.append("name", name);
+  formData.append("description", description);
+  formData.append("rating", rating);
+  if (file) {
+    formData.append("image", file);
+  }
+
+   var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState === 4 && request.status === 200) {
+      var response = request.responseText.trim();
+      if (response === "success") {
+        alert("Testimonial saved successfully!");
+        
+       window.location.reload();
+      } else {
+        alert("Error: " + response);
+      }
+    }
+  };
+
+  request.open("POST", "FlexBackendPross.php", true);
+  request.send(formData);
+}
+function LoadTestimonial() {
+  const tbody = document.querySelector("#testimonialTable tbody");
+  tbody.innerHTML = "";
+
+  const form = new FormData();
+  form.append("command", "LoadTestimonial");
+
+  const request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState === 4 && request.status === 200) {
+      try {
+        const response = JSON.parse(request.responseText);
+
+        if (response.status === "success") {
+          const Testimonial = response.data;
+
+          if (Testimonial.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="6" class="text-center">No Testimonial found</td></tr>`;
+            return;
+          }
+          Testimonial.forEach((T, index) => {
+            const row = `
+              <tr data-trainer-id="${T.Testimonial_id}">
+                <td>
+                  <img src="${T.image}" class="preview" alt="Trainer" 
+                       style="width:50px; height:50px; border-radius:50%;">
+                </td>
+                <td>${T.name}</td>
+                <td>${T.description}</td>
+                <td>${T.rating}</td>
+                <td>
+                  <span class="edit-btn" onclick="editTestimonial(${
+                    T.Testimonial_id
+                  })">✏️ Edit</span>
+                  <span class="delete-btn" onclick="deleteTestimonial(${
+                    T.Testimonial_id
+                  })">🗑️ Delete</span>
+                </td>
+              </tr>
+            `;
+            tbody.innerHTML += row;
+          });
+        } else if (response.status == "empty") {
+          tbody.innerHTML = `<tr><td colspan="6" class="text-center">No Testimonial available</td></tr>`;
+        } else {
+          alert("Error: " + response.message);
+        }
+      } catch (e) {
+        alert("Invalid response from server");
+        console.error(e);
+      }
+    }
+  };
+
+  request.open("POST", "FlexBackendPross.php", true);
+  request.send(form);
+}
+function editTestimonial(Testimonial_id) {
+  const row = document.querySelector(`tr[data-trainer-id="${Testimonial_id}"]`);
+  const cells = row.cells;
+
+  const name = cells[1].textContent.trim();
+  const description = cells[2].textContent.trim();
+  const rating = cells[3].textContent.trim();
+
+  document.getElementById("clienName").value = name;
+  document.getElementById("description").value = description;
+  document.getElementById("rating").value = rating;
+
+  const btn = document.querySelector("button");
+  btn.innerText = "Update Testimonial";
+  btn.onclick = function () {
+    updateTestimonial(Testimonial_id);
+  };
+
+  document.getElementById("form-title").innerText = "Update Testimonial";
+}
+function updateTestimonial(Testimonial_id) {
+  const name = document.getElementById("clienName").value;
+  const description = document.getElementById("description").value;
+  const rating = document.getElementById("rating").value;
+  const file = document.getElementById("imageInput").files[0];
+
+  const formData = new FormData();
+  formData.append("command", "UpdateTestimonial");
+  formData.append("Testimonial_id", Testimonial_id);
+  formData.append("name", name);
+  formData.append("description", description);
+  formData.append("rating", rating);
+
+  if (file) {
+    formData.append("image", file);
+  }
+
+  const request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState === 4 && request.status === 200) {
+      const response = request.responseText.trim();
+      if (response === "success") {
+        alert("Testimonial updated successfully!");
+        
+       window.location.reload();
+      } else {
+        alert("Error: " + response);
+      }
+    }
+  };
+
+  request.open("POST", "FlexBackendPross.php", true);
+  request.send(formData);
+}
+function deleteTestimonial(Testimonial_id) {
+  if (!confirm("Are you sure you want to delete this testimonial?")) return;
+
+  const formData = new FormData();
+  formData.append("command", "DeleteTestimonial");
+  formData.append("Testimonial_id", Testimonial_id);
+
+  const request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      const response = request.responseText.trim();
+      if (response == "success") {
+        alert("Testimonial deleted successfully.");
+          window.location.reload();
+      } else {
+        alert("Error deleting testimonial: " + response);
+      }
+    }
+  };
+
+  request.open("POST", "FlexBackendPross.php", true);
+  request.send(formData);
+}
+
+

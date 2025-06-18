@@ -986,7 +986,6 @@ if ($command == "addFlexProduct") {
         </div>
 <?php
         $mail->Body = ob_get_clean();
-
         $mail->send();
         echo "success";
     } catch (Exception $e) {
@@ -1020,7 +1019,7 @@ if ($command == "addFlexProduct") {
 
 
     if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
-        $uploadDir = __DIR__ . "/img/trainers"; // FULL PATH
+        $uploadDir = __DIR__ . "/img/trainers"; 
         if (!is_dir($uploadDir)) {
             mkdir($uploadDir, 0777, true);
         }
@@ -1066,7 +1065,7 @@ if ($command == "addFlexProduct") {
     $relativePath = null;
 
     if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
-        $uploadDir = __DIR__ . "/img/trainers"; // full path
+        $uploadDir = __DIR__ . "/img/trainers"; 
         if (!is_dir($uploadDir)) {
             mkdir($uploadDir, 0777, true);
         }
@@ -1120,5 +1119,189 @@ if ($command == "addFlexProduct") {
     $trainer_id = intval($_POST["Trainer_id"]);
     FlexDatabase::iud("DELETE FROM `Trainers` WHERE `Trainer_id` = {$trainer_id}");
     echo "success";
+}else if ($command == "InsertTestimonial") {
+    $name = $_POST["name"];
+    $description = $_POST["description"];
+    $rating = intval($_POST["rating"]);
+
+    if ($rating < 1 || $rating > 5) {
+        echo "Invalid rating value";
+        exit();
+    }
+
+    if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
+        $uploadDir = __DIR__ . "/img/testimonial";
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0777, true);
+        }
+
+        $fileName = basename($_FILES["image"]["name"]);
+        $uniqueName = uniqid() . "_" . $fileName;
+        $targetFile = $uploadDir . "/" . $uniqueName;
+
+        $imageType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+        $allowed = ['jpg', 'jpeg', 'png', 'gif'];
+
+        if (!in_array($imageType, $allowed)) {
+            echo "Invalid image type";
+            exit();
+        }
+
+        if (!file_exists($_FILES["image"]["tmp_name"])) {
+            echo "Temp file not found: " . $_FILES["image"]["tmp_name"];
+            exit();
+        }
+
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
+            $relativePath = "img/testimonial/" . $uniqueName;
+            FlexDatabase::iud("INSERT INTO `Testimonial` 
+                (`name`, `description`, `rating`, `image`) 
+                VALUES 
+                ('{$name}', '{$description}', {$rating}, '{$relativePath}')");
+
+            echo "success";
+        } else {
+            echo "Failed to move uploaded image.";
+        }
+    } else {
+        echo "Image upload failed. Error code: " . $_FILES["image"]["error"];
+    }
+}else if ($command == "LoadTestimonial") {
+    $result = FlexDatabase::search("SELECT * FROM Testimonial");
+
+    if ($result && $result->num_rows > 0) {
+    $data = [];
+
+    while ($row = $result->fetch_assoc()) {
+        $data[] = [
+            "Testimonial_id" => $row["Testimonial_id"],
+            "name" => $row["name"],
+            "description" => $row["description"],
+            "rating" => $row["rating"],
+            "image" => $row["image"]
+        ];
+    }
+
+    echo json_encode([
+        "status" => "success",
+        "data" => $data
+    ]);
+} else {
+    echo json_encode([
+        "status" => "empty"
+    ]);
 }
+
+}else if ($command == "InsertTestimonial") {
+    $name = $_POST["name"];
+    $description = $_POST["description"];
+    $rating = $_POST["rating"];
+
+    if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
+        $uploadDir = __DIR__ . "/img/testimonials";
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0777, true);
+        }
+
+        $fileName = basename($_FILES["image"]["name"]);
+        $uniqueName = uniqid() . "_" . $fileName;
+        $targetFile = $uploadDir . "/" . $uniqueName;
+
+        $imageType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+        $allowed = ['jpg', 'jpeg', 'png', 'gif'];
+
+        if (!in_array($imageType, $allowed)) {
+            echo "Invalid image type";
+            exit();
+        }
+
+        if (!file_exists($_FILES["image"]["tmp_name"])) {
+            echo "Temp file not found.";
+            exit();
+        }
+
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
+            $relativePath = "img/testimonials/" . $uniqueName;
+            FlexDatabase::iud("INSERT INTO Testimonial 
+                (`name`, `description`, `rating`, `image`) 
+                VALUES 
+                ('{$name}', '{$description}', '{$rating}', '{$relativePath}')");
+            echo "success";
+        } else {
+            echo "Failed to move uploaded image.";
+        }
+    } else {
+        echo "Image upload failed. Error code: " . $_FILES["image"]["error"];
+    }
+}else if ($command == "UpdateTestimonial") {
+    $id = intval($_POST["Testimonial_id"]);
+    $name = $_POST["name"];
+    $description = $_POST["description"];
+    $rating = $_POST["rating"];
+
+    $imagePath = "";
+
+    if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
+        $uploadDir = __DIR__ . "/img/testimonial";
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0777, true);
+        }
+
+        $fileName = basename($_FILES["image"]["name"]);
+        $uniqueName = uniqid() . "_" . $fileName;
+        $targetFile = $uploadDir . "/" . $uniqueName;
+
+        $imageType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+        $allowed = ['jpg', 'jpeg', 'png', 'gif'];
+
+        if (!in_array($imageType, $allowed)) {
+            echo "Invalid image type";
+            exit();
+        }
+
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
+            $imagePath = "img/testimonial/" . $uniqueName;
+
+            $res = FlexDatabase::search("SELECT image FROM `Testimonial` WHERE `Testimonial_id` = {$id}");
+            if ($res && mysqli_num_rows($res) > 0) {
+                $row = mysqli_fetch_assoc($res);
+                $oldPath = __DIR__ . "/" . $row["image"];
+                if (file_exists($oldPath)) {
+                    unlink($oldPath);
+                }
+            }
+            FlexDatabase::iud("UPDATE `Testimonial` SET 
+                name='{$name}', description='{$description}', rating='{$rating}', image='{$imagePath}'
+                WHERE `Testimonial_id`={$id}");
+        } else {
+            echo "Failed to move new image.";
+            exit();
+        }
+    } else {
+        FlexDatabase::iud("UPDATE `Testimonial` SET 
+            name='{$name}', description='{$description}', rating='{$rating}'
+            WHERE `Testimonial_id`={$id}");
+    }
+
+    echo "success";
+}else if ($command == "DeleteTestimonial") {
+    $id = intval($_POST["Testimonial_id"]);
+
+    $res = FlexDatabase::search("SELECT image FROM `Testimonial` WHERE `Testimonial_id` = {$id}");
+    if ($res && mysqli_num_rows($res) > 0) {
+        $row = mysqli_fetch_assoc($res);
+        $imagePath = __DIR__ . "/" . $row["image"];
+        if (file_exists($imagePath)) {
+            unlink($imagePath);
+        }
+    }
+
+    FlexDatabase::iud("DELETE FROM `Testimonial` WHERE `Testimonial_id` = {$id}");
+    echo  "success";
+}
+
+
+
+
+
 
