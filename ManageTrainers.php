@@ -86,7 +86,7 @@
     }
   </style>
 </head>
-<body>
+<body onload="LoadData();">
 
   <div class="form-container">
     <h2 id="form-title">Add Trainer</h2>
@@ -114,122 +114,7 @@
     </tbody>
   </table>
 
-  <script>
-    let trainerList = [
-      {
-        name: "Evenjaline",
-        position: "Front Office",
-        facebook: "https://facebook.com/evenjaline",
-        instagram: "https://instagram.com/evenjaline",
-        imageUrl: "https://i.imgur.com/UMt3KcF.jpg"
-      },
-      {
-        name: "Jake Mendes",
-        position: "Personal Trainer",
-        facebook: "https://facebook.com/jakefit",
-        instagram: "https://instagram.com/jakefit",
-        imageUrl: "https://i.imgur.com/ZQZSWRT.jpg"
-      },
-      {
-        name: "Sasha Lee",
-        position: "Yoga Instructor",
-        facebook: "",
-        instagram: "https://instagram.com/yogawithsasha",
-        imageUrl: "https://i.imgur.com/L2vK0vJ.jpg"
-      }
-    ];
-
-    let editingIndex = -1;
-
-    function handleSubmit() {
-      const name = document.getElementById('trainerName').value;
-      const position = document.getElementById('position').value;
-      const facebook = document.getElementById('facebook').value;
-      const instagram = document.getElementById('instagram').value;
-      const file = document.getElementById('imageInput').files[0];
-
-      if (!name || !position || (!file && editingIndex === -1)) {
-        alert("Please fill all required fields.");
-        return;
-      }
-
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        const imageUrl = file ? e.target.result : trainerList[editingIndex].imageUrl;
-        const trainer = { name, position, facebook, instagram, imageUrl };
-
-        if (editingIndex >= 0) {
-          trainerList[editingIndex] = trainer;
-          editingIndex = -1;
-          document.querySelector("button").innerText = "Add Trainer";
-          document.getElementById("form-title").innerText = "Add Trainer";
-        } else {
-          trainerList.push(trainer);
-        }
-
-        clearForm();
-        renderTrainerTable();
-      };
-
-      if (file) {
-        reader.readAsDataURL(file);
-      } else {
-        reader.onload();
-      }
-    }
-
-    function renderTrainerTable() {
-      const tbody = document.querySelector("#trainerTable tbody");
-      tbody.innerHTML = "";
-
-      trainerList.forEach((t, index) => {
-        const row = `
-          <tr>
-            <td><img src="${t.imageUrl}" class="preview" alt="Trainer"></td>
-            <td>${t.name}</td>
-            <td>${t.position}</td>
-            <td>${t.facebook ? `<a href="${t.facebook}" target="_blank">Facebook</a>` : '—'}</td>
-            <td>${t.instagram ? `<a href="${t.instagram}" target="_blank">Instagram</a>` : '—'}</td>
-            <td>
-              <span class="edit-btn" onclick="editTrainer(${index})">✏️ Edit</span>
-              <span class="delete-btn" onclick="deleteTrainer(${index})">🗑️ Delete</span>
-            </td>
-          </tr>
-        `;
-        tbody.innerHTML += row;
-      });
-    }
-
-    function editTrainer(index) {
-      const t = trainerList[index];
-      document.getElementById('trainerName').value = t.name;
-      document.getElementById('position').value = t.position;
-      document.getElementById('facebook').value = t.facebook;
-      document.getElementById('instagram').value = t.instagram;
-      editingIndex = index;
-
-      document.querySelector("button").innerText = "Update Trainer";
-      document.getElementById("form-title").innerText = "Update Trainer";
-    }
-
-    function deleteTrainer(index) {
-      if (confirm("Are you sure you want to delete this trainer?")) {
-        trainerList.splice(index, 1);
-        renderTrainerTable();
-      }
-    }
-
-    function clearForm() {
-      document.getElementById('trainerName').value = '';
-      document.getElementById('position').value = '';
-      document.getElementById('facebook').value = '';
-      document.getElementById('instagram').value = '';
-      document.getElementById('imageInput').value = '';
-    }
-
-    // Load initial table
-    renderTrainerTable();
-  </script>
+  <script src="js/script.js"></script>
 
 </body>
 </html>
