@@ -63,13 +63,13 @@
         <nav class="canvas-menu mobile-menu">
             <ul>
                 <li><a href="./index.php">Home</a></li>
-                <li><a href="./about-us.html">About Us</a></li>
+                <li><a href="./about-us.php">About Us</a></li>
                 <!-- <li><a href="./classes.html">Classes</a></li> -->
-                <li><a href="./services.html">Amenities</a></li>
-                <li><a href="./team.html">Our Team</a></li>
-                 <li><a href="./blog.html">Our blog</a></li>
+                <li><a href="./services.php">Amenities</a></li>
+                <li><a href="./team.php">Our Team</a></li>
+                 <li><a href="./blog.php">Our blog</a></li>
                 
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./contact.php">Contact</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -97,12 +97,12 @@
                     <nav class="nav-menu">
                         <ul>
                             <li class="active"><a href="./index.php">Home</a></li>
-                            <li><a href="./about-us.html">About Us</a></li>
+                            <li><a href="./about-us.php">About Us</a></li>
                             <!-- <li><a href="./class-details.html">Classes</a></li> -->
-                            <li><a href="./services.html">Amenities</a></li>
-                            <li><a href="./team.html">Our Team</a></li>
-                            <li><a href="./blog.html">Our blog</a></li>
-                            <li><a href="./contact.html">Contact</a></li>
+                            <li><a href="./services.php">Amenities</a></li>
+                            <li><a href="./team.php">Our Team</a></li>
+                            <li><a href="./blog.php">Our blog</a></li>
+                            <li><a href="./contact.php">Contact</a></li>
                         </ul>
                     </nav>
                 </div>

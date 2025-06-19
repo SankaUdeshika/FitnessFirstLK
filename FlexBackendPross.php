@@ -1298,7 +1298,32 @@ if ($command == "addFlexProduct") {
 
     FlexDatabase::iud("DELETE FROM `Testimonial` WHERE `Testimonial_id` = {$id}");
     echo  "success";
+}else if ($command == "loadTestimonial") {
+    $result = FlexDatabase::search("SELECT * FROM `Testimonial`");
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $data = [];
+        while ($row = mysqli_fetch_assoc($result)) {
+            $data[] = [
+                "Testimonial_id" => $row["Testimonial_id"],
+                "name" => $row["name"],
+                "description" => $row["description"],
+                "rating" => $row["rating"],
+                "image" => $row["image"]
+            ];
+        }
+
+        echo json_encode([
+            "status" => "success",
+            "data" => $data
+        ]);
+    } else {
+        echo json_encode([
+            "status" => "empty"
+        ]);
+    }
 }
+
 
 
 

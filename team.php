@@ -42,12 +42,12 @@
         <nav class="canvas-menu mobile-menu">
             <ul>
                 <li><a href="./index.php">Home</a></li>
-                <li><a href="./about-us.html">About Us</a></li>
+                <li><a href="./about-us.php">About Us</a></li>
                 <!-- <li><a href="./classes.html">Classes</a></li> -->
-                <li><a href="./services.html">Amenities</a></li>
-                <li><a href="./team.html">Our Team</a></li>
-              <li><a href="./blog.html">Our blog</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./services.php">Amenities</a></li>
+                <li><a href="./team.php">Our Team</a></li>
+              <li><a href="./blog.php">Our blog</a></li>
+                <li><a href="./contact.php">Contact</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -75,22 +75,22 @@
                     <nav class="nav-menu">
                         <ul>
                             <li class="active"><a href="./index.php">Home</a></li>
-                            <li><a href="./about-us.html">About Us</a></li>
+                            <li><a href="./about-us.php">About Us</a></li>
                             <!-- <li><a href="./class-details.html">Classes</a></li> -->
-                            <li><a href="./services.html">Amenities</a></li>
-                            <li><a href="./team.html">Our Team</a></li>
+                            <li><a href="./services.php">Amenities</a></li>
+                            <li><a href="./team.php">Our Team</a></li>
                             <li><a href="#">More</a>
                                 <ul class="dropdown">
-                                    <li><a href="./about-us.html">About us</a></li>
+                                    <li><a href="./about-us.php">About us</a></li>
                                     <!-- <li><a href="./class-timetable.html">Classes timetable</a></li> -->
                                     <!-- <li><a href="./bmi-calculator.html">Bmi calculate</a></li> -->
-                                    <li><a href="./team.html">Our team</a></li>
+                                    <li><a href="./team.php">Our team</a></li>
                                     <!-- <li><a href="./gallery.html">Gallery</a></li> -->
-                                    <li><a href="./blog.html">Our blog</a></li>
+                                    <li><a href="./blog.php">Our blog</a></li>
                                     <!-- <li><a href="./404.html">404</a></li> -->
                                 </ul>
                             </li>
-                            <li><a href="./contact.html">Contact</a></li>
+                            <li><a href="./contact.php">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -121,11 +121,10 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb-text">
-                        <h2>Our Blog</h2>
+                        <h2>Our Team</h2>
                         <div class="bt-option">
                             <a href="./index.php">Home</a>
-                            <a href="#">Pages</a>
-                            <span>Blog</span>
+                            <span>Our team</span>
                         </div>
                     </div>
                 </div>
@@ -134,176 +133,205 @@
     </section>
     <!-- Breadcrumb Section End -->
 
-    <!-- Blog Section Begin -->
-    <section class="blog-section spad">
+    <!-- Team Section Begin -->
+    <section class="team-section team-page spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 p-0">
-                    <div class="blog-item">
-                        <div class="bi-pic">
-                            <img src="img/blog/blog-1.jpg" alt="">
+                <div class="col-lg-12">
+                    <div class="team-title">
+                        <div class="section-title">
+                            <span>Our Team</span>
+                            <h2>Higher Managment</h2>
                         </div>
-                        <div class="bi-text">
-                            <h5><a href="./blog-details.html">Vegan White Peach Mug Cobbler With Cardam Vegan White Peach Mug
-                                    Cobbler...</a></h5>
-                            <ul>
-                                <li>by Admin</li>
-                                <li>Aug,15, 2019</li>
-                                <li>20 Comment</li>
-                            </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua accumsan lacus facilisis.</p>
-                        </div>
-                    </div>
-                    <div class="blog-item">
-                        <div class="bi-pic">
-                            <img src="img/blog/blog-2.jpg" alt="">
-                        </div>
-                        <div class="bi-text">
-                            <h5><a href="./blog-details.html">Vegan White Peach Mug Cobbler With Cardam Vegan White Peach Mug
-                                    Cobbler...</a></h5>
-                            <ul>
-                                <li>by Admin</li>
-                                <li>Aug,15, 2019</li>
-                                <li>20 Comment</li>
-                            </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua accumsan lacus facilisis.</p>
-                        </div>
-                    </div>
-                    <div class="blog-item">
-                        <div class="bi-pic">
-                            <img src="img/blog/blog-3.jpg" alt="">
-                        </div>
-                        <div class="bi-text">
-                            <h5><a href="./blog-details.html">Vegan White Peach Mug Cobbler With Cardam Vegan White Peach Mug
-                                    Cobbler...</a></h5>
-                            <ul>
-                                <li>by Admin</li>
-                                <li>Aug,15, 2019</li>
-                                <li>20 Comment</li>
-                            </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua accumsan lacus facilisis.</p>
-                        </div>
-                    </div>
-                    <div class="blog-item">
-                        <div class="bi-pic">
-                            <img src="img/blog/blog-4.jpg" alt="">
-                        </div>
-                        <div class="bi-text">
-                            <h5><a href="./blog-details.html">Vegan White Peach Mug Cobbler With Cardam Vegan White Peach Mug
-                                    Cobbler...</a></h5>
-                            <ul>
-                                <li>by Admin</li>
-                                <li>Aug,15, 2019</li>
-                                <li>20 Comment</li>
-                            </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua accumsan lacus facilisis.</p>
-                        </div>
-                    </div>
-                    <div class="blog-item">
-                        <div class="bi-pic">
-                            <img src="img/blog/blog-5.jpg" alt="">
-                        </div>
-                        <div class="bi-text">
-                            <h5><a href="./blog-details.html">Vegan White Peach Mug Cobbler With Cardam Vegan White Peach Mug
-                                    Cobbler...</a></h5>
-                            <ul>
-                                <li>by Admin</li>
-                                <li>Aug,15, 2019</li>
-                                <li>20 Comment</li>
-                            </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua accumsan lacus facilisis.</p>
-                        </div>
-                    </div>
-                    <div class="blog-pagination">
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">Next</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-8 p-0">
-                    <div class="sidebar-option">
-                        <div class="so-categories">
-                            <h5 class="title">Categories</h5>
-                            <ul>
-                                <li><a href="#">Yoga <span>12</span></a></li>
-                                <li><a href="#">Runing <span>32</span></a></li>
-                                <li><a href="#">Weightloss <span>86</span></a></li>
-                                <li><a href="#">Cario <span>25</span></a></li>
-                                <li><a href="#">Body buiding <span>36</span></a></li>
-                                <li><a href="#">Nutrition <span>15</span></a></li>
-                            </ul>
-                        </div>
-                        <div class="so-latest">
-                            <h5 class="title">Feature posts</h5>
-                            <div class="latest-large set-bg" data-setbg="img/letest-blog/latest-1.jpg">
-                                <div class="ll-text">
-                                    <h5><a href="./blog-details.html">This Japanese Way of Making Iced Coffee Is a Game...</a></h5>
-                                    <ul>
-                                        <li>Aug 20, 2019</li>
-                                        <li>20 Comment</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="latest-item">
-                                <div class="li-pic">
-                                    <img src="img/letest-blog/latest-2.jpg" alt="">
-                                </div>
-                                <div class="li-text">
-                                    <h6><a href="./blog-details.html">Grilled Potato and Green Bean Salad</a></h6>
-                                    <span class="li-time">Aug 15, 2019</span>
-                                </div>
-                            </div>
-                            <div class="latest-item">
-                                <div class="li-pic">
-                                    <img src="img/letest-blog/latest-3.jpg" alt="">
-                                </div>
-                                <div class="li-text">
-                                    <h6><a href="./blog-details.html">The $8 French Rosé I Buy in Bulk Every Summer</a></h6>
-                                    <span class="li-time">Aug 15, 2019</span>
-                                </div>
-                            </div>
-                            <div class="latest-item">
-                                <div class="li-pic">
-                                    <img src="img/letest-blog/latest-4.jpg" alt="">
-                                </div>
-                                <div class="li-text">
-                                    <h6><a href="./blog-details.html">Ina Garten's Skillet-Roasted Lemon Chicken</a></h6>
-                                    <span class="li-time">Aug 15, 2019</span>
-                                </div>
-                            </div>
-                            <div class="latest-item">
-                                <div class="li-pic">
-                                    <img src="img/letest-blog/latest-5.jpg" alt="">
-                                </div>
-                                <div class="li-text">
-                                    <h6><a href="./blog-details.html">The Best Weeknight Baked Potatoes, 3 Creative Ways</a></h6>
-                                    <span class="li-time">Aug 15, 2019</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="so-tags">
-                            <h5 class="title">Popular tags</h5>
-                            <a href="#">Gyming</a>
-                            <a href="#">Body buidling</a>
-                            <a href="#">Yoga</a>
-                            <a href="#">Weightloss</a>
-                            <a href="#">Proffeponal</a>
-                            <a href="#">Streching</a>
-                            <a href="#">Cardio</a>
-                            <a href="#">Karate</a>
-                        </div>
+                        <!-- <a href="#" class="primary-btn btn-normal appoinment-btn">appointment</a> -->
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6">
+                    <div class="ts-item set-bg" data-setbg="img/team/vinith.png">
+                        <div class="ts_text">
+                            <h4>Vinith</h4>
+                            <span>Genaral Manager</span>
+                            <div class="tt_social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
         </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="team-title">
+                        <div class="section-title">
+                            <span>Our Team</span>
+                            <h2>Front Office</h2>
+                        </div>
+                        <!-- <a href="#" class="primary-btn btn-normal appoinment-btn">appointment</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6">
+                    <div class="ts-item set-bg" data-setbg="img/team/abhishek.png">
+                        <div class="ts_text">
+                            <h4>Abhishek</h4>
+                            <span>Front Office</span>
+                            <div class="tt_social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="ts-item set-bg" data-setbg="img/team/evenjaline.png">
+                        <div class="ts_text">
+                            <h4>Evenjaline</h4>
+                            <span>Front Office</span>
+                            <div class="tt_social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="ts-item set-bg" data-setbg="img/team/dinesh.png">
+                        <div class="ts_text">
+                            <h4>Dinesh</h4>
+                            <span>Front Office</span>
+                            <div class="tt_social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                <div class="col-lg-4 col-sm-6">
+                    <div class="ts-item set-bg" data-setbg="img/team/farath.png">
+                        <div class="ts_text">
+                            <h4>Farath</h4>
+                            <span>Front Office</span>
+                            <div class="tt_social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="team-title">
+                        <div class="section-title">
+                            <span>Our Team</span>
+                            <h2>Gym Trainer</h2>
+                        </div>
+                        <!-- <a href="#" class="primary-btn btn-normal appoinment-btn">appointment</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6">
+                    <div class="ts-item set-bg" data-setbg="img/team/piyumi.png">
+                        <div class="ts_text">
+                            <h4>Piumi</h4>
+                            <span>Gym Trainer (Colombo 7)</span>
+                            <div class="tt_social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="ts-item set-bg" data-setbg="img/team/ashanthi.png">
+                        <div class="ts_text">
+                            <h4>Ashanthi</h4>
+                            <span>Gym Trainer (Colombo 7)</span>
+                            <div class="tt_social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="ts-item set-bg" data-setbg="img/team/raveen.png">
+                        <div class="ts_text">
+                            <h4>Raveen</h4>
+                            <span>Gym Trainer (Colombo 7)</span>
+                            <div class="tt_social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="ts-item set-bg" data-setbg="img/team/afran.png">
+                        <div class="ts_text">
+                            <h4>Afran</h4>
+                            <span>Gym Trainer (Colombo 7)</span>
+                            <div class="tt_social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="ts-item set-bg" data-setbg="img/team/sashika.png">
+                        <div class="ts_text">
+                            <h4>Sashika</h4>
+                            <span>Gym Trainer (Colombo 7)</span>
+                            <div class="tt_social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="ts-item set-bg" data-setbg="img/team/saminda.png">
+                        <div class="ts_text">
+                            <h4>Saminda</h4>
+                            <span>Gym Trainer (Colombo 7)</span>
+                            <div class="tt_social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="ts-item set-bg" data-setbg="img/team/chaminda.png">
+                        <div class="ts_text">
+                            <h4>Chaminda</h4>
+                            <span>Gym Trainer (Colombo 7)</span>
+                            <div class="tt_social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
     </section>
-    <!-- Blog Section End -->
+    
+    <!-- Team Section End -->
 
     <!-- Get In Touch Section Begin -->
     <div class="gettouch-section">
@@ -440,7 +468,6 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-
 
 
 </body>

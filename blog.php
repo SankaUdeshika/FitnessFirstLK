@@ -22,8 +22,6 @@
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/style2.css" type="text/css">
-
 </head>
 
 <body>
@@ -44,12 +42,12 @@
         <nav class="canvas-menu mobile-menu">
             <ul>
                 <li><a href="./index.php">Home</a></li>
-                <li><a href="./about-us.html">About Us</a></li>
+                <li><a href="./about-us.php">About Us</a></li>
                 <!-- <li><a href="./classes.html">Classes</a></li> -->
-                <li><a href="./services.html">Amenities</a></li>
-                <li><a href="./team.html">Our Team</a></li>
-              <li><a href="./blog.html">Our blog</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./services.php">Amenities</a></li>
+                <li><a href="./team.php">Our Team</a></li>
+              <li><a href="./blog.php">Our blog</a></li>
+                <li><a href="./contact.php">Contact</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -77,22 +75,22 @@
                     <nav class="nav-menu">
                         <ul>
                             <li class="active"><a href="./index.php">Home</a></li>
-                            <li><a href="./about-us.html">About Us</a></li>
+                            <li><a href="./about-us.php">About Us</a></li>
                             <!-- <li><a href="./class-details.html">Classes</a></li> -->
-                            <li><a href="./services.html">Amenities</a></li>
-                            <li><a href="./team.html">Our Team</a></li>
+                            <li><a href="./services.php">Amenities</a></li>
+                            <li><a href="./team.php">Our Team</a></li>
                             <li><a href="#">More</a>
                                 <ul class="dropdown">
-                                    <li><a href="./about-us.html">About us</a></li>
+                                    <li><a href="./about-us.php">About us</a></li>
                                     <!-- <li><a href="./class-timetable.html">Classes timetable</a></li> -->
                                     <!-- <li><a href="./bmi-calculator.html">Bmi calculate</a></li> -->
-                                    <li><a href="./team.html">Our team</a></li>
+                                    <li><a href="./team.php">Our team</a></li>
                                     <!-- <li><a href="./gallery.html">Gallery</a></li> -->
-                                    <li><a href="./blog.html">Our blog</a></li>
+                                    <li><a href="./blog.php">Our blog</a></li>
                                     <!-- <li><a href="./404.html">404</a></li> -->
                                 </ul>
                             </li>
-                            <li><a href="./contact.html">Contact</a></li>
+                            <li><a href="./contact.php">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -123,11 +121,11 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb-text">
-                        <h2>Contact Us</h2>
+                        <h2>Our Blog</h2>
                         <div class="bt-option">
                             <a href="./index.php">Home</a>
                             <a href="#">Pages</a>
-                            <span>Contact us</span>
+                            <span>Blog</span>
                         </div>
                     </div>
                 </div>
@@ -136,89 +134,176 @@
     </section>
     <!-- Breadcrumb Section End -->
 
-    <!-- Contact Section Begin -->
-    <section class="contact-section spad">
+    <!-- Blog Section Begin -->
+    <section class="blog-section spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="section-title contact-title">
-                        <span>Contact Us</span>
-                        <h2>GET IN TOUCH</h2>
-                    </div>
-                    <div class="contact-widget">
-                        <div class="cw-text mt-1">
-                            <i class="fa fa-map-marker"></i>
-                            <p>Colombo 7, Maitland Crescent<br/> Colombo 2, Moors Sports Club <br/>Colombo 2, World Trade Center </br> Ja-ela </p>
+                <div class="col-lg-8 p-0">
+                    <div class="blog-item">
+                        <div class="bi-pic">
+                            <img src="img/blog/blog-1.jpg" alt="">
                         </div>
-                        <div class="cw-text">
-                            <i class="fa fa-mobile"></i>
+                        <div class="bi-text">
+                            <h5><a href="./blog-details.html">Vegan White Peach Mug Cobbler With Cardam Vegan White Peach Mug
+                                    Cobbler...</a></h5>
                             <ul>
-                                <p>Colombo 7</p>
-                            <li>011-269-5331</li>
-                            <li>077-834-5678</li>
-                            <p>Moors Sport Club</p>
-                            <li>011-212-1755</li>
-                            <li>075-711-9033</li>
-                            <p>World Trade Center</p>
-                            <li>011-233-8842</li>
-                            <li>077-840-5889</li>
-                            <p>Ja-ela</p>
-                            <li>011-222-9747</li>
-                            <li>077-834-5678</li>
+                                <li>by Admin</li>
+                                <li>Aug,15, 2019</li>
+                                <li>20 Comment</li>
                             </ul>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua accumsan lacus facilisis.</p>
                         </div>
-                        <div class="cw-text email">
-                            <i class="fa fa-envelope"></i>
-                            <p>fitnessfirstcolombo@gmail.com</p>
+                    </div>
+                    <div class="blog-item">
+                        <div class="bi-pic">
+                            <img src="img/blog/blog-2.jpg" alt="">
                         </div>
+                        <div class="bi-text">
+                            <h5><a href="./blog-details.html">Vegan White Peach Mug Cobbler With Cardam Vegan White Peach Mug
+                                    Cobbler...</a></h5>
+                            <ul>
+                                <li>by Admin</li>
+                                <li>Aug,15, 2019</li>
+                                <li>20 Comment</li>
+                            </ul>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua accumsan lacus facilisis.</p>
+                        </div>
+                    </div>
+                    <div class="blog-item">
+                        <div class="bi-pic">
+                            <img src="img/blog/blog-3.jpg" alt="">
+                        </div>
+                        <div class="bi-text">
+                            <h5><a href="./blog-details.html">Vegan White Peach Mug Cobbler With Cardam Vegan White Peach Mug
+                                    Cobbler...</a></h5>
+                            <ul>
+                                <li>by Admin</li>
+                                <li>Aug,15, 2019</li>
+                                <li>20 Comment</li>
+                            </ul>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua accumsan lacus facilisis.</p>
+                        </div>
+                    </div>
+                    <div class="blog-item">
+                        <div class="bi-pic">
+                            <img src="img/blog/blog-4.jpg" alt="">
+                        </div>
+                        <div class="bi-text">
+                            <h5><a href="./blog-details.html">Vegan White Peach Mug Cobbler With Cardam Vegan White Peach Mug
+                                    Cobbler...</a></h5>
+                            <ul>
+                                <li>by Admin</li>
+                                <li>Aug,15, 2019</li>
+                                <li>20 Comment</li>
+                            </ul>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua accumsan lacus facilisis.</p>
+                        </div>
+                    </div>
+                    <div class="blog-item">
+                        <div class="bi-pic">
+                            <img src="img/blog/blog-5.jpg" alt="">
+                        </div>
+                        <div class="bi-text">
+                            <h5><a href="./blog-details.html">Vegan White Peach Mug Cobbler With Cardam Vegan White Peach Mug
+                                    Cobbler...</a></h5>
+                            <ul>
+                                <li>by Admin</li>
+                                <li>Aug,15, 2019</li>
+                                <li>20 Comment</li>
+                            </ul>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua accumsan lacus facilisis.</p>
+                        </div>
+                    </div>
+                    <div class="blog-pagination">
+                        <a href="#">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">Next</a>
                     </div>
                 </div>
-
-                <!-- Contact Us Form  -->
-               <div class="col-lg-6">
-                    <div class="leave-comment">
-
-                        <h4 class="mb-4 text-danger text-center">Leave a Comment</h4>
-
-                        <div class="input-group-lg d-flex flex-column gap-3">
-                            <input type="text" class=" mt-2 border border-3 border-dark" style="background-color:'#1e1e1e';" placeholder="Name" id="Name" required>
-                            <input type="email" class=" mt-2 border border-3 border-dark " style="background-color:'#1e1e1e'" placeholder="Email" id="Email" required>
-                            <input type="text" class="mt-2 border border-3 border-dark " style="background-color:'#1e1e1e'" placeholder="Mobile" id="Mobile" required>
-                            <textarea class=" mt-2 border border-3 border-dark " style="background-color:'#1e1e1e'" placeholder="Message" id="Message" rows="6" required></textarea>
-                            <button type="button" onclick="sendContactUsEmailToUs();" class="btn btn-warning  w-100 mt-2">Submit</button>
+                <div class="col-lg-4 col-md-8 p-0">
+                    <div class="sidebar-option">
+                        <div class="so-categories">
+                            <h5 class="title">Categories</h5>
+                            <ul>
+                                <li><a href="#">Yoga <span>12</span></a></li>
+                                <li><a href="#">Runing <span>32</span></a></li>
+                                <li><a href="#">Weightloss <span>86</span></a></li>
+                                <li><a href="#">Cario <span>25</span></a></li>
+                                <li><a href="#">Body buiding <span>36</span></a></li>
+                                <li><a href="#">Nutrition <span>15</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="so-latest">
+                            <h5 class="title">Feature posts</h5>
+                            <div class="latest-large set-bg" data-setbg="img/letest-blog/latest-1.jpg">
+                                <div class="ll-text">
+                                    <h5><a href="./blog-details.html">This Japanese Way of Making Iced Coffee Is a Game...</a></h5>
+                                    <ul>
+                                        <li>Aug 20, 2019</li>
+                                        <li>20 Comment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="latest-item">
+                                <div class="li-pic">
+                                    <img src="img/letest-blog/latest-2.jpg" alt="">
+                                </div>
+                                <div class="li-text">
+                                    <h6><a href="./blog-details.html">Grilled Potato and Green Bean Salad</a></h6>
+                                    <span class="li-time">Aug 15, 2019</span>
+                                </div>
+                            </div>
+                            <div class="latest-item">
+                                <div class="li-pic">
+                                    <img src="img/letest-blog/latest-3.jpg" alt="">
+                                </div>
+                                <div class="li-text">
+                                    <h6><a href="./blog-details.html">The $8 French Rosé I Buy in Bulk Every Summer</a></h6>
+                                    <span class="li-time">Aug 15, 2019</span>
+                                </div>
+                            </div>
+                            <div class="latest-item">
+                                <div class="li-pic">
+                                    <img src="img/letest-blog/latest-4.jpg" alt="">
+                                </div>
+                                <div class="li-text">
+                                    <h6><a href="./blog-details.html">Ina Garten's Skillet-Roasted Lemon Chicken</a></h6>
+                                    <span class="li-time">Aug 15, 2019</span>
+                                </div>
+                            </div>
+                            <div class="latest-item">
+                                <div class="li-pic">
+                                    <img src="img/letest-blog/latest-5.jpg" alt="">
+                                </div>
+                                <div class="li-text">
+                                    <h6><a href="./blog-details.html">The Best Weeknight Baked Potatoes, 3 Creative Ways</a></h6>
+                                    <span class="li-time">Aug 15, 2019</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="so-tags">
+                            <h5 class="title">Popular tags</h5>
+                            <a href="#">Gyming</a>
+                            <a href="#">Body buidling</a>
+                            <a href="#">Yoga</a>
+                            <a href="#">Weightloss</a>
+                            <a href="#">Proffeponal</a>
+                            <a href="#">Streching</a>
+                            <a href="#">Cardio</a>
+                            <a href="#">Karate</a>
                         </div>
                     </div>
                 </div>
             </div>
-
-                    <!-- FITNESSFIRST LOCATION -->
-
-                    <div class="col-12 mt-5">
-                        <div class="row mt-5">
-                            <div class="col-12">
-                                <div class="row">
-                                    <div class="col-lg-3 col-4 text-center">
-                                        <span class="GymLocationText" onclick="showGoogleLocation('colombo');">colombo7</span>
-                                    </div>
-                                    <div class="col-lg-3 col-4 text-center">
-                                        <span class="GymLocationText" onclick="showGoogleLocation('jaela');">Ja Ela </span>
-                                    </div>
-                                    <div class="col-lg-3 col-4 text-center">
-                                        <span class="GymLocationText" onclick="showGoogleLocation('wtc');"> WTC </span>
-                                    </div>
-                                    <div class="col-lg-3 col-12 text-center">
-                                        <span class="GymLocationText" onclick="showGoogleLocation('wtc');"> Moors Club </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <iframe style="transition: 0.5s ease-in-out;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31686.815227955212!2d79.82922301083981!3d6.9083058999999984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2597a85531ecb%3A0xd24f023f2b2a2bd5!2sFitness%20First%20-%20Colombo%207!5e0!3m2!1sen!2slk!4v1723187781024!5m2!1sen!2slk" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="GoogleMap"></iframe>
-                            </div>
-                        </div>
-                    </div>
         </div>
     </section>
-    <!-- Contact Section End -->
+    <!-- Blog Section End -->
 
     <!-- Get In Touch Section Begin -->
     <div class="gettouch-section">
@@ -226,7 +311,7 @@
             <div class="row">
                 <div class="col-md-4 mt-1">
                     <div class="gt-text">
-                        <i class="fa fa-map-marker "></i>
+                        <i class="fa fa-map-marker"></i>
                         <p class="mt-3">Colombo 7, Maitland Crescent<br/> Colombo 2, Moors Sports Club <br/>Colombo 2, World Trade Center </br> Ja-ela </p>
                     </div>
                 </div>
@@ -355,7 +440,7 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/script.js"></script>
+
 
 
 </body>

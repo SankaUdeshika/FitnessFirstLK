@@ -42,12 +42,12 @@
         <nav class="canvas-menu mobile-menu">
             <ul>
                 <li><a href="./index.php">Home</a></li>
-                <li><a href="./about-us.html">About Us</a></li>
+                <li><a href="./about-us.php">About Us</a></li>
                 <!-- <li><a href="./classes.html">Classes</a></li> -->
-                <li><a href="./services.html">Amenities</a></li>
-                <li><a href="./team.html">Our Team</a></li>
-                <li><a href="./blog.html">Our blog</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./services.php">Amenities</a></li>
+                <li><a href="./team.php">Our Team</a></li>
+                <li><a href="./blog.php">Our blog</a></li>
+                <li><a href="./contact.php">Contact</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -75,22 +75,22 @@
                     <nav class="nav-menu">
                         <ul>
                             <li class="active"><a href="./index.php">Home</a></li>
-                            <li><a href="./about-us.html">About Us</a></li>
+                            <li><a href="./about-us.php">About Us</a></li>
                             <!-- <li><a href="./class-details.html">Classes</a></li> -->
-                            <li><a href="./services.html">Amenities</a></li>
-                            <li><a href="./team.html">Our Team</a></li>
+                            <li><a href="./services.php">Amenities</a></li>
+                            <li><a href="./team.php">Our Team</a></li>
                             <li><a href="#">More</a>
                                 <ul class="dropdown">
-                                    <li><a href="./about-us.html">About us</a></li>
+                                    <li><a href="./about-us.php">About us</a></li>
                                     <!-- <li><a href="./class-timetable.html">Classes timetable</a></li> -->
                                     <!-- <li><a href="./bmi-calculator.html">Bmi calculate</a></li> -->
-                                    <li><a href="./team.html">Our team</a></li>
+                                    <li><a href="./team.php">Our team</a></li>
                                     <!-- <li><a href="./gallery.html">Gallery</a></li> -->
-                                    <li><a href="./blog.html">Our blog</a></li>
+                                    <li><a href="./blog.php">Our blog</a></li>
                                     <!-- <li><a href="./404.html">404</a></li> -->
                                 </ul>
                             </li>
-                            <li><a href="./contact.html">Contact</a></li>
+                            <li><a href="./contact.php">Contact</a></li>
                         </ul>
                     </nav>
                 </div>

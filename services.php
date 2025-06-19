@@ -42,13 +42,12 @@
         <nav class="canvas-menu mobile-menu">
             <ul>
                 <li><a href="./index.php">Home</a></li>
-                <li><a href="./about-us.html">About Us</a></li>
+                <li><a href="./about-us.php">About Us</a></li>
                 <!-- <li><a href="./classes.html">Classes</a></li> -->
-                <li><a href="./services.html">Amenities</a></li>
-                <li><a href="./team.html">Our Team</a></li>
-                <li><a href="./blog.html">Our blog</a></li>
-                
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./services.php">Amenities</a></li>
+                <li><a href="./team.php">Our Team</a></li>
+              <li><a href="./blog.php">Our blog</a></li>
+                <li><a href="./contact.php">Contact</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -76,12 +75,22 @@
                     <nav class="nav-menu">
                         <ul>
                             <li class="active"><a href="./index.php">Home</a></li>
-                            <li><a href="./about-us.html">About Us</a></li>
+                            <li><a href="./about-us.php">About Us</a></li>
                             <!-- <li><a href="./class-details.html">Classes</a></li> -->
-                            <li><a href="./services.html">Amenities</a></li>
-                            <li><a href="./team.html">Our Team</a></li>
-                            <li><a href="./blog.html">Our blog</a></li>
-                            <li><a href="./contact.html">Contact</a></li>
+                            <li><a href="./services.php">Amenities</a></li>
+                            <li><a href="./team.php">Our Team</a></li>
+                            <li><a href="#">More</a>
+                                <ul class="dropdown">
+                                    <li><a href="./about-us.php">About us</a></li>
+                                    <!-- <li><a href="./class-timetable.html">Classes timetable</a></li> -->
+                                    <!-- <li><a href="./bmi-calculator.html">Bmi calculate</a></li> -->
+                                    <li><a href="./team.php">Our team</a></li>
+                                    <!-- <li><a href="./gallery.html">Gallery</a></li> -->
+                                    <li><a href="./blog.php">Our blog</a></li>
+                                    <!-- <li><a href="./404.html">404</a></li> -->
+                                </ul>
+                            </li>
+                            <li><a href="./contact.php">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -112,10 +121,10 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb-text">
-                        <h2>About us</h2>
+                        <h2>Amenities</h2>
                         <div class="bt-option">
                             <a href="./index.php">Home</a>
-                            <span>About</span>
+                            <span>Amenities</span>
                         </div>
                     </div>
                 </div>
@@ -124,186 +133,199 @@
     </section>
     <!-- Breadcrumb Section End -->
 
-    <!-- ChoseUs Section Begin -->
-    <section class="choseus-section spad">
+    <!-- Services Section Begin -->
+    <section class="services-section spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <span>Why chose us?</span>
-                        <h2>PUSH YOUR LIMITS FORWARD</h2>
+                        <!-- <span>What we have?</span> -->
+                        <h2>What we have?</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="cs-item">
-                        <span class="flaticon-034-stationary-bike"></span>
-                        <h4>Modern equipment</h4>
-                        <p>Our gym is equipped with the latest state-of-the-art fitness machines and technology, designed to deliver maximum performance and safety. Whether you’re strength training or doing cardio, our equipment supports every fitness level and goal.</p>
+                <div class="col-lg-3 order-lg-1 col-md-6 p-0">
+                    <div class="ss-pic">
+                        <img src="img/services/services-1.jpg" alt="">
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="cs-item">
-                        <span class="flaticon-033-juice"></span>
-                        <h4>Healthy nutrition plan</h4>
-                        <p>We go beyond the gym floor. With Fitness First meal plans, you’ll get nutritious, ready-to-follow food guidance that fuels performance and supports lasting health — because what you eat matters.</p>
+                <div class="col-lg-3 order-lg-2 col-md-6 p-0">
+                    <div class="ss-text">
+                        <h4>Personal training</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ut dolore
+                            facilisis.</p>
+                        <!-- <a href="#">Explore</a> -->
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="cs-item">
-                        <span class="flaticon-002-dumbell"></span>
-                        <h4>Proffesponal training plan</h4>
-                        <p>Our certified trainers create structured, results-driven programs that help you train smarter, not harder. From strength and conditioning to fat loss and endurance, we’ve got the perfect plan for you.</p>
+                <div class="col-lg-3 order-lg-3 col-md-6 p-0">
+                    <div class="ss-pic">
+                        <img src="img/services/services-2.jpg" alt="">
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="cs-item">
-                        <span class="flaticon-014-heart-beat"></span>
-                        <h4>Unique to your needs</h4>
-                        <p>Your fitness journey is personal, and so is our approach. From training plans to meal programs, everything we offer is uniquely crafted to match your individual needs and help you reach your goals faster.</p>
+                <div class="col-lg-3 order-lg-4 col-md-6 p-0">
+                    <div class="ss-text">
+                        <h4>Group fitness classes</h4>
+                        <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus.</p>
+                        <!-- <a href="#">Explore</a> -->
+                    </div>
+                </div>
+                <div class="col-lg-3 order-lg-8 col-md-6 p-0">
+                    <div class="ss-pic">
+                        <img src="img/services/services-4.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 order-lg-7 col-md-6 p-0">
+                    <div class="ss-text second-row">
+                        <h4>Ice-Bath (Colombo 7)</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ut dolore
+                            facilisis.</p>
+                        <!-- <a href="#">Explore</a> -->
+                    </div>
+                </div>
+                <div class="col-lg-3 order-lg-6 col-md-6 p-0">
+                    <div class="ss-pic">
+                        <img src="img/services/services-3.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 order-lg-5 col-md-6 p-0">
+                    <div class="ss-text second-row">
+                        <h4>Sport massage</h4>
+                        <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus.</p>
+                        <!-- <a href="#">Explore</a> -->
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ChoseUs Section End -->
-
-    <!-- About US Section Begin -->
-    <section class="aboutus-section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 p-0">
-                    <div class="about-video set-bg" data-setbg="img/about-us.jpg">
-                        <!-- <a href="https://www.youtube.com/watch?v=EzKkl64rRbM" class="play-btn video-popup"><i
-                                class="fa fa-caret-right"></i></a> -->
-                    </div>
-                </div>
-                <div class="col-lg-6 p-0">
-                    <div class="about-text">
-                        <div class="section-title">
-                            <span>About Us</span>
-                            <h2>What we have done</h2>
-                        </div>
-                        <div class="at-desc">
-                            <p>Since opening our doors, Fitness First has transformed hundreds of lives through expert training, personalized support, and a commitment to excellence. We’ve built a community where fitness goals are achieved, confidence is gained, and limits are broken every day.</p>
-                        </div>
-                        <div class="about-bar">
-                            <div class="ab-item">
-                                <p>Body building</p>
-                                <div id="bar1" class="barfiller">
-                                    <span class="fill" data-percentage="80"></span>
-                                    <div class="tipWrap">
-                                        <span class="tip"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ab-item">
-                                <p>Training</p>
-                                <div id="bar2" class="barfiller">
-                                    <span class="fill" data-percentage="85"></span>
-                                    <div class="tipWrap">
-                                        <span class="tip"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ab-item">
-                                <p>Fitness</p>
-                                <div id="bar3" class="barfiller">
-                                    <span class="fill" data-percentage="75"></span>
-                                    <div class="tipWrap">
-                                        <span class="tip"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- About US Section End -->
-
-    <!-- Team Section Begin -->
-    <section class="team-section spad">
+    <!--  -->
+    <section class="services-section spad">
         <div class="container">
+            
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="team-title">
-                        <div class="section-title">
-                            <span>Our Team</span>
-                            <h2>TRAIN WITH EXPERTS</h2>
-                        </div>
-                        <!-- <a href="#" class="primary-btn btn-normal appoinment-btn">appointment</a> -->
+                <div class="col-lg-3 order-lg-1 col-md-6 p-0">
+                    <div class="ss-pic">
+                        <img src="img/services/services-1.jpg" alt="">
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="ts-slider owl-carousel">
-                    <div class="col-lg-4">
-                        <div class="ts-item set-bg" data-setbg="img/team/piyumi.png">
-                            <div class="ts_text">
-                                <h4>Piumi</h4>
-                                <span>Gym Trainer</span>
-                            </div>
-                        </div>
+                <div class="col-lg-3 order-lg-2 col-md-6 p-0">
+                    <div class="ss-text">
+                        <h4>Studio Space (Colombo 7 & World Trade Center)</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ut dolore
+                            facilisis.</p>
+                        <!-- <a href="#">Explore</a> -->
                     </div>
-                    <div class="col-lg-4">
-                        <div class="ts-item set-bg" data-setbg="img/team/ashanthi.png">
-                            <div class="ts_text">
-                                <h4>Ashanthi</h4>
-                                <span>Gym Trainer</span>
-                            </div>
-                        </div>
+                </div>
+                <div class="col-lg-3 order-lg-3 col-md-6 p-0">
+                    <div class="ss-pic">
+                        <img src="img/services/services-2.jpg" alt="">
                     </div>
-                    <div class="col-lg-4">
-                        <div class="ts-item set-bg" data-setbg="img/team/afran.png">
-                            <div class="ts_text">
-                                <h4>Afran</h4>
-                                <span>Gym Trainer</span>
-                            </div>
-                        </div>
+                </div>
+                <div class="col-lg-3 order-lg-4 col-md-6 p-0">
+                    <div class="ss-text">
+                        <h4>Spring cycle studio (Colombo 7 - under construction)</h4>
+                        <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus.</p>
+                        <!-- <a href="#">Explore</a> -->
                     </div>
-                    <div class="col-lg-4">
-                        <div class="ts-item set-bg" data-setbg="img/team/raveen.png">
-                            <div class="ts_text">
-                                <h4>Raveen</h4>
-                                <span>Gym Trainer</span>
-                            </div>
-                        </div>
+                </div>
+                <div class="col-lg-3 order-lg-8 col-md-6 p-0">
+                    <div class="ss-pic">
+                        <img src="img/services/services-4.jpg" alt="">
                     </div>
-                    <div class="col-lg-4">
-                        <div class="ts-item set-bg" data-setbg="img/team/sashika.png">
-                            <div class="ts_text">
-                                <h4>Sashika</h4>
-                                <span>Gym Trainer</span>
-                            </div>
-                        </div>
+                </div>
+                <div class="col-lg-3 order-lg-7 col-md-6 p-0">
+                    <div class="ss-text second-row">
+                        <h4>Ladies only gym (Colombo 2)</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ut dolore
+                            facilisis.</p>
+                        <!-- <a href="#">Explore</a> -->
                     </div>
-                    <div class="col-lg-4">
-                        <div class="ts-item set-bg" data-setbg="img/team/saminda.png">
-                            <div class="ts_text">
-                                <h4>Saminda</h4>
-                                <span>Gym Trainer</span>
-                            </div>
-                        </div>
+                </div>
+                <div class="col-lg-3 order-lg-6 col-md-6 p-0">
+                    <div class="ss-pic">
+                        <img src="img/services/services-3.jpg" alt="">
                     </div>
-
+                </div>
+                <div class="col-lg-3 order-lg-5 col-md-6 p-0">
+                    <div class="ss-text second-row">
+                        <h4>Sport massage</h4>
+                        <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus.</p>
+                        <!-- <a href="#">Explore</a> -->
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Team Section End -->
+    <!--  -->
+    <section class="services-section spad">
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-lg-3 order-lg-1 col-md-6 p-0">
+                    <div class="ss-pic">
+                        <img src="img/services/services-1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 order-lg-2 col-md-6 p-0">
+                    <div class="ss-text">
+                        <h4>Health corner</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ut dolore
+                            facilisis.</p>
+                        <!-- <a href="#">Explore</a> -->
+                    </div>
+                </div>
+                <div class="col-lg-3 order-lg-3 col-md-6 p-0">
+                    <div class="ss-pic">
+                        <img src="img/services/services-2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 order-lg-4 col-md-6 p-0">
+                    <div class="ss-text">
+                        <h4>Posing room (Colombo 7 - under construction)</h4>
+                        <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus.</p>
+                        <!-- <a href="#">Explore</a> -->
+                    </div>
+                </div>
+                <div class="col-lg-3 order-lg-8 col-md-6 p-0">
+                    <div class="ss-pic">
+                        <img src="img/services/services-4.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 order-lg-7 col-md-6 p-0">
+                    <div class="ss-text second-row">
+                        <h4>Cross fit area (ja-ela)</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ut dolore
+                            facilisis.</p>
+                        <!-- <a href="#">Explore</a> -->
+                    </div>
+                </div>
+                <div class="col-lg-3 order-lg-6 col-md-6 p-0">
+                    <div class="ss-pic">
+                        <img src="img/services/services-3.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 order-lg-5 col-md-6 p-0">
+                    <div class="ss-text second-row">
+                        <h4>Shower & locker rooms </h4>
+                        <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus.</p>
+                        <!-- <a href="#">Explore</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
 
     <!-- Banner Section Begin -->
     <section class="banner-section set-bg" data-setbg="img/banner-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <div class="bs-text">
-                        <h2>registration now to get more deals</h2>
+                    <div class="bs-text service-banner">
+                        <h2>Exercise until the body obeys.</h2>
                         <div class="bt-tips">Where health, beauty and fitness meet.</div>
-                        <!-- <a href="#" class="primary-btn  btn-normal">Appointment</a> -->
+                        <!-- <a href="https://www.youtube.com/watch?v=EzKkl64rRbM" class="play-btn video-popup"><i
+                                class="fa fa-caret-right"></i></a> -->
                     </div>
                 </div>
             </div>
@@ -311,66 +333,79 @@
     </section>
     <!-- Banner Section End -->
 
-    <!-- Testimonial Section Begin -->
-    <section class="testimonial-section spad">
+    <!-- Pricing Section Begin -->
+    <!-- <section class="pricing-section service-pricing spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <span>Testimonial</span>
-                        <h2>Our cilent say</h2>
+                        <span>Our Plan</span>
+                        <h2>Choose your pricing plan</h2>
                     </div>
                 </div>
             </div>
-            <div class="ts_slider owl-carousel">
-                <div class="ts_item">
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            <div class="ti_pic">
-                                <img src="img/testimonial/testimonial-1.jpg" alt="">
-                            </div>
-                            <div class="ti_text">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt<br /> ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
-                                    gravida. Risus commodo<br /> viverra maecenas accumsan lacus vel facilisis.</p>
-                                <h5>Marshmello Gomez</h5>
-                                <div class="tt-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-8">
+                    <div class="ps-item">
+                        <h3>Class drop-in</h3>
+                        <div class="pi-price">
+                            <h2>$ 39.0</h2>
+                            <span>SINGLE CLASS</span>
                         </div>
+                        <ul>
+                            <li>Free riding</li>
+                            <li>Unlimited equipments</li>
+                            <li>Personal trainer</li>
+                            <li>Weight losing classes</li>
+                            <li>Month to mouth</li>
+                            <li>No time restriction</li>
+                        </ul>
+                        <a href="#" class="primary-btn pricing-btn">Enroll now</a>
+                        <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
                     </div>
                 </div>
-                <div class="ts_item">
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            <div class="ti_pic">
-                                <img src="img/testimonial/testimonial-2.jpg" alt="">
-                            </div>
-                            <div class="ti_text">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt<br /> ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
-                                    gravida. Risus commodo<br /> viverra maecenas accumsan lacus vel facilisis.</p>
-                                <h5>Marshmello Gomez</h5>
-                                <div class="tt-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
+                <div class="col-lg-4 col-md-8">
+                    <div class="ps-item">
+                        <h3>12 Month unlimited</h3>
+                        <div class="pi-price">
+                            <h2>$ 99.0</h2>
+                            <span>SINGLE CLASS</span>
                         </div>
+                        <ul>
+                            <li>Free riding</li>
+                            <li>Unlimited equipments</li>
+                            <li>Personal trainer</li>
+                            <li>Weight losing classes</li>
+                            <li>Month to mouth</li>
+                            <li>No time restriction</li>
+                        </ul>
+                        <a href="#" class="primary-btn pricing-btn">Enroll now</a>
+                        <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-8">
+                    <div class="ps-item">
+                        <h3>6 Month unlimited</h3>
+                        <div class="pi-price">
+                            <h2>$ 59.0</h2>
+                            <span>SINGLE CLASS</span>
+                        </div>
+                        <ul>
+                            <li>Free riding</li>
+                            <li>Unlimited equipments</li>
+                            <li>Personal trainer</li>
+                            <li>Weight losing classes</li>
+                            <li>Month to mouth</li>
+                            <li>No time restriction</li>
+                        </ul>
+                        <a href="#" class="primary-btn pricing-btn">Enroll now</a>
+                        <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Testimonial Section End -->
+    </section> -->
+    <!-- Pricing Section End -->
 
     <!-- Get In Touch Section Begin -->
     <div class="gettouch-section">
@@ -507,6 +542,7 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+
 
 
 </body>

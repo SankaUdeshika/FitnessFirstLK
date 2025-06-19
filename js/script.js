@@ -2719,5 +2719,65 @@ function deleteTestimonial(Testimonial_id) {
   request.open("POST", "FlexBackendPross.php", true);
   request.send(formData);
 }
+function onloadTestimonial() {
+  const formData = new FormData();
+  formData.append("command", "loadTestimonial");
 
+  const xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      try {
+        const response = JSON.parse(xhr.responseText);
+        if (response.status === "success") {
+          const slider = document.querySelector(".ts_slider");
+          slider.innerHTML = "";
 
+          response.data.forEach((t) => {
+            const stars = '<i class="fa fa-star"></i>'.repeat(t.rating);
+
+            const html = `
+              <div class="ts_item">
+                <div class="row">
+                  <div class="col-lg-12 text-center">
+                    <div class="ti_pic">
+                      <img src="${t.image}" alt="${t.name}">
+                    </div>
+                    <div class="ti_text">
+                      <p>${t.description.replace(/\n/g, "<br />")}</p>
+                      <h5>${t.name}</h5>
+                      <div class="tt-rating">
+                        ${stars}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `;
+
+            slider.innerHTML += html;
+          });
+
+          if ($(".ts_slider").hasClass("owl-loaded")) {
+            $(".ts_slider").trigger('destroy.owl.carousel');
+          }
+          $(".ts_slider").owlCarousel({
+            loop: true,
+            margin: 10,
+            items: 1,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true
+          });
+
+        } else {
+          console.warn("No testimonials found.");
+        }
+      } catch (e) {
+        console.error("Error parsing response:", e);
+      }
+    }
+  };
+
+  xhr.open("POST", "FlexBackendPross.php", true);
+  xhr.send(formData);
+}
