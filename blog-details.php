@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fitness First LK</title>
-
+    <link rel="icon" type="image/png" href="img/FitnessFirstLKLogo.png">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
@@ -79,17 +79,7 @@
                             <!-- <li><a href="./class-details.html">Classes</a></li> -->
                             <li><a href="./services.php">Amenities</a></li>
                             <li><a href="./team.php">Our Team</a></li>
-                            <li><a href="#">More</a>
-                                <ul class="dropdown">
-                                    <li><a href="./about-us.php">About us</a></li>
-                                    <!-- <li><a href="./class-timetable.html">Classes timetable</a></li> -->
-                                    <!-- <li><a href="./bmi-calculator.html">Bmi calculate</a></li> -->
-                                    <li><a href="./team.php">Our team</a></li>
-                                    <!-- <li><a href="./gallery.html">Gallery</a></li> -->
-                                    <li><a href="./blog.php">Our blog</a></li>
-                                    <!-- <li><a href="./404.html">404</a></li> -->
-                                </ul>
-                            </li>
+                            <li><a href="./blog.php">Our blog</a></li>
                             <li><a href="./contact.php">Contact</a></li>
                         </ul>
                     </nav>
