@@ -9,6 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fitness First LK</title>
 
+    
+    <link rel="icon" type="image/png" href="img/FitnessFirstLKLogo.png">
+
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
@@ -287,7 +290,7 @@
    <!-- ChoseUs Section End -->
 
    <!-- Banner Section Begin -->
-   <section class="banner-section set-bg" data-setbg="img/banner-bg.jpg">
+   <section class="banner-section set-bg" data-setbg="img/banner-bg.png">
        <div class="container">
            <div class="row">
                <div class="col-lg-12 text-center">
