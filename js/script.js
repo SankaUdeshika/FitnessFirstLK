@@ -2340,7 +2340,7 @@ function sendContactUsEmailToUs() {
       }
     }
   };
-  request.open("POST", "FlexBackendPross.php", true);
+  request.open("POST", "BackEndProcess.php", true);
   request.send(form);
 }
 function LoadData() {
@@ -2406,7 +2406,7 @@ function LoadData() {
     }
   };
 
-  request.open("POST", "FlexBackendPross.php", true);
+  request.open("POST", "BackEndProcess.php", true);
   request.send(form);
 }
 
@@ -2450,7 +2450,7 @@ function handleSubmit() {
     }
   };
 
-  request.open("POST", "FlexBackendPross.php", true);
+  request.open("POST", "BackEndProcess.php", true);
   request.send(formData);
 }
 function editTrainer(Trainer_id) {
@@ -2509,7 +2509,7 @@ function UpdateTrainer(Trainer_id) {
     }
   };
 
-  request.open("POST", "FlexBackendPross.php", true);
+  request.open("POST", "BackEndProcess.php", true);
   request.send(formData);
 }
 
@@ -2533,7 +2533,7 @@ function deleteTrainer(Trainer_id) {
       }
     }
   };
-  request.open("POST", "FlexBackendPross.php", true);
+  request.open("POST", "BackEndProcess.php", true);
   request.send(formData);
 }
 function empty() {
@@ -2574,7 +2574,7 @@ function handleTestimonial() {
     }
   };
 
-  request.open("POST", "FlexBackendPross.php", true);
+  request.open("POST", "BackEndProcess.php", true);
   request.send(formData);
 }
 function LoadTestimonial() {
@@ -2627,7 +2627,7 @@ function LoadTestimonial() {
     }
   };
 
-  request.open("POST", "FlexBackendPross.php", true);
+  request.open("POST", "BackEndProcess.php", true);
   request.send(form);
 }
 function editTestimonial(Testimonial_id) {
@@ -2681,7 +2681,7 @@ function updateTestimonial(Testimonial_id) {
     }
   };
 
-  request.open("POST", "FlexBackendPross.php", true);
+  request.open("POST", "BackEndProcess.php", true);
   request.send(formData);
 }
 function deleteTestimonial(Testimonial_id) {
@@ -2704,7 +2704,7 @@ function deleteTestimonial(Testimonial_id) {
     }
   };
 
-  request.open("POST", "FlexBackendPross.php", true);
+  request.open("POST", "BackEndProcess.php", true);
   request.send(formData);
 }
 function onloadTestimonial() {
@@ -2766,6 +2766,6 @@ function onloadTestimonial() {
     }
   };
 
-  xhr.open("POST", "FlexBackendPross.php", true);
+  xhr.open("POST", "BackEndProcess.php", true);
   xhr.send(formData);
 }

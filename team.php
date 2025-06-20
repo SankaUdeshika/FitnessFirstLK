@@ -1,3 +1,7 @@
+<?php
+require "Connections/connection.php";
+?>
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -46,7 +50,7 @@
                 <!-- <li><a href="./classes.html">Classes</a></li> -->
                 <li><a href="./services.php">Amenities</a></li>
                 <li><a href="./team.php">Our Team</a></li>
-              <li><a href="./blog.php">Our blog</a></li>
+                <li><a href="./blog.php">Our blog</a></li>
                 <li><a href="./contact.php">Contact</a></li>
             </ul>
         </nav>
@@ -138,20 +142,28 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="ts-item set-bg" data-setbg="img/team/vinith.png">
-                        <div class="ts_text">
-                            <h4>Vinith</h4>
-                            <span>Genaral Manager</span>
-                            <div class="tt_social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
+                <?php
+                $trainer_rs =  Database::search("SELECT * FROM `trainers` WHERE `position` = 'HIGHER MANAGEMENT' ");
+                $trainer_num  = $trainer_rs->num_rows;
+
+                for ($x = 0; $x < $trainer_num; $x++) {
+                    $trainer_data = $trainer_rs->fetch_assoc();
+                ?>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="ts-item set-bg" data-setbg="<?PHP echo $trainer_data["image"] ?>">
+                            <div class="ts_text">
+                                <h4><?PHP echo $trainer_data["name"] ?></h4>
+                                <span><?PHP echo $trainer_data["position"] ?></span>
+                                <div class="tt_social">
+                                    <a href="<?PHP echo $trainer_data["facebook"] ?>"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><?PHP echo $trainer_data["instagram"] ?></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                
+                <?php
+                }
+                ?>
             </div>
         </div>
         <div class="container">
@@ -167,160 +179,70 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="ts-item set-bg" data-setbg="img/team/abhishek.png">
-                        <div class="ts_text">
-                            <h4>Abhishek</h4>
-                            <span>Front Office</span>
-                            <div class="tt_social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
+                <?php
+                $trainer_rs =  Database::search("SELECT * FROM `trainers` WHERE `position` = 'FRONT OFFICE' ");
+                $trainer_num  = $trainer_rs->num_rows;
+
+                for ($x = 0; $x < $trainer_num; $x++) {
+                    $trainer_data = $trainer_rs->fetch_assoc();
+                ?>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="ts-item set-bg" data-setbg="<?PHP echo $trainer_data["image"] ?>">
+                            <div class="ts_text">
+                                <h4><?PHP echo $trainer_data["name"] ?></h4>
+                                <span><?PHP echo $trainer_data["position"] ?></span>
+                                <div class="tt_social">
+                                    <a href="<?PHP echo $trainer_data["facebook"] ?>"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><?PHP echo $trainer_data["instagram"] ?></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="ts-item set-bg" data-setbg="img/team/evenjaline.png">
-                        <div class="ts_text">
-                            <h4>Evenjaline</h4>
-                            <span>Front Office</span>
-                            <div class="tt_social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="ts-item set-bg" data-setbg="img/team/dinesh.png">
-                        <div class="ts_text">
-                            <h4>Dinesh</h4>
-                            <span>Front Office</span>
-                            <div class="tt_social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div class="col-lg-4 col-sm-6">
-                    <div class="ts-item set-bg" data-setbg="img/team/farath.png">
-                        <div class="ts_text">
-                            <h4>Farath</h4>
-                            <span>Front Office</span>
-                            <div class="tt_social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                
+                <?php
+                }
+                ?>
             </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="team-title">
-                        <div class="section-title">
-                            <span>Our Team</span>
-                            <h2>Gym Trainer</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="team-title">
+                            <div class="section-title">
+                                <span>Our Team</span>
+                                <h2>Gym Trainer</h2>
+                            </div>
+                            <!-- <a href="#" class="primary-btn btn-normal appoinment-btn">appointment</a> -->
                         </div>
-                        <!-- <a href="#" class="primary-btn btn-normal appoinment-btn">appointment</a> -->
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="ts-item set-bg" data-setbg="img/team/piyumi.png">
-                        <div class="ts_text">
-                            <h4>Piumi</h4>
-                            <span>Gym Trainer (Colombo 7)</span>
-                            <div class="tt_social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
+                <div class="row">
+                    <?php
+                    $trainer_rs =  Database::search("SELECT * FROM `trainers` WHERE `position` = 'GYM TRAINER' ");
+                    $trainer_num  = $trainer_rs->num_rows;
+
+                    for ($x = 0; $x < $trainer_num; $x++) {
+                        $trainer_data = $trainer_rs->fetch_assoc();
+                    ?>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="ts-item set-bg" data-setbg="<?PHP echo $trainer_data["image"] ?>">
+                                <div class="ts_text">
+                                    <h4><?PHP echo $trainer_data["name"] ?></h4>
+                                    <span><?PHP echo $trainer_data["position"] ?></span>
+                                    <div class="tt_social">
+                                        <a href="<?PHP echo $trainer_data["facebook"] ?>"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><?PHP echo $trainer_data["instagram"] ?></i></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    <?php
+                    }
+                    ?>
+
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="ts-item set-bg" data-setbg="img/team/ashanthi.png">
-                        <div class="ts_text">
-                            <h4>Ashanthi</h4>
-                            <span>Gym Trainer (Colombo 7)</span>
-                            <div class="tt_social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="ts-item set-bg" data-setbg="img/team/raveen.png">
-                        <div class="ts_text">
-                            <h4>Raveen</h4>
-                            <span>Gym Trainer (Colombo 7)</span>
-                            <div class="tt_social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="ts-item set-bg" data-setbg="img/team/afran.png">
-                        <div class="ts_text">
-                            <h4>Afran</h4>
-                            <span>Gym Trainer (Colombo 7)</span>
-                            <div class="tt_social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="ts-item set-bg" data-setbg="img/team/sashika.png">
-                        <div class="ts_text">
-                            <h4>Sashika</h4>
-                            <span>Gym Trainer (Colombo 7)</span>
-                            <div class="tt_social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="ts-item set-bg" data-setbg="img/team/saminda.png">
-                        <div class="ts_text">
-                            <h4>Saminda</h4>
-                            <span>Gym Trainer (Colombo 7)</span>
-                            <div class="tt_social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="ts-item set-bg" data-setbg="img/team/chaminda.png">
-                        <div class="ts_text">
-                            <h4>Chaminda</h4>
-                            <span>Gym Trainer (Colombo 7)</span>
-                            <div class="tt_social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
             </div>
         </div>
-    </div>
     </section>
-    
+
     <!-- Team Section End -->
 
     <!-- Get In Touch Section Begin -->
@@ -330,7 +252,7 @@
                 <div class="col-md-4 mt-1">
                     <div class="gt-text">
                         <i class="fa fa-map-marker"></i>
-                        <p class="mt-3">Colombo 7, Maitland Crescent<br/> Colombo 2, Moors Sports Club <br/>Colombo 2, World Trade Center </br> Ja-ela </p>
+                        <p class="mt-3">Colombo 7, Maitland Crescent<br /> Colombo 2, Moors Sports Club <br />Colombo 2, World Trade Center </br> Ja-ela </p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -430,7 +352,7 @@
                     <div class="copyright-text">
                         <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </script> All rights reserved | <i class="fa fa-star" aria-hidden="true"></i> by <a href="https://www.linkedin.com/in/sanka-udeshika-6298311bb/" target="_blank">Sanka</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div>
                 </div>
             </div>
