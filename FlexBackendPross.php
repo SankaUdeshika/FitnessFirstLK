@@ -1299,7 +1299,7 @@ if ($command == "addFlexProduct") {
     FlexDatabase::iud("DELETE FROM `Testimonial` WHERE `Testimonial_id` = {$id}");
     echo  "success";
 }else if ($command == "loadTestimonial") {
-    $result = FlexDatabase::search("SELECT * FROM `Testimonial`");
+    $result = FlexDatabase::search("SELECT * FROM Testimonial");
 
     if ($result && mysqli_num_rows($result) > 0) {
         $data = [];
