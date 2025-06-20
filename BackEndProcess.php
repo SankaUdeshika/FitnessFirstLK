@@ -748,7 +748,7 @@ if ($command == "adminChangePassword") {
     }
 } else if ($command == "LoadTrainers") {
 
-    $result = FlexDatabase::search("SELECT * FROM `Trainers`");
+    $result = Database::search("SELECT * FROM `Trainers`");
     $Trainers = [];
 
     while ($row = $result->fetch_assoc()) {
@@ -798,7 +798,7 @@ if ($command == "adminChangePassword") {
 
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
             $relativePath = "img/trainers/" . $uniqueName;
-            FlexDatabase::iud("INSERT INTO Trainers 
+            Database::iud("INSERT INTO Trainers 
             (`name`, `position`, `facebook`, `instagram`, `image`) 
             VALUES 
             ('{$name}', '{$position}', '{$facebook}', '{$instagram}', '{$relativePath}')");
@@ -867,11 +867,11 @@ if ($command == "adminChangePassword") {
                 WHERE `Trainer_id` = {$Trainer_id}";
     }
 
-    FlexDatabase::iud($sql);
+    Database::iud($sql);
     echo "success";
 } else if ($command == "DeleteTrainer") {
     $trainer_id = intval($_POST["Trainer_id"]);
-    FlexDatabase::iud("DELETE FROM `Trainers` WHERE `Trainer_id` = {$trainer_id}");
+    Database::iud("DELETE FROM `Trainers` WHERE `Trainer_id` = {$trainer_id}");
     echo "success";
 } else if ($command == "InsertTestimonial") {
     $name = $_POST["name"];
@@ -908,7 +908,7 @@ if ($command == "adminChangePassword") {
 
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
             $relativePath = "img/testimonial/" . $uniqueName;
-            FlexDatabase::iud("INSERT INTO `Testimonial` 
+            Database::iud("INSERT INTO `testimonial` 
                 (`name`, `description`, `rating`, `image`) 
                 VALUES 
                 ('{$name}', '{$description}', {$rating}, '{$relativePath}')");
@@ -921,7 +921,7 @@ if ($command == "adminChangePassword") {
         echo "Image upload failed. Error code: " . $_FILES["image"]["error"];
     }
 } else if ($command == "LoadTestimonial") {
-    $result = FlexDatabase::search("SELECT * FROM Testimonial");
+    $result = Database::search("SELECT * FROM testimonial");
 
     if ($result && $result->num_rows > 0) {
         $data = [];
@@ -975,7 +975,7 @@ if ($command == "adminChangePassword") {
 
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
             $relativePath = "img/testimonials/" . $uniqueName;
-            FlexDatabase::iud("INSERT INTO Testimonial 
+            Database::iud("INSERT INTO Testimonial 
                 (`name`, `description`, `rating`, `image`) 
                 VALUES 
                 ('{$name}', '{$description}', '{$rating}', '{$relativePath}')");
@@ -1015,7 +1015,7 @@ if ($command == "adminChangePassword") {
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
             $imagePath = "img/testimonial/" . $uniqueName;
 
-            $res = FlexDatabase::search("SELECT image FROM `Testimonial` WHERE `Testimonial_id` = {$id}");
+            $res = Database::search("SELECT image FROM `testimonial` WHERE `Testimonial_id` = {$id}");
             if ($res && mysqli_num_rows($res) > 0) {
                 $row = mysqli_fetch_assoc($res);
                 $oldPath = __DIR__ . "/" . $row["image"];
@@ -1023,7 +1023,7 @@ if ($command == "adminChangePassword") {
                     unlink($oldPath);
                 }
             }
-            FlexDatabase::iud("UPDATE `Testimonial` SET 
+            Database::iud("UPDATE `testimonial` SET 
                 name='{$name}', description='{$description}', rating='{$rating}', image='{$imagePath}'
                 WHERE `Testimonial_id`={$id}");
         } else {
@@ -1031,7 +1031,7 @@ if ($command == "adminChangePassword") {
             exit();
         }
     } else {
-        FlexDatabase::iud("UPDATE `Testimonial` SET 
+        Database::iud("UPDATE `testimonial` SET 
             name='{$name}', description='{$description}', rating='{$rating}'
             WHERE `Testimonial_id`={$id}");
     }
@@ -1040,7 +1040,7 @@ if ($command == "adminChangePassword") {
 } else if ($command == "DeleteTestimonial") {
     $id = intval($_POST["Testimonial_id"]);
 
-    $res = FlexDatabase::search("SELECT image FROM `Testimonial` WHERE `Testimonial_id` = {$id}");
+    $res = Database::search("SELECT image FROM `testimonial` WHERE `Testimonial_id` = {$id}");
     if ($res && mysqli_num_rows($res) > 0) {
         $row = mysqli_fetch_assoc($res);
         $imagePath = __DIR__ . "/" . $row["image"];
@@ -1049,10 +1049,10 @@ if ($command == "adminChangePassword") {
         }
     }
 
-    FlexDatabase::iud("DELETE FROM `Testimonial` WHERE `Testimonial_id` = {$id}");
+    Database::iud("DELETE FROM `testimonial` WHERE `Testimonial_id` = {$id}");
     echo  "success";
 } else if ($command == "loadTestimonial") {
-    $result = FlexDatabase::search("SELECT * FROM Testimonial");
+    $result = Database::search("SELECT * FROM testimonial");
 
     if ($result && mysqli_num_rows($result) > 0) {
         $data = [];
