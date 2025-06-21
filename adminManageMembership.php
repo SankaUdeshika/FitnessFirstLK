@@ -88,7 +88,7 @@
 </head>
 <body>
 <?php
-  require "./Connections/FlexConnection.php";
+  require "./Connections/connection.php";
   ?>
   <table>
     <thead>
@@ -106,7 +106,7 @@
   
     
 
-    $membership_rs = FlexDatabase::search("SELECT * FROM `memberships`");
+    $membership_rs = Database::search("SELECT * FROM `memberships`");
     $membership_num = $membership_rs->num_rows;
 
     for ($X = 0; $X < $membership_num; $X++) { 

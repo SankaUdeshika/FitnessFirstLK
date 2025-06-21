@@ -97,7 +97,7 @@ if (isset($_SESSION["admin"])) {
                         </div>
 
                         <!-- content -->
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeCarouselImage.php'">
+                        <!-- <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeCarouselImage.php'">
                             <h1>Home Page Change Carousel Image</h1>
                         </div>
                         <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeHomePage.php'">
@@ -123,10 +123,20 @@ if (isset($_SESSION["admin"])) {
                         </div>
                         <div class="col-12 btn btn-outline-primary" onclick="window.location = 'ManageFactory.php'">
                             <h1>Manage Factory Items</h1>
-                        </div>
+                        </div> -->
                         <div class="col-12 btn btn-outline-primary" onclick="window.location = 'ManageTrainers.php'">
                             <h1>Manage Trainers</h1>
                         </div>
+                        <div class="col-12 btn btn-outline-primary" onclick="window.location = 'testimonial.php'">
+                            <h1>Manage Testimonials </h1>
+                        </div>
+                        <div class="col-12 btn btn-outline-primary" onclick="window.location = 'adminManageMembership.php'">
+                            <h1>Manage Memberships </h1>
+                        </div>
+                        <div class="col-12 btn btn-outline-primary" onclick="window.location = 'changepackageinfo.php'">
+                            <h1>Change Membership Packages </h1>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

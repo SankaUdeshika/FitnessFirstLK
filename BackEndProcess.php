@@ -748,7 +748,7 @@ if ($command == "adminChangePassword") {
     }
 } else if ($command == "LoadTrainers") {
 
-    $result = Database::search("SELECT * FROM `Trainers`");
+    $result = Database::search("SELECT * FROM `trainers`");
     $Trainers = [];
 
     while ($row = $result->fetch_assoc()) {
@@ -798,7 +798,7 @@ if ($command == "adminChangePassword") {
 
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
             $relativePath = "img/trainers/" . $uniqueName;
-            Database::iud("INSERT INTO Trainers 
+            Database::iud("INSERT INTO trainers 
             (`name`, `position`, `facebook`, `instagram`, `image`) 
             VALUES 
             ('{$name}', '{$position}', '{$facebook}', '{$instagram}', '{$relativePath}')");
@@ -851,7 +851,7 @@ if ($command == "adminChangePassword") {
     }
 
     if ($relativePath !== null) {
-        $sql = "UPDATE `Trainers`SET 
+        $sql = "UPDATE `trainers`SET 
                     `name` = '{$name}', 
                     `position` = '{$position}', 
                     `facebook` = '{$facebook}', 
@@ -859,7 +859,7 @@ if ($command == "adminChangePassword") {
                     `image` = '{$relativePath}' 
                 WHERE `Trainer_id` = {$Trainer_id}";
     } else {
-        $sql = "UPDATE `Trainers` SET 
+        $sql = "UPDATE `trainers` SET 
                     `name` = '{$name}', 
                     `position` = '{$position}', 
                     `facebook` = '{$facebook}', 
@@ -871,7 +871,7 @@ if ($command == "adminChangePassword") {
     echo "success";
 } else if ($command == "DeleteTrainer") {
     $trainer_id = intval($_POST["Trainer_id"]);
-    Database::iud("DELETE FROM `Trainers` WHERE `Trainer_id` = {$trainer_id}");
+    Database::iud("DELETE FROM `trainers` WHERE `Trainer_id` = {$trainer_id}");
     echo "success";
 } else if ($command == "InsertTestimonial") {
     $name = $_POST["name"];
@@ -921,7 +921,7 @@ if ($command == "adminChangePassword") {
         echo "Image upload failed. Error code: " . $_FILES["image"]["error"];
     }
 } else if ($command == "LoadTestimonial") {
-    $result = Database::search("SELECT * FROM testimonial");
+    $result = Database::search("SELECT * FROM `testimonial` ");
 
     if ($result && $result->num_rows > 0) {
         $data = [];
