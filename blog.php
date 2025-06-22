@@ -46,7 +46,8 @@
                 <!-- <li><a href="./classes.html">Classes</a></li> -->
                 <li><a href="./services.php">Amenities</a></li>
                 <li><a href="./team.php">Our Team</a></li>
-              <li><a href="./blog.php">Our blog</a></li>
+                 <li><a href="./blog.php">Our blog</a></li>
+                <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
                 <li><a href="./contact.php">Contact</a></li>
             </ul>
         </nav>
@@ -79,7 +80,8 @@
                             <!-- <li><a href="./class-details.html">Classes</a></li> -->
                             <li><a href="./services.php">Amenities</a></li>
                             <li><a href="./team.php">Our Team</a></li>
-                            <li><a href="./blog.php">Our blog</a></li>
+                               <li><a href="./blog.php">Our blog</a></li>
+                <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
                             <li><a href="./contact.php">Contact</a></li>
                         </ul>
                     </nav>

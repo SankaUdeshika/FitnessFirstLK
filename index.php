@@ -47,7 +47,9 @@
                 <!-- <li><a href="./classes.html">Classes</a></li> -->
                 <li><a href="./services.php">Amenities</a></li>
                 <li><a href="./team.php">Our Team</a></li>
-              <li><a href="./blog.php">Our blog</a></li>
+                   <li><a href="./blog.php">Our blog</a></li>
+                <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
+                <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
                 <li><a href="./contact.php">Contact</a></li>
             </ul>
         </nav>
@@ -80,7 +82,8 @@
                             <!-- <li><a href="./class-details.html">Classes</a></li> -->
                             <li><a href="./services.php">Amenities</a></li>
                             <li><a href="./team.php">Our Team</a></li>
-                            <li><a href="./blog.php">Our blog</a></li>
+                               <li><a href="./blog.php">Our blog</a></li>
+                <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
                             <li><a href="./contact.php">Contact</a></li>
                         </ul>
                     </nav>
@@ -115,7 +118,7 @@
                         <div class="col-lg-6 offset-lg-6">
                             <div class="hi-text">
                                 <span>Shape your body</span>
-                                <h1 class="fw-bold">Be <strong >strong</strong> with a professional</h1>
+                                <h1 class="fw-bold">Be <strong>strong</strong> with a professional</h1>
                                 <a href="team.html" class="primary-btn">Get info</a>
                             </div>
                         </div>
