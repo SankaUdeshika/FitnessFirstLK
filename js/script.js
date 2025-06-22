@@ -2746,7 +2746,7 @@ function onloadTestimonial() {
           });
 
           if ($(".ts_slider").hasClass("owl-loaded")) {
-            $(".ts_slider").trigger('destroy.owl.carousel');
+            $(".ts_slider").trigger("destroy.owl.carousel");
           }
           $(".ts_slider").owlCarousel({
             loop: true,
@@ -2754,9 +2754,8 @@ function onloadTestimonial() {
             items: 1,
             autoplay: true,
             autoplayTimeout: 5000,
-            autoplayHoverPause: true
+            autoplayHoverPause: true,
           });
-
         } else {
           console.warn("No testimonials found.");
         }
@@ -2768,4 +2767,28 @@ function onloadTestimonial() {
 
   xhr.open("POST", "BackEndProcess.php", true);
   xhr.send(formData);
+}
+
+function changeBlogType() {
+  var contenet = document.getElementById("Content_type").value;
+  let paragraph = false;
+  let Heading = false;
+  let image = false;
+
+  if (contenet == "1") {
+    Heading = true;
+    document.getElementById("HedingText").classList.remove("d-none");
+    document.getElementById("ImageSelector").classList.add("d-none");
+    document.getElementById("ContentText").classList.add("d-none");
+  } else if (contenet == "2") {
+    image = true;
+    document.getElementById("ImageSelector").classList.remove("d-none");
+    document.getElementById("HedingText").classList.add("d-none");
+    document.getElementById("ContentText").classList.add("d-none");
+  } else if (contenet == "3") {
+    paragraph = true;
+    document.getElementById("ContentText").classList.remove("d-none");
+    document.getElementById("ImageSelector").classList.add("d-none");
+    document.getElementById("HedingText").classList.add("d-none");
+  }
 }
