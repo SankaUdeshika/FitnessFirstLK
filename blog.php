@@ -43,11 +43,9 @@
             <ul>
                 <li><a href="./index.php">Home</a></li>
                 <li><a href="./about-us.php">About Us</a></li>
-                <!-- <li><a href="./classes.html">Classes</a></li> -->
                 <li><a href="./services.php">Amenities</a></li>
                 <li><a href="./team.php">Our Team</a></li>
-                 <li><a href="./blog.php">Our blog</a></li>
-                <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
+                <li><a href="./blog.php">Our blog</a></li>
                 <li><a href="./contact.php">Contact</a></li>
             </ul>
         </nav>
@@ -77,11 +75,9 @@
                         <ul>
                             <li class="active"><a href="./index.php">Home</a></li>
                             <li><a href="./about-us.php">About Us</a></li>
-                            <!-- <li><a href="./class-details.html">Classes</a></li> -->
                             <li><a href="./services.php">Amenities</a></li>
                             <li><a href="./team.php">Our Team</a></li>
-                               <li><a href="./blog.php">Our blog</a></li>
-                <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
+                            <li><a href="./blog.php">Our blog</a></li>
                             <li><a href="./contact.php">Contact</a></li>
                         </ul>
                     </nav>
@@ -131,104 +127,108 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 p-0">
-                    <div class="blog-item">
-                        <div class="bi-pic">
-                            <img src="img/blog/blog-1.jpg" alt="">
+                    <?php
+                    require "./Connections/FlexConnection.php";
+
+                    // 1. Determine current page
+                    $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int) $_GET['page'] : 1;
+                    $resultsPerPage = 5;
+                    $offset = ($page - 1) * $resultsPerPage;
+
+                    // 2. Count total blog records
+                    $totalResult = FlexDatabase::search("SELECT COUNT(DISTINCT blog.Bid) AS total FROM blog");
+                    $totalRow = $totalResult->fetch_assoc();
+                    $totalBlogs = $totalRow['total'];
+                    $totalPages = ceil($totalBlogs / $resultsPerPage);
+
+                    // 3. Get blog results with LIMIT and OFFSET
+                    $query = "SELECT blog.*, blogcontent.content FROM blog INNER JOIN blogcontent ON blog.Bid = blogcontent.blog_Bid ORDER BY blog.Bdate DESC LIMIT $resultsPerPage OFFSET $offset";
+                    $result = FlexDatabase::search($query);
+
+                    // 4. Display blogs
+                    while ($blog = $result->fetch_assoc()) {
+                        $blogId = $blog['Bid'];
+                        $commentResult = FlexDatabase::search("SELECT * FROM `blogcomment` WHERE `blog_Bid` = '$blogId'");
+                        $commentCount = $commentResult->num_rows;
+
+                        $title = $blog['BlogName'];
+                        $blog_cover_pic = $blog['blog_cover_pic'] ?? './img/logo.png';
+                        $author_name = $blog['author_name'];
+                        $date = date("M, d, Y", strtotime($blog['Bdate']));
+                        $shortDesc = substr($blog['content'], 0, 150) . "...";
+                    ?>
+                        <div class="blog-item">
+                            <div class="bi-pic">
+                                <img src="<?php echo htmlspecialchars($blog_cover_pic); ?>" alt="">
+                            </div>
+                            <div class="bi-text">
+                                <h5>
+                                    <a href="./blog-details.php?id=<?php echo htmlspecialchars($blogId); ?>">
+                                        <?php echo htmlspecialchars($title); ?>
+                                    </a>
+                                </h5>
+                                <ul>
+                                    <li>by <?php echo htmlspecialchars($author_name); ?></li>
+                                    <li><?php echo $date; ?></li>
+                                    <li><?php echo $commentCount; ?> Comment<?php echo $commentCount != 1 ? 's' : ''; ?></li>
+                                </ul>
+                                <p><?php echo htmlspecialchars($shortDesc); ?></p>
+                            </div>
                         </div>
-                        <div class="bi-text">
-                            <h5><a href="./blog-details.html">Vegan White Peach Mug Cobbler With Cardam Vegan White Peach Mug
-                                    Cobbler...</a></h5>
-                            <ul>
-                                <li>by Admin</li>
-                                <li>Aug,15, 2019</li>
-                                <li>20 Comment</li>
-                            </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua accumsan lacus facilisis.</p>
+                    <?php } ?>
+
+                    <?php if ($totalPages > 1): ?>
+                        <div class="blog-pagination">
+                            <?php if ($page > 1): ?>
+                                <a href="?page=<?php echo $page - 1; ?>">Prev</a>
+                            <?php endif; ?>
+
+                            <?php for ($p = 1; $p <= $totalPages; $p++): ?>
+                                <a href="?page=<?php echo $p; ?>" <?php if ($p === $page) echo 'class="active"'; ?>>
+                                    <?php echo $p; ?>
+                                </a>
+                            <?php endfor; ?>
+
+                            <?php if ($page < $totalPages): ?>
+                                <a href="?page=<?php echo $page + 1; ?>">Next</a>
+                            <?php endif; ?>
                         </div>
-                    </div>
-                    <div class="blog-item">
-                        <div class="bi-pic">
-                            <img src="img/blog/blog-2.jpg" alt="">
-                        </div>
-                        <div class="bi-text">
-                            <h5><a href="./blog-details.html">Vegan White Peach Mug Cobbler With Cardam Vegan White Peach Mug
-                                    Cobbler...</a></h5>
-                            <ul>
-                                <li>by Admin</li>
-                                <li>Aug,15, 2019</li>
-                                <li>20 Comment</li>
-                            </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua accumsan lacus facilisis.</p>
-                        </div>
-                    </div>
-                    <div class="blog-item">
-                        <div class="bi-pic">
-                            <img src="img/blog/blog-3.jpg" alt="">
-                        </div>
-                        <div class="bi-text">
-                            <h5><a href="./blog-details.html">Vegan White Peach Mug Cobbler With Cardam Vegan White Peach Mug
-                                    Cobbler...</a></h5>
-                            <ul>
-                                <li>by Admin</li>
-                                <li>Aug,15, 2019</li>
-                                <li>20 Comment</li>
-                            </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua accumsan lacus facilisis.</p>
-                        </div>
-                    </div>
-                    <div class="blog-item">
-                        <div class="bi-pic">
-                            <img src="img/blog/blog-4.jpg" alt="">
-                        </div>
-                        <div class="bi-text">
-                            <h5><a href="./blog-details.html">Vegan White Peach Mug Cobbler With Cardam Vegan White Peach Mug
-                                    Cobbler...</a></h5>
-                            <ul>
-                                <li>by Admin</li>
-                                <li>Aug,15, 2019</li>
-                                <li>20 Comment</li>
-                            </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua accumsan lacus facilisis.</p>
-                        </div>
-                    </div>
-                    <div class="blog-item">
-                        <div class="bi-pic">
-                            <img src="img/blog/blog-5.jpg" alt="">
-                        </div>
-                        <div class="bi-text">
-                            <h5><a href="./blog-details.html">Vegan White Peach Mug Cobbler With Cardam Vegan White Peach Mug
-                                    Cobbler...</a></h5>
-                            <ul>
-                                <li>by Admin</li>
-                                <li>Aug,15, 2019</li>
-                                <li>20 Comment</li>
-                            </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua accumsan lacus facilisis.</p>
-                        </div>
-                    </div>
-                    <div class="blog-pagination">
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">Next</a>
-                    </div>
+                    <?php endif; ?>
+
                 </div>
+
                 <div class="col-lg-4 col-md-8 p-0">
                     <div class="sidebar-option">
                         <div class="so-categories">
                             <h5 class="title">Categories</h5>
                             <ul>
-                                <li><a href="#">Yoga <span>12</span></a></li>
-                                <li><a href="#">Runing <span>32</span></a></li>
-                                <li><a href="#">Weightloss <span>86</span></a></li>
-                                <li><a href="#">Cario <span>25</span></a></li>
-                                <li><a href="#">Body buiding <span>36</span></a></li>
-                                <li><a href="#">Nutrition <span>15</span></a></li>
+                                <?php
+                                require "Connections/connection.php";
+
+                                $result = Database::search("SELECT * FROM `blogcategory`");
+                                $result_num = $result->num_rows;
+
+                                for ($x = 0; $x < $result_num; $x++) {
+                                    $result_data = $result->fetch_assoc();
+                                    $bcid = $result_data["BCid"];
+
+                                    $resultBlog = Database::search("SELECT * FROM `blog` WHERE `blogcategory_BCid` = '$bcid'");
+                                    $resultBlog_num = $resultBlog->num_rows;
+                                ?>
+
+                                    <li>
+                                        <a href="#"><?php echo $result_data["category"]; ?>
+                                            <span><?php echo $resultBlog_num; ?></span>
+                                        </a>
+                                    </li>
+
+                                <?php
+                                }
+                                ?>
+
+
+
+
                             </ul>
                         </div>
                         <div class="so-latest">
@@ -304,7 +304,7 @@
                 <div class="col-md-4 mt-1">
                     <div class="gt-text">
                         <i class="fa fa-map-marker"></i>
-                        <p class="mt-3">Colombo 7, Maitland Crescent<br/> Colombo 2, Moors Sports Club <br/>Colombo 2, World Trade Center </br> Ja-ela </p>
+                        <p class="mt-3">Colombo 7, Maitland Crescent<br /> Colombo 2, Moors Sports Club <br />Colombo 2, World Trade Center </br> Ja-ela </p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -404,7 +404,7 @@
                     <div class="copyright-text">
                         <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </script> All rights reserved | <i class="fa fa-star" aria-hidden="true"></i> by <a href="https://www.linkedin.com/in/sanka-udeshika-6298311bb/" target="_blank">Sanka</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div>
                 </div>
             </div>

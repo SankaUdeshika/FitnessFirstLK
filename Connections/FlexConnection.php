@@ -7,7 +7,7 @@ class FlexDatabase
     public static function setUpConnections()
     {
         if (!isset(FlexDatabase::$connection)) {
-            FlexDatabase::$connection = new mysqli("localhost", "root", "12345678", "fitnessfirstlk_db", "3306");
+            FlexDatabase::$connection = new mysqli("127.0.0.1", "root", "Shanu@456", "fitnessfirstlk_db", "3306");
         }
     }
 
