@@ -2286,7 +2286,6 @@ document
   });
 
 function sendContactUsEmailToUs() {
-
   var command = "SendEmailTOUS";
   var Name = document.getElementById("Name").value;
   var email = document.getElementById("Email").value;
@@ -2301,18 +2300,15 @@ function sendContactUsEmailToUs() {
   form.append("Message", Message);
   alert("OK bn");
 
-
   var request = new XMLHttpRequest();
   request.onreadystatechange = function () {
     if ((request.readyState == 4) & (request.status == 200)) {
-     
       var response = request.responseText;
-      if(response =="success"){
+      if (response == "success") {
         alert("ok");
-      }else{
-        alert(response)
+      } else {
+        alert(response);
       }
-      
     }
   };
   request.open("POST", "FlexBackendPross.php", true);
@@ -2417,7 +2413,7 @@ function handleSubmit() {
       var response = request.responseText.trim();
       if (response === "success") {
         alert("Trainer saved successfully!");
-        empty()
+        empty();
         LoadData();
       } else {
         alert("Error: " + response);
@@ -2476,7 +2472,7 @@ function UpdateTrainer(Trainer_id) {
       var response = request.responseText.trim();
       if (response === "success") {
         alert("Trainer Update successfully!");
-        empty()
+        empty();
         LoadData();
       } else {
         alert("Error: " + response);
@@ -2506,29 +2502,25 @@ function deleteTrainer(Trainer_id) {
       } else {
         alert("Error deleting trainer: " + response);
       }
-   
+    }
   };
-}
   request.open("POST", "FlexBackendPross.php", true);
   request.send(formData);
-
 }
 function empty() {
-document.getElementById("trainerName").value = "";
-document.getElementById("position").value = "";
-document.getElementById("facebook").value = "";
- document.getElementById("instagram").value = "";
- document.getElementById("imageInput").files[0] = "";
+  document.getElementById("trainerName").value = "";
+  document.getElementById("position").value = "";
+  document.getElementById("facebook").value = "";
+  document.getElementById("instagram").value = "";
+  document.getElementById("imageInput").files[0] = "";
 }
 
-function handleTestimonial(){
+function handleTestimonial() {
   var command = "InsertTestimonial";
   var file = document.getElementById("imageInput").files[0];
   var name = document.getElementById("clienName").value;
   var description = document.getElementById("description").value;
   var rating = document.getElementById("rating").value;
-
- 
 
   var formData = new FormData();
   formData.append("command", command);
@@ -2539,14 +2531,14 @@ function handleTestimonial(){
     formData.append("image", file);
   }
 
-   var request = new XMLHttpRequest();
+  var request = new XMLHttpRequest();
   request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
       var response = request.responseText.trim();
       if (response === "success") {
         alert("Testimonial saved successfully!");
-        
-       window.location.reload();
+
+        window.location.reload();
       } else {
         alert("Error: " + response);
       }
@@ -2587,12 +2579,8 @@ function LoadTestimonial() {
                 <td>${T.description}</td>
                 <td>${T.rating}</td>
                 <td>
-                  <span class="edit-btn" onclick="editTestimonial(${
-                    T.Testimonial_id
-                  })">✏️ Edit</span>
-                  <span class="delete-btn" onclick="deleteTestimonial(${
-                    T.Testimonial_id
-                  })">🗑️ Delete</span>
+                  <span class="edit-btn" onclick="editTestimonial(${T.Testimonial_id})">✏️ Edit</span>
+                  <span class="delete-btn" onclick="deleteTestimonial(${T.Testimonial_id})">🗑️ Delete</span>
                 </td>
               </tr>
             `;
@@ -2656,8 +2644,8 @@ function updateTestimonial(Testimonial_id) {
       const response = request.responseText.trim();
       if (response === "success") {
         alert("Testimonial updated successfully!");
-        
-       window.location.reload();
+
+        window.location.reload();
       } else {
         alert("Error: " + response);
       }
@@ -2680,7 +2668,7 @@ function deleteTestimonial(Testimonial_id) {
       const response = request.responseText.trim();
       if (response == "success") {
         alert("Testimonial deleted successfully.");
-          window.location.reload();
+        window.location.reload();
       } else {
         alert("Error deleting testimonial: " + response);
       }
@@ -2729,7 +2717,7 @@ function onloadTestimonial() {
           });
 
           if ($(".ts_slider").hasClass("owl-loaded")) {
-            $(".ts_slider").trigger('destroy.owl.carousel');
+            $(".ts_slider").trigger("destroy.owl.carousel");
           }
           $(".ts_slider").owlCarousel({
             loop: true,
@@ -2737,9 +2725,8 @@ function onloadTestimonial() {
             items: 1,
             autoplay: true,
             autoplayTimeout: 5000,
-            autoplayHoverPause: true
+            autoplayHoverPause: true,
           });
-
         } else {
           console.warn("No testimonials found.");
         }
@@ -2752,8 +2739,6 @@ function onloadTestimonial() {
   xhr.open("POST", "FlexBackendPross.php", true);
   xhr.send(formData);
 }
-<<<<<<< HEAD
-=======
 
 function changeBlogType() {
   var contenet = document.getElementById("Content_type").value;
@@ -2820,4 +2805,3 @@ function AddBlog() {
     request.send(form);
   }
 }
->>>>>>> main

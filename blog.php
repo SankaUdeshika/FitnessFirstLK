@@ -128,21 +128,21 @@
             <div class="row">
                 <div class="col-lg-8 p-0">
                     <?php
-                    require "./Connections/FlexConnection.php";
+                    require "./Connections/connection.php";
 
                     $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int) $_GET['page'] : 1;
                     $resultsPerPage = 5;
                     $offset = ($page - 1) * $resultsPerPage;
 
-                    $totalResult = FlexDatabase::search("SELECT * FROM `blog`");
+                    $totalResult = Database::search("SELECT * FROM `blog`");
                     $totalBlogs = $totalResult->num_rows;
 
                     $totalPages = ceil($totalBlogs / $resultsPerPage);
-                    $result = FlexDatabase::search("SELECT blog.*, blogcontent.content FROM blog INNER JOIN blogcontent ON blog.Bid = blogcontent.blog_Bid ORDER BY blog.Bdate DESC LIMIT $resultsPerPage OFFSET $offset");
+                    $result = Database::search("SELECT blog.*, blogcontent.content FROM blog INNER JOIN blogcontent ON blog.Bid = blogcontent.blog_Bid ORDER BY blog.Bdate DESC LIMIT $resultsPerPage OFFSET $offset");
 
                     while ($blog = $result->fetch_assoc()) {
                         $blogId = $blog['Bid'];
-                        $commentResult = FlexDatabase::search("SELECT * FROM `blogcomment` WHERE `blog_Bid` = '$blogId'");
+                        $commentResult = Database::search("SELECT * FROM `blogcomment` WHERE `blog_Bid` = '$blogId'");
                         $commentCount = $commentResult->num_rows;
 
                         $title = $blog['BlogName'];
@@ -210,7 +210,7 @@
                             <h5 class="title">Categories</h5>
                             <ul>
                                 <?php
-                                require "Connections/connection.php";
+                             
 
                                 $result = Database::search("SELECT * FROM `blogcategory`");
                                 $result_num = $result->num_rows;
