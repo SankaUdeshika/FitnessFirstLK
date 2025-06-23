@@ -130,22 +130,16 @@
                     <?php
                     require "./Connections/FlexConnection.php";
 
-                    // 1. Determine current page
                     $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int) $_GET['page'] : 1;
                     $resultsPerPage = 5;
                     $offset = ($page - 1) * $resultsPerPage;
 
-                    // 2. Count total blog records
-                    $totalResult = FlexDatabase::search("SELECT COUNT(DISTINCT blog.Bid) AS total FROM blog");
-                    $totalRow = $totalResult->fetch_assoc();
-                    $totalBlogs = $totalRow['total'];
+                    $totalResult = FlexDatabase::search("SELECT * FROM `blog`");
+                    $totalBlogs = $totalResult->num_rows;
+
                     $totalPages = ceil($totalBlogs / $resultsPerPage);
+                    $result = FlexDatabase::search("SELECT blog.*, blogcontent.content FROM blog INNER JOIN blogcontent ON blog.Bid = blogcontent.blog_Bid ORDER BY blog.Bdate DESC LIMIT $resultsPerPage OFFSET $offset");
 
-                    // 3. Get blog results with LIMIT and OFFSET
-                    $query = "SELECT blog.*, blogcontent.content FROM blog INNER JOIN blogcontent ON blog.Bid = blogcontent.blog_Bid ORDER BY blog.Bdate DESC LIMIT $resultsPerPage OFFSET $offset";
-                    $result = FlexDatabase::search($query);
-
-                    // 4. Display blogs
                     while ($blog = $result->fetch_assoc()) {
                         $blogId = $blog['Bid'];
                         $commentResult = FlexDatabase::search("SELECT * FROM `blogcomment` WHERE `blog_Bid` = '$blogId'");
@@ -177,20 +171,33 @@
                         </div>
                     <?php } ?>
 
-                    <?php if ($totalPages > 1): ?>
-                        <div class="blog-pagination">
-                            <?php if ($page > 1): ?>
-                                <a href="?page=<?php echo $page - 1; ?>">Prev</a>
-                            <?php endif; ?>
+                    <?php if ($totalPages > 0): ?>
+                        <div class="blog-pagination d-flex justify-content-center">
+                            <?php if ($totalPages > 1): ?>
+                                <?php
+                                $start = max(1, $page - 1);
+                                $end = min($totalPages, $start + 2);
 
-                            <?php for ($p = 1; $p <= $totalPages; $p++): ?>
-                                <a href="?page=<?php echo $p; ?>" <?php if ($p === $page) echo 'class="active"'; ?>>
-                                    <?php echo $p; ?>
-                                </a>
-                            <?php endfor; ?>
+                                if ($end - $start < 2) {
+                                    $start = max(1, $end - 2);
+                                }
+                                ?>
 
-                            <?php if ($page < $totalPages): ?>
-                                <a href="?page=<?php echo $page + 1; ?>">Next</a>
+                                <?php if ($page > 1): ?>
+                                    <a href="?page=<?php echo $page - 1; ?>">&laquo; Prev</a>
+                                <?php endif; ?>
+
+                                <?php for ($p = $start; $p <= $end; $p++): ?>
+                                    <a href="?page=<?php echo $p; ?>" <?php if ($p === $page) echo 'class="active"'; ?>>
+                                        <?php echo $p; ?>
+                                    </a>
+                                <?php endfor; ?>
+
+                                <?php if ($page < $totalPages): ?>
+                                    <a href="?page=<?php echo $page + 1; ?>">Next &raquo;</a>
+                                <?php endif; ?>
+                            <?php else: ?>
+                                <a class="active">1</a>
                             <?php endif; ?>
                         </div>
                     <?php endif; ?>
