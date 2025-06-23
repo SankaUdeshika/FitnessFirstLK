@@ -88,6 +88,7 @@ if (isset($_SESSION["admin"])) {
                                         <span>Select Category</span>
 
                                         <select name="" class="form-select" id="Category">
+                                            <option value="0">Select Category</option>
                                             <?php
                                             $blogCategory_rs = Database::search("SELECT * FROM `blogcategory` ");
                                             $blognum = $blogCategory_rs->num_rows;
@@ -114,11 +115,35 @@ if (isset($_SESSION["admin"])) {
                                         </div>
                                     </div>
                                 </div>
+                                <hr>
+
+                                <div class="col-6">
+                                    <div class="col-12">
+                                        <span class="fw-bold">Author</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <span>Add Author Image</span>
+                                    </div>
+
+                                    <div class="col-12 d-flex  justify-content-center">
+                                        <input type="file" class="form-control" id="authorImage">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="col-6 mt-4">
+                                        <span>Add Author Name</span>
+                                    </div>
+                                    <div class="col-12 d-flex  justify-content-center">
+                                        <input type="text" class="form-control" placeholder="Author Name" id="authorName">
+                                    </div>
+                                </div>
+
+                                <hr>
 
                                 <div class="col-6">
                                     <div class="row">
                                         <div class="col-12">
-                                            <span><?php echo count($map) ?> Contents</span>
+                                            <span class="fw-bold"><?php echo count($map) ?> Contents</span>
                                         </div>
                                         <div class="col-12">
                                             <span>Select Content Type</span>
@@ -140,19 +165,31 @@ if (isset($_SESSION["admin"])) {
                                             </select>
                                         </div>
                                         <div class="col-12 m-2 d-none" id="ContentText">
-                                            <textarea name="" style="width: 100%;" id="content" placeholder="Please type Your Content" cols="30" rows="10"></textarea>
+                                            <textarea name="" style="width: 100%;" id="paragraphContent" placeholder="Please type Your Content" cols="30" rows="10"></textarea>
                                         </div>
                                         <div class="col-12 m-2 d-none" id="ImageSelector">
-                                            <button class="btn btn-dark" style="width: 100%;">Select Image</button>
+                                            <input type="file" id="ImageInput">
                                         </div>
                                         <div class="col-12 m-2 d-none" id="HedingText">
                                             <input type="text" id="HeadingText" class="form-control">
+                                        </div>
+
+                                        <div class="col-12 m2">
+                                            <button class="btn btn-success" style="width: 100%;" onclick="Add_Content_in_blog()"> Add Content </button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-12 mt-4" id="contentTableContainer">
+                                            <!-- Table will appear here -->
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-12 d-grid">
-                                    <button class="fw-bold fs-1 btn btn-outline-info " onclick="AddBlog();">Publish Post</button>
+                                    <button class="fw-bold fs-1 btn btn-dark " onclick="AddBlog();">Publish Post</button>
                                 </div>
 
 
@@ -164,9 +201,80 @@ if (isset($_SESSION["admin"])) {
                 </div>
             </div>
 
+            <script>
+                let contentArray = [];
+
+                function Add_Content_in_blog() {
+                    const contentType = document.getElementById("Content_type").value;
+                    let content;
+
+                    // Get content based on selected type
+                    if (contentType == "1") {
+                        content = document.getElementById("HeadingText").value;
+                    } else if (contentType == "2") {
+                        // update image after 
+                        content = document.getElementById("ImageInput").files[0]
+                    } else if (contentType == "3") {
+                        content = document.getElementById("paragraphContent").value;
+                    } else {
+                        alert("Please select a valid content type.");
+                        return;
+                    }
+
+                    const content_data = {
+                        content_type: contentType,
+                        content: content,
+                    };
+
+                    contentArray.push(content_data);
+                    console.log(content_data);
+                    loadTable(); // refresh table after add
+                }
+
+                function loadTable() {
+                    const container = document.getElementById("contentTableContainer");
+                    container.innerHTML = ""; // clear previous table
+
+                    const table = document.createElement("table");
+                    table.className = "table table-bordered table-striped text-center bg-white";
+
+                    const headerRow = document.createElement("tr");
+                    ["No", "Content Type", "Content"].forEach(text => {
+                        const th = document.createElement("th");
+                        th.innerText = text;
+                        headerRow.appendChild(th);
+                    });
+                    table.appendChild(headerRow);
+
+                    contentArray.forEach((item, index) => {
+                        const row = document.createElement("tr");
+
+                        const tdIndex = document.createElement("td");
+                        tdIndex.innerText = index + 1;
+                        row.appendChild(tdIndex);
+
+                        const tdType = document.createElement("td");
+                        tdType.innerText = item.content_type;
+                        row.appendChild(tdType);
+
+                        const tdContent = document.createElement("td");
+                        if (item.content_type == "2") {
+                            tdContent.innerText = "Image";
+                        } else {
+                            tdContent.innerText = item.content;
+                        }
+                        row.appendChild(tdContent);
+
+                        table.appendChild(row);
+                    });
+
+                    container.appendChild(table);
+                }
+            </script>
+
+
             <script src="js/bootstrap.js"></script>
             <script src="js/script.js"></script>
-            <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
     </body>
 
     </html>
