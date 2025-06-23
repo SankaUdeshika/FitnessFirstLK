@@ -560,64 +560,6 @@ if ($command == "adminChangePassword") {
         Database::search("INSERT INTO `factoryinfo` (`FactoryCategory`,`ProductName`) VALUES ('" . $ItemCategory . "','" . $itemName . "') ");
         echo ("Adding Success");
     }
-} else if ($command == "AddBlogPost") { // admin add Blog Post
-    if (!empty($_FILES["file"])) {
-
-        $ImageFile = $_FILES["file"];
-        $ImageType = $ImageFile["type"];
-
-        $allowed_Image_extentions = array("image/jpg", "image/jpeg", "image/png", "image/svg+xml");
-
-        if (in_array($ImageType, $allowed_Image_extentions)) {
-
-            $NewImage_Extention;
-            if ($ImageType == "image/jpg") {
-                $NewImage_Extention = ".jpg";
-            } else  if ($ImageType == "image/jpeg") {
-                $NewImage_Extention = ".jpeg";
-            } else  if ($ImageType == "image/png") {
-                $NewImage_Extention = ".png";
-            } else  if ($ImageType == "image/svg+xml") {
-                $NewImage_Extention = ".svg";
-            }
-
-
-            if (!empty($_POST["blogName"])) {
-
-
-                if (!empty($_POST["content"])) {
-                    $blogName = $_POST["blogName"];
-                    $Category = $_POST["Category"];
-                    $content = $_POST["content"];
-                    $Para = Database::escape($content);
-
-                    // Get Date Time
-                    $date = date("Y.m.d");
-                    $time = date("H:i:s");
-
-
-                    $last_id = Database::search("SELECT * FROM `blog`");
-                    $last_num = $last_id->num_rows;
-
-                    $last_num = $last_num + 1;
-
-                    $newImageName = "Resources//images//blogImage//blog" . $last_num . $blogName . $NewImage_Extention;
-
-                    Database::iud("INSERT INTO `blog` (`Bid`,`BlogName`,`content`,`BlogMainImage`,`Bdate`,`Btime`,`blogCategory`) VALUES('" . $last_num . "','" . $blogName . "','" . $Para . "','" . $newImageName . "','" . $date . "','" . $time . "','" . $Category . "')");
-                    move_uploaded_file($ImageFile["tmp_name"], $newImageName);
-                    echo ("Adding Success");
-                } else {
-                    echo ("Please Type Your Content");
-                }
-            } else {
-                echo ("Please Enter  Paragraph");
-            }
-        } else {
-            echo ("Please Select Valid Image Extention");
-        }
-    } else {
-        echo ("Please Select a Image");
-    }
 } else if ($command == "UpdateBlogPostChangeImage") { // admin Update BlogPost Image
     if (!empty($_FILES["file"])) {
 
@@ -1074,5 +1016,107 @@ if ($command == "adminChangePassword") {
         echo json_encode([
             "status" => "empty"
         ]);
+    }
+} else if ($command == "AddBlogPost") { // admin add Blog Post
+
+    // cover image validation
+    if (!empty($_FILES["coverImage"])) {
+        $CoverImageFile = $_FILES["coverImage"];
+        $CoverImageType = $CoverImageFile["type"];
+        $allowed_Image_extentions = array("image/jpg", "image/jpeg", "image/png", "image/svg+xml");
+
+        if (in_array($CoverImageType, $allowed_Image_extentions)) {
+            $NewCoverImage_Extention;
+            if ($CoverImageType == "image/jpg") {
+                $NewCoverImage_Extention = ".jpg";
+            } else  if ($CoverImageType == "image/jpeg") {
+                $NewCoverImage_Extention = ".jpeg";
+            } else  if ($CoverImageType == "image/png") {
+                $NewCoverImage_Extention = ".png";
+            } else  if ($CoverImageType == "image/svg+xml") {
+                $NewCoverImage_Extention = ".svg";
+            }
+
+
+            // Author Image validaiton
+            if (!empty($_FILES["authorImage"])) {
+                $AuthorImageFile = $_FILES["authorImage"];
+                $AuthorImageType = $AuthorImageFile["type"];
+                $allowed_Image_extentions = array("image/jpg", "image/jpeg", "image/png", "image/svg+xml");
+
+                if (in_array($AuthorImageType, $allowed_Image_extentions)) {
+                    $AuthorImage_Extention;
+                    if ($AuthorImageType == "image/jpg") {
+                        $AuthorImage_Extention = ".jpg";
+                    } else  if ($AuthorImageType == "image/jpeg") {
+                        $AuthorImage_Extention = ".jpeg";
+                    } else  if ($AuthorImageType == "image/png") {
+                        $AuthorImage_Extention = ".png";
+                    } else  if ($AuthorImageType == "image/svg+xml") {
+                        $AuthorImage_Extention = ".svg";
+                    }
+
+                    if (!empty($_POST["blogName"])) {
+
+
+                        if ($_POST["Category"] == 0) {
+                            echo ("Please Enter a Category");
+                        } else if (empty($_POST["authorName"])) {
+                            echo ("please Enter a authorName");
+                        } else {
+                            $blogName = $_POST["blogName"];
+                            $Category = $_POST["Category"];
+                            $authorName = $_POST["authorName"];
+
+                            // Get Date Time
+                            $date = date("Y.m.d");
+                            $time = date("H:i:s");
+
+                            // Get the next blog ID
+                            $last_id_result = Database::search("SELECT * FROM `blog`");
+                            $last_num = $last_id_result->num_rows + 1;
+
+                            // Build image paths
+                            $newCoverImageName = "Resources/images/blogImage/blog" . $last_num . "_" . $blogName . "_CoverImage" . $NewCoverImage_Extention;
+                            $authorImage = "Resources/images/blogImage/blog" . $last_num . "_" . $blogName . "_AuthorImage" . $AuthorImage_Extention;
+
+                            // Decode content array
+                            $contentArray = json_decode($_POST['contentArray'], true);
+
+                            // Insert blog metadata
+                            Database::iud("INSERT INTO `blog` (`Bid`, `BlogName`, `Bdate`, `blogcategory_BCid`, `author_name`, `author_pic`, `blog_cover_pic`) 
+                            VALUES ('$last_num', '$blogName', '$date', '$Category', '$authorName', '$authorImage', '$newCoverImageName')");
+
+                            // Move uploaded cover image
+                            move_uploaded_file($CoverImageFile["tmp_name"], $newCoverImageName);
+
+                            echo "Adding Success";
+
+                            // Insert blog content
+                            for ($x = 0; $x < count($contentArray); $x++) {
+
+                                if ($contentArray[$x]['content_type'] != '2') {
+                                    $contentType = $contentArray[$x]['content_type'];
+                                    $content = $contentArray[$x]['content'];
+                                    $blogContent_no = $x;
+                                    Database::iud("INSERT INTO `blogContent` (`blogContent_No`, `blog_content_type_blog_content_id`, `content`, `blog_Bid`) 
+                                    VALUES ('$blogContent_no', '$contentType', '$content', '$last_num')");
+                                }
+                            }
+                        }
+                    } else {
+                        echo ("Please Enter Blog Name");
+                    }
+                } else {
+                    echo ("Please Select Valid Author Image Extention");
+                }
+            } else {
+                echo ("Please Select  Author Image ");
+            }
+        } else {
+            echo ("Please Select Valid Image Extention");
+        }
+    } else {
+        echo ("Please Select a Image");
     }
 }

@@ -853,35 +853,6 @@ function BlogViewImage() {
 }
 
 // admin Create a Blog Post
-function AddBlog() {
-  var command = "AddBlogPost";
-  var file = document.getElementById("AddBlogImage");
-  var blogName = document.getElementById("blogName").value;
-  var Category = document.getElementById("Category").value;
-  var content = document.getElementById("content").value;
-
-  var form = new FormData();
-  form.append("command", command);
-  form.append("file", file.files[0]);
-  form.append("blogName", blogName);
-  form.append("Category", Category);
-  form.append("content", content);
-
-  var request = new XMLHttpRequest();
-  request.onreadystatechange = function () {
-    if (request.readyState == 4 && request.status == 200) {
-      var response = request.responseText;
-      if (response == "Adding Success") {
-        alert(response);
-        window.location.reload();
-      } else {
-        alert(response);
-      }
-    }
-  };
-  request.open("POST", "BackEndProcess.php", true);
-  request.send(form);
-}
 
 // Update Blog Post
 function UpdateBlog(id) {
@@ -2776,19 +2747,61 @@ function changeBlogType() {
   let image = false;
 
   if (contenet == "1") {
+    // heading
     Heading = true;
     document.getElementById("HedingText").classList.remove("d-none");
     document.getElementById("ImageSelector").classList.add("d-none");
     document.getElementById("ContentText").classList.add("d-none");
   } else if (contenet == "2") {
+    // image
     image = true;
     document.getElementById("ImageSelector").classList.remove("d-none");
     document.getElementById("HedingText").classList.add("d-none");
     document.getElementById("ContentText").classList.add("d-none");
   } else if (contenet == "3") {
+    // paragraph
     paragraph = true;
     document.getElementById("ContentText").classList.remove("d-none");
     document.getElementById("ImageSelector").classList.add("d-none");
     document.getElementById("HedingText").classList.add("d-none");
+  }
+}
+
+function AddBlog() {
+  console.log(contentArray);
+  if (contentArray.length == 0) {
+    alert("please Enter the Content");
+  } else {
+    var command = "AddBlogPost";
+    var blogName = document.getElementById("blogName").value;
+    var Category = document.getElementById("Category").value;
+    var coverImage = document.getElementById("AddBlogImage");
+    var authorName = document.getElementById("authorName").value;
+    var authorImage = document.getElementById("authorImage");
+
+    var form = new FormData();
+    form.append("command", command);
+    form.append("coverImage", coverImage.files[0]);
+    form.append("blogName", blogName);
+    form.append("Category", Category);
+    form.append("authorName", authorName);
+    form.append("authorImage", authorImage.files[0]);
+    form.append("contentArray", JSON.stringify(contentArray));
+
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+      if (request.readyState == 4 && request.status == 200) {
+        var response = request.responseText;
+        alert(response);
+        // if (response == "Adding Success") {
+        //   alert(response);
+        //   window.location.reload();
+        // } else {
+        //   alert(response);
+        // }
+      }
+    };
+    request.open("POST", "BackEndProcess.php", true);
+    request.send(form);
   }
 }
