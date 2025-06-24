@@ -18,11 +18,7 @@ $package_Id = $_GET["id"];
 </head>
 
 <body class="bg-black">
-
-    <!-- preloader -->
-    <div class="col-12 preloader " id="preloader">
-        <?php include "preloader.php" ?>
-    </div>
+ 
 
     <!-- Header -->
     <div class="container-fluid">
@@ -334,6 +330,8 @@ $package_Id = $_GET["id"];
                                                                                     <div class="col-12 mt-3">
                                                                                         <input type="text" class="form-control" placeholder="Address" id="address">
                                                                                     </div>
+
+                                                                                    <input type="hidden" name="" value="<?php echo $package_Id ?>" id="membershipPackage">
 
                                                                                     <div class="col-12 mb-5">
                                                                                         <div class="row d-flex justify-content-center">

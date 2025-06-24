@@ -6,6 +6,7 @@ $fname = $_POST["fname"];
 $lname = $_POST["lname"];
 $address = $_POST["address"];
 $membership_price = $_POST["membership_price"];
+$membershipPackage_id = $_POST["membershipPackage_id"];
 $unique_id = uniqid();
 
 $membership_price = 10;
@@ -49,7 +50,7 @@ $url = 'https://webxpay.com/index.php?route=checkout/billing';
 
 //custom fields
 //email|Mobile|FirstName|lastName|Membership ID
-$custom_fields = base64_encode($email . '|' . $mobile . '|' . $fname . '|' . $lname . '|' . $unique_id);
+$custom_fields = base64_encode($email . '|' . $mobile . '|' . $fname . '|' . $lname . '|' . $unique_id . '|'. $membershipPackage_id);
 
 ?>
 

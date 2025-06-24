@@ -1545,6 +1545,7 @@ function PayWEBXPAY() {
   var lname = document.getElementById("lname").value.trim();
   var address = document.getElementById("address").value.trim();
   var membership_price = document.getElementById("membership_price").innerHTML; // Replace this dynamically if needed
+  var membershipPackage_id = document.getElementById("membershipPackage").value;
 
   // Simple validation
   if (!email || !validateEmail(email)) {
@@ -1591,7 +1592,8 @@ function PayWEBXPAY() {
   appendField("lname", lname);
   appendField("address", address);
   appendField("membership_price", membership_price);
-  alert(membership_price);
+  appendField("membershipPackage_id", membershipPackage_id);
+
 
   document.body.appendChild(form);
   form.submit();

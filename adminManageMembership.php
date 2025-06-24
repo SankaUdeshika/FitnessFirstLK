@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Trainer Admin Panel</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -19,7 +21,8 @@
       margin-bottom: 30px;
     }
 
-    input, label {
+    input,
+    label {
       width: 100%;
       margin: 10px 0;
       padding: 10px;
@@ -53,7 +56,8 @@
       overflow: hidden;
     }
 
-    th, td {
+    th,
+    td {
       padding: 12px;
       border-bottom: 1px solid #444;
       text-align: center;
@@ -70,7 +74,8 @@
       border-radius: 8px;
     }
 
-    .edit-btn, .delete-btn {
+    .edit-btn,
+    .delete-btn {
       background-color: #444;
       padding: 6px 10px;
       border-radius: 6px;
@@ -78,22 +83,30 @@
       cursor: pointer;
     }
 
-    .edit-btn:hover { background-color: #3498db; }
-    .delete-btn:hover { background-color: #e74c3c; }
+    .edit-btn:hover {
+      background-color: #3498db;
+    }
+
+    .delete-btn:hover {
+      background-color: #e74c3c;
+    }
+
     a {
       color: #00aced;
       text-decoration: none;
     }
   </style>
 </head>
+
 <body>
-<?php
+  <?php
   require "./Connections/connection.php";
   ?>
   <table>
     <thead>
       <tr>
         <th>membership_id</th>
+        <th>Package Details</th>
         <th>first_name</th>
         <th>last_name</th>
         <th>mobile</th>
@@ -102,32 +115,41 @@
       </tr>
     </thead>
     <tbody>
-        <?php
-  
-    
+      <?php
 
-    $membership_rs = Database::search("SELECT * FROM `memberships`");
-    $membership_num = $membership_rs->num_rows;
 
-    for ($X = 0; $X < $membership_num; $X++) { 
+
+      $membership_rs = Database::search("SELECT * FROM `memberships` INNER JOIN `member_package` ON `member_ship_id` = `memberships`.`member_package_member_ship_id` ");
+      $membership_num = $membership_rs->num_rows;
+
+      for ($X = 0; $X < $membership_num; $X++) {
         $memberData = $membership_rs->fetch_assoc();
-        ?>
-       
+      ?>
+
         <tr>
-            <td><?php echo $memberData["membership_id"]; ?></td>
-            <td><?php echo $memberData["first_name"]; ?></td>
-            <td><?php echo $memberData["last_name"]; ?></td>
-            <td><?php echo $memberData["mobile"]; ?></td>
-            <td><?php echo $memberData["email"]; ?></td>
-            <td><?php echo $memberData["join_date"]; ?></td>
+          <td><?php echo $memberData["membership_id"]; ?></td>
+          <td>
+            Package:- <span class="text-danger"><?php echo $memberData["PacakageName"]; ?></span><br>
+            location:- <span class="text-danger"><?php echo $memberData["location"]; ?></span><br>
+            WorkoutTime:- <span class="text-danger"><?php echo $memberData["workoutTime"]; ?></span> <br>
+            duration:- <span class="text-danger"><?php echo $memberData["duration"]; ?></span>
+
+
+          </td>
+          <td><?php echo $memberData["first_name"]; ?></td>
+          <td><?php echo $memberData["last_name"]; ?></td>
+          <td><?php echo $memberData["mobile"]; ?></td>
+          <td><?php echo $memberData["email"]; ?></td>
+          <td><?php echo $memberData["join_date"]; ?></td>
         </tr>
-        <?php
-    }
-    ?>
+      <?php
+      }
+      ?>
     </tbody>
   </table>
 
   <script src="js/script.js"></script>
 
 </body>
+
 </html>
