@@ -16,7 +16,6 @@ if ($blog_num == 1) {
     $author_pic = $blog_data["author_pic"];
     $blog_cover_pic = $blog_data["blog_cover_pic"];
     $blog_category_name = $blog_data["category"];
-
 } else {
 ?>
     <h1>Something wrong , please try again later</h1>
@@ -224,21 +223,47 @@ if ($blog_num == 1) {
                             <div class="col-lg-6">
                                 <div class="comment-option">
                                     <h5 class="co-title">Comment</h5>
-                                    <div class="co-item">
-                                        <div class="co-widget">
-                                            <a href="#"><i class="fa fa-heart-o"></i></a>
-                                            <a href="#"><i class="fa fa-share-square-o"></i></a>
-                                        </div>
-                                        <div class="co-pic">
-                                            <img src="img/blog/details/comment-1.jpg" alt="">
-                                            <h5>Brandon Kelley</h5>
-                                        </div>
-                                        <div class="co-text">
-                                            <p>Neque porro quisquam est, qui dolorem ipsum dolor sit amet, consectetur,
-                                                adipisci velit dolore.</p>
-                                        </div>
-                                    </div>
-                                    <div class="co-item reply-comment">
+
+                                    <?php
+                                    $blog_comment_rs =  Database::search("SELECT * FROM `blogcomment` WHERE `blog_Bid` = '" . $blog_id . "' ");
+                                    $blog_comment_num = $blog_comment_rs->num_rows;
+
+                                    if ($blog_comment_num == 0) {
+                                    ?>
+                                        <span class="text-white fw-bold">No Comments</span>
+                                        <?php
+                                    } else {
+
+                                        for ($i = 0; $i < $blog_comment_num; $i++) {
+                                            $blog_comment_data = $blog_comment_rs->fetch_assoc();
+                                        ?>
+                                            <div class="co-item">
+                                                <div class="co-widget">
+                                                    <a href="#"><i class="fa fa-heart-o"></i></a>
+                                                    <a href="#"><i class="fa fa-share-square-o"></i></a>
+                                                </div>
+                                                <div class="co-pic">
+                                                    <img src="img\man.png" alt="">
+                                                    <h5><?php echo $blog_comment_data["name"] ?></h5>
+                                                </div>
+                                                <div class="co-text">
+                                                    <p><?php echo $blog_comment_data["comment"] ?></p>
+                                                </div>
+                                            </div>
+                                        <?php
+
+                                        }
+                                        ?>
+
+
+
+                                    <?php
+                                    }
+
+
+                                    ?>
+                                    <!-- reply Comment  -->
+                                    <!-- <div class="co-item reply-comment">
                                         <div class="co-widget">
                                             <a href="#"><i class="fa fa-heart-o"></i></a>
                                             <a href="#"><i class="fa fa-share-square-o"></i></a>
@@ -251,31 +276,18 @@ if ($blog_num == 1) {
                                             <p>Neque porro quisquam est, qui dolorem ipsum dolor sit amet, consectetur,
                                                 adipisci velit dolore.</p>
                                         </div>
-                                    </div>
-                                    <div class="co-item">
-                                        <div class="co-widget">
-                                            <a href="#"><i class="fa fa-heart-o"></i></a>
-                                            <a href="#"><i class="fa fa-share-square-o"></i></a>
-                                        </div>
-                                        <div class="co-pic">
-                                            <img src="img/blog/details/comment-3.jpg" alt="">
-                                            <h5>Brandon Kelley</h5>
-                                        </div>
-                                        <div class="co-text">
-                                            <p>Neque porro quisquam est, qui dolorem ipsum dolor sit amet, consectetur,
-                                                adipisci velit dolore.</p>
-                                        </div>
-                                    </div>
+                                    </div> -->
+
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="leave-comment">
                                     <h5>Leave a comment</h5>
-                                    <form action="#">
-                                        <input type="text" placeholder="Name">
-                                        <input type="text" placeholder="Email">
-                                        <input type="text" placeholder="Website">
-                                        <textarea placeholder="Comment"></textarea>
+                                    <form action="AddingBlogComments_process.php" method="post">
+                                        <input type="text" name="Name" placeholder="Name" required>
+                                        <input type="text" name="Email" placeholder="Email" required>
+                                        <input type="hidden" name="blogId" id="blogId" value="<?php echo $blog_id ?>">
+                                        <textarea name="Comment" placeholder="Comment" required></textarea>
                                         <button type="submit">Submit</button>
                                     </form>
                                 </div>
