@@ -1077,8 +1077,8 @@ if ($command == "adminChangePassword") {
                             $last_num = $last_id_result->num_rows + 1;
 
                             // Build image paths
-                            $newCoverImageName = "Resources/images/blogImage/blog" . $last_num . "_" . $blogName . "_CoverImage" . $NewCoverImage_Extention;
-                            $authorImage = "Resources/images/blogImage/blog" . $last_num . "_" . $blogName . "_AuthorImage" . $AuthorImage_Extention;
+                            $newCoverImageName = "img/blog/" . $last_num . "_" . $blogName . "_CoverImage" . $NewCoverImage_Extention;
+                            $authorImage = "img/blog/" . $last_num . "_" . $blogName . "_AuthorImage" . $AuthorImage_Extention;
 
                             // Decode content array
                             $contentArray = json_decode($_POST['contentArray'], true);
@@ -1089,6 +1089,7 @@ if ($command == "adminChangePassword") {
 
                             // Move uploaded cover image
                             move_uploaded_file($CoverImageFile["tmp_name"], $newCoverImageName);
+                            move_uploaded_file($AuthorImageFile["tmp_name"], $authorImage);
 
                             echo "Adding Success";
 
