@@ -1,3 +1,29 @@
+<?php
+require "Connections/connection.php";
+$blog_id = $_GET["id"];
+
+$blog_rs = Database::search("SELECT * FROM `blog` INNER JOIN `blogcategory` ON `blogcategory`.`BCid` = `blog`.`blogcategory_BCid` WHERE `Bid` = '" . $blog_id . "' ");
+
+$blog_num = $blog_rs->num_rows;
+
+if ($blog_num == 1) {
+    $blog_data =  $blog_rs->fetch_assoc();
+    $blog_name = $blog_data["BlogName"];
+    $date = $blog_data["Bdate"];
+    $formatted_date = date("M,d, Y", strtotime($date));
+    $blog_category = $blog_data["blogcategory_BCid"];
+    $author_name = $blog_data["author_name"];
+    $author_pic = $blog_data["author_pic"];
+    $blog_cover_pic = $blog_data["blog_cover_pic"];
+    $blog_category_name = $blog_data["category"];
+} else {
+?>
+    <h1>Something wrong , please try again later</h1>
+<?php
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -46,7 +72,7 @@
                 <!-- <li><a href="./classes.html">Classes</a></li> -->
                 <li><a href="./services.php">Amenities</a></li>
                 <li><a href="./team.php">Our Team</a></li>
-                   <li><a href="./blog.php">Our blog</a></li>
+                <li><a href="./blog.php">Our blog</a></li>
                 <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
                 <li><a href="./contact.php">Contact</a></li>
             </ul>
@@ -80,8 +106,8 @@
                             <!-- <li><a href="./class-details.html">Classes</a></li> -->
                             <li><a href="./services.php">Amenities</a></li>
                             <li><a href="./team.php">Our Team</a></li>
-                               <li><a href="./blog.php">Our blog</a></li>
-                <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
+                            <li><a href="./blog.php">Our blog</a></li>
+                            <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
                             <li><a href="./contact.php">Contact</a></li>
                         </ul>
                     </nav>
@@ -108,15 +134,15 @@
     <!-- Header End -->
 
     <!-- Blog Details Hero Section Begin -->
-    <section class="blog-details-hero set-bg" data-setbg="img/blog/details/details-hero.jpg">
+    <section class="blog-details-hero set-bg" data-setbg="<?php echo $blog_cover_pic ?>">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 p-0 m-auto">
                     <div class="bh-text">
-                        <h3>Workout nutrition explained. What to eat before, during, and after exercise.</h3>
+                        <h3><?php echo $blog_name ?></h3>
                         <ul>
-                            <li>by Admin</li>
-                            <li>Aug,15, 2019</li>
+                            <li>by <?php echo $author_name ?></li>
+                            <li><?php echo $formatted_date ?></li>
                             <li>20 Comment</li>
                         </ul>
                     </div>
@@ -133,64 +159,40 @@
                 <div class="col-lg-8 p-0 m-auto">
                     <div class="blog-details-text">
                         <div class="blog-details-title">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua accusantium doloremque laudantium. Excepteur
-                                sint occaecat cupidatat non proident sculpa .</p>
-                            <p>laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit
-                                amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat anim id est laborum.</p>
-                            <h5>You Can Buy For Less Than A College Degree</h5>
-                            <p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                                in voluptate velit esse cillum dolore eu fugiat nulla pariatur officia deserunt mollit.
-                            </p>
+
+                            <?php
+                            $content_rs =  Database::search("SELECT * FROM `blogcontent` WHERE `blog_Bid` = '" . $blog_id . "' ");
+                            $content_num = $content_rs->num_rows;
+
+                            for ($x = 0; $x < $content_num; $x++) {
+                                $content_data = $content_rs->fetch_assoc();
+                                if ($content_data["blog_content_type_blog_content_id"] == 1) { // Heading
+                            ?>
+                                    <h5><?php echo $content_data["content"] ?></h5>
+                                <?php
+                                } else if ($content_data["blog_content_type_blog_content_id"] == 2) { // Image
+                                ?>
+                                    <div class="blog-details-pic">
+                                        <div class="blog-details-pic-item">
+                                            <img src="<?php echo $content_data["content"] ?>" alt="">
+                                        </div>
+                                    </div>
+                                <?php
+                                } else if ($content_data["blog_content_type_blog_content_id"] == 3) { // paragraph
+                                ?>
+                                    <p><?php echo $content_data["content"] ?></p>
+                            <?php
+                                }
+                            }
+
+                            ?>
+
+
                         </div>
-                        <div class="blog-details-pic">
-                            <div class="blog-details-pic-item">
-                                <img src="img/blog/details/details-1.jpg" alt="">
-                            </div>
-                            <div class="blog-details-pic-item">
-                                <img src="img/blog/details/details-2.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="blog-details-desc">
-                            <p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                        </div>
-                        <div class="blog-details-quote">
-                            <div class="quote-icon">
-                                <img src="img/blog/details/quote-left.png" alt="">
-                            </div>
-                            <h5>The whole family of tiny legumes, whether red, green, yellow, or black, offers so many
-                                possibilities to create an exciting lunch.</h5>
-                            <span>MEIKE PETERS</span>
-                        </div>
-                        <div class="blog-details-more-desc">
-                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                                in. . Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
-                            <p>laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit
-                                amet, consectetur adipisicing elit, sed eiusmod tempor incididunt laboris nisi ut
-                                aliquip commodo consequat. Class aptent taciti sociosqu ad litora torquent per conubia
-                                nostra, per inceptos himenaeos. Mauris vel magna ex. Integer gravida tincidunt accumsan.
-                                Vestibulum nulla mauris, condimentum id felis ac, volutpat volutpat mi qui dolorem.</p>
-                        </div>
+
                         <div class="blog-details-tag-share">
                             <div class="tags">
-                                <a href="#">Body buiding</a>
-                                <a href="#">Yoga</a>
-                                <a href="#">Weightloss</a>
-                                <a href="#">Streching</a>
+                                <a href="#"><?php echo $blog_category_name; ?></a>
                             </div>
                             <div class="share">
                                 <span>Share</span>
@@ -201,13 +203,13 @@
                         </div>
                         <div class="blog-details-author">
                             <div class="ba-pic">
-                                <img src="img/blog/details/blog-profile.jpg" alt="">
+                                <img src="<?php echo $author_pic ?>" alt="">
                             </div>
                             <div class="ba-text">
-                                <h5>Lena Mollein.</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                <h5><?php echo $author_name ?></h5>
+                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation.</p>
+                                    exercitation.</p> -->
                                 <div class="bp-social">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
@@ -221,21 +223,47 @@
                             <div class="col-lg-6">
                                 <div class="comment-option">
                                     <h5 class="co-title">Comment</h5>
-                                    <div class="co-item">
-                                        <div class="co-widget">
-                                            <a href="#"><i class="fa fa-heart-o"></i></a>
-                                            <a href="#"><i class="fa fa-share-square-o"></i></a>
-                                        </div>
-                                        <div class="co-pic">
-                                            <img src="img/blog/details/comment-1.jpg" alt="">
-                                            <h5>Brandon Kelley</h5>
-                                        </div>
-                                        <div class="co-text">
-                                            <p>Neque porro quisquam est, qui dolorem ipsum dolor sit amet, consectetur,
-                                                adipisci velit dolore.</p>
-                                        </div>
-                                    </div>
-                                    <div class="co-item reply-comment">
+
+                                    <?php
+                                    $blog_comment_rs =  Database::search("SELECT * FROM `blogcomment` WHERE `blog_Bid` = '" . $blog_id . "' ");
+                                    $blog_comment_num = $blog_comment_rs->num_rows;
+
+                                    if ($blog_comment_num == 0) {
+                                    ?>
+                                        <span class="text-white fw-bold">No Comments</span>
+                                        <?php
+                                    } else {
+
+                                        for ($i = 0; $i < $blog_comment_num; $i++) {
+                                            $blog_comment_data = $blog_comment_rs->fetch_assoc();
+                                        ?>
+                                            <div class="co-item">
+                                                <div class="co-widget">
+                                                    <a href="#"><i class="fa fa-heart-o"></i></a>
+                                                    <a href="#"><i class="fa fa-share-square-o"></i></a>
+                                                </div>
+                                                <div class="co-pic">
+                                                    <img src="img\man.png" alt="">
+                                                    <h5><?php echo $blog_comment_data["name"] ?></h5>
+                                                </div>
+                                                <div class="co-text">
+                                                    <p><?php echo $blog_comment_data["comment"] ?></p>
+                                                </div>
+                                            </div>
+                                        <?php
+
+                                        }
+                                        ?>
+
+
+
+                                    <?php
+                                    }
+
+
+                                    ?>
+                                    <!-- reply Comment  -->
+                                    <!-- <div class="co-item reply-comment">
                                         <div class="co-widget">
                                             <a href="#"><i class="fa fa-heart-o"></i></a>
                                             <a href="#"><i class="fa fa-share-square-o"></i></a>
@@ -248,31 +276,18 @@
                                             <p>Neque porro quisquam est, qui dolorem ipsum dolor sit amet, consectetur,
                                                 adipisci velit dolore.</p>
                                         </div>
-                                    </div>
-                                    <div class="co-item">
-                                        <div class="co-widget">
-                                            <a href="#"><i class="fa fa-heart-o"></i></a>
-                                            <a href="#"><i class="fa fa-share-square-o"></i></a>
-                                        </div>
-                                        <div class="co-pic">
-                                            <img src="img/blog/details/comment-3.jpg" alt="">
-                                            <h5>Brandon Kelley</h5>
-                                        </div>
-                                        <div class="co-text">
-                                            <p>Neque porro quisquam est, qui dolorem ipsum dolor sit amet, consectetur,
-                                                adipisci velit dolore.</p>
-                                        </div>
-                                    </div>
+                                    </div> -->
+
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="leave-comment">
                                     <h5>Leave a comment</h5>
-                                    <form action="#">
-                                        <input type="text" placeholder="Name">
-                                        <input type="text" placeholder="Email">
-                                        <input type="text" placeholder="Website">
-                                        <textarea placeholder="Comment"></textarea>
+                                    <form action="AddingBlogComments_process.php" method="post">
+                                        <input type="text" name="Name" placeholder="Name" required>
+                                        <input type="text" name="Email" placeholder="Email" required>
+                                        <input type="hidden" name="blogId" id="blogId" value="<?php echo $blog_id ?>">
+                                        <textarea name="Comment" placeholder="Comment" required></textarea>
                                         <button type="submit">Submit</button>
                                     </form>
                                 </div>
@@ -292,7 +307,7 @@
                 <div class="col-lg-4">
                     <div class="gt-text">
                         <i class="fa fa-map-marker"></i>
-                        <p>333 Middle Winchendon Rd, Rindge,<br/> NH 03461</p>
+                        <p>333 Middle Winchendon Rd, Rindge,<br /> NH 03461</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -322,7 +337,7 @@
                 <div class="col-md-4 mt-1">
                     <div class="gt-text">
                         <i class="fa fa-map-marker"></i>
-                        <p class="mt-3">Colombo 7, Maitland Crescent<br/> Colombo 2, Moors Sports Club <br/>Colombo 2, World Trade Center </br> Ja-ela </p>
+                        <p class="mt-3">Colombo 7, Maitland Crescent<br /> Colombo 2, Moors Sports Club <br />Colombo 2, World Trade Center </br> Ja-ela </p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -422,7 +437,7 @@
                     <div class="copyright-text">
                         <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </script> All rights reserved | <i class="fa fa-star" aria-hidden="true"></i> by <a href="https://www.linkedin.com/in/sanka-udeshika-6298311bb/" target="_blank">Sanka</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div>
                 </div>
             </div>

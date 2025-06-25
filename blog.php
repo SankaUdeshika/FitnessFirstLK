@@ -128,7 +128,8 @@
             <div class="row">
                 <div class="col-lg-8 p-0">
                     <?php
-                    require "Connections/connection.php";
+
+                    require "./Connections/connection.php";
 
                     $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int) $_GET['page'] : 1;
                     $resultsPerPage = 5;
@@ -209,7 +210,6 @@
                             <h5 class="title">Categories</h5>
                             <ul>
                                 <?php
-                              
                                 $result = Database::search("SELECT * FROM `blogcategory`");
                                 $result_num = $result->num_rows;
 

@@ -49,9 +49,10 @@ if ($signature_status == true) {
         $mobile = $custom_fields_varible[1];
         $fname = $custom_fields_varible[2];
         $lname = $custom_fields_varible[3];
+        $membership_package_id = $custom_fields_varible[5];
 
-        Database::iud("INSERT INTO `memberships` (`membership_id`,`first_name`,`last_name`,`mobile`,`email`,`join_date`)
-     VALUES('" . $membership_id . "','" . $Email . "','" . $mobile . "','" . $fname . "','" . $lname . "','" . $date . "');  ");
+        Database::iud("INSERT INTO `memberships` (`membership_id`,`email`,`mobile`,`first_name`,`last_name`,`join_date`,`member_package_member_ship_id`)
+     VALUES('" . $membership_id . "','" . $Email . "','" . $mobile . "','" . $fname . "','" . $lname . "','" . $date . "','" . $membership_package_id . "');  ");
 
         $mail = new PHPMailer;
         $mail->IsSMTP();
@@ -130,15 +131,20 @@ if ($signature_status == true) {
 ";
         }
     } else if ($_POST['status_code'] == '15') { // transaction Faild
-        echo ("
-    <body style='font-family: Arial, sans-serif; background-color: #f2f2f2; padding: 30px; display: flex; justify-content: center; align-items: center; height: 100vh;'>
-        <div style='background-color:rgba(8, 8, 8, 0.61); border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 30px; max-width: 400px; text-align: center;'>
-            <h1 style='color: #f2f2f2;'>Something Wrong, Please Try again later.</h1>
-            <p style='color:rgb(255, 0, 0); font-weight: bolder;'>Your payment is Declined. Please try to connect with Fitness First or your bank partner.</p>
-            <button style='background-color: red; color: white; font-weight: bolder;' onclick=\"window.location.href='index.php'\">Back to Home</button>
-        </div>
-    </body>
-");
+
+
+
+
+
+                echo ("
+            <body style='font-family: Arial, sans-serif; background-color: #f2f2f2; padding: 30px; display: flex; justify-content: center; align-items: center; height: 100vh;'>
+                <div style='background-color:rgba(8, 8, 8, 0.61); border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 30px; max-width: 400px; text-align: center;'>
+                    <h1 style='color: #f2f2f2;'>Something Wrong, Please Try again later.</h1>
+                    <p style='color:rgb(255, 0, 0); font-weight: bolder;'>Your payment is Declined. Please try to connect with Fitness First or your bank partner.</p>
+                    <button style='background-color: red; color: white; font-weight: bolder;' onclick=\"window.location.href='index.php'\">Back to Home</button>
+                </div>
+            </body>
+        ");
     }
 } else {
     $custom_fields_varible = explode('|', $custom_fields);

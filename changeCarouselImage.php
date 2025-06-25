@@ -125,9 +125,9 @@ if (isset($_SESSION["admin"])) {
                     </div>
                 </div>
             </div>
-            <script src="js/script.js"></script>
             <script src="js/bootstrap.js"></script>
             <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
+            <script src="js/script.js"></script>
     </body>
 
     </html>
