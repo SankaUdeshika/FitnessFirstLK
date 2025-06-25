@@ -79,22 +79,33 @@ if ($command == "adminChangePassword") {
             } else  if ($ImageType == "image/svg+xml") {
                 $NewImage_Extention = ".svg";
             }
+            $uploadDir = __DIR__ . "/img/carousel";
+            if (!is_dir($uploadDir)) {
+                echo ("parth not found");
+            }
 
-            $newImageName = "Resources//images//carouselImages//" . $id . $NewImage_Extention;
-
+            $newImageName = "img/carousel" . $id . $NewImage_Extention;
+             $targetFile = $uploadDir . "/". $id . $NewImage_Extention ;
             $oldImage_rs = Database::search("SELECT * FROM `homecarouselimages` WHERE `HCI_id` = '" . $id . "' ");
             $oldImage_num = $oldImage_rs->num_rows;
             $oldImage_data = $oldImage_rs->fetch_assoc();
 
             if ($oldImage_num == "1") {
-                // unlink($oldImage_data["HIC_path"]);
-                move_uploaded_file($ImageFile["tmp_name"], $newImageName);
-                Database::iud("UPDATE `homecarouselimages` SET `HIC_path` = '" . $newImageName . "' WHERE `HCI_id` = '" . $id . "'");
-                echo ("Update Success");
+                if (move_uploaded_file($ImageFile["tmp_name"], $targetFile)) {
+                    $relativePath = "img/carousel/" . $id . $NewImage_Extention;
+                    Database::iud("UPDATE `homecarouselimages` SET `HIC_path` = '" . $relativePath . "' WHERE `HCI_id` = '" . $id . "'");
+                    echo ("Update Success");
+                } else {
+                    echo ("Image saving failed");
+                }
             } else {
-                move_uploaded_file($ImageFile["Tmp_name"], $newImageName);
-                Database::iud("UPDATE `homecarouselimages` SET `HIC_path` = '" . $newImageName . "' WHERE `HCI_id` = '" . $id . "'");
-                echo ("Update Success");
+                if (move_uploaded_file($ImageFile["Tmp_name"], $targetFile)) {
+                           $relativePath = "img/carousel/" . $id . $NewImage_Extention;
+                    Database::iud("UPDATE `homecarouselimages` SET `HIC_path` = '" . $relativePath . "' WHERE `HCI_id` = '" . $id . "'");
+                    echo ("Update Success");
+                }else{
+                     echo ("Image saving failed 2");
+                }
             }
         } else {
             echo ("Please Select Valid Image Extention");
