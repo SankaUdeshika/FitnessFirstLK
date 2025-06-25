@@ -280,6 +280,7 @@ function adminLogin() {
 
 // Change Admin carousel Image
 function changeCarouseImage(id) {
+  alert("ok");
   var command = "changeCarouseImage";
   var file = document.getElementById("FileChooser" + id);
 
@@ -2752,8 +2753,6 @@ function onloadTestimonial() {
   xhr.open("POST", "FlexBackendPross.php", true);
   xhr.send(formData);
 }
-<<<<<<< HEAD
-=======
 
 function changeBlogType() {
   var contenet = document.getElementById("Content_type").value;
@@ -2820,4 +2819,4 @@ function AddBlog() {
     request.send(form);
   }
 }
->>>>>>> main
+

@@ -80,7 +80,7 @@ if ($command == "adminChangePassword") {
                 $NewImage_Extention = ".svg";
             }
 
-            $newImageName = "Resources//images//carouselImages//" . $id . $NewImage_Extention;
+            $newImageName = "./img/carousel" . $id . $NewImage_Extention;
 
             $oldImage_rs = Database::search("SELECT * FROM `homecarouselimages` WHERE `HCI_id` = '" . $id . "' ");
             $oldImage_num = $oldImage_rs->num_rows;
