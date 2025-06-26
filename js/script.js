@@ -1594,7 +1594,6 @@ function PayWEBXPAY() {
   appendField("membership_price", membership_price);
   appendField("membershipPackage_id", membershipPackage_id);
 
-
   document.body.appendChild(form);
   form.submit();
 }

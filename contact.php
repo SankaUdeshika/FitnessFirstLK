@@ -48,7 +48,7 @@
                 <!-- <li><a href="./classes.html">Classes</a></li> -->
                 <li><a href="./services.php">Amenities</a></li>
                 <li><a href="./team.php">Our Team</a></li>
-                 <li><a href="./blog.php">Our blog</a></li>
+                <li><a href="./blog.php">Our blog</a></li>
                 <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
                 <li><a href="./contact.php">Contact</a></li>
             </ul>
@@ -82,8 +82,8 @@
                             <!-- <li><a href="./class-details.html">Classes</a></li> -->
                             <li><a href="./services.php">Amenities</a></li>
                             <li><a href="./team.php">Our Team</a></li>
-                               <li><a href="./blog.php">Our blog</a></li>
-                <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
+                            <li><a href="./blog.php">Our blog</a></li>
+                            <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
                             <li><a href="./contact.php">Contact</a></li>
                         </ul>
                     </nav>
@@ -140,23 +140,23 @@
                     <div class="contact-widget">
                         <div class="cw-text mt-1">
                             <i class="fa fa-map-marker"></i>
-                            <p>Colombo 7, Maitland Crescent<br/> Colombo 2, Moors Sports Club <br/>Colombo 2, World Trade Center </br> Ja-ela </p>
+                            <p>Colombo 7, Maitland Crescent<br /> Colombo 2, Moors Sports Club <br />Colombo 2, World Trade Center </br> Ja-ela </p>
                         </div>
                         <div class="cw-text">
                             <i class="fa fa-mobile"></i>
                             <ul>
                                 <p>Colombo 7</p>
-                            <li>011-269-5331</li>
-                            <li>077-834-5678</li>
-                            <p>Moors Sport Club</p>
-                            <li>011-212-1755</li>
-                            <li>075-711-9033</li>
-                            <p>World Trade Center</p>
-                            <li>011-233-8842</li>
-                            <li>077-840-5889</li>
-                            <p>Ja-ela</p>
-                            <li>011-222-9747</li>
-                            <li>077-834-5678</li>
+                                <li>011-269-5331</li>
+                                <li>077-834-5678</li>
+                                <p>Moors Sport Club</p>
+                                <li>011-212-1755</li>
+                                <li>075-711-9033</li>
+                                <p>World Trade Center</p>
+                                <li>011-233-8842</li>
+                                <li>077-840-5889</li>
+                                <p>Ja-ela</p>
+                                <li>011-222-9747</li>
+                                <li>077-834-5678</li>
                             </ul>
                         </div>
                         <div class="cw-text email">
@@ -167,7 +167,7 @@
                 </div>
 
                 <!-- Contact Us Form  -->
-               <div class="col-lg-6">
+                <div class="col-lg-6">
                     <div class="leave-comment">
 
                         <h4 class="mb-4 text-danger text-center">Leave a Comment</h4>
@@ -183,31 +183,33 @@
                 </div>
             </div>
 
-                    <!-- FITNESSFIRST LOCATION -->
+            <!-- FITNESSFIRST LOCATION -->
 
-                    <div class="col-12 mt-5">
-                        <div class="row mt-5">
-                            <div class="col-12">
-                                <div class="row">
-                                    <div class="col-lg-3 col-4 text-center">
-                                        <span class="GymLocationText" onclick="showGoogleLocation('colombo');">colombo7</span>
-                                    </div>
-                                    <div class="col-lg-3 col-4 text-center">
-                                        <span class="GymLocationText" onclick="showGoogleLocation('jaela');">Ja Ela </span>
-                                    </div>
-                                    <div class="col-lg-3 col-4 text-center">
-                                        <span class="GymLocationText" onclick="showGoogleLocation('wtc');"> WTC </span>
-                                    </div>
-                                    <div class="col-lg-3 col-12 text-center">
-                                        <span class="GymLocationText" onclick="showGoogleLocation('wtc');"> Moors Club </span>
-                                    </div>
-                                </div>
+            <div class="col-12 mt-5">
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-lg-3 col-4 text-center">
+                                <span class="GymLocationText" onclick="showGoogleLocation('wtc');"> WTC </span>
                             </div>
-                            <div class="col-12">
-                                <iframe style="transition: 0.5s ease-in-out;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31686.815227955212!2d79.82922301083981!3d6.9083058999999984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2597a85531ecb%3A0xd24f023f2b2a2bd5!2sFitness%20First%20-%20Colombo%207!5e0!3m2!1sen!2slk!4v1723187781024!5m2!1sen!2slk" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="GoogleMap"></iframe>
+                            <div class="col-lg-3 col-12 text-center">
+                                <span class="GymLocationText" onclick="showGoogleLocation('wtc');"> Moors Club </span>
                             </div>
+                            <div class="col-lg-3 col-4 text-center">
+                                <span class="GymLocationText" onclick="showGoogleLocation('colombo');">Colombo7</span>
+                            </div>
+                            <div class="col-lg-3 col-4 text-center">
+                                <span class="GymLocationText" onclick="showGoogleLocation('jaela');">Kandana -Ja Ela </span>
+                            </div>
+
+
                         </div>
                     </div>
+                    <div class="col-12">
+                        <iframe style="transition: 0.5s ease-in-out;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31686.815227955212!2d79.82922301083981!3d6.9083058999999984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2597a85531ecb%3A0xd24f023f2b2a2bd5!2sFitness%20First%20-%20Colombo%207!5e0!3m2!1sen!2slk!4v1723187781024!5m2!1sen!2slk" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="GoogleMap"></iframe>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <!-- Contact Section End -->
@@ -219,7 +221,7 @@
                 <div class="col-md-4 mt-1">
                     <div class="gt-text">
                         <i class="fa fa-map-marker "></i>
-                        <p class="mt-3">Colombo 7, Maitland Crescent<br/> Colombo 2, Moors Sports Club <br/>Colombo 2, World Trade Center </br> Ja-ela </p>
+                        <p>Colombo 1, World Trade Center</br> Colombo 2, Moors Sports Club <br /> Colombo 7, Maitland Crescent<br /> Kandana Ja-ela </p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -319,7 +321,7 @@
                     <div class="copyright-text">
                         <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </script> All rights reserved | <i class="fa fa-star" aria-hidden="true"></i> by <a href="https://www.linkedin.com/in/sanka-udeshika-6298311bb/" target="_blank">Sanka</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div>
                 </div>
             </div>

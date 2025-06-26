@@ -114,7 +114,6 @@ if (isset($_SESSION["admin"])) {
 
             <script src="js/bootstrap.js"></script>
             <script src="js/script.js"></script>
-            <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
     </body>
 
     </html>
@@ -148,7 +147,6 @@ if (isset($_SESSION["admin"])) {
 
         <script src="bootstrap.bundle.js"></script>
         <script src="script.js"></script>
-        <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
     </body>
 
     </html>

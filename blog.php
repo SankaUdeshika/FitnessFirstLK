@@ -1,3 +1,10 @@
+<?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+require "Connections/connection.php";
+?>
+
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -26,9 +33,9 @@
 
 <body>
     <!-- Page Preloder -->
-    <div id="preloder">
+    <!-- <div id="preloder">
         <div class="loader"></div>
-    </div>
+    </div> -->
 
     <!-- Offcanvas Menu Section Begin -->
     <div class="offcanvas-menu-overlay"></div>
@@ -128,7 +135,7 @@
             <div class="row">
                 <div class="col-lg-8 p-0">
                     <?php
-                    require "./Connections/connection.php";
+
 
                     $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int) $_GET['page'] : 1;
                     $resultsPerPage = 5;
@@ -139,7 +146,6 @@
 
                     $totalPages = ceil($totalBlogs / $resultsPerPage);
                     $result = Database::search("SELECT blog.*, blogcontent.content FROM blog INNER JOIN blogcontent ON blog.Bid = blogcontent.blog_Bid ORDER BY blog.Bdate DESC LIMIT $resultsPerPage OFFSET $offset");
-
                     while ($blog = $result->fetch_assoc()) {
                         $blogId = $blog['Bid'];
                         $commentResult = Database::search("SELECT * FROM `blogcomment` WHERE `blog_Bid` = '$blogId'");
@@ -210,7 +216,7 @@
                             <h5 class="title">Categories</h5>
                             <ul>
                                 <?php
-                             
+
 
                                 $result = Database::search("SELECT * FROM `blogcategory`");
                                 $result_num = $result->num_rows;

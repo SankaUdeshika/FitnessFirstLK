@@ -444,7 +444,7 @@
                 <div class="col-md-4">
                     <div class="gt-text">
                         <i class="fa fa-map-marker"></i>
-                        <p>Colombo 7, Maitland Crescent<br /> Colombo 2, Moors Sports Club <br />Colombo 2, World Trade Center </br> Ja-ela </p>
+                        <p>Colombo 1, World Trade Center</br>  Colombo 2, Moors Sports Club <br /> Colombo 7, Maitland Crescent<br /> Kandana Ja-ela </p>
                     </div>
                 </div>
                 <div class="col-md-4">

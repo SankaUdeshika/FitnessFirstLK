@@ -1018,7 +1018,6 @@ if ($command == "adminChangePassword") {
         ]);
     }
 } else if ($command == "AddBlogPost") { // admin add Blog Post
-
     // cover image validation
     if (!empty($_FILES["coverImage"])) {
         $CoverImageFile = $_FILES["coverImage"];
@@ -1058,12 +1057,12 @@ if ($command == "adminChangePassword") {
 
                     if (!empty($_POST["blogName"])) {
 
-
                         if ($_POST["Category"] == 0) {
                             echo ("Please Enter a Category");
                         } else if (empty($_POST["authorName"])) {
                             echo ("please Enter a authorName");
                         } else {
+
                             $blogName = $_POST["blogName"];
                             $Category = $_POST["Category"];
                             $authorName = $_POST["authorName"];
@@ -1073,7 +1072,8 @@ if ($command == "adminChangePassword") {
                             $time = date("H:i:s");
 
                             // Get the next blog ID
-                            $last_id_result = Database::search("SELECT * FROM `blog`");
+
+                            $last_id_result =  Database::search("SELECT * FROM `blog`");
                             $last_num = $last_id_result->num_rows + 1;
 
                             // Build image paths
@@ -1081,8 +1081,8 @@ if ($command == "adminChangePassword") {
                             $authorImage = "img/blog/" . $last_num . "_" . $blogName . "_AuthorImage" . $AuthorImage_Extention;
 
                             // Decode content array
-                            $contentArray = json_decode($_POST['contentArray'], true);
-
+                            // $contentArray = json_decode($_POST['contentArray'], true);
+                            // echo ($contentArray);
                             // Insert blog metadata
                             Database::iud("INSERT INTO `blog` (`Bid`, `BlogName`, `Bdate`, `blogcategory_BCid`, `author_name`, `author_pic`, `blog_cover_pic`) 
                             VALUES ('$last_num', '$blogName', '$date', '$Category', '$authorName', '$authorImage', '$newCoverImageName')");
@@ -1094,16 +1094,16 @@ if ($command == "adminChangePassword") {
                             echo "Adding Success";
 
                             // Insert blog content
-                            for ($x = 0; $x < count($contentArray); $x++) {
+                            // for ($x = 0; $x < count($contentArray); $x++) {
 
-                                if ($contentArray[$x]['content_type'] != '2') {
-                                    $contentType = $contentArray[$x]['content_type'];
-                                    $content = $contentArray[$x]['content'];
-                                    $blogContent_no = $x;
-                                    Database::iud("INSERT INTO `blogContent` (`blogContent_No`, `blog_content_type_blog_content_id`, `content`, `blog_Bid`) 
-                                    VALUES ('$blogContent_no', '$contentType', '$content', '$last_num')");
-                                }
-                            }
+                            //     if ($contentArray[$x]['content_type'] != '2') {
+                            //         $contentType = $contentArray[$x]['content_type'];
+                            //         $content = $contentArray[$x]['content'];
+                            //         $blogContent_no = $x;
+                            //         Database::iud("INSERT INTO `blogContent` (`blogContent_No`, `blog_content_type_blog_content_id`, `content`, `blog_Bid`) 
+                            //         VALUES ('$blogContent_no', '$contentType', '$content', '$last_num')");
+                            //     }
+                            // }
                         }
                     } else {
                         echo ("Please Enter Blog Name");
