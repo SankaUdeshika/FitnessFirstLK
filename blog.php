@@ -136,10 +136,9 @@ require "Connections/connection.php";
                 <div class="col-lg-8 p-0">
                     <?php
 
-<<<<<<< HEAD
-=======
+
                     require "./Connections/connection.php";
->>>>>>> f818845d3fe7077c44610733a1d9fe90c8cf1e55
+
 
                     $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int) $_GET['page'] : 1;
                     $resultsPerPage = 5;
@@ -219,11 +218,7 @@ require "Connections/connection.php";
                             <h5 class="title">Categories</h5>
                             <ul>
                                 <?php
-<<<<<<< HEAD
 
-
-=======
->>>>>>> f818845d3fe7077c44610733a1d9fe90c8cf1e55
                                 $result = Database::search("SELECT * FROM `blogcategory`");
                                 $result_num = $result->num_rows;
 
