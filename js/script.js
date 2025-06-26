@@ -280,6 +280,7 @@ function adminLogin() {
 
 // Change Admin carousel Image
 function changeCarouseImage(id) {
+  alert("ok");
   var command = "changeCarouseImage";
   var file = document.getElementById("FileChooser" + id);
 
@@ -2806,3 +2807,4 @@ function AddBlog() {
     request.send(form);
   }
 }
+ main

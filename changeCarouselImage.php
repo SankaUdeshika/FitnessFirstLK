@@ -36,7 +36,6 @@ if (isset($_SESSION["admin"])) {
                                         <nav class="nav flex-column">
                                             <a class="nav-link " href="adminDashboard.php">Dashboard</a>
                                             <a class="nav-link active" aria-current="page" href="adminManageContent.php">Manage Content</a>
-                                            <a class="nav-link" href="adminManageBlogs.php">Manage Blog</a>
                                         </nav>
                                     </div>
                                 </div>
@@ -97,52 +96,38 @@ if (isset($_SESSION["admin"])) {
                         </div>
 
                         <!-- content -->
-                        <!-- 
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeHomePage.php'">
-                            <h1>Home Page About Change</h1>
+                        <div class="col-12">
+                            <div class="row">
+                                <?php
+                                $images_rs = Database::search("SELECT * FROM `homecarouselimages`");
+                                $image_num = $images_rs->num_rows;
+
+                                for ($i = 0; $i < $image_num; $i++) {
+                                    $image_data = $images_rs->fetch_assoc();
+                                ?>
+                                    <div class="col-12 mt-4 mb-3">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <input type="file" class="visually-hidden" onchange="changeCarouseImage('<?php echo ($image_data['HCI_id']) ?>');" id="FileChooser<?php echo ($image_data["HCI_id"]) ?>">
+                                                <img src="<?php echo ($image_data["HIC_path"]) ?>" id="Cimage<?php echo ($image_data["HCI_id"]) ?>" alt="">
+                                            </div>
+                                            <div class="col-2 d-grid">
+                                                <label for="FileChooser<?php echo ($image_data["HCI_id"]) ?>" class="btn btn-primary" style=" display:flex;align-items: center; justify-content: center;">Upload Image</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php
+                                }
+                                ?>
+
+                            </div>
                         </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeWhyFinessPart.php'">
-                            <h1>Change Home Page Why Fitness Part</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeSuccessStory.php'">
-                            <h1>Change Home Success Box</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-danger" onclick="window.location = 'changeClassesTopImage.php'">
-                            <h1>Change Top Image in evey sub Page</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-danger" onclick="window.location = 'changeClassesVideo.php'">
-                            <h1>Change Classes Video part</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-danger" onclick="window.location = 'change5Areas.php'">
-                            <h1>Change 5 Areas</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-primary" onclick="window.location = 'ChangeFacilitiesAbout.php'">
-                            <h1>Change Facilities Features</h1>
-                        </div>
-                       -->
-                        <div class="col-12 btn btn-outline-primary" onclick="window.location = 'ManageTrainers.php'">
-                            <h1>Manage Trainers</h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-primary" onclick="window.location = 'testimonial.php'">
-                            <h1>Manage Testimonials </h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-primary" onclick="window.location = 'adminManageMembership.php'">
-                            <h1>Manage Memberships </h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-primary" onclick="window.location = 'changepackageinfo.php'">
-                            <h1>Change Membership Packages </h1>
-                        </div>
-                        <div class="col-12 btn btn-outline-dark" onclick="window.location = 'changeCarouselImage.php'">
-                            <h1>Home Page Change Carousel Image</h1>
-                        </div>
-                        
                     </div>
                 </div>
             </div>
-            
             <script src="js/bootstrap.js"></script>
-            <script src="js/script.js"></script>
             <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
+            <script src="js/script.js"></script>
     </body>
 
     </html>
@@ -164,14 +149,7 @@ if (isset($_SESSION["admin"])) {
     <body style="background-color: #74EBD5;background-image: linear-gradient(90deg,#74EBD5 0%,#9FACE6 100%);">
 
         <div class="col-12 d-flex justify-content-center align-items-center text-white" style="width: 100%; height: 100vh;">
-            <div class="row">
-                <div class="col-12">
-                    <h1>Please Log In first</h1>
-                </div>
-                <div class="col-12">
-                    <a href="adminLogin.php">Go to Login Page</a>
-                </div>
-            </div>
+            <h1>Please Log In first</h1>
         </div>
 
 

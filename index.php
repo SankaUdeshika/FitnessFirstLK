@@ -47,7 +47,7 @@
                 <!-- <li><a href="./classes.html">Classes</a></li> -->
                 <li><a href="./services.php">Amenities</a></li>
                 <li><a href="./team.php">Our Team</a></li>
-                   <li><a href="./blog.php">Our blog</a></li>
+                <li><a href="./blog.php">Our blog</a></li>
                 <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
                 <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
                 <li><a href="./contact.php">Contact</a></li>
@@ -82,8 +82,8 @@
                             <!-- <li><a href="./class-details.html">Classes</a></li> -->
                             <li><a href="./services.php">Amenities</a></li>
                             <li><a href="./team.php">Our Team</a></li>
-                               <li><a href="./blog.php">Our blog</a></li>
-                <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
+                            <li><a href="./blog.php">Our blog</a></li>
+                            <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
                             <li><a href="./contact.php">Contact</a></li>
                         </ul>
                     </nav>
@@ -110,9 +110,20 @@
     <!-- Header End -->
 
     <!-- Hero Section Begin -->
+    <?php
+    require "./Connections/connection.php"; // adjust path
+    $carousel_rs = Database::search("SELECT * FROM `homecarouselimages` ORDER BY `HCI_id` ASC LIMIT 2");
+    $carousel_images = [];
+
+    while ($row = $carousel_rs->fetch_assoc()) {
+        $carousel_images[] = $row["HIC_path"];
+    }
+    ?>
+
     <section class="hero-section">
         <div class="hs-slider owl-carousel">
-            <div class="hs-item set-bg" data-setbg="img/hero/hero-1.jpg">
+            <!-- First Slide -->
+            <div class="hs-item set-bg vh-100" data-setbg="<?php echo $carousel_images[0]; ?>">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 offset-lg-6">
@@ -125,13 +136,15 @@
                     </div>
                 </div>
             </div>
-            <div class="hs-item set-bg" data-setbg="img/hero/hero-2.jpg">
+
+            <!-- Second Slide -->
+            <div class="hs-item set-bg vh-100" data-setbg="<?php echo $carousel_images[1]; ?>">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 offset-lg-6">
                             <div class="hi-text">
                                 <span>Shape your body</span>
-                                <h1 class="fw-bold">Buy <strong>Six Month</strong> Get <strong>Six month</strong></h1>
+                                <h1 class="fw-bold">Buy <strong>Six Month</strong> Get <strong>Six Month</strong></h1>
                                 <a href="#" class="primary-btn">Enroll Now</a>
                             </div>
                         </div>
@@ -140,6 +153,7 @@
             </div>
         </div>
     </section>
+
     <!-- Hero Section End -->
 
     <!-- ChoseUs Section Begin -->
