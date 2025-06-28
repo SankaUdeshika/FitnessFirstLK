@@ -136,10 +136,6 @@ require "Connections/connection.php";
                 <div class="col-lg-8 p-0">
                     <?php
 
-
-                    require "./Connections/connection.php";
-
-
                     $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int) $_GET['page'] : 1;
                     $resultsPerPage = 5;
                     $offset = ($page - 1) * $resultsPerPage;
@@ -148,7 +144,8 @@ require "Connections/connection.php";
                     $totalBlogs = $totalResult->num_rows;
 
                     $totalPages = ceil($totalBlogs / $resultsPerPage);
-                    $result = Database::search("SELECT blog.*, blogcontent.content FROM blog INNER JOIN blogcontent ON blog.Bid = blogcontent.blog_Bid ORDER BY blog.Bdate DESC LIMIT $resultsPerPage OFFSET $offset");
+                    $result = Database::search("SELECT blog.* FROM blog ORDER BY blog.Bdate DESC LIMIT $resultsPerPage OFFSET $offset");
+
                     while ($blog = $result->fetch_assoc()) {
                         $blogId = $blog['Bid'];
                         $commentResult = Database::search("SELECT * FROM `blogcomment` WHERE `blog_Bid` = '$blogId'");
@@ -158,7 +155,7 @@ require "Connections/connection.php";
                         $blog_cover_pic = $blog['blog_cover_pic'] ?? './img/logo.png';
                         $author_name = $blog['author_name'];
                         $date = date("M, d, Y", strtotime($blog['Bdate']));
-                        $shortDesc = substr($blog['content'], 0, 150) . "...";
+                        $shortDesc = substr($blog['content'] ?? '', 0, 150) . "...";
                     ?>
                         <div class="blog-item">
                             <div class="bi-pic">

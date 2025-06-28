@@ -30,9 +30,9 @@ require "Connections/connection.php";
 
 <body>
     <!-- Page Preloder -->
-    <div id="preloder">
+    <!-- <div id="preloder">
         <div class="loader"></div>
-    </div>
+    </div> -->
 
     <!-- Offcanvas Menu Section Begin -->
     <div class="offcanvas-menu-overlay"></div>
@@ -158,7 +158,7 @@ require "Connections/connection.php";
                                 <span><?PHP echo $trainer_data["position"] ?></span>
                                 <div class="tt_social">
                                     <a href="<?PHP echo $trainer_data["facebook"] ?>"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><?PHP echo $trainer_data["instagram"] ?></i></a>
+                                    <a href="<?PHP echo $trainer_data["instagram"] ?>"><i class="fa fa-instagram"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -195,7 +195,7 @@ require "Connections/connection.php";
                                 <span><?PHP echo $trainer_data["position"] ?></span>
                                 <div class="tt_social">
                                     <a href="<?PHP echo $trainer_data["facebook"] ?>"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><?PHP echo $trainer_data["instagram"] ?></i></a>
+                                    <a href="<?PHP echo $trainer_data["instagram"] ?>"><i class="fa fa-instagram"></i></i></a>
                                 </div>
                             </div>
                         </div>

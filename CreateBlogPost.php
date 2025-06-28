@@ -4,7 +4,6 @@ include "Connections/connection.php";
 
 if (isset($_SESSION["admin"])) {
 
-    $map = [];
 
 ?>
     <!DOCTYPE html>
@@ -142,57 +141,45 @@ if (isset($_SESSION["admin"])) {
 
                                 <div class="col-6">
                                     <div class="row">
+
+
                                         <div class="col-12">
-                                            <span class="fw-bold"><?php echo count($map) ?> Contents</span>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <span class="fw-bold">Contents</span>
+                                                </div>
+                                                <div class="col-12">
+                                                    <textArea class="form-control" id="content1"></textArea>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <span class="fw-bold" >Contents</span>
+                                                </div>
+                                                <div class="col-12">
+                                                    <textArea class="form-control" id="content2"></textArea>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="col-12">
-                                            <span>Select Content Type</span>
-                                            <select name="" class="form-select m-2" id="Content_type" onchange="changeBlogType();">
-                                                <option value="0">Select a Content Type</option>
-
-                                                <?php
-                                                $blogContentType_rs = Database::search("SELECT * FROM `blog_content_type` ");
-                                                $blogcontentNum = $blogContentType_rs->num_rows;
-
-                                                for ($i = 0; $i < $blogcontentNum; $i++) {
-                                                    $blog_Type_data = $blogContentType_rs->fetch_assoc();
-                                                ?>
-                                                    <option value="<?php echo ($blog_Type_data["blog_content_id"]) ?>"><?php echo ($blog_Type_data["content_type"]) ?></option>
-                                                <?php
-                                                }
-
-                                                ?>
-                                            </select>
-                                        </div>
-                                        <div class="col-12 m-2 d-none" id="ContentText">
-                                            <textarea name="" style="width: 100%;" id="paragraphContent" placeholder="Please type Your Content" cols="30" rows="10"></textarea>
-                                        </div>
-                                        <div class="col-12 m-2 d-none" id="ImageSelector">
-                                            <input type="file" id="ImageInput">
-                                        </div>
-                                        <div class="col-12 m-2 d-none" id="HedingText">
-                                            <input type="text" id="HeadingText" class="form-control">
-                                        </div>
-
-                                        <div class="col-12 m2">
-                                            <button class="btn btn-success" style="width: 100%;" onclick="Add_Content_in_blog()"> Add Content </button>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="row">
-                                        <div class="col-12 mt-4" id="contentTableContainer">
-                                            <!-- Table will appear here -->
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <span class="fw-bold" >Contents</span>
+                                                </div>
+                                                <div class="col-12">
+                                                    <textArea class="form-control" id="content3"></textArea>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="col-12 d-grid">
                                     <button class="fw-bold fs-1 btn btn-dark " onclick="AddBlog();">Publish Post</button>
                                 </div>
-
-
+0
 
                             </div>
                         </div>
@@ -201,76 +188,6 @@ if (isset($_SESSION["admin"])) {
                 </div>
             </div>
 
-            <script>
-                let contentArray = [];
-
-                function Add_Content_in_blog() {
-                    const contentType = document.getElementById("Content_type").value;
-                    let content;
-
-                    // Get content based on selected type
-                    if (contentType == "1") {
-                        content = document.getElementById("HeadingText").value;
-                    } else if (contentType == "2") {
-                        // update image after 
-                        content = document.getElementById("ImageInput").files[0]
-                    } else if (contentType == "3") {
-                        content = document.getElementById("paragraphContent").value;
-                    } else {
-                        alert("Please select a valid content type.");
-                        return;
-                    }
-
-                    const content_data = {
-                        content_type: contentType,
-                        content: content,
-                    };
-
-                    contentArray.push(content_data);
-                    console.log(content_data);
-                    loadTable(); // refresh table after add
-                }
-
-                function loadTable() {
-                    const container = document.getElementById("contentTableContainer");
-                    container.innerHTML = ""; // clear previous table
-
-                    const table = document.createElement("table");
-                    table.className = "table table-bordered table-striped text-center bg-white";
-
-                    const headerRow = document.createElement("tr");
-                    ["No", "Content Type", "Content"].forEach(text => {
-                        const th = document.createElement("th");
-                        th.innerText = text;
-                        headerRow.appendChild(th);
-                    });
-                    table.appendChild(headerRow);
-
-                    contentArray.forEach((item, index) => {
-                        const row = document.createElement("tr");
-
-                        const tdIndex = document.createElement("td");
-                        tdIndex.innerText = index + 1;
-                        row.appendChild(tdIndex);
-
-                        const tdType = document.createElement("td");
-                        tdType.innerText = item.content_type;
-                        row.appendChild(tdType);
-
-                        const tdContent = document.createElement("td");
-                        if (item.content_type == "2") {
-                            tdContent.innerText = "Image";
-                        } else {
-                            tdContent.innerText = item.content;
-                        }
-                        row.appendChild(tdContent);
-
-                        table.appendChild(row);
-                    });
-
-                    container.appendChild(table);
-                }
-            </script>
 
 
             <script src="js/bootstrap.js"></script>

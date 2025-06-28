@@ -2379,7 +2379,7 @@ function LoadData() {
     }
   };
 
-  request.open("POST", "FlexBackendPross.php", true);
+  request.open("POST", "BackEndProcess.php", true);
   request.send(form);
 }
 
@@ -2423,7 +2423,7 @@ function handleSubmit() {
     }
   };
 
-  request.open("POST", "FlexBackendPross.php", true);
+  request.open("POST", "BackEndProcess.php", true);
   request.send(formData);
 }
 function editTrainer(Trainer_id) {
@@ -2482,7 +2482,7 @@ function UpdateTrainer(Trainer_id) {
     }
   };
 
-  request.open("POST", "FlexBackendPross.php", true);
+  request.open("POST", "BackEndProcess.php", true);
   request.send(formData);
 }
 
@@ -2506,7 +2506,7 @@ function deleteTrainer(Trainer_id) {
       }
     }
   };
-  request.open("POST", "FlexBackendPross.php", true);
+  request.open("POST", "BackEndProcess.php", true);
   request.send(formData);
 }
 function empty() {
@@ -2547,7 +2547,7 @@ function handleTestimonial() {
     }
   };
 
-  request.open("POST", "FlexBackendPross.php", true);
+  request.open("POST", "BackEndProcess.php", true);
   request.send(formData);
 }
 function LoadTestimonial() {
@@ -2600,7 +2600,7 @@ function LoadTestimonial() {
     }
   };
 
-  request.open("POST", "FlexBackendPross.php", true);
+  request.open("POST", "BackEndProcess.php", true);
   request.send(form);
 }
 function editTestimonial(Testimonial_id) {
@@ -2654,7 +2654,7 @@ function updateTestimonial(Testimonial_id) {
     }
   };
 
-  request.open("POST", "FlexBackendPross.php", true);
+  request.open("POST", "BackEndProcess.php", true);
   request.send(formData);
 }
 function deleteTestimonial(Testimonial_id) {
@@ -2677,7 +2677,7 @@ function deleteTestimonial(Testimonial_id) {
     }
   };
 
-  request.open("POST", "FlexBackendPross.php", true);
+  request.open("POST", "BackEndProcess.php", true);
   request.send(formData);
 }
 function onloadTestimonial() {
@@ -2738,73 +2738,48 @@ function onloadTestimonial() {
     }
   };
 
-  xhr.open("POST", "FlexBackendPross.php", true);
+  xhr.open("POST", "BackEndProcess.php", true);
   xhr.send(formData);
 }
 
-function changeBlogType() {
-  var contenet = document.getElementById("Content_type").value;
-  let paragraph = false;
-  let Heading = false;
-  let image = false;
-
-  if (contenet == "1") {
-    // heading
-    Heading = true;
-    document.getElementById("HedingText").classList.remove("d-none");
-    document.getElementById("ImageSelector").classList.add("d-none");
-    document.getElementById("ContentText").classList.add("d-none");
-  } else if (contenet == "2") {
-    // image
-    image = true;
-    document.getElementById("ImageSelector").classList.remove("d-none");
-    document.getElementById("HedingText").classList.add("d-none");
-    document.getElementById("ContentText").classList.add("d-none");
-  } else if (contenet == "3") {
-    // paragraph
-    paragraph = true;
-    document.getElementById("ContentText").classList.remove("d-none");
-    document.getElementById("ImageSelector").classList.add("d-none");
-    document.getElementById("HedingText").classList.add("d-none");
-  }
-}
-
 function AddBlog() {
-  console.log(contentArray);
-  if (contentArray.length == 0) {
-    alert("please Enter the Content");
-  } else {
-    var command = "AddBlogPost";
-    var blogName = document.getElementById("blogName").value;
-    var Category = document.getElementById("Category").value;
-    var coverImage = document.getElementById("AddBlogImage");
-    var authorName = document.getElementById("authorName").value;
-    var authorImage = document.getElementById("authorImage");
+  var command = "AddBlogPost";
+  var blogName = document.getElementById("blogName").value;
+  var Category = document.getElementById("Category").value;
+  var coverImage = document.getElementById("AddBlogImage");
+  var authorName = document.getElementById("authorName").value;
+  var authorImage = document.getElementById("authorImage");
 
-    var form = new FormData();
-    form.append("command", command);
-    form.append("coverImage", coverImage.files[0]);
-    form.append("blogName", blogName);
-    form.append("Category", Category);
-    form.append("authorName", authorName);
-    form.append("authorImage", authorImage.files[0]);
-    form.append("contentArray", JSON.stringify(contentArray));
+  var content1 = document.getElementById("content1").value;
+  var content2 = document.getElementById("content2").value;
+  var content3 = document.getElementById("content3").value;
 
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
-      if (request.readyState == 4 && request.status == 200) {
-        var response = request.responseText;
-        alert(response);
-        // if (response == "Adding Success") {
-        //   alert(response);
-        //   window.location.reload();
-        // } else {
-        //   alert(response);
-        // }
-      }
-    };
-    request.open("POST", "BackEndProcess.php", true);
-    request.send(form);
-  }
+  var form = new FormData();
+  form.append("command", command);
+  form.append("coverImage", coverImage.files[0]);
+  form.append("blogName", blogName);
+  form.append("Category", Category);
+  form.append("authorName", authorName);
+  form.append("authorImage", authorImage.files[0]);
+
+  form.append("content1", content1);
+  form.append("content2", content2);
+  form.append("content3", content3);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+      alert(response);
+      // if (response == "Adding Success") {
+      //   alert(response);
+      //   window.location.reload();
+      // } else {
+      //   alert(response);
+      // }
+    }
+  };
+  request.open("POST", "BackEndProcess.php", true);
+  request.send(form);
 }
- main
+main;
