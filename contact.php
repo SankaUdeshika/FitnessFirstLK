@@ -193,7 +193,7 @@
                                 <span class="GymLocationText" onclick="showGoogleLocation('wtc');"> WTC </span>
                             </div>
                             <div class="col-lg-3 col-12 text-center">
-                                <span class="GymLocationText" onclick="showGoogleLocation('wtc');"> Moors Club </span>
+                                <span class="GymLocationText" onclick="showGoogleLocation('Moors');"> Moors Club </span>
                             </div>
                             <div class="col-lg-3 col-4 text-center">
                                 <span class="GymLocationText" onclick="showGoogleLocation('colombo');">Colombo7</span>

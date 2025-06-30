@@ -2260,6 +2260,9 @@ function showGoogleLocation(location) {
   } else if (location == "wtc") {
     document.getElementById("GoogleMap").src =
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31685.182231971485!2d79.80819611083984!3d6.9326339999999975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2592c3f054759%3A0x3cdec16a4408635e!2sFitness%20First%20-%20WTC!5e0!3m2!1sen!2slk!4v1723188585859!5m2!1sen!2slk";
+  } else if (location == "Moors") {
+    document.getElementById("GoogleMap").src =
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.769961441183!2d79.8571577!3d6.9180822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2596b67bcc199%3A0x296e137265db5ce8!2sMoors%20Sports%20Club!5e0!3m2!1sen!2slk!4v1751306273384!5m2!1sen!2slk";
   }
 }
 
