@@ -16,6 +16,9 @@ if ($blog_num == 1) {
     $author_pic = $blog_data["author_pic"];
     $blog_cover_pic = $blog_data["blog_cover_pic"];
     $blog_category_name = $blog_data["category"];
+    $blog_content_1 = $blog_data["content1"];
+    $blog_content_2 = $blog_data["content2"];
+    $blog_content_3 = $blog_data["content3"];
 } else {
 ?>
     <h1>Something wrong , please try again later</h1>
@@ -52,9 +55,9 @@ if ($blog_num == 1) {
 
 <body>
     <!-- Page Preloder -->
-    <div id="preloder">
+    <!-- <div id="preloder">
         <div class="loader"></div>
-    </div>
+    </div> -->
 
     <!-- Offcanvas Menu Section Begin -->
     <div class="offcanvas-menu-overlay"></div>
@@ -160,32 +163,19 @@ if ($blog_num == 1) {
                     <div class="blog-details-text">
                         <div class="blog-details-title">
 
-                            <?php
-                            $content_rs =  Database::search("SELECT * FROM `blogcontent` WHERE `blog_Bid` = '" . $blog_id . "' ");
-                            $content_num = $content_rs->num_rows;
+                            <div class="row">
+                                <div class="col-12">
+                                    <p><?php echo $blog_content_1 ?></p>
+                                </div>
+                                <br>
+                                <div class="col-12">
+                                    <p><?php echo $blog_content_2 ?></p>
+                                </div>
+                                <div class="col-12">
+                                    <p><?php echo $blog_content_3 ?></p>
+                                </div>
+                            </div>
 
-                            for ($x = 0; $x < $content_num; $x++) {
-                                $content_data = $content_rs->fetch_assoc();
-                                if ($content_data["blog_content_type_blog_content_id"] == 1) { // Heading
-                            ?>
-                                    <h5><?php echo $content_data["content"] ?></h5>
-                                <?php
-                                } else if ($content_data["blog_content_type_blog_content_id"] == 2) { // Image
-                                ?>
-                                    <div class="blog-details-pic">
-                                        <div class="blog-details-pic-item">
-                                            <img src="<?php echo $content_data["content"] ?>" alt="">
-                                        </div>
-                                    </div>
-                                <?php
-                                } else if ($content_data["blog_content_type_blog_content_id"] == 3) { // paragraph
-                                ?>
-                                    <p><?php echo $content_data["content"] ?></p>
-                            <?php
-                                }
-                            }
-
-                            ?>
 
 
                         </div>

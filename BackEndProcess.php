@@ -1084,6 +1084,11 @@ if ($command == "adminChangePassword") {
                             $content_2 = $_POST["content2"];
                             $content_3 = $_POST["content3"];
 
+                            $escape_content_1  = Database::escape($content_1);
+                            $escape_content_2  = Database::escape($content_2);
+                            $escape_content_3  = Database::escape($content_3);
+
+
                             // Get Date Time
                             $date = date("Y.m.d");
                             $time = date("H:i:s");
@@ -1094,13 +1099,13 @@ if ($command == "adminChangePassword") {
                             $last_num = $last_id_result->num_rows + 1;
 
                             // Build image paths
-                            $newCoverImageName = "img/blog/" . $last_num . "_" . $blogName . "_CoverImage" . $NewCoverImage_Extention;
-                            $authorImage = "img/blog/" . $last_num . "_" . $blogName . "_AuthorImage" . $AuthorImage_Extention;
+                            $newCoverImageName = "img/blog/" . $last_num . "_CoverImage" . $NewCoverImage_Extention;
+                            $authorImage = "img/blog/" . $last_num . "_AuthorImage" . $AuthorImage_Extention;
 
 
                             // Insert blog metadata
                             Database::iud("INSERT INTO `blog` (`Bid`, `BlogName`, `Bdate`, `blogcategory_BCid`, `author_name`, `author_pic`, `blog_cover_pic`,`content1`,`content2`,`content3`) 
-                            VALUES ('$last_num', '$blogName', '$date', '$Category', '$authorName', '$authorImage', '$newCoverImageName','$content_1','$content_2','$content_3')");
+                            VALUES ('$last_num', '$blogName', '$date', '$Category', '$authorName', '$authorImage', '$newCoverImageName','$escape_content_1','$escape_content_2','$escape_content_3')");
 
                             // Move uploaded cover image
                             move_uploaded_file($CoverImageFile["tmp_name"], $newCoverImageName);
