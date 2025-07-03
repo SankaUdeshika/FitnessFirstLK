@@ -58,12 +58,12 @@ if ($signature_status == true) {
         $mail->IsSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'sankaudeshika123@gmail.com';
-        $mail->Password = 'dglixqrsukucqzav';
+        $mail->Username = 'fflkcolombo@gmail.com';
+        $mail->Password = 'dqdqlyurxaejbuuy';
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
-        $mail->setFrom('sankaudeshika123@gmail.com', 'Membership Purchasing');
-        $mail->addReplyTo('sankaudeshika123@gmail.com', 'Membership Purchasing');
+        $mail->setFrom('fflkcolombo@gmail.com', 'Membership Purchasing');
+        $mail->addReplyTo('fflkcolombo@gmail.com', 'Membership Purchasing');
         $mail->addAddress($Email);
         $mail->isHTML(true);
         $mail->Subject = 'Thank you for Purchasing Membership';

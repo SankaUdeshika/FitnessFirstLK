@@ -179,8 +179,7 @@ if (isset($_SESSION["admin"])) {
                                 <div class="col-12 d-grid">
                                     <button class="fw-bold fs-1 btn btn-dark " onclick="AddBlog();">Publish Post</button>
                                 </div>
-0
-
+                                            
                             </div>
                         </div>
 
