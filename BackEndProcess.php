@@ -649,8 +649,7 @@ if ($command == "adminChangePassword") {
     $Category_id =  $_POST["Bid"];
     $_SESSION["Category"] = $Category_id;
     echo ($Category_id);
-} else if ($command == "SendEmailTOUS") {
-
+} else if ($command == "SendEmailTOUS") { // send Email to us 
 
     $Name = $_POST["Name"];
     $email = $_POST["email"];
@@ -659,43 +658,43 @@ if ($command == "adminChangePassword") {
 
     try {
         $mail = new PHPMailer;
-        $mail->isSMTP();
+        $mail->IsSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'shanufer722@gmail.com';
-        $mail->Password = 'hsjjfhprupxmxlla';
+        $mail->Username = 'fflkcolombo@gmail.com';
+        $mail->Password = 'dqdqlyurxaejbuuy';
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
-        $mail->setFrom('shanufer722@gmail.com', 'New Registration');
-        $mail->addReplyTo('shanufer4@gmail.com', 'New Registration');
-        $email = $_POST["email"] ?? 'example@example.com';
-        $mail->addAddress($email);
+        $mail->setFrom('fflkcolombo@gmail.com', 'Membership Purchasing');
+        $mail->addReplyTo('fflkcolombo@gmail.com', 'Membership Purchasing');
+        $mail->addAddress('fflkcolombo@gmail.com');
         $mail->isHTML(true);
-        $mail->Subject = 'New Registration';
-        $customer_data = [];
-
-        ob_start();
-?>
-        <div style="background-color:#f4f4f4; padding:30px; font-family:Arial, sans-serif; border-radius:10px;">
-            <div style="background-color:#000000; color:white; padding:20px; border-radius:10px 10px 0 0;">
-                <h2>Fitness First - New Contact Message</h2>
-            </div>
-            <div style="background-color:white; padding:20px; border-radius:0 0 10px 10px;">
-                <p><strong>Name:</strong> <?= htmlspecialchars($Name) ?></p>
-                <p><strong>Email:</strong> <?= htmlspecialchars($email) ?></p>
-                <p><strong>Mobile:</strong> <?= htmlspecialchars($Mobile) ?></p>
-                <p><strong>Message:</strong></p>
-                <div style="background-color:#f1f1f1; padding:15px; border-left:4px solid #2e7d32;">
-                    <?= nl2br(htmlspecialchars($Message)) ?>
-                </div>
-                <hr>
-                <p style="font-size:12px; color:gray;">This message was sent from the contact form on your website.</p>
-            </div>
+        $mail->Subject = 'Contact US';
+        $bodyContent = "
+<div style='background-color:#f4f4f4; padding:30px; font-family:Arial, sans-serif; border-radius:10px;'>
+    <div style='background-color:#000000; color:white; padding:20px; border-radius:10px 10px 0 0;'>
+        <h2>Fitness First - New Contact Message</h2>
+    </div>
+    <div style='background-color:white; padding:20px; border-radius:0 0 10px 10px;'>
+        <p><strong>Name:</strong> " . htmlspecialchars($Name) . "</p>
+        <p><strong>Email:</strong> " . htmlspecialchars($email) . "</p>
+        <p><strong>Mobile:</strong> " . htmlspecialchars($Mobile) . "</p>
+        <p><strong>Message:</strong></p>
+        <div style='background-color:#f1f1f1; padding:15px; border-left:4px solid #2e7d32;'>
+            " . nl2br(htmlspecialchars($Message)) . "
         </div>
-<?php
-        $mail->Body = ob_get_clean();
-        $mail->send();
-        echo "success";
+        <hr>
+        <p style='font-size:12px; color:gray;'>This message was sent from the contact form on your website.</p>
+    </div>
+</div>";
+        $mail->Body    = $bodyContent;
+
+
+        if (!$mail->send()) {
+            echo ("verification code sending failed");
+        } else {
+            echo ("Done");
+        }
     } catch (Exception $e) {
         echo "Email could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
@@ -1128,10 +1127,10 @@ if ($command == "adminChangePassword") {
     } else {
         echo ("Please Select a Image");
     }
-}else if ($command == "SearchInput"){
-      $input = $_POST["input"];
-    
-   if ($input !== "") {
+} else if ($command == "SearchInput") {
+    $input = $_POST["input"];
+
+    if ($input !== "") {
         $result = Database::search("SELECT * FROM `memberships` INNER JOIN `member_package` ON `member_ship_id` = `memberships`.`member_package_member_ship_id`
          WHERE `membership_id` = '$input'");
 

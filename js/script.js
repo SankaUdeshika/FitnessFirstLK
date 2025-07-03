@@ -2316,7 +2316,7 @@ function sendContactUsEmailToUs() {
       // }
     }
   };
-  request.open("POST", "FlexBackendPross.php", true);
+  request.open("POST", "BackEndProcess.php", true);
   request.send(form);
 }
 
