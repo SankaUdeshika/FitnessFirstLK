@@ -1128,4 +1128,34 @@ if ($command == "adminChangePassword") {
     } else {
         echo ("Please Select a Image");
     }
+}else if ($command == "SearchInput"){
+      $input = $_POST["input"];
+    
+   if ($input !== "") {
+        $result = Database::search("SELECT * FROM `memberships` INNER JOIN `member_package` ON `member_ship_id` = `memberships`.`member_package_member_ship_id`
+         WHERE `membership_id` = '$input'");
+
+        if ($result && $result->num_rows > 0) {
+            $data = [];
+            while ($row = $result->fetch_assoc()) {
+                $data[] = [
+                    "membership_id" => $row["membership_id"],
+                    "packageName" => $row["PacakageName"],
+                    "location" => $row["location"],
+                    "workoutTime" => $row["workoutTime"],
+                    "duration" => $row["duration"],
+                    "first_name" => $row["first_name"],
+                    "last_name" => $row["last_name"],
+                    "mobile" => $row["mobile"],
+                    "email" => $row["email"],
+                    "join_date" => $row["join_date"]
+                ];
+            }
+            echo json_encode(["status" => "success", "data" => $data]);
+        } else {
+            echo json_encode(["status" => "not_found"]);
+        }
+    } else {
+        echo json_encode(["status" => "invalid"]);
+    }
 }

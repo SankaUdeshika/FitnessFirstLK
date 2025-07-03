@@ -2786,4 +2786,62 @@ function AddBlog() {
   request.open("POST", "BackEndProcess.php", true);
   request.send(form);
 }
+
+function searchMembership() {
+  var input = document.getElementById("searchInput").value;
+  var tbody = document.querySelector("tbody");
+  var command = "SearchInput";
+ 
+  if (!input) {
+    alert("Please enter a Membership ID.");
+    return;
+  }
+
+  var form = new FormData();
+  form.append("input", input);
+    form.append("command", command);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState === 4 && request.status === 200) {
+      try {
+        const response = JSON.parse(request.responseText);
+        tbody.innerHTML = ""; 
+
+        if (response.status === "success") {
+
+          response.data.forEach(member => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+              <td>${member.membership_id}</td>
+              <td>
+                Package: <span class="text-danger">${member.packageName}</span><br>
+                Location: <span class="text-danger">${member.location}</span><br>
+                WorkoutTime: <span class="text-danger">${member.workoutTime}</span><br>
+                Duration: <span class="text-danger">${member.duration}</span>
+              </td>
+              <td>${member.first_name}</td>
+              <td>${member.last_name}</td>
+              <td>${member.mobile}</td>
+              <td>${member.email}</td>
+              <td>${member.join_date}</td>
+            `;
+            tbody.appendChild(row);
+          });
+        } else if (response.status === "not_found") {
+          tbody.innerHTML = "<tr><td colspan='7'>No member found with that ID.</td></tr>";
+        } else {
+          alert("Invalid input.");
+        }
+      } catch (e) {
+        console.error("Error parsing response:", e);
+        alert("An error occurred.");
+      }
+    }
+  };
+  request.open("POST", "BackEndProcess.php", true);
+  request.send(form);
+}
+
+
 main;
