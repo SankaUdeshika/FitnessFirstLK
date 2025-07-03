@@ -99,9 +99,13 @@
 </head>
 
 <body>
-  <?php
-  require "./Connections/connection.php";
-  ?>
+
+<div class="form-container">
+    <label for="searchInput">Search by Membership ID:</label>
+    <input type="text" id="searchInput" placeholder="Enter Membership ID">
+    <button onclick="searchMembership()">Search Membership</button>
+  </div>
+
   <table>
     <thead>
       <tr>
@@ -116,25 +120,24 @@
     </thead>
     <tbody>
       <?php
+      error_reporting(E_ALL);
+      ini_set('display_errors', 1);
 
+      require "./Connections/connection.php";
 
-
-      $membership_rs = Database::search("SELECT * FROM `memberships` INNER JOIN `member_package` ON `member_ship_id` = `memberships`.`member_package_member_ship_id` ");
+      $membership_rs = Database::search("SELECT * FROM `memberships` INNER JOIN `member_package` ON `member_ship_id` = `memberships`.`member_package_member_ship_id`");
       $membership_num = $membership_rs->num_rows;
 
       for ($X = 0; $X < $membership_num; $X++) {
         $memberData = $membership_rs->fetch_assoc();
       ?>
-
         <tr>
           <td><?php echo $memberData["membership_id"]; ?></td>
           <td>
             Package:- <span class="text-danger"><?php echo $memberData["PacakageName"]; ?></span><br>
-            location:- <span class="text-danger"><?php echo $memberData["location"]; ?></span><br>
-            WorkoutTime:- <span class="text-danger"><?php echo $memberData["workoutTime"]; ?></span> <br>
-            duration:- <span class="text-danger"><?php echo $memberData["duration"]; ?></span>
-
-
+            Location:- <span class="text-danger"><?php echo $memberData["location"]; ?></span><br>
+            WorkoutTime:- <span class="text-danger"><?php echo $memberData["workoutTime"]; ?></span><br>
+            Duration:- <span class="text-danger"><?php echo $memberData["duration"]; ?></span>
           </td>
           <td><?php echo $memberData["first_name"]; ?></td>
           <td><?php echo $memberData["last_name"]; ?></td>
