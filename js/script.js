@@ -1619,7 +1619,7 @@ function openPaymentGateway(hashKey) {
     hash: hashKey,
     first_name: "Sanka",
     last_name: "Udeshika",
-    email: "sankaudeshika123@gmail.com",
+    email: "fflkcolombo@gmail.com",
     phone: "0764213724",
     address: "123 Street",
     city: "Dehiwala",
@@ -1650,7 +1650,7 @@ function openPaymentGateway(hashKey) {
 //   const hash = hashKey;
 //   const first_name = "Sanka";
 //   const last_name = "udeshika";
-//   const email = "sankaudeshika123@gmail.com";
+//   const email = "fflkcolombo@gmail.com";
 //   const phone = "0764213724";
 //   const address = "123 Street";
 //   const city = "Dehiwala";
@@ -2303,22 +2303,23 @@ function sendContactUsEmailToUs() {
   form.append("email", email);
   form.append("Mobile", Mobile);
   form.append("Message", Message);
-  alert("OK bn");
 
   var request = new XMLHttpRequest();
   request.onreadystatechange = function () {
     if ((request.readyState == 4) & (request.status == 200)) {
       var response = request.responseText;
-      if (response == "success") {
-        alert("ok");
-      } else {
-        alert(response);
-      }
+      alert(response);
+      // if (response == "success") {
+      //   alert("ok");
+      // } else {
+      //   alert(response);
+      // }
     }
   };
   request.open("POST", "FlexBackendPross.php", true);
   request.send(form);
 }
+
 function LoadData() {
   const tbody = document.querySelector("#trainerTable tbody");
   tbody.innerHTML = "";
