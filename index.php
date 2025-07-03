@@ -130,7 +130,7 @@
                             <div class="hi-text">
                                 <span>Shape your body</span>
                                 <h1 class="fw-bold">Be <strong>strong</strong> with a professional</h1>
-                                <a href="team.html" class="primary-btn">Get info</a>
+                                <a href="team.php" class="primary-btn">Get info</a>
                             </div>
                         </div>
                     </div>

@@ -65,90 +65,134 @@ if (isset($_SESSION["admin"])) {
                             <hr />
                         </div>
 
-                        <div class="col-12 bg-dark">
+                        <div class="container" style="background-color: white
+                        ;">
                             <div class="row">
-                                <div class="col-12 col-lg-2 text-center my-3">
-                                    <label class="form-label fs-4 fw-bold text-white">Total Active Time</label>
+                                <div class="col-lg-12">
+                                    <div class="section-title">
+                                        <span>Monthly Deals</span>
+                                        <h2>Choose your Package</h2>
+                                    </div>
                                 </div>
-                                <div class="col-12 col-lg-10 text-center my-3">
-                                    <?php
-
-                                    $start_date = new DateTime("2022-09-27 00:00:00");
-
-                                    $tdate = new DateTime();
-                                    $tz = new DateTimeZone("Asia/Colombo");
-                                    $tdate->setTimezone($tz);
-
-                                    $end_date = new DateTime($tdate->format("Y-m-d H:i:s"));
-
-                                    $difference = $end_date->diff($start_date);
-
-                                    ?>
-                                    <label class="form-label fs-4 fw-bold text-warning">
-                                        <?php
-
-                                        echo $difference->format('%Y') . " Years " . $difference->format('%m') . " Months " .
-                                            $difference->format('%d') . " Days " . $difference->format('%H') . " Hours " .
-                                            $difference->format('%i') . " Minutes " . $difference->format('%s') . " Seconds ";
-                                        ?>
-                                    </label>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-lg-4 col-md-8">
+                                    <div class="ps-item">
+                                        <h3>Gents Annual 50% OFF</h3>
+                                        <div class="pi-price">
+                                            <h2>Rs.40000/=</h2>
+                                            <span>Moors Sport Club</span>
+                                        </div>
+                                        <ul>
+                                            <li>Fully equipment gym</li>
+                                            <li>Ladies Only Area</li>
+                                            <li>Certified trainers</li>
+                                            <li>Shower & Changing room facilities</li>
+                                            <li>Free meal plan & workout schedules</li>
+                                            <li>Body assessment</li>
+                                            <li>Ample parking</li>
+                                        </ul>
+                                        <a href="#" class="primary-btn pricing-btn" onclick="window.location = 'membershipCheckout.php?id=1'">Enroll now</a>
+                                        <!-- <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a> -->
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-8">
+                                    <div class="ps-item">
+                                        <h3>Buy 6months Get 6months</h3>
+                                        <div class="pi-price">
+                                            <h2>Rs.80000/=</h2>
+                                            <span>Colombo 7</span>
+                                        </div>
+                                        <ul>
+                                            <li>Fully equipment gym</li>
+                                            <li>Swimming pool, sauna & steam room</li>
+                                            <li>Certified trainers</li>
+                                            <li>Access to all 4 branches</li>
+                                            <li>In-house suppliments store</li>
+                                            <li>Shower & Changing room facilities</li>
+                                            <li>Free meal plan & workout schedules</li>
+                                            <li>Body assessment</li>
+                                            <li>Ample parking</li>
+                                        </ul>
+                                        <a href="#" class="primary-btn pricing-btn" onclick="window.location = 'membershipCheckout.php?id=1'">Enroll now</a>
+                                        <!-- <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a> -->
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-8">
+                                    <div class="ps-item">
+                                        <h3>Ladies Annual 50% OFF </h3>
+                                        <div class="pi-price">
+                                            <h2>Rs.35000/=</h2>
+                                            <span>JA-ELA</span>
+                                        </div>
+                                        <ul>
+                                            <li>Fully equipment gym</li>
+                                            <li>Certified trainers</li>
+                                            <li>Shower & Changing room facilities</li>
+                                            <li>Free meal plan & workout schedules</li>
+                                            <li>Body assessment</li>
+                                            <li>Ample parking</li>
+                                        </ul>
+                                        <a href="#" class="primary-btn pricing-btn" onclick="window.location = 'membershipCheckout.php?id=1'">Enroll now</a>
+                                        <!-- <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a> -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- content -->
 
-                       <div class="col-12 p-4">
-    <div class="row">
-        <?php
-        $member_package = Database::search("SELECT * FROM `member_package`");
-        $member_package_num = $member_package->num_rows;
-        ?>
+                        <div class="col-12 p-4">
+                            <div class="row">
+                                <?php
+                                $member_package = Database::search("SELECT * FROM `member_package`");
+                                $member_package_num = $member_package->num_rows;
+                                ?>
 
-        <table class="table table-bordered table-striped table-hover">
-            <thead class="table-dark">
-                <tr>
-                    <th>member_ship_id</th>
-                    <th>location</th>
-                    <th>membership_price</th>
-                    <th>PacakageName</th>
-                    <th>workoutTime</th>
-                    <th>duration</th>
-                    <th>Update / Insert</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                for ($i = 0; $i < $member_package_num; $i++) {
-                    $member_package_data = $member_package->fetch_assoc(); 
-                ?>
-                    <tr>
-                        <td contenteditable="false"><?php echo $member_package_data["member_ship_id"]; ?></td>
-                        <td contenteditable="true"><?php echo $member_package_data["location"]; ?></td>
-                        <td contenteditable="true"><?php echo $member_package_data["membership_price"]; ?></td>
-                        <td contenteditable="true"><?php echo $member_package_data["PacakageName"]; ?></td>
-                        <td contenteditable="true"><?php echo $member_package_data["workoutTime"]; ?></td>
-                        <td contenteditable="true"><?php echo $member_package_data["duration"]; ?></td>
-                        <td><button class="btn btn-primary btn-sm" onclick="updateRow(this)">Update</button></td>
-                    </tr>
-                <?php
-                }
-                ?>
+                                <table class="table table-bordered table-striped table-hover">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>member_ship_id</th>
+                                            <th>location</th>
+                                            <th>membership_price</th>
+                                            <th>PacakageName</th>
+                                            <th>workoutTime</th>
+                                            <th>duration</th>
+                                            <th>Update / Insert</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        for ($i = 0; $i < $member_package_num; $i++) {
+                                            $member_package_data = $member_package->fetch_assoc();
+                                        ?>
+                                            <tr>
+                                                <td contenteditable="false"><?php echo $member_package_data["member_ship_id"]; ?></td>
+                                                <td contenteditable="true"><?php echo $member_package_data["location"]; ?></td>
+                                                <td contenteditable="true"><?php echo $member_package_data["membership_price"]; ?></td>
+                                                <td contenteditable="true"><?php echo $member_package_data["PacakageName"]; ?></td>
+                                                <td contenteditable="true"><?php echo $member_package_data["workoutTime"]; ?></td>
+                                                <td contenteditable="true"><?php echo $member_package_data["duration"]; ?></td>
+                                                <td><button class="btn btn-primary btn-sm" onclick="updateRow(this)">Update</button></td>
+                                            </tr>
+                                        <?php
+                                        }
+                                        ?>
 
-                <tr>
-                    <td contenteditable="false"></td> 
-                    <td contenteditable="true"></td>
-                    <td contenteditable="true"></td>
-                    <td contenteditable="true"></td>
-                    <td contenteditable="true"></td>
-                    <td contenteditable="true"></td>
-                    <td><button class="btn btn-danger btn-sm" onclick="InsertRow(this)">Insert</button></td>
-                </tr>
+                                        <tr>
+                                            <td contenteditable="false"></td>
+                                            <td contenteditable="true"></td>
+                                            <td contenteditable="true"></td>
+                                            <td contenteditable="true"></td>
+                                            <td contenteditable="true"></td>
+                                            <td contenteditable="true"></td>
+                                            <td><button class="btn btn-danger btn-sm" onclick="InsertRow(this)">Insert</button></td>
+                                        </tr>
 
-            </tbody>
-        </table>
-    </div>
-</div>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
 
 
 
