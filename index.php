@@ -458,7 +458,7 @@
                 <div class="col-md-4">
                     <div class="gt-text">
                         <i class="fa fa-map-marker"></i>
-                        <p>Colombo 1, World Trade Center</br>  Colombo 2, Moors Sports Club <br /> Colombo 7, Maitland Crescent<br /> Kandana Ja-ela </p>
+                        <p>Colombo 1, World Trade Center</br> Colombo 2, Moors Sports Club <br /> Colombo 7, Maitland Crescent<br /> Kandana Ja-ela </p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -515,10 +515,10 @@
                     <div class="fs-widget">
                         <h4>Useful links</h4>
                         <ul>
-                            <li><a href="about-us.html">About</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <!-- <li><a href="#">Classes</a></li> -->
-                            <li><a href="#">Contact</a></li>
+                    
+                            <li><a href="terms&conditions.php">Terms & Condition </a></li>
+                            <li><a href="privacyPolicy.php">Privacy Policy </a></li>
+                            <li><a href="refundPolicy.php">Refund Policy </a></li>
                         </ul>
                     </div>
                 </div>

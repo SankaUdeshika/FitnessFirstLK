@@ -463,10 +463,10 @@
                     <div class="fs-widget">
                         <h4>Useful links</h4>
                         <ul>
-                            <li><a href="about-us.html">About</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <!-- <li><a href="#">Classes</a></li> -->
-                            <li><a href="#">Contact</a></li>
+                     
+                            <li><a href="terms&conditions.php">Terms & Condition </a></li>
+                            <li><a href="privacyPolicy.php">Privacy Policy </a></li>
+                            <li><a href="refundPolicy.php">Refund Policy </a></li>
                         </ul>
                     </div>
                 </div>
