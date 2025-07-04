@@ -134,7 +134,7 @@ if (isset($_SESSION["admin"])) {
                                                 </ul>
                                                 <input type="hidden" name="id" value="<?php echo $packageId; ?>">
                                                 <button type="submit" name="update_package"class="btn btn-dark text-uppercase fw-bold py-2 mt-3" style="width: 100%; display: block; margin: 0 auto; border-radius: 0;">
-                                                    Enroll Now
+                                                    Update Now
                                                 </button>
 
                                             </div>
