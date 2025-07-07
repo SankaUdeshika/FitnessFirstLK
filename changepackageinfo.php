@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "Connections/connection.php";
+require "Connections/connection.php";
 
 if (isset($_SESSION["admin"])) {
 ?>
@@ -65,8 +65,7 @@ if (isset($_SESSION["admin"])) {
                             <hr />
                         </div>
 
-                        <div class="container" style="background-color: white
-                        ;">
+                        <div class="container" style="background-color: white ;">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="section-title">
@@ -77,7 +76,7 @@ if (isset($_SESSION["admin"])) {
                             </div>
                             <div class="row justify-content-center">
                                 <?php
-                                require_once "./Connections/connection.php";
+
 
                                 // Handle update submission
                                 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["update_package"])) {

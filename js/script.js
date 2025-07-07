@@ -1640,50 +1640,7 @@ function openPaymentGateway(hashKey) {
   form.submit(); // 🚀 this will redirect to WebxPay payment UI
 }
 
-// function openPaymentGateway(hashKey) {
-//   alert("payment Gateway Opened");
 
-//   const merchant_id = "561794519801";
-//   const order_id = "123";
-//   const amount = "1000.00";
-//   const currency = "LKR";
-//   const hash = hashKey;
-//   const first_name = "Sanka";
-//   const last_name = "udeshika";
-//   const email = "fflkcolombo@gmail.com";
-//   const phone = "0764213724";
-//   const address = "123 Street";
-//   const city = "Dehiwala";
-//   const country = "Sri Lanka";
-//   const return_url = "http://localhost/fitnesfirst/index.php";
-//   const cancel_url = "http://localhost/fitnesfirst/blog.php";
-
-//   var f = new FormData();
-//   f.append("merchant_id", merchant_id);
-//   f.append("order_id", order_id);
-//   f.append("amount", amount);
-//   f.append("currency", currency);
-//   f.append("hash", hash);
-//   f.append("first_name", first_name);
-//   f.append("last_name", last_name);
-//   f.append("Email", email);
-//   f.append("phone", phone);
-//   f.append("address", address);
-//   f.append("city", city);
-//   f.append("country", country);
-//   f.append("return_url", return_url);
-//   f.append("cancel_url", cancel_url);
-
-//   var r = new XMLHttpRequest();
-//   r.onreadystatechange = function () {
-//     if (r.readyState == 4 && r.status == 200) {
-//       var response = r.responseText;
-//       alert(response);
-//     }
-//   };
-//   r.open("POST", "https://sandbox.webxpay.com/index.php", false);
-//   r.send(f);
-// }
 
 function addMembership() {
   alert("please Wait");

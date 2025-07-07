@@ -9,7 +9,6 @@ $membership_price = $_POST["membership_price"];
 $membershipPackage_id = $_POST["membershipPackage_id"];
 $unique_id = uniqid();
 
-$membership_price = 10;
 
 
 
