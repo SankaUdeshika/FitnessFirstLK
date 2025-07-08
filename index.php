@@ -143,8 +143,8 @@
                     <div class="row">
                         <div class="col-lg-6 offset-lg-6">
                             <div class="hi-text">
-                                <span>Shape your body</span>
-                                <h1 class="fw-bold">Buy <strong>Six Month</strong> Get <strong>Six Month</strong></h1>
+                                <!-- <span>Shape your body</span> -->
+                                <!-- <h1 class="fw-bold">Buy <strong>Six Month</strong> Get <strong>Six Month</strong></h1> -->
                                 <a href="#" class="primary-btn">Enroll Now</a>
                             </div>
                         </div>
