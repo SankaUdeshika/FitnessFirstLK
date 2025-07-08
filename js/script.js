@@ -1674,7 +1674,6 @@ function addMembership() {
 
 // choose Funciton
 function find() {
-  alert("working");
   var branch = document.getElementById("branch").value;
   var time = document.getElementById("time").value;
   var category = document.getElementById("category").value;

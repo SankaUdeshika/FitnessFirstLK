@@ -237,7 +237,7 @@ $package_Id = $_GET["id"];
                                             if ($package_count > 0) {
                                                 $package_details = $package_rs->fetch_assoc();
                                             ?>
-                                                <h1><?php echo $package_details["PacakageName"] ?></h1>
+                                                <h1 style="color: red; font-weight: lighter;"><?php echo $package_details["PacakageName"] ?></h1>
 
                                             <?php
                                             }
@@ -253,7 +253,10 @@ $package_Id = $_GET["id"];
                                                     <div class="col-5">
                                                         <div class="row">
                                                             <div class="col-12">
-                                                                <span class="fw-bold text-white" style="color: white;"> <?php echo $package_details["PacakageName"] ?></span>
+                                                                <span class="fw-bold text-white" style="color: white;"> <?php echo $package_details["PacakageName"] ?></span><br>
+                                                                <span class="fw-bold text-white" style="color: white; font-size: smaller;"> <?php echo $package_details["location"] ?></span><br>
+                                                                <span class="fw-bold text-white" style="color: white; font-size: smaller;"> <?php echo $package_details["workoutTime"] ?></span><br>
+                                                                <span class="fw-bold text-white" style="color: white; font-size: smaller;"> <?php echo $package_details["duration"] ?></span><br>
                                                             </div>
                                                             <div class="col-12">
                                                                 <small class="text-white-50">Rs.<?php echo $package_details["membership_price"] ?></small>
