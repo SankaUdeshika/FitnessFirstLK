@@ -312,64 +312,147 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-8">
+                    <!-- first Discount -->
                     <div class="ps-item">
-                        <h3>Gents Annual 50% OFF</h3>
-                        <div class="pi-price">
-                            <h2>Rs.40000/=</h2>
-                            <span>Moors Sport Club</span>
-                        </div>
-                        <ul>
-                            <li>Fully equipment gym</li>
-                            <li>Ladies Only Area</li>
-                            <li>Certified trainers</li>
-                            <li>Shower & Changing room facilities</li>
-                            <li>Free meal plan & workout schedules</li>
-                            <li>Body assessment</li>
-                            <li>Ample parking</li>
-                        </ul>
-                        <a href="#" class="primary-btn pricing-btn" onclick="window.location = 'membershipCheckout.php?id=1'">Enroll now</a>
-                        <!-- <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a> -->
+                        <?php
+                        $first_discount_rs  = Database::search("SELECT * FROM `member_package`   WHERE `member_ship_id` = '1' ");
+                        $first_discount_num  = $first_discount_rs->num_rows;
+
+                        if ($first_discount_num > 0) {
+                            $first_discount_data = $first_discount_rs->fetch_assoc();
+                        ?>
+                            <h3><?php echo $first_discount_data["discount_text"] ?></h3>
+                            <div class="pi-price">
+                                <h2>Rs.<?php echo $first_discount_data["membership_price"] ?></h2>
+                                <span><?php echo $first_discount_data["location"] ?></span>
+                            </div>
+                            <ul>
+                                <?php
+                                $first_discount_Details_rs = Database::search("SELECT * FROM `membership_details` WHERE `member_package_member_ship_id` = '1'");
+                                $first_discount_Details_num = $first_discount_Details_rs->num_rows;
+
+                                if ($first_discount_Details_num > 0) {
+                                    for ($x = 0; $x < $first_discount_Details_num; $x++) {
+                                        $first_discount_Details_data = $first_discount_Details_rs->fetch_assoc();
+                                ?>
+                                        <li><?php echo $first_discount_Details_data["detail"] ?></li>
+                                    <?php
+
+                                    }
+                                    ?>
+
+                                <?php
+                                }
+
+                                ?>
+
+                            </ul>
+                            <a href="#" class="primary-btn pricing-btn" onclick="window.location = 'membershipCheckout.php?id=1'">Enroll now</a>
+                            <!-- <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a> -->
+                        <?php
+                        } else {
+                        ?>
+                            <h3>Sorry, No Discounts</h3>
+                        <?php
+                        }
+
+                        ?>
+
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-8">
                     <div class="ps-item">
-                        <h3>Buy 6months Get 6months</h3>
-                        <div class="pi-price">
-                            <h2>Rs.80000/=</h2>
-                            <span>Colombo 7</span>
-                        </div>
-                        <ul>
-                            <li>Fully equipment gym</li>
-                            <li>Swimming pool, sauna & steam room</li>
-                            <li>Certified trainers</li>
-                            <li>Access to all 4 branches</li>
-                            <li>In-house suppliments store</li>
-                            <li>Shower & Changing room facilities</li>
-                            <li>Free meal plan & workout schedules</li>
-                            <li>Body assessment</li>
-                            <li>Ample parking</li>
-                        </ul>
-                        <a href="#" class="primary-btn pricing-btn" onclick="window.location = 'membershipCheckout.php?id=1'">Enroll now</a>
-                        <!-- <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a> -->
+                        <?php
+                        $second_discount_rs  = Database::search("SELECT * FROM `member_package`   WHERE `member_ship_id` = '2' ");
+                        $second_discount_num  = $second_discount_rs->num_rows;
+
+                        if ($second_discount_num > 0) {
+                            $second_discount_data = $second_discount_rs->fetch_assoc();
+                        ?>
+                            <h3><?php echo $second_discount_data["discount_text"] ?></h3>
+                            <div class="pi-price">
+                                <h2>Rs.<?php echo $second_discount_data["membership_price"] ?></h2>
+                                <span><?php echo $second_discount_data["location"] ?></span>
+                            </div>
+                            <ul>
+                                <?php
+                                $second_discount_Details_rs = Database::search("SELECT * FROM `membership_details` WHERE `member_package_member_ship_id` = '2'");
+                                $second_discount_Details_num = $second_discount_Details_rs->num_rows;
+
+                                if ($second_discount_Details_num > 0) {
+                                    for ($x2 = 0; $x2 < $second_discount_Details_num; $x2++) {
+                                        $second_discount_Details_data = $second_discount_Details_rs->fetch_assoc();
+                                ?>
+                                        <li><?php echo $second_discount_Details_data["detail"] ?></li>
+                                    <?php
+
+                                    }
+                                    ?>
+
+                                <?php
+                                }
+
+                                ?>
+
+                            </ul>
+                            <a href="#" class="primary-btn pricing-btn" onclick="window.location = 'membershipCheckout.php?id=2'">Enroll now</a>
+                            <!-- <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a> -->
+                        <?php
+                        } else {
+                        ?>
+                            <h3>Sorry, No Discounts</h3>
+                        <?php
+                        }
+
+                        ?>
+
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-8">
                     <div class="ps-item">
-                        <h3>Ladies Annual 50% OFF </h3>
-                        <div class="pi-price">
-                            <h2>Rs.35000/=</h2>
-                            <span>JA-ELA</span>
-                        </div>
-                        <ul>
-                            <li>Fully equipment gym</li>
-                            <li>Certified trainers</li>
-                            <li>Shower & Changing room facilities</li>
-                            <li>Free meal plan & workout schedules</li>
-                            <li>Body assessment</li>
-                            <li>Ample parking</li>
-                        </ul>
-                        <a href="#" class="primary-btn pricing-btn" onclick="window.location = 'membershipCheckout.php?id=1'">Enroll now</a>
-                        <!-- <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a> -->
+                        <?php
+                        $third_discount_rs  = Database::search("SELECT * FROM `member_package`   WHERE `member_ship_id` = '3' ");
+                        $third_discount_num  = $third_discount_rs->num_rows;
+
+                        if ($third_discount_num > 0) {
+                            $third_discount_data = $third_discount_rs->fetch_assoc();
+                        ?>
+                            <h3><?php echo $third_discount_data["discount_text"] ?></h3>
+                            <div class="pi-price">
+                                <h2>Rs.<?php echo $third_discount_data["membership_price"] ?></h2>
+                                <span><?php echo $third_discount_data["location"] ?></span>
+                            </div>
+                            <ul>
+                                <?php
+                                $third_discount_Details_rs = Database::search("SELECT * FROM `membership_details` WHERE `member_package_member_ship_id` = '3'");
+                                $third_discount_Details_num = $third_discount_Details_rs->num_rows;
+
+                                if ($third_discount_Details_num > 0) {
+                                    for ($x3 = 0; $x3 < $third_discount_Details_num; $x3++) {
+                                        $third_discount_Details_data = $third_discount_Details_rs->fetch_assoc();
+                                ?>
+                                        <li><?php echo $third_discount_Details_data["detail"] ?></li>
+                                    <?php
+
+                                    }
+                                    ?>
+
+                                <?php
+                                }
+
+                                ?>
+
+                            </ul>
+                            <a href="#" class="primary-btn pricing-btn" onclick="window.location = 'membershipCheckout.php?id=3'">Enroll now</a>
+                            <!-- <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a> -->
+                        <?php
+                        } else {
+                        ?>
+                            <h3>Sorry, No Discounts</h3>
+                        <?php
+                        }
+
+                        ?>
                     </div>
                 </div>
             </div>
@@ -515,7 +598,7 @@
                     <div class="fs-widget">
                         <h4>Useful links</h4>
                         <ul>
-                    
+
                             <li><a href="terms&conditions.php">Terms & Condition </a></li>
                             <li><a href="privacyPolicy.php">Privacy Policy </a></li>
                             <li><a href="refundPolicy.php">Refund Policy </a></li>
