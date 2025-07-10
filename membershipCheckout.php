@@ -18,7 +18,7 @@ $package_Id = $_GET["id"];
 </head>
 
 <body class="bg-black">
- 
+
 
     <!-- Header -->
     <div class="container-fluid">
@@ -163,6 +163,7 @@ $package_Id = $_GET["id"];
                                     <div class="col-12">
                                         <label for="branch" class="form-label text-white">Branch:</label>
                                         <select id="branch" name="branch" class="form-select">
+                                            <option value="0">Select Branch</option>
                                             <option value="Colombo 7">Colombo 7</option>
                                             <option value="WTC">WTC</option>
                                             <option value="Moors">Moors</option>
@@ -173,6 +174,7 @@ $package_Id = $_GET["id"];
                                     <div class="col-12 mt-3">
                                         <label for="time" class="form-label text-white">Time:</label>
                                         <select id="time" name="time" class="form-select">
+                                            <option value="0">Select Time</option>
                                             <option value="Full Time">Full Time</option>
                                             <option value="Off Peak">Off Peak</option>
                                         </select>
@@ -181,16 +183,25 @@ $package_Id = $_GET["id"];
                                     <div class="col-6 mt-3">
                                         <label for="category" class="form-label text-white">Package Name:</label>
                                         <select id="category" name="category" class="form-select">
-                                            <option value="Individual Ladies">Individual Ladies</option>
-                                            <option value="Individual Gents">Individual Gents</option>
-                                            <option value="Couple">Couple</option>
-                                            <option value="Student">Students</option>
+                                            <option value="0">Select Package Name</option> 
+                                            <?php
+                                            $Package_name_Rs = Database::search("SELECT DISTINCT `PacakageName` FROM `member_package`");
+                                            $Package_name_num = $Package_name_Rs->num_rows;
+
+                                            for ($p = 0; $p < $Package_name_num; $p++) {
+                                                $package_name_data = $Package_name_Rs->fetch_assoc();
+                                            ?>
+                                                <option value="Individual Ladies"><?php echo $package_name_data["PacakageName"] ?></option>
+                                            <?php
+                                            }
+                                            ?>
                                         </select>
                                     </div>
 
                                     <div class="col-6 mt-3">
                                         <label for="membership" class="form-label text-white">Membership:</label>
                                         <select id="membership" name="membership" class="form-select">
+                                            <option value="0">Select Duration</option>
                                             <option value="Daily">Daily</option>
                                             <option value="Monthly">Monthly</option>
                                             <option value="Quarterly">Quarterly</option>
@@ -206,19 +217,6 @@ $package_Id = $_GET["id"];
                                             </div>
                                         </div>
                                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                                 </div>
                             </div>
@@ -293,7 +291,7 @@ $package_Id = $_GET["id"];
                                                                 <span class="text-white fs-5">Total</span>
                                                             </div>
                                                             <div class="col-6 text-white fw-bold text-end">
-                                                                <span class="text-decoration-underline" > Rs.<?php echo $package_details["membership_price"] ?></span>
+                                                                <span class="text-decoration-underline"> Rs.<?php echo $package_details["membership_price"] ?></span>
                                                                 <span class="d-none" id="membership_price"><?php echo $package_details["membership_price"] ?></span>
                                                             </div>
                                                         </div>

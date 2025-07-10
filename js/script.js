@@ -1640,8 +1640,6 @@ function openPaymentGateway(hashKey) {
   form.submit(); // 🚀 this will redirect to WebxPay payment UI
 }
 
-
-
 function addMembership() {
   alert("please Wait");
   var email = document.getElementById("Email").value;
@@ -1678,6 +1676,16 @@ function find() {
   var time = document.getElementById("time").value;
   var category = document.getElementById("category").value;
   var membership = document.getElementById("membership").value;
+
+  if (branch == "0") {
+    alert("Please Select a Branch");
+  } else if (time == "0") {
+    alert("Please Select a Time");
+  } else if (category == "0") {
+    alert("Please Select a Package Name");
+  } else if (membership == "0") {
+    alert("Please Select a Duration");
+  }
 
   var form = new FormData();
   form.append("branch", branch);
@@ -2747,7 +2755,7 @@ function searchMembership() {
   var input = document.getElementById("searchInput").value;
   var tbody = document.querySelector("tbody");
   var command = "SearchInput";
- 
+
   if (!input) {
     alert("Please enter a Membership ID.");
     return;
@@ -2755,18 +2763,17 @@ function searchMembership() {
 
   var form = new FormData();
   form.append("input", input);
-    form.append("command", command);
+  form.append("command", command);
 
   var request = new XMLHttpRequest();
   request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
       try {
         const response = JSON.parse(request.responseText);
-        tbody.innerHTML = ""; 
+        tbody.innerHTML = "";
 
         if (response.status === "success") {
-
-          response.data.forEach(member => {
+          response.data.forEach((member) => {
             const row = document.createElement("tr");
             row.innerHTML = `
               <td>${member.membership_id}</td>
@@ -2785,7 +2792,8 @@ function searchMembership() {
             tbody.appendChild(row);
           });
         } else if (response.status === "not_found") {
-          tbody.innerHTML = "<tr><td colspan='7'>No member found with that ID.</td></tr>";
+          tbody.innerHTML =
+            "<tr><td colspan='7'>No member found with that ID.</td></tr>";
         } else {
           alert("Invalid input.");
         }
@@ -2798,6 +2806,5 @@ function searchMembership() {
   request.open("POST", "BackEndProcess.php", true);
   request.send(form);
 }
-
 
 main;

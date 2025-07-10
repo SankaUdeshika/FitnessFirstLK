@@ -303,15 +303,15 @@
     <section class="pricing-section spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12" >
                     <div class="section-title">
                         <span>Monthly Deals</span>
                         <h2>Choose your Package</h2>
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-8">
+            <div class="row justify-content-center" >
+                <div class="col-lg-3 col-md-8">
                     <!-- first Discount -->
                     <div class="ps-item">
                         <?php
@@ -360,7 +360,8 @@
 
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-8">
+                <div class="col-lg-3 col-md-8">
+                    <!-- second Discount -->
                     <div class="ps-item">
                         <?php
                         $second_discount_rs  = Database::search("SELECT * FROM `member_package`   WHERE `member_ship_id` = '2' ");
@@ -408,7 +409,8 @@
 
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-8">
+                <div class="col-lg-3 col-md-8">
+                    <!-- third Discount -->
                     <div class="ps-item">
                         <?php
                         $third_discount_rs  = Database::search("SELECT * FROM `member_package`   WHERE `member_ship_id` = '3' ");
@@ -451,7 +453,53 @@
                             <h3>Sorry, No Discounts</h3>
                         <?php
                         }
+                        ?>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-8">
+                    <!-- fourth Discount -->
+                    <div class="ps-item">
+                        <?php
+                        $fourth_discount_rs  = Database::search("SELECT * FROM `member_package`   WHERE `member_ship_id` = '4' ");
+                        $fourth_discount_num  = $fourth_discount_rs->num_rows;
 
+                        if ($fourth_discount_num > 0) {
+                            $fourth_discount_data = $fourth_discount_rs->fetch_assoc();
+                        ?>
+                            <h3><?php echo $fourth_discount_data["discount_text"] ?></h3>
+                            <div class="pi-price">
+                                <h2>Rs.<?php echo $fourth_discount_data["membership_price"] ?></h2>
+                                <span><?php echo $fourth_discount_data["location"] ?></span>
+                            </div>
+                            <ul>
+                                <?php
+                                $fourth_discount_Details_rs = Database::search("SELECT * FROM `membership_details` WHERE `member_package_member_ship_id` = '4'");
+                                $fourth_discount_Details_num = $fourth_discount_Details_rs->num_rows;
+
+                                if ($fourth_discount_Details_num > 0) {
+                                    for ($x4 = 0; $x4 < $fourth_discount_Details_num; $x4++) {
+                                        $fourth_discount_Details_data = $fourth_discount_Details_rs->fetch_assoc();
+                                ?>
+                                        <li><?php echo $fourth_discount_Details_data["detail"] ?></li>
+                                    <?php
+
+                                    }
+                                    ?>
+
+                                <?php
+                                }
+
+                                ?>
+
+                            </ul>
+                            <a href="#" class="primary-btn pricing-btn" onclick="window.location = 'membershipCheckout.php?id=4'">Enroll now</a>
+                            <!-- <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a> -->
+                        <?php
+                        } else {
+                        ?>
+                            <h3>Sorry, No Discounts</h3>
+                        <?php
+                        }
                         ?>
                     </div>
                 </div>
