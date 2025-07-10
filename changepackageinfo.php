@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "Connections/connection.php";
+include "Connections/connection.php";
 
 if (isset($_SESSION["admin"])) {
 ?>
@@ -65,7 +65,8 @@ if (isset($_SESSION["admin"])) {
                             <hr />
                         </div>
 
-                        <div class="container" style="background-color: white ;">
+                        <div class="container-fluid p-5 " style="background-color: white
+                        ;">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="section-title">
@@ -76,9 +77,8 @@ if (isset($_SESSION["admin"])) {
                             </div>
                             <div class="row justify-content-center">
                                 <?php
+                                require_once "./Connections/connection.php";
 
-
-                                // Handle update submission
                                 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["update_package"])) {
                                     $id = Database::escape($_POST["id"]);
                                     $location = Database::escape($_POST["location"]);
@@ -86,10 +86,8 @@ if (isset($_SESSION["admin"])) {
                                     $discount = Database::escape($_POST["discount"]);
                                     $details = $_POST["details"];
 
-                                    // Update package
                                     Database::iud("UPDATE `member_package` SET `location` = '$location', `membership_price` = '$price', `discount_text` = '$discount' WHERE `member_ship_id` = '$id'");
 
-                                    // Replace details
                                     Database::iud("DELETE FROM `membership_details` WHERE `member_package_member_ship_id` = '$id'");
                                     foreach ($details as $detail) {
                                         $escapedDetail = Database::escape($detail);
@@ -99,18 +97,18 @@ if (isset($_SESSION["admin"])) {
                                     echo "<script>alert('Package ID $id updated successfully!');</script>";
                                 }
 
-                                $result = Database::search("SELECT * FROM `member_package` WHERE `member_ship_id` IN (1, 2, 3)");
+                                $result = Database::search("SELECT * FROM `member_package` WHERE `member_ship_id` IN (1, 2, 3 , 4)");
 
                                 while ($row = $result->fetch_assoc()) {
                                     $packageId = $row["member_ship_id"];
                                     $detailsResult = Database::search("SELECT `detail` FROM `membership_details` WHERE `member_package_member_ship_id` = $packageId");
                                 ?>
-                                    <div class="col-lg-4 col-md-8">
+                                    <div class="col-lg-3 col-md-8">
                                         <form method="POST">
                                             <div class="ps-item text-center" style="text-align: center;">
                                                 <h3>
                                                     <input type="text" name="discount" value="<?php echo htmlspecialchars($row["discount_text"]); ?>"
-                                                        style="border: none; background: transparent; width: 100%; font-size: 30px; text-align: center;" />
+                                                        style="border: none; background: transparent; width: 100%; font-size: 20px; text-align:center; " />
                                                 </h3>
                                                 <div class="pi-price" style="margin-bottom: 10px;">
                                                     <h2 class="text-danger fw-bold" style="font-size: 40px;">
@@ -133,7 +131,7 @@ if (isset($_SESSION["admin"])) {
                                                 </ul>
                                                 <input type="hidden" name="id" value="<?php echo $packageId; ?>">
                                                 <button type="submit" name="update_package"class="btn btn-dark text-uppercase fw-bold py-2 mt-3" style="width: 100%; display: block; margin: 0 auto; border-radius: 0;">
-                                                    Update Now
+                                                    Enroll Now
                                                 </button>
 
                                             </div>
