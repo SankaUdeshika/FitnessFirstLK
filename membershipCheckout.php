@@ -191,7 +191,7 @@ $package_Id = $_GET["id"];
                                             for ($p = 0; $p < $Package_name_num; $p++) {
                                                 $package_name_data = $Package_name_Rs->fetch_assoc();
                                             ?>
-                                                <option value="Individual Ladies"><?php echo $package_name_data["PacakageName"] ?></option>
+                                                <option value="<?php echo $package_name_data["PacakageName"] ?>"><?php echo $package_name_data["PacakageName"] ?></option>
                                             <?php
                                             }
                                             ?>

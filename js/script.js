@@ -1997,12 +1997,12 @@ function ProteinCarouselRight() {
 
 var MainNumber = 0;
 
-function StartChageFlexHomeCaroysel() {
-  setInterval(() => {
-    MainNumber = MainNumber + 1;
-    ChangeFlexHomeCarlousel(MainNumber);
-  }, 3000);
-}
+// function StartChageFlexHomeCaroysel() {
+//   setInterval(() => {
+//     MainNumber = MainNumber + 1;
+//     ChangeFlexHomeCarlousel(MainNumber);
+//   }, 3000);
+// }
 
 window.addEventListener("load", StartChageFlexHomeCaroysel);
 
@@ -2152,58 +2152,7 @@ function DeleteFlavourOnProductpage(fname) {
   r.send(f);
 }
 
-// document
-//   .querySelector(".EventListText")
-//   .addEventListener("mouseover", function () {
-//     document.querySelector(".EventImage").style.backgroundImage =
-//       "url('Resources/images/Events/FightNight/A7S09290.jpg')";
-//     document.querySelector(".EventImage").style.transition = "0.2s ease-in-out";
-//   });
 
-// document
-//   .querySelector(".EventListText")
-//   .addEventListener("mouseout", function () {
-//     document.querySelector(".EventImage").style.backgroundImage =
-//       "url('Resources/images/Events/FightNight/A7S09388.jpg')";
-//     document.querySelector(".EventImage").style.transition = "0.2s ease-in-out";
-//   });
-
-// EventlistnerText2
-// document.querySelector('.EventListText2').addEventListener('mouseover',function(){
-//   document.querySelector('.EventImage').style.backgroundImage = "url('Resources/images/carouselImages/4.jpeg')";
-//   document.querySelector('.EventImage').style.transition = "0.2s ease-in-out";
-// });
-
-// document.querySelector('.EventListText2').addEventListener('mouseout', function() {
-//   document.querySelector('.EventImage').style.backgroundImage = "url('Resources/images/carouselImages/2.jpeg')";
-//   document.querySelector('.EventImage').style.transition = "0.2s ease-in-out";
-// });
-
-// document
-//   .querySelector(".findGymBox")
-//   .addEventListener("mouseover", function () {
-//     document.querySelector(".findGymImage").style.scale = 1.2;
-//     document.querySelector(".findGymText").style.scale = 0.9;
-//     document.querySelector(".findGymBox").style.cursor = "pointer";
-//   });
-
-// document.querySelector(".findGymBox").addEventListener("mouseout", function () {
-//   document.querySelector(".findGymImage").style.scale = 1;
-//   document.querySelector(".findGymText").style.scale = 1;
-// });
-
-// document
-//   .querySelector(".supplimentRow")
-//   .addEventListener("mouseover", function () {
-//     document.querySelector(".supplimentRow").style.left = "0%";
-//     document.querySelector(".SupplimentBOX").style.scale = "1.1";
-//   });
-// document
-//   .querySelector(".supplimentRow")
-//   .addEventListener("mouseout", function () {
-//     document.querySelector(".supplimentRow").style.left = "-53%";
-//     document.querySelector(".SupplimentBOX").style.scale = "1";
-//   });
 
 document.querySelector(".BLOGRow").addEventListener("mouseover", function () {
   document.querySelector(".BLOGRow").style.left = "0%";
