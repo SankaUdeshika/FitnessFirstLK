@@ -1,10 +1,3 @@
-<?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-require "Connections/connection.php";
-?>
-
-
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -29,6 +22,8 @@ require "Connections/connection.php";
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/style2.css" type="text/css">
+
 
 <style>
         @keyframes scrollBanner {
@@ -50,9 +45,9 @@ require "Connections/connection.php";
 
 <body>
     <!-- Page Preloder -->
-    <!-- <div id="preloder">
+    <div id="preloder">
         <div class="loader"></div>
-    </div> -->
+    </div>
 
     <!-- Offcanvas Menu Section Begin -->
     <div class="offcanvas-menu-overlay"></div>
@@ -67,9 +62,11 @@ require "Connections/connection.php";
             <ul>
                 <li><a href="./index.php">Home</a></li>
                 <li><a href="./about-us.php">About Us</a></li>
+                <!-- <li><a href="./classes.html">Classes</a></li> -->
                 <li><a href="./services.php">Amenities</a></li>
                 <li><a href="./team.php">Our Team</a></li>
                 <li><a href="./blog.php">Our blog</a></li>
+                <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
                 <li><a href="./contact.php">Contact</a></li>
             </ul>
         </nav>
@@ -99,9 +96,11 @@ require "Connections/connection.php";
                         <ul>
                             <li class="active"><a href="./index.php">Home</a></li>
                             <li><a href="./about-us.php">About Us</a></li>
+                            <!-- <li><a href="./class-details.html">Classes</a></li> -->
                             <li><a href="./services.php">Amenities</a></li>
                             <li><a href="./team.php">Our Team</a></li>
                             <li><a href="./blog.php">Our blog</a></li>
+                            <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
                             <li><a href="./contact.php">Contact</a></li>
                         </ul>
                     </nav>
@@ -133,11 +132,11 @@ require "Connections/connection.php";
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb-text">
-                        <h2>Our Blog</h2>
+                        <h2>Coperates</h2>
                         <div class="bt-option">
                             <a href="./index.php">Home</a>
                             <a href="#">Pages</a>
-                            <span>Blog</span>
+                            <span>Coperates</span>
                         </div>
                     </div>
                 </div>
@@ -146,181 +145,67 @@ require "Connections/connection.php";
     </section>
     <!-- Breadcrumb Section End -->
 
-    <!-- Blog Section Begin -->
-    <section class="blog-section spad">
+    <!-- Contact Section Begin -->
+    <section class="contact-section spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 p-0">
-                    <?php
-
-                    $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int) $_GET['page'] : 1;
-                    $resultsPerPage = 5;
-                    $offset = ($page - 1) * $resultsPerPage;
-
-                    $totalResult = Database::search("SELECT * FROM `blog`");
-                    $totalBlogs = $totalResult->num_rows;
-
-                    $totalPages = ceil($totalBlogs / $resultsPerPage);
-                    $result = Database::search("SELECT blog.* FROM blog ORDER BY blog.Bdate DESC LIMIT $resultsPerPage OFFSET $offset");
-
-                    while ($blog = $result->fetch_assoc()) {
-                        $blogId = $blog['Bid'];
-                        $commentResult = Database::search("SELECT * FROM `blogcomment` WHERE `blog_Bid` = '$blogId'");
-                        $commentCount = $commentResult->num_rows;
-
-                        $title = $blog['BlogName'];
-                        $blog_cover_pic = $blog['blog_cover_pic'] ?? './img/logo.png';
-                        $author_name = $blog['author_name'];
-                        $date = date("M, d, Y", strtotime($blog['Bdate']));
-                        $shortDesc = substr($blog['content'] ?? '', 0, 150) . "...";
-                    ?>
-                        <div class="blog-item">
-                            <div class="bi-pic">
-                                <img src="<?php echo htmlspecialchars($blog_cover_pic); ?>" alt="">
-                            </div>
-                            <div class="bi-text">
-                                <h5>
-                                    <a href="./blog-details.php?id=<?php echo htmlspecialchars($blogId); ?>">
-                                        <?php echo htmlspecialchars($title); ?>
-                                    </a>
-                                </h5>
-                                <ul>
-                                    <li>by <?php echo htmlspecialchars($author_name); ?></li>
-                                    <li><?php echo $date; ?></li>
-                                    <li><?php echo $commentCount; ?> Comment<?php echo $commentCount != 1 ? 's' : ''; ?></li>
-                                </ul>
-                                <p><?php echo htmlspecialchars($shortDesc); ?></p>
-                            </div>
+                <div class="col-lg-6">
+                    <div class="section-title contact-title">
+                        <span>Contact Us</span>
+                        <h2>GET IN TOUCH</h2>
+                    </div>
+                    <div class="contact-widget">
+                        <div class="cw-text mt-1">
+                            <i class="fa fa-map-marker"></i>
+                            <p>Colombo 7, Maitland Crescent<br /> Colombo 2, Moors Sports Club <br />Colombo 2, World Trade Center </br> Ja-ela </p>
                         </div>
-                    <?php } ?>
-
-                    <?php if ($totalPages > 0): ?>
-                        <div class="blog-pagination d-flex justify-content-center">
-                            <?php if ($totalPages > 1): ?>
-                                <?php
-                                $start = max(1, $page - 1);
-                                $end = min($totalPages, $start + 2);
-                                if ($end - $start < 2) {
-                                    $start = max(1, $end - 2);
-                                }
-                                ?>
-
-                                <?php if ($page > 1): ?>
-                                    <a href="?page=<?php echo $page - 1; ?>">&laquo; Prev</a>
-                                <?php endif; ?>
-
-                                <?php for ($p = $start; $p <= $end; $p++): ?>
-                                    <a href="?page=<?php echo $p; ?>" <?php if ($p === $page) echo 'class="active"'; ?>>
-                                        <?php echo $p; ?>
-                                    </a>
-                                <?php endfor; ?>
-
-                                <?php if ($page < $totalPages): ?>
-                                    <a href="?page=<?php echo $page + 1; ?>">Next &raquo;</a>
-                                <?php endif; ?>
-                            <?php else: ?>
-                                <a class="active">1</a>
-                            <?php endif; ?>
-                        </div>
-                    <?php endif; ?>
-
-                </div>
-
-                <div class="col-lg-4 col-md-8 p-0">
-                    <div class="sidebar-option">
-                        <div class="so-categories">
-                            <h5 class="title">Categories</h5>
+                        <div class="cw-text">
+                            <i class="fa fa-mobile"></i>
                             <ul>
-                                <?php
-
-                                $result = Database::search("SELECT * FROM `blogcategory`");
-                                $result_num = $result->num_rows;
-
-                                for ($x = 0; $x < $result_num; $x++) {
-                                    $result_data = $result->fetch_assoc();
-                                    $bcid = $result_data["BCid"];
-
-                                    $resultBlog = Database::search("SELECT * FROM `blog` WHERE `blogcategory_BCid` = '$bcid'");
-                                    $resultBlog_num = $resultBlog->num_rows;
-                                ?>
-
-                                    <li>
-                                        <a href="#"><?php echo $result_data["category"]; ?>
-                                            <span><?php echo $resultBlog_num; ?></span>
-                                        </a>
-                                    </li>
-
-                                <?php
-                                }
-                                ?>
-
+                                <p>Colombo 7</p>
+                                <li>011-269-5331</li>
+                                <li>077-834-5678</li>
+                                <p>Moors Sport Club</p>
+                                <li>011-212-1755</li>
+                                <li>075-711-9033</li>
+                                <p>World Trade Center</p>
+                                <li>011-233-8842</li>
+                                <li>077-840-5889</li>
+                                <p>Ja-ela</p>
+                                <li>011-222-9747</li>
+                                <li>077-834-5678</li>
                             </ul>
                         </div>
-                        <div class="so-latest">
-                            <h5 class="title">Feature posts</h5>
-                            <div class="latest-large set-bg" data-setbg="img/letest-blog/latest-1.jpg">
-                                <div class="ll-text">
-                                    <h5><a href="./blog-details.html">This Japanese Way of Making Iced Coffee Is a Game...</a></h5>
-                                    <ul>
-                                        <li>Aug 20, 2019</li>
-                                        <li>20 Comment</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="latest-item">
-                                <div class="li-pic">
-                                    <img src="img/letest-blog/latest-2.jpg" alt="">
-                                </div>
-                                <div class="li-text">
-                                    <h6><a href="./blog-details.html">Grilled Potato and Green Bean Salad</a></h6>
-                                    <span class="li-time">Aug 15, 2019</span>
-                                </div>
-                            </div>
-                            <div class="latest-item">
-                                <div class="li-pic">
-                                    <img src="img/letest-blog/latest-3.jpg" alt="">
-                                </div>
-                                <div class="li-text">
-                                    <h6><a href="./blog-details.html">The $8 French Rosé I Buy in Bulk Every Summer</a></h6>
-                                    <span class="li-time">Aug 15, 2019</span>
-                                </div>
-                            </div>
-                            <div class="latest-item">
-                                <div class="li-pic">
-                                    <img src="img/letest-blog/latest-4.jpg" alt="">
-                                </div>
-                                <div class="li-text">
-                                    <h6><a href="./blog-details.html">Ina Garten's Skillet-Roasted Lemon Chicken</a></h6>
-                                    <span class="li-time">Aug 15, 2019</span>
-                                </div>
-                            </div>
-                            <div class="latest-item">
-                                <div class="li-pic">
-                                    <img src="img/letest-blog/latest-5.jpg" alt="">
-                                </div>
-                                <div class="li-text">
-                                    <h6><a href="./blog-details.html">The Best Weeknight Baked Potatoes, 3 Creative Ways</a></h6>
-                                    <span class="li-time">Aug 15, 2019</span>
-                                </div>
-                            </div>
+                        <div class="cw-text email">
+                            <i class="fa fa-envelope"></i>
+                            <p>fitnessfirstcolombo@gmail.com</p>
                         </div>
-                        <div class="so-tags">
-                            <h5 class="title">Popular tags</h5>
-                            <a href="#">Gyming</a>
-                            <a href="#">Body buidling</a>
-                            <a href="#">Yoga</a>
-                            <a href="#">Weightloss</a>
-                            <a href="#">Proffeponal</a>
-                            <a href="#">Streching</a>
-                            <a href="#">Cardio</a>
-                            <a href="#">Karate</a>
+                    </div>
+                </div>
+
+                <!-- Contact Us Form  -->
+                <div class="col-lg-6">
+                    <div class="leave-comment">
+
+                        <h4 class="mb-4 text-danger text-center">Get A Cord</h4>
+
+                        <div class="input-group-lg d-flex flex-column gap-3">
+                            <input type="text" class=" mt-2 border border-3 border-dark" style="background-color:'#1e1e1e';" placeholder="Name" id="Name" required>
+                            <input type="email" class=" mt-2 border border-3 border-dark " style="background-color:'#1e1e1e'" placeholder="Email" id="Email" required>
+                            <input type="text" class="mt-2 border border-3 border-dark " style="background-color:'#1e1e1e'" placeholder="Company Name" id="CompanyName" required>
+                            <textarea class=" mt-2 border border-3 border-dark " style="background-color:'#1e1e1e'" placeholder="Message" id="Message" rows="6" required></textarea>
+                            <button type="button" onclick="sendContactUsEmailToUs();" class="btn btn-warning  w-100 mt-2">Submit</button>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- FITNESSFIRST LOCATION -->
+
+          
         </div>
     </section>
-    <!-- Blog Section End -->
+    <!-- Contact Section End -->
 <div class="col-12 overflow-hidden" style="position: relative; height: 65px;">
         <div class="row d-flex justify-content-center align-items-center">
             <h5>Trusted Partners</h5>
@@ -337,8 +222,8 @@ require "Connections/connection.php";
             <div class="row">
                 <div class="col-md-4 mt-1">
                     <div class="gt-text">
-                        <i class="fa fa-map-marker"></i>
-                        <p class="mt-3">Colombo 7, Maitland Crescent<br /> Colombo 2, Moors Sports Club <br />Colombo 2, World Trade Center </br> Ja-ela </p>
+                        <i class="fa fa-map-marker "></i>
+                        <p>Colombo 1, World Trade Center</br> Colombo 2, Moors Sports Club <br /> Colombo 7, Maitland Crescent<br /> Kandana Ja-ela </p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -466,7 +351,7 @@ require "Connections/connection.php";
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-
+    <script src="js/script.js"></script>
 
 
 </body>

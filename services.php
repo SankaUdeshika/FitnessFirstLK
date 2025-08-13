@@ -22,6 +22,24 @@
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+
+
+<style>
+        @keyframes scrollBanner {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .scrolling-banner {
+            display: flex;
+            animation: scrollBanner 15s linear infinite;
+        }
+    </style>
 </head>
 
 <body>
@@ -398,7 +416,16 @@
         </div>
     </section> -->
     <!-- Pricing Section End -->
-
+<div class="col-12 overflow-hidden" style="position: relative; height: 65px;">
+        <div class="row d-flex justify-content-center align-items-center">
+            <h5>Trusted Partners</h5>
+        </div>
+        <div class="scrolling-banner" style="white-space: nowrap; display: inline-block;">
+            <img src="img/Corporates.png" alt="Partner Logo" style="height: 40px; display: inline-block; margin-right: 30px;">
+            <img src="img/Corporates.png" alt="Partner Logo" style="height: 40px; display: inline-block; margin-right: 30px;">
+            <img src="img/Corporates.png" alt="Partner Logo" style="height: 40px; display: inline-block; margin-right: 30px;">
+        </div>
+    </div>
     <!-- Get In Touch Section Begin -->
     <div class="gettouch-section">
         <div class="container">

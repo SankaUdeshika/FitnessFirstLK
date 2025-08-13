@@ -23,9 +23,41 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/style2.css" type="text/css">
+
+    <style>
+        /* Make the container scrollable horizontally on small devices */
+        .scrolling-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .scrolling-wrapper::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .scrolling-wrapper::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px;
+        }
+
+        @keyframes scrollBanner {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .scrolling-banner {
+            display: flex;
+            animation: scrollBanner 15s linear infinite;
+        }
+    </style>
 </head>
 
-<body>
+<body onload="onloadTestimonial();">
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -48,7 +80,6 @@
                 <li><a href="./services.php">Amenities</a></li>
                 <li><a href="./team.php">Our Team</a></li>
                 <li><a href="./blog.php">Our blog</a></li>
-                <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
                 <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
                 <li><a href="./contact.php">Contact</a></li>
             </ul>
@@ -125,12 +156,12 @@
             <!-- First Slide -->
             <div class="hs-item set-bg vh-100" data-setbg="<?php echo $carousel_images[0]; ?>">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 offset-lg-6">
+                    <div class="row h-100">
+                        <div class="col-lg-6 offset-lg-6 d-flex align-items-center justify-content-center justify-content-lg-end text-center text-lg-start">
                             <div class="hi-text">
                                 <span>Shape your body</span>
                                 <h1 class="fw-bold">Be <strong>strong</strong> with a professional</h1>
-                                <a href="team.php" class="primary-btn">Get info</a>
+                                <a href="team.php" class="primary-btn">Free Day Trial</a>
                             </div>
                         </div>
                     </div>
@@ -140,11 +171,11 @@
             <!-- Second Slide -->
             <div class="hs-item set-bg vh-100" data-setbg="<?php echo $carousel_images[1]; ?>">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 offset-lg-6">
+                    <div class="row vh-100">
+                        <div class="col-lg-6 offset-lg-6 d-flex align-items-center justify-content-center justify-content-lg-end text-center text-lg-start">
                             <div class="hi-text">
-                                <!-- <span>Shape your body</span> -->
-                                <!-- <h1 class="fw-bold">Buy <strong>Six Month</strong> Get <strong>Six Month</strong></h1> -->
+                                <span>Shape your body</span>
+                                <h1 class="fw-bold">Buy <strong>Six Month</strong> Get <strong>Six Month</strong></h1>
                                 <a href="#" class="primary-btn">Enroll Now</a>
                             </div>
                         </div>
@@ -156,14 +187,70 @@
 
     <!-- Hero Section End -->
 
+    <!-- Testimonial Section Begin -->
+    <section class="testimonial-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <span>Testimonial</span>
+                        <h2>Our cilent say</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="ts_slider owl-carousel">
+                <div class="ts_item">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <div class="ti_pic">
+                                <img src="img/testimonial/testimonial-1.jpg" alt="">
+                            </div>
+                            <div class="ti_text">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt<br /> ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
+                                    gravida. Risus commodo<br /> viverra maecenas accumsan lacus vel facilisis.</p>
+                                <h5>Marshmello Gomez</h5>
+                                <div class="tt-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ts_item">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <div class="ti_pic">
+                                <img src="img/testimonial/testimonial-2.jpg" alt="">
+                            </div>
+                            <div class="ti_text">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt<br /> ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
+                                    gravida. Risus commodo<br /> viverra maecenas accumsan lacus vel facilisis.</p>
+                                <h5>Marshmello Gomez</h5>
+                                <div class="tt-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial Section End -->
     <!-- ChoseUs Section Begin -->
     <section class="choseus-section spad">
         <div class="container">
-            <div class="row">
-                <div class="col-12 mb-5">
-                    <?php include "bmical.php" ?>
-                </div>
-            </div>
+
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
@@ -283,6 +370,11 @@
     </section>
     <!-- ChoseUs Section End -->
 
+    <div class="row">
+        <div class="col-12 mb-5 mt-5">
+            <?php include "bmical.php" ?>
+        </div>
+    </div>
     <!-- Banner Section Begin -->
     <section class="banner-section set-bg" data-setbg="img/banner-bg.png">
         <div class="container">
@@ -303,202 +395,156 @@
     <section class="pricing-section spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12" >
+                <div class="col-lg-12">
                     <div class="section-title">
                         <span>Monthly Deals</span>
                         <h2>Choose your Package</h2>
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center" >
-                <div class="col-lg-3 col-md-8">
-                    <!-- first Discount -->
+
+            <!-- Wrap row in a div with horizontal scroll on small devices -->
+            <div class="scrolling-wrapper row flex-row flex-nowrap overflow-auto pb-3">
+                <!-- Each package -->
+                <div class="col-lg-3 col-md-8 flex-shrink-0 mt-3">
                     <div class="ps-item">
                         <?php
-                        $first_discount_rs  = Database::search("SELECT * FROM `member_package`   WHERE `member_ship_id` = '1' ");
+                        $first_discount_rs  = Database::search("SELECT * FROM `member_package` WHERE `member_ship_id` = '1' ");
                         $first_discount_num  = $first_discount_rs->num_rows;
-
                         if ($first_discount_num > 0) {
                             $first_discount_data = $first_discount_rs->fetch_assoc();
                         ?>
-                            <h3><?php echo $first_discount_data["discount_text"] ?></h3>
+                            <h3><?php echo htmlspecialchars($first_discount_data["discount_text"]); ?></h3>
                             <div class="pi-price">
-                                <h2>Rs.<?php echo $first_discount_data["membership_price"] ?></h2>
-                                <span><?php echo $first_discount_data["location"] ?></span>
+                                <h2>Rs.<?php echo htmlspecialchars($first_discount_data["membership_price"]); ?></h2>
+                                <span><?php echo htmlspecialchars($first_discount_data["location"]); ?></span>
                             </div>
                             <ul>
                                 <?php
                                 $first_discount_Details_rs = Database::search("SELECT * FROM `membership_details` WHERE `member_package_member_ship_id` = '1'");
                                 $first_discount_Details_num = $first_discount_Details_rs->num_rows;
-
                                 if ($first_discount_Details_num > 0) {
                                     for ($x = 0; $x < $first_discount_Details_num; $x++) {
                                         $first_discount_Details_data = $first_discount_Details_rs->fetch_assoc();
                                 ?>
-                                        <li><?php echo $first_discount_Details_data["detail"] ?></li>
-                                    <?php
-
-                                    }
-                                    ?>
-
+                                        <li><?php echo htmlspecialchars($first_discount_Details_data["detail"]); ?></li>
                                 <?php
+                                    }
                                 }
-
                                 ?>
-
                             </ul>
-                            <a href="#" class="primary-btn pricing-btn" onclick="window.location = 'membershipCheckout.php?id=1'">Enroll now</a>
-                            <!-- <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a> -->
+                            <a href="membershipCheckout.php?id=1" class="primary-btn pricing-btn">Enroll now</a>
                         <?php
                         } else {
-                        ?>
-                            <h3>Sorry, No Discounts</h3>
-                        <?php
+                            echo "<h3>Sorry, No Discounts</h3>";
                         }
-
                         ?>
-
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-8">
-                    <!-- second Discount -->
+
+                <div class="col-lg-3 col-md-8 flex-shrink-0 mt-3">
                     <div class="ps-item">
                         <?php
-                        $second_discount_rs  = Database::search("SELECT * FROM `member_package`   WHERE `member_ship_id` = '2' ");
+                        $second_discount_rs  = Database::search("SELECT * FROM `member_package` WHERE `member_ship_id` = '2' ");
                         $second_discount_num  = $second_discount_rs->num_rows;
-
                         if ($second_discount_num > 0) {
                             $second_discount_data = $second_discount_rs->fetch_assoc();
                         ?>
-                            <h3><?php echo $second_discount_data["discount_text"] ?></h3>
+                            <h3><?php echo htmlspecialchars($second_discount_data["discount_text"]); ?></h3>
                             <div class="pi-price">
-                                <h2>Rs.<?php echo $second_discount_data["membership_price"] ?></h2>
-                                <span><?php echo $second_discount_data["location"] ?></span>
+                                <h2>Rs.<?php echo htmlspecialchars($second_discount_data["membership_price"]); ?></h2>
+                                <span><?php echo htmlspecialchars($second_discount_data["location"]); ?></span>
                             </div>
                             <ul>
                                 <?php
                                 $second_discount_Details_rs = Database::search("SELECT * FROM `membership_details` WHERE `member_package_member_ship_id` = '2'");
                                 $second_discount_Details_num = $second_discount_Details_rs->num_rows;
-
                                 if ($second_discount_Details_num > 0) {
                                     for ($x2 = 0; $x2 < $second_discount_Details_num; $x2++) {
                                         $second_discount_Details_data = $second_discount_Details_rs->fetch_assoc();
                                 ?>
-                                        <li><?php echo $second_discount_Details_data["detail"] ?></li>
-                                    <?php
-
-                                    }
-                                    ?>
-
+                                        <li><?php echo htmlspecialchars($second_discount_Details_data["detail"]); ?></li>
                                 <?php
+                                    }
                                 }
-
                                 ?>
-
                             </ul>
-                            <a href="#" class="primary-btn pricing-btn" onclick="window.location = 'membershipCheckout.php?id=2'">Enroll now</a>
-                            <!-- <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a> -->
+                            <a href="membershipCheckout.php?id=2" class="primary-btn pricing-btn">Enroll now</a>
                         <?php
                         } else {
-                        ?>
-                            <h3>Sorry, No Discounts</h3>
-                        <?php
+                            echo "<h3>Sorry, No Discounts</h3>";
                         }
-
                         ?>
-
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-8">
-                    <!-- third Discount -->
+
+                <div class="col-lg-3 col-md-8 flex-shrink-0 mt-3">
                     <div class="ps-item">
                         <?php
-                        $third_discount_rs  = Database::search("SELECT * FROM `member_package`   WHERE `member_ship_id` = '3' ");
+                        $third_discount_rs  = Database::search("SELECT * FROM `member_package` WHERE `member_ship_id` = '3' ");
                         $third_discount_num  = $third_discount_rs->num_rows;
-
                         if ($third_discount_num > 0) {
                             $third_discount_data = $third_discount_rs->fetch_assoc();
                         ?>
-                            <h3><?php echo $third_discount_data["discount_text"] ?></h3>
+                            <h3><?php echo htmlspecialchars($third_discount_data["discount_text"]); ?></h3>
                             <div class="pi-price">
-                                <h2>Rs.<?php echo $third_discount_data["membership_price"] ?></h2>
-                                <span><?php echo $third_discount_data["location"] ?></span>
+                                <h2>Rs.<?php echo htmlspecialchars($third_discount_data["membership_price"]); ?></h2>
+                                <span><?php echo htmlspecialchars($third_discount_data["location"]); ?></span>
                             </div>
                             <ul>
                                 <?php
                                 $third_discount_Details_rs = Database::search("SELECT * FROM `membership_details` WHERE `member_package_member_ship_id` = '3'");
                                 $third_discount_Details_num = $third_discount_Details_rs->num_rows;
-
                                 if ($third_discount_Details_num > 0) {
                                     for ($x3 = 0; $x3 < $third_discount_Details_num; $x3++) {
                                         $third_discount_Details_data = $third_discount_Details_rs->fetch_assoc();
                                 ?>
-                                        <li><?php echo $third_discount_Details_data["detail"] ?></li>
-                                    <?php
-
-                                    }
-                                    ?>
-
+                                        <li><?php echo htmlspecialchars($third_discount_Details_data["detail"]); ?></li>
                                 <?php
+                                    }
                                 }
-
                                 ?>
-
                             </ul>
-                            <a href="#" class="primary-btn pricing-btn" onclick="window.location = 'membershipCheckout.php?id=3'">Enroll now</a>
-                            <!-- <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a> -->
+                            <a href="membershipCheckout.php?id=3" class="primary-btn pricing-btn">Enroll now</a>
                         <?php
                         } else {
-                        ?>
-                            <h3>Sorry, No Discounts</h3>
-                        <?php
+                            echo "<h3>Sorry, No Discounts</h3>";
                         }
                         ?>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-8">
-                    <!-- fourth Discount -->
+
+                <div class="col-lg-3 col-md-8 flex-shrink-0 mt-3">
                     <div class="ps-item">
                         <?php
-                        $fourth_discount_rs  = Database::search("SELECT * FROM `member_package`   WHERE `member_ship_id` = '4' ");
+                        $fourth_discount_rs  = Database::search("SELECT * FROM `member_package` WHERE `member_ship_id` = '4' ");
                         $fourth_discount_num  = $fourth_discount_rs->num_rows;
-
                         if ($fourth_discount_num > 0) {
                             $fourth_discount_data = $fourth_discount_rs->fetch_assoc();
                         ?>
-                            <h3><?php echo $fourth_discount_data["discount_text"] ?></h3>
+                            <h3><?php echo htmlspecialchars($fourth_discount_data["discount_text"]); ?></h3>
                             <div class="pi-price">
-                                <h2>Rs.<?php echo $fourth_discount_data["membership_price"] ?></h2>
-                                <span><?php echo $fourth_discount_data["location"] ?></span>
+                                <h2>Rs.<?php echo htmlspecialchars($fourth_discount_data["membership_price"]); ?></h2>
+                                <span><?php echo htmlspecialchars($fourth_discount_data["location"]); ?></span>
                             </div>
                             <ul>
                                 <?php
                                 $fourth_discount_Details_rs = Database::search("SELECT * FROM `membership_details` WHERE `member_package_member_ship_id` = '4'");
                                 $fourth_discount_Details_num = $fourth_discount_Details_rs->num_rows;
-
                                 if ($fourth_discount_Details_num > 0) {
                                     for ($x4 = 0; $x4 < $fourth_discount_Details_num; $x4++) {
                                         $fourth_discount_Details_data = $fourth_discount_Details_rs->fetch_assoc();
                                 ?>
-                                        <li><?php echo $fourth_discount_Details_data["detail"] ?></li>
-                                    <?php
-
-                                    }
-                                    ?>
-
+                                        <li><?php echo htmlspecialchars($fourth_discount_Details_data["detail"]); ?></li>
                                 <?php
+                                    }
                                 }
-
                                 ?>
-
                             </ul>
-                            <a href="#" class="primary-btn pricing-btn" onclick="window.location = 'membershipCheckout.php?id=4'">Enroll now</a>
-                            <!-- <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a> -->
+                            <a href="membershipCheckout.php?id=4" class="primary-btn pricing-btn">Enroll now</a>
                         <?php
                         } else {
-                        ?>
-                            <h3>Sorry, No Discounts</h3>
-                        <?php
+                            echo "<h3>Sorry, No Discounts</h3>";
                         }
                         ?>
                     </div>
@@ -581,10 +627,20 @@
         </div>
     </section>
     <!-- Team Section End -->
-
+    <div class="col-12 overflow-hidden" style="position: relative; height: 65px;">
+        <div class="row d-flex justify-content-center align-items-center">
+            <h5>Trusted Partners</h5>
+        </div>
+        <div class="scrolling-banner" style="white-space: nowrap; display: inline-block;">
+            <img src="img/Corporates.png" alt="Partner Logo" style="height: 40px; display: inline-block; margin-right: 30px;">
+            <img src="img/Corporates.png" alt="Partner Logo" style="height: 40px; display: inline-block; margin-right: 30px;">
+            <img src="img/Corporates.png" alt="Partner Logo" style="height: 40px; display: inline-block; margin-right: 30px;">
+        </div>
+    </div>
     <!-- Get In Touch Section Begin -->
     <div class="gettouch-section">
         <div class="container">
+
             <div class="row">
                 <div class="col-md-4">
                     <div class="gt-text">
@@ -660,7 +716,7 @@
                             <li><a href="https://fitnessfirst.lk/adminLogin.php">Login</a></li>
                             <!-- <li><a href="#">My account</a></li> -->
                             <!-- <li><a href="#">Subscribe</a></li> -->
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="contact.php">Contact</a></li>
                         </ul>
                     </div>
                 </div>
