@@ -161,7 +161,7 @@
                             <div class="hi-text">
                                 <span>Shape your body</span>
                                 <h1 class="fw-bold">Be <strong>strong</strong> with a professional</h1>
-                                <a href="team.php" class="primary-btn">Free Day Trial</a>
+                                <a class="primary-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeX0bJtgAX28lJNutZr2scCCX5ckGP5IDCNhmHaJxObAPqUXQ/viewform?usp=dialog', '_blank')">Free Day Trial</a>
                             </div>
                         </div>
                     </div>
@@ -172,16 +172,17 @@
             <div class="hs-item set-bg vh-100" data-setbg="<?php echo $carousel_images[1]; ?>">
                 <div class="container">
                     <div class="row vh-100">
-                        <div class="col-lg-6 offset-lg-6 d-flex align-items-center justify-content-center justify-content-lg-end text-center text-lg-start">
+                        <div class="col-lg-6 offset-lg-6 d-flex text-center mb-5 text-lg-start align-items-center justify-content-center">
                             <div class="hi-text">
                                 <span>Shape your body</span>
                                 <h1 class="fw-bold">Buy <strong>Six Month</strong> Get <strong>Six Month</strong></h1>
-                                <a href="#" class="primary-btn">Enroll Now</a>
+                                <a class="primary-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeX0bJtgAX28lJNutZr2scCCX5ckGP5IDCNhmHaJxObAPqUXQ/viewform?usp=dialog', '_blank')">Free Day Trial</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -632,9 +633,9 @@
             <h5>Trusted Partners</h5>
         </div>
         <div class="scrolling-banner" style="white-space: nowrap; display: inline-block;">
-            <img src="img/Corporates.png" alt="Partner Logo" style="height: 40px; display: inline-block; margin-right: 30px;">
-            <img src="img/Corporates.png" alt="Partner Logo" style="height: 40px; display: inline-block; margin-right: 30px;">
-            <img src="img/Corporates.png" alt="Partner Logo" style="height: 40px; display: inline-block; margin-right: 30px;">
+            <img src="img/Corporates.png" alt="Partner Logo" style="height: 30px; display: inline-block; margin-right: 30px;">
+            <img src="img/Corporates.png" alt="Partner Logo" style="height: 30px; display: inline-block; margin-right: 30px;">
+            <img src="img/Corporates.png" alt="Partner Logo" style="height: 30px; display: inline-block; margin-right: 30px;">
         </div>
     </div>
     <!-- Get In Touch Section Begin -->
