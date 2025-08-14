@@ -126,7 +126,7 @@
     <!-- Breadcrumb Section End -->
 
     <!-- Services Section Begin -->
-    <section class="services-section spad">
+    <section class="services-section ">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -145,8 +145,8 @@
                 <div class="col-lg-3 order-lg-2 col-md-6 p-0">
                     <div class="ss-text">
                         <h4>Personal training</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ut dolore
-                            facilisis.</p>
+                        <p> For members seeking focused, one-on-one support, personal training services are available 
+with certified trainers to help you achieve your specific fitness goals.</p>
                         <!-- <a href="#">Explore</a> -->
                     </div>
                 </div>
@@ -158,7 +158,8 @@
                 <div class="col-lg-3 order-lg-4 col-md-6 p-0">
                     <div class="ss-text">
                         <h4>Group fitness classes</h4>
-                        <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus.</p>
+                        <p>Stay motivated and energized with our dynamic group fitness classes, designed for all fitness 
+levels and led by experienced instructors.</p>
                         <!-- <a href="#">Explore</a> -->
                     </div>
                 </div>
@@ -169,9 +170,9 @@
                 </div>
                 <div class="col-lg-3 order-lg-7 col-md-6 p-0">
                     <div class="ss-text second-row">
-                        <h4>Ice-Bath (Colombo 7)</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ut dolore
-                            facilisis.</p>
+                        <h4>Group Fitness Classes</h4>
+                        <p>Stay motivated and energized with our dynamic group fitness classes, designed for all fitness 
+levels and led by experienced instructors.</p>
                         <!-- <a href="#">Explore</a> -->
                     </div>
                 </div>
@@ -182,8 +183,9 @@
                 </div>
                 <div class="col-lg-3 order-lg-5 col-md-6 p-0">
                     <div class="ss-text second-row">
-                        <h4>Sport massage</h4>
-                        <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus.</p>
+                        <h4>Sports Massage (Colombo 7)</h4>
+                        <p> Enhance your recovery and performance with professional sports massage services, ideal for 
+relieving muscle tension and improving mobility.</p>
                         <!-- <a href="#">Explore</a> -->
                     </div>
                 </div>
@@ -191,7 +193,7 @@
         </div>
     </section>
     <!--  -->
-    <section class="services-section spad">
+    <section class="services-section ">
         <div class="container">
             
             <div class="row">
@@ -202,9 +204,9 @@
                 </div>
                 <div class="col-lg-3 order-lg-2 col-md-6 p-0">
                     <div class="ss-text">
-                        <h4>Studio Space (Colombo 7 & World Trade Center)</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ut dolore
-                            facilisis.</p>
+                        <h4>Ice Bath (Colombo 7)</h4>
+                        <p>Refresh and recover faster with our dedicated ice bath facilities, perfect for reducing 
+inflammation and promoting muscle recovery after intense workouts.</p>
                         <!-- <a href="#">Explore</a> -->
                     </div>
                 </div>
@@ -215,8 +217,9 @@
                 </div>
                 <div class="col-lg-3 order-lg-4 col-md-6 p-0">
                     <div class="ss-text">
-                        <h4>Spring cycle studio (Colombo 7 - under construction)</h4>
-                        <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus.</p>
+                        <h4>Studio Space</h4>
+                        <p> Spacious, fully equipped studio areas are available at both Colombo 7 and WTC branches, 
+ideal for group workouts, stretching, or personal routines.</p>
                         <!-- <a href="#">Explore</a> -->
                     </div>
                 </div>
@@ -227,7 +230,7 @@
                 </div>
                 <div class="col-lg-3 order-lg-7 col-md-6 p-0">
                     <div class="ss-text second-row">
-                        <h4>Ladies only gym (Colombo 2)</h4>
+                        <h4>Spin Cycle Studio (Colombo 7)</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ut dolore
                             facilisis.</p>
                         <!-- <a href="#">Explore</a> -->
@@ -240,8 +243,9 @@
                 </div>
                 <div class="col-lg-3 order-lg-5 col-md-6 p-0">
                     <div class="ss-text second-row">
-                        <h4>Sport massage</h4>
-                        <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus.</p>
+                        <h4> Steam & Sauna (Colombo 7)</h4>
+                        <p>Relax and unwind with access to our steam and sauna facilities at Colombo 7 — perfect for 
+post-workout recovery and detoxification.</p>
                         <!-- <a href="#">Explore</a> -->
                     </div>
                 </div>
@@ -249,7 +253,7 @@
         </div>
     </section>
     <!--  -->
-    <section class="services-section spad">
+    <section class="services-section spad3">
         <div class="container">
             
             <div class="row">
@@ -260,9 +264,9 @@
                 </div>
                 <div class="col-lg-3 order-lg-2 col-md-6 p-0">
                     <div class="ss-text">
-                        <h4>Health corner</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ut dolore
-                            facilisis.</p>
+                        <h4>Ladies-Only Gym (Colombo 2)</h4>
+                        <p> Enjoy privacy and comfort at our exclusive ladies-only gym in Colombo 2, designed to create 
+a supportive environment for women to train confidently.</p>
                         <!-- <a href="#">Explore</a> -->
                     </div>
                 </div>
@@ -273,8 +277,9 @@
                 </div>
                 <div class="col-lg-3 order-lg-4 col-md-6 p-0">
                     <div class="ss-text">
-                        <h4>Posing room (Colombo 7 - under construction)</h4>
-                        <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus.</p>
+                        <h4>Health Corner</h4>
+                        <p> Our Health Corner provides a curated selection of supplements and wellness products to 
+support your fitness and nutritional needs.</p>
                         <!-- <a href="#">Explore</a> -->
                     </div>
                 </div>
@@ -285,9 +290,9 @@
                 </div>
                 <div class="col-lg-3 order-lg-7 col-md-6 p-0">
                     <div class="ss-text second-row">
-                        <h4>Cross fit area (ja-ela)</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ut dolore
-                            facilisis.</p>
+                        <h4>Posing Room</h4>
+                        <p> A dedicated posing room is available for physique athletes and bodybuilders to practice 
+stage presence, posing routines, and track progress under proper lighting.</p>
                         <!-- <a href="#">Explore</a> -->
                     </div>
                 </div>
@@ -298,8 +303,9 @@
                 </div>
                 <div class="col-lg-3 order-lg-5 col-md-6 p-0">
                     <div class="ss-text second-row">
-                        <h4>Shower & locker rooms </h4>
-                        <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus.</p>
+                        <h4>Shower & Locker Rooms</h4>
+                        <p>Clean and secure shower and locker facilities are available for all members, ensuring comfort 
+and convenience before and after your workout.</p>
                         <!-- <a href="#">Explore</a> -->
                     </div>
                 </div>
@@ -314,8 +320,9 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="bs-text service-banner">
-                        <h2>Exercise until the body obeys.</h2>
-                        <div class="bt-tips">Where health, beauty and fitness meet.</div>
+                        <h2>CrossFit Area (Ja-Ela)</h2>
+                        <div class="bt-tips"> Train with intensity in our fully equipped CrossFit zone at the Ja-Ela branch, built for 
+functional workouts and strength conditioning.</div>
                         <!-- <a href="https://www.youtube.com/watch?v=EzKkl64rRbM" class="play-btn video-popup"><i
                                 class="fa fa-caret-right"></i></a> -->
                     </div>
@@ -325,79 +332,6 @@
     </section>
     <!-- Banner Section End -->
 
-    <!-- Pricing Section Begin -->
-    <!-- <section class="pricing-section service-pricing spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <span>Our Plan</span>
-                        <h2>Choose your pricing plan</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-8">
-                    <div class="ps-item">
-                        <h3>Class drop-in</h3>
-                        <div class="pi-price">
-                            <h2>$ 39.0</h2>
-                            <span>SINGLE CLASS</span>
-                        </div>
-                        <ul>
-                            <li>Free riding</li>
-                            <li>Unlimited equipments</li>
-                            <li>Personal trainer</li>
-                            <li>Weight losing classes</li>
-                            <li>Month to mouth</li>
-                            <li>No time restriction</li>
-                        </ul>
-                        <a href="#" class="primary-btn pricing-btn">Enroll now</a>
-                        <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-8">
-                    <div class="ps-item">
-                        <h3>12 Month unlimited</h3>
-                        <div class="pi-price">
-                            <h2>$ 99.0</h2>
-                            <span>SINGLE CLASS</span>
-                        </div>
-                        <ul>
-                            <li>Free riding</li>
-                            <li>Unlimited equipments</li>
-                            <li>Personal trainer</li>
-                            <li>Weight losing classes</li>
-                            <li>Month to mouth</li>
-                            <li>No time restriction</li>
-                        </ul>
-                        <a href="#" class="primary-btn pricing-btn">Enroll now</a>
-                        <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-8">
-                    <div class="ps-item">
-                        <h3>6 Month unlimited</h3>
-                        <div class="pi-price">
-                            <h2>$ 59.0</h2>
-                            <span>SINGLE CLASS</span>
-                        </div>
-                        <ul>
-                            <li>Free riding</li>
-                            <li>Unlimited equipments</li>
-                            <li>Personal trainer</li>
-                            <li>Weight losing classes</li>
-                            <li>Month to mouth</li>
-                            <li>No time restriction</li>
-                        </ul>
-                        <a href="#" class="primary-btn pricing-btn">Enroll now</a>
-                        <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- Pricing Section End -->
 
     <!-- Get In Touch Section Begin -->
     <div class="gettouch-section">

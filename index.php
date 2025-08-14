@@ -213,7 +213,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>WHAT WE CAN OFFER</h2>
+                        <h2>SERVICE WE OFFER</h2>
                     </div>
                 </div>
             </div>
@@ -224,8 +224,8 @@
                             <img src="img/classes/class-1.jpg" alt="">
                         </div>
                         <div class="ci-text">
-                            <span>STRENGTH</span>
-                            <h5>Weightlifting</h5>
+                            <!-- <span>STRENGTH</span> -->
+                            <h5>1-On-1 TRAINING</h5>
                             <!-- <a href="#"><i class="fa fa-angle-right"></i></a> -->
                         </div>
                     </div>
@@ -236,8 +236,8 @@
                             <img src="img/classes/class-2.jpg" alt="">
                         </div>
                         <div class="ci-text">
-                            <span>Cardio</span>
-                            <h5>Indoor cycling</h5>
+                            <!-- <span>Cardio</span> -->
+                            <h5> Elderly Training</h5>
                             <!-- <a href="#"><i class="fa fa-angle-right"></i></a> -->
                         </div>
                     </div>
@@ -248,8 +248,8 @@
                             <img src="img/classes/class-3.jpg" alt="">
                         </div>
                         <div class="ci-text">
-                            <span>STRENGTH</span>
-                            <h5>Kettlebell power</h5>
+                            <!-- <span>STRENGTH</span> -->
+                            <h5>Pre & Postnatal Training</h5>
                             <!-- <a href="#"><i class="fa fa-angle-right"></i></a> -->
                         </div>
                     </div>
@@ -260,8 +260,8 @@
                             <img src="img/classes/class-4.jpg" alt="">
                         </div>
                         <div class="ci-text">
-                            <span>Cardio</span>
-                            <h4>Steam Room & Sauna</h4>
+                            <!-- <span>Cardio</span> -->
+                            <h4>Body Conditioning Training</h4>
                             <!-- <a href="#"><i class="fa fa-angle-right"></i></a> -->
                         </div>
                     </div>
@@ -272,8 +272,8 @@
                             <img src="img/classes/class-5.jpg" alt="">
                         </div>
                         <div class="ci-text">
-                            <span>Massage</span>
-                            <h4>Sport Massage</h4>
+                            <!-- <span>Massage</span> -->
+                            <h4>Muscle Rehabilitation Training</h4>
                             <!-- <a href="#"><i class="fa fa-angle-right"></i></a> -->
                         </div>
                     </div>
