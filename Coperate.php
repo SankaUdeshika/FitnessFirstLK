@@ -194,7 +194,7 @@
                             <input type="email" class=" mt-2 border border-3 border-dark " style="background-color:'#1e1e1e'" placeholder="Email" id="Email" required>
                             <input type="text" class="mt-2 border border-3 border-dark " style="background-color:'#1e1e1e'" placeholder="Company Name" id="CompanyName" required>
                             <textarea class=" mt-2 border border-3 border-dark " style="background-color:'#1e1e1e'" placeholder="Message" id="Message" rows="6" required></textarea>
-                            <button type="button" onclick="sendContactUsEmailToUs();" class="btn btn-warning  w-100 mt-2">Submit</button>
+                            <button type="button" onclick="sendContactUsEmailToUs1();" class="btn btn-warning  w-100 mt-2">Submit</button>
                         </div>
                     </div>
                 </div>
