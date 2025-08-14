@@ -235,9 +235,9 @@
             <h5>Trusted Partners</h5>
         </div>
         <div class="scrolling-banner" style="white-space: nowrap; display: inline-block;">
-            <img src="img/Corporates.png" alt="Partner Logo" style="height: 40px; display: inline-block; margin-right: 30px;">
-            <img src="img/Corporates.png" alt="Partner Logo" style="height: 40px; display: inline-block; margin-right: 30px;">
-            <img src="img/Corporates.png" alt="Partner Logo" style="height: 40px; display: inline-block; margin-right: 30px;">
+          <img src="img/Corporates.png" alt="Partner Logo" style="height: 30px; display: inline-block; object-fit:cover; margin-right: 30px;">
+          <img src="img/Corporates.png" alt="Partner Logo" style="height: 30px; display: inline-block; object-fit:cover; margin-right: 30px;">
+          <img src="img/Corporates.png" alt="Partner Logo" style="height: 30px; display: inline-block; object-fit:cover; margin-right: 30px;">
         </div>
     </div>
     <!-- Get In Touch Section Begin -->
