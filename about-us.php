@@ -22,9 +22,26 @@
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+
+<style>
+        @keyframes scrollBanner {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .scrolling-banner {
+            display: flex;
+            animation: scrollBanner 15s linear infinite;
+        }
+    </style>
 </head>
 
-<body onload="onloadTestimonial();">
+<body >
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -312,67 +329,16 @@
         </div>
     </section>
     <!-- Banner Section End -->
-
-    <!-- Testimonial Section Begin -->
-    <section class="testimonial-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <span>Testimonial</span>
-                        <h2>Our cilent say</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="ts_slider owl-carousel">
-                <div class="ts_item">
-                    <div class="row">
-                        <div class="col-lg-12 text-center" >
-                            <div class="ti_pic">
-                                <img src="img/testimonial/testimonial-1.jpg" alt="">
-                            </div>
-                            <div class="ti_text">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt<br /> ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
-                                    gravida. Risus commodo<br /> viverra maecenas accumsan lacus vel facilisis.</p>
-                                <h5>Marshmello Gomez</h5>
-                                <div class="tt-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ts_item">
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            <div class="ti_pic">
-                                <img src="img/testimonial/testimonial-2.jpg" alt="">
-                            </div>
-                            <div class="ti_text">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt<br /> ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
-                                    gravida. Risus commodo<br /> viverra maecenas accumsan lacus vel facilisis.</p>
-                                <h5>Marshmello Gomez</h5>
-                                <div class="tt-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="col-12 overflow-hidden" style="position: relative; height: 65px;">
+        <div class="row d-flex justify-content-center align-items-center">
+            <h5>Trusted Partners</h5>
         </div>
-    </section>
-    <!-- Testimonial Section End -->
+        <div class="scrolling-banner" style="white-space: nowrap; display: inline-block;">
+            <img src="img/Corporates.png" alt="Partner Logo" style="height: 40px; display: inline-block; margin-right: 30px;">
+            <img src="img/Corporates.png" alt="Partner Logo" style="height: 40px; display: inline-block; margin-right: 30px;">
+            <img src="img/Corporates.png" alt="Partner Logo" style="height: 40px; display: inline-block; margin-right: 30px;">
+        </div>
+    </div>
 
     <!-- Get In Touch Section Begin -->
     <div class="gettouch-section">
@@ -451,7 +417,7 @@
                             <li><a href="https://fitnessfirst.lk/adminLogin.php">Login</a></li>
                             <!-- <li><a href="#">My account</a></li> -->
                             <!-- <li><a href="#">Subscribe</a></li> -->
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="contact.php">Contact</a></li>
                         </ul>
                     </div>
                 </div>

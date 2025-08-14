@@ -2232,6 +2232,35 @@ function sendContactUsEmailToUs() {
   request.open("POST", "BackEndProcess.php", true);
   request.send(form);
 }
+function sendContactUsEmailToUs1() {
+  var command = "SendEmailTOUSCorperate";
+  var Name = document.getElementById("Name").value;
+  var email = document.getElementById("Email").value;
+  var CompanyName = document.getElementById("CompanyName").value;
+  var Message = document.getElementById("Message").value;
+
+  var form = new FormData();
+  form.append("command", command);
+  form.append("Name", Name);
+  form.append("email", email);
+  form.append("CompanyName", CompanyName);
+  form.append("Message", Message);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if ((request.readyState == 4) & (request.status == 200)) {
+      var response = request.responseText;
+      alert(response);
+      // if (response == "success") {
+      //   alert("ok");
+      // } else {
+      //   alert(response);
+      // }
+    }
+  };
+  request.open("POST", "BackEndProcess.php", true);
+  request.send(form);
+}
 
 function LoadData() {
   const tbody = document.querySelector("#trainerTable tbody");
