@@ -2152,8 +2152,6 @@ function DeleteFlavourOnProductpage(fname) {
   r.send(f);
 }
 
-
-
 document.querySelector(".BLOGRow").addEventListener("mouseover", function () {
   document.querySelector(".BLOGRow").style.left = "0%";
   document.querySelector(".BlogBOX").style.scale = "1.1";
@@ -2517,6 +2515,7 @@ function LoadTestimonial() {
             return;
           }
           Testimonial.forEach((T, index) => {
+            alert(T.image);
             const row = `
               <tr data-trainer-id="${T.Testimonial_id}">
                 <td>

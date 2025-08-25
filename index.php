@@ -1,14 +1,26 @@
+<?php
+// For the HOMEPAGE only
+$pageTitle = "Fitness First LK: Best Gym in Sri Lanka | Weight Loss & Muscle Gain";
+$metaDescription = "Sri Lanka's premier fitness destination. Find the best gym near you in Colombo, Wattala, Nugegoda & more. Expert trainers, weight loss programs, muscle gain plans, sauna facilities, and quality ladies gym wear. Free trial available!";
+$metaKeywords = "gym Sri Lanka, best gym Colombo, weight loss, muscle gain, ladies gym, sauna, workout plans, personal training, fitness classes, gym Wattala, gym Nugegoda, gym Dehiwala, gym Kiribathgoda";
+?>
+
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en"> <!-- Changed from zxx to en -->
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Gym Template">
-    <meta name="keywords" content="Gym, unica, creative, html">
+    <meta name="keywords" content="<?php echo htmlspecialchars($metaKeywords); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fitness First LK</title>
+
+    <!-- ONLY ONE TITLE TAG -->
+    <title><?php echo htmlspecialchars($pageTitle); ?></title>
+    <meta name="description" content="<?php echo htmlspecialchars($metaDescription); ?>">
+
     <link rel="icon" type="image/png" href="img/FitnessFirstLKLogo.png">
+
+    <!-- Rest of your head content remains the same -->
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
@@ -23,6 +35,8 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/style2.css" type="text/css">
+
+    <!-- Rest of your styles -->
 
     <style>
         /* Make the container scrollable horizontally on small devices */
