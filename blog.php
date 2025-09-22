@@ -30,7 +30,7 @@ require "Connections/connection.php";
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
-<style>
+    <style>
         @keyframes scrollBanner {
             0% {
                 transform: translateX(0);
@@ -65,11 +65,14 @@ require "Connections/connection.php";
         </div>
         <nav class="canvas-menu mobile-menu">
             <ul>
-                <li><a href="./index.php">Home</a></li>
+                <li class="active"><a href="./index.php">Home</a></li>
                 <li><a href="./about-us.php">About Us</a></li>
+                <!-- <li><a href="./class-details.html">Classes</a></li> -->
                 <li><a href="./services.php">Amenities</a></li>
                 <li><a href="./team.php">Our Team</a></li>
                 <li><a href="./blog.php">Our blog</a></li>
+                <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
+                <li><a href="./coperates.php">Coperates</a></li>
                 <li><a href="./contact.php">Contact</a></li>
             </ul>
         </nav>
@@ -99,9 +102,12 @@ require "Connections/connection.php";
                         <ul>
                             <li class="active"><a href="./index.php">Home</a></li>
                             <li><a href="./about-us.php">About Us</a></li>
+                            <!-- <li><a href="./class-details.html">Classes</a></li> -->
                             <li><a href="./services.php">Amenities</a></li>
                             <li><a href="./team.php">Our Team</a></li>
                             <li><a href="./blog.php">Our blog</a></li>
+                            <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
+                            <li><a href="./coperates.php">Coperates</a></li>
                             <li><a href="./contact.php">Contact</a></li>
                         </ul>
                     </nav>
@@ -321,14 +327,14 @@ require "Connections/connection.php";
         </div>
     </section>
     <!-- Blog Section End -->
-<div class="col-12 overflow-hidden" style="position: relative; height: 65px;">
+    <div class="col-12 overflow-hidden" style="position: relative; height: 65px;">
         <div class="row d-flex justify-content-center align-items-center">
             <h5>Trusted Partners</h5>
         </div>
         <div class="scrolling-banner" style="white-space: nowrap; display: inline-block;">
-          <img src="img/Corporates.png" alt="Partner Logo" style="height: 30px; display: inline-block; object-fit:cover; margin-right: 30px;">
-          <img src="img/Corporates.png" alt="Partner Logo" style="height: 30px; display: inline-block; object-fit:cover; margin-right: 30px;">
-          <img src="img/Corporates.png" alt="Partner Logo" style="height: 30px; display: inline-block; object-fit:cover; margin-right: 30px;">
+            <img src="img/Corporates.png" alt="Partner Logo" style="height: 30px; display: inline-block; object-fit:cover; margin-right: 30px;">
+            <img src="img/Corporates.png" alt="Partner Logo" style="height: 30px; display: inline-block; object-fit:cover; margin-right: 30px;">
+            <img src="img/Corporates.png" alt="Partner Logo" style="height: 30px; display: inline-block; object-fit:cover; margin-right: 30px;">
         </div>
     </div>
     <!-- Get In Touch Section Begin -->
@@ -395,7 +401,7 @@ require "Connections/connection.php";
                     <div class="fs-widget">
                         <h4>Useful links</h4>
                         <ul>
-                     
+
                             <li><a href="terms&conditions.php">Terms & Condition </a></li>
                             <li><a href="privacyPolicy.php">Privacy Policy </a></li>
                             <li><a href="refundPolicy.php">Refund Policy </a></li>

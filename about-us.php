@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
-<style>
+    <style>
         @keyframes scrollBanner {
             0% {
                 transform: translateX(0);
@@ -41,7 +41,7 @@
     </style>
 </head>
 
-<body >
+<body>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -63,9 +63,9 @@
                 <!-- <li><a href="./classes.html">Classes</a></li> -->
                 <li><a href="./services.php">Amenities</a></li>
                 <li><a href="./team.php">Our Team</a></li>
-                   <li><a href="./blog.php">Our blog</a></li>
+                <li><a href="./blog.php">Our blog</a></li>
                 <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
-                
+
                 <li><a href="./contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -98,8 +98,9 @@
                             <!-- <li><a href="./class-details.html">Classes</a></li> -->
                             <li><a href="./services.php">Amenities</a></li>
                             <li><a href="./team.php">Our Team</a></li>
-                               <li><a href="./blog.php">Our blog</a></li>
-                <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
+                            <li><a href="./blog.php">Our blog</a></li>
+                            <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
+                            <li><a href="./coperates.php">Coperates</a></li>
                             <li><a href="./contact.php">Contact</a></li>
                         </ul>
                     </nav>
@@ -329,14 +330,14 @@
         </div>
     </section>
     <!-- Banner Section End -->
-<div class="col-12 overflow-hidden" style="position: relative; height: 65px;">
+    <div class="col-12 overflow-hidden" style="position: relative; height: 65px;">
         <div class="row d-flex justify-content-center align-items-center">
             <h5>Trusted Partners</h5>
         </div>
         <div class="scrolling-banner" style="white-space: nowrap; display: inline-block;">
-          <img src="img/Corporates.png" alt="Partner Logo" style="height: 30px; display: inline-block; object-fit:cover; margin-right: 30px;">
-          <img src="img/Corporates.png" alt="Partner Logo" style="height: 30px; display: inline-block; object-fit:cover; margin-right: 30px;">
-          <img src="img/Corporates.png" alt="Partner Logo" style="height: 30px; display: inline-block; object-fit:cover; margin-right: 30px;">
+            <img src="img/Corporates.png" alt="Partner Logo" style="height: 30px; display: inline-block; object-fit:cover; margin-right: 30px;">
+            <img src="img/Corporates.png" alt="Partner Logo" style="height: 30px; display: inline-block; object-fit:cover; margin-right: 30px;">
+            <img src="img/Corporates.png" alt="Partner Logo" style="height: 30px; display: inline-block; object-fit:cover; margin-right: 30px;">
         </div>
     </div>
 
@@ -347,7 +348,7 @@
                 <div class="col-md-4 mt-1">
                     <div class="gt-text">
                         <i class="fa fa-map-marker"></i>
-                        <p>Colombo 1, World Trade Center</br>  Colombo 2, Moors Sports Club <br /> Colombo 7, Maitland Crescent<br /> Kandana Ja-ela </p>
+                        <p>Colombo 1, World Trade Center</br> Colombo 2, Moors Sports Club <br /> Colombo 7, Maitland Crescent<br /> Kandana Ja-ela </p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -446,7 +447,7 @@
                     <div class="copyright-text">
                         <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </script> All rights reserved | <i class="fa fa-star" aria-hidden="true"></i> by <a href="https://www.linkedin.com/in/sanka-udeshika-6298311bb/" target="_blank">Sanka</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div>
                 </div>
             </div>
@@ -466,7 +467,7 @@
     <!-- Search model end -->
 
     <!-- Js Plugins -->
-     <script src="js/script.js"></script>
+    <script src="js/script.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>

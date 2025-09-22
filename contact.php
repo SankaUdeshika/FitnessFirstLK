@@ -94,13 +94,14 @@
                 <div class="col-lg-6">
                     <nav class="nav-menu">
                         <ul>
-                            <li class="active"><a href="./index.php">Home</a></li>
+                              <li class="active"><a href="./index.php">Home</a></li>
                             <li><a href="./about-us.php">About Us</a></li>
                             <!-- <li><a href="./class-details.html">Classes</a></li> -->
                             <li><a href="./services.php">Amenities</a></li>
                             <li><a href="./team.php">Our Team</a></li>
                             <li><a href="./blog.php">Our blog</a></li>
                             <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
+                            <li><a href="./coperates.php">Coperates</a></li>
                             <li><a href="./contact.php">Contact</a></li>
                         </ul>
                     </nav>

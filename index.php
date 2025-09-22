@@ -129,6 +129,7 @@ $metaKeywords = "gym Sri Lanka, best gym Colombo, weight loss, muscle gain, ladi
                             <li><a href="./team.php">Our Team</a></li>
                             <li><a href="./blog.php">Our blog</a></li>
                             <li><a href="./membershipCheckout.php?id=1">Our Packages</a></li>
+                            <li><a href="./coperates.php">Coperates</a></li>
                             <li><a href="./contact.php">Contact</a></li>
                         </ul>
                     </nav>
@@ -185,7 +186,7 @@ $metaKeywords = "gym Sri Lanka, best gym Colombo, weight loss, muscle gain, ladi
             <!-- Second Slide -->
             <div class="hs-item set-bg vh-100" data-setbg="<?php echo $carousel_images[1]; ?>">
                 <div class="container">
-                    <div class="row vh-100">
+                    <div class="row ">
                         <div class="col-lg-6 offset-lg-6 d-flex text-center mb-5 text-lg-start align-items-center justify-content-center">
                             <div class="hi-text">
                                 <span>Shape your body</span>
