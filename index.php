@@ -189,9 +189,9 @@ $metaKeywords = "gym Sri Lanka, best gym Colombo, weight loss, muscle gain, ladi
                     <div class="row ">
                         <div class="col-lg-6 offset-lg-6 d-flex text-center mb-5 text-lg-start align-items-center justify-content-center">
                             <div class="hi-text">
-                                <span>Shape your body</span>
-                                <h1 class="fw-bold">Buy <strong>Six Month</strong> Get <strong>Six Month</strong></h1>
-                                <a class="primary-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeX0bJtgAX28lJNutZr2scCCX5ckGP5IDCNhmHaJxObAPqUXQ/viewform?usp=dialog', '_blank')">Free Day Trial</a>
+                                <!-- <span>Shape your body</span> -->
+                                <!-- <h1 class="fw-bold">Try Out <strong>Free </strong> Day <strong>Trail</strong></h1>
+                                <a class="primary-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeX0bJtgAX28lJNutZr2scCCX5ckGP5IDCNhmHaJxObAPqUXQ/viewform?usp=dialog', '_blank')">Free Day Trial</a> -->
                             </div>
                         </div>
                     </div>
